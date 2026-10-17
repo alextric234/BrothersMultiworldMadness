@@ -12970,294 +12970,37 @@ DELTARUNE:
     []
 
 Dicey Dungeons:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ####################
-  # Location Options #
-  ####################
-  levelsanity:
-    # Determines whether level up rewards grants checks
-    # (Adds 5 checks for each episode)
-    'false': 0
-    'true': 50
-
-  checks_per_shop:
-    # Determines the number of AP items that generate
-    # for any individual shop (e.g. 
-    # in Episode 1, Floor 2 shop). Also determines the number
-    # (up to 3) of items in a shop which can be AP at a time.
-    # Items above 3 will fill in to those shops as they're
-    # purchased (aka as the location checks are sent).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  checks_per_chest:
-    # Determines the number of AP items that can
-    # be found within any individual chest (e.g. 
-    # in Episode 1, Floor 1 chest) across runs (1 per run).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  checks_per_trade:
-    # Determines the number of AP items that generate
-    # for any individual trade (e.g. 
-    # in Episode 1, Floor 4 trade). Only one will be
-    # given at a time. (Adds 1 check per episode)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  ################
-  # Dice Options #
-  ################
-  split_dice:
-    # Determines whether Dice Shards are required to receive
-    # dice when leveling up. Shared across episodes.
-    # Note: Also affects Robot's CPU.
-    'false': 50
-    'true': 0
-
-  dice_shards_per_die:
-    # Determines number of pieces to split each level up die into. 
-    # Only takes effect if Split Dice is On. 
-    # (Adds 3 items for each Dice Shard per Die)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  spare_dice_shards:
-    # Includes bonus dice shards, to make getting your dice 
-    # a little easier.
-    # Only takes effect if Split Dice is On.
-    # (Adds items equal to setting)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  ####################
-  # Gameplay Options #
-  ####################
-  episode_progression:
-    # Determines how you gain access to Episodes. This affects logic as well.
-    # 
-    # vanilla: Episodes are unlocked as normal: 
-    # Episode 4 requires any 2 prior episodes to be completed. 
-    # 3 for Episode 5, and 4 for Episode 6.
-    # 
-    # open_world: All episodes are available from start. 
-    # Note: This uses base save, so you must have unlocked 
-    # all episodes prior for this to work.
-    vanilla: 50
-    open_world: 0
-
-  shop_selection:
-    # Determines what is purchasable in shops.
-    # 
-    # vanilla: All shops which would normally have non-equipment choices
-    # (like Warrior Floor 5 shops) have that available, along with
-    # AP items / checks / filler.
-    # 
-    # items_only: All shops will only include AP items / checks / filler
-    # and will not include health or upgrades.
-    vanilla: 50
-    items_only: 0
-
-  character:
-    # Determines which character you would like to play as.
-    warrior: 50
-    thief: 0
-    robot: 0
-    inventor: 0
-
-  excluded_equipment:
-    # Excludes certain equipment from item generation. 
-    # Missing equipment is replaced with filler, so consider adjusting location options 
-    # to include fewer overall checks if removing a lot of equipment this way.
-    []
-
-  use_equipment_from_any_character:
-    # Allows ANY equipment in the game to be found, rather than just that accessible by your character.
-    # DEFINITELY can break logic, as some equipment will be unusable! Be very wary of this setting.
-    # If not playing as Robot, check out preset any-equipment-non-robot for recommended Excluded Equipment.
-    # Open equipment availability MUST be on to use this option!
-    'false': 50
-    'true': 0
-
-  randomize_gadgets:
-    # Change the gadget of some equipment into "Random Gadget", which will produce a random
-    # gadget's effect each time it is used.
-    # 
-    # vanilla: No equipment is changed.
-    # 
-    # filler only: Only filler items will be affected (filler otherwise acts like scrap).
-    # 
-    # all equipment: All equipment will have their gadgets replaced.
-    vanilla: 50
-    filler_only: 0
-    all_equipment: 0
-
-  ###################
-  # Quality of Life #
-  ###################
-  skip_cutscenes:
-    # Select whether you want to skip cutscenes before and 
-    # after episodes, as well as the tutorial at the 
-    # beginning of the game.
-    'false': 0
-    'true': 50
-
-  equipment_availability:
-    # Determines where received Equipment can be found in-game.
-    # 
-    # vanilla: Equipment will be bound to the episodes or locations
-    # (chest/shop/etc) it can be found in the base game.
-    # 
-    # open: Equipment can spawn in any episode/location.
-    vanilla: 0
-    open: 50
-
-  warrior_2_disable_curse:
-    # If playing as Warrior, disable the Curse status for Episode 2.
-    'false': 50
-    'true': 0
-
-  warrior_3_remove_hp_decrease_on_level:
-    # If playing as Warrior, prevent HP loss on level up.
-    'false': 50
-    'true': 0
-
-  inventor_3_remove_rust:
-    # If playing as Inventor, prevent Rust from degrading your equipment.
-    # Equipment will function just like other Inventor episodes.
-    'false': 50
-    'true': 0
-
-  inventor_3_start_with_grindstone:
-    # If playing as Inventor, start Episode 3 (Rust) with a Grindstone.
-    # Helps alleviate some pain from Levelsanity taking away guaranteed Grindstone.
-    'false': 50
-    'true': 0
-
-  upgrade_equipment:
-    # Choose whether you'd like any equipment upgraded that wouldn't otherwise be.
-    # 
-    # vanilla: No equipment is upgraded that wouldn't be upgraded in base game.
-    # 
-    # starting equipment: Your starting equipment is upgraded, all other equipment stays the same.
-    # 
-    # all equipment: All equipment is upgraded, like Warrior Episode 2. Upgrades in episodes are converted to Copy blueprints.
-    vanilla: 50
-    starting_equipment: 0
-    all_equipment: 0
-
-  release_episodes_when_completed:
-    # Release any checks in an Episode when that episode is beaten.
-    # Prevents need to replay episodes once they are beaten.
-    'false': 50
-    'true': 0
-
-  remove_checks_when_sent:
-    # Remove AP checks from your equipped items when the check is sent to the client.
-    # Useful to have off if you want to use them as gadgets for Inventor.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  levelsanity: true
+  checks_per_chest: 2
+  checks_per_shop: 2
+  checks_per_trade: 1
+  split_dice: false
+  dice_shards_per_die: 0
+  spare_dice_shards: 0
+  episode_progression: vanilla
+  shop_selection: vanilla
+  character: random
+  excluded_equipment: []
+  randomize_gadgets: vanilla
+  use_equipment_from_any_character: false
+  skip_cutscenes: true
+  equipment_availability: open
+  warrior_2_disable_curse: false
+  warrior_3_remove_hp_decrease_on_level: false
+  inventor_3_remove_rust: false
+  inventor_3_start_with_grindstone: false
+  upgrade_equipment: vanilla
+  release_episodes_when_completed: false
+  remove_checks_when_sent: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Diddy Kong Racing:
   ################
