@@ -4809,19 +4809,19 @@ APQuest:
   hammer:
     # Adds another item to the itempool: The Hammer.
     # The top middle chest will now be locked behind a breakable wall, requiring the Hammer.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   extra_starting_chest:
     # Adds an extra chest in the bottom left, making room for an extra Confetti Cannon.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   start_with_one_confetti_cannon:
     # Start with a confetti cannon already in your inventory.
     # Why? Because you deserve it. You get to celebrate yourself without doing any work first.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   trap_chance:
     # Percentage chance that any given Confetti Cannon will be replaced by a Math Trap.
@@ -4829,11 +4829,11 @@ APQuest:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    0: 50
+    0: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
+    random-range-1-25: 50 # random value between 0 and 100
 
   #####################
   # Aesthetic Options #
@@ -4853,9 +4853,9 @@ APQuest:
   player_sprite:
     # The sprite that the player will have.
     human: 50
-    duck: 0
-    horse: 0
-    cat: 0
+    duck: 50
+    horse: 50
+    cat: 50
 
   ###########################
   # Item & Location Options #
