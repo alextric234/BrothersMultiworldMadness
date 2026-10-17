@@ -2126,11 +2126,11 @@ AM2R:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    46: 50
+    46: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
+    random-range-25-75: 50 # random value between 0 and 100
 
   MetroidsInPool:
     # Chose how many Metroids will be in the pool, if Metroids are randomized.
@@ -2209,11 +2209,11 @@ AM2R:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    0: 50
+    0: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
+    random-range-20-50: 50 # random value between 0 and 100
 
   RemoveFloodTrap:
     # Removes Flood Traps from trap fill
@@ -2289,8 +2289,8 @@ AM2R:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    0: 50
-    random: 0
+    0: 0
+    random: 50
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
     random-range-0-100: 0 # random value between 0 and 100
@@ -2305,12 +2305,12 @@ AM2R:
   DeathlinkMessagePacks:
     # Predefined DeathLink Message Packs
     # valid_keys = {"default", "enemy", "ror2", "copypastas", "randplayer", "custom"}
-    ['default']
+    ['default', 'enemy', 'ror2', 'copypastas', 'randplayer']
 
   DeathLink:
     # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   ###########################
   # Item & Location Options #
