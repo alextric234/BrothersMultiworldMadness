@@ -3851,545 +3851,69 @@ Balatro:
     []
 
 Baldur's Gate 3 - ToT:
-  ################
-  # Game Options #
-  ################
-  death_link:
-    'false': 50
-    'true': 0
-
-  death_link_trigger:
-    # Chooses what local Trials death condition sends a DeathLink.
-    # 
-    # Full Party Wipe: Sends when every active party member is dead or downed.
-    # Any Party Kill: Sends when any active party member fully dies.
-    # Any Party Downed: Sends when any active party member is downed.
-    full_party_wipe: 50
-    any_party_kill: 0
-    any_party_downed: 0
-
-  death_link_punishment:
-    # Chooses what happens locally when this slot receives a DeathLink.
-    # 
-    # Kill All Party Members: Wipes the active party, companions, and summons to force a reload.
-    # Down Random Party Member: Downs one random active party member or companion.
-    # Kill Random Party Member: Fully kills one random active party member or companion.
-    # Remove All Resources - All: Drains every tracked resource from the whole active party and companions,
-    # including spell slots, actions, bonus actions, movement, rage charges, Channel Divinity, sorcery points,
-    # and similar class resources.
-    # Remove All Resources - Random: Drains every tracked resource from one random active party member or companion,
-    # including spell slots, actions, bonus actions, movement, rage charges, Channel Divinity, sorcery points,
-    # and similar class resources.
-    # Remove All Actions - All: Removes only actions, bonus actions, and movement from the whole active party and companions.
-    # Remove All Actions - Random: Removes only actions, bonus actions, and movement from one random active
-    # party member or companion.
-    # Nothing: Receives the DeathLink notification but applies no local punishment.
-    kill_all_party_members: 50
-    down_random_party_member: 0
-    kill_random_party_member: 0
-    remove_all_resources_all: 0
-    remove_all_resources_random: 0
-    remove_all_actions_all: 0
-    remove_all_actions_random: 0
-    nothing: 0
-
-  #########
-  # Goals #
-  #########
-  goal:
-    # Determines how this BG3 Trials slot wins.
-    # 
-    # Buy NG+: Purchase the local Quick Start / NG+ unlock from the tav shop.
-    # Clear Stages: Complete the configured number of Trials clears.
-    # Reach RogueScore: Reach the configured RogueScore total.
-    buy_ng_plus: 50
-    clear_stages: 0
-    reach_rogue_score: 0
-
-  goal_clear_target:
-    # How many successful Trials clears are required when the goal is Clear Stages.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  goal_rogue_score_target:
-    # How much RogueScore is required when the goal is Reach RogueScore.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 25
-    # Maximum value is 1000
-    300: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-25-1000: 0 # random value between 25 and 1000
-
-  goal_ng_plus_fragment_gate_percent:
-    # How much of the Progressive Shop must be unlocked before `NG+` appears in the shop.
-    # 
-    # If Progressive Shop is disabled, this gate is ignored and `NG+` appears normally.
-    percent_0: 50
-    percent_25: 0
-    percent_50: 0
-    percent_75: 0
-    percent_100: 0
-
-  goal_ng_plus_price:
-    # Local shop price for `NG+`.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1000
-    # Maximum value is 10000
-    3000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1000-10000: 0 # random value between 1000 and 10000
-
-  ####################
-  # Check Thresholds #
-  ####################
-  clear_check_count:
-    # How many Archipelago checks can be earned from successful scenario clears.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 40
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-40: 0 # random value between 0 and 40
-
-  clear_check_interval:
-    # Awards one clear-based check every N successful scenario clears until the count limit is reached.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  kill_check_count:
-    # How many Archipelago checks can be earned from total enemy kills in Trials.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  kill_check_interval:
-    # Awards one kill-based check every N total kills until the count limit is reached.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 50
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-50: 0 # random value between 1 and 50
-
-  perfect_check_count:
-    # How many Archipelago checks can be earned from perfect clears.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  perfect_check_interval:
-    # Awards one perfect-clear check every N perfect clears until the count limit is reached.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  roguescore_check_count:
-    # How many Archipelago checks can be earned from RogueScore milestones.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 30
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-30: 0 # random value between 0 and 30
-
-  roguescore_check_interval:
-    # Awards one RogueScore-based check every N RogueScore until the count limit is reached.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-100: 0 # random value between 5 and 100
-
-  ########
-  # Shop #
-  ########
-  progressive_shop:
-    # Locks randomized AP shop checks behind progressive ``Shop Fragment`` items.
-    # 
-    # Each received Shop Fragment unlocks the next visible section of the tav shop until the
-    # whole randomized shop is available.
-    'false': 0
-    'true': 50
-
-  progressive_shop_unlock_rate:
-    # How much of the randomized AP shop each received Shop Fragment unlocks.
-    # 
-    # Lower values create more Shop Fragments and finer-grained shop progression.
-    # This option only affects generation when Progressive Shop is enabled.
-    percent_5: 0
-    percent_10: 50
-    percent_20: 0
-    percent_25: 0
-    percent_50: 0
-    percent_100: 0
-
-  shop_check_count:
-    # Targets at least N randomized AP shop checks from ``trials_unlock_catalog.json``.
-    # 
-    # Buying one of these entries sends a location check instead of granting the reward immediately.
-    # The original reward becomes an AP item that must be received from the multiworld.
-    # 
-    # The world will automatically expand above this value when needed so every configured
-    # non-filler unlock copy still appears somewhere in the randomized item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1335
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1335: 0 # random value between 0 and 1335
-
-  shop_price_minimum:
-    # Minimum seeded random price for AP shop entries.
-    # 
-    # Prices are rounded to multiples of 10, and NG+ keeps its vanilla local cost.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 1000
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-1000: 0 # random value between 10 and 1000
-
-  shop_price_maximum:
-    # Maximum seeded random price for AP shop entries.
-    # 
-    # Prices are rounded to multiples of 10, and NG+ keeps its vanilla local cost.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 1000
-    250: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-1000: 0 # random value between 10 and 1000
-
-  vanilla_pixie_blessing_in_shop:
-    # Restores Pixie Blessing as a normal local shop unlock instead of randomizing it into the AP pool.
-    # 
-    # When enabled, Moonshield is removed from the randomized shop check pool and the vanilla 30-cost shop entry stays local.
-    'false': 50
-    'true': 0
-
-  permanent_buff_target:
-    # Chooses who receives character-bound useful AP unlock rewards.
-    # 
-    # User Character: Gives the reward to the receiving player's chosen character.
-    # Random Party Member: Gives the reward to one random active party member.
-    # All Party Members: Gives the reward to every active party member.
-    # 
-    # Progression rewards ignore this setting and still keep their whole-party or global behavior.
-    user_character: 0
-    random_party_member: 50
-    all_party_members: 0
-
-  ###############
-  # Unlock Pool #
-  ###############
-  tadpole_copies:
-    # How many copies of Get a Tadpole are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_exp_copies:
-    # How many copies of 1000 EXP are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_loot_copies:
-    # How many copies of Roll Loot x10 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_loot_rare_copies:
-    # How many copies of Roll Rare Loot x5 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_loot_epic_copies:
-    # How many copies of Roll Epic Loot x3 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_loot_legendary_copies:
-    # How many copies of Roll Legendary Loot x1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_supplies_copies:
-    # How many copies of 40 Camp Supplies are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_hair_str_copies:
-    # How many copies of Hag Hair Strength +1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_hair_dex_copies:
-    # How many copies of Hag Hair Dexterity +1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_hair_con_copies:
-    # How many copies of Hag Hair Constitution +1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_hair_int_copies:
-    # How many copies of Hag Hair Intelligence +1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_hair_wis_copies:
-    # How many copies of Hag Hair Wisdom +1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buy_hair_cha_copies:
-    # How many copies of Hag Hair Charisma +1 are included in the randomized AP unlock pool.
-    # 
-    # Set this to 0 to remove that unlock from the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  include_equipment_fillers:
-    # Whether one-off equipment filler items from the upstream BG3 equipment pool stay in the AP filler pool.
-    # 
-    # Disable this to remove those equipment filler items from the multiworld entirely.
-    'false': 0
-    'true': 50
-
-  ##################
-  # Client & Traps #
-  ##################
-  traps_percentage:
-    # Percent chance that filler slots become traps instead of helpful filler rewards.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  death_link_trigger: full_party_wipe
+  death_link_punishment: down_random_party_member
+  goal: buy_ng_plus
+  goal_clear_target: 20
+  goal_rogue_score_target: 300
+  goal_ng_plus_fragment_gate_percent: percent_50
+  goal_ng_plus_price: 3000
+  clear_check_count: 20
+  clear_check_interval: 1
+  kill_check_count: 20
+  kill_check_interval: 5
+  perfect_check_count: 5
+  perfect_check_interval: 1
+  roguescore_check_count: 10
+  roguescore_check_interval: 25
+  progressive_shop: true
+  progressive_shop_unlock_rate: percent_10
+  shop_check_count: 50
+  shop_price_minimum: 30
+  shop_price_maximum: 250
+  vanilla_pixie_blessing_in_shop: false
+  permanent_buff_target: random_party_member
+  tadpole_copies: 15
+  buy_exp_copies: 10
+  buy_loot_copies: 30
+  buy_loot_rare_copies: 10
+  buy_loot_epic_copies: 10
+  buy_loot_legendary_copies: 5
+  buy_supplies_copies: 10
+  buy_hair_str_copies: 10
+  buy_hair_dex_copies: 10
+  buy_hair_con_copies: 10
+  buy_hair_int_copies: 10
+  buy_hair_wis_copies: 10
+  buy_hair_cha_copies: 10
+  include_equipment_fillers: true
+  traps_percentage: 20
   enabled_traps:
-    # Which trap types are allowed in the filler pool.
-    # 
-    # Monster traps are still the least proven option and may need extra testing in Trials.
-    ['FaerieFire', 'Ensnared', 'Stun', 'Slow', 'Cheesed', 'Confusion', 'Bleeding', 'Bane', 'Burning', 'Silence', 'Blindness', 'Frightened', 'Grease', 'HoldPerson', 'Poisoned']
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Bane
+  - Bleeding
+  - Blindness
+  - Burning
+  - Cheesed
+  - Confusion
+  - Ensnared
+  - FaerieFire
+  - Frightened
+  - Grease
+  - HoldPerson
+  - Poisoned
+  - Silence
+  - Slow
+  - Stun
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Baldur's Gate 3:
   progression_balancing: normal
