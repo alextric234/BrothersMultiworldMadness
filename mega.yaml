@@ -3036,11 +3036,11 @@ APBingo:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 59
-    1: 50
+    1: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-1-59: 0 # random value between 1 and 59
+    random-range-1-10: 50 # random value between 1 and 59
 
   additional_bingos:
     # Adds additional unique bingo's as locations.
@@ -3056,11 +3056,11 @@ APBingo:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 4
     # Maximum value is 26
-    5: 50
+    5: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-4-26: 0 # random value between 4 and 26
+    random-range-4-13: 50 # random value between 4 and 26
 
   bingo_balance:
     # The percentage of bingo squares that'll be forcibly equally divided amongst the other worlds
