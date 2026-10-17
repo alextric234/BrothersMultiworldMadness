@@ -16145,246 +16145,30 @@ DORONKO WANKO:
     []
 
 Dr. Robotnik's Ring Racers:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    # 
-    # **Items:** ensure all logically relevant items can be acquired. Some items, such as keys, may be self-locking, and
-    # some locations may be inaccessible.
-    full: 0
-    minimal: 0
-    items: 50
-
-  #############
-  # Locations #
-  #############
-  challenges:
-    # Include most locations from the vanilla "Challenges" menu.
-    'false': 0
-    'true': 50
-
-  spray_cans:
-    # Include each map's Spray Can as a location.
-    'false': 0
-    'true': 50
-
-  prison_egg_cds:
-    # Include the Prison Egg CD milestones as locations.
-    # 
-    # Grinding is possible, but shouldn't be necessary as logic only expects that you get one CD per Bonus Round that has been unlocked.
-    # However, missing a CD will require replaying part of a Grand Prix. Enable at your own risk!
-    'false': 50
-    'true': 0
-
-  gum_challenge:
-    # Forcefully include Gum's Challenge. Does nothing if Challenges are off.
-    # 
-    # This will turn many Spray Cans from filler into progression items, only for a single check. Enable at your own risk!
-    'false': 50
-    'true': 0
-
-  sound_test_challenge:
-    # Include Sound Test's Challenge. Does nothing if Challenges are off.
-    # 
-    # This will turn some Alt. Music from filler into progression items, only for a single check. Enable at your own risk!
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal_num_trophies:
-    # How many Cup trophies are needed in order to complete the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 30
-    14: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-30: 0 # random value between 1 and 30
-
-  goal_trophy_level:
-    # The final placement needed in order to for a Cup's trophy to be considered for goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-    any: 50 # equivalent to 0
-    gold: 0 # equivalent to 1
-    silver: 0 # equivalent to 2
-    bronze: 0 # equivalent to 3
-
-  ####################
-  # Starting Drivers #
-  ####################
-  starting_driver_pool:
-    # Determine the pool that is chosen from when randomizing starting drivers.
-    # 
-    # - **Vanilla**: Randomize from only the starting drivers.
-    # - **Balanced**: Randomize from any drivers, but require at least one from each engine class.
-    # - **Full**: Randomize from any drivers, no restrictions.
-    vanilla: 0
-    balanced: 50
-    full: 0
-
-  starting_driver_count:
-    # How many drivers to start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    9: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  #############
-  # Chao Keys #
-  #############
-  chao_key_ratio:
-    # Replace some filler items with Chao Keys, as a percentage of the total number of enabled locations.
-    # 
-    # If there are enough locations for KKD Honors to spawn, then those will be replaced first.
-    # Otherwise, this replaces unique filler items, until either the quota is met or all filler is replaced.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  keygen_rate:
-    # How many rounds need to be completed for a Chao Key to be generated.
-    # 
-    # Disabling will cause Chao Keys to only be found from checks, or not at all if "Chao Key %" is zero.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 32
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-32: 0 # random value between 1 and 32
-    disabled: 0 # equivalent to 0
-
-  hintgen:
-    # If disabled, then KEYGEN generates Chao Keys, like vanilla.
-    # If enabled, then KEYGEN will generate a hint for a random location that hasn't been gotten.
-    # 
-    # (This is also affected by KEYGEN Rate.)
-    'false': 50
-    'true': 0
-
-  #########
-  # Logic #
-  #########
-  character_wins_count:
-    # Alter the number of wins required for any "100 wins playing as X" challenges.
-    # 
-    # - **Exclude**: Require 100 wins per character, but exclude from logic. Every challenge that has this condition uses it as an alternative, so this doesn't remove any locations.
-    # - **Nerfed**: Require only 5 wins per character, in logic.
-    # - **Vanilla**: Require 100 wins per character, in logic. Not recommended.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-    exclude: 50 # equivalent to 0
-    nerfed: 0 # equivalent to 5
-    vanilla: 0 # equivalent to 100
-
-  simple_map_access:
-    # If enabled, then maps are available on level select as soon as their respective Cup / Map Access item is found.
-    # If disabled, then it's required to visit the map first, like the vanilla game.
-    # This option has the most noticeable effect on Lost & Found maps.
-    'false': 0
-    'true': 50
-
-  ############
-  # Scouting #
-  ############
-  scouting:
-    # Enables "scouting" on the Locations board.
-    # 
-    # If disabled, acts like the vanilla game: blue ? tiles only display their requirement.
-    # If enabled: ALL tiles display their requirement, blue ? tiles further display what you would get for completing it.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: items
+  challenges: true
+  spray_cans: true
+  prison_egg_cds: false
+  gum_challenge: false
+  sound_test_challenge: false
+  goal_num_trophies: random
+  goal_trophy_level: any
+  starting_driver_pool: balanced
+  starting_driver_count: 9
+  chao_key_ratio: 10
+  keygen_rate: 5
+  hintgen: false
+  character_wins_count: exclude
+  simple_map_access: true
+  scouting: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Dragon Warrior:
   ################
