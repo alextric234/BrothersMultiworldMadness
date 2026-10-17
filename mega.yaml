@@ -3934,573 +3934,68 @@ Ape Escape 3:
     []
 
 Ape Escape:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  allowcollect:
-    # Allows for the !collect command used by other players to catch monkeys or collect Specter Coins in your world. This behaves the same as automatically using the /syncprogress command after someone !collects.
-    'false': 50
-    'true': 0
-
-  trap_link:
-    # Whether your received traps are linked to other players
-    # 
-    # You will also receive any linked traps from other players with Trap Link enabled,
-    # if you have a weight above "none" set for that trap
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ########
-  # Goal #
-  ########
-  goal:
-    # Choose the victory condition for this world.
-    # 
-    # mm: First Specter fight in Monkey Madness, with the vanilla condition (just get there).
-    # ppm: Second Specter fight in Peak Point Matrix, with the vanilla condition (catch all monkeys). Peak Point Matrix will have the vanilla entry condition.
-    # tokenhunt: Collecting enough Specter Token items throughout the world.
-    # mmtoken: First Specter fight in Monkey Madness, after collecting enough Specter Token items.
-    # ppmtoken: Second Specter fight in Peak Point Matrix, after collecting enough Specter Token items.
-    # 
-    # Supported values: mm, ppm, tokenhunt, mmtoken, ppmtoken
-    # Default value: mm
-    mm: 50
-    ppm: 0
-    tokenhunt: 0
-    mmtoken: 0
-    ppmtoken: 0
-
-  fasttokengoal:
-    # If this is enabled and the chosen goal is `mmtoken` or `ppmtoken`, provides easy access to the goal boss once enough Specter Tokens have been obtained.
-    # When enough Specter Tokens have been obtained, hold START while confirming a stage in the level select to warp directly to your goal boss, bypassing all other requirements.
-    # 
-    #     off: MM/PPM will only be accessible through World Keys by normal means.
-    #     on: You will be able to warp directly to your goal boss by holding START in the level select.
-    # 
-    #     Supported values: off, on
-    #     Default value: off
-    'off': 50
-    'on': 0
-
-  requiredtokens:
-    # Choose the required number of Specter Tokens for goal.
-    # 
-    # Supported values: 5 - 60
-    # Default value: 20
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 60
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-60: 0 # random value between 5 and 60
-
-  totaltokens:
-    # Choose the total number of Specter Tokens in the item pool.
-    # If a world requests a token requirement greater than the number of tokens created, then the total and required values will be swapped.
-    # 
-    # Supported values: 5 - 60
-    # Default value: 30
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 60
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-60: 0 # random value between 5 and 60
-
-  tokenlocations:
-    # Choose where Specter Tokens can be placed in the multiworld.
-    # 
-    # anywhere: Specter Tokens can be placed anywhere in the multiworld.
-    # ownworld: Specter Tokens can only be placed in your world.
-    # 
-    # Supported values: anywhere, ownworld
-    # Default value: ownworld
-    anywhere: 0
-    ownworld: 50
-
-  #####################
-  # Logic & Abilities #
-  #####################
-  logic:
-    # Choose expected trick knowledge.
-    # 
-    # normal: No advanced movement tech or out of bounds required, and hard monkeys will guarantee a helpful gadget. Some additional difficult or precise jumps won't be required either. May still require some out of the box thinking or non-standard routes. Suitable for casual players.
-    # hard: Movement tech can be required in places with a low penalty for failing. Suitable for players with speedrun knowledge.
-    # expert: All tricks and glitches can be required, and some monkeys may require resetting the room if not caught in a certain way. Can also require obscure game knowledge. Suitable for those seeking the ultimate challenge.
-    # 
-    # Supported values: normal, hard, expert
-    # Default value: normal
-    normal: 50
-    hard: 0
-    expert: 0
-
-  infinitejump:
-    # Choose if the Infinite Jump trick should be put into logic.
-    # 
-    # false: Infinite Jump is not put into logic.
-    # true: Infinite Jump is put into logic.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  superflyer:
-    # Choose if the Super Flyer trick should be put into logic.
-    # 
-    # false: Super Flyer is not put into logic.
-    # true: Super Flyer is put into logic.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  gadget:
-    # Choose a starting gadget aside from the Time Net.
-    # 
-    # club: Start with the Stun Club.
-    # radar: Start with the Monkey Radar.
-    # sling: Start with the Slingback Shooter.
-    # hoop: Start with the Super Hoop.
-    # flyer: Start with the Sky Flyer.
-    # car: Start with the RC Car.
-    # punch: Start with the Magic Punch.
-    # waternet: Start with the Water Net.
-    # none: Start with no additional gadgets.
-    # 
-    # Supported values: club, radar, sling, hoop, flyer, car, punch, waternet, none
-    # Default value: club
-    club: 50
-    radar: 0
-    sling: 0
-    hoop: 0
-    flyer: 0
-    car: 0
-    punch: 0
-    waternet: 0
-    none: 0
-
-  ####################
-  # Entrance & World #
-  ####################
-  entrance:
-    # Choose how the level entrances should be randomized. Can be used to access Entrance Plando with the custom option. For "mm", "ppm" and "ppmtoken" goals, Peak Point Matrix will always be the last level with its vanilla unlock condition. Races will be included in randomization if coin shuffle is on, and excluded otherwise.
-    # 
-    # off: Levels will be in the vanilla order.
-    # recommended: The recommended preset for your chosen goal will be selected. For mm, this is "Lock Endgame". For ppm and ppmtoken, this is "Lock PPM". For everything else, this is "Random".
-    # levelshuffle: Levels will be in a random order.
-    # erashuffle: Each era will contain the levels from a random other era. Dimension X, containing the Jake races and Peak Point Matrix, counts as an era.
-    # lockendgame: Levels will be in a random order, with Monkey Madness and Peak Point Matrix forced to the end.
-    # lockppm: Levels will be in a random order, with Peak Point Matrix forced to the end.
-    # goallevelfirst: Levels will be in a random order, with your goal level forced to the start.
-    # custom: Uses the Entrance Plando option to determine level order, allowing any level to be placed at any entrance, with the rest placed randomly. This overrides coin shuffle race level placements, but does not override the ppm goal Peak Point Matrix placement.
-    # 
-    # Supported values: off, recommended, levelshuffle, erashuffle, lockendgame, lockppm, goallevelfirst, custom
-    # Default value: recommended
-    'off': 0
-    recommended: 50
-    levelshuffle: 0
-    erashuffle: 0
-    lockendgame: 0
-    lockppm: 0
-    goallevelfirst: 0
-    custom: 0
-
-  entranceplando:
-    # If Entrance is Custom, forces the chosen levels to the chosen entrances. Note that if you plando a level to the Peak Point Matrix entrance for the ppm goal, this placement will be ignored!
-    # 
-    # Format is W-L Entrance: Level. 9-1 Monkey Madness: Dexter's Island will result in Dexter's Island being at the Monkey Madness entrance. Any entrance not set will have a random level. Any level assigned to more than one entrance will be placed at the later entrance.
-    # The default sequence is a "reverse lock endgame" sequence.
-    # Level names: "Fossil Field", "Primordial Ooze", "Molten Lava", "Thick Jungle", "Dark Ruins", "Cryptic Relics", "Stadium Attack", "Crabby Beach", "Coral Cave", "Dexter's Island", "Snowy Mammoth", "Frosty Retreat", "Hot Springs", "Gladiator Attack", "Sushi Temple", "Wabi Sabi Wall", "Crumbling Castle", "City Park", "Specter's Factory", "TV Tower", "Monkey Madness", "Peak Point Matrix"
-    1-1 Fossil Field: TV Tower
-    1-2 Primordial Ooze: Specter's Factory
-    1-3 Molten Lava: City Park
-    2-1 Thick Jungle: Crumbling Castle
-    2-2 Dark Ruins: Wabi Sabi Wall
-    2-3 Cryptic Relics: Sushi Temple
-    3-1 Stadium Attack: Gladiator Attack
-    4-1 Crabby Beach: Hot Springs
-    4-2 Coral Cave: Frosty Retreat
-    4-3 Dexter's Island: Snowy Mammoth
-    5-1 Snowy Mammoth: Dexter's Island
-    5-2 Frosty Retreat: Coral Cave
-    5-3 Hot Springs: Crabby Beach
-    6-1 Gladiator Attack: Stadium Attack
-    7-1 Sushi Temple: Cryptic Relics
-    7-2 Wabi Sabi Wall: Dark Ruins
-    7-3 Crumbling Castle: Thick Jungle
-    8-1 City Park: Molten Lava
-    8-2 Specter's Factory: Primordial Ooze
-    8-3 TV Tower: Fossil Field
-    9-1 Monkey Madness: Monkey Madness
-    9-2 Peak Point Matrix: Peak Point Matrix
-
-  randomizestartingroom:
-    # Choose if the starting room for each level should be randomized.
-    # 
-    # off: The starting room for each level is the original starting room.
-    # on: The starting room for each level is a random room from within that level.
-    # 
-    # Supported values: off, on
-    # Default value: off
-    'off': 50
-    'on': 0
-
-  unlocksperkey:
-    # Choose how many levels each World Key should unlock. The first three levels will always start unlocked.
-    # Races will be skipped if coin shuffle is off. Peak Point Matrix will require the same number of keys as the Monkey Madness entrance on a boss goal, and one additional key on a token hunt or token boss goal.
-    # 
-    # world: Each World Key unlocks the 1 or 3 levels in the next world. Creates between 6 and 9 World Keys.
-    # level: Each World Key unlocks the next level. Creates between 16 and 19 World Keys.
-    # twolevels: Each World Key unlocks the next two levels. Creates between 8 and 10 World Keys.
-    # none: All levels are open from the beginning of the game.
-    # 
-    # Supported values: world, level, twolevels, none
-    # Default value: world
-    world: 50
-    level: 0
-    twolevels: 0
-    none: 0
-
-  extrakeys:
-    # Choose the number of extra World Keys that should be created.
-    # 
-    # Supported values: 0 - 10
-    # Default value: 0
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  #####################
-  # Items & Locations #
-  #####################
-  coin:
-    # Choose if Specter Coins should be added as locations.
-    # 
-    # false: Specter Coins are not locations.
-    # true: The 60 Specter Coins are added as locations.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  jacket:
-    # Choose if static jackets should act as locations.
-    # 
-    # false: Jackets are not locations.
-    # true: The 23 available jackets are added as locations.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  mailbox:
-    # Choose if mailboxes in the Time Station and levels should act as locations.
-    # Training rooms are in a different option.
-    # 
-    # false: Mailboxes are not locations.
-    # true: The 63 available mailboxes are added as locations.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  trainingrooms:
-    # Choose if locations inside training rooms should be included as checks.
-    # 
-    # false: Training rooms have no checks.
-    # completion: Training rooms have 1 check on completion.
-    # mailboxes: Training room mailboxes count as checks.
-    # 
-    # Supported values: false, completion, mailboxes
-    # Default value: false
-    'false': 50
-    completion: 0
-    mailboxes: 0
-
-  lamp:
-    # Choose if Monkey Lamps should be locked and shuffled into the multiworld.
-    # 
-    # false: Monkey Lamps will act in vanilla (catch enough monkeys in their level to open the door)
-    # true: The 8 Monkey Lamps will be items in the multiworld, that open their respective door when received.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  shufflenet:
-    # Choose if the Time Net should be shuffled.
-    # This option requires at least one of coins and mailboxes to be shuffled to be used - if all locations in this world require the net, the net will be given at game start.
-    # 
-    # false: Time Net is not shuffled, and is given at game start.
-    # true: Time Net is shuffled into the pool. The mailboxes in the Time Station will also be locations if this happens.
-    # 
-    # Supported values: false, true
-    # Default value: false
-    'false': 50
-    'true': 0
-
-  shufflewaternet:
-    # Choose if the Water Net should be shuffled.
-    # 
-    # off: Water Net is not shuffled, and is given at game start.
-    # progressive: Water Net is shuffled and split into parts, adding two Progressive Water Nets and Water Catch to the pool.
-    # - Progressive Water Net : The first allows Spike to swim on the surface and avoid drowning after a few seconds. The second allows Spike to dive underwater.
-    # - Water Catch: Allows shooting the Water Net.
-    # on: Water Net is shuffled, adding it to the pool as a single item.
-    # 
-    # Supported values: off, progressive, on
-    # Default value: off
-    'off': 50
-    progressive: 0
-    'on': 0
-
-  ##################
-  # Filler & Traps #
-  ##################
-  fillerpreset:
-    # Choose the distribution of filler items.
-    # 
-    # Normal: Balanced distribution with better items appearing less often.
-    # Bountiful: Nearly every filler item will be useful.
-    # Stingy: Nearly every filler item will be its smallest quantity.
-    # Nothing: Replace all filler items with Nothing.
-    # Custom: Use custom weights set with the option "customfillerweights".
-    # 
-    # Supported values: normal, bountiful, stingy, nothing, custom
-    # Default value: normal
-    normal: 50
-    bountiful: 0
-    stingy: 0
-    nothing: 0
-    custom: 0
-
+  progression_balancing: normal
+  accessibility: full
+  allowcollect: false
+  trap_link: false
+  death_link: false
+  goal: mm
+  fasttokengoal: 'off'
+  requiredtokens: 20
+  totaltokens: 30
+  tokenlocations: ownworld
+  logic: normal
+  infinitejump: 'false'
+  superflyer: 'false'
+  gadget: random
+  entrance: recommended
+  randomizestartingroom: 'off'
+  unlocksperkey: world
+  extrakeys: 3
+  coin: 'true'
+  jacket: 'false'
+  mailbox: 'true'
+  trainingrooms: 'false'
+  lamp: 'false'
+  shufflenet: 'false'
+  shufflewaternet: progressive
+  fillerpreset: normal
   customfillerweights:
-    # Use custom weights for filler item distribution by choosing "Custom" in the "Filler Preset" option.
-    # This works the same way as other weighted options.
-    # You can use a weight of 0 to prevent that filler item from appearing.
-    # If all weights are set to 0, then all filler items will be Nothing.
-    # 
-    # Range: 0 - 100
-    # Default values are the same as the Normal preset.
-    25 Energy Chips: 4
-    3 Explosive Pellets: 3
-    3 Guided Pellets: 3
-    5 Cookies: 3
-    5 Energy Chips: 14
-    Cookie: 16
-    Energy Chip: 31
-    Explosive Pellet: 9
-    Guided Pellet: 9
     Jacket: 7
-    Nothing: 0
+    Cookie: 16
+    5 Cookies: 3
+    Energy Chip: 31
+    5 Energy Chips: 14
+    25 Energy Chips: 4
+    Explosive Pellet: 9
+    3 Explosive Pellets: 3
+    Guided Pellet: 9
+    3 Guided Pellets: 3
     Rainbow Cookie: 6
-
-  trappercentage:
-    # Replace a percentage of filler items in the item pool with random traps.
-    # 
-    # Range: 0 - 100
-    # Default value: 0
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+    Nothing: 0
+  trappercentage: 0
   trapweights:
-    # Specify the weighted chance of rolling individual trap items.
-    # 
-    # You can use a weight of 0 to guarantee a particular trap will never appear.
-    # **This option is ignored when "TrapPercentage" option is set to an other value than "custom"
-    # 
-    # Range: 0 - 100
-    # Default values:
-    #   Banana Peel Trap: 15
-    #   Gadget Shuffle Trap: 13
-    #   Monkey Mash Trap: 5
-    #   Icy Hot Pants Trap: 10
-    #   Stun Trap: 7
-    #   Camera Rotate Trap: 10
     Banana Peel Trap: 15
-    Camera Rotate Trap: 10
     Gadget Shuffle Trap: 13
-    Icy Hot Pants Trap: 10
     Monkey Mash Trap: 5
+    Icy Hot Pants Trap: 10
     Stun Trap: 7
+    Camera Rotate Trap: 10
+  trapsonreconnect: []
+  lowoxygensounds: half
+  itemdisplay: 'on'
+  kickoutprevention: 'on'
+  autoequip: 'on'
+  spikecolor: random
+  customspikecolor: FFFFFF
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
-  trapsonreconnect:
-    # Determine which traps are sent when reconnecting.
-    # 
-    # This option determines which traps will be sent when reconnecting to the client.
-    # Traps that are not in this list will only activate when connected
-    # 
-    # Supported values: "Banana Peel Trap", "Gadget Shuffle Trap", "Monkey Mash Trap", "Icy Hot Pants Trap", "Stun Trap", "Camera Rotate Trap"
-    []
-
-  ###################
-  # Quality of Life #
-  ###################
-  lowoxygensounds:
-    # Choose how quickly the low oxygen beep sound effect will play when underwater.
-    # 
-    # off: Low Oxygen sounds will not play at all.
-    # half: Low Oxygen sounds will play less frequently.
-    # on: Low Oxygen Sounds will play normally.
-    # 
-    # Supported values: off, half, on
-    # Default value: half
-    'off': 0
-    half: 50
-    'on': 0
-
-  itemdisplay:
-    # Set the default for the Bizhawk item display command. This can be changed in the client at any time. The position and duration of these messages can be changed in Bizhawk config at any time.
-    # 
-    # off: Receiving an item will not show a message in Bizhawk.
-    # on: Receiving an item will show a message in Bizhawk.
-    # 
-    # Supported values: off, on
-    # Default value: on
-    'off': 0
-    'on': 50
-
-  kickoutprevention:
-    # Set the default for Kickout Prevention behavior. This can be changed in the client at any time.
-    # 
-    # off: Will always kick you out after catching the level's last monkey or defeating a boss.
-    # on: Prevents the kickout when catching the last monkey or defeating a boss.
-    # 
-    # Supported values: off, on
-    # Default value: on
-    'off': 0
-    'on': 50
-
-  autoequip:
-    # Set the default for Auto Equipping new gadgets. This can be changed in the client at any time.
-    # 
-    # off: Received gadgets need to be manually equipped.
-    # on: Received gadgets will automatically be equipped to an open face button, if one exists.
-    # 
-    # Supported values: off, on
-    # Default value: on
-    'off': 0
-    'on': 50
-
-  spikecolor:
-    # Determine the color of Spike in-game. This can be changed in the client at any time.
-    # Can select between the following presets, or choose "custom" to use a custom color set with the "CustomSpikeColor" option.
-    # 
-    # Supported values: vanilla, dark, white, red, green, blue, yellow, cyan, magenta, custom
-    # Default value: vanilla
-    vanilla: 50
-    dark: 0
-    white: 0
-    red: 0
-    green: 0
-    blue: 0
-    yellow: 0
-    cyan: 0
-    magenta: 0
-    custom: 0
-
-  customspikecolor:
-    # Use a custom color for Spike by choosing "Custom" in the "Spike Color" option.
-    # Enter an RGB hexadecimal value for the desired color.
-    # **Note: If an invalid color is entered, it will be set to the "Vanilla" preset!
-    # 
-    # Range: 000000 to FFFFFF
-    # Default value: FFFFFF
-    FFFFFF: 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
 
 APQuest:
   ################
