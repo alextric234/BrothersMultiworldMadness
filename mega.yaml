@@ -9739,143 +9739,22 @@ Crash2:
   priority_locations: []
 
 Crazy Taxi:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  fare_license_mode:
-    # How fare range licenses are handled. v0.2 client is designed for progressive mode.
-    progressive: 50
-    non_progressive: 0
-
-  fare_blocks:
-    # Number of 23-fare blocks included in the seed.
-    # 
-    # 4 blocks = 92 fares, good for short syncs.
-    # 8 blocks = 184 fares, the original standard length.
-    # 12 blocks = 276 fares, good for longer asyncs.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 12
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-12: 0 # random value between 2 and 12
-
-  required_crazy_box_clears:
-    # Number of Crazy Box stages required to finish.
-    # 
-    # Short syncs: 4-8.
-    # Standard: 9-15.
-    # Long/all-stage async: 16.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 4
-    # Maximum value is 16
-    16: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-4-16: 0 # random value between 4 and 16
-
-  enable_timer_items:
-    # Adds timer extension items and timer reduction traps to the item pool.
-    'false': 0
-    'true': 50
-
-  trap_percentage:
-    # Approximate percentage of filler slots that should become timer traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  death_link:
-    # Send DeathLink after enough failed fares.
-    'false': 50
-    'true': 0
-
-  failed_fares_for_deathlink:
-    # Number of failed fares required to send a DeathLink.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  fare_license_mode: progressive
+  fare_blocks: 8
+  required_crazy_box_clears: 16
+  enable_timer_items: true
+  trap_percentage: 10
+  death_link: true
+  failed_fares_for_deathlink: 5
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Crypt of the NecroDancer:
   ################
