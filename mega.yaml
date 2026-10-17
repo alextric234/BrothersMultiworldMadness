@@ -334,337 +334,48 @@ requires:
   version: 0.6.7
 
 A Link Between Worlds:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  logic_mode:
-    # Logic to use for item placement.
-    # normal: Standard gameplay, no tricky item use or glitches. If unsure, choose this.
-    # hard: Adds tricks that aren't technically glitches. Lamp + Net considered as weapons. No glitches.
-    # glitched: Includes the above plus a selection of easy-to-learn glitches.
-    # adv_glitched: Includes the above plus "advanced" glitches that may be a challenge to master.
-    # hell: Includes every known RTA-viable glitch. Don't choose this.
-    normal: 50
-    hard: 0
-    glitched: 0
-    adv_glitched: 0
-    hell: 0
-
-  randomize_dungeon_prizes:
-    # This shuffles all Sage Portraits and Pendants among themselves.
-    'false': 50
-    'true': 0
-
-  progression_bosses:
-    # Place progression items on all dungeon bosses.
-    'false': 50
-    'true': 0
-
-  lorule_castle_requirement:
-    # Choose how many Portraits are needed to enter Lorule Castle and fight Yuganon.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 7
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-7: 0 # random value between 0 and 7
-
-  pedestal_requirement:
-    # Choose which Pendants are required to reach the Master Sword Pedestal.
-    # vanilla: Only the Pendants of Power and Wisdom are required.
-    # standard: All Pendants are required.
-    vanilla: 0
-    standard: 50
-
-  nice_items:
-    # Choose how to handle Nice Items.
-    # vanilla: Nice Items are obtained as upgrades from Mother Maiamai.
-    # shuffled: Freely shuffles two progressive copies of each Ravio Item.
-    # off: Removes Nice Items from the game.
-    # upgrades: Shuffles upgrades for each Ravio item, which upgrade your item once you get it.
-    vanilla: 50
-    shuffled: 0
-    'off': 0
-    upgrades: 0
-
-  super_items:
-    # Choose how to handle Super Items.
-    # shuffled: Shuffles a second progressive copy of the Lamp and Net into the general item pool.
-    # off: Removes Super Items from the game.
-    # upgrades: Shuffles upgrades for the Lamp and Net, which upgrade your item once you get it.
-    shuffled: 0
-    'off': 50
-    upgrades: 0
-
-  shuffle_maiamai_rewards:
-    # Choose whether to put items on Mother Maiamai. Has no effect if `nice_items` is set to vanilla.
-    # Instead of trading Maiamai for items, Mother Maiamai gives you an item once you have the
-    # required Ravio item and a certain number of Maiamai, controlled by `maiamai_limit`.
-    'false': 50
-    'true': 0
-
-  maiamai_limit:
-    # When Mother Maiamai rewards are shuffled, this controls the maximum number of Maiamai
-    # that can be required to get items from Mother Maiamai.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  small_keys:
-    # Choose how to randomize small keys.
-    # own_dungeons: Small keys are found in their own dungeons.
-    # anywhere: (Keyos) Small keys can be found in any world.
-    # remove: (Keysy) Small keys and the doors they lock are removed from the game.
-    own_dungeons: 50
-    anywhere: 0
-    remove: 0
-
-  big_keys:
-    # Choose how to randomize big keys.
-    # own_dungeons: Big keys are found in their own dungeons.
-    # anywhere: (Keyos) Big keys can be found in any world.
-    # remove: (Keysy) Big keys and the doors they lock are removed from the game.
-    own_dungeons: 50
-    anywhere: 0
-    remove: 0
-
-  compasses:
-    # Choose how to randomize compasses.
-    # own_dungeons: Compasses are found in their own dungeons.
-    # anywhere: Compasses can be found in any world.
-    # startwith: Start with the compass to every dungeon.
-    own_dungeons: 50
-    anywhere: 0
-    startwith: 0
-
-  key_rings:
-    # Replace all the small keys for a dungeon with a single Key Ring for that dungeon that opens all the locked doors.
-    'false': 50
-    'true': 0
-
-  lamp_and_net_as_weapons:
-    # Treat the base Lamp and Net as damage-dealing weapons?
-    # - The red base Lamp and Net each deal 1/2 the damage of the Forgotten Sword (i.e. they're VERY BAD weapons).
-    # - The blue Super Lamp and Super Net each deal 4 damage (same as MS Lv3) and are always considered weapons, regardless of this setting.
-    'false': 50
-    'true': 0
-
-  no_progression_enemies:
-    # Removes Enemies from dungeons that are themselves Progression (e.g.: Bawbs, the bomb enemy).
-    # Logic will be adjusted to require the player's items instead.
-    'false': 50
-    'true': 0
-
-  assured_weapon:
-    # If enabled at least one weapon is guaranteed to be placed in Ravio's Shop.
-    'false': 50
-    'true': 0
-
-  maiamai_mayhem:
-    # This shuffles Maiamai into the pool, adding 100 more locations.
-    'false': 50
-    'true': 0
-
-  initial_crack_state:
-    # Choose the initial Crack state:
-    # closed: All Cracks except the Hyrule Castle Crack (and its pair) remain closed until the Quake Item is found.
-    # open: All Cracks are open from the start of the game, and the Quake Item is not in the item pool.
-    # progressive: All Cracks except the Hyrule Castle Crack are closed, but the Quake Item and the Bracelets are not in the item pool.
-    #   Instead, there are two Progressive Merge items. The first one you get allows you to merge, while the second one opens the cracks.
-    closed: 0
-    open: 50
-    progressive: 0
-
-  crack_shuffle:
-    # Choose how to shuffle Cracks:
-    # off: Cracks are not shuffled.
-    # cross_world_pairs: Cracks are shuffled, but remain in Hyrule/Lorule pairs.
-    # any_world_pairs: Cracks are shuffled freely, and can lead to the same or opposite world.
-    # mirrored_cross_world_pairs: Same as Cross World Pairs, but each pair's vanilla counterparts will be in a matching pair.
-    # mirrored_any_world_pairs: Same as Any World Pairs, but each pair's vanilla counterparts will be in a matching pair.
-    'off': 50
-    cross_world_pairs: 0
-    any_world_pairs: 0
-    mirrored_cross_world_pairs: 0
-    mirrored_any_world_pairs: 0
-
-  minigames_excluded:
-    # Excludes the following: Octoball Derby, Dodge the Cuccos, Hyrule Hotfoot, Treacherous Tower, and both Rupee Rushes.
-    'false': 50
-    'true': 0
-
-  skip_big_bomb_flower:
-    # Skips the Big Bomb Flower by removing the 5 Big Rocks in Lorule Field.
-    # (Does not affect Lorule Castle Bomb Trial)
-    'false': 50
-    'true': 0
-
-  trials_required:
-    # Choose the number of (randomly selected) trials required to open the Lorule Castle Trials Door.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  open_trials_door:
-    # Makes the Lorule Castle Trials Door automatically open from both sides.
-    # This may require entering Lorule Castle early via the crack.
-    # If turned on, this overrides the Trials Required setting.
-    'false': 50
-    'true': 0
-
-  bow_of_light_in_castle:
-    # Limits the Bow of Light's placement to somewhere in Lorule Castle (including possibly Zelda).
-    'false': 50
-    'true': 0
-
-  weather_vanes:
-    # Choose Weather Vanes behavior. Logic may require using them to progress.
-    # standard: Start with only the standard complimentary Weather Vanes (Link's House & Vacant House)
-    # shuffled: Weather Vane destinations are shuffled into random pairs
-    # convenient: Start with convenient Weather Vanes that don't affect logic
-    # hyrule: Start with the 9 Hyrule Weather Vanes (and Vacant House)
-    # lorule: Start with the 13 Lorule Weather Vanes (and Link's House)
-    # all: Start with all 22 Weather Vanes
-    standard: 50
-    shuffled: 0
-    convenient: 0
-    hyrule: 0
-    lorule: 0
-    all: 0
-
-  dark_rooms_lampless:
-    # If enabled the logic may expect players to cross Dark Rooms without the Lamp.
-    # Not for beginners and those who like being able to see things.
-    'false': 50
-    'true': 0
-
-  swordless_mode:
-    # Removes *ALL* Swords from the game.
-    # The Bug Net becomes a required item to play Dead Man's Volley against Yuga Ganon.
-    'false': 50
-    'true': 0
-
-  hint_ghosts:
-    # Choose the behavior of the Hint Ghosts. (Hint Ghosts in dungeons never appear.)
-    # off: Hint Ghosts do not appear.
-    # always: Hint Ghosts always appear.
-    # glasses: Hint Ghosts appear once you obtain the Hint Glasses item.
-    'off': 0
-    always: 50
-    glasses: 0
-
-  chest_size_matches_contents:
-    # All chests containing progression items will become large, and others will be made small.
-    # Note: Some large chests will have a reduced hitbox to prevent negative gameplay interference.
-    'false': 50
-    'true': 0
-
-  treacherous_tower_floors:
-    # Choose how many floors the Treacherous Tower should have (2-66).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 66
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-66: 0 # random value between 2 and 66
-
-  purple_potion_bottles:
-    # Fills all Empty Bottles with a free Purple Potion.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  logic_mode: normal
+  randomize_dungeon_prizes: false
+  progression_bosses: true
+  lorule_castle_requirement: random
+  pedestal_requirement: vanilla
+  nice_items: shuffled
+  super_items: shuffled
+  shuffle_maiamai_rewards: true
+  maiamai_limit: 25
+  small_keys: own_dungeons
+  big_keys: own_dungeons
+  compasses: startwith
+  key_rings: true
+  lamp_and_net_as_weapons: false
+  no_progression_enemies: false
+  assured_weapon: true
+  maiamai_mayhem: false
+  initial_crack_state: progressive
+  crack_shuffle: 'off'
+  minigames_excluded: true
+  skip_big_bomb_flower: true
+  trials_required: random
+  open_trials_door: false
+  bow_of_light_in_castle: true
+  weather_vanes: standard
+  dark_rooms_lampless: false
+  swordless_mode: false
+  hint_ghosts: always
+  chest_size_matches_contents: true
+  treacherous_tower_floors: 5
+  purple_potion_bottles: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 A Link to the Past:
   ################
