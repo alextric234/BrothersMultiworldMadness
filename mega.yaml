@@ -16089,8 +16089,8 @@ DORONKO WANKO:
     # Choose the end goal.
     # Cake: Reveal all the hidden paintings and interact with the cake
     # Badge: Get all Badges
-    cake: 0
-    badge: 50
+    cake: 50
+    badge: 0
 
   logic:
     # Standard: Expected game logic
