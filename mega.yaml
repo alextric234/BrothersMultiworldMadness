@@ -1885,8 +1885,8 @@ Adventure:
 
   death_link:
     # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   bat_logic:
     # How the bat is considered for logic
