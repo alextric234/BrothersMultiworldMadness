@@ -9701,323 +9701,42 @@ Crash Team Racing:
   priority_locations: []
 
 Crash2:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  level_exit_locations:
-    # Add all 27 level exits as checks into the pool
-    # These are distinct from the secret exit checks
-    'false': 50
-    'true': 0
-
-  extra_crystals:
-    # Add extra crystals to the pool
-    # Note: adding crystals can cause there to be more items than locations, which will error on generation
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 39
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-39: 0 # random value between 0 and 39
-
-  speedrun_logic:
-    # This option lets you choose to enable any of a few implemented speedrun skips.
-    # For any that you enable, you may be required to do it in your seed, depending on how
-    # the randomization plays out. List them using the names provided below.
-    # 
-    # Supported tricks:
-    # red_gem_early: get the red gem in Snow Go without using the secret entrance.
-    # road_to_ruin_gem: get the box gem in Road to Ruin without using the secret entrance.
-    # ruination_skip_green: access the green gem path in Ruination without needing the green gem.
-    []
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  wumpa_chance:
-    # Chance that a filler item is a single wumpa fruit instead of a life
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #####################
-  # Collection Checks #
-  #####################
-  life_sanity:
-    # Adds collecting unique life items as checks
-    # This applies only to freestanding lives (not lives spawned from boxes or from collecting 100 wumpas)
-    # This option adds 42 checks into the pool
-    'false': 50
-    'true': 0
-
-  life_count_checks_range:
-    # Add checks for reaching certain life counts
-    # Logic uses crystal count in order to consider higher life counts as occurring later in the run
-    # This works like the Python Range function, so the first number is the start point,
-    # second number is the stop point (not inclusive), and the third is the step size
-    # Example: "10, 31, 10" will add checks for collecting 10, 20, and 30 lives
-    # 
-    # Values that fall outside the range of 5-99 will be ignored
-    # 
-    # Setting step size to 0 will disable this option, so just use something like "0, 0, 0"
-    10, 31, 10: 50
-
+  progression_balancing: normal
+  accessibility: full
+  level_exit_locations: true
+  extra_crystals: 5
+  speedrun_logic: []
+  death_link: true
+  wumpa_chance: 80
+  life_sanity: true
+  life_count_checks_range: 10, 31, 10
   life_count_checks_custom:
-    # Add any custom values to the previous option
-    # These need to be written as strings. Valid values are in the range 5 - 99
-    ['10', '20', '30']
-
-  fruit_sanity:
-    # Adds wumpa fruit checks
-    # This applies only to freestanding wumpa fruit (not fruit spawned from boxes/enemies)
-    # Full sanity adds a total of 2395 individual wumpa checks to the game
-    # Fruit bundles condenses this into 404 grouped wumpa checks
-    disabled: 50
-    fruit_bundles: 0
-    full_sanity: 0
-
-  exclude_difficult_wumpas:
-    # Excludes particularly difficult/annoying wumpa fruit locations, which makes it so they won't contain useful/progression items
-    # The specific location locations affected by this option are marked with a "*" in their name
-    'false': 0
-    'true': 50
-
-  fill_wumpa_checks_locally_chance:
-    # % chance to pre-emptively fill wumpa checks with a Crash 2 filler item
-    # The purpose of this is to prevent games with fewer checks from being clogged with Crash 2 filler
-    # This runs before the multiworld item placement algorithm and serves as a better alternative to using the default local_items option
-    # You could also set this option to 100% and have traps enabled if you want an "avoid the wumpa fruit" gamemode
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    70: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###################
-  # Warp Randomizer #
-  ###################
-  randomize_warp_destinations:
-    # Randomize the destination of the 25 basic warp portals in the Warp Room.
-    # This currently does not include the secret warp room.
-    # Bosses are not randomized.
-    'false': 50
-    'true': 0
-
-  non_randomized_warp_destinations:
-    # If "randomize_warp_destinations" is enabled, any levels placed in this list will retain their original position in the Warp Room.
-    # You must specify the secret entrances separately.
-    # For example, "Snow Go (Secret Entrance)" will keep the Snow Go secret entrance portal as the second portal in the secret warp room.
-    []
-
-  ################
-  # Trap Options #
-  ################
-  trap_chance:
-    # Chance to replace a filler life/fruit with a trap
-    # If playing with fruit sanity you should lower this chance because there will be a LOT of traps
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  trap_duration:
-    # Amount of seconds a trap will be active for
-    # Receiving a trap when it was already active will reset the duration
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 600
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-600: 0 # random value between 0 and 600
-
-  small_crash_weight:
-    # Relative chance for a trap to be a Small Crash Trap
-    # This makes Crash smol
-    # (Due to an issue with Polar + small Crash, this trap will be inactive in bear levels)
-    # Chance for a specific trap to be picked is weight / totalWeight
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  big_crash_weight:
-    # Relative chance for a trap to be a Big Crash Trap
-    # This makes Crash beeg
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  no_lives_weight:
-    # Relative chance for a trap to be a No Lives Trap
-    # This temporarily removes all your lives
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  jetpack_controls_weight:
-    # Relative chance for a trap to be a Jetpack Controls Trap
-    # Just imagine you are in a jetpack level
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ################
-  # Gimmick Lock #
-  ################
-  gimmick_lock:
-    # This serves as a universal toggle to enable/disable locking the Jetpack, Jetboard, Fireflies, and Polar behind an item.
-    # Each gimmick can be customized in how strict the logic rules are or be disabled completely.
-    # Disabled: This gimmick will not be locked
-    # If you don't have X gimmick unlocked, then:
-    # Basic: An entire level that normally contains X gimmick will be out of logic
-    # Normal: Anything that is trivial to obtain without X gimmick will be in logic
-    # (trivial means it is either expected of you from the vanilla game or doesn't require any complex movement)
-    # Lunatic: Anything that is possible to obtain without X gimmick will be in logic
-    'false': 50
-    'true': 0
-
-  jetpack_lock_logic:
-    # -Note: Playing Jetpack levels without the Jetpack can sometimes crash the game-
-    # Normal: puts most of the wumpa fruit in logic
-    # Lunatic: getting through the invisible barrier is in logic
-    disabled: 0
-    basic: 50
-    normal: 0
-    lunatic: 0
-
-  jetboard_lock_logic:
-    # Normal: a few wumpa fruit are put in logic along with the Air Crash secret exit
-    # Nothing crazy is possible, so normal is equivalent to lunatic
-    disabled: 0
-    basic: 50
-    normal: 0
-
-  polar_lock_logic:
-    # -Note: Playing Polar levels without Polar can sometimes crash the game-
-    # Normal: Bear It wumpa fruit and Un-Bearable wumpa fruit up to the Polar section are in logic
-    # Lunatic: Everything except the Totally Bear box gem is in logic
-    disabled: 0
-    basic: 50
-    normal: 0
-    lunatic: 0
-
-  firefly_lock_logic:
-    # Normal: 3 wumpa fruit are available (nothing in the dark is in logic)
-    # Lunatic: Everything (except very missable and un-fun wumpa fruit) is in logic
-    disabled: 0
-    basic: 50
-    normal: 0
-    lunatic: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - '10'
+  - '20'
+  - '30'
+  fruit_sanity: disabled
+  exclude_difficult_wumpas: true
+  fill_wumpa_checks_locally_chance: 70
+  randomize_warp_destinations: false
+  non_randomized_warp_destinations: []
+  trap_chance: 15
+  trap_duration: 30
+  small_crash_weight: 10
+  big_crash_weight: 10
+  no_lives_weight: 10
+  jetpack_controls_weight: 10
+  gimmick_lock: false
+  jetpack_lock_logic: basic
+  jetboard_lock_logic: basic
+  polar_lock_logic: basic
+  firefly_lock_logic: basic
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Crazy Taxi:
   ################
