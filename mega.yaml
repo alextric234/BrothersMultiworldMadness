@@ -4930,8 +4930,8 @@ Archipeladoku:
     # enabled it die as well. Archipeladoku can only receive death links, not send them. When a death
     # link is received all non-given numbers will be cleared. This can also be toggled in the client
     # from the Debug menu.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 5
 
   #################
   # Board Options #
