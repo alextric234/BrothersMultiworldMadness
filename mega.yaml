@@ -2510,7 +2510,6 @@ Ape Escape:
   exclude_locations: []
   priority_locations: []
 
-
 APQuest:
   ################
   # Game Options #
@@ -3587,471 +3586,68 @@ Battle for Bikini Bottom:
   start_inventory_from_pool: {}
 
 Bloons TD6:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # How you complete the randomizer. 
-    # Collecting enough of the "Medal" item will unlock a victory map (marked by the archipelago logo)
-    # 
-    # Default: Beat the victory map on the highest available difficulty in the pool.
-    # Boss: Defeat a random Boss Bloon event on the victory map.
-    # Elite Boss: Defeat a random Elite Boss Bloon event on the victory map. 
-    #             Note: Boss Events are guaranteed to take place on Beginner or Intermediate maps.
-    default: 50
-    boss: 0
-    elite_boss: 0
-
-  total_medals:
-    # The total number of Medal items placed in the item pool.
-    # These are the collectables required to unlock the goal map.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 20
-    # Maximum value is 100
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-20-100: 0 # random value between 20 and 100
-
-  medalreq:
-    # The Percentage of the Total Medals required for you to access the Goal Map
-    # 
-    # For my own sanity and the randomizers this is hard bottomed at 50% so it can't be cheesed
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 100
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-100: 0 # random value between 50 and 100
-
-  ###############
-  # Map Options #
-  ###############
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: default
+  total_medals: random
+  medalreq: 50
   mode_pool:
-    # Which difficulty/mode checks are eligible to be assigned to maps.
-    # Each included map will randomly draw `modes_per_map` modes from this pool.
-    # 
-    # Available modes: Easy, Medium, Hard, Impoppable, Chimps,
-    # PrimaryOnly, MilitaryOnly, MagicOnly,
-    # Deflation, Apopalypse, Reverse, DoubleMoabHealth, HalfCash, AlternateBloonsRounds
-    # 
-    # Note: Completing milestone rounds on higher difficulties will still send checks for
-    # lower difficulties assigned to that map (e.g. round 60 on Impoppable sends Medium
-    # if Medium is in that map's pool).
-    ['Hard', 'Easy', 'Medium', 'Impoppable']
-
-  modes_per_map:
-    # How many modes from the Mode Pool are randomly assigned as checks for each map.
-    # If this exceeds the pool size, it is capped at the pool size and every mode in the pool will be on every map.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 14
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-14: 0 # random value between 1 and 14
-
-  random_mode_amount_per_map:
-    # When enabled, each map receives a random number of modes between 1 and Modes Per Map
-    # (capped at the pool size). Every map may have a different count.
-    'false': 50
-    'true': 0
-
-  total_maps:
-    # The number of maps to be included (not including starting maps).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 88
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-88: 0 # random value between 10 and 88
-
-  starting_map_count:
-    # The number of maps that will be automatically unlocked at the start.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 6
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-6: 0 # random value between 1 and 6
-
-  min_map_diff:
-    # The Minimum Map Difficulty for selected maps (including starting and goal map)
-    # 
-    # 0 = Beginner
-    # 1 = Intermediate
-    # 2 = Advanced
-    # 3 = Expert
-    # 
-    # Must be less than or equal to Maximum Map Difficulty.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  max_map_diff:
-    # The Maximum Map Difficulty for selected maps (including starting and goal map)
-    # 
-    # 0 = Beginner
-    # 1 = Intermediate
-    # 2 = Advanced
-    # 3 = Expert
-    # 
-    # Must be greater than or equal to Minimum Map Difficulty.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  map_blacklist:
-    # Maps to never include in this randomizer, entered by display name.
-    # Example: ["Monkey Meadow", "#ouch", "Bloonarius Prime"]
-    # If a map appears in both the blacklist and whitelist, the blacklist wins.
-    []
-
-  map_whitelist:
-    # Maps that are guaranteed to be included in the pool (starting maps or unlockable maps),
-    # as long as they fall within the selected difficulty range and are not blacklisted.
-    # Other maps outside this list can still fill remaining slots. Entered by display name.
-    # Example: ["Monkey Meadow", "Bloonarius Prime", "Infernal"]
-    []
-
-  ##################
-  # Monkey Options #
-  ##################
-  category_lock:
-    # False/Off: Monkeys are unlocked individually as normal.
-    # True/On:  Monkeys are unlocked by category (Primary, Military, Magic, Support).
-    #           You start with one random category and the other three are sent as items.
-    #           When enabled, starting monkeys are always randomized (ignores Random Starting Monkeys option).
-    'false': 50
-    'true': 0
-
-  num_start_monkey:
-    # The number of starting Monkeys you would like.
-    # Only relevant if Category Lock is disabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 3
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-3: 0 # random value between 1 and 3
-
-  starting_monkey:
-    # Choose specific starting monkeys by entering their display name, e.g. ["Heli Pilot"].
-    # Only relevant if Category Lock is disabled.
-    # 
-    # Empty: All starting monkeys are randomized.
-    # Non-empty: Every monkey listed is guaranteed as a starting monkey. If you list fewer
-    #            monkeys than Starting Monkey Amount, the remaining slots are filled randomly.
-    #            If you list more monkeys than Starting Monkey Amount, all of them are still included.
-    []
-
-  #######################
-  # Progression Options #
-  #######################
-  knowledge_mode:
-    # How Monkey Knowledge is handled.
-    # 
-    # Unlock Checks: Each Monkey Knowledge node is its own item. Once received, click it in the
-    #                Knowledge Tree to send a check. {Adds 134 checks}
-    # Automatic:     Each Monkey Knowledge node is its own item but you don't have to activate them
-    #                in the tree's and have no checks for activating them.
-    # Progressive:   The 134 knowledge items are replaced with 7 "Progressive Knowledge" items.
-    #                Each one activates the next full layer of the Knowledge Tree across all
-    #                branches.
-    unlock_checks: 50
-    automatic: 0
-    progressive: 0
-
-  progressive_prices:
-    # False/Off: Tower and upgrade costs behave normally based on the selected difficulty.
-    # True/On:  All tower and upgrade costs start at Impoppable pricing (1.20x).
-    #           Receiving "Progressive Prices" items progressively decreases costs across all difficulties:
-    #           Impoppable (1.20x) -> Hard (1.08x) -> Medium (1.00x) -> Easy (0.85x)
-    'false': 50
-    'true': 0
-
-  progressive_starting_cash:
-    # The number of "Progressive Starting Cash" items placed in the item pool.
-    # Every game starts with its normal starting cash (650 in most modes),
-    # and each Progressive Starting Cash you receive adds another 150 to it.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  max_level:
-    # What do you want to be the maximum level of the randomizer?
-    # 
-    # Levels start at 0, if at 0 they are disabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 150
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-150: 0 # random value between 0 and 150
-
-  static_req:
-    # Only relevant if "XP Curve Behaviour" is set to false.
-    # 
-    # Min Req. 500 XP
-    # Max Req. 10,000 XP
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 500
-    # Maximum value is 10000
-    5000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-500-10000: 0 # random value between 500 and 10000
-
-  xp_curve:
-    # The scaling of the XP requirements for Level Up checks.
-    # 
-    # False/Static: A Configurable Amount of XP is Required to Level Up EACH time.
-    # True/Curved: Uses the default XP Curve from BTD6
-    'false': 50
-    'true': 0
-
-  ###################
-  # Extra Locations #
-  ###################
-  pop_tier_checks:
-    # False/Off: Monkey upgrade tiers are not locked behind pop counts.
-    # True/On:  Tier 3, 4, and 5 upgrades for each monkey are locked until that monkey
-    #           has accumulated enough pops. Hitting each threshold sends a check.
-    #           {Adds 72 checks}
-    'false': 50
-    'true': 0
-
-  tier3_pop_requirement:
-    # Number of pops in a single game required with a monkey type to unlock its Tier 3 upgrades and send a check.
-    # Only relevant if Pop Tier Checks is enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 100
-    # Maximum value is 1000
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-100-1000: 0 # random value between 100 and 1000
-
-  tier4_pop_requirement:
-    # Number of pops in a single game required with a monkey type to unlock its Tier 4 upgrades and send a check.
-    # Only relevant if Pop Tier Checks is enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1000
-    # Maximum value is 10000
-    2000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1000-10000: 0 # random value between 1000 and 10000
-
-  tier5_pop_requirement:
-    # Number of pops in a single game required with a monkey type to unlock its Tier 5 upgrades and send a check.
-    # Only relevant Pop Tier Checks is enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5000
-    # Maximum value is 100000
-    10000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5000-100000: 0 # random value between 5000 and 100000
-
-  upgrade_sanity:
-    # False/Off: Monkey upgrade paths are freely available as normal.
-    # True/On:  Each monkey's three upgrade paths (Top, Middle, Bottom) become items
-    #           in the multiworld pool. Receiving e.g. "DartMonkey-MiddlePath" unlocks
-    #           Dart Monkey's tier 4 and 5 upgrades on the middle path.
-    #           Tiers 1-3 remain freely purchasable on all paths.
-    #           {Adds 78 items to the pool}
-    'false': 50
-    'true': 0
-
-  round_sanity:
-    # Adds location checks for completing rounds on any map.
-    # Set to 0 to disable. Otherwise, a check is sent every N rounds up to round 100.
-    # 
-    # Examples:
-    # 5 = checks at rounds 5, 10, 15, 20, ..., 100 (20 checks per map)
-    # 20 = checks at rounds 20, 40, 60, 80, 100 (5 checks per map)
-    # 60 = check at round 60 only (1 check per map)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  custom_round_checks:
-    # Specify exact rounds to send checks on, if Round Sanity overlaps it counts as 1 check.
-    # Enter round numbers between 1 and 100.
-    # Example: ['98', '95', '93', '78']
-    # If Round Sanity is also set, both sets of checks are included.
-    []
-
-  ################
-  # Trap Options #
-  ################
-  trap_percentage:
-    # Replace a percentage of filler items in the item pool with random traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  - Medium
+  - Hard
+  - Easy
+  modes_per_map: 3
+  random_mode_amount_per_map: false
+  total_maps: random
+  starting_map_count: 3
+  min_map_diff: 0
+  max_map_diff: 3
+  map_blacklist: []
+  map_whitelist: []
+  category_lock: false
+  num_start_monkey: 3
+  starting_monkey: []
+  xp_curve: false
+  static_req: 5000
+  max_level: 40
+  knowledge_mode: unlock_checks
+  progressive_prices: false
+  progressive_starting_cash: 0
+  pop_tier_checks: false
+  tier3_pop_requirement: 200
+  tier4_pop_requirement: 2000
+  tier5_pop_requirement: 10000
+  upgrade_sanity: false
+  round_sanity: 0
+  custom_round_checks: []
+  trap_percentage: 15
   trap_weights:
-    # Specify the weights determining how many copies of each trap item will be in your itempool.
-    # If you don't want a specific type of trap, you can set the weight for it to 0.
-    # If you set all trap weights to 0, you will get no traps, bypassing the "Trap Percentage" option.
-    # For information on what the traps do, check the wiki: https://archipelago.miraheze.org/wiki/Bloons_TD6
-    144p Trap: 10
-    Bee Trap: 10
-    Chaos Control Trap: 10
-    Flood Trap: 10
-    Freeze Trap: 10
-    Input Sequence Trap: 10
-    Literature Trap: 10
-    Math Quiz Trap: 10
     Modified Bloons: 10
-    Number Sequence Trap: 10
-    Pokemon Trivia Trap: 10
-    Screen Flip Trap: 10
-    Shuffle Trap: 10
+    Freeze Trap: 10
+    Bee Trap: 10
     Speed Up Trap: 10
+    Literature Trap: 10
+    144p Trap: 10
+    Flood Trap: 10
     Swap Trap: 10
-    Trivia Trap: 10
-    Yap Trap: 10
+    Shuffle Trap: 10
     Zoom Trap: 10
-
-  trap_link:
-    # Whether your received traps are linked to other players
-    # 
-    # You will also receive any linked traps from other players with Trap Link enabled,
-    # if you have a weight above "0" set for that trap.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+    Screen Flip Trap: 10
+    Chaos Control Trap: 10
+    Math Quiz Trap: 10
+    Trivia Trap: 10
+    Pokemon Trivia Trap: 10
+    Number Sequence Trap: 10
+    Input Sequence Trap: 10
+    Yap Trap: 10
+  trap_link: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Bomberman 64:
   ################
