@@ -2854,328 +2854,44 @@ AP-Rummy:
     []
 
 Ape Escape 2:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ###############
-  # AP Settings #
-  ###############
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###############
-  # Playthrough #
-  ###############
-  goal:
-    # Determines your victory condition.
-    # 
-    # - specter: Find your World Keys and complete the "Showdown with Specter!" boss fight.
-    # - final_specter: Find your World Keys, catch every monkey in the game and complete the "Final Showdown with Specter!" boss fight.
-    specter: 50
-    final_specter: 0
-
-  world_key_behaviour:
-    # Determines the behaviour of "World Key" items.
-    # 
-    # - level: Each "World Key" item will unlock one additional level.
-    # - world: Each "World Key" item will unlock all levels up to (and including) the next boss fight.
-    # - alternating: "World Key" items will alternate between unlocking all levels leading up to the next boss fight, and unlocking the boss fight itself.
-    level: 0
-    world: 0
-    alternating: 50
-
-  level_shuffle:
-    # Randomises the order of level unlocks.
-    # Your final battle with Specter will always be placed at the end of the game.
-    # 
-    # - off: Levels will appear in their default order.
-    # - separate: Levels and bosses will be shuffled separately.
-    # - mixed: Levels and bosses will be shuffled together.
-    'off': 50
-    separate: 0
-    mixed: 0
-
-  randomise_starting_room:
-    # Randomises the starting room of each level.
-    'false': 50
-    'true': 0
-
-  music_randomisation:
-    # Randomises the music played throughout the game.
-    # 
-    # - default: Music will not be touched by randomisation.
-    # - level: The music track for each level will be randomised. Levels with multiple music tracks will have each track randomised individually.
-    # - room: The music track for each individual room will be randomised.
-    default: 50
-    level: 0
-    room: 0
-
-  playable_character:
-    # Determines which character you will play as.
-    # 
-    # - hikaru: Play as Hikaru (Jimmy). Pipotchi will tag along to help you out.
-    # - kakeru: Play as Kakeru (Spike). You won't have Pipotchi's help.
-    hikaru: 50
-    kakeru: 0
-
-  #############
-  # Locations #
-  #############
-  message_phone_locations:
-    # Adds locations for activating each message phone.
-    # 
-    # *Note that playing as Kakeru will disable message phones.
-    'false': 50
-    'true': 0
-
-  gotcha_box_locations:
-    # Determines how many locations can be obtained through usage of the Gotcha Box.
-    # Please be mindful of other players in your world when increasing this number.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  gotcha_box_gating:
-    # Determines how new items will be made accessible from the Gotcha Box.
-    # To prevent excessive grinding, logic will not always expect you to obtain all accessible items from the Gotcha Box.
-    # More items will be logically expected as you progress through the game.
-    # 
-    # - none: All items within the Gotcha Box are accessible from the beginning. This does not mean you are logically expected to immediately obtain them all.
-    # - levels: More items will become available from the Gotcha Box as you unlock more levels.
-    # - restock_items: More items will become available from the Gotcha Box as you receive "Gotcha Box Restock" items.
-    none: 0
-    levels: 50
-    restock_items: 0
-
-  gotcha_box_forced_filler_percentage:
-    # Determines a percentage of Gotcha Box locations that will be forced to contain filler items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #########
-  # Items #
-  #########
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: specter
+  world_key_behaviour: world
+  level_shuffle: mixed
+  randomise_starting_room: true
+  music_randomisation: default
+  playable_character: hikaru
+  message_phone_locations: true
+  gotcha_box_locations: 0
+  gotcha_box_gating: levels
+  gotcha_box_forced_filler_percentage: 50
   starting_gadgets:
-    # Determines which gadgets you will begin the game with.
-    # You may enter "Random" multiple times to receive multiple random gadgets.
-    # 
-    # Starting without the Monkey Net requires that message phone or Gotcha Box locations be enabled.
-    # 
-    # Valid names are: "Random", "Monkey Net", "Stun Club", "Monkey Radar", "Dash Hoop", "Catapult", "Sky Flyer", "R.C. Car", "Bananarang", "Water Cannon", "Electro Magnet", "Power Punch"
-    ['Monkey Net', 'Stun Club']
-
-  extra_world_keys:
-    # Adds extra "World Key" items to the pool, making it easier to unlock new levels.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  shuffle_water_net:
-    # Determines whether to lock the Water Net behind receiving an item.
-    # If this is enabled and you haven't received the Water Net, then touching water will instantly cause you to lose a Cookie and respawn.
-    'false': 0
-    'true': 50
-
-  shuffle_collectible_filler:
-    # Adds filler items for each unlockable Monkey Fable, Movie, Soundtrack, Comic Strip, Concept Artwork, Secret Photo and Stage Photo.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Logic & Tricks #
-  ##################
-  logic_difficulty:
-    # Determines the overall difficulty of logic.
-    # Certain tricks or glitches can be enabled separately.
-    # 
-    # - normal: You will be logically expected to have a majority of gadgets at your disposal.
-    # - hard: You will be logically expected to use gadgets in novel ways.
-    # - expert: You will be logically expected to make difficult jumps and use gadgets in unexpected ways. Hip drop attacks and rocket dives may be essential.
-    normal: 50
-    hard: 0
-    expert: 0
-
-  hidden_monkey_logic:
-    # If this option is enabled, certain well-hidden monkeys will logically expect the Monkey Radar or See-All Scope.
-    # This option is recommended for inexperienced players who do not already know where each monkey is located.
-    'false': 50
-    'true': 0
-
-  damage_boost_logic:
-    # If this option is enabled, intentionally taking damage to pass through fire and other hazards will be logically expected.
-    'false': 0
-    'true': 50
-
-  air_crawl_logic:
-    # If this option is enabled, using the Air Crawl glitch will be logically expected.
-    'false': 50
-    'true': 0
-
-  air_crawl_behaviour:
-    # Determines the behaviour of the "Air Crawl" glitch.
-    # 
-    # - default: You can perform the Air Crawl glitch as normal.
-    # - patched: The Air Crawl glitch is impossible to perform.
-    # - item: The Air Crawl glitch can be performed after receiving the "Air Crawl" item.
-    # - progressive: The Air Crawl glitch can be performed after receiving two "Progressive Catapult" items.
-    default: 50
-    patched: 0
-    item: 0
-    progressive: 0
-
-  boost_jump_logic:
-    # If this option is enabled, swinging the net as you double jump before swapping to another gadget for increased height will be logically expected.
-    'false': 50
-    'true': 0
-
-  boost_fly_logic:
-    # If this option is enabled, performing a boost jump into the Sky Flyer will be logically expected.
-    'false': 50
-    'true': 0
-
-  long_jump_logic:
-    # If this option is enabled, performing a neutral jump with the Dash Hoop will be logically expected.
-    'false': 50
-    'true': 0
-
-  #########
-  # Traps #
-  #########
-  trap_percentage:
-    # Determines the percentage of filler items that will be replaced with trap items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  lazy_camera_trap_weight:
-    # This trap causes the camera to temporarily stop following you.
-    # A higher number means that you are more likely to see the given trap. A value of 0 means the trap will not appear.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  rocket_boots_trap_weight:
-    # This trap causes you to temporarily run at incredible speeds.
-    # A higher number means that you are more likely to see the given trap. A value of 0 means the trap will not appear.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  slowness_trap_weight:
-    # This trap causes you to temporarily run incredibly slowly.
-    # A higher number means that you are more likely to see the given trap. A value of 0 means the trap will not appear.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Monkey Net
+  - Stun Club
+  extra_world_keys: 5
+  shuffle_water_net: true
+  shuffle_collectible_filler: true
+  logic_difficulty: normal
+  hidden_monkey_logic: false
+  damage_boost_logic: true
+  air_crawl_logic: false
+  air_crawl_behaviour: default
+  boost_jump_logic: false
+  boost_fly_logic: false
+  long_jump_logic: false
+  trap_percentage: 15
+  lazy_camera_trap_weight: 50
+  rocket_boots_trap_weight: 50
+  slowness_trap_weight: 50
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Ape Escape 3:
   progression_balancing: normal
