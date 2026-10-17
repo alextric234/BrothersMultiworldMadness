@@ -17304,152 +17304,26 @@ Final Fantasy:
     []
 
 Five Nights at Fuckboy's 2:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  scenario:
-    # Choose which scenario to play
-    toy_freddy: 50
-    bb: 0
-
-  goal:
-    # Choose which goal you want to beat.
-    # If scenario is bb, goal is to beat the toy animatronics.
-    # (Refurbs is not recommended.)
-    bb: 50
-    refurbs: 0
-
-  trade_quest:
-    # Includes RNG Trade Item drops in the randomizer.
-    # (Adds 5 locations.)
-    'false': 50
-    'true': 0
-
-  difficulty:
-    # Playing on Proud will include the 3 extra chests on the show stage, the cassettes and rap god boss as locations.
-    # Playing on Critical will include everything on Proud plus each keystone for ability unlocks and 2 chests in Kid's Cove.
-    # Proud and Critical have not been playtested so fair warning.
-    standard: 50
-    proud: 0
-    critical: 0
-
-  fem_rods:
-    # Turning this on will force both Rod of Femininity A and B to be filler items.
-    # If this is off, all locations in the women's bathroom won't be in logic until the second puppet is accessible.
-    'false': 0
-    'true': 50
-
-  extra_checks:
-    # Turning this on will force Boss Rush and the Dragon Dildo F check to be a filler item.
-    # This setting is ignored if goal is set to refurbs.
-    'false': 0
-    'true': 50
-
-  shadow_bonnie:
-    # Turning this on will force the Shadow Bonnie bossfight check to be a filler item.
-    # This setting is only affected if the critical difficulty is enabled.
-    'false': 50
-    'true': 0
-
-  levelsanity:
-    # Includes each level up and each ability learned as an item location
-    # This setting is ignored if the difficulty is critical
-    # Adds 100 locations if scenario is toy freddy, else it's 40
-    'false': 50
-    'true': 0
-
-  grindy:
-    # Turning this on will exclude checks that involve toy freddy using his
-    # abilities 20 or 40 times.
-    # This setting will always be off if levelsanity is off.
-    'false': 50
-    'true': 0
-
-  copyright:
-    # Enable copyright songs
-    'false': 50
-    'true': 0
-
-  shop:
-    # Change the percentage of the vending machine items cost
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000: 0 # random value between 1 and 1000
-
-  office_camera:
-    # In the B.B. Scenario, nerf the office camera fight by giving your party a 50% defense boost
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  scenario: random
+  goal: bb
+  trade_quest: false
+  difficulty: standard
+  fem_rods: true
+  extra_checks: true
+  shadow_bonnie: false
+  levelsanity: false
+  grindy: false
+  copyright: false
+  shop: 100
+  office_camera: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
 
 Five Nights at Fuckboy's:
   ################
