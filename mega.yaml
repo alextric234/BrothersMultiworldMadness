@@ -9059,407 +9059,118 @@ Chrono Trigger Jets of Time:
     []
 
 Civilization V:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  #########
-  # Logic #
-  #########
-  victory_goal_logic:
-    # Which victory should be achievable before the game is considered beatable?
-    # 
-    # Note that this solely affects progression logic. You can still beat the game earlier than expected or pursue a
-    # different victory if you so choose.
-    # 
-    # Domination and Time victories are not included here as Domination can be achieved at any moment and Time has no
-    # requirements.
-    none: 50
-    science: 0
-    culture: 0
-    diplomatic: 0
-
-  era_goal_logic:
-    # Which era must be unlocked before the game is considered beatable?
-    # 
-    # This is in addition to the value given for "Victory Goal Logic".
-    # Similarly, this solely affects progression logic.
-    ancient: 0
-    classical: 0
-    medieval: 0
-    renaissance: 0
-    industrial: 0
-    modern: 0
-    atomic: 0
-    information: 50
-
-  embarking_goal_logic:
-    # Add Optics and Astronomy as requirements before the game is considered beatable.
-    # 
-    # Similarly to other goal logic options, this solely affects progression logic.
-    'false': 0
-    'true': 50
-
-  ###################
-  # Quality of Life #
-  ###################
-  policy_cost_modifier:
-    # Multiplies the base cost of adopting social policies with the given percentage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    90: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  tech_cost_modifier:
-    # Multiplies the base cost of researching technologies with the given percentage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  progressive_techs:
-    # Use progressive technologies.
-    # 
-    # Progressive technologies divides all 79 technologies (excl. Agriculture) into 11 categories.
-    # This makes the unlocking of technologies feel less chaotic and more streamlined compared to true random
-    # technologies. It also makes it far less likely to not have important early-era buildings in the mid to late game.
-    'false': 0
-    'true': 50
-
-  item_hints:
-    # Enable item hints for all locations.
-    # 
-    # Options are:
-    # - full: Locations state their exact item.
-    # - classification: Locations state the classification of their item (progression; useful; filler; trap).
-    # - none: Locations do not state their item.
-    full: 0
-    classification: 50
-    none: 0
-
-  disguise_traps:
-    # Item classification hints will classify traps as progression items.
-    # 
-    # Keep in mind that if item hints are set to 'full', the name of the trap is still visible and could potentially spoil
-    # you of the true nature of the item.
-    # 
-    # Has no effect if item hints are set to 'none'.
-    'false': 50
-    'true': 0
-
-  satellites_meets_all:
-    # Receiving the Satellites technology will also meet all civilizations and city-states.
-    'false': 50
-    'true': 0
-
-  super_palace:
-    # Replaces the default Palace with a version that has much higher yields:
-    # - Gold/Science/Production: 3 -> 15
-    # - Culture: 1 -> 5
-    # - Happiness/Faith/Food: 0 -> 5
-    # 
-    # This makes the early game easier without your usual base technologies.
-    'false': 50
-    'true': 0
-
-  ############
-  # Sanities #
-  ############
-  building_sanity:
-    # Add most standard buildings to the location pool.
-    # 
-    # This adds 53 buildings to the location pool in total.
-    # 
-    # Buildings that will not be added:
-    # - Palace
-    # - Courthouse
-    # - Any religious building (Cathedral; Monastery; Mosque; and Pagoda)
-    # - Any civilization-unique building (they count as the building they replace instead)
-    # - Any National Wonder (see National Wonder Sanity instead)
-    # - Any World Wonder (see World Wonder Sanity instead)
-    'false': 50
-    'true': 0
-
-  national_wonder_sanity:
-    # Add all national wonders to the location pool.
-    # 
-    # This adds the 11 national wonders and the 3 guilds to the location pool.
-    'false': 50
-    'true': 0
-
-  world_wonder_sanity:
-    # Add all world wonders to the location pool.
-    # 
-    # This adds the 47 world wonders to the location pool, including the 3 ideology world wonders.
-    # 
-    # WARNING: This option is NOT suitable for syncs.
-    'false': 50
-    'true': 0
-
-  unit_sanity:
-    # Add most standard units to the location pool.
-    # 
-    # This adds 66 units to the location pool in total.
-    # 
-    # Units that will not be added:
-    # - Foreign Legion
-    # - Any religious unit (Inquisitor and Missionary)
-    # - Any civilization-unique unit (they count as the unit they replace instead)
-    # - Any Great Person
-    # - Any Spaceship unit (SS Booster; SS Cockpit; SS Engine; and SS Stasis Chamber)
-    'false': 50
-    'true': 0
-
-  settler_sanity:
-    # Adds Settlers to the item and location pools, with the amount being determined by the Settler Sanity Amount option.
-    # 
-    # When enabled, Settlers can only be obtained as a progressive item. Training them counts as a location, up to the
-    # amount, after which they can no longer be trained. When receiving a Settler as an item, they spawn near the capital
-    # (or a different city if you happen to not have one).
-    # 
-    # Enabling this option will remove the Settler from the Unit Sanity location pool, if it is enabled.
-    'false': 50
-    'true': 0
-
-  settler_sanity_amount:
-    # Number of Settlers to put in the item and location pools.
-    # 
-    # Progression logic will expect you to be able to get the following number of Settlers per era:
-    # - Ancient: 1
-    # - Classical; Medieval; and Renaissance: 2
-    # - Industrial; Modern; and Atomic: 3
-    # - Information: 4
-    # 
-    # Has no effect if Settler Sanity is not enabled.
-    # 
-    # NOTE: The lower limit being 0 is not a mistake. If you want to be Venice as a different civilization, be my guest.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  promotion_sanity:
-    # Add all earnable unit promotions (excl. Heal Instantly) to the item and location pools.
-    # 
-    # This adds 83 promotions to the item and location pools in total.
-    # 
-    # WARNING: This option can cause situations where you need to level up many units types to find logical progression.
-    'false': 50
-    'true': 0
-
-  ################
-  # Filler Items #
-  ################
+  progression_balancing: normal
+  accessibility: full
+  victory_goal_logic: none
+  era_goal_logic: information
+  embarking_goal_logic: true
+  policy_cost_modifier: 90
+  tech_cost_modifier: 100
+  progressive_techs: true
+  item_hints: classification
+  disguise_traps: true
+  satellites_meets_all: true
+  super_palace: false
+  building_sanity: false
+  national_wonder_sanity: false
+  world_wonder_sanity: false
+  unit_sanity: false
+  settler_sanity: false
+  settler_sanity_amount: 10
+  promotion_sanity: false
   filler_item_weights:
-    # The weights of each filler item to be chosen when a filler item is required.
-    Bonus - All City Population +1: 4
-    Bonus - All City Population +2: 1
-    Bonus - All City-State Influence +15: 3
-    Bonus - All City-State Influence +30: 1
-    Bonus - All Unit Experience +15: 8
-    Bonus - All Unit Experience +35: 4
-    Bonus - All Unit Experience +80: 2
-    Bonus - All Unit Free Promotion: 2
+    Bonus - Gold +100: 10
+    Bonus - Gold +250: 5
+    Bonus - Gold +1000: 2
     Bonus - Culture +100: 11
-    Bonus - Culture +1000: 3
     Bonus - Culture +250: 6
-    Bonus - Culture Per Turn For Free +50: 3
-    Bonus - Extra Happiness Per City +1: 5
-    Bonus - Extra Happiness Per City +2: 2
-    Bonus - Faith +125: 4
+    Bonus - Culture +1000: 3
     Bonus - Faith +50: 7
+    Bonus - Faith +125: 4
     Bonus - Faith +500: 1
+    Bonus - Snack from Thes: 9
     Bonus - Free Great Person: 1
     Bonus - Free Policy: 2
     Bonus - Free Tech: 1
     Bonus - Free Unit: 3
     Bonus - Free Worker: 5
-    Bonus - Gold +100: 10
-    Bonus - Gold +1000: 2
-    Bonus - Gold +250: 5
-    Bonus - Golden Age: 1
+    Bonus - All City-State Influence +15: 3
+    Bonus - All City-State Influence +30: 1
+    Bonus - All City Population +1: 4
+    Bonus - All City Population +2: 1
     Bonus - New City Extra Population +1: 3
     Bonus - New City Extra Population +2: 1
-    Bonus - Snack from Thes: 9
-
-  enable_traps:
-    # Add traps to the filler item pool.
-    'false': 50
-    'true': 0
-
-  trap_filler_chance:
-    # The percent chance for a filler item to be a trap instead.
-    # 
-    # Has no effect if traps are not enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+    Bonus - Extra Happiness Per City +1: 5
+    Bonus - Extra Happiness Per City +2: 2
+    Bonus - Culture Per Turn For Free +50: 3
+    Bonus - All Unit Experience +15: 8
+    Bonus - All Unit Experience +35: 4
+    Bonus - All Unit Experience +80: 2
+    Bonus - All Unit Free Promotion: 2
+    Bonus - Golden Age: 1
+  enable_traps: false
+  trap_filler_chance: 5
   trap_item_weights:
-    # The weights of each trap to be chosen when a trap item is required.
-    # 
-    # Has no effect if traps are not enabled.
-    Trap - All City Population -1: 5
-    Trap - All City Population -2: 2
+    Trap - Gold -50: 25
+    Trap - Gold -100: 15
+    Trap - Gold -250: 3
+    Trap - Culture -50: 25
+    Trap - Culture -100: 15
+    Trap - Culture -250: 3
+    Trap - Faith -25: 25
+    Trap - Faith -50: 15
+    Trap - Faith -125: 3
     Trap - All City-State Influence -15: 4
     Trap - All City-State Influence -30: 2
+    Trap - All City Population -1: 5
+    Trap - All City Population -2: 2
     Trap - Barbarians 1: 6
     Trap - Barbarians 3: 3
     Trap - Barbarians 6: 1
-    Trap - Culture -100: 15
-    Trap - Culture -250: 3
-    Trap - Culture -50: 25
-    Trap - Denounce: 2
-    Trap - Faith -125: 3
-    Trap - Faith -25: 25
-    Trap - Faith -50: 15
-    Trap - Gold -100: 15
-    Trap - Gold -250: 3
-    Trap - Gold -50: 25
     Trap - Shuffle Units: 4
+    Trap - Denounce: 2
     Trap - War: 1
-
-  ##############
-  # Death Link #
-  ##############
-  death_link:
-    'false': 50
-    'true': 0
-
-  death_link_trigger:
-    # What triggers a death link to be sent?
-    # 
-    # Has no effect if death link is disabled.
-    # 
-    # Possible triggers:
-    # - Unit killed: When any of your units gets killed.
-    # - City captured: When any of your cities gets captured.
-    # - Capital captured: When your capital gets captured.
-    # - Game lost: When you lose a game.
-    unit_killed: 0
-    city_captured: 0
-    capital_captured: 0
-    game_lost: 50
-
+  death_link: true
+  death_link_trigger: city_captured
   death_link_effect_weights:
-    # The weights of each death link to be chosen when a death link is received.
-    # 
-    # Has no effect if death link is not enabled.
-    All Cities 1 Population: 0
-    All Cities 10 Population: 0
-    All Cities 20 Population: 0
-    All Cities 3 Population: 0
-    All Cities 40 Population: 0
-    All Cities 5 Population: 0
-    All Units 100% HP: 0
+    Random Unit 25% HP: 1
+    Random Unit 50% HP: 0
+    Random Unit 100% HP: 0
     All Units 25% HP: 0
     All Units 50% HP: 0
-    Barbarians 12: 0
+    All Units 100% HP: 0
+    Random City 1 Population: 0
+    Random City 3 Population: 0
+    Random City 5 Population: 0
+    Random City 10 Population: 0
+    Random City 20 Population: 0
+    Random City 40 Population: 0
+    All Cities 1 Population: 0
+    All Cities 3 Population: 0
+    All Cities 5 Population: 0
+    All Cities 10 Population: 0
+    All Cities 20 Population: 0
+    All Cities 40 Population: 0
+    Lose Random City: 0
+    Lose All Cities Not Capital: 0
     Barbarians 3: 0
     Barbarians 6: 0
     Barbarians 9: 0
-    Declare War 1: 0
-    Declare War 3: 0
-    Declare War 5: 0
+    Barbarians 12: 0
     Denounce 1: 0
     Denounce 3: 0
     Denounce 5: 0
-    Lose All Cities Not Capital: 0
+    Declare War 1: 0
+    Declare War 3: 0
+    Declare War 5: 0
     Lose Game: 0
-    Lose Random City: 0
-    Random City 1 Population: 0
-    Random City 10 Population: 0
-    Random City 20 Population: 0
-    Random City 3 Population: 0
-    Random City 40 Population: 0
-    Random City 5 Population: 0
-    Random Unit 100% HP: 0
-    Random Unit 25% HP: 1
-    Random Unit 50% HP: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Clique:
   ################
