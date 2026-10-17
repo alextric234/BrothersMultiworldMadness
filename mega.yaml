@@ -1942,8 +1942,8 @@ Adventure:
     # to the port number used to connect to each other, to simplify connecting multiple local
     # clients to local EmuHawk instances.
     # Set in the yaml, since the connector has to read this out of the rom file before connecting.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   yorgle_speed:
     # Sets Yorgle's initial speed.  Yorgle has a speed of 2 in the original game
@@ -2049,8 +2049,8 @@ Adventure:
     # This doesn't affect logic since all the castles are reachable
     # from each other.
     yellow: 50
-    black: 0
-    white: 0
+    black: 50
+    white: 50
 
   ###########################
   # Item & Location Options #
