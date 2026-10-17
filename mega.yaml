@@ -4392,275 +4392,70 @@ Baldur's Gate 3 - ToT:
     []
 
 Baldur's Gate 3:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # (Dev note: Progression Balancing is recommended to be 0)
-    # Determines what location counts as victory.
-    # These goals also determine how many level ups are placed in the pool-
-    # Rescue Halsin: Level Cap 5 - goal is to rescue Halsin and return him safely to the Grove.
-    # Kill Inquisitor Wwargaz: Level Cap 8 - goal is to kill Inquisitor Wwargaz in the Creche.
-    #     The space laser does not count.
-    # Act 1 user defined fights: Level Cap 8 - goal is to defeat selected bosses (see UserDefinedFights).
-    # Kill Myrkul: Level Cap 10 - goal is to kill the Avatar of Myrkul at the end of Act 2.
-    # Act 2 user defined fights: Level Cap 10 - goal is to defeat selected bosses (see UserDefinedFights).
-    # Kill the Nether Brain: Level Cap 12 - goal is to kill the Nether Brain at the end of Act 3. UNTESTED.
-    # Act 3 user defined fights: Level Cap 12 - goal is to defeat selected bosses (see UserDefinedFights). UNTESTED.
-    rescue_halsin: 50
-    kill_inquisitor_wwargaz: 0
-    act1_user_defined_fights: 0
-    kill_myrkul: 0
-    act2_user_defined_fights: 0
-    kill_nether_brain: 0
-    act3_user_defined_fights: 0
-
+  progression_balancing: normal
+  accessibility: full
+  goal: kill_myrkul
   user_defined_fights:
-    # If using a User Defined Fights goal, select which fights are required to complete the goal.
-    # Act 2 fights require the act2_user_defined_fights goal to be selected.
-    # Act 3 fights require the act3_user_defined_fights goal to be selected.
-    # Act 1 fights are Auntie Ethel - Ch'r'ai W'wargaz, Act 2 fights are Shambling Mound - Myrkul, Act 3 fights are everything past Myrkul.
-    ['Myrkul', 'Malus Thorm', 'Bulette', 'Balthazar', 'Gerringothe Thorm', 'Auntie Ethel', 'Spectator', 'Shambling Mound', 'Yurgir', "Ch'r'ai Tska'an", 'Cursed Kuo-Toa Chief', 'Thisobald Thorm', 'Nere', 'Grym', 'Spider Queen', "Ch'r'ai W'wargaz", 'Netherbrain']
-
-  killsanity:
-    # Whether kills of individual creatures should be locations.
-    # Kills do _not_ count if they are done by falling damage or by being thrown into a chasm.
-    # 
-    # Currently the only option is "All Nonmissable Hostiles" -  The intent was all monsters that are either default or story-forced hostile,
-    # and are not likely to be missed by advancing plot. There still do exist some fights that are technically missable (paladins, Nere, etc), but
-    # only by transitions that have explicit warnings on them.
-    # 
-    # Nonmissable Hostiles Location count - Halsin: 156, Wwargaz: 287, Myrkul: 535, Netherbrain: Not implemented yet
-    'off': 50
-    all_nonmissable_hostiles: 0
-
-  killsanity_strictness:
-    # If Killsanity is on, determines how strict the requirements are for a kill to count as a location.
-    # Strict: Only kills by player characters count.
-    # Normal: Only kills count. This is the default.
-    # Relaxed: As long as they die, it counts.
-    strict: 0
-    normal: 50
-    relaxed: 0
-
-  questsanity:
-    # Whether quest updates should be locations.
-    # Some locations may be buggy or missable- please tell the BG3 channel if any quest doesn't complete that you think should've.
-    # Due to the nature of the branching of BG3 paths, many quests had to have choices as to what options were viable.
-    # Currently the only option is "Most Content" - skill checks are not expected to be passed _unless_ future content depends on it.
-    # 
-    # Most Content Location count - Halsin: 180, Wwargaz: 284, Myrkul: 350, Netherbrain: Not implemented yet
-    'off': 0
-    most_content: 50
-
-  containersanity:
-    # Whether opening containers should be locations. It turns every
-    # openable container placed in a Prologue/Act 1-3 level into a check.
-    # Don't do this. Very unstable, likely broken.
-    # 
-    # Containersanity location count - Halsin: 1760, Wwargaz: 2673, Myrkul: 5217, Netherbrain: 10142
-    'off': 50
-    no_really_dont_do_this: 0
-    i_suppose_if_you_insist: 0
-
-  container_highlight:
-    # Highlights containers in the world so you can find them. This is rather disruptive so is only
-    # recommended if you are using Containersanity. Additionally, many containers will be highlighted
-    # that are not actually locations - some are unreachable or bugged or whatever. The highlight
-    # only knows whether things "could" be locations.
-    'false': 50
-    'true': 0
-
+  - Auntie Ethel
+  - Balthazar
+  - Bulette
+  - Ch'r'ai Tska'an
+  - Ch'r'ai W'wargaz
+  - Cursed Kuo-Toa Chief
+  - Gerringothe Thorm
+  - Grym
+  - Malus Thorm
+  - Myrkul
+  - Nere
+  - Netherbrain
+  - Shambling Mound
+  - Spectator
+  - Spider Queen
+  - Thisobald Thorm
+  - Yurgir
+  killsanity: 'off'
+  killsanity_strictness: normal
+  questsanity: most_content
+  containersanity: 'off'
+  container_highlight: false
   characters_in_logic:
-    # Which characters the generator should assume you will recruit.
-    # A character NOT listed here has their character-specific plot events removed from the
-    # location pool: locations named "<Character>: ..." and any "Recruit <Character>" location
-    # (e.g. removing Lae'zel drops "Lae'zel: Deal with Patrol" and "Beach-LZ: Recruit Lae'zel").
-    # If Questsanity is on, determines which characters' quest completions are included in logic.
-    # Currently in testing - not considered stable. In particular Halsin seems required through act 2.
-    ['Astarion', 'Shadowheart', 'Wyll', 'Minthara', 'Karlach', 'Halsin', 'Gale', "Lae'zel"]
-
-  deathlink:
-    # If true, when a player dies, all players receive an item that kills them. Currently in testing.
-    'false': 50
-    'true': 0
-
-  deathlink_consequence:
-    # If Deathlink is on, determines what happens when a player receives a deathlink.
-    # Kill: The player dies immediately.
-    # Knockout: The player is knocked out.
-    kill: 50
-    knockout: 0
-
-  sync_method:
-    # Determines how AP items will be delivered into BG3.
-    # With a current mod and client, items are delivered automatically within about a second regardless
-    # of this choice, and the AP Sync scroll remains as a manual "force a sync now" button.
-    # This option only changes behavior with an OLD mod version (no sync timer):
-    # Scroll_Tav - Items will only be generated when the scroll is cast, and placed in Tav's inventory.
-    # Any_action_Tav - Items will be generated when ANYBODY takes ANY action that the game considers worth triggering the listener flag for
-    #     (which is most things).
-    scroll_tav: 0
-    any_action_tav: 50
-
-  add_act1a_treasure:
-    # Adds 26 items into the pool.
-    'false': 0
-    'true': 50
-
-  add_act1b_treasure:
-    # Adds 62 items into the pool.
-    'false': 0
-    'true': 50
-
-  add_act2_treasure:
-    # Adds 103 items into the pool.
-    'false': 50
-    'true': 0
-
-  add_act3_treasure:
-    # Adds 191 items into the pool.
-    'false': 50
-    'true': 0
-
-  trim_treasure_method:
-    # The standard method of having 1:1 items:locations does not work for BG3. Each option instead lists how many locations or items they add.
-    # Locations are filled with progression first, then useful, and if there is room left, filler.
-    # If there are not enough locations for all of the useful items, they will be trimmed. This option determines how this trimming is done.
-    # - Remove Later Treasure First: Removes treasure items that are found later in the game first. This is the recommended option for a more balanced playthrough.
-    # - Remove Random Treasure: Removes treasure items at random.
-    remove_later_treasure_first: 50
-    remove_random_treasure: 0
-
-  additional_level_ups:
-    # For an easier play through, this adds items to support additional levels into the pool. Not recommended.
-    # Each level up requires 4 fragments, so if you add 40 fragments, there will be 10 additional level ups available.
-    # Logic does not account for these- you are still expected to be able to clear the locations at the expected levels.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 40
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-40: 0 # random value between 0 and 40
-
-  traps_percentage:
-    # What percent of filler items should be traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  local_fill_percent:
-    # What percent of your filler and trap items are placed in your own world instead of
-    # being shuffled into the multiworld.
-    # Useful with large location counts (containersanity especially), which would otherwise
-    # flood every other player's pool with BG3 lockpicks and healing potions.
-    # Items named in local_items or non_local_items are left alone. Does nothing in a
-    # single player game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 98
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-98: 0 # random value between 0 and 98
-
+  - Astarion
+  - Gale
+  - Halsin
+  - Karlach
+  - Lae'zel
+  - Minthara
+  - Shadowheart
+  - Wyll
+  deathlink: true
+  deathlink_consequence: knockout
+  sync_method: any_action_tav
+  add_act1a_treasure: true
+  add_act1b_treasure: true
+  add_act2_treasure: true
+  add_act3_treasure: false
+  trim_treasure_method: remove_later_treasure_first
+  additional_level_ups: 0
+  traps_percentage: 15
+  local_fill_percent: 0
   enabled_traps:
-    # Which kinds of traps should be enabled.
-    ['Monster', 'Clown', 'Stun', 'Sussur', 'Confusion', 'Blinded', 'Bleeding']
-
-  block_entrances:
-    # If true, there will be barriers placed in the world that block advancement until a required item is received. This is currently in testing and may be buggy.
-    'false': 50
-    'true': 0
-
-  randomize_companion_classes:
-    # If true, each recruitable companion starts at a random class and subclass instead of their
-    # usual one (Lae'zel the Wizard, Karlach the Bard, ...). Applied when they are first recruited;
-    # only level 1 is built for you, later levels are yours to pick. Your own character is never
-    # changed. Experimental.
-    'false': 50
-    'true': 0
-
-  randomize_companion_clothes:
-    # If true, each recruitable companion wears another companion's camp clothes, shoes and
-    # underwear, applied when they are first recruited. Your own character is never changed.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Bleeding
+  - Blinded
+  - Clown
+  - Confusion
+  - Monster
+  - Stun
+  - Sussur
+  block_entrances: true
+  randomize_companion_classes: true
+  randomize_companion_clothes: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Banjo-Tooie:
   ################
