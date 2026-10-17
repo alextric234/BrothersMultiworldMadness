@@ -19,8 +19,6 @@ game:
   Ape Escape: 1
   APQuest: 1
   Archipeladoku: 1
-  Atlyss: 1
-  Autopelago: 1
   Balatro: 1
   Baldur's Gate 3 - ToT: 1
   Baldur's Gate 3: 1
@@ -5193,376 +5191,6 @@ Archipeladoku:
     # Generic items plando.
     []
 
-Atlyss:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # What is required to complete the game.
-    # Slime Diva: Defeat the Slime Diva boss (level 10).
-    # Lord Zuulneruda: Defeat Lord Zuulneruda in the Catacombs (level 12).
-    # Colossus: Defeat the Colossus in Crescent Grove (level 20).
-    # Galius: Defeat Galius in Bularr Fortress (level 26) - DEFAULT.
-    # Lord Kaluuz: Defeat Lord Kaluuz in Catacombs Floor 3 (level 18).
-    # Valdur: Defeat Valdur the dragon (level 25+).
-    # All Bosses: Defeat all 6 major bosses.
-    # All Quests: Complete every quest in the game.
-    # Level 32: Reach the maximum level.
-    slime_diva: 50
-    lord_zuulneruda: 0
-    colossus: 0
-    galius: 0
-    lord_kaluuz: 0
-    valdur: 0
-    all_bosses: 0
-    all_quests: 0
-    level_32: 0
-
-  random_portals:
-    # How area portals are unlocked.
-    # Off (default): Progressive Portals - find "Progressive Portal" items to unlock
-    # areas in a fixed sequence. Each portal found opens the next area in order.
-    # On: Random Portals - find individual portal items (e.g. "Outer Sanctum Portal",
-    # "Catacombs Portal") to unlock specific areas independently.
-    'false': 50
-    'true': 0
-
-  shop_sanity:
-    # Whether shop items can contain Archipelago items from other worlds.
-    # When enabled, buying items from shops sends checks to other players.
-    'false': 0
-    'true': 50
-
-  achievements:
-    # Whether in-game achievements are tracked as Archipelago locations.
-    # When enabled (default), unlocking achievements such as 'A New Journey',
-    # 'Trout Master', 'Skill Student', subclass picks, dungeon clears, 'Altered
-    # Vision', 'Rude!', etc. sends checks to other players (adds up to 18
-    # locations, fewer if a class is unselected).
-    # When disabled, no achievement locations are placed in this slot and the
-    # mod will not send their checks during play; pick this for a shorter or
-    # more boss/quest-focused run.
-    'false': 0
-    'true': 50
-
-  main_class:
-    # What you chose to be as your main class
-    fighter: 50
-    bandit: 0
-    mystic: 0
-
-  secondary_class:
-    # What you chose to be as your secondary class
-    fighter: 50
-    bandit: 0
-    mystic: 0
-    none: 0
-
-  experience_multiplier:
-    # Experience gain multiplier applied in the Atlyss mod.
-    # x8.0: Extremely fast leveling.
-    # x4.0: Very fast leveling.
-    # x2.0: Fast leveling.
-    # x1.0: Vanilla/default leveling.
-    # x0.75: Slower leveling.
-    # x0.5: Much slower leveling.
-    x8_0: 0
-    x4_0: 0
-    x2_0: 0
-    x1_0: 50
-    x0_75: 0
-    x0_5: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
-
-Autopelago:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  victory_location:
-    # Optionally moves the final victory location earlier to reduce the number of locations in the multiworld.
-    # 
-    # - **Snakes on a Planet (default):** The game goes all the way to "Moon, The". This gives the longest game.
-    # - **Secret Cache:** The game stops at the end of Cool World. This gives the middlest-length game.
-    # - **Captured Goldfish:** The game stops at the end of The Sewers. This gives the shortest game.
-    snakes_on_a_planet: 50
-    secret_cache: 0
-    captured_goldfish: 0
-
-  enabled_buffs:
-    # Enables various buffs that affect how the rat behaves. All are enabled by default.
-    # 
-    # - **Well Fed:** Gets more done
-    # - **Lucky:** One free success
-    # - **Energized:** Moves faster
-    # - **Stylish:** Better RNG
-    # - **Confident:** Ignore a trap
-    # - **Smart:** Next check is progression
-    ['Lucky', 'Smart', 'Well Fed', 'Stylish', 'Energized', 'Confident']
-
-  enabled_traps:
-    # Enables various traps that affect how the rat behaves. All are enabled by default.
-    # 
-    # - **Upset Tummy:** Gets less done
-    # - **Unlucky:** Worse RNG
-    # - **Sluggish:** Moves slower
-    # - **Distracted:** Skip a "step"
-    # - **Startled:** Run towards start
-    # - **Conspiratorial:** Next check is trap
-    # - **Poison:** Dies
-    ['Distracted', 'Sluggish', 'Startled', 'Conspiratorial', 'Unlucky', 'Upset Tummy', 'Poison']
-
-  lactose_intolerant:
-    # Replaces all references to lactose-containing products with less offensive ones.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Death Settings #
-  ##################
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_delay_seconds:
-    # Has no effect if "Poison" traps are disabled. Otherwise:
-    # 
-    # Sets the delay (in seconds) from a death trigger to when the rat actually "dies".
-    # 
-    # Default: 5 (seconds)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 60
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-60: 0 # random value between 0 and 60
-
-  death_item_percentage:
-    # Has no effect if "Poison" traps are disabled. Otherwise:
-    # 
-    # Controls what percentage of trap items added to the pool should be replaced by "poison" items. The percentage is
-    # taken from the items that are INTENDED to be traps, so you can disable all other traps and still get the same number
-    # of "poison" items as you would otherwise have.
-    # 
-    # Specifically, items with "poison" auras are held back, and then this configured percentage of random trap items are
-    # replaced by copies of the items that were held back.
-    # 
-    # Whole numbers only.
-    # 
-    # Default: 2 (percent).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #############################
-  # Message Text Replacements #
-  #############################
-  msg_impending_doom:
-    # What messages the rat can say when it's about to die.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - "I don't feel so good..."
-
-  msg_changed_target:
-    # What messages the rat can say when a buff or trap is added to the queue of location checks to send before resuming its normal logic.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # The text {LOCATION} will be replaced with the name of the actual location.
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - "Oh, hey, what's that thing over there at {LOCATION}?"
-    - "There's something at {LOCATION}, I'm sure of it!"
-    - 'Something at {LOCATION} smells good!'
-    - "There's a rumor that something's going on at {LOCATION}!"
-
-  msg_enter_go_mode:
-    # What messages the rat can say when it first realizes that it can complete its goal.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - "That's it! I have everything I need! The goal is in sight!"
-
-  msg_enter_bk:
-    # What messages the rat can say when it first sees that no further location checks are in logic.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - "I don't have anything to do right now. Go team!"
-    - "Hey, I'm completely stuck. But I still believe in you!"
-    - "I've run out of things to do. How are you?"
-    - "I'm out of things for now, gonna get a coffee. Anyone want something?"
-
-  msg_remind_bk:
-    # What messages the rat can say to occasionally remind the players that it has no further location checks in logic.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - "I don't have anything to do right now. Go team!"
-    - "Hey, I'm completely stuck. But I still believe in you!"
-    - "I've run out of things to do. How are you?"
-    - "I'm out of things for now, gonna get a coffee. Anyone want something?"
-
-  msg_exit_bk:
-    # What messages the rat can say after one or more location checks become in logic.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - "Yippee, that's just what I needed!"
-    - "I'm back! I knew you could do it!"
-    - "Sweet, I'm unblocked! Thanks!"
-    - "Squeak-squeak, it's rattin' time!"
-
-  msg_completed_goal:
-    # What messages the rat can say to celebrate victory.
-    # 
-    # Specify the message itself, or with an optional weight to have that message appear more often (default weight is 1).
-    # 
-    # If you want to disable rat chat, then you're in the wrong place. Do that from the settings menu in the game client itself.
-    - 'Yeah, I did it! er... WE did it!'
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
-
 Balatro:
   ################
   # Game Options #
@@ -5600,10 +5228,10 @@ Balatro:
     # Beat Decks on Stake: Win with the specified amount of Decks on the specified Stake (or harder)
     # Win with Jokers on Stake: Win with the specified amount of Jokers on the specified Stake (or harder)
     # Unique Wins: Win with the specified amount of unique combinations of Decks and Stakes
-    beat_decks: 50
+    beat_decks: 0
     unlock_jokers: 0
     beat_ante: 0
-    beat_decks_on_stake: 0
+    beat_decks_on_stake: 50
     win_with_jokers_on_stake: 0
     beat_unique_decks: 0
 
@@ -5700,9 +5328,9 @@ Balatro:
     # stake_as_item: stakes can be found as items and unlock the stake for every deck
     # stake_as_item_per_deck: stakes can be found as items but only unlock it for a specific deck
     unlocked: 0
-    vanilla: 50
+    vanilla: 0
     linear: 0
-    stake_as_item: 0
+    stake_as_item: 50
     stake_as_item_per_deck: 0
 
   include_stakesMode:
@@ -5739,8 +5367,8 @@ Balatro:
     # Rather than handling each joker as an individual item, you can group them into bundles for quicker progress 
     # and fewer items to manage in the world. When enabled, all 150 jokers will be placed into randomly generated bundles. 
     # You can also specify the size of these joker bundles
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 40
 
   joker_bundle_size:
     # Specify the size of Joker Bundles.
@@ -5748,17 +5376,17 @@ Balatro:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 5
     # Maximum value is 30
-    10: 50
+    10: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-5-30: 0 # random value between 5 and 30
+    random-range-5-30: 4 # random value between 5 and 30
 
   remove_or_debuff_jokers:
     # Choose whether locked jokers should be completely removed or appear in a debuffed state. 
     # Set this to true to remove them entirely, or set it to false to have them appear debuffed.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 40
 
   tarot_bundle:
     # Instead of making every tarot card an individual item, you have the option to put them all in one bundle, 
@@ -5810,8 +5438,8 @@ Balatro:
   remove_or_debuff_consumables:
     # Choose whether locked consumables should be completely removed or appear in a debuffed state. 
     # Set this to true to remove them entirely, or set it to false to have them appear debuffed.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   decks_unlocked_from_start:
     # Number of random decks you want to start with.
@@ -5819,11 +5447,11 @@ Balatro:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 15
-    1: 50
+    1: 0
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
+    random-range-1-15: 50 # random value between 0 and 15
 
   filler_jokers:
     # Which Jokers are supposed to be filler (every Joker not in this list will be considered a progressive item)
@@ -5860,7 +5488,7 @@ Balatro:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 20
-    4: 50
+    20: 50
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
@@ -5898,7 +5526,7 @@ Balatro:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 100
-    10: 50
+    5: 50
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
@@ -5912,15 +5540,15 @@ Balatro:
     # High traps: 1 in 2 filler items will be traps
     # Mayhem: Every filler item will be a trap
     no_traps: 0
-    low_amount: 0
-    medium_amount: 50
+    low_amount: 40
+    medium_amount: 0
     high_amount: 0
     mayhem: 0
 
   deathlink:
     # When your run ends, everybody will die. When somebody else dies, your run will end.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   forceyaml:
     # Some settings (like death link or remove_or_debuff_jokers etc) can be changed in-game after the fact. 
