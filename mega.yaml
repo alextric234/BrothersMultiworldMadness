@@ -6427,360 +6427,57 @@ Bubble Bobble:
     []
 
 Buckshot Roulette:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Specify the goal for your game.
-    # 
-    # - **70K**: Beat the base game.
-    # - **140K**: Win Double or Nothing mode after doubling your earnings.
-    # - **1000K**: Cash out a minimum of $1,000,000 in Double or Nothing mode.
-    # - **Custom**: Cash out a mininum of a specified amount of money in Double or Nothing mode.
-    70k: 0
-    140k: 50
-    1000k: 0
-    custom: 0
-
-  custom_goal_amount:
-    # If Goal is set to Custom, specify the minimum amount of money needed to be cashed out.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000000000
-    1000000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000000000: 0 # random value between 1 and 1000000000
-
-  double_or_nothing_requirements:
-    # Specify the requirements to unlock Double or Nothing mode
-    # 
-    # - **Free**: Double or Nothing is unlocked from the start.
-    # - **Vanilla**: Double or Nothing is unlocked after beating the base game.
-    # - **Pills**: Double or Nothing is unlocked after obtaining the Double or Nothing Pills item in the multiworld.
-    # - **Vanilla Plus**: Double or Nothing is unlocked after beating the base game and finding the pills.
-    free: 0
-    vanilla: 50
-    pills: 0
-    vanilla_plus: 0
-
-  additional_goal_requirements:
-    # Specify any additional requirements needed to reach goal.
-    # 
-    # - **None**: No additional requirements need to be met in order to goal.
-    # - **Shots**: Obtain a percentage of your shotsanity checks specified by the "Shotsanity Goal Percentage" option.
-    # - **Streak**: Reach the maximum streak set in the "Streaksanity Count" option.
-    # - **Sanities**: Both shotsanity and streaksanity additional requirements are included
-    # 
-    # If the respective sanities are not enabled, the additional goals will not be included.
-    none: 50
-    shots: 0
-    streak: 0
-    sanities: 0
-
-  asynchronous_points:
-    # If enabled, points required for a 1000K or custom goal can be obtained across multiple runs.
-    # 
-    # Additionally, some filler items will be replaced with point increase items, which add points
-    # to your point total upon finding one.
-    'false': 50
-    'true': 0
-
-  point_filler_percentage:
-    # Specify the maximum percentage of your required point total to be added as filler items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  consumable_item_logic:
-    # Specify how consumable items affect the logic for your game. In solo worlds, this only has a noticeable effect
-    # when Goal is 1000K or Custom (with a sufficiently large goal amount).
-    # 
-    # - **Tight**:
-    #     Two consumable items are expected before beating the 2nd round of the base game.
-    #     Three consumable items are expected before beating the 3rd round of the base game.
-    #     An additional item is expected for every round of Double or Nothing.
-    #         (e.g. The 140K goal will logically expect obtaining every consumable item before goaling)
-    # 
-    # - **Normal**:
-    #     One consumable item is expected before beating the 2nd round of the base game.
-    #     Two consumable items are expected before beating the 3rd round of the base game.
-    #     An additional item is expected for every 3 rounds of Double or Nothing.
-    #         (e.g. The 140K goal will logically expect obtaining 4 consumable items before goaling,
-    #               The 1000K goal will logically expect obtaining every consumable item before goaling)
-    # 
-    # - **Minimal**:
-    #     No consumable items are expected before beating the base game.
-    #     An additional item is expected for every 3 rounds of Double or Nothing.
-    #         (e.g. The 140K goal will logically expect obtaining 2 consumable items before goaling,
-    #               The 1000K goal will logically expect obtaining 7 consumable items before goaling)
-    # 
-    # - **None**: Consumable items are not considered logically required for goal
-    #     (except for obtaining certain achievements).
-    tight: 0
-    normal: 50
-    minimal: 0
-    none: 0
-
+  progression_balancing: normal
+  accessibility: full
+  goal: 140k
+  custom_goal_amount: 1000000
+  double_or_nothing_requirements: pills
+  additional_goal_requirements: none
+  asynchronous_points: false
+  point_filler_percentage: 25
+  consumable_item_logic: normal
   included_custom_mechanics:
-    # Specify which custom mechanics are added to the game.
-    # 
-    # ***ACTUAL OPTIONS***
-    # 
-    # **Item Luck**: Adds 3 items to the pool named "Progressive Item Luck". For each progressive item luck you
-    # obtain, the likelihood of pulling an item increases.
-    # 
-    # **Life Bank**: Adds a life bank to the game, accessible by clicking the icon on the top right of the UI.
-    # You gain life bank charges by finding items called "Life Bank Charge" spread throughout the multiworld.
-    # Spend a charge from your life bank any time during your turn to restore a charge during the round. Your
-    # charges are given back to you on a new run.
-    # 
-    # **Item Buffs**: Finding "Item Buff" items in the multiworld will apply a permanent buff to your consumable items.
-    # 
-    # **Item Debuffs**: Start with a selection of consumable items debuffed. Finding an item's respective "Clear Debuff"
-    # in the multiworld will remove its debuff.
-    # 
-    # ***SIDE EFFECTS***
-    # 
-    # **Poison Gauge**: A value representing the expected amount of damage you will take at the beginning
-    # of every turn as follows:
-    # 
-    #     Poison Gauge | Guaranteed Damage Every Turn | Chance of Losing One Extra Charge
-    #     -------------+------------------------------+----------------------------------
-    #           p      |    d = p / 100 rounded down  |           p / 100 - d            
-    #     -------------+------------------------------+----------------------------------
-    #                                        EXAMPLES                                    
-    #     -------------+------------------------------+----------------------------------
-    #           30     |              0               |               30%                
-    #          100     |              1               |                0%                
-    #          240     |              2               |               40%                
-    # 
-    # Certain item debuffs will affect the poison gauge. The poison gauge is reset to 0 when starting a new round.
-    ['Item Buffs', 'Item Luck', 'Life Bank']
-
+  - Item Buffs
+  - Item Luck
+  - Life Bank
   item_buffs:
-    # Specify which items to include buffs for. Ignored if "Item Buffs" is not included in "Included Custom Mechanics."
-    # 
-    # **Hand Saw**: Deals an extra point of damage (2 -> 3)
-    # **Magnifying Glass**: Gains the ability to convert the current shell to either live or blank (50% success chance)
-    # **Beer**: Gains the ability to clear the shotgun, immediately moving on to the next batch.
-    # **Cigarette Pack**: 50% chance to heal 2 charges instead of 1
-    # **Handcuffs**: Dealer skips one extra turn (1 -> 2)
-    # **Expired Medicine**: Buffs chance of healing (1 in 2 -> 5 in 6)
-    # **Burner Phone**: Gains the ability to select which shell to get info about (2nd - 8th)
-    # **Adrenaline**: Gains the ability to steal the dealer's adrenaline
-    # **Inverter**: Applies a Schrodinger's Bullet Trap to the dealer
-    ['Hand Saw', 'Magnifying Glass', 'Adrenaline', 'Beer', 'Burner Phone', 'Expired Medicine', 'Handcuffs', 'Inverter', 'Cigarette Pack']
-
+  - Adrenaline
+  - Beer
+  - Burner Phone
+  - Cigarette Pack
+  - Expired Medicine
+  - Hand Saw
+  - Handcuffs
+  - Inverter
+  - Magnifying Glass
   item_debuffs:
-    # Specify which items should start with a debuff. Ignored if "Item Debuffs" is not included in "Included Custom Mechanics."
-    # 
-    # **Hand Saw**: 25% chance to also deal 1 damage to the player
-    # **Magnifying Glass**: 40% chance to gain no information when viewing the current shell
-    # **Beer**: Adds 15 to the poison gauge (see custom mechanics)
-    # **Cigarette Pack**: Adds 30 to the poison gauge (see custom mechanics)
-    # **Handcuffs**: 25% chance for the dealer to immediately break free
-    # **Expired Medicine**: Failing the coin flip will also add 20 to the poison gauge (see custom mechanics)
-    # **Burner Phone**: 25% chance to get no information
-    # **Adrenaline**: Adds 50 to the poison gauge (see custom mechanics)
-    # **Inverter**: 25% chance to not invert the current shell
-    ['Hand Saw', 'Magnifying Glass', 'Adrenaline', 'Beer', 'Burner Phone', 'Expired Medicine', 'Handcuffs', 'Inverter', 'Cigarette Pack']
-
+  - Adrenaline
+  - Beer
+  - Burner Phone
+  - Cigarette Pack
+  - Expired Medicine
+  - Hand Saw
+  - Handcuffs
+  - Inverter
+  - Magnifying Glass
   included_traps:
-    # Specify which traps are added to the game.
-    # 
-    # **Stolen Package Trap**: Your box will be empty the next time you draw items.
-    # 
-    # **Schrodinger's Bullet Trap**: The current shell is randomized the next time you
-    # pick up the shotgun.
-    ['Stolen Package Trap', "Schrodinger's Bullet Trap"]
-
-  trap_fill_percentage:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  exclude_full_house:
-    # Specify whether the Full House achivement should be excluded from the location list.
-    'false': 0
-    'true': 50
-
-  shotsanity:
-    # Shotsanity adds locations for every successful live and blank shot up to a specified amount.
-    # 
-    # - **Off**:
-    #     Shotsanity is disabled.
-    # - **Balanced**:
-    #     Shotsanity is enabled. Consumable item logic also applies to shotsanity locations.
-    # - **Unreasonable**:
-    #     Shotsanity is enabled. No logic applies to shotsanity locations.
-    'off': 0
-    balanced: 50
-    unreasonable: 0
-
-  shotsanity_count:
-    # If Shotsanity is enabled, specify the number of locations to add for each successful shot.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000: 0 # random value between 1 and 1000
-
-  balanced_shotsanity_count_per_round:
-    # If Shotsanity is set to Balanced, specify the number of shot locations in logic during each round,
-    # starting from the second round of the base game.
-    #     (e.g. If this setting is set to 10:
-    #         - Shotsanity Locations beyond 10 expect Base Game Second Round
-    #         - Shotsanity Locations beyond 20 expect Base Game Final Round
-    #         - Shotsanity Locations beyond 30 expect Double or Nothing - 1 Round
-    #         and so on...
-    #     )
-    # 
-    # No matter what value is set, all shotsanity locations will be in logic after beating the penultimate round before
-    # your goal.
-    #     - If your goal is 70K, all shotsanity locations are in logic after Base Game Second Round.
-    #     - If your goal is 140K, all shotsanity locations are in logic after Double or Nothing - 5 Rounds.
-    #     - If your goal is 1000K, all shotsanity locations are in logic after Double or Nothing - 14 Rounds.
-    # 
-    # You are **NOT** restricted from obtaining shotsanity locations out of logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000: 0 # random value between 1 and 1000
-
-  shotsanity_goal_percentage:
-    # If included as an additional goal requirement, specify the percentage of
-    # shotsanity checks needed for goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  streaksanity:
-    # Streaksanity adds locations for every successful shot made on the dealer in a row without losing health (or resetting).
-    # 
-    # - **Off**:
-    #     Streaksanity is disabled.
-    # - **Logical**:
-    #     Streaksanity is enabled. Logic will be applied to streak locations as follows:
-    #     
-    #     A score is calculated based on your currently obtained items:
-    #         - Handcuffs: +2 pts
-    #         - Magnifying Glass: +1 pt
-    #         - Beer: +1 pt
-    #         - Burner Phone: +1 pt (if Double or Nothing is accessible)
-    #         - Adrenaline: +1 pt (if Double or Nothing is accessible)
-    #         - Inverter: +1 pt (if Double or Nothing is accessible)
-    #     A streak of `n` will require a score of at least `n + 3`.
-    #     In addition, all streaks of at least 5 logically require handcuffs.
-    # - **Unreasonable**:
-    #     Streaksanity is enabled. No logic applies to streaksanity locations.
-    'off': 50
-    logical: 0
-    unreasonable: 0
-
-  streaksanity_count:
-    # If Streaksanity is enabled, specify the maximum streak to be included.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 10
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-10: 0 # random value between 2 and 10
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Schrodinger's Bullet Trap
+  - Stolen Package Trap
+  trap_fill_percentage: 15
+  exclude_full_house: true
+  shotsanity: balanced
+  shotsanity_count: 50
+  balanced_shotsanity_count_per_round: 5
+  shotsanity_goal_percentage: 100
+  streaksanity: 'off'
+  streaksanity_count: 7
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Bugs Bunny Lost in Time:
   ################
