@@ -1694,8 +1694,8 @@ Actraiser:
 
   boss_crystal:
     # If enabled it will place 6 of the Dheim crystals on the act 2 bosses
-    'false': 0
-    'true': 50
+    'false': 50
+    'true': 0
 
   max_crystal:
     # Total Number of Dheim Crystals in the Pool
@@ -1729,8 +1729,8 @@ Actraiser:
   fast_construct:
     # Reduces the amount of time it takes for construction phases to begin
     # enable if you want a slightly faster game
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   max_level:
     # Maximum required level to access a non death heim action stage
@@ -1758,7 +1758,7 @@ Actraiser:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 7
-    3: 50
+    7: 50
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
@@ -1769,18 +1769,18 @@ Actraiser:
   #################
   catraiser:
     # Meow!
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   include_traps:
     # Includes Traps (Only one made so far) Into the Filler item pool
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   death_link:
     # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   #########################
   # Randomization Options #
@@ -1792,8 +1792,8 @@ Actraiser:
 
   random_color:
     # Randomized Color Pallettes for many things in the game
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   random_object:
     # Randomized Enemies within an action stage
@@ -1802,8 +1802,8 @@ Actraiser:
 
   random_orb:
     # Randomized Items Dropped From Orbs
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   random_lair:
     # Randomized Monster Lairs
