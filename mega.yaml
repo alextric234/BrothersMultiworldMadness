@@ -2415,22 +2415,22 @@ ANIMAL WELL:
 
   candle_checks:
     # Lighting each of the candles sends a check.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   bunnies_as_checks:
     # Include the secret bunnies as checks.
     # Exclude Tedious removes the Mural, Dream, UV, and Floor is Lava bunnies.
     # The Disc Spike bunny will not be a check unless you have multiple disc hops or you have both precise tricks and wheel tricks enabled.
-    'off': 50
-    exclude_tedious: 0
+    'off': 0
+    exclude_tedious: 50
     all_bunnies: 0
 
   bunny_warps_in_logic:
     # Include the songs that warp you to Bunny spots in logic.
     # If you have Bunnies as Checks enabled, this option is automatically enabled.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   fruitsanity:
     # All 115 fruits send a check after being eaten.
@@ -2454,8 +2454,8 @@ ANIMAL WELL:
     # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
     # 
     # You can toggle this in the Client by using /deathlink, or in your host.yaml.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 5
 
   #################
   # Logic Options #
