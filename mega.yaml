@@ -17343,184 +17343,31 @@ Five Nights at Fuckboy's:
   priority_locations: []
 
 FNaFW:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ending_goal:
-    # Which ending do you want to be the goal.
-    scott: 50
-    clock: 0
-    fourth_glitch: 0
-    universe_end: 0
-    chipper: 0
-    magic_rainbow: 0
-    any: 0
-
-  initial_characters:
-    # Decides your starting characters
-    vanilla: 0
-    limited_random: 50
-    true_random_no_halloween: 0
-    true_random: 0
-    halloween: 0
-
-  vanilla_halloween:
-    # Makes the Halloween Land minigames give the vanilla stuff
-    'false': 0
-    'true': 50
-
-  vanilla_lasers:
-    # Makes the laser switches always be found in their vanilla locations
-    'false': 50
-    'true': 0
-
-  vanilla_pearl:
-    # Makes the pearl always be found in its vanilla location
-    'false': 50
-    'true': 0
-
-  logic_diff:
-    # Decides how difficult the logic is:
-    # Easy: Every Boss requires a strong Animatronic, Late Game checks are only in logic with certain characters (Garuntees good characters early on)
-    # Normal (recommended): Late Game requires certain characters and/or attacks (Higher chance of good characters earlier)
-    # Hard: Only certain Bosses require characters with Neon Wall or Gift Boxes
-    # Insane: Everything is expected to be done without any strong characters, including every Bosses
-    easy: 0
-    normal: 50
-    hard: 0
-    insane: 0
-
-  cheap_shop:
-    # Halves the price of every Item in every Shop
-    'false': 0
-    'true': 50
-
-  require_find_char:
-    # Makes every character location logically require the Find Characters chip
-    # This means you can still find characters, but they are not logically intended to be found yet.
-    'false': 0
-    'true': 50
-
-  progressive_anims:
-    # Makes you get animatronics in a randomized set order, but with stronger animatronics later in the order
-    'false': 50
-    'true': 0
-
-  progressive_bytes:
-    # Makes you get bytes in a randomized set order, but with stronger bytes later in the order
-    'false': 50
-    'true': 0
-
-  progressive_chips:
-    # Makes you get chips in a randomized set order, but with stronger chips later in the order (Some chips may be excluded)
-    'false': 50
-    'true': 0
-
-  progressive_areas:
-    # Makes you get areas in randomized set order, but with more progression into one direction of the map.
-    # e.g.:
-    # Choppy's Woods -> Dusting Fields 
-    # Lilygear Lake -> Blacktomb Yard -> Pinwheel Circus
-    # Halloween Land -> Geist Lair
-    'false': 50
-    'true': 0
-
-  area_warping:
-    # How do the warp buttons function?
-    # visit_area: You have to trigger the warp the same way as vanilla.
-    # always: You only need the Access Switch/Access item for that area to warp there.
-    # warp_item: Similar to always, but you need an additional item for warping.
-    visit_area: 50
-    always: 0
-    warp_item: 0
-
-  fazcoin_chests:
-    # How many Fazcoin chests per area will be give out Checks
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3
-    # Maximum value is 5
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3-5: 0 # random value between 3 and 5
-
-  halloween_minigame:
-    # If the minigames from Update 2 in Halloween Land should be shuffled into the pool:
-    # true: Randomizes the Accesses for the Minigames into the pool, you'll need an Item for each Minigame
-    # false: Minigames are Accessible as soon as you can enter Halloween Land
-    'false': 0
-    'true': 50
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  ending_goal: scott
+  initial_characters: true_random
+  vanilla_halloween: true
+  vanilla_lasers: false
+  vanilla_pearl: false
+  logic_diff: easy
+  cheap_shop: true
+  require_find_char: true
+  progressive_anims: false
+  progressive_bytes: false
+  progressive_chips: false
+  progressive_areas: false
+  area_warping: always
+  fazcoin_chests: 5
+  halloween_minigame: true
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Garfield Kart - Furious Racing:
   ################
