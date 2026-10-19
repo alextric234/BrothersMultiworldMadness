@@ -30897,318 +30897,44 @@ Pokemon Trozei:
     []
 
 PokePark:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # Sends a DeathLink when losing a Power Competition. Depending on the game version, the Power Competition's
-    # location, and other circumstances, some losses may not send a DeathLink right now.
-    # 
-    # DeathLinks from other players can be received anywhere in the game. More information can be found in the
-    # documentation.
-    'false': 50
-    'true': 0
-
-  ########
-  # Goal #
-  ########
-  goal:
-    # Determines the goal required to complete the world.
-    # 
-    # Mew: Complete Mew's Power Competition (default).
-    # Postgame: Complete the postgame Prisma completion, which requires all Friendships.
-    mew: 50
-    postgame: 0
-
-  #############
-  # Entrances #
-  #############
-  randomize_attraction_entrances:
-    # Randomizes Attraction Entrances among themselves. Entering an Attraction may lead to a different Attraction.
-    'false': 50
-    'true': 0
-
-  randomize_treehouse_gates_entrances:
-    # Randomizes the Zone Gates in the Treehouse among themselves. Entering a Gate may lead to a different Zone.
-    'false': 50
-    'true': 0
-
-  randomize_fast_travel_entrances:
-    # Randomizes Drifblim Fast Travel Entrances among themselves.
-    # 
-    # Each Fast Travel route is randomized separately based on its starting Zone and selected destination. For example,
-    # traveling from the Meadow Zone to the Beach Zone may lead somewhere different than traveling from the Cavern Zone
-    # to the Beach Zone.
-    # 
-    # Enabling this option automatically disables unlocking Fast Travel through Taxi Stops.
-    'false': 50
-    'true': 0
-
-  randomize_general_entrances:
-    # Randomizes general overworld Entrances, such as the connection between the Meadow Zone Main Area and the Venusaur
-    # Area.
-    'false': 50
-    'true': 0
-
-  mix_entrance_pools:
-    # Combines all enabled Treehouse Gate, Fast Travel, and General Entrance pools into one randomized pool. Attraction
-    # Entrances remain in their own pool.
-    'false': 50
-    'true': 0
-
-  ########
-  # Misc #
-  ########
-  power_starting_mode:
-    # Determines which Power Items are added to the starting inventory.
-    # For fully custom starting Powers, set this to 'None' and use the StartInventoryPool option instead
-    # 
-    # Full: Start with all Power Items, including Double Dash.
-    # None: Start with no Power Items.
-    # Vanilla: Start with one Thunderbolt and one Dash (default).
-    # Thunderbolt: Start with one Thunderbolt.
-    # Dash: Start with one Dash.
-    # IronTail: Start with one Iron Tail.
-    # Randomize: Start with a random number of each Power Item, including Double Dash.
-    full: 0
-    none: 0
-    vanilla: 50
-    thunderbolt: 0
-    dash: 0
-    iron_tail: 0
-    randomize: 0
-
-  start_fast_travel:
-    # Determines how many Fast Travel Items are added to the starting inventory.
-    # 
-    # None: Start with no Fast Travel Items (default).
-    # One: Start with one random Fast Travel Item.
-    # All: Start with all Fast Travel Items.
-    none: 50
-    one: 0
-    all: 0
-
-  num_required_battle_count:
-    # Determines the number of required consecutive Wins to challenge Battle count Pokemon e.g. Scyther
-    # 
-    # Set this to 0 to remove the consecutive Battle requirement.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 7
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-7: 0 # random value between 0 and 7
-
-  num_required_prisma_count_skygarden:
-    # Determines how many Prisma Shards are required to travel to Skygarden with Piplup in the Treehouse.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 14
-    14: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-14: 0 # random value between 1 and 14
-
-  in_zone_road_blocks:
-    # Adds Roadblock Items for obstacles inside the Zones, such as the Beach Zone Bridges.
-    # 
-    # When disabled, all affected Roadblock Items are added to the starting inventory.
-    'false': 0
-    'true': 50
-
-  harder_enemy_ai:
-    # Pokemon always use their harder AI during Power Competitions. Logic requirements are increased to account for the
-    # additional difficulty, but individual matchups may still be harder depending on player skill and know-how.
-    'false': 50
-    'true': 0
-
-  unlock_fast_travel_with_taxi_stop:
-    # Unlocks Fast Travel to reachable Zones when interacting with the Taxi Stops beside Drifblim.
-    # 
-    # This option is automatically disabled when Fast Travel Entrances are randomized.
-    'false': 0
-    'true': 50
-
-  show_client_text_ingame:
-    # Displays Archipelago Client messages inside the game. This can also be toggled from the PokePark Client.
-    'false': 0
-    'true': 50
-
-  fps_enhancement_patch:
-    # Unlocks the frame rate up to 60 FPS.
-    'false': 50
-    'true': 0
-
-  #############
-  # Locations #
-  #############
-  remove_battle_power_comp_locations:
-    # Removes Battle Power Competition Locations. Battles can still be played to gain Berries but will no longer send
-    # Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_chase_power_comp_locations:
-    # Removes Chase Power Competition Locations. Chases can still be played to gain Berries but will no longer send
-    # Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_quiz_power_comp_locations:
-    # Removes Quiz Power Competition Locations. Quizzes can still be played to gain Berries but will no longer send
-    # Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 0
-    'true': 50
-
-  remove_hide_and_seek_power_comp_locations:
-    # Removes Hide and Seek Power Competition Locations. Hide and Seek can still be played to gain Berries but will no
-    # longer send Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_errand_power_comp_locations:
-    # Removes Errand Locations. Errands can still be completed to gain Berries but will no longer send Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_misc_power_comp_locations:
-    # Removes miscellaneous Friendship Locations that do not belong to another Power Competition category. These
-    # activities can still be completed to gain Berries but will no longer send Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_power_training_locations:
-    # Removes Power Training Locations, such as Thunderbolt Training with Electabuzz.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_attraction_locations:
-    # Removes the individual Pokemon Record Locations from Attractions. Attractions can still be played to gain Berries,
-    # and their Prisma Locations are not removed by this option.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 0
-    'true': 50
-
-  remove_attraction_prisma_locations:
-    # Removes the Prisma Location from each Attraction. Attractions can still be played to gain Berries, and their
-    # individual Pokemon Record Locations are not removed by this option.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_pokemon_unlock_locations:
-    # Removes Locations for unlocking Pokemon in the overworld, such as Caterpie's Tree and Shroomish's Crate.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  remove_legendary_pokemon_power_comp_locations:
-    # Removes Legendary Pokemon Power Competition Locations, such as Celebi. These competitions can still be played to
-    # gain Berries but will no longer send Location Checks.
-    # 
-    # WARNING: Removing too many Location types may leave too few Locations for the required progression Items.
-    'false': 50
-    'true': 0
-
-  each_zone:
-    # Pokemon that appear in multiple Zones become separate Locations for each Zone.
-    # 
-    # For example, Bonsly in the Meadow, Cavern, and Magma Zones becomes three separate Locations instead of one shared
-    # Location.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: mew
+  randomize_attraction_entrances: false
+  randomize_fast_travel_entrances: false
+  randomize_treehouse_gates_entrances: false
+  randomize_general_entrances: false
+  mix_entrance_pools: false
+  power_starting_mode: randomize
+  start_fast_travel: one
+  num_required_battle_count: 0
+  num_required_prisma_count_skygarden: 14
+  in_zone_road_blocks: true
+  harder_enemy_ai: false
+  unlock_fast_travel_with_taxi_stop: true
+  show_client_text_ingame: true
+  fps_enhancement_patch: true
+  each_zone: false
+  remove_battle_power_comp_locations: false
+  remove_chase_power_comp_locations: false
+  remove_quiz_power_comp_locations: true
+  remove_hide_and_seek_power_comp_locations: false
+  remove_errand_power_comp_locations: false
+  remove_misc_power_comp_locations: false
+  remove_legendary_pokemon_power_comp_locations: false
+  remove_power_training_locations: false
+  remove_attraction_locations: true
+  remove_attraction_prisma_locations: false
+  remove_pokemon_unlock_locations: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Pokepelago:
   ################
