@@ -24397,439 +24397,86 @@ Noita:
   start_inventory_from_pool: {}
 
 NSMBW:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  hint_hint_movies:
-    # Free hints all hint movies when you reach peace castle.
-    'false': 0
-    'true': 50
-
-  #############
-  # Locations #
-  #############
-  shortcuts_sanity:
-    # Enabled:Turns all secret exit and some normal exits into locations and unlockable items.
-    #     Exits still needs to be unlocked as vanilla to be able to be used.
-    # Disabled : Lock disable non-necessary shortcuts, no ap location / items will be created.
-    # Dont_lock : Like disabled but most shortcuts (excluding cannons) will behave as vanilla.
-    disabled: 0
-    enabled: 50
-    dont_lock: 0
-
-  level_completion:
-    # All level clears are locations.
-    # Adds 231 locations.
-    # (Strongly recommended to enabled).
-    'false': 0
-    'true': 50
-
-  hint_movie_sanity:
-    # Hint movies in peach castles are locations, adds 65 locations.
-    # You will need to receive starcoin items and complete levels to buy them.
-    'false': 50
-    'true': 0
-
-  starcoin_sanity:
-    # If enabled will include 231 star coins as locations and items.
-    # If disabled will still create the star coins as ap items but place them in their vanilla locations.
-    'false': 0
-    'true': 50
-
-  include_inventory_powerups:
-    # A location that gets collected when you collect a powerup to your inventory, e.g. from a toad house or beating overworld enemy.
-    # These locations are very grindy, do not increase above 100, or set to random on your first playthrough.
-    # Recommend value less than 40
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  world_comp_priority:
-    # Makes half world completion and world completion priority locations -> they will have a good item.
-    # Causes generation failures ~0.5% if enabled.
-    'false': 50
-    'true': 0
-
-  #########
-  # Items #
-  #########
-  randomize_powerups:
-    # Will randomize ['Super Mushroom', 'Fire Flower', 'Mini Mushroom', 'Propeller Mushroom', 'Penguin Suit', 'Ice Flower']. Notably Star counts as an ability.
-    # They will require the archipelago item to pick its super 
-    # on_except_mushroom: (recommended) Will randomize all powerups except Super Mushroom. 
-    # on_progressive: Treats all powerups as Super Mushroom if the item Super Mushroom is not received.
-    'off': 0
-    on_except_mushroom: 50
-    on_progressive: 0
-    'on': 0
-
-  randomize_abilites:
-    # If ability randomizer should be enabled. (former movement rando)
-    # If enabled will shuffle all abilities in Abilities Included into the item pool
-    # They will need to be unlocked to be used.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  hint_hint_movies: true
+  level_completion: true
+  shortcuts_sanity: enabled
+  hint_movie_sanity: true
+  starcoin_sanity: true
+  include_inventory_powerups: 20
+  world_comp_priority: false
+  randomize_powerups: on_except_mushroom
+  randomize_abilites: true
   abilites_included:
-    # Which abilities are shuffled into the item pool.
-    # Requires Randomize Abilities to be enabled.
-    # Consider not enabling run on your first attempt since it slows you down significantly.
-    # More abilities exists as secret options as they have smaller issues.
-    # They are: Spin jump and Climb
-    ['Carry', 'Star', 'Ground Pound', 'Run', 'Swim', 'Wall Jump', 'Crouch', 'Yoshi']
-
-  randomize_level_elements:
-    # Whether level elements (also called level gimmicks) should be shuffled into the item pool.
-    # Uses the list from LevelElementsIncluded
-    'false': 50
-    'true': 0
-
+  - Carry
+  - Crouch
+  - Ground Pound
+  - Run
+  - Star
+  - Swim
+  - Wall Jump
+  - Yoshi
+  randomize_level_elements: true
   level_elements_included:
-    # Which level elements are shuffled into the item pool.
-    # Requires Randomize Level Elements to be enabled.
-    # The only valid none default option is pipe, which still is required for most world starts.
-    ['P-Switch', '!-Switch', 'Door', 'Check Point']
-
-  randomize_boss_health:
-    # If enabled all kopalings will start out with having 10 health.
-    # This number is reduced by 1 for each Boss Health item you receive
-    'false': 50
-    'true': 0
-
-  ###################
-  # Clear condition #
-  ###################
-  alternative_goal:
-    # Which goal to have
-    # Bowser      : Beat 8-C
-    # Starcoin    : Have starcoin = requirement
-    # Hintmovie   : Have all hintmovie locations
-    # All_levels  : Beat all levels in the game
-    bowser: 50
-    starcoins: 0
-    hintmovies: 0
-    all_levels: 0
-
-  bowser_star_unlock:
-    # Requires at least x star coins to unlock final level or goal.
-    # Recommended to have bellow ~ 200 to not get fill errors
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 231
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-231: 0 # random value between 0 and 231
-
-  bowser_world_unlock:
-    # Requirement of beating at least x of worlds to unlock final level.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 7
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-7: 0 # random value between 0 and 7
-
-  #########
-  # Logic #
-  #########
-  logic_difficulty:
-    # If hard will make locations that require glitches to be in logic,
-    # recommended to normal.
-    # Easy                 : Logic should mostly account for "vanilla" solutions, trivial platforming.
-    # Normal (Recommended) : Still easy platforming, but some creative solutions will be in logic.
-    # Hard                 : Logic expects you to do very hard skips
-    easy: 0
-    normal: 50
-    hard: 0
-
-  logic_outside_powerup:
-    # If on then solutions involving bringing powerups from outside the level will be considered in logic.
-    'false': 0
-    'true': 50
-
-  starting_world:
-    # Select the world you want to start with, or keep it at random.
-    world1: 0
-    world2: 0
-    world3: 0
-    world4: 0
-    world5: 0
-    world6: 0
-    world7: 0
-    world8: 0
-    random: 50
-
-  hint_movie_shop_price_logic:
-    # This option changes how logic for hint movies is decided.
-    # free (recommended)            : Hint movies does not cost starcoin items, just needs levels to be unlocked.
-    # ordered                       : Logic assumes you buy the movies in order, doing otherwise messes with logic (and can very rarely make you seed unbeatable).
-    # all                           : Logic assumes you have all star coins before a movie is in logic. This causes them to be very late spheres.
-    # progressive (not implemented) : Groups hintmovies together and requires all in that group to be bought before unlocking next group.
-    free: 50
-    ordered: 0
-    all: 0
-    progressive: 0
-
-  ####################
-  # Filler and Traps #
-  ####################
+  - '!-Switch'
+  - Check Point
+  - Door
+  - P-Switch
+  randomize_boss_health: true
+  alternative_goal: bowser
+  bowser_star_unlock: random
+  bowser_world_unlock: random
+  logic_difficulty: normal
+  logic_outside_powerup: true
+  starting_world: random
+  hint_movie_shop_price_logic: free
+  amount_support_received: 20
   filler_items:
-    # elect which filler items and in which ration to be generated.
+    Fill Inventory: 10
     1-ups: 10
     Coin x01: 10
     Coin x10: 10
     Coin x50: 10
-    Fill Inventory: 10
-    Low Gravity: 10
-    Power-up Grace: 10
     Random Power-up: 10
     Super Speed: 10
-
+    Low Gravity: 10
+    Power-up Grace: 10
   trap_items:
-    # Select which trap items and in which ration to be generated.
-    Death trap: 10
-    Goomba trap: 10
-    Gravity Trap: 10
-    Literature trap: 10
     Lose powerup trap: 10
-    Movement lock trap: 10
-    Reverse Control trap: 10
+    Goomba trap: 10
+    Death trap: 10
+    Time trap: 10
     Robbery trap: 10
     Shrink trap: 10
-    Slow Trap: 10
+    Literature trap: 10
     Throw trap: 10
-    Time trap: 10
-
-  trap_chance:
-    # The percentage ratio of fillers that will be traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  amount_support_received:
-    # Sets the amount of 1ups and powerups send to inventory when receiving their corresponding items.
-    # If set to -1 it will randomize between 1 and 10 each time you get an item
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is -1
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range--1-100: 0 # random value between -1 and 100
-
-  modifier_multiplier_percentage:
-    # Modifiers are temporary buffs / debuffs gained from filler / traps.
-    # The length of all modifiers are multiplied by this percentage.
-    # Modifiers still clears on death.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000: 0 # random value between 1 and 1000
-
-  ###############
-  # Riivolution #
-  ###############
-  use_riivolution:
-    # Creates a riivolution patch when connecting the client to the server.
-    # If disabled the client will instead rely on memory patching.
-    # Required to:
-    #  - Use other riivolution based options.
-    #  - Not having the client autoload save states.
-    #  - See custom randomizer graphics (log and starcoin model)
-    'false': 0
-    'true': 50
-
-  level_shuffle_riivolution:
-    # Shuffles the level order.
-    # Requires use_riivolution to be enabled.
-    'false': 50
-    'true': 0
-
-  music_shuffle_riivolution:
-    # WARNING: Causes caches on some seeds, may need manual removal.
-    # Shuffles the background music and sound effects.
-    # Requires use_riivolution to be enabled.
-    'false': 50
-    'true': 0
-
-  tile_sheet_shuffle_riivolution:
-    # Shuffles the Pa0_jyotyu textures, changes the looks of ?-blocks and brick blocks
-    # Requires use_riivolution to be enabled.
-    'false': 50
-    'true': 0
-
-  #############
-  # DeathLink #
-  #############
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_link_group:
-    # Death Link only applies to players with an identical Group name.
-    # Games that don't support the Group option count as having an empty group name.
-    '': 50
-
-  death_link_amnesty:
-    # How many deaths it takes to send a deathlink.
-    # Keep at 1 for every death to send.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  death_link_grace:
-    # How many deathlinks it takes to receive a death.
-    # Keep at 1 for every death to be received.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 25
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-25: 0 # random value between 1 and 25
-
-  #########
-  # Other #
-  #########
-  starcoin_collect_immediately:
-    # If enabled will send checks for star coins directly when collected,
-    # otherwise will send them on level completion.
-    # Does NOT impact logic, you will still be expected to complete a level before its star coins are in logic.
-    'false': 0
-    'true': 50
-
-  save_state_slot:
-    # Which save state slot the client should use to auto save too
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 8
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-8: 0 # random value between 1 and 8
-
-  starcoin_shop_multiplier:
-    # A multiplier for what a star coin is worth when buying from the hint movie store.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  important_early_items:
-    # Marks some important items as early, resulting in a more fun playthrough.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+    Reverse Control trap: 10
+    Movement lock trap: 10
+    Slow Trap: 10
+    Gravity Trap: 10
+  trap_chance: 15
+  modifier_multiplier_percentage: 100
+  use_riivolution: true
+  level_shuffle_riivolution: true
+  music_shuffle_riivolution: false
+  tile_sheet_shuffle_riivolution: false
+  death_link: true
+  death_link_group: ''
+  death_link_amnesty: 2
+  death_link_grace: 1
+  starcoin_shop_multiplier: 3
+  important_early_items: true
+  starcoin_collect_immediately: true
+  save_state_slot: 7
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 OpenRCT2:
   ################
