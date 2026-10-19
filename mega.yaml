@@ -19940,596 +19940,80 @@ Mario Kart Double Dash:
   start_inventory_from_pool: {}
 
 Mario Sports Mix:
-  ################
-  # Game Options #
-  ################
+  progression_balancing: normal
+  accessibility: full
   enabled_sports:
-    # Choose which sports to enable
-    # 
-    # NOTE: You can still do Behemoth without all the 4 main sports enabled however
-    # Behemoth King **requires** Sports Mix enabled
-    ['Basketball', 'Volleyball', 'Hockey', 'Dodgeball', 'Sports Mix']
-
-  restrict_sports_mix:
-    # Sports Mix will only choose between enabled sports.
-    'false': 0
-    'true': 50
-
-  include_exhibition:
-    # Include exhibition locations and items
-    'false': 0
-    'true': 50
-
-  include_tournaments:
-    # Include tournament locations and items
-    'false': 0
-    'true': 50
-
-  start_with_sports:
-    # Start with random sports? HEAVILY RECOMMENDED
-    # Will cause immediate BK if off and you DON'T have any party modes given at the start.
-    # This will NOT give you Sports Mix.
-    'false': 0
-    'true': 50
-
-  start_with_mushroom_cup:
-    # Start with Mushroom Cup for Basketball, Dodgeball, Volleyball and Hockey?
-    # (Also unlocks related courts) - Recommended if you don't have party games on!
-    # 
-    # Random option pulls from both Normal and Hard Cups 
-    # and defaults to both if Progressive Cups are enabled.
-    # Gives all Mushroom Cup Stages as well if Progressive Courts are enabled.
-    none: 0
-    normal_difficulty: 50
-    hard_difficulty: 0
-    both: 0
-    random_cups: 0
-
-  start_with_random_mushroom_cups:
-    # How many random Mushroom Cups should you start with? (1-7)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 7
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-7: 0 # random value between 1 and 7
-
-  cup_unlock_type:
-    # How to unlock cups
-    # 
-    # **Cup Item**: Each cup is its own item
-    # **Progressive Cup**: Cups are unlocked in a certain order with progressive items. (Normal -> Hard (If enabled) ->
-    # Sports Mix)
-    # Note: Progressive Cup will unlock the cup for **every** sport while Cup Item has cups for each sport
-    cup_item: 50
-    progressive_cup: 0
-
-  court_unlock_type:
-    # How to unlock courts
-    # 
-    # **Court Item**: Each court is its own item
-    # **Progressive Court**: Courts are unlocked in a certain order with progressive items
-    # Note: Behemoth Stage is an item! Behemoth Stage is the last court unlocked in Progressive Court
-    court_item: 50
-    progressive_court: 0
-
-  start_with_characters:
-    # Start with 2 or 3 random characters
-    none: 50
-    2_characters: 0
-    3_characters: 0
-
-  exhibition_type:
-    # What type of exhibition locations do you want?
-    # 
-    # **All Sports**: Exhibition locations will be for all the 4 main sports
-    # **Universal**: Exhibition locations will be for **any** sport
-    all_sports: 50
-    universal: 0
-
+  - Basketball
+  - Dodgeball
+  - Hockey
+  - Sports Mix
+  - Volleyball
+  restrict_sports_mix: true
+  include_tournaments: true
+  include_exhibition: true
+  start_with_sports: true
+  start_with_mushroom_cup: normal_difficulty
+  start_with_random_mushroom_cups: 1
+  cup_unlock_type: cup_item
+  court_unlock_type: court_item
+  start_with_characters: none
+  exhibition_type: all_sports
   exhibition_difficulties:
-    # Which exhibition difficulties should be included?
-    # If the difficulty is off, you won't be able to send checks with that difficulty
-    # (Easy, Normal, Hard, Expert)
-    ['Normal', 'Hard']
-
-  hard_tournament_difficulty:
-    # Would you like to include locations and items for Hard Tournaments?
-    # Adds 3 Progressive Cups to the pool if Progressive Cup Item is selected
-    'false': 0
-    'true': 50
-
-  sports_mix_unlock:
-    # Unlock Sports Mix by getting the Sports Mix item or the 4 Sports Crystals
-    sports_mix_item: 50
-    sports_crystals: 0
-
-  trap_chance:
-    # The chance a filler is swapped with a trap
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #################################
-  # Basketball Tournament Options #
-  #################################
-  basket_time:
-    # Select the custom amount of time for a Basketball tournament
-    1_min_30_secs: 0
-    2_mins: 0
-    2_mins_30_secs: 50
-    3_mins: 0
-    3_mins_30_secs: 0
-    'off': 0
-
-  enable_b_points_win:
-    # Getting a certain amount of points wins you or the opponent the set
-    'false': 50
-    'true': 0
-
-  b_points_win:
-    # Set the required amount of points to win
-    # NOTE: The requirement for Bowser Jr. Blvd. is (value x 5) + 50 rounded
-    # to the nearest 1 decimal place
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 50
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-50: 0 # random value between 10 and 50
-
-  b_period:
-    # How many periods do you want to be playing?
-    # Recommended to set a low amount, kinda boring otherwise.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  ################################
-  # Dodgeball Tournament Options #
-  ################################
-  dodge_time:
-    # Select the custom amount of time for a Dodgeball tournament
-    2_mins: 0
-    2_mins_30_secs: 0
-    3_mins: 50
-    3_mins_30_secs: 0
-    4_mins: 0
-    'off': 0
-
-  d_period:
-    # How many periods do you want to be playing?
-    # Recommended to set a low amount, kinda boring otherwise.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  d_max_health:
-    # How much health should everyone have?
-    '100': 50
-    '150': 0
-    '200': 0
-    '250': 0
-    '300': 0
-
-  #################################
-  # Volleyball Tournament Options #
-  #################################
-  v_points_win:
-    # Set the required amount of points to win
-    # NOTE: The requirement for Bowser Jr. Blvd. is value x 2 rounded
-    # to the nearest 1 decimal place
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 20
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-20: 0 # random value between 10 and 20
-
-  v_period:
-    # How many sets do you want to be playing?
-    # Recommended to set a low amount, kinda boring otherwise.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  #############################
-  # Hockey Tournament Options #
-  #############################
-  hockey_time:
-    # Select the custom amount of time for a Hockey tournament
-    2_mins: 0
-    2_mins_30_secs: 0
-    3_mins: 50
-    3_mins_30_secs: 0
-    4_mins: 0
-    'off': 0
-
-  enable_h_points_win:
-    # Getting a certain amount of points wins you or the opponent the set
-    'false': 50
-    'true': 0
-
-  h_points_win:
-    # Set the required amount of points to win
-    # NOTE: The requirement for Bowser Jr. Blvd. is (value x 5) + 50 rounded
-    # to the nearest 1 decimal place
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 50
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-50: 0 # random value between 10 and 50
-
-  h_period:
-    # How many periods do you want to be playing?
-    # Recommended to set a low amount, kinda boring otherwise.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  ################
-  # Goal Options #
-  ################
-  goal_condition:
-    # What is your goal?
-    # 
-    # **Defeat Behemoth**: Defeat the Behemoth to goal!
-    # **Defeat Behemoth King**: Defeat the Behemoth King to goal!
-    # **Win Cups**: Win a certain amount of cups to goal!
-    # **Exhibition Tour**: Win every exhibition match for your selected difficulties to goal! (Needs All Sports option)
-    # **Party Palooza**: Win every game in every Party Mode to goal!
-    # 
-    # NOTE: Exhibition Tour disables the QoL feature for winning exhibition matches, recommended to have 2 difficulties
-    # selected
-    defeat_behemoth: 0
-    defeat_behemoth_king: 50
-    win_cups: 0
-    exhibition_tour: 0
-    party_palooza: 0
-
-  win_cups_amount:
-    # How many cups are required to goal?
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 27
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-27: 0 # random value between 1 and 27
-
-  boss_locations:
-    # Have locations behind bosses even if your goal isn't that boss!
-    # Cannot be the same as the goal condition!
-    'no': 50
-    defeat_behemoth: 0
-    defeat_behemoth_king: 0
-    both: 0
-
-  behemoth_hp:
-    # Behemoth Health - 2400 is default
-    # Recommended to edit this in the YAML (2400 - 4000)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2400
-    # Maximum value is 4000
-    2400: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2400-4000: 0 # random value between 2400 and 4000
-
-  behemoth_king_hp:
-    # Behemoth King Health - 3000 is default
-    # Recommended to edit this in the YAML (3000 - 7000)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3000
-    # Maximum value is 7000
-    3000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3000-7000: 0 # random value between 3000 and 7000
-
-  ######################
-  # Party Mode Options #
-  ######################
+  - Hard
+  - Normal
+  hard_tournament_difficulty: true
+  sports_mix_unlock: sports_mix_item
+  trap_chance: 15
+  basket_time: 2_mins_30_secs
+  enable_b_points_win: false
+  b_points_win: 30
+  b_period: 1
+  dodge_time: 3_mins
+  d_period: 1
+  d_max_health: '100'
+  v_points_win: 10
+  v_period: 1
+  hockey_time: 3_mins
+  enable_h_points_win: false
+  h_points_win: 20
+  h_period: 1
+  goal_condition: defeat_behemoth
+  win_cups_amount: 15
+  boss_locations: 'no'
+  behemoth_hp: 2400
+  behemoth_king_hp: 3000
   party_mode:
-    # Which (if any) Party Modes do you want enabled?
-    # (Feed Petey, Harmony Hustle, Bob-omb Dodge, Smash Skate)
-    # 
-    # NOTE: All are required if your goal is Party Palooza
-    ['Feed Petey', 'Smash Skate']
-
-  start_with_party_modes:
-    # Start with the enabled party modes
-    # Useful if you're not starting with the sports!
-    'false': 50
-    'true': 0
-
-  party_mode_opponent:
-    # Which CPU will be your main opponent?
-    # (This CPU will get things like points from deathlink, points
-    # from Coins Trap, etc)
-    cpu_2: 50
-    cpu_3: 0
-    cpu_4: 0
-
-  ##########################
-  # Alternate Path Options #
-  ##########################
-  include_alt_paths:
-    # Include alternate paths?
-    # No: Alt Paths will not be included
-    # Yes: Alt Paths will be included
-    # LR Split: Alt Paths will be split between Left and Right
-    'false': 50
-    'true': 0
-
-  alt_path_type:
-    # What Type of Alt Path Locations do you want?
-    # All Paths: Alt Path locations will be per sport and per difficulty
-    # Difficulty Universal: Alt Path Locations will be for **any** difficulty
-    # Sport Universal: Alt Path Locations will be for **any** sport
-    # Full Universal: Alt Path Locations will be for **any** difficulty/sport
-    # Progessive Options give Progressive items which unlock the Alt Paths in cup order
-    # 
-    # IMPORTANT NOTE: Sports Mix will NOT send any alt path checks if alt paths are combined
-    all_paths: 50
-    difficulty_combine: 0
-    sport_combine: 0
-    full_combine: 0
-    progressive_sport_combine: 0
-    progressive_full_combine: 0
-
-  always_spawn_alt_paths:
-    # Make it so the criteria to spawn Alternate Paths is always enabled
-    # 
-    # NOTE: Certain conditions require Special Meter, you can reset to get a better
-    # position for most of them except the Dodgeball Star Cup Round 2 condition,
-    # though this is covered in logic.
-    'false': 0
-    'true': 50
-
-  #####################
-  # Deathlink Options #
-  #####################
-  deathlink:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    # Toggleable inside client
-    'false': 50
-    'true': 0
-
-  deathlink_action:
-    # What counts as sending a deathlink? Requires Deathlink on
-    # 
-    # NOTE: Every number of points works like normal for everything BUT dodgeball.
-    # In dodgeball, everytime the opponent wins the set a deathlink triggers
-    losing_or_tying_a_match: 50
-    every_number_of_points: 0
-
-  deathlink_opponent_scores_points:
-    # How many points should the opponent get to send a deathlink?
-    # Requires Deathlink on & Every Number Of Points action
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  deathlink_consequence:
-    # What happens when you receive a deathlink? Requires Deathlink on
-    lose_match: 50
-    opponent_gains_points: 0
-
-  deathlink_opponent_get_points:
-    # How many points should the opponent get when receiving a deathlink?
-    # Requires Deathlink on & Opponent Gains Point consequence
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  deathlink_boss_health_recovered:
-    # What percentage of the boss' health should be recovered when sent a deathlink?
-    # (Behemoth & Behemoth King)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  deathlink_dodgeball_health_lost:
-    # **ONLY FOR DODGEBALL**
-    # How much health will you lose when you get sent a deathlink if you're in dodgeball?
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ##################
-  # Sanity Options #
-  ##################
-  character_sanity:
-    # Turn on or off Character Sanity
-    # (Winning with a character and/or costume sends a check)
-    'off': 50
-    characters: 0
-    characters_and_costumes: 0
-
-  send_both_character_sanity:
-    # When winning with a costume, send the Character Sanity
-    # check for *both* the character and the costume or just the costume
-    'false': 50
-    'true': 0
-
-  court_sanity:
-    # Winning on each court sends a check
-    'false': 50
-    'true': 0
-
-  special_sanity:
-    # Using each character's special sends a check
-    'false': 50
-    'true': 0
-
-  #################
-  # Extra Options #
-  #################
-  oops_all_character:
-    # Meme Option, Makes it so all Opponents are a Single Character
-    'off': 50
-    mario: 0
-    luigi: 0
-    peach: 0
-    daisy: 0
-    yoshi: 0
-    wario: 0
-    waluigi: 0
-    donkey_kong: 0
-    diddy_kong: 0
-    toad: 0
-    bowser: 0
-    bowser_jr: 0
-    moogle: 0
-    cactuar: 0
-    ninja: 0
-    white_mage: 0
-    slime: 0
-    black_mage: 0
-
-  replace_extra:
-    # Choose whether to also replace the Goalie in Hockey and the Yoshi in Dodgeball
-    'false': 50
-    'true': 0
-
-  shuffle_music:
-    # Shuffles the music in the game
-    'off': 50
-    shuffle_within_groups: 0
-    full_shuffle: 0
-
-  random_tint:
-    # Randomly tints each stage.
-    # Volleyball has some issues and will not be tinted as a result.
-    'false': 50
-    'true': 0
-
-  tint_volleyball:
-    # EPILEPSY WARNING! DO NOT ENABLE IF YOU'RE SENSITVE TO FLASHING LIGHTS
-    # 
-    # Volleyball has some issues with tinting, flickering back to white constantly
-    # for a single frame during gameplay. Enable this option only if your okay with this.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Feed Petey
+  - Smash Skate
+  start_with_party_modes: false
+  party_mode_opponent: cpu_2
+  include_alt_paths: false
+  alt_path_type: all_paths
+  always_spawn_alt_paths: true
+  deathlink: true
+  deathlink_action: losing_or_tying_a_match
+  deathlink_consequence: lose_match
+  deathlink_opponent_scores_points: 10
+  deathlink_opponent_get_points: 10
+  deathlink_boss_health_recovered: 20
+  deathlink_dodgeball_health_lost: 20
+  character_sanity: 'off'
+  send_both_character_sanity: false
+  court_sanity: false
+  special_sanity: false
+  oops_all_character: 'off'
+  replace_extra: false
+  shuffle_music: 'off'
+  random_tint: true
+  tint_volleyball: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Mario Super Sluggers:
   ################
