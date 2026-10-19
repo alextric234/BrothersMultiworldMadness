@@ -30937,504 +30937,66 @@ PokePark:
   start_inventory_from_pool: {}
 
 Pokepelago:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  dexsanity:
-    # If enabled, each Pokemon has its own location check ('Guess {Pokemon}').
-    # Access is gated by whichever lock options are active (Type Keys, Region Passes,
-    # Route Keys, Line Unlocks, Gym Badges, etc.).
-    # Disabling removes all per-Pokemon locations, leaving only milestone-based checks.
-    # Automatically enabled when Route Locks or Line Locks is on.
-    'false': 0
-    'true': 50
-
-  starting_location_count:
-    # Number of free 'Oak's Lab' starting locations to include (0-8).
-    # These are immediately accessible checks (Oak's Parcel Delivery, Pokedex Received, etc.)
-    # that kickstart your adventure. Set to 0 to disable them entirely.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  goal_type:
-    # How the goal is defined.
-    # Percentage: guess a percentage of the active Pokemon pool (see 'Goal Percentage').
-    # Count: guess a fixed number of Pokemon (see 'Goal Count').
-    percentage: 50
-    count: 0
-
-  goal_percentage:
-    # Percentage of the active Pokemon pool that must be guessed to complete the game.
-    # Only used when 'Goal Type' is set to 'percentage'.
-    # For example, 80 with 386 active Pokemon means guessing 309 to win.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  goal_count:
-    # Fixed number of Pokemon that must be guessed to complete the game.
-    # Only used when 'Goal Type' is set to 'count'.
-    # Automatically capped to the total active Pokemon across selected regions.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1025
-    151: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1025: 0 # random value between 1 and 1025
-
-  ###########
-  # Regions #
-  ###########
+  progression_balancing: normal
+  accessibility: full
+  dexsanity: true
+  starting_location_count: 4
+  goal_type: percentage
+  goal_percentage: 70
+  goal_count: 151
+  region_locks: true
   regions:
-    # Which game regions to include. Each region adds its Pokemon to the pool.
-    # 
-    # Provide a YAML list of region names, for example:
-    #     regions:
-    #       - Kanto
-    #       - Johto
-    #       - Hoenn
-    # (Inline form also works: regions: [Kanto, Johto, Hoenn].)
-    # 
-    # At least one region is always active (defaults to Kanto if the list is empty).
-    # This manual list is honored by default. It is ONLY ignored if you set
-    # 'random_region_count' to a non-zero value, which randomizes the regions instead.
-    # Valid regions: Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar, Hisui, Paldea.
-    # 
-    # KNOWN CORNER, Hisui on its own: Hisui has only 7 Pokemon, where every other region has
-    # 72 or more. It supplies roughly 37 locations and nearly all of them sit behind the very
-    # keys that need placing. So 'regions: [Hisui]' with nothing else AND two or more lock
-    # options (type + line + route + legendary + badge + the category locks) is rejected at
-    # the start of generation with a clear error naming the fix, instead of dying mid-fill
-    # with a cryptic 'FillError: No more spots to place N items'. The world never silently
-    # disables a lock you chose. The fix is to add a second region (Galar is the natural
-    # partner for Hisui) or to turn some lock options off. Random selection will never hand
-    # you a lone Hisui by accident, so you only reach this by asking for it here. Hisui
-    # together with any other region is perfectly safe.
-    ['Kanto']
-
-  random_region_count:
-    # Override the manual Regions list with a random selection.
-    # Set to 0 (or disabled) to use the manual Regions list above (THIS IS THE DEFAULT,
-    # so your 'regions:' list is honored unless you change this).
-    # Set to 1-10 to ignore the manual list and randomly pick that many regions
-    # (or generations if grouping is on).
-    # Set to random to also randomize how many are picked.
-    # When 'Group Hisui & Galar' is enabled, this picks from 9 generation units
-    # (Gen 8 = Galar + Hisui together) instead of 10 individual regions.
-    # One guard rail: when the roll comes out to a single unit, regions with fewer than 20
-    # Pokemon are left out of that draw, because a lone 7-Pokemon Hisui cannot hold a heavy
-    # lock stack's keys and would crash generation. Hisui stays fully available in every roll
-    # of two or more regions, and your lock choices are never touched. If you actually want a
-    # solo micro-region, ask for it directly with the manual 'regions' list; note that a solo
-    # micro-region combined with two or more lock options is rejected at generation start
-    # (see the Regions option's known-corner note).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    random: 0 # equivalent to -1
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-    disabled: 50 # equivalent to 0
-
-  group_hisui_galar:
-    # When enabled, Galar and Hisui are treated as a single 'Gen 8' unit
-    # for random region selection. Picking Gen 8 always includes both regions.
-    # When disabled, Galar and Hisui are independent picks.
-    # Only affects random_region_count; the manual Regions list is unaffected.
-    # Leaving this on is the friendliest setting for Hisui, since it guarantees Hisui always
-    # arrives with Galar's 89 Pokemon behind it. With it off, Hisui can still be rolled in any
-    # multi-region set; it just can never be rolled as the only region (see
-    # 'random_region_count').
-    'false': 0
-    'true': 50
-
-  region_locks:
-    # If enabled, non-starting regions require a Region Pass item to access.
-    # Disabling this makes all selected regions freely accessible from the start.
-    'false': 0
-    'true': 50
-
-  starter_region:
-    # Which game region your adventure starts in.
-    # Determines which Pokemon starters are available and which Type Keys begin pre-collected.
-    # 'any': a random active region is chosen each seed.
-    # Specific region: must also be included in the Regions option.
-    # If the chosen region is not active, falls back to a random active region.
-    any: 50
-    kanto: 0
-    johto: 0
-    hoenn: 0
-    sinnoh: 0
-    unova: 0
-    kalos: 0
-    alola: 0
-    galar: 0
-    hisui: 0
-    paldea: 0
-
-  starter_pokemon:
-    # Which starter Pokemon to begin with.
-    # 'any': a random starter from the starting region's list.
-    # 'first'/'second'/'third': by position in the starting region's list.
-    # 'random_starter': picks randomly from ALL regional starters across active regions.
-    # 'random_any': picks from ALL active base-form Pokemon (fully random).
-    # Starter Count controls how many starters are chosen (1-3) for random modes.
-    any: 50
-    first: 0
-    second: 0
-    third: 0
-    random_starter: 0
-    random_any: 0
-
-  starter_count:
-    # How many starter Pokemon to begin with (1-3).
-    # Each starter pre-collects its Type Keys, Route Key, Line Unlock, and
-    # Region Pass (if the starter is in a non-starting region).
-    # More starters = more open early game with wider type/route/line coverage.
-    # Only used when Starter Pokemon is set to 'random_starter' or 'random_any'.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 3
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-3: 0 # random value between 1 and 3
-
-  prefer_lab_starters:
-    # When Starter Pokemon is 'random', prefer traditional starters
-    # (Bulbasaur, Charmander, Squirtle, Chikorita, etc.) over wild Pokemon.
-    # Gives a 5x weight to Professor's Lab Pokemon in the random selection.
-    'false': 0
-    'true': 50
-
-  ##############
-  # Lock Gates #
-  ##############
-  type_locks:
-    # If enabled, guessing a Pokemon requires all Type Keys matching its elemental types
-    # (e.g. Bulbasaur needs both Grass Type Key and Poison Type Key).
-    # 
-    # Generation cost: adds one progression item per active type (up to 18).
-    # Pokemon of a type can only be caught with that Type Key, so most Type Keys
-    # must go in non-type-gated locations (starting slots + "Guessed N" milestones
-    # + dexsanity "Guess X" locations). Disabling Dexsanity removes the per-Pokemon
-    # locations and can squeeze Type Key placement on small regions -- see the
-    # Hisui-only case in the backlog history and the Line Locks perf note below.
-    'false': 0
-    'true': 50
-
-  route_locks_enabled:
-    # Require Route Key items to access Pokemon by game area.
-    # Routes are grouped into meaningful areas (e.g. Melemele Island, Wild Area
-    # North, Hoenn Early Routes). Each area adds one Route Key to the item pool.
-    # A Pokemon is accessible if you have ANY area key for a route it appears on.
-    # Forces Dexsanity ON if it isn't already (needed for enough locations to
-    # hold all Route Keys); a logging.warning fires when that mutation happens.
-    # Route Locks and Line Locks compose independently and no longer auto-disable
-    # each other -- the two gating axes are orthogonal (they gate by different
-    # things: where a Pokemon is found vs. its evolution family).
-    # 
-    # YAML key: route_locks_enabled (NOT route_locks). The dataclass attribute
-    # in PokepelagoOptions uses the _enabled suffix; AP silently ignores unknown
-    # keys, so a YAML with `route_locks: true` will generate with this option
-    # set to its default (0) and the setting will appear to have no effect.
-    'false': 50
-    'true': 0
-
-  line_locks:
-    # Require a Line Unlock item for each evolution family.
-    # Every active evolution family adds one Line Unlock to the item pool.
-    # Required for ALL members of the family (base forms and evolutions).
-    # Evolution-only Pokemon inherit route access from their base form.
-    # Forces Dexsanity ON if it isn't already (needed for enough locations to
-    # hold all Line Unlocks); a logging.warning fires when that mutation happens.
-    # Composes independently with Route Locks (no longer auto-disabled when
-    # Route Locks is also on). When the active region pool is too small for
-    # the number of progression items Line Locks would create, generation only
-    # *warns* about the estimated progression-to-location ratio -- it never
-    # silently disables the option (see the -- GENERATION PERFORMANCE -- note
-    # below for the heuristic and its threshold).
-    # 
-    # -- GENERATION PERFORMANCE -------------------------------------------------
-    # Line Locks is the single biggest cost on generation time, because it adds
-    # one progression item per evolution family across every active region
-    # (~50-100 per region, 300+ across many regions). Stacking Line Locks with:
-    # 
-    #   - 5+ active regions, AND
-    #   - Type Locks + Region Locks + Badge Level Gating, AND
-    #   - 3+ of {legendary, trade, baby, fossil, paradox, stone, ultra_beast} locks
-    # 
-    # ...pushes the progression-item count into the 700-900 range. `fill_restrictive`
-    # complexity scales with progression-items x locations, so these configs can
-    # take 30-60s to generate on modest hardware (vs. <5s for typical configs).
-    # The heuristic at `__init__.py:90-108` only WARNS (via logging.warning) when the
-    # estimated progression-to-location ratio exceeds 55% -- it no longer disables
-    # Line Locks. This flags likely FillError risk but not slow-but-completes
-    # generation. If you want all-locks-on with many regions, be prepared to
-    # wait on generation.
-    'false': 50
-    'true': 0
-
-  badge_level_gating:
-    # Gate Pokemon behind Gym Badges based on their encounter level.
-    # Higher-level Pokemon require more badges (Lv1-10: 0 badges, Lv11-20: 1, etc.).
-    # When combined with Legendary Locks, uses the higher requirement of the two.
-    # Requires Gym Badges in the item pool (enabled automatically).
-    'false': 50
-    'true': 0
-
-  legendary_locks:
-    # Gate legendary Pokemon behind Gym Badge items.
-    # Collect 6 Badges for sub-legendaries (trios, regis, tapus, etc.),
-    # 7 Badges for box legendaries (version mascots), and
-    # 8 Badges for mythics (event-only Pokemon like Mew, Celebi, Arceus).
-    # When Badge Level Gating is also on, uses the higher badge requirement.
-    # 8 Gym Badge items are added to the item pool when enabled.
-    'false': 0
-    'true': 50
-
-  trade_locks:
-    # Require a Link Cable item before guessing trade-evolved Pokemon
-    # (Alakazam, Machamp, Golem, Gengar, Scizor, Steelix, Conkeldurr, etc.).
-    'false': 0
-    'true': 50
-
-  baby_locks:
-    # Require Daycare item(s) before guessing baby Pokemon
-    # (Pichu, Cleffa, Igglybuff, Togepi, Tyrogue, Smoochum, Elekid, Magby, etc.).
-    'false': 50
-    'true': 0
-
-  daycare_count:
-    # Number of Daycare items required to unlock baby Pokemon.
-    # Only used when Baby Pokemon Lock is enabled.
-    # Set higher for a more gradual unlock; all copies must be received.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  fossil_locks:
-    # Require a Fossil Restorer item before guessing fossil-revived Pokemon
-    # (Omanyte, Omastar, Kabuto, Kabutops, Aerodactyl, Lileep, Cranidos, etc.).
-    'false': 50
-    'true': 0
-
-  ultra_beast_locks:
-    # Require an Ultra Wormhole item before guessing Ultra Beasts
-    # (Nihilego through Blacephalon, plus Necrozma which also originates from Ultra Space).
-    'false': 50
-    'true': 0
-
-  paradox_locks:
-    # Require a Time Rift item before guessing Paradox Pokemon
-    # (Great Tusk, Roaring Moon, Iron Valiant, etc., plus Koraidon and Miraidon).
-    # Only relevant when Paldea is active.
-    'false': 50
-    'true': 0
-
-  stone_locks:
-    # Require the matching evolutionary stone item before guessing stone-only evolutions.
-    # Each stone type that gates at least one active Pokemon adds one stone item to the pool.
-    # Examples: Fire Stone -> Arcanine/Ninetales/Flareon, Water Stone -> Starmie/Vaporeon/Cloyster.
-    'false': 0
-    'true': 50
-
-  #########
-  # Items #
-  #########
-  include_shinies:
-    # Add Shiny Charm filler items to the item pool.
-    # Receiving a Shiny Charm makes a random Pokemon in your caught list display
-    # its shiny sprite. Purely cosmetic -- no gameplay effect.
-    'false': 0
-    'true': 50
-
-  master_ball_bypass_gates:
-    # If enabled, Master Balls can catch any Pokemon regardless of lock gates.
-    # If disabled, Master Balls can only be used on Pokemon you could normally guess.
-    'false': 0
-    'true': 50
-
-  pokegear_pokedex_filler:
-    # Classify Pokedex and Pokegear as filler instead of useful items.
-    # They behave identically in-game (reveal a Pokemon's type/identity); this only
-    # lowers their fill priority so they stop crowding the useful-item tier when you
-    # end up with a large surplus. Master Ball is unaffected.
-    # Off by default (Pokedex and Pokegear remain 'useful').
-    'false': 50
-    'true': 0
-
-  trap_chance:
-    # Percentage chance (0-100) that a filler item slot will be replaced by a trap item.
-    # 0 means no traps; 100 means all filler items will be traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  - Galar
+  - Unova
+  - Sinnoh
+  - Paldea
+  - Kanto
+  - Kalos
+  - Johto
+  - Hoenn
+  - Hisui
+  - Alola
+  random_region_count: disabled
+  group_hisui_galar: true
+  starter_region: random
+  starter_pokemon: random
+  starter_count: 1
+  prefer_lab_starters: true
+  type_locks: true
+  route_locks_enabled: false
+  line_locks: false
+  badge_level_gating: false
+  legendary_locks: true
+  trade_locks: true
+  baby_locks: false
+  daycare_count: 1
+  fossil_locks: false
+  ultra_beast_locks: false
+  paradox_locks: false
+  stone_locks: true
+  master_ball_bypass_gates: true
+  pokegear_pokedex_filler: false
+  include_shinies: true
+  trap_chance: 15
   trap_weights:
-    # Controls the relative weight of each trap type when a trap slot is filled.
-    # Higher values mean that trap appears more often. Set a trap to 0 to disable it entirely.
-    # Traps you leave out of your YAML keep their default weight; only an explicit 0 disables one.
-    # The overall chance of a trap appearing is controlled by 'Trap Chance'.
-    # Traps: small_shuffle, big_shuffle, derpy_mon, release.
+    small_shuffle: 10
     big_shuffle: 5
     derpy_mon: 25
     release: 25
-    small_shuffle: 10
-
   filler_weights:
-    # Controls the relative weight of each filler item category.
-    # Higher values mean that category appears more often. Set a category to 0 to disable it entirely.
-    # Categories you leave out of your YAML keep their default weight; only an explicit 0 disables one.
-    # Traps are controlled separately by the 'Trap Chance' option.
-    # Categories: master_ball, key_items, splash.
-    key_items: 100
     master_ball: 50
+    key_items: 100
     splash: 50
-
-  local_filler_percent:
-    # Percentage of this world's own filler items to force into this world's own
-    # locations before the multiworld fill runs, keeping them out of other players'
-    # games. Only filler is localized (Pokedex, Pokegear, Master Ball, Shiny Charm,
-    # traps, and the splash filler); progression and useful gate items are never
-    # localized, so the seed stays completable and cross-game progression is
-    # unaffected. Higher values keep more of Pokepelago's large Dexsanity filler pool
-    # out of an async/multiworld.
-    # 
-    # Dexsanity can create up to ~1025 'Guess {Pokemon}' locations, which forces an
-    # equally large filler pool; without this, most of that filler floods other games.
-    # 'off' (0) keeps the classic behavior. 'auto' (-1, the default) scales a forced
-    # minimum by how inflated the pool is: 0 when Dexsanity is off, otherwise 50% for
-    # one region and +10% per additional region, capped at 90% so some filler still
-    # travels to the rest of the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-    off: 0 # equivalent to 0
-    auto: 50 # equivalent to -1
-
-  ###########
-  # Display #
-  ###########
-  hide_spoilers:
-    # If on, every per-Pokemon location name is shown as its National Dex number
-    # instead of the Pokemon name ('Guess Bulbasaur' becomes 'Guess Pokemon 1').
-    # This stops hints and tracker location lists from giving away which Pokemon
-    # are available to guess. It is cosmetic only: location ids, logic, checks and
-    # item names are unchanged, so generation and completion are identical either way.
-    # Useful for streams or shared screens. Off by default.
-    'false': 50
-    'true': 0
-
-  stop_autosubmit_on_goal:
-    # Default for the client's 'stop auto-submit after goal' toggle.
-    # When on, once your goal is reached the client stops auto-submitting remaining
-    # guesses. This only sets the client's initial preference -- players can still
-    # override it locally. Off by default (auto-submit keeps running after goal).
-    # Has no effect on generation or logic.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  local_filler_percent: auto
+  stop_autosubmit_on_goal: false
+  hide_spoilers: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Portal 2:
   ################
