@@ -18397,736 +18397,80 @@ Kingdom Hearts III:
   start_inventory_from_pool: {}
 
 Kirby Air Ride:
-  ################
-  # Game Options #
-  ################
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ###################
-  # General Options #
-  ###################
-  energy_link:
-    # Enables EnergyLink: collecting patches or destroying objects in City Trial sends energy to the
-    # Multiworld's shared pool, which you can spend on patches or other items.
-    'false': 50
-    'true': 0
-
-  trap_link:
-    # When on, traps you receive in-game are broadcast to other TrapLink players and you receive theirs.
-    # Independent of "Trap Chance".
-    'false': 50
-    'true': 0
-
-  checklist_rewards:
-    # Which categories of the game's vanilla checklist rewards (red boxes) are placed as items into the
-    # multiworld. Valid categories are:
-    # 
-    # - "Sound Test": sound test entries
-    # - "Music": course and stadium music tracks
-    # - "Filler Boxes": boxes awarding a checkbox filler
-    # - "Endings": the ending movie for each mode
-    # - "Gameplay Extras": Top Ride extra rules, Air Ride's Special Machine Intros, City Trial's pause-screen
-    #   power-up display
-    # 
-    # Only categories you specify are added to the pool. Others are left out, and automatically unlocked in-game
-    # from the start. In-game checklists will not contain these items.
-    # 
-    # Other reward categories are gated by other options. This option only covers the categories above.
-    []
-
-  non_progression_checkboxes:
-    # What happens to a checkbox whose category is not selected in its mode's "Progression" option.
-    # 
-    # - Excluded: it stays a location but only ever holds filler. You can still fill it in-game and it
-    #   still sends its check.
-    # - Removed: it is not a location at all. Nothing is placed there and filling it in-game sends
-    #   nothing. It still counts toward "fill in N checklist blocks" goals.
-    # 
-    # Boxes named in a "checklist_list" goal are always kept, even when their category is unselected.
-    excluded: 50
-    removed: 0
-
-  ################
-  # Item Options #
-  ################
-  spawn_rate_min:
-    # Starting item spawn rate percent. The rate climbs from here as "Spawn Rate Up" items are received
-    # (+10% each); set it equal to "Spawn Rate Max" for a flat rate with no such items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-100: 0 # random value between 10 and 100
-
-  spawn_rate_max:
-    # Item spawn rate ceiling percent, reached after collecting every "Spawn Rate Up" item; the pool
-    # contains (max - min) / 10 of them. Snapped to the nearest multiple of 10. Applies to City Trial
-    # and Top Ride.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 100
-    # Maximum value is 300
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-100-300: 0 # random value between 100 and 300
-
-  trap_chance:
-    # Percentage chance for non-progression item slots to contain traps.
-    # Set to 0 to disable traps entirely.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  death_link: true
+  progression_balancing: normal
+  accessibility: full
+  trap_link: true
+  energy_link: true
+  checklist_rewards: []
+  non_progression_checkboxes: excluded
+  trap_chance: 15
   traps:
-    # Which categories of trap may appear in your item pool. Has no effect unless "Trap Chance" is above 0.
-    ['Down Patches', 'Sleep Ability', 'Debuff', 'Drop Patches', 'Fake Patches', 'Direct Damage']
-
+  - Debuff
+  - Direct Damage
+  - Down Patches
+  - Drop Patches
+  - Fake Patches
+  - Sleep Ability
   allowed_items:
-    # Which categories of optional (non-progression) give items may appear in your item pool. Removing a
-    # category keeps all of its items out of your pool.
-    # 
-    # Defaults to "Permanent Patches" only; add the others to put their gives in your pool.
-    # 
-    # Valid categories are:
-    # - "Permanent Patches"
-    # - "City Trial Item Gives"
-    # - "City Trial Event Gives"
-    # - "Copy Ability Gives"
-    # - "Top Ride Item Gives"
-    ['Permanent Patches']
-
-  ######################
-  # City Trial Options #
-  ######################
-  city_trial_goal:
-    # Sets the goal for City Trial.
-    # 
-    # - 100 Checklist Blocks: Get the checkbox for getting 100 checkboxes in the City Trial Checklist
-    # - N Checklist Blocks: Get the specified number of checkboxes
-    # - Hydra and Dragoon: Get the checkbox for assembling Hydra and Dragoon in a single CT run
-    # - Beat King DeDeDe: Get the checkbox for defeating King DeDeDe in under a minute
-    # - Checklist List: Specify a custom list of City Trial checkboxes (locations) to complete
-    # - Max Stats in One Run: Get max stats for every patch in one CT run
-    # 
-    # Select "None" to disable City Trial.
-    100_checklist_blocks: 50
-    n_checklist_blocks: 0
-    checklist_list: 0
-    hydra_and_dragoon: 0
-    beat_king_dedede: 0
-    max_stats_in_one_run: 0
-    none: 0
-
-  city_trial_checklist_amount:
-    # This sets the number of checklist boxes for the 'Fill in N Checklist blocks!' goal for City Trial.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 120
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-120: 0 # random value between 1 and 120
-
-  city_trial_goal_locations:
-    # The specific checklist locations required for the "checklist_list" goal in City Trial.
-    # Only used when City Trial Goal is set to "checklist_list". Supports location group names.
-    []
-
+  - Permanent Patches
+  spawn_rate_min: 100
+  spawn_rate_max: 200
+  city_trial_goal: beat_king_dedede
+  city_trial_checklist_amount: 60
+  city_trial_goal_locations: []
   city_trial_progression:
-    # Which extra categories of City Trial checkboxes may hold progression items.
-    # 
-    # - "High Effort": long grinds or high difficulty, such as breaking 1000 boxes
-    # - "Multiplayer": boxes that need a second player
-    # - "Free Run": Free Run boxes
-    # - "Bust Vehicle on Vehicle": busting one machine with another
-    # - "RNG: Events": City Trial events
-    # - "RNG: Food": getting X food items in one run
-    # - "RNG: Copy Chance Wheel": copy abilities from the wheel
-    # 
-    # Categories you leave out are excluded from progression, or removed from your world completely,
-    # decided by the "Non-Progression Checkboxes".
-    ['RNG: Copy Chance Wheel']
-
-  city_trial_checkbox_fillers:
-    # Number of "checkbox filler" items added to pool for the City Trial Checklist.
-    # Set to 0 to disable.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-    disabled: 0 # equivalent to 0
-
-  city_trial_reveal_checklist:
-    # If enabled, the City Trial checklist starts off completely revealed.
-    # Revealing is visual only: it does not complete or unlock anything.
-    'false': 50
-    'true': 0
-
-  city_trial_patch_cap_min:
-    # Per-stat patch cap the player starts with (18 = vanilla). The cap climbs from here as "Patch Cap
-    # Increase" items are received (+1 each); set it equal to "Patch Cap Max" for a flat cap with none.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 18
-    18: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-18: 0 # random value between 1 and 18
-
-  city_trial_patch_cap_max:
-    # Per-stat patch cap ceiling (18 = vanilla), reached after collecting every "Patch Cap Increase"
-    # item; the pool contains (max - min) of them. Also the per-stat threshold for the
-    # "max_stats_in_one_run" goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 18
-    # Maximum value is 30
-    18: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-18-30: 0 # random value between 18 and 30
-
-  city_trial_stadiums_gated:
-    # When enabled, City Trial stadiums are locked and must be unlocked by finding their
-    # corresponding Unlock Stadium items.
-    # 
-    # When disabled, every stadium is available from the start and no Unlock Stadium items are added to the
-    # pool.
-    'false': 0
-    'true': 50
-
-  starting_stadium:
-    # The City Trial stadium unlocked from the start.
-    # 
-    # Only applies when City Trial is enabled and "City Trial Stadiums Gated" is on; otherwise ignored.
-    # VS. KING DEDEDE cannot be picked when it is your City Trial goal.
-    randomized: 50
-    drag_race_1: 0
-    drag_race_2: 0
-    drag_race_3: 0
-    drag_race_4: 0
-    air_glider: 0
-    target_flight: 0
-    high_jump: 0
-    kirby_melee_1: 0
-    kirby_melee_2: 0
-    destruction_derby_1: 0
-    destruction_derby_2: 0
-    destruction_derby_3: 0
-    destruction_derby_4: 0
-    destruction_derby_5: 0
-    single_race_1: 0
-    single_race_2: 0
-    single_race_3: 0
-    single_race_4: 0
-    single_race_5: 0
-    single_race_6: 0
-    single_race_7: 0
-    single_race_8: 0
-    single_race_9: 0
-    vs_king_dedede: 0
-
-  ap_patches:
-    # Number of AP Patches in the seed. AP Patches drop from Archipelago boxes in City Trial.
-    # Every AP patch collected is a check, and any rider can collect one, even CPUs.
-    # 
-    # Use this to add more locations to the world that can hold items.
-    # 
-    # Set to 0 to disable AP patches.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 200
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-200: 0 # random value between 0 and 200
-    disabled: 0 # equivalent to 0
-    low: 50 # equivalent to 20
-    normal: 0 # equivalent to 50
-    high: 0 # equivalent to 200
-
-  ap_patch_placement:
-    # Whether AP Patch locations can hold progression.
-    # 
-    # - Default: treated like any other location.
-    # - Excluded: filler only.
-    default: 50
-    excluded: 0
-
-  city_trial_events_gated:
-    # When enabled, City Trial events (Dyna Blade, Meteor, Tac, etc.) are locked and must be
-    # unlocked by finding their corresponding items.
-    # 
-    # When disabled, all events are available from the start and no event unlock items are added to
-    # the pool.
-    'false': 0
-    'true': 50
-
-  city_trial_patches_gated:
-    # When enabled, patch stat types (Boost, Top Speed, Offense, etc.) are locked and must be
-    # unlocked by finding their corresponding items.
-    # 
-    # When disabled, all patch stat types are available from the start and no patch type unlock items
-    # are added to the pool.
-    'false': 0
-    'true': 50
-
-  city_trial_items_gated:
-    # When enabled, City Trial items (All Up, Speed Max, Candy, food, legendary parts, etc.)
-    # are locked and must be unlocked by finding their corresponding items.
-    # 
-    # When disabled, all game items are available from the start and no item unlock items are added to
-    # the pool.
-    'false': 50
-    'true': 0
-
-  city_trial_boxes_gated:
-    # When enabled, box types (Blue, Green, Red) are locked and must be unlocked by finding
-    # their corresponding items.
-    # 
-    # Boxes will still not spawn if none of their containing items are unlocked yet.
-    # 
-    # When disabled, all box types are available from the start and no box unlock items are added to
-    # the pool.
-    'false': 0
-    'true': 50
-
-  ####################
-  # Air Ride Options #
-  ####################
-  air_ride_goal:
-    # Sets the goal for Air Ride.
-    # 
-    # - 100 Checklist Blocks: Get the checkbox for getting 100 checkboxes in the Air Ride Checklist
-    # - N Checklist Blocks: Get the specified number of checkboxes
-    # - Checklist List: Specify a custom list of Air Ride checkboxes (locations) to complete
-    # 
-    # Select "None" to disable Air Ride.
-    100_checklist_blocks: 0
-    n_checklist_blocks: 0
-    checklist_list: 0
-    none: 50
-
-  air_ride_checklist_amount:
-    # This sets the number of checklist boxes for the 'Fill in N Checklist blocks!' goal for Air Ride.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 120
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-120: 0 # random value between 1 and 120
-
-  air_ride_goal_locations:
-    # The specific checklist locations required for the "checklist_list" goal in Air Ride.
-    # Only used when Air Ride Goal is set to "checklist_list". Supports location group names.
-    []
-
-  air_ride_progression:
-    # Which extra categories of Air Ride checkboxes may hold progression items.
-    # 
-    # - "High Effort": long grinds or high difficulty, such as gliding for an hour or racing 300 laps
-    # - "Free Run": Free Run boxes
-    # - "Time Attack": Time Attack boxes
-    # - "RNG: Rivals": boxes that depend on what your rivals happen to do
-    # 
-    # Categories you leave out are excluded from progression, or removed from your world completely,
-    # decided by the "Non-Progression Checkboxes".
-    []
-
-  air_ride_checkbox_fillers:
-    # Number of "checkbox filler" items added to the pool for the Air Ride Checklist.
-    # Set to 0 to disable.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-    disabled: 0 # equivalent to 0
-
-  air_ride_reveal_checklist:
-    # If enabled, the Air Ride checklist starts off completely revealed.
-    # Revealing is visual only: it does not complete or unlock anything.
-    'false': 50
-    'true': 0
-
-  air_ride_courses_gated:
-    # When enabled, Air Ride courses are locked and must be unlocked by finding their
-    # corresponding items.
-    # 
-    # When disabled, all Air Ride courses are available from the start and no course unlock items are
-    # added to the pool.
-    'false': 0
-    'true': 50
-
-  starting_air_ride_course:
-    # The Air Ride course unlocked from the start.
-    # 
-    # Only applies when Air Ride is enabled and "Air Ride Courses Gated" is on; otherwise ignored.
-    randomized: 50
-    fantasy_meadows: 0
-    magma_flows: 0
-    sky_sands: 0
-    frozen_hillside: 0
-    beanstalk_park: 0
-    celestial_valley: 0
-    machine_passage: 0
-    checker_knights: 0
-    nebula_belt: 0
-
-  ####################
-  # Top Ride Options #
-  ####################
-  top_ride_goal:
-    # Sets the goal for Top Ride.
-    # 
-    # - 100 Checklist Blocks: Get the checkbox for getting 100 checkboxes in the Top Ride Checklist
-    # - N Checklist Blocks: Get the specified number of checkboxes
-    # - Checklist List: Specify a custom list of Top Ride checkboxes (locations) to complete
-    # 
-    # Select "None" to disable Top Ride.
-    100_checklist_blocks: 0
-    n_checklist_blocks: 0
-    checklist_list: 0
-    none: 50
-
-  top_ride_checklist_amount:
-    # This sets the number of checklist boxes for the 'Fill in N Checklist blocks!' goal for Top Ride.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 120
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-120: 0 # random value between 1 and 120
-
-  top_ride_goal_locations:
-    # The specific checklist locations required for the "checklist_list" goal in Top Ride.
-    # Only used when Top Ride Goal is set to "checklist_list". Supports location group names.
-    []
-
-  top_ride_progression:
-    # Which extra categories of Top Ride checkboxes may hold progression items.
-    # 
-    # - "High Effort": long grinds or high difficulty, such as racing 300 laps
-    # - "Free Run": Free Run boxes
-    # - "Time Attack": Time Attack boxes
-    # - "Multiplayer": boxes that need multiple players
-    # 
-    # Categories you leave out are excluded from progression, or removed from your world completely,
-    # decided by the "Non-Progression Checkboxes".
-    []
-
-  top_ride_checkbox_fillers:
-    # Number of "checkbox filler" items added to the pool for the Top Ride Checklist.
-    # Set to 0 to disable.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-    disabled: 0 # equivalent to 0
-
-  top_ride_reveal_checklist:
-    # If enabled, the Top Ride checklist starts off completely revealed instead of filling in around
-    # the squares you complete. Revealing is visual only: it does not complete or unlock anything.
-    'false': 50
-    'true': 0
-
-  top_ride_courses_gated:
-    # When enabled, Top Ride courses are locked and must be unlocked by finding their
-    # corresponding items.
-    # 
-    # When disabled, all Top Ride courses are available from the start and no course unlock items are
-    # added to the pool.
-    'false': 0
-    'true': 50
-
-  starting_top_ride_course:
-    # The Top Ride course unlocked from the start.
-    # 
-    # Only applies when Top Ride is enabled and "Top Ride Courses Gated" is on; otherwise ignored.
-    randomized: 50
-    grass: 0
-    sand: 0
-    sky: 0
-    fire: 0
-    light: 0
-    water: 0
-    metal: 0
-
-  top_ride_items_gated:
-    # When enabled, Top Ride items are locked and must be unlocked by finding their
-    # corresponding items.
-    # 
-    # The four items tied to copy abilities (Freeze Fan, Fire, Bomb, Walky) are additionally unlocked
-    # by the copy ability unlock items.
-    # 
-    # When disabled, all Top Ride items are available from the start and no item unlock items are added
-    # to the pool.
-    'false': 0
-    'true': 50
-
-  #################################
-  # Archipelago Checklist Options #
-  #################################
-  archipelago_goal:
-    # EXPERIMENTAL - ONLY USE IF YOU WANT TO TEST - SOME CHECKS LIKELY BROKEN
-    # Sets the goal for the Archipelago checklist.
-    # 
-    # - N Checklist Blocks: Get the specified number of checkboxes in the Archipelago Checklist
-    # - Checklist List: Specify a custom list of Archipelago checkboxes (locations) to complete
-    # - Assemble Archipelago Star: Assemble the Archipelago Star Legendary Machine in one CT run
-    # - Assemble All Three Legendaries in One Run: Assemble all 3 legendary machines in one CT run
-    # 
-    # Select "None" to exclude archipelago checklist locations completely.
-    n_checklist_blocks: 0
-    checklist_list: 0
-    assemble_archipelago_star: 0
-    all_three_legendaries_in_one_run: 0
-    none: 50
-
-  archipelago_checklist_amount:
-    # This sets the number of checklist boxes for the 'Fill in N Checklist blocks!' goal for the
-    # Archipelago checklist.
-    # 
-    # The Archipelago checklist holds fewer boxes than the other modes, so the range stops at what
-    # the checklist actually has rather than the grid's 120 cells.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 52
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-52: 0 # random value between 1 and 52
-
-  archipelago_goal_locations:
-    # The specific checklist locations required for the "checklist_list" goal on the Archipelago
-    # checklist. Only used when Archipelago Checklist Goal is set to "checklist_list". Supports location
-    # group names.
-    []
-
+  - 'RNG: Copy Chance Wheel'
+  city_trial_checkbox_fillers: 5
+  city_trial_reveal_checklist: false
+  city_trial_patch_cap_min: 18
+  city_trial_patch_cap_max: 18
+  city_trial_stadiums_gated: true
+  starting_stadium: randomized
+  ap_patches: normal
+  ap_patch_placement: default
+  city_trial_events_gated: true
+  city_trial_patches_gated: true
+  city_trial_items_gated: false
+  city_trial_boxes_gated: true
+  air_ride_goal: none
+  air_ride_checklist_amount: 60
+  air_ride_goal_locations: []
+  air_ride_progression: []
+  air_ride_checkbox_fillers: 5
+  air_ride_reveal_checklist: false
+  air_ride_courses_gated: true
+  starting_air_ride_course: randomized
+  top_ride_goal: none
+  top_ride_checklist_amount: 60
+  top_ride_goal_locations: []
+  top_ride_progression: []
+  top_ride_checkbox_fillers: 5
+  top_ride_reveal_checklist: false
+  top_ride_courses_gated: true
+  starting_top_ride_course: randomized
+  top_ride_items_gated: true
+  archipelago_goal: none
+  archipelago_checklist_amount: 25
+  archipelago_goal_locations: []
   archipelago_progression:
-    # Which extra categories of Archipelago checklist checkboxes may hold progression items.
-    # 
-    # - "High Effort": long grinds or high difficulty, such as assembling all three legendary machines
-    # - "RNG: Food": get x food items in one run boxes
-    # - "RNG: Copy Chance Wheel": copy abilities from the wheel
-    # - "RNG: Rivals": boxes that depend on what your rivals happen to do
-    # 
-    # Categories you leave out are excluded from progression, or removed from your world completely,
-    # decided by the "Non-Progression Checkboxes".
-    ['RNG: Copy Chance Wheel']
-
-  archipelago_checkbox_fillers:
-    # Number of "checkbox filler" items added to the pool for the Archipelago checklist.
-    # Set to 0 to disable.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-    disabled: 50 # equivalent to 0
-
-  archipelago_reveal_checklist:
-    # If enabled, the Archipelago checklist starts off completely revealed.
-    # Revealing is visual only: it does not complete or unlock anything.
-    'false': 50
-    'true': 0
-
-  ################
-  # Other Gating #
-  ################
-  abilities_gated:
-    # When enabled, copy abilities (Fire, Sword, Bomb, etc.) are locked and must be unlocked
-    # by finding their corresponding items.
-    # 
-    # When disabled, all copy abilities are available from the start and no ability unlock items are
-    # added to the pool.
-    'false': 0
-    'true': 50
-
-  base_abilities_gated:
-    # When enabled, base abilities - inhale, quick spin, and machine charge - start locked and must
-    # each be unlocked by finding their item.
-    # 
-    # When disabled, all three moves are available from the start and no base ability unlock items are
-    # added to the pool.
-    'false': 50
-    'true': 0
-
-  colors_gated:
-    # When enabled, Kirby colors are locked and must be unlocked by finding their corresponding
-    # items.
-    # 
-    # When disabled, all Kirby colors are available from the start and no color unlock items are added
-    # to the pool.
-    'false': 0
-    'true': 50
-
-  starting_kirby_color:
-    # The Kirby color unlocked from the start.
-    # 
-    # Only applies when "Kirby Colors Gated" is on; otherwise ignored.
-    randomized: 50
-    pink: 0
-    yellow: 0
-    blue: 0
-    red: 0
-    green: 0
-    purple: 0
-    brown: 0
-    white: 0
-
-  machines_gated:
-    # When enabled, air ride machines are locked and must be unlocked by finding their
-    # corresponding items. Applies to all modes.
-    # 
-    # When disabled, all machines are available from the start and no machine unlock items are added
-    # to the pool.
-    'false': 50
-    'true': 0
-
-  starting_machine:
-    # The machine unlocked unlocked from the start.
-    # 
-    # Only applies when "Machines Gated" is on and City Trial or Air Ride is enabled; otherwise ignored.
-    # 
-    # With "Base Abilities Gated" on, Bulk, Slick and Turbo Star cannot be picked.
-    randomized: 50
-    warp_star: 0
-    compact_star: 0
-    winged_star: 0
-    shadow_star: 0
-    bulk_star: 0
-    slick_star: 0
-    formula_star: 0
-    wagon_star: 0
-    rocket_star: 0
-    swerve_star: 0
-    turbo_star: 0
-    jet_star: 0
-    flight_warp_star: 0
-    meta_knight: 0
-    wheelie_bike: 0
-    rex_wheelie: 0
-    wheelie_scooter: 0
-    king_dedede: 0
-
-  starting_top_ride_machine:
-    # The Top Ride machine unlocked from the start.
-    # 
-    # Only applies when "Machines Gated" is on and Top Ride is enabled; otherwise ignored.
-    randomized: 50
-    free_star: 0
-    steer_star: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - 'RNG: Copy Chance Wheel'
+  archipelago_checkbox_fillers: disabled
+  archipelago_reveal_checklist: false
+  abilities_gated: true
+  base_abilities_gated: false
+  machines_gated: false
+  starting_machine: randomized
+  starting_top_ride_machine: randomized
+  colors_gated: true
+  starting_kirby_color: randomized
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Kirby Super Star:
   ################
