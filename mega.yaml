@@ -20041,167 +20041,31 @@ Mario Super Sluggers:
   start_inventory_from_pool: {}
 
 Medievil:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Lets the user choose the completion goal
-    # Defeat Zarok - Beat the boss at the end
-    # Chalices - Collect all chalices
-    # Both - Defeat both zarok AND get the chalices
-    zarok: 50
-    chalice: 0
-    both: 0
-
-  progression_option:
-    # Lets users choose how they wish to progress
-    # Vanilla - Plays the game like normal
-    # Open - Unlocks the whole map to go in any order
-    vanilla: 50
-    open: 0
-
-  include_ant_hill_in_checks:
-    # Toggle whether to include the ant hill in your location checks and logic
-    'false': 0
-    'true': 50
-
-  include_chalices_in_checks:
-    # Include Chalices in Checks
-    'false': 0
-    'true': 50
-
-  chalice_win_count:
-    # Sets the number of chalices required to complete the game
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  break_ammo_limit:
-    # Allow weapon ammo to be higher than the default
-    'false': 0
-    'true': 50
-
-  break_percentage_limit:
-    # Allow weapon percentages to be higher than the default
-    'false': 0
-    'true': 50
-
-  traps:
-    # Allow traps in the pool
-    'false': 0
-    'true': 50
-
-  ammo:
-    # Allow Ammo and Charge in the pool
-    'false': 0
-    'true': 50
-
-  deathlink:
-    # Sets if you want deathlink or not
-    'false': 50
-    'true': 0
-
-  deathsound:
-    # There is a sound that will play moments before your death with this on.
-    'false': 50
-    'true': 0
-
-  cheat_menu:
-    # Sets the cheat menu to be available in the pause menu. This allows level skip, chalice completion and
-    # invulnerability. Please note, though. That the chalices are counted via checks as getting the actual number isn't
-    # viable at the moment. Sorry!
-    'off': 50
-    simple: 0
-    super: 0
-
-  gargoylesanity:
-    # Sets whether to do checks for interacting with gargoyle statues
-    'false': 50
-    'true': 0
-
-  booksanity:
-    # Sets whether reading books counts as checks
-    'false': 50
-    'true': 0
-
-  runesanity:
-    # Sets whether to mix runes into the pool
-    'false': 50
-    'true': 0
-
-  guaranteed_items:
-    # Guarantees that the specified items will be in the item pool
-    {}
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: zarok
+  progression_option: vanilla
+  include_ant_hill_in_checks: true
+  include_chalices_in_checks: true
+  chalice_win_count: 20
+  break_ammo_limit: true
+  break_percentage_limit: true
+  traps: true
+  ammo: true
+  deathlink: true
+  deathsound: true
+  cheat_menu: super
+  gargoylesanity: false
+  booksanity: false
+  runesanity: false
+  guaranteed_items: {}
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Mega Man 2:
   ################
