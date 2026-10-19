@@ -23021,816 +23021,104 @@ Metroid Bread:
   start_inventory_from_pool: {}
 
 Metroid Dread:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  starting_area:
-    # Which Dread region Samus spawns in. 'artaria' is the vanilla start;
-    # every other region spawns at one of its save/navigation stations. A
-    # non-Artaria spawn uses the native region-graph logic and grants the minimal
-    # extra starting items needed to bootstrap from that location (mirrors
-    # Randovania's per-start starting items).
-    artaria: 50
-    cataris: 0
-    dairon: 0
-    burenia: 0
-    ghavoran: 0
-    ferenia: 0
-    hanubia: 0
-
-  door_lock_rando:
-    # Randomize the weapon/tool needed to open each door. Modes mirror
-    # Randovania's DockRandoMode (https://github.com/randovania/randovania/blob/main/randovania/layout/base/dock_rando_configuration.py):
-    # 
-    #   * 'vanilla' — original door locks, nothing randomized.
-    #   * 'individual_doors' — Randovania "Individual Doors" (DockRandoMode.DOCKS):
-    #     every eligible door rolls its own random weapon type, independently.
-    #   * 'door_types' — Randovania "Door Types" (DockRandoMode.WEAKNESSES):
-    #     randomizes all doors BY TYPE, turning every door of one vanilla type into
-    #     the same new type world-wide (a consistent global remap).
-    # 
-    # Both sides of a door always match. The access logic accounts for the new
-    # requirements (a door may now demand e.g. Wave Beam or Power Bombs) and items
-    # are placed so the seed stays solvable. Either randomizing mode uses the
-    # native region-graph logic model. Legacy names 'off'/'randomized' still work.
-    vanilla: 50
-    individual_doors: 0
-    door_types: 0
-
+  progression_balancing: normal
+  accessibility: full
+  starting_area: artaria
+  door_lock_rando: vanilla
   doors_to_change:
-    # Door Lock Randomizer — which vanilla door types are eligible to be
-    # randomized (Randovania's "Doors to Change"). Doors of any type NOT listed
-    # keep their vanilla lock. Only matters when Door Lock Randomizer is on.
-    # Default mirrors Randovania's default set.
-    ['Sensor Lock Door', 'Wave Beam Door', 'Grapple Beam Door', 'Missile Door', 'Power Beam Door', 'Charge Beam Door', 'Plasma Beam Door', 'Wide Beam Door', 'Access Open', 'Super Missile Door']
-
+  - Access Open
+  - Charge Beam Door
+  - Grapple Beam Door
+  - Missile Door
+  - Plasma Beam Door
+  - Power Beam Door
+  - Sensor Lock Door
+  - Super Missile Door
+  - Wave Beam Door
+  - Wide Beam Door
   change_doors_to:
-    # Door Lock Randomizer — the pool of lock types a randomized door may
-    # become (Randovania's "Change Doors To"). Only matters when Door Lock
-    # Randomizer is on. NOTE: this apworld can only render the "basic" weapon-beam
-    # lock types safely; exotic shields and "Access Permanently Closed" are not
-    # placed even if listed (they would brick the door / crash the load). Default
-    # is the safe basic set.
-    ['Wave Beam Door', 'Grapple Beam Door', 'Missile Door', 'Power Beam Door', 'Charge Beam Door', 'Plasma Beam Door', 'Wide Beam Door', 'Super Missile Door']
-
-  transport_rando:
-    # Randomize where elevators and shuttles go (Randovania-style). 'off' keeps
-    # vanilla transports. 'randomized' shuffles destinations as a two-way matching
-    # within type (elevator<->elevator, shuttle<->shuttle); teleporters stay
-    # vanilla. The access logic accounts for the new connections. Uses the native
-    # region-graph logic model.
-    'off': 50
-    randomized: 0
-
-  include_boss_pickups:
-    # Whether boss defeats (Corpius, Kraid, Drogyga, Experiment, Escue,
-    # Golzuna) and EMMI defeats grant AP items. ON by default — matches
-    # how Randovania places them.
-    'false': 0
-    'true': 50
-
-  trick_level:
-    # Baseline permissiveness of the access logic — the difficulty assumed for
-    # every trick left on 'follow global' (see the per-trick 'Trick: …' options).
-    # Higher levels ASSUME the player can perform the trick (it may be REQUIRED to
-    # reach a check) — they do not merely allow it. Beginner assumes only the
-    # easiest tech; Mastery assumes everything Randovania classifies. Per-trick
-    # overrides let you raise or disable individual tricks relative to this.
-    beginner: 50
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  death_link:
-    # When you die, everyone with Death Link enabled dies — and vice versa.
-    # On an incoming death the client force-kills Samus (deferred safely through
-    # cutscenes); a self-induced death from an incoming link is not re-broadcast,
-    # so the chain terminates rather than echoing. Off by default.
-    'false': 50
-    'true': 0
-
-  start_with_pulse_radar:
-    # Whether Samus starts with Pulse Radar (the hidden-block / breakable
-    # reveal ability). ON reproduces the Randovania starter preset. Turning it
-    # OFF is fully safe: Pulse Radar gates nothing in the access logic (it has
-    # zero rule references), so seeds are equally solvable either way — the only
-    # effect is that Pulse Radar becomes a findable pickup you shuffle into the
-    # world instead of starting inventory.
-    'false': 0
-    'true': 50
-
-  show_boss_lifebar:
-    # Show the boss life bar in the HUD. Template default: ON.
-    'false': 0
-    'true': 50
-
-  show_enemy_life:
-    # Show enemy health values in the HUD. Template default: OFF.
-    'false': 50
-    'true': 0
-
-  show_enemy_damage:
-    # Show damage numbers dealt to enemies. Template default: OFF.
-    'false': 50
-    'true': 0
-
-  show_player_damage:
-    # Show damage numbers Samus takes. Template default: ON.
-    'false': 0
-    'true': 50
-
-  enable_death_counter:
-    # Show a counter of how many times Samus has died. Template default: ON.
-    'false': 0
-    'true': 50
-
-  show_dna_in_hud:
-    # Show a running count of collected Metroid DNA on the HUD (only appears
-    # when the DNA goal is active, i.e. Required Metroid DNA > 0). Maps to
-    # open-dread-rando's ``show_dna_in_hud`` cosmetic patch. Default ON — handy
-    # for tracking the collection goal.
-    'false': 0
-    'true': 50
-
-  room_name_display:
-    # When to show the current room's name on-screen. 'never' hides it;
-    # 'always' keeps it pinned; 'with_fade' shows it briefly on room entry
-    # then fades. Template default: never.
-    never: 50
-    always: 0
-    with_fade: 0
-
-  raven_beak_damage_table:
-    # Raven Beak's beam/missile damage scaling. 'unmodified' keeps the
-    # vanilla per-weapon table; 'consistent_low'/'consistent_high' flatten
-    # every weapon to one low/high multiplier. Template default: consistent_low.
-    unmodified: 0
-    consistent_low: 50
-    consistent_high: 0
-
-  nerf_power_bombs:
-    # Reduce Power Bomb strength against certain enemies/props. Template
-    # default: ON.
-    'false': 0
-    'true': 50
-
-  disabled_lights:
-    # Which regions have their lights turned off, making them pitch dark to
-    # explore (Randovania's per-region "Lights Out" checkboxes,
-    # ``DreadConfiguration.disabled_lights``).
-    # 
-    # Every light source in a listed region is DELETED from the RomFS at patch
-    # time — open-dread-rando's ``mass_delete_actors`` with
-    # ``actor_layer: rLightsLayer`` / ``method: all``, exactly what Randovania's
-    # exporter emits. The effect is the Dairon-powered-down look applied to a
-    # whole region; the only illumination left is Samus's own.
-    # 
-    # Purely visual: it deletes light actors, never geometry, pickups or triggers,
-    # so access logic and solvability are untouched at any accessibility level.
-    # Empty (the default) ⇒ no ``mass_delete_actors`` entry is emitted and the
-    # patcher output is byte-identical to a non-dark seed.
-    []
-
-  x_starts_released:
-    # Release the X Parasites from Elun at the very start of the game,
-    # matching Randovania's `default_x_released`. With this ON, the X are loose
-    # from the first frame, so X-gated encounters (e.g. Golzuna and Experiment
-    # Z-57 only appear once the X are released) are reachable without first
-    # triggering the Elun release event. Logic stays solvable either way — the
-    # compiled rules conservatively assume the release must be triggered, so
-    # turning this ON only relaxes requirements. Template default: OFF.
-    'false': 50
-    'true': 0
-
-  progressive_suit:
-    # Shuffle one Progressive Suit (Varia Suit → Gravity Suit) instead of the
-    # two suits separately. Default ON (Randovania parity).
-    'false': 0
-    'true': 50
-
-  progressive_spin:
-    # Shuffle one Progressive Spin (Spin Boost → Space Jump) instead of the
-    # two spin upgrades separately. Default ON (Randovania parity).
-    'false': 0
-    'true': 50
-
-  progressive_charge_beam:
-    # Shuffle one Progressive Charge Beam (Charge Beam → Diffusion Beam)
-    # instead of the two separately. Default ON (Randovania parity).
-    'false': 0
-    'true': 50
-
-  progressive_beam:
-    # Shuffle one Progressive Beam (Wide → Plasma → Wave Beam) instead of the
-    # three beams separately. Default ON (Randovania parity).
-    'false': 0
-    'true': 50
-
-  progressive_missile:
-    # Shuffle one Progressive Missile (Super Missile → Ice Missile) instead of
-    # the two separately. Default ON (Randovania parity).
-    'false': 0
-    'true': 50
-
-  progressive_bomb:
-    # Shuffle one Progressive Bomb (Bomb → Cross Bomb) instead of the two
-    # separately. Default ON (Randovania parity). Safe for the Kraid fight: tier 1
-    # is always the regular Bomb, so you can never be left with only Cross Bomb.
-    'false': 0
-    'true': 50
-
-  required_artifacts:
-    # How many Metroid DNA must be collected to unlock the goal. 0 disables
-    # the DNA objective (the goal is simply reaching the ship). Mirrors
-    # Randovania's objective.required_artifacts; max 12 (one per boss/EMMI).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  artifact_placement:
-    # Where Metroid DNA may be placed. 'prefer_bosses' locks DNA to the
-    # boss/EMMI/cutscene pickups (Randovania's default flavor); 'anywhere'
-    # shuffles DNA into the full location pool.
-    prefer_bosses: 50
-    anywhere: 0
-
-  hint_all_dna:
-    # Make the in-game Network Stations reveal where ALL of your required
-    # Metroid DNA are located (their location is named, like Randovania's Dairon /
-    # Itorash DNA hints). When OFF, the stations show only the usual mixed
-    # placement hints and the objective screen just states how many DNA you need.
-    # Only meaningful when Required Metroid DNA > 0. Default ON (Randovania
-    # parity).
-    'false': 0
-    'true': 50
-
-  energy_tank_count:
-    # Number of Energy Tanks placed in the pool. Vanilla Randovania: 8.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  energy_part_count:
-    # Number of Energy Parts placed in the pool (4 parts = +1 tank's worth of
-    # HP, granted immediately by default). Vanilla Randovania: 16.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 64
-    16: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-64: 0 # random value between 0 and 64
-
-  missile_tank_count:
-    # Number of Missile Tank pickups (each grants +2 missile capacity).
-    # Vanilla Randovania: 60.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 120
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-120: 0 # random value between 0 and 120
-
-  missile_plus_tank_count:
-    # Number of Missile+ Tank pickups (each grants +10 missile capacity).
-    # Vanilla Randovania: 12.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    12: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  power_bomb_tank_count:
-    # Number of Power Bomb Tank pickups (each grants +1 PB capacity).
-    # Vanilla Randovania: 13. Setting this to 0 with starting_power_bombs=0
-    # is rejected at generation (PB gates become unreachable).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    13: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  starting_power_bombs:
-    # How many Power Bombs the main Power Bomb pickup grants on first
-    # collection (and Samus's starting PB capacity once the weapon unlocks).
-    # Vanilla Randovania: 2.
-    # 
-    # This feeds AP logic (faithful v0.3 ammo model): power-bomb capacity gates are
-    # met by ``starting_power_bombs`` (from the launcher) + ``power_bomb_tank_ammo``
-    # per Power Bomb Tank. The binding PB capacity in logic is small (2), met by the
-    # launcher's vanilla grant alone; lowering this promotes PB tanks to logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  starting_missiles:
-    # Samus's starting missile capacity (and starting ammo count). Vanilla
-    # Randovania starter: 15.
-    # 
-    # This DOES feed AP logic (faithful v0.3 ammo model): missile capacity gates
-    # are checked against ``starting_missiles + missile_tank_ammo·MissileTank +
-    # missile_plus_tank_ammo·Missile+Tank``, so lowering it makes the player need
-    # more tanks to clear the same missile-locked route. The binding capacity in
-    # logic is small (15); above it every gate is OR'd with an alternative.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-
-  energy_per_tank:
-    # How much energy a single Energy Tank grants (an Energy Part grants 1/4 of
-    # this). Vanilla Dread: 100. Lower values = harder; higher = easier.
-    # 
-    # This DOES feed AP logic (faithful v0.3 HP model): damage gates are checked
-    # against ``(energy_per_tank - 1) + energy_per_tank*EnergyTank +
-    # (energy_per_tank/4)*EnergyPart``, so lowering it makes the player need more
-    # energy to clear the same route. Samus's base (pre-tank) max HP is NOT fixed —
-    # it scales as ``energy_per_tank - 1`` (the game and Randovania both start her
-    # one point below a full tank), which is 99 at the vanilla 100/tank.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1499
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1499: 0 # random value between 1 and 1499
-
-  missile_tank_ammo:
-    # How much missile capacity each Missile Tank grants. Randovania
-    # `ammo_count` default: 2. Feeds AP logic (missile capacity gates).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-
-  missile_plus_tank_ammo:
-    # How much missile capacity each Missile+ Tank grants. Randovania
-    # `ammo_count` default: 10. Feeds AP logic (missile capacity gates).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-
-  power_bomb_tank_ammo:
-    # How much Power Bomb capacity each Power Bomb Tank grants. Randovania
-    # `ammo_count` default: 1. Feeds AP logic (power-bomb capacity gates).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  flash_shift_upgrade_amount:
-    # How many extra Flash Shift chain dashes each Flash Shift Upgrade grants.
-    # Randovania `ammo_count` default: 1 (one additional dash per upgrade).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  flash_shift_upgrade_count:
-    # How many Flash Shift Upgrade pickups to shuffle into the item pool
-    # (Randovania ammo `pickup_count`). Each grants `Flash Shift Upgrade Amount`
-    # extra chained dashes. Randovania does NOT shuffle these by default — default
-    # 0; the vanilla chains come bundled in the main Flash Shift (see Flash Shift
-    # Included Ammo).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 16
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-16: 0 # random value between 0 and 16
-
-  speed_booster_upgrade_count:
-    # How many Speed Booster Upgrade pickups to shuffle into the item pool
-    # (Randovania standard `num_shuffled_pickups`). Each reduces Speed Booster
-    # charge time. Randovania does NOT shuffle these by default — default 0. The
-    # main Speed Booster grants none (vanilla has no charge upgrade), so
-    # speed-charge routes need shuffled copies (or an alternative path).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 16
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-16: 0 # random value between 0 and 16
-
-  flash_shift_included_ammo:
-    # How many Flash Shift Upgrades the MAIN Flash Shift pickup bundles in
-    # (Randovania's `included_ammo` for the Flash Shift major). Vanilla = 2 ("2
-    # flashes after the first" → 3 total dashes), so default 2. This feeds the
-    # access logic (collecting the main credits this many in `state`); the
-    # FlashUpgrade>=3 route therefore needs one shuffled Flash Shift Upgrade or an
-    # alternative. Raise it to bundle more dashes into the main; if the main plus
-    # any shuffled upgrades can't reach a route's requirement, that route drops out
-    # of logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9: 0 # random value between 0 and 9
-
-  flash_shift_upgrade_requires_main_item:
-    # Whether Flash Shift Upgrades require the main Flash Shift to function
-    # (Randovania's ammo `requires_main_item`, default ON). In this world this is
-    # effectively always ON regardless: every compiled rule that references a Flash
-    # Shift Upgrade also requires Flash Shift, and the extra dashes are inert
-    # in-game without the ability. Exposed for parity with Randovania; turning it
-    # OFF does not relax the access logic (the requirement is baked into the
-    # rules).
-    'false': 0
-    'true': 50
-
-  trick_knowledge:
-    # Difficulty level assumed for the 'Knowledge' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_movement:
-    # Difficulty level assumed for the 'Movement' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_combat:
-    # Difficulty level assumed for the 'Combat' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_pseudo_wave_beam:
-    # Difficulty level assumed for the 'Pseudo-Wave Beam' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_infinite_bomb_jump:
-    # Difficulty level assumed for the 'Infinite Bomb Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_water_bomb_jump:
-    # Difficulty level assumed for the 'Water Bomb Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_water_space_jump:
-    # Difficulty level assumed for the 'Water Space Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_single_wall_jump:
-    # Difficulty level assumed for the 'Single-wall Wall Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_slide_jump:
-    # Difficulty level assumed for the 'Slide Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_speed_booster_conservation:
-    # Difficulty level assumed for the 'Speed Booster Conservation' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_wall_jump:
-    # Difficulty level assumed for the 'Wall Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_suitless:
-    # Difficulty level assumed for the 'Heat/Cold Runs' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_reverse_grapple:
-    # Difficulty level assumed for the 'Reverse Grapple Block' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_damage_boost:
-    # Difficulty level assumed for the 'Damage Boost' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_frozen_enemy:
-    # Difficulty level assumed for the 'Stand on Frozen Enemy' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_grapple_movement:
-    # Difficulty level assumed for the 'Grapple Movement' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_cross_bomb_skip:
-    # Difficulty level assumed for the 'Cross Bomb Skip' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_climb_sloped_tunnels:
-    # Difficulty level assumed for the 'Climb Sloped Tunnels' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_short_boost:
-    # Difficulty level assumed for the 'Short Boost' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_diffusion_abuse:
-    # Difficulty level assumed for the 'Diffusion Abuse' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_flash_shift_skip:
-    # Difficulty level assumed for the 'Flash Shift Skip' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_diagonal_bomb_jump:
-    # Difficulty level assumed for the 'Diagonal Bomb Jump' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_ledge_warp:
-    # Difficulty level assumed for the 'Ledge Warp' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_cross_bomb_launch:
-    # Difficulty level assumed for the 'Cross Bomb Launch' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_floor_clip:
-    # Difficulty level assumed for the 'Floor Clip' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  trick_climb_sloped_surfaces:
-    # Difficulty level assumed for the 'Climb Sloped Surfaces' trick. 'follow_global' uses the global Trick Level; 'disabled' never requires or assumes it.
-    follow_global: 50
-    disabled: 0
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    mastery: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Charge Beam Door
+  - Grapple Beam Door
+  - Missile Door
+  - Plasma Beam Door
+  - Power Beam Door
+  - Super Missile Door
+  - Wave Beam Door
+  - Wide Beam Door
+  transport_rando: 'off'
+  include_boss_pickups: true
+  trick_level: beginner
+  death_link: true
+  start_with_pulse_radar: true
+  show_boss_lifebar: true
+  show_enemy_life: true
+  show_enemy_damage: false
+  show_player_damage: true
+  enable_death_counter: true
+  show_dna_in_hud: true
+  room_name_display: never
+  raven_beak_damage_table: consistent_low
+  nerf_power_bombs: true
+  disabled_lights: []
+  x_starts_released: false
+  progressive_suit: true
+  progressive_spin: true
+  progressive_charge_beam: true
+  progressive_beam: true
+  progressive_missile: true
+  progressive_bomb: true
+  required_artifacts: random
+  artifact_placement: prefer_bosses
+  hint_all_dna: true
+  energy_tank_count: 12
+  energy_part_count: 16
+  missile_tank_count: 60
+  missile_plus_tank_count: 12
+  power_bomb_tank_count: 13
+  starting_power_bombs: 2
+  starting_missiles: 15
+  energy_per_tank: 100
+  missile_tank_ammo: 2
+  missile_plus_tank_ammo: 10
+  power_bomb_tank_ammo: 1
+  flash_shift_upgrade_amount: 1
+  flash_shift_upgrade_count: 0
+  speed_booster_upgrade_count: 0
+  flash_shift_included_ammo: 2
+  flash_shift_upgrade_requires_main_item: true
+  trick_knowledge: follow_global
+  trick_movement: follow_global
+  trick_combat: follow_global
+  trick_pseudo_wave_beam: follow_global
+  trick_infinite_bomb_jump: follow_global
+  trick_water_bomb_jump: follow_global
+  trick_water_space_jump: follow_global
+  trick_single_wall_jump: follow_global
+  trick_slide_jump: follow_global
+  trick_speed_booster_conservation: follow_global
+  trick_wall_jump: follow_global
+  trick_suitless: follow_global
+  trick_reverse_grapple: follow_global
+  trick_damage_boost: follow_global
+  trick_frozen_enemy: follow_global
+  trick_grapple_movement: follow_global
+  trick_cross_bomb_skip: follow_global
+  trick_climb_sloped_tunnels: follow_global
+  trick_short_boost: follow_global
+  trick_diffusion_abuse: follow_global
+  trick_flash_shift_skip: follow_global
+  trick_diagonal_bomb_jump: follow_global
+  trick_ledge_warp: follow_global
+  trick_cross_bomb_launch: follow_global
+  trick_floor_clip: follow_global
+  trick_climb_sloped_surfaces: follow_global
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Metroid Prime:
   ################
