@@ -22901,791 +22901,124 @@ Mega Man X3:
     []
 
 Metroid Bread:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    full: 0
-    minimal: 0
-    items: 50
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  game_goal:
-    # How to complete your Metroid Bread slot.
-    defeat_raven_beak: 50
-    one_hundred_percent: 0
-    all_bosses: 0
-
-  required_dna:
-    # How many Metroid DNA must be collected before Raven Beak is logically /
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  dna_placement:
-    # Where Metroid DNA may be placed when Required Metroid DNA > 0.
-    prefer_emmi: 50
-    prefer_bosses: 0
-    anywhere: 0
-
-  hint_all_dna:
-    # When Required Metroid DNA > 0, Adam / Network Stations reveal where all
-    'false': 0
-    'true': 50
-
-  door_lock_rando:
-    # Randomize the weapon needed to open eligible doors. Both sides of a door
-    vanilla: 50
-    individual_doors: 0
-
-  randovania_door_rando:
-    # Place locks with Randovania's Individual Doors algorithm.
-    # 
-    # When on, eligible doors are opened to Power Beam before items are placed,
-    # then about 60% of those connections are locked from the inventory that can
-    # already reach either side. Uses Doors to Change and Change Doors To.
-    # When off, Door Lock Randomizer keeps Bread's current placer.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: items
+  death_link: true
+  game_goal: defeat_raven_beak
+  required_dna: random
+  dna_placement: prefer_emmi
+  hint_all_dna: true
+  door_lock_rando: vanilla
+  randovania_door_rando: false
   doors_to_change:
-    # Which vanilla door types may be randomized.
-    # 
-    # Used when Door Lock Randomizer is Individual Doors, and when Randovania
-    # Door Rando Algorithm is on.
-    ['Wave Beam Door', 'Grapple Beam Door', 'Missile Door', 'Power Beam Door', 'Charge Beam Door', 'Plasma Beam Door', 'Wide Beam Door', 'Access Open', 'Super Missile Door', 'Sensor Lock Door']
-
+  - Access Open
+  - Charge Beam Door
+  - Grapple Beam Door
+  - Missile Door
+  - Plasma Beam Door
+  - Power Beam Door
+  - Sensor Lock Door
+  - Super Missile Door
+  - Wave Beam Door
+  - Wide Beam Door
   change_doors_to:
-    # Pool of lock types a randomized door may become.
-    ['Wave Beam Door', 'Grapple Beam Door', 'Missile Door', 'Power Bomb Door', 'Ice Missile Door', 'Power Beam Door', 'Cross Bomb Door', 'Charge Beam Door', 'Diffusion Beam Door', 'Bomb Door', 'Storm Missile Door', 'Plasma Beam Door', 'Wide Beam Door', 'Super Missile Door']
-
-  transport_rando:
-    # Shuffle elevator and shuttle destinations (two-way within type).
-    'off': 50
-    randomized: 0
-
-  include_boss_pickups:
-    # Whether boss and EMMI defeat pickups are AP checks (on by default).
-    'false': 0
-    'true': 50
-
-  start_with_pulse_radar:
-    # Start with Pulse Radar. When off, Pulse Radar is shuffled into the pool.
-    'false': 0
-    'true': 50
-
-  show_boss_lifebar:
-    'false': 0
-    'true': 50
-
-  show_enemy_life:
-    'false': 50
-    'true': 0
-
-  show_enemy_damage:
-    'false': 50
-    'true': 0
-
-  show_player_damage:
-    # Show floating damage numbers when Samus takes damage (ODR config.ini
-    'false': 0
-    'true': 50
-
-  immediate_energy_parts:
-    # When enabled, each Energy Part immediately raises max energy by 1/4 of
-    'false': 0
-    'true': 50
-
-  constant_heat_damage:
-    # Constant heated-room damage per second (ODR ``constant_environment_damage.heat``).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  constant_cold_damage:
-    # Constant cold-room damage per second (ODR ``constant_environment_damage.cold``).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  constant_lava_damage:
-    # Constant lava damage per second (ODR ``constant_environment_damage.lava``).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  enable_death_counter:
-    'false': 0
-    'true': 50
-
-  show_dna_in_hud:
-    # Show collected Metroid DNA count on the HUD when Required DNA > 0.
-    'false': 0
-    'true': 50
-
-  room_name_display:
-    never: 50
-    always: 0
-    with_fade: 0
-
-  raven_beak_damage_table:
-    unmodified: 0
-    consistent_low: 50
-    consistent_high: 0
-
-  nerf_power_bombs:
-    # Power Bomb Limitations (RDV / ODR): Power Bombs no longer open Charge Beam
-    'false': 50
-    'true': 0
-
-  skip_item_popups:
-    # Skip the item-get dialogue. The item is granted immediately and its
-    # collection line is queued on the bottom-right received-item bar (YAML
-    # ``skip_item_popups``). Off: the normal acquisition popup still plays.
-    'false': 50
-    'true': 0
-
-  disabled_lights:
-    # Regions whose light actors are mass-deleted (darker rooms).
-    []
-
-  x_starts_released:
-    # Start with X parasites already released (Elun / freeroam flavor).
-    'false': 50
-    'true': 0
-
-  station_map_warp:
-    # Master switch for pause-map station warps (YAML ``station_map_warp``).
-    # 
-    # On the pause map, A still navigates the world map and places markers.
-    # Y on a locked Save, Map, or Network station opens the warp prompt instead
-    # of cycling icon highlights, and only while that map page is actually open
-    # (Enabled and Visible). Y during gameplay does nothing. Y off a station
-    # still highlights icons. Which stations Y can target is set by Pause Map
-    # Warp Requirement and Pause Map Warp Reach. Off: the prompt is not in the
-    # game. Existing yamls that only set this option keep warping; the new
-    # options are not required.
-    'false': 50
-    'true': 0
-
-  warp_requirement:
-    # Which locked stations Y may warp to when Pause Map Station Warp is on.
-    # 
-    # Visited (default, current behavior): only a Save, Map, or Network station
-    # you have already used. An unused station shows "You haven't saved here
-    # yet" and A closes that notice. It does not warp.
-    # Visible: any station icon the pause-map cursor has locked, including one
-    # you have not used, when the catalog has a spawn point for it. A confirms
-    # that warp and B cancels. An unused station with no spawn still shows the
-    # unused notice instead of loading a bad target.
-    # Y only opens a prompt while the pause map is open. Ignored while Pause
-    # Map Station Warp is off.
-    visible: 0
-    visited: 50
-
-  warp_reach:
-    # Which regions Y may warp to when Pause Map Station Warp is on.
-    # 
-    # The pause-map lock already follows the region named in the map header, and
-    # that header can be a region other than the one Samus is standing in. A
-    # warp loads the catalog station's own scenario and start point. That is
-    # global, so the default stays global and existing seeds do not shrink to
-    # the current region.
-    # Local: only a station in the scenario you are currently in. A station in
-    # another region is ignored even when the cursor distance matches it.
-    # Global: any Save, Map, or Network station in the game, still limited by
-    # Pause Map Warp Requirement.
-    # Y only opens a prompt while the pause map is open. Ignored while Pause
-    # Map Station Warp is off.
-    local: 0
-    global: 50
-
-  energy_tanks:
-    # Number of Energy Tanks in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  energy_parts:
-    # Number of Energy Parts in the item pool. Four Energy Parts equal one Energy Tank.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    16: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  missile_tanks:
-    # Number of Missile Tanks (+2 missiles each) in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 50
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-50: 0 # random value between 10 and 50
-
-  missile_plus_tanks:
-    # Number of Missile+ Tanks (+10 missiles each) in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 15
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
-
-  power_bomb_tanks:
-    # Number of Power Bomb Tanks (+1 power bomb each) in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 15
-    12: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
-
-  energy_per_tank:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000: 0 # random value between 1 and 1000
-
-  starting_missiles:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 255
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-255: 0 # random value between 0 and 255
-
-  starting_power_bombs:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  missile_tank_ammo:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 50
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-50: 0 # random value between 1 and 50
-
-  missile_plus_tank_ammo:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  power_bomb_tank_ammo:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  vanilla_flash_shift_behaviour:
-    # When enabled, the pool contains a single **Flash Shift** item that grants the
-    'false': 0
-    'true': 50
-
-  flash_shift_upgrade_amount:
-    # How many chain dashes each Flash Shift Upgrade pickup grants (after the base flash).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  flash_shift_upgrade_count:
-    # Number of Flash Shift Upgrade pickups in the pool (1–5).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  speed_booster_upgrade_count:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  flash_shift_included_ammo:
-    # Chain dashes bundled with the main Flash Shift item (vanilla is 2).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  flash_shift_upgrade_requires_main_item:
-    # Only used when Vanilla Flash Shift Behaviour is off.
-    'false': 0
-    'true': 50
-
-  progressive_beams:
-    # If enabled, individual beam upgrades (Wide, Plasma, Wave) are replaced with Progressive Beams.
-    'false': 0
-    'true': 50
-
-  progressive_charge:
-    # If enabled, Charge Beam and Diffusion Beam are replaced with Progressive Charge Beam.
-    'false': 0
-    'true': 50
-
-  progressive_missiles:
-    # If enabled, Super Missile and Ice Missile are replaced with Progressive Missiles.
-    'false': 50
-    'true': 0
-
-  progressive_bombs:
-    # If enabled, Bomb and Cross Bomb are replaced with Progressive Bombs.
-    'false': 0
-    'true': 50
-
-  progressive_suit:
-    # If enabled, Varia Suit and Gravity Suit are replaced with Progressive Suits.
-    'false': 0
-    'true': 50
-
-  progressive_spin:
-    # If enabled, Spin Boost and Space Jump are replaced with Progressive Spins.
-    'false': 0
-    'true': 50
-
-  starting_location:
-    # Where Samus begins a new save. default = Artaria Intro Room (vanilla). random_save_station = pick a random Randovania-valid start (save / map / nav platforms and the intro start). Or choose a specific location.
-    default: 50
-    random_save_station: 0
-    artaria_map_station_save_station: 0
-    artaria_navigation_station_north_save_station: 0
-    artaria_navigation_station_south_save_station: 0
-    artaria_save_station_east_save_station: 0
-    artaria_save_station_north_save_station: 0
-    artaria_save_station_south_save_station: 0
-    artaria_save_station_west_save_station: 0
-    burenia_map_station_save_station: 0
-    burenia_navigation_station_north_save_station: 0
-    burenia_navigation_station_south_save_station: 0
-    burenia_save_station_middle_save_station: 0
-    burenia_save_station_north_save_station: 0
-    burenia_save_station_south_save_station: 0
-    cataris_map_station_save_station: 0
-    cataris_navigation_station_northwest_save_station: 0
-    cataris_navigation_station_southeast_save_station: 0
-    cataris_save_station_east_save_station: 0
-    cataris_save_station_west_save_station: 0
-    dairon_map_station_save_station: 0
-    dairon_navigation_station_north_save_station: 0
-    dairon_navigation_station_south_save_station: 0
-    dairon_save_station_east_save_station: 0
-    dairon_save_station_west_save_station: 0
-    elun_save_station_save_station: 0
-    ferenia_map_station_save_station: 0
-    ferenia_navigation_station_save_station: 0
-    ferenia_save_station_north_save_station: 0
-    ferenia_save_station_southeast_save_station: 0
-    ghavoran_map_station_save_station: 0
-    ghavoran_navigation_station_save_station: 0
-    ghavoran_save_station_center_save_station: 0
-    ghavoran_save_station_east_save_station: 0
-    hanubia_navigation_station_save_station: 0
-    itorash_transport_to_hanubia_elevator_to_hanubia: 0
-
-  starting_kit_items:
-    # Max progression items the generator may precollect as a Start Kit so the
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  early_morph_ball:
-    # If enabled, Morph Ball will be guaranteed early in the seed.
-    'false': 50
-    'true': 0
-
-  dangerous_logic:
-    # Off: a check is only in logic if it is reachable AND you can leave back toward the start (or otherwise escape). On: reachable is enough, even if the room softlocks you.
-    'false': 50
-    'true': 0
-
-  knowledge_tricks:
-    # Some destructible objects have vulnerabilities other than those which the player is informed of.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  movement_tricks:
-    # Non-obvious movement which can't easily be classified using other tricks.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  combat_tricks:
-    # If enabled, the player may be expected to defeat enemies and bosses with fewer items and less hea...
-    disabled: 0
-    beginner: 50
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  pseudo_wave:
-    # It's possible to fire through solid walls without obtaining Wave Beam.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  infinite_bomb_jump:
-    # By chaining and timing bomb jumps it's possible to reach the top of a room.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  water_bomb_jump:
-    # Performing a WBJ will make higher bomb jumps underwater possible.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  water_space_jump:
-    # Used to gain height underwater in certain places without Gravity Suit.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  single_wall_wall_jump:
-    # With this technique it is possible to jump up a single wall all the way up. Requires Morph Ball.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  slide_jump:
-    # By sliding off a cliff and jumping right before you fall you'll jump further.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  speedbooster_conservation:
-    # Maintaining and chaining Speed Booster through complex and otherwise unintended situations.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  wall_jump_tricks:
-    # Basic movement ability which can be abused in unintended ways.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  heat_cold_runs:
-    # You can run through heat and cold rooms without a suit. It depends on your health how long you ca...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  reverse_grapple_block:
-    # Opening up grapple blocks from the "wrong" side is possible.
-    'false': 50
-    'true': 0
-
-  damage_boost:
-    # Most enemies will knock you away when Samus gets damaged. This can be used to get momentum over l...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  stand_on_frozen_enemy:
-    # After you receive the ice missiles you'll be able to freeze some enemies in place allowing you to...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  grapple_movement:
-    # Using Grapple Beam for magnets without Spider Magnet, jumping from the tether, or Grapple Boost.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  cross_bomb_skip:
-    # There are sets of crumble blocks that you must use Cross Bomb to roll across. All can be skipped...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  climb_sloped_tunnels:
-    # Various tunnels that contain slopes in the game can be ascended with bombs or good movement.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  short_boost:
-    # Flash Shift can be manipulated to allow you to charge Speed Booster in a smaller area than intended.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  diffusion_abuse:
-    # Using Diffusion Beam in certain situations can bypass the usual requirements for some objects.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  flash_shift_skip:
-    # With certain items or movement techniques, the Shutter Platforms can be bypassed without Flash Sh...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  diagonal_bomb_jump:
-    # A special kind of bomb jump where you gain diagonal momentum from bombs that explode slightly to...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  ledge_warp:
-    # A frame perfect trick that allows you to warp to a ledge you have previously been at.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  cross_bomb_launch:
-    # By sliding and morphing as the Cross Bomb is exploding, Samus gains a lot of horizontal momentum.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  floor_clip:
-    # Many floors can be clipped through with Speed Booster, Flash Shift, and/or Grapple Beam.
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  climb_sloped_surfaces:
-    # It is possible to gain height on sloped surfaces with good movement (free-aim, Flash Shift, Spin...
-    disabled: 50
-    beginner: 0
-    intermediate: 0
-    advanced: 0
-    expert: 0
-    ludicrous: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Bomb Door
+  - Charge Beam Door
+  - Cross Bomb Door
+  - Diffusion Beam Door
+  - Grapple Beam Door
+  - Ice Missile Door
+  - Missile Door
+  - Plasma Beam Door
+  - Power Beam Door
+  - Power Bomb Door
+  - Storm Missile Door
+  - Super Missile Door
+  - Wave Beam Door
+  - Wide Beam Door
+  transport_rando: 'off'
+  include_boss_pickups: true
+  start_with_pulse_radar: true
+  show_boss_lifebar: true
+  show_enemy_life: true
+  show_enemy_damage: false
+  show_player_damage: true
+  immediate_energy_parts: true
+  constant_heat_damage: 20
+  constant_cold_damage: 20
+  constant_lava_damage: 20
+  enable_death_counter: true
+  show_dna_in_hud: true
+  room_name_display: never
+  raven_beak_damage_table: consistent_low
+  nerf_power_bombs: false
+  skip_item_popups: false
+  disabled_lights: []
+  x_starts_released: false
+  station_map_warp: true
+  warp_requirement: visited
+  warp_reach: global
+  energy_tanks: 12
+  energy_parts: 16
+  missile_tanks: 35
+  missile_plus_tanks: 10
+  power_bomb_tanks: 12
+  energy_per_tank: 100
+  starting_missiles: 15
+  starting_power_bombs: 0
+  missile_tank_ammo: 2
+  missile_plus_tank_ammo: 10
+  power_bomb_tank_ammo: 1
+  vanilla_flash_shift_behaviour: true
+  flash_shift_upgrade_amount: 1
+  flash_shift_upgrade_count: 3
+  speed_booster_upgrade_count: 0
+  flash_shift_included_ammo: 2
+  flash_shift_upgrade_requires_main_item: true
+  progressive_beams: true
+  progressive_charge: true
+  progressive_missiles: false
+  progressive_bombs: true
+  progressive_suit: true
+  progressive_spin: true
+  starting_location: default
+  starting_kit_items: 0
+  early_morph_ball: true
+  dangerous_logic: false
+  knowledge_tricks: disabled
+  movement_tricks: disabled
+  combat_tricks: beginner
+  pseudo_wave: disabled
+  infinite_bomb_jump: disabled
+  water_bomb_jump: disabled
+  water_space_jump: disabled
+  single_wall_wall_jump: disabled
+  slide_jump: disabled
+  speedbooster_conservation: disabled
+  wall_jump_tricks: disabled
+  heat_cold_runs: disabled
+  reverse_grapple_block: false
+  damage_boost: disabled
+  stand_on_frozen_enemy: disabled
+  grapple_movement: disabled
+  cross_bomb_skip: disabled
+  climb_sloped_tunnels: disabled
+  short_boost: disabled
+  diffusion_abuse: disabled
+  flash_shift_skip: disabled
+  diagonal_bomb_jump: disabled
+  ledge_warp: disabled
+  cross_bomb_launch: disabled
+  floor_clip: disabled
+  climb_sloped_surfaces: disabled
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Metroid Dread:
   ################
