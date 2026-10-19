@@ -18254,881 +18254,147 @@ Kingdom Hearts 2:
   priority_locations: {}
 
 Kingdom Hearts III:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ##############
-  # Generation #
-  ##############
-  goal:
-    # Selects the key items that open the final door. Victory is reported only
-    # after defeating Master Xehanort and reaching the post-fight ending
-    # cutscene.
-    three_proofs: 50
-    seven_heart_pieces: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_link_amnesty:
-    # Local deaths forgiven before sending a DeathLink. With 3, every fourth
-    # local death is shared, then the allowance resets. 0 shares every death.
-    # Received DeathLinks still apply and do not use the allowance. Can be changed
-    # during play in the in-game AP Options menu.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  battle_level_mode:
-    # Off keeps default battle levels. Sora Level scales battle levels with Sora's level.
-    'off': 0
-    sora_level: 50
-
-  keyblade_levels:
-    # Controls how Keyblade levels are handled. `start at max` begins every
-    # Keyblade fully upgraded. `shuffled` adds ten shared Progressive Keyblade
-    # Level items to the randomized item pool. `keyblade upgrade sanity` instead
-    # adds ten useful progressive level items for each supported Keyblade
-    # available in the seed
-    start_at_max: 0
-    shuffled: 50
-    keyblade_upgrade_sanity: 0
-
-  style_change:
-    # Shared: one unlock item enables Style Change for every keyblade.
-    # KeybladeStyleSanity: each keyblade requires its own style unlock item.
-    # Always On: start with the shared Style Change ability already unlocked.
-    shared: 0
-    keybladestylesanity: 50
-    always_on: 0
-
-  ultima_weapon_mode:
-    # Controls how Ultima Weapon is obtained.
-    # 
-    # `shards` adds the selected number of Ultima Weapon Shards to the randomized
-    # item pool and grants Ultima Weapon after every shard is received. `shop`
-    # adds Ultima Weapon to the Moogle Shop after every other Keyblade is fully
-    # upgraded. `yozora` awards it for defeating Yozora. `randomized pool` adds
-    # Ultima Weapon itself to the randomized item pool. `banished` adds neither
-    # Ultima Weapon nor its shards to the randomized pool or Moogle Shop.
-    shards: 50
-    shop: 0
-    yozora: 0
-    randomized_pool: 0
-    banished: 0
-
-  ultima_weapon_shard_count:
-    # Number of shards required when Ultima Weapon is set to `shards`.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 13
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-13: 0 # random value between 2 and 13
-
-  moogle_shop_checks:
-    # Adds this many one-time Archipelago purchases to the Moogle Shop Buy menu.
-    # Each purchase reports a location check and becomes sold out permanently.
-    # Set this to 0 to disable the checks.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  moogle_shop_price:
-    # Base Munny price for Archipelago items in the Moogle Shop Buy menu.
-    # Filler uses this price, useful items cost 5x, progression items cost 10x,
-    # and traps cost half. The seed may lower the base if its item pool cannot
-    # provide enough Munny Pouches for the planned shop budget.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10000: 0 # random value between 0 and 10000
-
-  trap_percentage:
-    # Percentage of remaining filler items replaced by KH3 traps. Trap types are
-    # selected with equal probability between Sneeze Trap and Burn Trap. Each trap
-    # triggers once when its AP item is received and is not replayed after loading
-    # or starting another save.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###################
-  # KH3 World Pools #
-  ###################
-  olympus_pool:
-    # Choose how Olympus rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  twilight_town_pool:
-    # Choose how Twilight Town rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  toy_box_pool:
-    # Choose how Toy Box rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  kingdom_of_corona_pool:
-    # Choose how Kingdom of Corona rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  monstropolis_pool:
-    # Choose how Monstropolis rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  hundred_acre_wood_pool:
-    # Choose how 100 Acre Wood rewards are randomized.
-    randomize: 0
-    junk: 50
-
-  arendelle_pool:
-    # Choose how Arendelle rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  san_fransokyo_pool:
-    # Choose how San Fransokyo rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  the_caribbean_pool:
-    # Choose how Caribbean rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  keyblade_graveyard_pool:
-    # Controls Keyblade Graveyard and The Final World progression checks.
-    randomize: 50
-    junk: 0
-
-  remind_pool:
-    # Choose how Re Mind rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  dark_world_pool:
-    # Choose how Dark World rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  unreality_pool:
-    # Choose how Unreality rewards are randomized.
-    randomize: 0
-    junk: 50
-
-  ####################
-  # KH3 Reward Pools #
-  ####################
-  equipment_abilities_pool:
-    # Vanilla keeps the original abilities attached to each piece of equipment.
-    # Randomize shuffles existing abilities between equipment ability slots.
-    # Junk replaces them with utility abilities. Abilities remain attached to
-    # equipment; this does not add AP checks or change stats or upgrade rewards.
-    randomize: 50
-    junk: 0
-    vanilla: 0
-
-  data_battle_rewards_pool:
-    # Choose how Data Battle rewards are randomized.
-    randomize: 50
-    junk: 0
-
-  synthesis_pool:
-    # Vanilla keeps normal synthesis. Randomize adds a one-time AP reward for
-    # the first successful craft of each ordinary recipe. Crafted items remain
-    # available normally. Junk allows only filler or traps, never progression or
-    # useful items, even when other pools need extra placement slots.
-    randomize: 0
-    junk: 0
-    vanilla: 50
-
-  photo_missions_pool:
-    # Vanilla keeps normal photo missions. Randomize adds one AP reward when
-    # each photo mission is completed. Junk allows only filler or traps, 
-    # never progression or useful items, even
-    # when other pools need extra placement slots.
-    randomize: 0
-    junk: 0
-    vanilla: 50
-
-  keyblade_upgrade_rewards_pool:
-    # Vanilla keeps Keyblade upgrade abilities. Randomize replaces each
-    # upgrade ability with an AP check requiring that Keyblade and its level.
-    # Junk prefers non-progression rewards.
-    randomize: 0
-    junk: 0
-    vanilla: 50
-
-  fullcourse_abilities_pool:
-    # Vanilla keeps the original full-course meal abilities. Randomize shuffles
-    # them between full-course entries. Junk replaces them with utility abilities.
-    # These remain meal bonuses; this does not add AP checks or change food stats.
-    randomize: 0
-    junk: 50
-    vanilla: 0
-
-  lucky_emblems_pool:
-    # Choose how Lucky Emblem rewards are randomized.
-    randomize: 0
-    junk: 50
-
-  lucky_emblems_per_check:
-    # Sets how many Lucky Emblem photos are required for each check. For example,
-    # 3 creates checks at 3, 6, 9, and so on. Set this to 1 to make every Lucky
-    # Emblem its own check. Choose `vanilla milestones` to keep KH3's original
-    # irregular milestones.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 90
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-90: 0 # random value between 1 and 90
-    vanilla milestones: 50 # equivalent to 0
-
-  flantastic_flans_pool:
-    # Seven AP checks for the Flantastic Seven's one-time high-score rewards.
-    # Fruit rewards remain native. Junk prefers non-progression placements.
-    randomize: 0
-    junk: 50
-
-  verum_rex_pool:
-    # Controls the one-time AP ability and item rewards from Verum Rex.
-    # Randomize allows normal placements; junk prefers non-progression rewards,
-    # but allows progression when needed. The maximum AP rank is set separately.
-    randomize: 0
-    junk: 50
-
-  festival_dance_pool:
-    # Controls the one-time AP ability and item rewards from Festival Dance.
-    # Randomize allows normal placements; junk prefers non-progression rewards,
-    # but allows progression when needed. The maximum AP rank is set separately.
-    randomize: 0
-    junk: 50
-
-  frozen_slider_pool:
-    # Controls the one-time AP ability and item rewards from Frozen Slider.
-    # Randomize allows normal placements; junk prefers non-progression rewards,
-    # but allows progression when needed. The maximum AP rank is set separately.
-    # Also controls both all-treasures rewards, which have no rank cap.
-    randomize: 0
-    junk: 50
-
-  flash_tracer_course_a_pool:
-    # Controls the one-time AP ability and item rewards from Flash Tracer Course A.
-    # Randomize allows normal placements; junk prefers non-progression rewards,
-    # but allows progression when needed. The maximum AP rank is set separately.
-    randomize: 0
-    junk: 50
-
-  flash_tracer_course_b_pool:
-    # Controls the one-time AP ability and item rewards from Flash Tracer Course B.
-    # Randomize allows normal placements; junk prefers non-progression rewards,
-    # but allows progression when needed. The maximum AP rank is set separately.
-    randomize: 0
-    junk: 50
-
-  festival_dance_max_rank:
-    # Highest Festival Dance rank eligible for normal AP rewards.
-    # Ranks above this are restricted to filler or traps, including the A-rank
-    # ability and first-A bonus. Junk restricts every dance reward. Ranks at or
-    # below the limit still follow Festival Dance Pool. Higher scores also clear all
-    # lower tiers. Festival Dance has no S rank.
-    junk: 0
-    d: 0
-    c: 0
-    b: 0
-    a: 50
-
-  verum_rex_max_rank:
-    # Highest Verum Rex rank eligible for normal AP rewards.
-    # Ranks above this are restricted to filler or traps, including the A-rank
-    # ability and first-A bonus. Junk restricts every Verum Rex reward. Ranks at
-    # or below the limit still follow Verum Rex Pool. Higher scores also clear
-    # all lower tiers. Verum Rex has no S rank.
-    junk: 0
-    d: 0
-    c: 0
-    b: 0
-    a: 50
-
-  frozen_slider_max_rank:
-    # Highest Frozen Slider rank eligible for normal AP rewards.
-    # Higher ranks are restricted to filler or traps, including the A-rank
-    # ability and first-A bonus. Junk restricts all ranked rewards. Ranks at or
-    # below the limit follow Frozen Slider Pool. Higher scores clear all lower tiers.
-    # Treasure collection rewards are unaffected. There is no S-rank prize.
-    junk: 0
-    d: 0
-    c: 0
-    b: 0
-    a: 50
-
-  flash_tracer_course_a_max_rank:
-    # Highest Flash Tracer Course A rank eligible for normal AP rewards.
-    # Higher ranks are restricted to filler or traps, including the A-rank
-    # ability and first-A bonus. Junk restricts all ranked rewards. Ranks at or
-    # below the limit follow Flash Tracer Course A Pool. Higher scores clear all lower tiers.
-    # Course B is configured separately. There is no S-rank prize.
-    junk: 0
-    d: 0
-    c: 0
-    b: 0
-    a: 50
-
-  flash_tracer_course_b_max_rank:
-    # Highest Flash Tracer Course B rank eligible for normal AP rewards.
-    # Higher ranks are restricted to filler or traps, including the A-rank
-    # ability and first-A bonus. Junk restricts all ranked rewards. Ranks at or
-    # below the limit follow Flash Tracer Course B Pool. Higher scores clear all lower tiers.
-    # Course A is configured separately. There is no S-rank prize.
-    junk: 0
-    d: 0
-    c: 0
-    b: 0
-    a: 50
-
-  classic_kingdom_checks:
-    # High Score adds one check per Classic Kingdom game (23 total). Record a
-    # score during this seed to earn each check; no minimum score is required.
-    # Quitting before a result is recorded does not count. The Classic Tone
-    # reward remains a separate randomized check in every mode.
-    'off': 50
-    high_score: 0
-
-  ingredients:
-    # Experimental: ingredient pickup checks and access rules are still being tested.
-    # Off adds no ingredient checks. Ingredientsanity adds 51 checks for the
-    # first field acquisition of each ingredient. Ingredientsanity+ instead adds
-    # checks for individual pickup spots, excluding one-time tutorial pickups.
-    # Known chance % spots contain junk only. Defaults to Off.
-    # IF YOU RUN THIS IN A SYNC AND YOU DONT KNOW WHAT YOU'RE DOING, YOU WILL FEEL 
-    # MY WRATH AS THIS ADDS 300 CHECKS.
-    'off': 50
-    ingredientsanity: 0
-    ingredientsanity_plus: 0
-
-  battlegates_pool:
-    # Choose how Battlegate rewards are randomized.
-    randomize: 0
-    junk: 50
-
-  ##################################
-  # Companion Games (Experimental) #
-  ##################################
-  ####################
-  # Third Party Mods #
-  ####################
-  olympus_coliseum_pool:
-    # Controls Archipelago integration for the third-party Olympus Coliseum mod.
-    # Off disables this integration: the mod is optional. If installed, it keeps its native cup rewards.
-    # Randomize and Junk require the supported Coliseum mod. 
-    # These modes replace each cup's native reward with one AP check; Junk
-    # prefers non-progression rewards, allowing progression when needed.
-    # Set the mod's Settings > Unlock Features to Series.
-    randomize: 0
-    junk: 0
-    'off': 50
-
-  music_chest_count:
-    # Number of additional music chests, each bound to a distinct MoM song.
-    # Choose 0-8 authored chest locations across the KH3 worlds. Requires Melody
-    # of Memory and MoMController. Songs are reserved before vanilla conversion.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  music_chest_vanilla_conversion:
-    # Number of vanilla chests to randomly convert to blue/gold music chests.
-    # Choose 1–128, or 0 to disable conversion.
-    # Each requires a distinct song clear before Open becomes available. Original
-    # chest locations and rewards remain intact. The count is capped by available
-    # chests and remaining songs after reserving music_chest_count songs.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 128
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-128: 0 # random value between 0 and 128
-
-  music_chest_bonus_checks:
-    # Opening a music chest awards an additional randomized Archipelago item.
-    # Applies to converted vanilla chests and additional music chests. Both checks
-    # complete when the chest opens after its song clear, not at song completion.
-    'false': 0
-    'true': 50
-
-  melody_of_memory_difficulty:
-    # Exact difficulty required for every selected Melody of Memory song.
-    beginner: 50
-    standard: 0
-    proud: 0
-
-  ##################
-  # KH3 Stat Pools #
-  ##################
-  base_sora_stats_pool:
-    # Choose vanilla, balanced, or boosted Sora base stats.
-    # 
-    # These are the base Sora stats; level-based Strength, Magic,
-    # Defense, and AP are controlled separately by Level Up Stats.
-    vanilla: 50
-    balanced: 0
-    boosted: 0
-
-  level_up_stats_pool:
-    # Choose vanilla, balanced, or boosted level-based Strength, Magic,
-    # Defense, and AP.
-    vanilla: 50
-    balanced: 0
-    boosted: 0
-
-  keyblade_enhance_stats_pool:
-    # Choose vanilla, balanced, or boosted Keyblade upgrade stat bonuses.
-    vanilla: 50
-    balanced: 0
-    boosted: 0
-
-  equipment_stats_pool:
-    # Choose vanilla, balanced, or boosted equipment stats and resistances.
-    # Equipment ability randomization is controlled separately.
-    vanilla: 50
-    balanced: 0
-    boosted: 0
-
-  food_effect_stats_pool:
-    # Choose vanilla, balanced, or boosted food stat bonuses.
-    # This does not change full-course meal abilities.
-    vanilla: 50
-    balanced: 0
-    boosted: 0
-
-  exp_multiplier:
-    # Enemy EXP multiplier.
-    0_5x: 0
-    1_0x: 50
-    1_5x: 0
-    2_0x: 0
-    2_5x: 0
-    3_0x: 0
-    3_5x: 0
-    4_0x: 0
-    4_5x: 0
-    5_0x: 0
-    10_0x: 0
-    20_0x: 0
-
-  ############################################
-  # KH3 Enemy and Party Pools (Experimental) #
-  ############################################
-  enemies_pool:
-    # Experimental: controls whether the enemy randomization starts
-    # enabled. Every AP seed includes the remap, which can also be toggled from
-    # the Garden of Assemblage settings menu.
-    # This can cause softlocks or unusual fight behavior.
-    vanilla: 50
-    randomize: 0
-
-  enemy_chaos:
-    # Experimental: randomizes enemies per entity instead of per enemy type.
-    'false': 50
-    'true': 0
-
-  bosses_pool:
-    # Experimental: controls whether the boss randomization starts enabled.
-    # Every AP seed includes the remap, which can also be toggled from the Garden
-    # of Assemblage settings menu. Victory bonus checks should remain tied to the
-    # original fight scripts, but boss swaps can still crash or break scripted
-    # fight completion.
-    vanilla: 50
-    randomize: 0
-
-  default_data_battles:
-    # Keeps all Data Organization XIII fights out of the boss shuffle, including
-    # when boss randomization is enabled later in-game.
-    'false': 50
-    'true': 0
-
-  default_end_game_battles:
-    # Keeps Replica and Master Xehanort out of the boss shuffle, including when
-    # boss randomization is enabled later in-game. Armored Xehanort is always
-    # excluded for stability.
-    'false': 50
-    'true': 0
-
-  default_yozora_battle:
-    # Keeps Yozora out of the boss shuffle, including when boss randomization
-    # is enabled later in-game.
-    'false': 50
-    'true': 0
-
-  party_members_pool:
-    # Sets the initial state of Randomize Party Members in the Garden of
-    # Assemblage runtime settings menu. Vanilla starts Friend 1 and Friend 2
-    # on Vanilla, using the game's party choices. These can be changed in-game.
-    vanilla: 50
-    randomize: 0
-
-  default_donald_goofy:
-    # Starts the player with the standard Donald and Goofy Party Member unlock
-    # items. Their world-specific variants remain in the randomized item pool.
-    'false': 50
-    'true': 0
-
-  party_chaos:
-    # Sets the initial state of Reroll Party Every Room in GoA Options. When ON,
-    # the received random party rerolls on every room change. When OFF, the
-    # random pair stays stable until the available Party Member items change.
-    'false': 50
-    'true': 0
-
-  color_randomization:
-    # Recolours Sora, his world forms, Donald, Goofy and every guest party
-    # member, along with the weapons they carry - keyblades, Donald's staves
-    # and Goofy's shields.
-    # 
-    # Coordinated keeps each character recognisable: hues are spread so
-    # separate garments differ, the zones within one garment stay related,
-    # and faces and skin are left alone.
-    # 
-    # Wild draws every material zone independently and repaints the surfaces
-    # Coordinated protects, faces included. Some seeds will produce genuinely
-    # clashing characters - that is the mode working as intended.
-    # 
-    # This sets the starting value only. It can be changed at any time from
-    # AP Options in the in-game settings menu, and that choice is saved.
-    'off': 50
-    coordinated: 0
-    wild: 0
-
-  ########################
-  # KH3 Randomizer Rules #
-  ########################
-  default_base_abilities:
-    # Prevents default starting abilities such as Block, Dodge Roll, and Pole Spin
-    # from being randomized. Zero EXP is always a starting ability and is
-    # never included in the randomized pool, regardless of this option.
-    'false': 50
-    'true': 0
-
-  start_with_wall_run:
-    # Start with the Wall Run unlock item so Archipelago delivers it at the
-    # start of the game.
-    'false': 50
-    'true': 0
-
-  start_with_magic:
-    # Start with the Magic unlock item so Archipelago delivers it at the start
-    # of the game. This unlocks spellcasting; Links have their own unlock.
-    'false': 50
-    'true': 0
-
-  start_with_links:
-    # Start with the Links unlock item. Individual Heartbinders are still required.
-    # This does not unlock spellcasting.
-    'false': 50
-    'true': 0
-
-  start_with_attraction_flow:
-    # Start with the Attraction Flow unlock item so Archipelago delivers it at
-    # the start of the game.
-    'false': 50
-    'true': 0
-
-  junk_classic_kingdom_reward:
-    # Prevent progression items in the reward for completing all Classic Kingdom games.
-    'false': 0
-    'true': 50
-
-  junk_golden_herc_rewards:
-    # Prevent progression items in Golden Herc pickups and the turn-in reward.
-    'false': 0
-    'true': 50
-
-  junk_sora_collection_rewards:
-    # Prevent progression items in Sora collection rewards.
-    'false': 0
-    'true': 50
-
-  allow_all_stats:
-    # Include normally zero stats when a stat pool is balanced or boosted.
-    # Vanilla stat pools are unaffected.
-    'false': 50
-    'true': 0
-
-  allow_negative_stats:
-    # Allow balanced or boosted stat rolls to be negative, except Sora base
-    # stats and AP (including equipment AP). Vanilla stat pools are unaffected.
-    'false': 50
-    'true': 0
-
-  level_up_limit:
-    # Highest Sora level eligible for non-junk AP items. Levels above this limit contain
-    # only filler or traps, never progression or useful items. Set to 1 for junk
-    # at every level.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 99
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-99: 0 # random value between 1 and 99
-
-  lucky_emblem_limit:
-    # Randomizes Lucky Emblem milestone rewards up to and including this count;
-    # later rewards become junk.
-    emblems_10: 0
-    emblems_20: 0
-    emblems_30: 0
-    emblems_40: 0
-    emblems_50: 50
-    emblems_60: 0
-    emblems_70: 0
-    emblems_80: 0
-    emblems_90: 0
-
-  moogle_synthesis_limit:
-    # Number of ordinary recipes, in native recipe order, eligible for normal
-    # AP rewards. Later recipes only receive filler or traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 67
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-67: 0 # random value between 0 and 67
-
-  #######################
-  # KH3 Quality of Life #
-  #######################
-  easier_mini_ufo:
-    # Make the Mini-UFO fight easier.
-    'false': 0
-    'true': 50
-
-  faster_raging_vulture:
-    # Shorten the Raging Vulture fight.
-    'false': 0
-    'true': 50
-
-  faster_lich_sequence:
-    # Shorten the Lich chase sequence.
-    'false': 0
-    'true': 50
-
-  dark_baymax_phase_1_skip:
-    # Skip the first phase of the Dark Baymax fight.
-    'false': 0
-    'true': 50
-
-  frozen_chase_skip:
-    # Skip the Frozen chase sequence in Arendelle.
-    'false': 0
-    'true': 50
-
-  faster_crab_collection:
-    # Speed up crab collection in the Caribbean.
-    'false': 0
-    'true': 50
-
-  big_hero_rescue_skip:
-    # Skip the Big Hero 6 rescue sequence.
-    'false': 50
-    'true': 0
-
-  faster_sora_collection:
-    # Speed up Sora collection in The Final World.
-    'false': 0
-    'true': 50
-
-  guardians_of_light_skip:
-    # Skip the Guardians of Light sequence in Re Mind.
-    'false': 50
-    'true': 0
-
-  fun_10k_heartless:
-    # Spawn 200 enemies at once at the start of the 10k Heartless fight,
-    # with a larger arena and Shadows that respawn as they die.
-    # A powerful computer is recommended.
-    'false': 50
-    'true': 0
-
-  skip_guardians_and_mickey_walk:
-    # When entering the Re:Mind Scala ad Caelum route, advance the story flag
-    # past the slow Guardians of Light and Mickey walking sequence.
-    'false': 0
-    'true': 50
-
-  fast_union_cross:
-    # End the mandatory Union Cross sequence as soon as its ride begins.
-    'false': 0
-    'true': 50
-
-  fast_dance_minigame:
-    # Shorten the mandatory Kingdom of Corona story dance minigame.
-    'false': 0
-    'true': 50
-
-  fast_beat_of_lead:
-    # Finish Toy Box's mandatory Beat of Lead encounter after one mecha kill.
-    'false': 0
-    'true': 50
-
-  all_maps_unlocked:
-    # Start with every KH3 area-map item. These maps are removed from the
-    # Archipelago item pool and replaced with filler. This does not unlock
-    # worlds, routes, save points, or portals.
-    'false': 0
-    'true': 50
-
-  max_level_ship:
-    # Set the Caribbean ship to its maximum level.
-    'false': 0
-    'true': 50
-
-  auto_skip_cutscenes:
-    # Enables the experimental automatic cutscene skipper. Doesn't work on 99% of cutscenes.
-    'false': 50
-    'true': 0
-
-  skip_world_intro_cutscenes:
-    # Start supported worlds after their opening cutscenes.
-    # Disabled starts world intros normally, retaining required Olympus/End of World setup.
-    # This is separate from the experimental automatic cutscene skipper.
-    'false': 50
-    'true': 0
-
-  #############
-  # KH3 Hints #
-  #############
-  hint_selection_type:
-    # Controls the hint style written into Secret Reports.
-    none: 0
-    vague_by_check: 0
-    vague_by_category: 0
-    verbose: 50
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  death_link_amnesty: 0
+  battle_level_mode: sora_level
+  goal: three_proofs
+  keyblade_levels: shuffled
+  style_change: keybladestylesanity
+  ultima_weapon_mode: randomized_pool
+  ultima_weapon_shard_count: 7
+  trap_percentage: 15
+  moogle_shop_checks: random
+  moogle_shop_price: 100
+  olympus_pool: randomize
+  twilight_town_pool: randomize
+  toy_box_pool: randomize
+  kingdom_of_corona_pool: randomize
+  monstropolis_pool: randomize
+  hundred_acre_wood_pool: junk
+  arendelle_pool: randomize
+  san_fransokyo_pool: randomize
+  the_caribbean_pool: randomize
+  keyblade_graveyard_pool: randomize
+  remind_pool: randomize
+  dark_world_pool: randomize
+  unreality_pool: junk
+  lucky_emblems_per_check: vanilla milestones
+  equipment_abilities_pool: randomize
+  data_battle_rewards_pool: junk
+  synthesis_pool: vanilla
+  photo_missions_pool: randomize
+  keyblade_upgrade_rewards_pool: vanilla
+  fullcourse_abilities_pool: junk
+  lucky_emblems_pool: junk
+  flantastic_flans_pool: randomize
+  verum_rex_pool: junk
+  festival_dance_pool: junk
+  frozen_slider_pool: junk
+  flash_tracer_course_a_pool: junk
+  flash_tracer_course_b_pool: junk
+  festival_dance_max_rank: a
+  verum_rex_max_rank: a
+  frozen_slider_max_rank: a
+  flash_tracer_course_a_max_rank: a
+  flash_tracer_course_b_max_rank: a
+  classic_kingdom_checks: 'off'
+  ingredients: 'off'
+  battlegates_pool: junk
+  olympus_coliseum_pool: 'off'
+  music_chest_count: 0
+  music_chest_vanilla_conversion: 0
+  music_chest_bonus_checks: true
+  melody_of_memory_difficulty: beginner
+  base_sora_stats_pool: boosted
+  level_up_stats_pool: boosted
+  keyblade_enhance_stats_pool: boosted
+  equipment_stats_pool: balanced
+  food_effect_stats_pool: balanced
+  exp_multiplier: 5_0x
+  enemies_pool: vanilla
+  bosses_pool: vanilla
+  party_members_pool: vanilla
+  default_data_battles: false
+  default_end_game_battles: false
+  default_yozora_battle: false
+  default_donald_goofy: false
+  enemy_chaos: false
+  party_chaos: false
+  color_randomization: 'off'
+  default_base_abilities: true
+  start_with_wall_run: false
+  start_with_magic: false
+  start_with_links: false
+  start_with_attraction_flow: false
+  junk_classic_kingdom_reward: true
+  junk_golden_herc_rewards: true
+  junk_sora_collection_rewards: true
+  allow_all_stats: false
+  allow_negative_stats: false
+  level_up_limit: 50
+  lucky_emblem_limit: emblems_50
+  moogle_synthesis_limit: 15
+  easier_mini_ufo: true
+  faster_raging_vulture: true
+  faster_lich_sequence: true
+  dark_baymax_phase_1_skip: true
+  frozen_chase_skip: true
+  faster_crab_collection: true
+  big_hero_rescue_skip: true
+  faster_sora_collection: true
+  guardians_of_light_skip: true
+  fun_10k_heartless: true
+  skip_guardians_and_mickey_walk: true
+  fast_union_cross: true
+  fast_dance_minigame: true
+  fast_beat_of_lead: true
+  all_maps_unlocked: true
+  max_level_ship: true
+  auto_skip_cutscenes: false
+  skip_world_intro_cutscenes: false
+  hint_selection_type: verbose
   important_hint_checks:
-    # Item names that should be considered important when generating KH3 Secret
-    # Report hints.
-    ['Secret Report 2', 'Magic: Blizzard', 'Magic: Water', 'Ability: Block', 'Magic: Thunder', 'Secret Report 9', 'Secret Report 6', 'Ability: Doubleflight', 'Magic: Aero', 'Magic: Cure', 'Secret Report 8', 'Ocean Heartbinder', 'Secret Report 5', 'Secret Report 4', 'Secret Report 7', 'Ability: Pole Spin', 'Pixel Heartbinder', "'Ohana Heartbinder", 'Secret Report 3', 'Magic: Fire', 'Dream Heartbinder', 'Pride Heartbinder', 'Ability: Dodge Roll', 'Ability: Air Slide', 'Secret Report 13', 'Secret Report 1', 'Ability: Withstand Combo', 'Secret Report 11', 'Secret Report 10', 'Secret Report 12', 'Ability: Second Chance']
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - '''Ohana Heartbinder'
+  - 'Ability: Air Slide'
+  - 'Ability: Block'
+  - 'Ability: Dodge Roll'
+  - 'Ability: Doubleflight'
+  - 'Ability: Pole Spin'
+  - 'Ability: Second Chance'
+  - 'Ability: Withstand Combo'
+  - Dream Heartbinder
+  - 'Magic: Aero'
+  - 'Magic: Blizzard'
+  - 'Magic: Cure'
+  - 'Magic: Fire'
+  - 'Magic: Thunder'
+  - 'Magic: Water'
+  - Ocean Heartbinder
+  - Pixel Heartbinder
+  - Pride Heartbinder
+  - Secret Report 1
+  - Secret Report 10
+  - Secret Report 11
+  - Secret Report 12
+  - Secret Report 13
+  - Secret Report 2
+  - Secret Report 3
+  - Secret Report 4
+  - Secret Report 5
+  - Secret Report 6
+  - Secret Report 7
+  - Secret Report 8
+  - Secret Report 9
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Kirby Air Ride:
   ################
