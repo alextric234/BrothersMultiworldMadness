@@ -26163,563 +26163,83 @@ Paint:
   start_inventory_from_pool: {}
 
 'Paper Mario: The Thousand-Year Door':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  console_mode:
-    # ONLY ENABLE THIS IF YOU WANT TO PLAY ON CONSOLE.
-    # This will disable all Multiplayer features, and cause the game to be patched in a way that is compatible with console play.
-    # The game may lose some functionality compared to the PC version when this is enabled, and is intended for users who want to play the mod on console solo.
-    'false': 50
-    'true': 0
-
-  multiplayer:
-    # Toggle multiplayer features on or off.
-    # Turning this off means you will not see any other players in-game.
-    'false': 0
-    'true': 50
-
-  remote_items:
-    # Toggle Remote Items on or off.
-    # Turning this on means all items including ones in your own world will be sent to you from the server.
-    # All local items will be AP items.
-    'false': 50
-    'true': 0
-
-  goal:
-    # This determines the goal of the game.
-    # shadow_queen: Defeat the Shadow Queen.
-    # crystal_stars: Collect a specified amount of Crystal Stars.
-    # bonetail: Defeat Bonetail.
-    # recipes: Cook a specified amount of Zess T.'s recipes (requires Cooksanity).
-    shadow_queen: 50
-    crystal_stars: 0
-    bonetail: 0
-    recipes: 0
-
-  goal_stars:
-    # This determines how many crystal stars are required to enter the Throne Room in the Palace of Shadow.
-    # This also determines how many stars are required to goal with the crystal_stars goal selected.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 7
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-7: 0 # random value between 1 and 7
-
-  goal_recipes_range:
-    # This determines how many recipes must be cooked to goal with the recipes goal selected.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 12
-    # Maximum value is 57
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-12-57: 0 # random value between 12 and 57
-
-  palace_stars:
-    # This determines how many Crystal Stars are required to enter the Palace of Shadow.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 7
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-7: 0 # random value between 0 and 7
-
-  required_stars_toggle:
-    # Toggles the Required Stars setting.
-    # This will force the stars selected in Required Stars to be needed to enter the Palace of Shadow.
-    # Leaving this off will cause the stars needed to be chosen randomly.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  console_mode: false
+  multiplayer: true
+  remote_items: false
+  goal: shadow_queen
+  goal_stars: random
+  goal_recipes_range: 30
+  palace_stars: random
+  required_stars_toggle: false
   required_stars:
-    # Select which stars are required to enter the Palace of Shadow.
-    # If you do not toggle this option the stars will be chosen randomly.
-    # If this has more stars in it than goal stars required, it will use the ones that come first in the list.
-    # If this has fewer stars in it than goal stars required, it will fill the rest in randomly.
-    ['Diamond Star', 'Emerald Star', 'Gold Star', 'Ruby Star', 'Sapphire Star', 'Garnet Star', 'Crystal Star']
-
-  star_shuffle:
-    # Crystal Stars will be added as items to the item pool.
-    # vanilla: Crystal Stars will remain in their original locations.
-    # stars_only: Crystal Stars will be shuffled into other crystal star locations.
-    # all: Crystal Stars will be shuffled into any location.
-    vanilla: 50
-    stars_only: 0
-    all: 0
-
-  tattlesanity:
-    # Creates a location for every enemy being tattled.
-    # All key items can possibly be placed in these locations.
-    'false': 50
-    'true': 0
-
-  piecesanity:
-    # Determines if Star Piece locations will be randomized.
-    # vanilla: Star Piece locations will remain in their original locations.
-    # nonpanel_only: Only Star Pieces that are not in panels will be randomized.
-    # all: All Star Pieces will be randomized.
-    vanilla: 0
-    nonpanel_only: 50
-    all: 0
-
-  cooksanity:
-    # Zess T.'s 57 recipes become locations: cooking a recipe from the unlocked-ingredient menu awards its check.
-    # Her vanilla inventory cooking stays available.
-    # Disabling this removes the recipe locations and Zess T. cooks fully vanilla.
-    'false': 50
-    'true': 0
-
-  shopsanity:
-    # Shop items will be randomized.
-    # This only includes regular shops.
-    'false': 0
-    'true': 50
-
-  shop_purchase_limit:
-    # This determines which items in the shop will be replenished infinitely when purchasing.
-    # infinite: All non-progression items in shops can be purchased infinitely.
-    # consumables_only: Only consumable items can be purchased infinitely.
-    # badges_only: Only badges can be purchased infinitely.
-    # limited: No items can be purchased infinitely.
-    infinite: 0
-    consumables_only: 50
-    badges_only: 0
-    limited: 0
-
-  shinesanity:
-    # Shine Sprites will be randomized.
-    'false': 0
-    'true': 50
-
-  keysanity:
-    # Chapter specific keys will be added to the item pool.
-    # Disabling this will place the keys in their own chapters dungeon.
-    'false': 0
-    'true': 50
-
-  troublesanity:
-    # The trouble center will have their items randomized.
-    # Disabling this will keep the trouble center items in their original locations.
-    'false': 50
-    'true': 0
-
-  dazzle_rewards:
-    # This determines what type of items are given as rewards by Dazzle.
-    # vanilla: The rewards are the same as the original game.
-    # filler: The rewards will be non-progression items.
-    # all: The rewards can be any item.
-    vanilla: 0
-    filler: 0
-    all: 50
-
-  pit_items:
-    # This determines what type of items are in the Pit of 100 Trials.
-    # vanilla: The locations contain the same items as the original game, and the locations themselves will not be created.
-    # filler: The locations will be marked as excluded.
-    # all: The locations can contain any item.
-    vanilla: 0
-    filler: 50
-    all: 0
-
-  limit_chapter_logic:
-    # Progression items will only appear in required chapters, and in common areas. You will not need to
-    # check the chapters that are out of logic whatsoever. You can still visit them for local items (badges, consumables, etc) if you want or need to.
-    # To view what chapters are expected of you, you're able to check what stars are illuminated on the Thousand-Year Door.
-    'false': 50
-    'true': 0
-
-  limit_chapter_eight:
-    # All chapter 8 keys items will be placed in vanilla locations.
-    # All other locations will have local non-progression items.
-    'false': 50
-    'true': 0
-
-  blue_pipe_toggle:
-    # Toggle whether the blue pipes in Rogueport Sewers are usable.
-    # Disabling this will remove the blue switches and the pipes will become inaccessible.
-    'false': 0
-    'true': 50
-
-  palace_skip:
-    # Entering the Thousand-Year door will take you straight to Grodus.
-    'false': 50
-    'true': 0
-
-  cutscene_skip:
-    # Skips some of the longer cutscenes in the game,
-    # such as the Shadow Queen cutscene, Fahr Outpost Cannon etc.
-    'false': 0
-    'true': 50
-
-  epilogue_skip:
-    # After the final boss, warp straight to the credits instead of
-    # playing the Rogueport epilogue.
-    'false': 50
-    'true': 0
-
-  disable_intermissions:
-    # After obtaining a crystal star, mario will stay in the boss' room,
-    # and the sequence will be updated past the intermission.
-    'false': 0
-    'true': 50
-
-  fast_travel:
-    # Enable this to gain the ability to warp to any area you have visited from the map
-    # screen in the main menu. Press A on the destination to open the warp confirmation dialog.
-    'false': 0
-    'true': 50
-
-  in_game_tracker:
-    # Adds a logic tracker to the journal map.
-    # All map nodes are colored by check availability.
-    # Pressing X on a node opens a list of that area's locations and their accessibility.
-    'false': 0
-    'true': 50
-
-  panel_hints:
-    # Colors hidden flip panels on the floor by accessibility.
-    # This is recommended for beginners who want to learn where flip panels are located.
-    'false': 50
-    'true': 0
-
-  mirror_mode:
-    # Mirrors the game horizontally.
-    # Everything in the overworld and in-battle will be mirrored completely.
-    'false': 50
-    'true': 0
-
-  succeed_conditions:
-    # Enable this to make it so the battle condition in fights in the Glitz Pit
-    # will always be fulfilled, regardless of their actual fulfillment.
-    'false': 50
-    'true': 0
-
-  open_westside:
-    # Rogueport Westside is open from the start.
-    'false': 50
-    'true': 0
-
-  grubba_bribe_direction:
-    # Sets how bribing grubba behaves in-game.
-    # Set if you want grubba to require coins for moving up or down the rankings respectively.
-    # up_rank_only: Grubba accepts coins to move up the rankings. (20 -> 1). Moving down is free.
-    # down_rank_only: Grubba accepts coins bribes to move down the rankings. (1 -> 20). Moving up is free.
-    # both_directions: Grubba accepts coins for moving both up and down the rankings.
-    up_rank_only: 0
-    down_rank_only: 0
-    both_directions: 50
-
-  grubba_bribe_cost:
-    # Sets the cost to bribe Grubba to move up the rankings.
-    # Grubba can be found in his office after your first battle in the glitz pit.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  enemy_randomizer:
-    # Toggles the randomization of enemies in battles.
-    # vanilla: Enemies will be the same as the original game.
-    # within_chapter: Enemy encounters will be shuffled with other encounters that appear in the same chapter.
-    # random: Enemy encounters will be shuffled with any other encounter in the game.
-    vanilla: 50
-    within_chapter: 0
-    randomize: 0
-
-  enemy_formations:
-    # Determines how many formations each fight can use when Enemy Randomizer is enabled.
-    # Multiple: Randomize every formation separately.
-    # Singular: Enemy encounters will be reduced to 1 singular, randomized formation.
-    multiple: 0
-    singular: 50
-
-  encounter_shuffle_type:
-    # This determines how enemies are grouped when randomizing.
-    # Enemy randomizer must be set to either within_chapter or random for this option to have an effect.
-    # vanilla_groups: Enemies will be grouped by encounter, and shuffled as a group.
-    # custom_groups: Enemies will be shuffled individually, and grouped into new encounters based on their new enemy count.
-    vanilla_groups: 50
-    custom_groups: 0
-
-  enemy_stat_scaling:
-    # With Enemy Randomizer on, randomized enemies replicate the vanilla HP, Defense and Attack
-    # of the enemy that originally occupied that fight.
-    # Encounters left unrandomized are instead scaled to the chapter they appear in.
-    'false': 50
-    'true': 0
-
-  boss_randomizer:
-    # Shuffles bosses amongst each other.
-    # vanilla: Bosses will be the same as the original game.
-    # chapter_bosses: Only end-of-chapter bosses will be shuffled amongst each other.
-    # mini_bosses: Only mini-bosses will be shuffled amongst each other.
-    # full: All bosses and mini-bosses will be shuffled together.
-    vanilla: 50
-    chapter_bosses: 0
-    mini_bosses: 0
-    full: 0
-
-  boss_stat_scaling:
-    # Scales randomized bosses to replicate the exact HP and level of the boss that originally occupied that fight.
-    # This is independent of Enemy Stat Scaling and only affects bosses; when disabled, bosses are never scaled.
-    'false': 0
-    'true': 50
-
-  boss_scaling_nerfs:
-    # With this enabled, some bosses will be nerfed with Boss Stat Scaling enabled for balancing.
-    # Currently: Cortez's HP scales to a third of the replaced boss's HP, so his three phases
-    # add up to the fight's intended total.
-    # Has no effect unless Boss Stat Scaling is enabled.
-    'false': 0
-    'true': 50
-
-  moon_speed:
-    # Mario's walking speed on the moon will be increased to be the same as his normal walking speed.
-    'false': 50
-    'true': 0
-
-  permanent_peekaboo:
-    # The Peekaboo badge is always active, even when not equipped.
-    'false': 50
-    'true': 0
-
-  full_run_bar:
-    # The run bar in battle always starts at 100 percent.
-    'false': 50
-    'true': 0
-
-  first_attack:
-    # The First Attack badge costs 0 BP, just like the remake.
-    'false': 50
-    'true': 0
-
-  badge_bp:
-    # Change the BP cost of all badges.
-    # This will not affect badges with unique costs such as First Attack, Power Bounce, etc.
-    # vanilla: All badges will have their normal BP cost.
-    # shuffled: All badges will have their BP cost shuffled among each other.
-    # random_costs: All badges will have a random BP cost between 0 and 6.
-    vanilla: 50
-    shuffled: 0
-    random_costs: 0
-
-  badge_fp:
-    # Change the FP cost of all badges.
-    # This will not affect badges with unique costs such as Refresh, etc.
-    # vanilla: All badges will have their normal FP cost.
-    # shuffled: All badges will have their FP cost shuffled among each other.
-    # random_costs: All badges will have a random FP cost between 0 and 6.
-    vanilla: 50
-    shuffled: 0
-    random_costs: 0
-
-  partner_fp:
-    # Change the FP cost of all partners.
-    # This will not affect partners with unique costs such as Vivian, etc.
-    # vanilla: All partner abilities will have their normal FP cost.
-    # shuffled: All partner abilities will have their FP cost shuffled among each other.
-    # random_costs: All partner abilities will have a random FP cost between 0 and 6.
-    vanilla: 50
-    shuffled: 0
-    random_costs: 0
-
-  music_settings:
-    # Choose in-game music settings.
-    # normal: Music will not change.
-    # silent: No music will play at all.
-    # randomized: Music will be randomized.
-    normal: 50
-    silent: 0
-    randomized: 0
-
-  block_visibility:
-    # Choose how visible item blocks are.
-    # normal: All blocks will keep their vanilla visibility.
-    # all_visible: All blocks will be visible.
-    normal: 0
-    all_visible: 50
-
-  experience_multiplier:
-    # Multiplies the experience you gain from battles by percentage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  starting_hp:
-    # How much health you start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  starting_fp:
-    # How much flower points you start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  starting_bp:
-    # How many badge points you start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-
-  starting_coins:
-    # How many coins you start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  starting_level:
-    # What level you start at.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 99
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-99: 0 # random value between 1 and 99
-
-  starting_partner:
-    # Choose the partner that you start with.
-    # This settings will not be applied if partner shuffle is set to Vanilla.
-    goombella: 50
-    koops: 0
-    bobbery: 0
-    yoshi: 0
-    flurrie: 0
-    vivian: 0
-    ms_mowz: 0
-
-  yoshi_color:
-    # Select the color of your Yoshi partner.
-    green: 50
-    red: 0
-    blue: 0
-    orange: 0
-    pink: 0
-    black: 0
-    white: 0
-
-  yoshi_name:
-    # Set the name of your Yoshi partner.
-    # This has a maximum length of 8 characters.
-    Yoshi: 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Crystal Star
+  - Diamond Star
+  - Emerald Star
+  - Garnet Star
+  - Gold Star
+  - Ruby Star
+  - Sapphire Star
+  star_shuffle: all
+  tattlesanity: false
+  piecesanity: nonpanel_only
+  cooksanity: false
+  shopsanity: true
+  shop_purchase_limit: consumables_only
+  shinesanity: true
+  keysanity: true
+  troublesanity: false
+  dazzle_rewards: all
+  pit_items: filler
+  limit_chapter_logic: false
+  limit_chapter_eight: true
+  blue_pipe_toggle: true
+  palace_skip: true
+  cutscene_skip: true
+  epilogue_skip: true
+  disable_intermissions: true
+  fast_travel: true
+  in_game_tracker: true
+  panel_hints: false
+  mirror_mode: false
+  succeed_conditions: true
+  open_westside: false
+  grubba_bribe_direction: both_directions
+  grubba_bribe_cost: 20
+  enemy_randomizer: vanilla
+  enemy_formations: singular
+  encounter_shuffle_type: vanilla_groups
+  enemy_stat_scaling: false
+  boss_randomizer: vanilla
+  boss_stat_scaling: true
+  boss_scaling_nerfs: true
+  moon_speed: true
+  permanent_peekaboo: true
+  full_run_bar: true
+  first_attack: false
+  badge_bp: random_costs
+  badge_fp: random_costs
+  partner_fp: random_costs
+  music_settings: normal
+  block_visibility: all_visible
+  experience_multiplier: 501
+  starting_hp: random
+  starting_fp: random
+  starting_bp: random
+  starting_coins: random
+  starting_level: random
+  starting_partner: random
+  yoshi_color: random
+  yoshi_name: the green guy
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Path of Exile:
   ################
