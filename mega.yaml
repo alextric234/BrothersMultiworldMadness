@@ -17369,337 +17369,42 @@ FNaFW:
   exclude_locations: []
   priority_locations: []
 
+game: Garfield Kart - Furious Racing
 Garfield Kart - Furious Racing:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # Determines what your goal is to consider the game beaten.
-    # 
-    # - Grand Prix: Get first place in every grand prix cup
-    # - Races: Get first place in every race
-    # - Time Trials: Gain medals in all time trials
-    # - Puzzle Piece Hunt: Collect specified amount of puzzle pieces
-    grand_prix: 0
-    races: 50
-    time_trials: 0
-    puzzle_piece_hunt: 0
-
-  cc_requirement:
-    # Sets the CC you will be expected to play on. This determines checks added for winning on specific CCs,
-    # as well as what you need to be able to goal with grand_prix and races on. Selecting any allows winning
-    # on any CC of your choice, with no extra cc checks added.
-    # 
-    # Winning on 150cc will send all checks for 50 and 100cc, and same goes for 100cc giving 50cc checks.
-    # For goaling your slot, if the option is not set to grand prix or races, this option just affects the extra cc win checks.
-    any: 50
-    50cc: 0
-    100cc: 0
-    150cc: 0
-
-  time_trial_goal_grade:
-    # Sets the minimum medal grade required for the Time Trials goal
-    # !!!IMPORTANT!!! Platinum medals require certain kart combinations to be
-    # reasonably achievable. These aren't implemented in logic yet, so randomizing
-    # kart loadouts may lead to impossible games.
-    # 
-    # If the goal is not Time Trials, this option does nothing.
-    bronze: 50
-    silver: 0
-    gold: 0
-    platinum: 0
-
-  ###########################
-  # Race Randomizer Options #
-  ###########################
-  randomize_races:
-    # Sets how to shuffle race unlocks into the item pool
-    # 
-    # - Cups: Grand Prix cup unlocks are shuffled into the item pool, races unlock when you unlock their cup
-    # - Races: Race unlocks are shuffled into the item pool, cups unlock when you've unlocked all races in the cup
-    # - Cups and Races: Race and cup unlocks are shuffled into the item pool, playing a cup requires all 4 races and the cup item
-    # 
-    # Note: "Cups and Races" is incompatible with Progressive Cups - if both are enabled,
-    # Progressive Cups will be automatically disabled.
-    cups: 0
-    races: 50
-    cups_and_races: 0
-
-  progressive_cups:
-    # Starts the game with the first cup onlocked, then unlocks them in order
-    # every time a "Cup Unlock" item is found.
-    # Turning this off unlocks cups in random order with their specific items.
-    # 
-    # This option does nothing if cups aren't randomized.
-    # 
-    # Note: This option is automatically disabled if Randomize Races is set to "Cups and Races".
-    'false': 50
-    'true': 0
-
-  time_trial_randomization:
-    # Adds time trial checks to each course.
-    # 
-    # Choose the highest medal grade to add checks for. Earning a higher medal unlocks all lower medal checks.
-    # 
-    # - Off: No time trial checks are added
-    # - Bronze: Bronze check on each course
-    # - Silver: Bronze and Silver checks on each course
-    # - Gold: Bronze, Silver, and Gold checks on each course
-    # - Platinum: Bronze, Silver, Gold, and Platinum checks on each course
-    # 
-    # Always enabled if Time Trial Goal is enabled.
-    # 
-    # !!!IMPORTANT!!! Platinum medals require certain kart combinations to be
-    # reasonably achievable, and are EXTREMELY DIFFICULT.
-    'off': 50
-    bronze: 0
-    silver: 0
-    gold: 0
-    platinum: 0
-
-  ########################
-  # Puzzle Piece Options #
-  ########################
-  randomize_puzzle_pieces:
-    # Adds puzzle pieces to the item pool.
-    # 
-    # Always on when the goal is Puzzle Piece Hunt
-    'false': 50
-    'true': 0
-
-  puzzle_piece_count:
-    # Sets the amount of puzzle pieces added to the item pool. If the goal is Puzzle Piece Hunt,
-    # a percentage of these (set by Puzzle Pieces Required) is required to beat the game.
-    # 
-    # If puzzle pieces aren't randomized, this option does nothing.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 48
-    48: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-48: 0 # random value between 1 and 48
-
-  puzzle_piece_required:
-    # Sets the percentage of the puzzle pieces in the item pool required to beat the game.
-    # 
-    # Does nothing if the goal is not Puzzle Piece Hunt.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 100
-    75: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-100: 0 # random value between 10 and 100
-
-  #####################
-  # Character Options #
-  #####################
-  randomize_characters:
-    # Adds characters to the item pool, and adds a location for winning a race as each character.
-    'false': 0
-    'true': 50
-
-  randomize_karts:
-    # Adds karts to the item pool, and adds a location for winning a race with each kart.
-    'false': 0
-    'true': 50
-
-  randomize_hats:
-    # Adds hats to the item pool, and adds locatiosn for unlocking a hat via winning a single race or time trial
-    'false': 0
-    'true': 50
-
-  randomize_spoilers:
-    # Adds spoilers to the item pool, and adds locations for unlocking spoilers via grand prix 1st place finishes
-    'false': 50
-    'true': 0
-
-  stat_randomizer:
-    # Randomizes the top speed, acceleration, and handling for Karts and/or Characters
-    # 
-    # - Off: Karts and characters use their default values
-    # - Karts: Randomizes kart stats, not characters
-    # - Characters: Randomizes character stats, not karts
-    # - Both: Randomizes stats for both karts and characters.
-    'off': 50
-    karts: 0
-    characters: 0
-    both: 0
-
-  random_stat_values:
-    # Choose how high you want randomized stats to be. Note that these are just
-    # averages and outliers may still happen, they're just less likely.
-    # 
-    # - Low: Stats are generally much lower than the base game
-    # - Medium: Stats are generally around the same as the base game
-    # - High: Stats are generally much higher than the base game
-    # 
-    # !! WARNING: Setting this to low is extremely likely make certain vanilla 
-    # time trial medals impossible !!
-    low: 0
-    medium: 50
-    high: 0
-
-  ####################
-  # Gameplay Options #
-  ####################
-  single_lap_mode:
-    # Races only have a single lap. This makes the game significantly harder, 
-    # especially on weak kart combos.
-    # 
-    # This overrides Lap Count setting
-    'false': 50
-    'true': 0
-
-  lap_count:
-    # Modifies the amount of laps in a race, has no effect if single lap mode is on.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 10
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-10: 0 # random value between 2 and 10
-
-  disable_cpu_items:
-    # Prevents CPUs from using items for a less chaotic experience.
-    # 
-    # Has no effect if Item Mania is enabled.
-    'false': 50
-    'true': 0
-
-  item_mania:
-    # CPUs will always get 3 copies of items they get from item boxes. CPU items can't be
-    # disabled if this option is selected.
-    # 
-    # !!!WARNING!!! This makes the game significantly harder and more frustrating to play,
-    # not for the faint of heart
-    'false': 50
-    'true': 0
-
-  springs_only:
-    # Item boxes can only give springs. This makes puzzle piece hunting a lot easier.
-    'false': 50
-    'true': 0
-
-  ############################
-  # Other Randomizer Options #
-  ############################
-  randomize_items:
-    # Randomizes the items that can be received from item boxes and adds locations for
-    # acquiring each item from an item box for the first time.
-    # Always starts with one item unlocked.
-    # 
-    # Incompatible with springs only.
-    'false': 50
-    'true': 0
-
-  lap_sanity:
-    # Adds checks for finishing a lap in first place (or another place, configurable in mod settings), adding anywhere between 1 and 10
-    # items to the pool per race, for a total of 16 to 160 extra locations
-    'false': 50
-    'true': 0
-
-  trap_percentage:
-    # What percentage of filler items should be replaced with traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  trap_handling:
-    # Determines when traps are disabled. Some traps, such as Mirror Trap, override this option and will always disable after a period of time.
-    # 
-    # - Time: Disables a trap sent after 1 minute of them being active in a race.
-    # - Race: Disables a trap sent after finishing a race, regardless of placement.
-    # - Win: Disables a trap sent after finishing a race in 1st place. (WARNING! THIS CAN RESULT IN EXTREMELY DIFFICULT SEEDS! BE WARNED!)
-    time: 50
-    race: 0
-    win: 0
-
-  death_link:
-    # Enables Death Link.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: grand_prix
+  cc_requirement: any
+  time_trial_goal_grade: bronze
+  randomize_races: cups
+  progressive_cups: true
+  time_trial_randomization: 'off'
+  randomize_puzzle_pieces: true
+  puzzle_piece_count: random
+  puzzle_piece_required: 75
+  randomize_characters: true
+  randomize_karts: true
+  randomize_hats: true
+  randomize_spoilers: true
+  stat_randomizer: both
+  random_stat_values: high
+  single_lap_mode: false
+  lap_count: 3
+  disable_cpu_items: false
+  item_mania: false
+  springs_only: false
+  randomize_items: true
+  lap_sanity: false
+  trap_percentage: 15
+  trap_handling: time
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 GoldenEye 007:
   ################
