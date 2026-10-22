@@ -28694,120 +28694,19 @@ Pokemon Snap:
   start_inventory_from_pool: {}
 
 Pokemon Trozei:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ############
-  # gameplay #
-  ############
-  required_bosses:
-    # Sets the number of mini bosses required to be able to challenge phobosphere.
-    # To unlock phobosphere this therefore requires the mini boss level unlocks
-    # and the phobosphere level unlock
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  hard_mode:
-    # Allows playing the adventure in hard mode. This makes the game a little harder.
-    # It is possible to play on normal, start on hard mode or have hard mode turned
-    # on by a trap item and stay on permanently.
-    normal: 50
-    hard: 0
-    hard_as_trap: 0
-
-  hard_trap_count:
-    # Specifies the amount of hard mode traps added to the item pool
-    # when set to hard as trap.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  #############
-  # deathlink #
-  #############
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    # 
-    # In Pokemon Trozei, while in a stage in adventure mode, a game over is sent. Game over sends a death link.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  required_bosses: random
+  hard_mode: normal
+  hard_trap_count: 1
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 PokePark:
   progression_balancing: normal
