@@ -30489,977 +30489,114 @@ Secret of Mana:
     []
 
 Shadow The Hedgehog:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ############
-  # Sanities #
-  ############
-  objective_sanity:
-    # Determines if objective based checks are enabled.
-    # Objectivesanity checks are all stage objectives for dark/hero missions.
-    # Please read the readme for more information.
-    'false': 0
-    'true': 50
-
-  enemy_objective_sanity:
-    # Determines if enemy-based objective checks are enabled.
-    'false': 0
-    'true': 50
-
-  character_sanity:
-    # Determines if character checks are enabled.
-    # The first time you meet a character, the cutscene will play and provide a check.
-    # Disabling is handling by overwriting the value and cutscene will never play.
-    'false': 0
-    'true': 50
-
-  checkpoint_sanity:
-    # Determines whether checkpoint sanity is enabled.
-    # This only adds checks and does not add anything to the pool.
-    'false': 0
-    'true': 50
-
-  key_sanity:
-    # Determines whether key sanity is enabled.
-    # This enables checks as keys and does not add any items to the pool.
-    'false': 50
-    'true': 0
-
-  enemy_sanity:
-    # Determines whether standard enemy sanity is enabled.
-    # This can be used in tandem with enemy objective sanity.
-    'false': 50
-    'true': 0
-
-  weapon_sanity_unlock:
-    # Determines whether weapons are required to be obtained from the pool of items.
-    # This will change the logic of same stages.
-    # Can be used alongside Weapon Groups for more flexibility.
-    'false': 50
-    'true': 0
-
-  weapon_sanity_hold:
-    # Determines whether game contains checks for legally holding each weapon.
-    # If unlocked is chosen, you must unlock the weapon with unlock first.
-    # If on is chosen, you will still lose the item in this mode, but will get the check.
-    'off': 50
-    unlocked: 0
-    'on': 0
-
-  vehicle_logic:
-    # Determines if vehicle logic is active. Vehicles will not be avialable for use until found.
-    'false': 50
-    'true': 0
-
-  object_unlocks:
-    # Overarching setting to enable/disable very object options.
-    'false': 50
-    'true': 0
-
-  shadow_boxes:
-    # Whether or not Special Weapon Boxes (Shadow crates) reward a check.
-    'false': 50
-    'true': 0
-
-  energy_cores:
-    # Whether or not energy cores (Hero/Dark cores) reward a check.
-    'false': 50
-    'true': 0
-
-  gold_beetle_sanity:
-    # Whether or not Golden Beetles reward checks.
-    'false': 50
-    'true': 0
-
-  door_sanity:
-    # Determines whether key door sanity is enabled, i.e. opening the key door provides a check.
-    'false': 50
-    'true': 0
-
-  key_collection_method:
-    # Determines how keys can be collected.
-    # Local: Only the player collecting keys locally will collect keys for opening key doors.
-    #     If keysanity is enabled, you will keep these keys when re-entering stages,
-    #     but if disabled, you need to collect each time. Rare logic will require this.
-    # Arch: All keys must be obtained as archipelago items.
-    # Both: Arch items are included and local accessible keys also contribute to the key count.
-    local: 50
-    arch: 0
-    both: 0
-
-  item_sanity:
-    # Determines whether item box sanity is enabled.
-    'false': 50
-    'true': 0
-
-  checkpoint_shuffle:
-    # Determines whether checkpoint shuffle is enabled.
-    # Off: Checkpoint behaviour acts as normal.
-    # Unlocks Only: All checkpoints are added as items into the multiworld,
-    #     allowing you to jump to later in the stage when unlocking.
-    # Start And Unlock: Checkpoints spawns for stages are randomised to be other checkpoints.
-    #     To access Checkpoint 0 when unlocked, for relevant stages,
-    #     You must pause and press Y then restart the stage.
-    'off': 50
-    unlocks_only: 0
-    start_and_unlock: 0
-
+  progression_balancing: normal
+  accessibility: full
+  objective_sanity: true
+  enemy_objective_sanity: true
+  character_sanity: true
+  enemy_sanity: false
+  item_sanity: false
+  key_sanity: false
+  key_collection_method: local
+  checkpoint_sanity: true
+  checkpoint_shuffle: 'off'
   checkpoint_rules:
-    # Specific settings for controlling which checkpoint items are included.
-    # Disable Goal Rings: Disables including the goal ring as a possible checkpoint / spawn point.
-    # Zero Start: If checkpoint zero cannot be backtracked to, always start at 0. Note, read readme for information on reaching if disabled.
-    # Minimal Checkpoints: Removes random checkpoints from the pool to prevent end-game bloat.
-    ['Zero Start']
-
-  minimal_checkpoint_percentage:
-    # Percentage chance to include a checkpoint if Minimal Checkpoint rule is enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  ###############
-  # Progression #
-  ###############
-  starting_stages:
-    # Determines the number of stages that start unlocked in Select mode.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 22
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-22: 0 # random value between 0 and 22
-
-  level_progression:
-    # Which type of logic to use for progression through the game.
-    # Select will ignore story mode progression, and accessibility to stages will be given by items, based on gate options.
-    #     See gates options for more information on gates.
-    # 
-    # Story progression takes the story path and unlocks stages after clearing previous stages in story mode.
-    # Story mode stages will be available in select mode, and clearing in select mode
-    #     will automatically follow the story path, sometimes leading to bosses blocking further stages.
-    #     Use the /story command to see what stages are available in story and
-    #     /story /s{stage} to set the story progression to where it needs to be.
-    select: 50
-    story: 0
-    both: 0
-
-  select_gates:
-    # Determines distribution behaviour for select gates.
-    'off': 0
-    early: 0
-    medium: 50
-    late: 0
-
-  select_gates_count:
-    # Determines the number of select gates.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  gate_unlock_requirement:
-    # Determines how gates are opened when using select gates.
-    # Items: Adds specific gate keys into the logic which open gates sequentially.
-    # Objective: Uses the objective items (e.g. Egg Balloon / Jungle Soldier)
-    # Chaos Emeralds: Each chaos emerald unlocks a gate. Forces gate count.
-    # Objective Available: Objective; but only uses stage items for levels previously available in gates.
-    items: 0
-    objective: 0
-    chaos_emeralds: 0
-    objective_available: 50
-
-  gate_density:
-    # Determines the density of objective items required for gates as per gate formula.
-    # Higher values will set the percentages higher to open gates.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  select_bosses:
-    # Whether bosses can be unlocked via select mode.
-    # Note that mid-bosses require the ability to access the main stage
-    #     in order to enter them but may be unlocked before they can be entered.
-    'false': 0
-    'true': 50
-
-  story_shuffle:
-    # Determines method for shuffling story stages.
-    # Off will disable the story shuffle and will instead require vanilla order.
-    # Chaos mode will shuffle the story. For more information on chaos shuffle, please read the documentation.
-    'off': 50
-    chaos: 0
-
-  select_percentage:
-    # Percent of stage unlock items to include in the item pool when playing
-    # on 'Both' story and select mode.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  story_boss_count:
-    # How many copies of each standard boss to feature through the story chain.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  include_last_way_shuffle:
-    # Determines whether to include Last Way accessibility in the seed.
-    # 
-    # In story mode:
-    # By enabling this, Devil Doom (the final fight) will be hidden in story mode and must be found
-    # in order to clear the game.
-    # Last Way goes to a random stage at the end, hence why Devil Doom MUST be shuffled in this way.
-    # 
-    # In Select mode:
-    # Last Story will unlock early once the stage is unlocked via item or gate. Entering here plays as
-    # normal end game would,  and would lead to Devil Doom afterwards.
-    # 
-    # Note, if you are in the Devil Doom stage without the required goal items unlocked, you will be unable to complete it,
-    # Shadow will run out of rings on a loop and the stage must be exited and returned to later.
-    'false': 50
-    'true': 0
-
-  exclude_go_mode_items:
-    # Excludes go-mode items from being checks, which is currently limited to
-    # - Checks within The Last Way on Select/Story Shuffle-less modes
-    'false': 0
-    'true': 50
-
-  ##############
-  # Difficulty #
-  ##############
-  logic_level:
-    # Determines the logic level for play-through.
-    # Easy: Some requirements are dialled back to make for a smoother early experience.
-    # Normal: Standard logic.
-    # Hard: Skips expected of the player in order to make progress.
-    easy: 0
-    normal: 50
-    hard: 0
-
-  boss_logic_level:
-    # Determines the boss logic level for playthrough.
-    # Easy boss logic ensures the player has access to one of the weapons within the stage in order to beat it.
-    # All bosses can be beaten without any progression otherwise, apart from Iron Jungle Egg Breaker.
-    easy: 50
-    hard: 0
-
-  craft_logic_level:
-    # Determines the craft logic level for playthrough - distinguishing a difference
-    # in logic for crafts in Iron Jungle, Lethal Highway and Air Fleet
-    # 
-    # A divider for calculating amount of hits required to take down a craft.
-    # Option Shadow Rifle: Use lowest setting but explicitly require the Shadow Rifle
-    # Option Impossible: Logic does not take into consideration any multiplier
-    #     The maximum hits (may) require infinite ammo
-    # Other:
-    #     Apply reduction by that value to the total number of hits on the craft
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-    shadow_rifle: 0 # equivalent to 0
-    impossible: 0 # equivalent to 1
-    hard: 0 # equivalent to 3
-    normal: 50 # equivalent to 6
-    easy: 0 # equivalent to 8
-
-  chaos_control_logic_level:
-    # Determines the chaos control logic level for play-through.
-    # Note: This functionality may not work quite as intended yet with checkpoint shuffle.
-    # Off: Chaos Control is never required to make progress.
-    # Easy: Stages where the player will naturally have chaos control are included.
-    # Intermediate: Stages with workarounds that are not extremely complicated are included.
-    # Hard: Requires the player to work out building up and handling gauge.
-    'off': 50
-    easy: 0
-    intermediate: 0
-    hard: 0
-
-  ########
-  # Goal #
-  ########
-  goal_chaos_emeralds:
-    # Determines if chaos emeralds are required for completion.
-    # If enabled, you require the 7 chaos emeralds to unlock your goal.
-    'false': 0
-    'true': 50
-
-  goal_missions:
-    # Determines what percentage of general missions are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    75: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goal_objective_missions:
-    # Determines what percentage of objective missions are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goal_final_missions:
-    # Determines what percentage of final missions are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goal_hero_missions:
-    # Determines what percentage of hero missions are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goal_dark_missions:
-    # Determines what percentage of dark missions are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goal_bosses:
-    # Determines what percentage of bosses are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goal_final_bosses:
-    # Determines what percentage of final boss missions are required for completion, rounded up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###########################
-  # Objective Configuration #
-  ###########################
-  objective_sanity_system:
-    # Option to determine what triggers objective sanity checks.
-    # Count Up, the original system, requires getting/maintaining a particular count.
-    # Individual, the new system, where each individual activation is a separate check, not requiring the count
-    #     Due to technical limitations:
-    #      - Currently disabled for Final Haunt Shields
-    #      - GUN Soldiers work on despawn rather than defeat
-    # Both, checks for both in the system, if available
-    count_up: 0
-    individual: 50
-    both: 0
-
-  objective_sanity_behaviour:
-    # When objective-sanity is enabled, how to operate clearing of stages
-    # Default: You require desired item count to finish stage, press Z to finish, then complete a goal
-    # Manual Clear: You require desired item count to finish stage, pressing Z when completable, sets count to 0, must be beaten normally
-    #     (Must handle early accessible / update to current value detected in the stage)
-    # Base Clear: You do not need to collect items to progress stages, but as objectivesanity is on,
-    #     required to still press Z to avoid inability to get checks.
-    default: 50
-    manual_clear: 0
-    base_clear: 0
-
-  keys_required_for_doors:
-    # Determines how many keys are required to open doors. This works by providing fake keys to the player.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  objective_percentage:
-    # Sets the objective percentage for each objective.
-    # When playing objective sanity count up, this removes the locations for anything after the percentage objective.
-    # Only affects locations, use available/completion for goal-related effects.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  objective_completion_percentage:
-    # When playing Objective Sanity, determine the percentage of items required to finish stages.
-    # When playing non-objective, this is the amount required to complete the stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  objective_item_percentage_available:
-    # When playing Objective Sanity, determine the percentage of items required to finish stages added alongside
-    # your provided completion percentage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 900
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-900: 0 # random value between 0 and 900
-
-  objective_frequency:
-    # Frequency of checks for objective checks, i.e. if set to 4, each 4 progress is 1 check.
-    # This will always include the final check as well as every 4.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  objective_enemy_percentage:
-    # When playing Objective Sanity, determine the percentage of items required to finish stages for enemy objectives.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    90: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  objective_completion_enemy_percentage:
-    # When playing Enemy Objective Sanity, determine the percentage of items required to finish stages.
-    # This is specifically the enemy-based objectivesanity missions.
-    # For all enemies, refer to enemy sanity. These can be used in tandem.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    90: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  objective_item_enemy_percentage_available:
-    # When playing Objective Enemy Sanity, determine the percentage of items required to finish stages added alongside
-    # your provided completion percentage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 900
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-900: 0 # random value between 0 and 900
-
-  enemy_objective_frequency:
-    # Frequency of checks for enemy objective checks as percentage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  enemy_sanity_percentage:
-    # Determines the percentage of enemysanity checks in a stage to be included.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  enemy_frequency:
-    # Frequency of checks for enemy checks, i.e. if set to 4, each 4 progress is 1 check.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  percent_overrides:
-    # Advanced YAML setting to provide keys to dictate percentage based overrides.
-    # Read the setup_en.yaml for more information.
-    {}
-
-  #################
-  # Configuration #
-  #################
-  rifle_components:
-    # Whether parts are required for the Shadow Rifle to be complete and available.
-    'false': 50
-    'true': 0
-
-  excluded_stages:
-    # Stage names to exclude checks from.
-    []
-
-  object_ziplines:
-    # Whether ziplines need to be unlocked before they can be used.
-    'false': 0
-    'true': 50
-
-  object_pulleys:
-    # Whether pulleys need to be unlocked before they can be used.
-    'false': 0
-    'true': 50
-
-  object_rockets:
-    # Whether rockets need to be unlocked before they can be used.
-    'false': 0
-    'true': 50
-
-  object_units:
-    # Whether heal units and bombs, as associated servers need to be unlocked before they can be used.
-    'false': 0
-    'true': 50
-
-  object_warp_holes:
-    # Whether warp holes need to be unlocked before they can be used.
-    'false': 0
-    'true': 50
-
-  object_light_dashes:
-    # Whether light dash trails of rings need to be unlocked before they can be used.
-    'false': 0
-    'true': 50
-
-  single_diablon:
-    # Only include a single Sonic & Diablon of the available 3.
-    'false': 50
-    'true': 0
-
-  single_black_doom:
-    # Only include a single Black Doom of the available 3.
-    'false': 50
-    'true': 0
-
-  single_egg_dealer:
-    # Only include a single Egg Dealer of the available 3.
-    'false': 50
-    'true': 0
-
-  boss_enemy_sanity:
-    # Determines whether boss enemy sanity is enabled.
-    # This can be used in tandem with enemy objective sanity.
-    'false': 50
-    'true': 0
-
-  difficult_enemy_sanity:
-    # Determines whether enemies marked as difficult are included as part of enemy sanity.
-    'false': 50
-    'true': 0
-
-  last_way_enemysanity:
-    # Toggle to disable enemy sanity for last way. Only applicable when enemysanity is enabled.
-    'false': 0
-    'true': 50
-
-  story_and_select_start_together:
-    # Force story mode's start point to be one of the starting select stages (for both mode)
-    'false': 0
-    'true': 50
-
-  story_progression_balancing:
-    # Story progression balancing to determine sphering for story stages.
-    # Higher numbers choose routes leading to more stages available in one go.
-    # Lower numbers choose smaller story progression, but will stay lower progression for longer.
-    # Refer to the documentation for more information.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  story_progression_balancing_passes:
-    # Story progression balancing passes to make, using balancing value.
-    # Use 0 to disable story progression balancing.
-    # Each pass selects a route, reducing the counts required to progress through story missions.
-    # The lowest value from all passes will be used.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  force_objective_sanity_chance:
-    # Determines the probability of a objective-sanity stage being force-added to Priority Locations
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  force_objective_sanity_max:
-    # Determines the upper limit of total objectsanity items in priority locations.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 60
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-60: 0 # random value between 0 and 60
-
-  force_objective_sanity_max_counter:
-    # Determines the upper limit of stages to be forced into priority locations.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  starting_level_method:
-    # Ensures clearable neutral stages are picked first for starting stages.
-    # None: Starting behaviour has no factors.
-    # Clear Stage: First stage non-objectivesanity mission can be cleared.
-    # Stage + Item: First stage, plus an item that progresses through that stage. Only picks one item.
-    none: 50
-    clear_stage: 0
-    stage_and_item: 0
-
-  secret_story_progression:
-    # When using UT, hide the progress of stages until the player has found them in the story mode.
-    'false': 50
-    'true': 0
-
-  checkpoint_convenience:
-    # Determines whether checkpoint convenience is enabled, allowing warping back to a checkpoint
-    # On re-entering a stage if it has been enabled before.
-    # Requires Checkpoint sanity to function.
-    'false': 0
-    'true': 50
-
-  minimum_rank:
-    # Minimum rank required to get the location clear check.
-    a: 0
-    b: 0
-    c: 0
-    d: 0
-    e: 50
-
-  auto_clear_missions:
-    # Set automatic clears for missions once objective criteria is achieved. When playing story mode, ensure
-    # that the player has access to a new stage before auto-clearing to improve tracking behaviour.
-    # Auto clear is automatically disabled when playing on objective-less sanity.
-    'false': 0
-    'true': 50
-
-  start_inventory_excess_items:
-    # Add items to start inventory if not enough locations found.
-    # Not recommended to disable as can lead to generate failures.
-    'false': 0
-    'true': 50
-
-  ###############
-  # Extra Items #
-  ###############
-  enable_ring_items:
-    # Determines if ring filler is included.
-    'false': 0
-    'true': 50
-
-  enable_gauge_items:
-    # Determines if gauge filler is included.
-    'false': 0
-    'true': 50
-
-  enable_ammo_boost_items:
-    # Determines if ammo boost filler is included.
-    'false': 0
-    'true': 50
-
-  enable_traps:
-    # Enables traps for the multiworld
-    'false': 50
-    'true': 0
-
-  trap_fill_percentage:
-    # Enables traps for the multiworld
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  poison_trap_enabled:
-    # Enables traps for the multiworld
-    'off': 50
-    low: 0
-    medium: 0
-    high: 0
-
-  ammo_trap_enabled:
-    # Enables traps for the multiworld
-    'off': 50
-    low: 0
-    medium: 0
-    high: 0
-
-  checkpoint_trap_enabled:
-    # Enables traps for the multiworld
-    'off': 50
-    low: 0
-    medium: 0
-    high: 0
-
-  weapon_sanity_min_available:
-    # Minimum value for weapon copies to be in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  weapon_sanity_max_available:
-    # Maximum value for weapon weapons to be in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
+  - Zero Start
+  minimal_checkpoint_percentage: 50
+  weapon_sanity_unlock: false
+  weapon_sanity_hold: 'off'
+  vehicle_logic: false
+  object_unlocks: false
+  shadow_boxes: false
+  energy_cores: false
+  door_sanity: false
+  gold_beetle_sanity: false
+  starting_stages: 1
+  select_gates: medium
+  select_gates_count: 5
+  gate_unlock_requirement: objective_available
+  level_progression: select
+  story_shuffle: 'off'
+  include_last_way_shuffle: false
+  story_boss_count: 1
+  select_bosses: true
+  select_percentage: 0
+  gate_density: 0
+  exclude_go_mode_items: true
+  logic_level: easy
+  boss_logic_level: easy
+  craft_logic_level: normal
+  chaos_control_logic_level: 'off'
+  goal_chaos_emeralds: true
+  goal_missions: 75
+  goal_final_missions: 0
+  goal_hero_missions: 0
+  goal_dark_missions: 0
+  goal_objective_missions: 0
+  goal_bosses: 0
+  goal_final_bosses: 0
+  objective_sanity_system: individual
+  objective_sanity_behaviour: default
+  objective_percentage: 100
+  objective_enemy_percentage: 90
+  objective_completion_percentage: 100
+  objective_completion_enemy_percentage: 90
+  objective_item_percentage_available: 0
+  objective_item_enemy_percentage_available: 0
+  enemy_sanity_percentage: 50
+  keys_required_for_doors: 5
+  objective_frequency: 1
+  enemy_objective_frequency: 1
+  enemy_frequency: 1
+  boss_enemy_sanity: false
+  difficult_enemy_sanity: false
+  checkpoint_convenience: true
+  force_objective_sanity_chance: 25
+  force_objective_sanity_max: 10
+  force_objective_sanity_max_counter: 1000
+  excluded_stages: []
+  auto_clear_missions: true
+  secret_story_progression: false
+  starting_level_method: none
+  single_egg_dealer: false
+  single_black_doom: false
+  single_diablon: false
+  rifle_components: false
+  minimum_rank: E
+  story_progression_balancing: 25
+  story_progression_balancing_passes: 1
+  object_pulleys: true
+  object_ziplines: true
+  object_units: true
+  object_rockets: true
+  object_light_dashes: true
+  object_warp_holes: true
+  story_and_select_start_together: true
+  start_inventory_excess_items: true
+  last_way_enemysanity: true
+  weapon_sanity_min_available: 1
+  weapon_sanity_max_available: 1
+  enable_gauge_items: true
+  enable_ring_items: true
+  enable_ammo_boost_items: true
   weapon_groups:
-    # Group together confirmed sets of weapon items to unlock them in given batches.
-    # 
-    # - Stage Melee Weapons: Non-required Stage Melee Weapons
-    # - Environment Weapons: All Stage Melee Environment Weapons
-    # - Egg Pawn Weapons: Used by Egg Pawns
-    # - GUN Launcher Weapons: Launching GUN Weapons
-    # - Black Warrior Weapons: Held by standard Black Arms
-    # - Black Oak Weapons: Held by big Black Arm enemies
-    # - Worm Weapons:  Held by Black Arm Worm enemies
-    # - Gun Soldier Weapons: Held by GUN Soldiers
-    # - Gun Mech Weapons: Held by GUN Mechs
-    # - Laser Weapons: Laser-style weapons
-    ['Stage Melee Weapons']
-
-  #########
-  # Other #
-  #########
-  ring_link:
-    # Whether your in-level ring gain/loss is linked to other players.
-    # Off disables the feature.
-    # On enables the feature excluding the special cases listed below.
-    # Unsafe enables ring link during Circus Park missions and during Devil Doom.
-    'off': 50
-    'on': 0
-    unsafe: 0
-
-  music_shuffle:
-    # Toggle for shuffling the stage music upon entering a stage
-    'false': 50
-    'true': 0
-
-  shadow_mod:
-    # Shadow Mod intended to be used. In order to use a mod you accept that the game may not yet
-    # be fully supported and that bugs will occur.
-    # Only vanilla is officially supported.
-    # Only mods in the list have any testing or handling at all.
-    # Minor mods will not affect memory and are likely to be fine.
-    vanilla: 50
-    reloaded: 0
-    sx: 0
-
-  ##########
-  # Plando #
-  ##########
-  plando_starting_stages:
-    # Force this selection of stages to be chosen first.
-    []
-
-  plando_checkpoint_spawns:
-    # Advanced YAML setting to provide keys to dictate percentage based overrides.
-    # Read the setup_en.yaml for more information.
-    {}
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Stage Melee Weapons
+  enable_traps: true
+  ammo_trap_enabled: 'on'
+  checkpoint_trap_enabled: 'on'
+  poison_trap_enabled: 'on'
+  trap_fill_percentage: 15
+  ring_link: 'on'
+  shadow_mod: vanilla
+  music_shuffle: false
+  plando_starting_stages: []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 shapez 2:
   ################
