@@ -29276,421 +29276,49 @@ Ratchet and Clank 3:
   start_inventory_from_pool: {}
 
 Rimworld:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  BasicResearchLocationCount:
-    # The number of basic research locations in the game. These will only require the basic research bench.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 200
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-200: 0 # random value between 10 and 200
-
-  HiTechResearchLocationCount:
-    # The number of hi-tech research locations in the game. These will only require the hi-tech research bench (which requires Microelectronics.)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 200
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-200: 0 # random value between 0 and 200
-
-  MultiAnalyzerResearchLocationCount:
-    # The number of multi-analyzer research locations in the game. These will only require the hi-tech research bench and the multi-analyzer (and the research for them.)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 200
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-200: 0 # random value between 0 and 200
-
-  ResearchBaseCost:
-    # The amount of research points required to research research locations.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 8000
-    500: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-8000: 0 # random value between 10 and 8000
-
-  ResearchCostVariance:
-    # The max amount research points will vary by for research locations.
-    # If the base cost is 500 and the variance is 800, every research will cost between 500 and 1300 points.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8000: 0 # random value between 0 and 8000
-
-  ResearchCostIncreasePerTier:
-    # The amount of points that will increase per research tier.
-    # For example, if the base cost is 500, the variance is 800, and the Increase Per Tier is 100, a third-tier (third column) research will be
-    # between 700 and 1500 points.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8000: 0 # random value between 0 and 8000
-
-  ResearchMaxPrerequisites:
-    # The max number of prerequisites for the generated Archipelago research. The higher this is, the more restricted your selection of research will be.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  CraftLocationCount:
-    # The number of craft locations in the game. These locations require crafting two random items together.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 400
-    51: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-400: 0 # random value between 0 and 400
-
-  RaidLocationCount:
-    # The number of raid locations in the game. These locations require defeating a target enemy, one of which will carry a location item in its inventory in each raid.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 400
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-400: 0 # random value between 0 and 400
-
-  TradeLocationCount:
-    # The number of trade locations in the game. These locations require trading with a caravan or settlement for a location item.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 200
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-200: 0 # random value between 0 and 200
-
-  RaidTrapCount:
-    # The guaranteed number of raid traps in the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ColonistItemCount:
-    # The number of colonists that will get sent as items in the game. Note: If you wind up with more than ~20 colonists, you may have performance issues.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  PlayerNamesAsColonistItems:
-    # If enabled, random player names from the multiworld will be used for colonist nicknames
-    disabled: 50
-    enabled: 0
-
-  PercentFillerAsTraps:
-    # The chance random filler will become trap items, like raids.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  VictoryCondition:
-    # The way to win. Choosing "any" will ensure one of these is considered "in-logic." They also require a "basic" set of research that isn't strictly required to win, so royalty will consider pianos and noble apparel in logic, while anomaly will consider basic bioferrite research in logic. The monument victory condition will require building a room with special archipelago statues and some number of randomized room conditions.
-    any: 0
-    ship_launch: 50
-    royalty: 0
-    archonexus: 0
-    anomaly: 0
-    monument: 0
-
-  MonumentStatueCount:
-    # If the monument victory condition is enabled, this specifies how many Archipelago statues will be required to create a monument and win the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 30
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-30: 0 # random value between 1 and 30
-
-  ExtraMonumentStatueCount:
-    # If the monument victory condition is enabled, this specifies how many extra monument statues will be in the pool, allowing the player an easier victory.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 30
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-30: 0 # random value between 0 and 30
-
-  MonumentOtherBuildingRequirementCount:
-    # If the monument victory condition is enabled, this specifies how many non-statue building requirements will be required to create a monument and win the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  MonumentWealthRequirement:
-    # If the monument victory condition is enabled, this specifies how much wealth is required in the monument room to win.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 350000
-    10000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-350000: 0 # random value between 0 and 350000
-
-  RoyaltyEnabled:
-    # Enable the Royalty DLC. If you disable any DLC in yaml and enable it in client, all research will be researchable and excluded from the generator.
-    disabled: 50
-    enabled: 0
-
-  IdeologyEnabled:
-    # Enable the Ideology DLC. If you disable any DLC in yaml and enable it in client, all research will be researchable and excluded from the generator.
-    disabled: 50
-    enabled: 0
-
-  BiotechEnabled:
-    # Enable the Biotech DLC. If you disable any DLC in yaml and enable it in client, all research will be researchable and excluded from the generator.
-    disabled: 50
-    enabled: 0
-
-  AnomalyEnabled:
-    # Enable the Anomaly DLC. If you disable any DLC in yaml and enable it in client, all research will be researchable and excluded from the generator.
-    disabled: 50
-    enabled: 0
-
-  OdysseyEnabled:
-    # Enable the Odyssey DLC. If you disable any DLC in yaml and enable it in client, all research will be researchable and excluded from the generator.
-    disabled: 50
-    enabled: 0
-
-  StartingResearchLevel:
-    # If "none" is selected, the player will have access to NO research, regardless of starting scenario. Tribal and Crashlanded will give the player those starting research (regardless of starting scenario.)
-    none: 50
-    tribal: 0
-    crashlanded: 0
-
-  BonusResearchItems:
-    # How many bonus items will you receive when a research (that unlocks items) is received. For example, if this is set to 2, you may receive a jacket and a flophat when you receive Complex Clothing. If set to -1, you'll receive one of everything, otherwise, you'll receive any number at random (note: This means setting it to higher than 1 may result in getting, say, 5 Harps when you receive Harp.)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is -1
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range--1-10: 0 # random value between -1 and 10
-
-  ResearchScoutType:
-    # How research project scouting works - this will show you what items research projects will send. "None" will show no information for all research. "Summary" options will show the player name and item type (Chris's progressive item). "Fullitem" options will show player name and item name (Chris's progressive item, Master Sword). "Available" options will show only if the research can be started now. "All" options will hint all research.
-    none: 0
-    summary_available: 0
-    fullitem_available: 50
-    summary_all: 0
-    fullitem_all: 0
-
-  ResearchScoutSecretTraps:
-    # If turned on, the game will lie about scouted trap items. If the scout type shows the player and item name, all traps will be replaced by a random progression item from another player (instead of showing Alex's freeze trap, it will show Chris's Master Sword.) If the scout type only shows item type, it will simply show traps as progression items.
-    'off': 50
-    'on': 0
-
-  NeolithicItemWeight:
-    # How likely it will be that low/no-tech items are chosen for crafting locations. Higher weights make this category more likely. 0 will exempt it from the list. Note that these categories are slightly different than the vanilla "Tech Level," to help account for how challenging they are to craft.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  MedievalItemWeight:
-    # How likely it will be that low-tech items are chosen for crafting locations. Higher weights make this category more likely. 0 will exempt it from the list. Note that these categories are slightly different than the vanilla "Tech Level," to help account for how challenging they are to craft.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  IndustrialItemWeight:
-    # How likely it will be that mid-tech items are chosen for crafting locations. Higher weights make this category more likely. 0 will exempt it from the list. Note that these categories are slightly different than the vanilla "Tech Level," to help account for how challenging they are to craft.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  SpacerItemWeight:
-    # How likely it will be that high-tech items are chosen for crafting locations. Higher weights make this category more likely. 0 will exempt it from the list. Note that these categories are slightly different than the vanilla "Tech Level," to help account for how challenging they are to craft.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  HardToMakeItemWeight:
-    # How likely it will be that complicated items are chosen for crafting locations. These items usually require specific/unique investment, like multiple advanced components and the like. Higher weights make this category more likely. 0 will exempt it from the list. Note that these categories are slightly different than the vanilla "Tech Level," to help account for how challenging they are to craft.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  AnomalyItemWeight:
-    # How likely it will be that Anomaly-specific items are chosen for crafting locations. These items will often require bioferrite, and investment into the anomaly expansion to craft. Higher weights make this category more likely. 0 will exempt it from the list. Note that these categories are slightly different than the vanilla "Tech Level," to help account for how challenging they are to craft.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  BasicResearchLocationCount: 35
+  HiTechResearchLocationCount: 35
+  MultiAnalyzerResearchLocationCount: 35
+  ResearchBaseCost: 500
+  ResearchCostVariance: 1000
+  ResearchCostIncreasePerTier: 100
+  ResearchMaxPrerequisites: 3
+  CraftLocationCount: 51
+  RaidLocationCount: 10
+  TradeLocationCount: 10
+  RaidTrapCount: 0
+  ColonistItemCount: 5
+  PlayerNamesAsColonistItems: disabled
+  PercentFillerAsTraps: 20
+  VictoryCondition: ship_launch
+  MonumentStatueCount: 5
+  ExtraMonumentStatueCount: 0
+  MonumentOtherBuildingRequirementCount: 5
+  MonumentWealthRequirement: 10000
+  RoyaltyEnabled: disabled
+  IdeologyEnabled: disabled
+  BiotechEnabled: disabled
+  AnomalyEnabled: disabled
+  OdysseyEnabled: disabled
+  StartingResearchLevel: none
+  BonusResearchItems: 0
+  ResearchScoutType: fullitem_available
+  ResearchScoutSecretTraps: 'off'
+  NeolithicItemWeight: 60
+  MedievalItemWeight: 60
+  IndustrialItemWeight: 30
+  SpacerItemWeight: 10
+  HardToMakeItemWeight: 1
+  AnomalyItemWeight: 10
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Risk of Rain 2:
   ################
