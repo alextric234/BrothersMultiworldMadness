@@ -28330,654 +28330,92 @@ Pokemon FireRed and LeafGreen:
   priority_locations: []
 
 Pokemon HeartGold and SoulSilver:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  version:
-    # Which version will be randomized.
-    heartgold: 50
-    soulsilver: 0
-
-  goal:
-    # The goal of the randomizer.
-    # 
-    # Options:
-    # - clear_pokemon_league: defeat Lance in the Pokémon League.
-    # - defeat_red: defeat Red at the Summit of Mount Silver.
-    clear_pokemon_league: 50
-    defeat_red: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    # 
-    # In Pokémon HeartGold and SoulSilver, blacking out sends a death and receiving a death causes you to black out.
-    'false': 50
-    'true': 0
-
-  death_link_group:
-    # The death link group to use. Death links are only sent within groups.
-    # To interface with games which do not support groups, use the empty group "".
-    '': 50
-
-  remote_items:
-    # Whether local items should be given in-game, or sent by the server.
-    # This overrides the show randomized progression items option: all items are shown.
-    # 
-    # Choices:
-    # - off: no items are remote.
-    # - only_randomized: only randomized items are remote.
-    # - only_randomized_or_progression: only randomized items or progression items are remote.
-    # - all: all (randomizable) items are remote.
-    'off': 50
-    only_randomized: 0
-    only_randomized_or_progression: 0
-    all: 0
-
-  #################
-  # Item Shuffles #
-  #################
-  overworlds:
-    # Adds overworld items to the pool.
-    'false': 0
-    'true': 50
-
-  hiddens:
-    # Adds hidden items to the pool.
-    'false': 50
-    'true': 0
-
-  npc_gifts:
-    # Adds NPC gifts to the pool.
-    'false': 0
-    'true': 50
-
-  key_items:
-    # Adds key items to the pool.
-    'false': 0
-    'true': 50
-
-  hms:
-    # Adds the HMs to the pool.
-    # 
-    # The expectation is that this will be enabled. If not, depending on
-    # other options—particularly barricades—certain locations may be inaccessible,
-    # or certain seeds incompletable.
-    'false': 0
-    'true': 50
-
-  badges:
-    # Adds the badges to the pool.
-    # 
-    # The expectation is that this will be enabled. If not, depending on
-    # other options—particularly barricades—certain locations may be inaccessible,
-    # or certain seeds incompletable.
-    'false': 0
-    'true': 50
-
-  rods:
-    # Adds rods to the pool.
-    'false': 0
-    'true': 50
-
-  bicycle:
-    # Adds the bicycle to the pool.
-    'false': 50
-    'true': 0
-
-  running_shoes:
-    # Adds the running shoes to the pool.
-    'false': 50
-    'true': 0
-
-  pokedex:
-    # Add the Pokedex to the pool. Note: this also adds the national dex to the pool.
-    'false': 50
-    'true': 0
-
-  time_items:
-    # Adds the different times of day (morning, day, night) as items to the item pool. If set to false, they are precollected.
-    'false': 0
-    'true': 50
-
-  sound_items:
-    # Adds different radio music as sound items to the item pool. If set to false, they are precollected.
-    'false': 0
-    'true': 50
-
-  randomize_fly_items:
-    # Add fly locations to the pool.
-    # 
-    # Options:
-    # - kanto
-    # - johto
-    # - pokemon_league
-    # - mount_silver
-    []
-
-  pokegear_card:
-    # Randomize the cards available for the Pokegear.
-    'false': 50
-    'true': 0
-
-  ##############
-  # Roadblocks #
-  ##############
-  require_restored_power_for_magnet_train:
-    # In addition to the pass, the magnet train will require power to be restored
-    # before it is operational (as it is in vanilla gameplay).
-    'false': 0
-    'true': 50
-
-  blue_return_viridian_badge_requirement:
-    # The number of Kanto League Badges required for Blue to agree to return to the Viridian City Gym.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 7
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-7: 0 # random value between 0 and 7
-
-  ################
-  # Logic Tweaks #
-  ################
-  visibility_hm_logic:
-    # Logically require Flash for traversing and finding locations in applicable regions.
-    'false': 0
-    'true': 50
-
-  dowsing_machine_logic:
-    # Logically require the Dowsing Machine to find hidden items.
-    'false': 0
-    'true': 50
-
-  ############
-  # Starters #
-  ############
-  randomize_starters:
-    # Randomize starter Pokémon.
-    'false': 50
-    'true': 0
-
-  require_two_level_evolution_starters:
-    # If the starters are randomized, require that they all be two-level-evolution species.
-    # This option only applies to the blacklist. If the whitelist is nonempty,
-    # it is ignored.
-    'false': 50
-    'true': 0
-
-  starter_whitelist:
-    # Specify the possible starters that can be randomized.
-    # This has precedence over the blacklist and requiring two-level-evolution
-    # species.
-    # This has no effect if starters are not randomized.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # Note: legendaries is **not** a valid key for this option.
-    []
-
-  starter_blacklist:
-    # Specify the banned starters.
-    # The whitelist has precedence over this.
-    # This has no effect if starters are not randomized.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # legendaries, all lowercase, will be interpreted as banning all legendary
-    # species.
-    []
-
-  ###########
-  # Pokémon #
-  ###########
-  randomize_encounters:
-    # Randomize encountered Pokémon. This does not affect static legendaries, like Ho-Oh and Lugia.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  version: heartgold
+  goal: clear_pokemon_league
+  death_link: true
+  death_link_group: ''
+  remote_items: 'off'
+  hms: true
+  badges: true
+  overworlds: true
+  hiddens: false
+  npc_gifts: true
+  key_items: true
+  rods: true
+  running_shoes: false
+  bicycle: true
+  pokedex: false
+  time_items: true
+  sound_items: true
+  pokegear_card: false
+  randomize_fly_items: []
+  require_restored_power_for_magnet_train: true
+  blue_return_viridian_badge_requirement: random
+  visibility_hm_logic: true
+  dowsing_machine_logic: true
+  randomize_starters: true
+  require_two_level_evolution_starters: true
+  starter_whitelist: []
+  starter_blacklist: []
+  reusable_tms: true
+  ap_items_shop_in_ap_helper: true
+  randomize_encounters: true
   in_logic_encounters:
-    # - rods: fishing encounters.
-    # - time: tall-grass or fishing encounters which require a specific time of day.
-    # - rock_smash: rock smash encounters.
-    # - sounds: hoenn/sinnoh sounds encounters.
-    ['time', 'sounds', 'rock_smash', 'rods']
-
-  encounter_species_blacklist:
-    # Specify the banned encounter species.
-    # The whitelist has precedence over this.
-    # This has no effect if starters are not randomized.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # legendaries, all lowercase, will be interpreted as banning all legendary
-    # species.
-    []
-
-  dexsanity:
-    # How many dexsanity locations there will be.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 493
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-493: 0 # random value between 0 and 493
-    none: 50 # equivalent to 0
-    full: 0 # equivalent to 493
-
-  dexsanity_mode:
-    # The dexsanity mode.
-    # 
-    # Options:
-    # - noreq: no items are required to trigger dexsanity locations.
-    # - req: the Pokedex (or National Dex for non-regional species) is required
-    #        to trigger dexsanity locations.
-    # - req_noprompt: same as req, but when you initially get the Pokedex
-    #                 or National Dex, do not prompt for each already seen
-    #                 dexsanity species.
-    noreq: 50
-    req: 0
-    req_noprompt: 0
-
-  dexsanity_blacklist:
-    # Specify the species which cannot be dexsanity locations.
-    # The whitelist has precedence over this.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # legendaries, all lowercase, will be interpreted as banning all legendary
-    # species.
-    []
-
-  dexsanity_whitelist:
-    # Specify the possible species which can be dexsanity locations.
-    # This has precedence over the dexsanity blacklist.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # legendaries, all lowercase, will be interpreted as allowing all legendary
-    # species.
-    []
-
-  dexsanity_required:
-    # Specify the species which must be dexsanity locations.
-    # This has precedence over the whitelist and blacklist.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # legendaries, all lowercase, will be interpreted as requiring all legendary
-    # species.
-    []
-
+  - rock_smash
+  - rods
+  - sounds
+  - time
+  encounter_species_blacklist: []
+  dexsanity: 50
+  dexsanity_mode: noreq
+  dexsanity_whitelist: []
+  dexsanity_blacklist: []
+  dexsanity_required: []
   in_logic_evolution_methods:
-    # Evolution methods that are in logic.
-    # Valid keys:
-    # - level: all species which require a specific level to evolve.
-    # - happiness: all species which require happiness to evolve.
-    # - use_item: all species which require a specific item to evolve. This includes trade evolutions (item is linking cord).
-    # - held_item: all species which require a held item to evolve.
-    # - time: all species which require being evolved at certain times.
-    # - location: all species which require being evolved at certain locations.
-    # - mildly_annoying: the secondary evolution of nincada, leveling up with a certain species in the party, those requiring certain genders.
-    # - highly_annoying: the evolutions of tyrogue, wurmple, and feebas.
-    # 
-    # For species whose evolutions intersect multiple categories, all categories are required for their evolution to be in logic. For example, time and held_item must be specified for happiny's evolution to be in logic. level and mildly_annoying must be specified for the evolution of nincada into shedinja.
-    ['happiness', 'level', 'held_item', 'time', 'location', 'use_item']
-
-  ap_items_shop_in_ap_helper:
-    # Non-reusable progression bag (named AP items shop) items shop is available with the AP Helper.
-    # (the AP Helper is present in the basement floor of any Pokémon Center)
-    'false': 0
-    'true': 50
-
-  reusable_tms:
-    # TMs are reusable.
-    'false': 50
-    'true': 0
-
-  mossy_rock_locations:
-    # Where mossy rocks appear. In vanilla, mossy rocks are used to evolve Eevee into Leafeon.
-    # 
-    # Options:
-    # - option_kanto: a mossy rock will appear in Viridian Forest.
-    # - option_johto: a mossy rock will appear in Ilex Forest.
-    # - option_both: both of the above will apply.
-    kanto: 0
-    johto: 0
-    both: 50
-
-  icy_rock_locations:
-    # Where icy rocks appear. In vanilla, icy rocks are used to evolve Eevee into Glaceon.
-    # 
-    # Options:
-    # - option_kanto: an icy rock will appear in Seafoam Islands.
-    # - option_johto: an icy rock will appear in Ice Path.
-    # - option_both: both of the above will apply.
-    kanto: 0
-    johto: 0
-    both: 50
-
-  magnetic_field_locations:
-    # Where magnetic fields are present. In vanilla, magnetic fields are used to evolve certain species.
-    # 
-    # Options:
-    # - option_kanto: a magnetic field will be present in the grass outside the power plant.
-    # - option_johto: a magnetic field will be present in the Ruins of Alph.
-    # - option_both: both of the above will apply.
-    kanto: 0
-    johto: 0
-    both: 50
-
-  ############
-  # Trainers #
-  ############
-  trainersanity:
-    # Each trainer adds a location to the game. These locations are
-    # filled with nuggets by default.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 461
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-461: 0 # random value between 0 and 461
-    none: 50 # equivalent to 0
-    full: 0 # equivalent to 461
-
-  trainersanity_whitelist:
-    # Specify the possible trainers which can be trainersanity locations.
-    # This has precedence over the trainersanity blacklist.
-    []
-
-  trainersanity_blacklist:
-    # Specify the trainers which cannot be trainersanity locations.
-    # The whitelist has precedence over this.
-    []
-
-  trainersanity_required:
-    # Specify trainers which must be trainersanity locations.
-    # Has precedence over the whitelist and blacklist.
-    []
-
-  randomize_trainer_parties:
-    # Randomize trainer party members.
-    'false': 50
-    'true': 0
-
-  trainer_party_blacklist:
-    # Specify the banned trainer party species.
-    # The whitelist has precedence over this.
-    # This has no effect if starters are not randomized.
-    # 
-    # The species names should be entered entirely in lowercase.
-    # Spaces should be replaced by underscores. For example,
-    # Mr. Mime would be mr_mime.
-    # 
-    # legendaries, all lowercase, will be interpreted as banning all legendary
-    # species.
-    []
-
-  #######
-  # HMs #
-  #######
-  remove_badge_requirements:
-    # Specify which HMs do not require a badge to use outside of battle.
-    # 
-    # HMs should be provided in the form: "fly", "waterfall", "rock_smash", etc.
-    # "all" specifies that all hms have their requirement removed.
-    []
-
-  tmhm_compatibility:
-    # Add TM/HM compatibility to all species.
-    # 
-    # Choices:
-    # - none: the compatibility is unaffected
-    # - hms: all species will be compatible with all HMs (and TM70 Flash)
-    # - all: all species will be compatible with all TMs and HMs
-    none: 50
-    hms: 0
-    all: 0
-
-  hm_reader:
-    # Add the HM Reader item. The HM Reader is an item that lets you use field moves without teaching them.
-    # 
-    # Options:
-    # - no: Don't add the HM Reader item.
-    # - itempool: Add the HM Reader item to the itempool.
-    # - precollected: Start with the HM Reader item.
-    'no': 50
-    itempool: 0
-    precollected: 0
-
-  hm_reader_mode:
-    # Mode for the HM Reader. The HM Reader is an item that lets you use field moves without teaching them.
-    # 
-    # Options:
-    # - req_mon: require a Pokemon in your party to which you can teach the move, in order for the HM reader to use it.
-    # - noreq_mon: do not require a Pokemon in your party to which you can teach the move.
-    req_mon: 50
-    noreq_mon: 0
-
-  ###################
-  # Quality of Life #
-  ###################
-  game_options:
-    # Presets in-game options.
-    # 
-    # Allowed options and values, with default first:
-    # 
-    # text_speed: mid/slow/fast - Sets the text speed
-    # sound: stereo/mono - Sets the sound mode
-    # battle_scene: on/off - Sets whether the battle animations are shown
-    # battle_style: shift/set - Sets whether pokemon can be changed when the opponent's pokemon faints
-    # button_mode: normal/l=a - Sets the button mode
-    # text_frame: 1–20 - Sets the textbox frame. "random" will pick a random frame.
-    # received_items_notification: jingle/nothing/message - Sets the received_items_notification.
-    # 
-    # The text_speed, sound, battle_scene, battle_style, button_mode, text_frame, and received_items_notification
-    # options can additionally be modifier in the in-game options menu.
-    battle_scene: 'on'
-    battle_style: shift
-    button_mode: normal
-    received_items_notification: jingle
-    sound: stereo
-    text_frame: 1
-    text_speed: mid
-
-  blind_trainers:
-    # Set whether trainers will be blind.
-    # 
-    # This option can also be modified in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  hm_cut_ins:
-    # Whether HM Cut-Ins should be played.
-    # 
-    # This option can also be modified in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  fps60:
-    # Whether the 60 FPS patch should be applied.
-    # 
-    # This option can also be modified in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  normalize_encounters:
-    # In the vanilla game, encounter table entries have varying probabilities, from 20% down to 1%.
-    # This option will normalize these, so they all have the same probability. The normalized
-    # probabilities are 1/12 for each entry in the land table, and 1/5 for each entry in the water
-    # and rod tables.
-    # 
-    # This option is modifiable in the in-game options menu.
-    # 
-    # Note: this does not mean that there are twelve encounter slots, and a 1/12 chance for each slot.
-    # Often there will only be two or three encounter slots per route, occupying all twelve entries
-    # in the encounter table. This option only means that the *smallest* possible probability for any
-    # slot will be 1/12. (except for special encounters, where there may be more or less table
-    # entries)
-    'false': 0
-    'true': 50
-
-  instant_text:
-    # Have text scroll instantly.
-    # 
-    # This option is modifiable in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  hold_a_to_advance:
-    # You no longer need to press A to advance text, holding it will suffice. (Same for B)
-    # 
-    # This option is modifiable in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  always_catch:
-    # Have a 100% chance of catching any encounter.
-    # 
-    # This option is modifiable in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  guaranteed_escape:
-    # You will always be able to escape from wild encounters.
-    # 
-    # This option is modifiable in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  talk_trainers_without_fight:
-    # You can talk to trainers without having to fight them.
-    # This only applies when you talk to them, not if they spot you.
-    # Note: them spotting you can be disabled by the blind trainers option.
-    # 
-    # This option is modifiable in the in-game options menu.
-    'false': 50
-    'true': 0
-
-  exp_multiplier:
-    # Set an experience multiplier for all gained experience.
-    # This can either be an integer between 0 and 65535, inclusive,
-    # or a string of a fraction "a/b", where the numerator is
-    # between 0 and 65535, inclusive, and the denominator is
-    # between 1 and 65535, inclusive.
-    # 
-    # This option can be modified in-game.
-    1
-
-  master_repel:
-    # Add a master repel item to the item pool. The master repel is a key item.
-    # It is a repel that blocks all encounters, and never runs out.
-    'false': 50
-    'true': 0
-
+  - happiness
+  - held_item
+  - level
+  - location
+  - time
+  - use_item
+  mossy_rock_locations: both
+  icy_rock_locations: both
+  magnetic_field_locations: both
+  trainersanity: none
+  trainersanity_whitelist: []
+  trainersanity_blacklist: []
+  trainersanity_required: []
+  randomize_trainer_parties: false
+  trainer_party_blacklist: []
+  remove_badge_requirements: []
+  hm_reader: precollected
+  hm_reader_mode: noreq_mon
+  tmhm_compatibility: hms
+  require_fly_items_for_flight: false
+  blind_trainers: false
+  hm_cut_ins: false
+  fps60: false
+  normalize_encounters: true
+  instant_text: true
+  hold_a_to_advance: true
+  always_catch: true
+  guaranteed_escape: true
+  talk_trainers_without_fight: false
   item_notifications_mask:
-    # Which types of items should in-game notifications be shown for.
-    # Valid options are all, progression, useful, and trap.
-    # 
-    # This option can also be modified in the in-game options menu.
-    ['progression', 'useful']
-
-  require_fly_items_for_flight:
-    # Require the fly location item to fly to a certain location.
-    # If this is false, then simply visiting the location will be sufficient.
-    'false': 50
-    'true': 0
-
-  fast_fishing:
-    # Fishing is faster.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - progression
+  - useful
+  fast_fishing: true
+  master_repel: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Pokemon Mystery Dungeon Explorers of Sky:
   ################
