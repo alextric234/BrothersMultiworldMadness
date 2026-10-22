@@ -29583,360 +29583,41 @@ Saving Princess:
     []
 
 Schedule I:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ####################
-  # Gameplay Options #
-  ####################
-  goal:
-    # The goal to win the game.
-    # Bomb Fragments: A MacGuffin item goal. Must recieve all bomb fragments to goal.
-    # networth: Reach a specificed net worth to goal.
-    # missions_: Complete the main story, defeat the cartel to goal
-    #     - 700 Suburbia cartel influence (7 cartel items) is required to defeat the cartel.
-    bomb_fragments_only: 0
-    missions_only: 0
-    missions_networth: 50
-    missions_bomb_fragments: 0
-    missions_networth_bomb_fragments: 0
-    bomb_fragments_networth: 0
-
-  networth_amount_required:
-    # The net worth amount required to win the game.
-    # This option is only relevant if the goal includes net worth.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10000
-    # Maximum value is 10000000
-    100000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10000-10000000: 0 # random value between 10000 and 10000000
-
-  number_of_bomb_fragments_required:
-    # The number of bomb fragments required to win the game.
-    # This option is only relevant if the goal includes bomb fragments.
-    # The default value is 5.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 20
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-20: 0 # random value between 5 and 20
-
-  number_of_extra_bomb_fragments:
-    # The number of extra bomb fragments to include in the item pool.
-    # This option is only relevant if the goal includes bomb fragments.
-    # The default value is 2. Make sure to accomadate for how many required.
-    # Recommended value to have ~25-33% extra fragments.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  number_of_xp_bundles:
-    # Number of XP bundles to include in the item pool.
-    # min to max xp bundles will be interpolated based on number of bundles.
-    # Meaning there will be 1 min bundle and 1 max bundle and the rest will be evenly distributed in between.
-    # If default min/max are used, 25 bundles give max level xp. 12 gives out about a quarter of that.
-    # 16,425 xp is needed to complete the game, but this can be done naturally, bundles speed up process.
-    # If 1 bundle is chosen, only the minimum xp bundle will be in the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    12: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  amount_of_xp_per_bundle_min:
-    # Min amount of XP per bundle included in the item pool.
-    # Each bundle is worth the specified amount of XP.
-    # This option is only relevant if NumberOfXpBundles > 0.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1000: 0 # random value between 1 and 1000
-
-  amount_of_xp_per_bundle_max:
-    # Max amount of XP per bundle included in the item pool.
-    # Each bundle is worth the specified amount of XP.
-    # This option is only relevant if NumberOfXpBundles > 0.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1000
-    # Maximum value is 10000
-    5000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1000-10000: 0 # random value between 1000 and 10000
-
-  number_of_cash_bundles:
-    # Number of cash bundles to include in the item pool.
-    # min to max cash bundles will be interpolated based on number of bundles.
-    # Meaning there will be 1 min bundle and 1 max bundle and the rest will be evenly distributed in between.
-    # If 1 bundle is chosen, only the minimum cash bundle will be in the item pool.
-    # Defaults will give out ~87k cash with 20 bundles. 46 bundles gives out ~200k cash.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    12: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  amount_of_cash_per_bundle_min:
-    # Min amount of cash per bundle included in the item pool.
-    # Each bundle is worth the specified amount of cash.
-    # This option is only relevant if NumberOfCashBundles > 0.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 1500
-    1500: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-1500: 0 # random value between 1 and 1500
-
-  amount_of_cash_per_bundle_max:
-    # Max amount of cash per bundle included in the item pool.
-    # Each bundle is worth the specified amount of cash.
-    # This option is only relevant if NumberOfCashBundles > 0.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1500
-    # Maximum value is 100000
-    10000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1500-100000: 0 # random value between 1500 and 100000
-
-  ban_bad_filler_items:
-    # If enabled, bad filler items will not be included in the item pool.
-    'false': 0
-    'true': 50
-
-  ban_progression_skip_items:
-    # If enabled, filler items that allow for progression skips will not be included in the item pool.
-    # This can add variety to the seed to allow for out of logic skips.
-    'false': 0
-    'true': 50
-
-  trap_chance:
-    # Percentage chance that a filler item will be a trap.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  randomize_level_unlocks:
-    # Leveling up is always a check regardless of this option.
-    # Block Boss I, 30,350xp, will be the highest checks will go to.
-    # Things you unlock by leveling up will be shuffled into the item pool if this option is enabled.
-    # When this is enabled, you will no longer get level up rewards naturally.
-    'false': 0
-    'true': 50
-
-  randomize_cartel_influence:
-    # Determines if cartel influence will be randomized into the item pool.
-    # 7 Bundles of 100 cartel influence per in-game region that applies.
-    # Every 100 cartel influcence by the player counts as a check regardless of this option.
-    # This option removes the player's ability to earn cartel influence naturally
-    'false': 0
-    'true': 50
-
-  cartel_influence_items_per_region:
-    # Number of cartel influence Items to include in the item pool per region.
-    # Each item is worth 100 cartel influence.
-    # 7 needed to unlock region, recommend to add extra of each region.
-    # Westville has 5 less checks and 5 less cartel influence items
-    # This option is only relevant if Randomize Cartel Influence is enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 7
-    # Maximum value is 12
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-7-12: 0 # random value between 7 and 12
-
-  randomize_customers:
-    # Determines if customers will be added into the item pool.
-    # Customers are checks regardless if this is toggled on or off
-    # Player can still get successful samples as checks
-    'false': 0
-    'true': 50
-
-  randomize_dealers:
-    # Determines if dealers will be added into the item pool.
-    # Recruiting dealers become checks, but you do not recruit them.
-    # This does not include Benji, who is required for story progression.
-    'false': 0
-    'true': 50
-
-  randomize_suppliers:
-    # Determines if suppliers will be added into the item pool.
-    # If enabled, befriending suppliers no longer become checks.
-    # Albert Hoover is unlocked by default
-    'false': 0
-    'true': 50
-
-  randomize_sewer_key:
-    # Determines if the Sewer Key will be added into the item pool.
-    # If enabled, Jen Herd will no longer sell sewer key.
-    # Buying the sewer key from Jen Herd is a check no matter if this option is toggled on or off.
-    'false': 0
-    'true': 50
-
-  randomize_drug_making_properties:
-    # Determines if drug making properties will be added into the item pool.
-    # Purchasing drug making properties become checks, but you do not purchase them.
-    # Realtor will have AP items instead of drug making properties if this is enabled.
-    # This does not include ones you must purchase through missions.
-    'false': 0
-    'true': 50
-
-  randomize_business_properties:
-    # Determines if business properties will be added into the item pool.
-    # The Realtor will have AP items instead of business properties if this is enabled.
-    'false': 0
-    'true': 50
-
-  recipe_checks:
-    # Number of recipe checks to include in the item pool.
-    # These are recipes per drug type.
-    # 10 means 10 weed recipes, 10 meth recipes, etc.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 15
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
-
-  cash_for_trash:
-    # Number of checks for each 10 pieces of trash collected
-    # 50 = 500 total pieces of trash which is equal to the achiemvement.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_link_options:
-    # Specify how deathlink will affect you.
-    # traps include: Heat Trap, Slippery Trap, Trash Trap, Pan Trap, TimeScale Trap, Sleep Trap
-    # Death sends players to the hospital (Cash Fee). 
-    # Recommended: Use either random trap or death or both. Sleep trap is okay too. Arrested is especially brutal.
-    # Options:
-    # - sleep trap: Ends day.
-    # - arrested: Player is arrested and loses all illegal items in their inventory.
-    # - random trap: Player will be affected by a random trap.
-    # - death: Player will be sent to the hospital upon death (Cash Fee). The mod does not reset to last save on death.
-    []
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: missions_only
+  networth_amount_required: 100000
+  number_of_bomb_fragments_required: 10
+  number_of_extra_bomb_fragments: 2
+  ban_bad_filler_items: true
+  ban_progression_skip_items: false
+  trap_chance: 15
+  number_of_xp_bundles: 15
+  amount_of_xp_per_bundle_min: random
+  amount_of_xp_per_bundle_max: random
+  number_of_cash_bundles: 19
+  amount_of_cash_per_bundle_min: 1500
+  amount_of_cash_per_bundle_max: 50511
+  randomize_level_unlocks: true
+  randomize_cartel_influence: true
+  cartel_influence_items_per_region: 10
+  randomize_drug_making_properties: true
+  randomize_business_properties: true
+  randomize_dealers: true
+  randomize_customers: true
+  randomize_suppliers: true
+  randomize_sewer_key: true
+  recipe_checks: 5
+  cash_for_trash: 5
+  death_link: true
+  death_link_options: []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Scooby-Doo! Unmasked:
   ################
