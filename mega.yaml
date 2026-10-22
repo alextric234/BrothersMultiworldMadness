@@ -30599,198 +30599,44 @@ Shadow The Hedgehog:
   priority_locations: []
 
 shapez 2:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Select your goal.
-    # 
-    # - **Milestones** - Complete all milestones.
-    # - **Operator levels** - Reach the operator level that contains your last operator level check. Requires an operator level checks number higher than 0.
-    milestones: 50
-    operator_levels: 0
-
+  progression_balancing: normal
+  accessibility: full
+  goal: milestones
   location_modifiers:
-    # Modifies Various aspects about location generation. You can add as many modifiers as you want.
-    # 
-    # - **Lock task lines** - Makes task lines require an item to be unlocked. Task lines #1-3 are always unlocked.
-    # - **Lock operator lines** - Makes operator lines require an item to be unlocked.
-    # - **Lock operator levels tab** - Makes the operator levels tab require an item to be unlocked.
-    ['Lock operator lines']
-
+  - Lock operator lines
   location_adjustments:
-    # Adjust various parameters of milestones, task lines, operator lines, etc.
-    # Any minimum parameter cannot be higher than its corresponding maximum parameter.
-    # Weighting for each parameter individually, "random", and "random-range-x-y" are supported.
-    # 
-    # Most names are self-explanatory. However, do note that...
-    # - **Random operator lines** means "X out of all operator lines are random".
-    # - **Required shapes multiplier** is in percent, i.e. 100 is default amount of shapes.
-    #   Also, default amounts are based on the (vanilla) regular scenario.
-    # 
-    # Do note that you have to add enough (minimum) locations to fit all non-filler items
-    # (filler items are research/platform/blueprint points).
-    # Excluding task line and operator line keys, there are ~70 items.
-    # 
-    # Allowed values (in range) are...
-    # - **Milestones** - 3-20
-    # - **Minimum checks per milestone** - 2-12
-    # - **Maximum checks per milestone** - 5-12
-    # - **Starting platform points** - 250-2000
-    # - **Starting research points** - 0-50
-    # - **Starting blueprint points** - 0-10000
-    # - **Task lines** - 3-200
-    # - **Minimum checks per task line** - 1-5
-    # - **Maximum checks per task line** - 1-5
-    # - **Operator lines** - 1-100
-    # - **Random operator lines** - 0-3
-    # - **Operator level checks** - 0-200
-    # - **Required shapes multiplier** - 1-1000
-    Maximum checks per milestone: 12
-    Maximum checks per task line: 5
     Milestones: 8
     Minimum checks per milestone: 8
-    Minimum checks per task line: 3
-    Operator level checks: 0
-    Operator lines: 8
-    Random operator lines: 2
-    Required shapes multiplier: 100
-    Starting blueprint points: 0
+    Maximum checks per milestone: 12
     Starting platform points: 250
     Starting research points: 0
+    Starting blueprint points: 0
     Task lines: 20
-
-  shape_configuration:
-    # Choose how many corners all shapes have.
-    # 
-    # - **Tetragonal** - 4 corners (standard).
-    # - **Hexagonal** - 6 corners.
-    tetragonal: 50
-    hexagonal: 0
-
+    Minimum checks per task line: 3
+    Maximum checks per task line: 5
+    Operator lines: 8
+    Random operator lines: 2
+    Operator level checks: 0
+    Required shapes multiplier: 100
+  shape_configuration: tetragonal
   shape_generation_modifiers:
-    # Modifies what shapes are generated as requirements for milestones, tasks, and operator levels.
-    # You can add as many modifiers as you want.
-    # 
-    # - **Milestone operator lines** - Takes the final shapes of (some) milestones and reuses them as operator lines.
-    ['Milestone operator lines']
-
+  - Milestone operator lines
   shape_generation_adjustments:
-    # Adjust various parameters about how shape requirements for milestones, tasks, and operator levels are generated.
-    # Weighting for each parameter individually, "random", and "random-range-x-y" are supported.
-    # 
-    # - **Maximum layers** - The maximum number of layers any shape can have.
-    # - **Maximum processors per milestone** - The maximum number of certain buildings that are required to produce the final shapes of milestones.
     Maximum layers: 4
     Maximum processors per milestone: 4
-
-  blueprint_shapes:
-    # Choose which set of shapes rewards the player with blueprint points.
-    # 
-    # If tetragonal shapes are chosen, **Regular**, **Hard**, and **Insane** use the corresponding scenario's set.
-    # If hexagonal shapes are chosen, all of those three options use the hexagonal scenario's set.
-    # **Randomized** generates a random set of 3 to 5 different blueprint shapes.
-    # 
-    # You can also put in a list of custom blueprint shapes. See this game's option guides for more information.
-    regular: 50
-    hard: 0
-    insane: 0
-    randomized: 0
-
+  blueprint_shapes: regular
   item_pool_modifiers:
-    # Modifies what items your world puts into the item pool. You can add as many modifiers as you want.
-    # 
-    # - **Random starting processor** - Adds a random processor building that doesn't require other buildings to the starting milestone.
-    # - **Include blueprint points** - Allows blueprint points to be added as filler items. If blueprint costs are disabled ingame, blueprint point rewards will be invisible ingame.
-    # - **Arbitrary research points** - Allows research points items to give any amount in range of 1-100 instead of snapping them to nice numbers.
-    # - **Arbitrary platform items** - Allows platform items to give any amount in range of 1-500 instead of snapping them to nice numbers.
-    # - **Arbitrary blueprint points** - Allows blueprint points to give amounts in range of 1000-10000 snapped to 100-step numbers instead of 1000-step numbers.
-    # - **Unlock extensions with miners** - Makes shape and fluid miners also unlock their extensions with them.
-    ['Random starting processor', 'Unlock extensions with miners']
-
-  show_other_players_items:
-    # Shows the names of items in-game that do not belong to your own world.
-    # 
-    # - **No** - Labels all of those items as "AP Item".
-    # - **Item** - Shows the name of each of those items.
-    # - **Player** - Additionally appends the player's name to the item's name.
-    # - **Classification** - Additionally appends the item's classification (progression, filler, ...) to its name.
-    # - **Player & Classification** - Appends both the player's name and the classification to the item's name.
-    'no': 0
-    item: 50
-    player: 0
-    classification: 0
-    player_classification: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Random starting processor
+  - Unlock extensions with miners
+  show_other_players_items: item
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Shellipelago:
   ################
