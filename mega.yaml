@@ -31016,581 +31016,64 @@ Skyward Sword:
   starting_items: {}
 
 Slay the Spire II:
-  #####################
-  # Character Options #
-  #####################
+  progression_balancing: normal
+  accessibility: full
+  ancient_relic_location: anytime
+  ancient_relic_pool: balanced
+  relic_rewards_available_anytime: 2
+  progressive_starter_card: true
+  progressive_starter_relic: true
+  shuffle_all_cards: false
   characters:
-    # Enter the list of characters to play as.  Valid characters are:
-    # 'Ironclad'
-    # 'Silent'
-    # 'Defect'
-    # 'Regent'
-    # 'Necrobinder'
-    ['Ironclad']
-
-  modded_characters:
-    # Modded characters to include when Advanced Characters is disabled. Enter each character's
-    # internal ID. At most 5 modded characters can be present in the generated character set.
-    # 
-    # If using a modded character:
-    # Enter the internal ID of the character to use.
-    # 
-    # If you don't know the exact ID to enter with the mod installed go to
-    # `Archipelago Settings -> Archipelago` to view a list of installed modded character IDs.
-    # 
-    # If a configured mod is missing or its ID is wrong, the client treats that character as
-    # unrecognized and mirrors its checks from playable configured characters. Configure at least
-    # one character that the client can load so it has a valid starting character.
-    []
-
-  pick_num_characters:
-    # Randomly select from the configured characters this many characters to generate for.
-    # 0 disables.
-    # For example, if "character" is configured to be:
-    #     characters:
-    #         - Ironclad
-    #         - Silent
-    #         - Defect
-    # and pick_num_characters is 2, one possible generated set is Ironclad and Defect.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  num_chars_goal:
-    # How many characters you need to complete a run with before you goal. 0 means all characters
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  lock_characters:
-    # Whether in a multi character run "Unlock [Char]" items should be shuffled in.
-    # locked_fixed means the unlocked_character option is used to determine which character to start with
-    # locked_random means which character you start with is randomized
-    # unlocked means you start with all characters available
-    unlocked: 0
-    locked_random: 50
-    locked_fixed: 0
-
-  unlocked_character:
-    # Which character to start unlocked, if lock_characters is set to locked_fixed.
-    # Can also enter a character name for modded characters.
-    ironclad: 50
-    silent: 0
-    defect: 0
-    regent: 0
-    necrobinder: 0
-
+  - Ironclad
+  modded_characters: []
+  pick_num_characters: 0
+  num_chars_goal: 1
+  lock_characters: locked_random
+  unlocked_character: random
   ascension:
-    # Logic assumes Ascension 1 is enabled for relic checks. A single number N enables Ascensions 1 through N.
-    # When multiple values are supplied, each number enables only that numbered Ascension. You can also provide
-    # names which are shown below. Names are case-sensitive.
-    # 
-    #  The ascension names are as follows:
-    #  - 'SwarmingElites'
-    #  - 'WearyTraveler'
-    #  - 'Poverty'
-    #  - 'TightBelt'
-    #  - 'AscendersBane'
-    #  - 'Inflation'
-    #  - 'Scarcity'
-    #  - 'ToughEnemies'
-    #  - 'DeadlyEnemies'
-    #  - 'DoubleBoss'
-    ['SwarmingElites']
-
-  ascension_down:
-    # Ascension Down items to add for each character.
-    # Only enabled Ascensions can receive a corresponding Ascension Down.
-    # 
-    # A single number N selects the highest N enabled Ascensions. When multiple values are supplied, each
-    # number selects only that numbered Ascension. Names are case-sensitive.
-    # Supports both numbers and names.
-    # 
-    # - 'SwarmingElites'
-    # - 'WearyTraveler'
-    # - 'Poverty'
-    # - 'TightBelt'
-    # - 'AscendersBane'
-    # - 'Inflation'
-    # - 'Scarcity'
-    # - 'ToughEnemies'
-    # - 'DeadlyEnemies'
-    # - 'DoubleBoss'
-    # 
-    # Logic does not account for receiving these items.
-    []
-
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ancient_relic_location:
-    # Controls when Progressive Ancient relic choices are offered.
-    # 
-    # Start Of Act presents them through the normal Ancient encounter. Anytime presents
-    # them as linked choices in the Archipelago reward menu as soon as they are received.
-    start_of_act: 0
-    anytime: 50
-
-  ancient_relic_pool:
-    # Controls which Ancient relics can appear in each three-choice reward.
-    # 
-    # Balanced uses the natural Ancient rolled for that act. Chaos can use relics from
-    # any Ancient in the appropriate act. True Chaos combines the Act 2 and Act 3 pools for the
-    # Act 2 and Act 3 Progressive Ancient rewards. Neow's reward always uses Neow's Act 1 pool.
-    balanced: 50
-    chaos: 0
-    true_chaos: 0
-
-  relic_rewards_available_anytime:
-    # How many Relic items can be claimed before earning relic rewards in the run.
-    # 
-    # The client snapshots this value at run start. Later Relic items need a reward from an
-    # Elite, treasure chest, or Black Star before they appear in the AP reward menu. The client's
-    # local AP relic availability can be overriden in client settings for new runs only.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  progressive_starter_card:
-    # Globally enables progressive special starter cards for every configured character.
-    # 
-    # Requires Include Floor Checks. Each character gets two Progressive Starter Card items, which
-    # replace two floor-check filler items. With none received, the character
-    # starts without the special starter card that Archaic Tooth would transform (Bash, Neutralize, a compatible modded equivalent etc).
-    # The first item restores the normal card.
-    # 
-    # Characters without an Archaic Tooth transformation are left unchanged, although their two
-    # Progressive Starter Card items are still present in the multiworld.
-    # 
-    # WARNING: This can make the early game significantly harder for some characters. Logic expects you to reach
-    # Late Act 1 (may need to beat 1 Elite) without your starters.
-    'false': 50
-    'true': 0
-
-  progressive_starter_relic:
-    # Globally enables progressive starter relics for every configured character.
-    # 
-    # Requires Include Floor Checks. Each character gets two Progressive Starter Relic items, which
-    # replace two floor-check filler items. With none received, the character
-    # starts without the starter relic that Touch of Orobas would refine (such as Burning Blood, or a
-    # compatible modded equivalent).
-    # 
-    # Characters without a Touch of Orobas refinement are left unchanged, although their two
-    # Progressive Starter Relic items are still present in the multiworld.
-    # 
-    # WARNING: This can make the early game significantly harder for characters whose starting relic
-    # is central to their early power. Logic expects you to reach Late Act 1 (may require beating 1 Elite) without
-    # your starters.
-    'false': 50
-    'true': 0
-
-  shuffle_all_cards:
-    # Whether every card reward is shuffled.  If false, then every other card reward is shuffled
-    'false': 50
-    'true': 0
-
-  ############
-  # Sanities #
-  ############
-  include_floor_checks:
-    # Add locations for reaching new floors and fill the corresponding item-pool space with
-    # configurable filler. Ascension Down and Progressive Starter options require these locations.
-    'false': 0
-    'true': 50
-
-  neow_sanity:
-    # Adds Neow's start-of-run reward as a location and Progressive Ancient reward.
-    # 
-    # With Anytime, Neow's relic choices appear in the Archipelago reward menu.
-    'false': 50
-    'true': 0
-
-  campfire_sanity:
-    # Whether to shuffle being able to rest and smith at each campsite per act.  Also adds
-    # new locations at campsites per act.
-    'false': 50
-    'true': 0
-
-  gold_sanity:
-    # Whether to replace combat, elite, and boss gold rewards with AP locations. Adds 22 locations per character.
-    'false': 50
-    'true': 0
-
-  potion_sanity:
-    # Whether to replace potion rewards with AP locations. Adds 9 locations per character.
-    'false': 50
-    'true': 0
-
-  shop_sanity:
-    # Move the configured shop slots to a separate AP shop page as purchasable location checks and
-    # shuffle items that progressively restore the corresponding slots on the normal shop page.
-    'false': 50
-    'true': 0
-
-  shop_card_slots:
-    # When shop_sanity is enabled, the number of colored card slots to shuffle.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  shop_neutral_card_slots:
-    # When shop_sanity is enabled, the number of neutral card slots to shuffle.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 2
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-2: 0 # random value between 0 and 2
-
-  shop_relic_slots:
-    # When shop_sanity is enabled, the number of relic slots to shuffle.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  shop_potion_slots:
-    # When shop_sanity is enabled, the number of potion slots to shuffle
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  shop_remove_slots:
-    # When shop_sanity is enabled, whether to shuffle the ability to remove cards at the shop.
-    # Progressive based on Act; i.e. you'll gain the ability to remove cards per Act, starting from Act 1.
-    # Act 4 will be treated as Act 3.
-    'false': 50
-    'true': 0
-
-  shop_sanity_costs:
-    # Controls the price paid for location checks on the AP shop page. Normal shop-item prices are
-    # unaffected. Tiered modes first calculate a vanilla-style baseline for the AP card, relic, or potion.
-    # 
-    # Fixed: 15 gold per AP check.
-    # Super Discount Tiered: 20 percent of the calculated baseline.
-    # Discount Tiered: 50 percent of the calculated baseline.
-    # Tiered: the full calculated baseline.
-    # 
-    # Generation logic does not account for these prices.
-    fixed: 0
-    super_discount_tiered: 0
-    discount_tiered: 50
-    tiered: 0
-
-  ##############
-  # Death Link #
-  ##############
-  death_link:
-    # Share deaths with other Death Link players. Dying sends a Death Link. Receiving one while in
-    # a run damages the current character by Death Link Damage Percent of maximum health and can add a
-    # Death Fragment if the character survives. Local client settings can override these slot settings.
-    'false': 50
-    'true': 0
-
-  enable_death_fragments:
-    # When Death Link is enabled, add a permanent Death Fragment curse after receiving a Death Link
-    # while in a run, provided the character survives the configured damage. If received during combat,
-    # another copy is also added to that combat's draw pile.
-    'false': 0
-    'true': 50
-
-  death_link_damage_percent:
-    # If Death Link is enabled, this setting determines how much damage you take when you receive a Death Link, 
-    # as a percentage of your max health. 
-    # If you do not want to take any damage, set this to 0. 
-    # If you want to be killed whenever you receive a Death Link, set this to 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ####################
-  # Advanced Options #
-  ####################
-  release_on_victory:
-    # Release the winning character's remaining checks when their goal is recorded.
-    'false': 0
-    'true': 50
-
-  seeded:
-    # Whether each character should have a fixed seed to climb the spire with or not.
-    'false': 50
-    'true': 0
-
-  use_advanced_characters:
-    # Whether to use the advanced characters feature. The normal options for character, ascension, etc. are ignored.
-    # See the "advanced_characters" option.
-    'false': 50
-    'true': 0
-
-  advanced_characters:
-    # The configuration for advanced characters.  Each character's options can be configured
-    # independently of each other.  No validation is done on the character name, so use carefully.
-    # Format is:
-    #     <char name>:
-    #         ascension:
-    #             - <string or number>
-    #         ascension_down:
-    #             - <string or number>
-    # 
-    # If using a modded character:
-    # Enter the internal ID of the character to use.
-    # 
-    # If you don't know the exact ID to enter with the mod installed go to
-    # `Archipelago Settings -> Archipelago` to view a list of installed modded character IDs.
-    # 
-    # If a configured mod is missing or its ID is wrong, the client treats that character as
-    # unrecognized and mirrors its checks from playable configured characters. Configure at least
-    # one character that the client can load so it has a valid starting character.
-    ironclad:
-      ascension:
-      - 1
-      ascension_down: []
-
-  ###############
-  # Bonus Items #
-  ###############
-  bonus_items:
-    # Add a number of Bonus Items to the item pool.
-    # These items make the game easier to complete, and are not accounted for in logic.
-    # 
-    # Each ordered entry creates one character-agnostic bonus item and must provide either
-    # a non-empty list of value Pools or one specific Value. For example:
-    # 
-    #     bonus_items:
-    #         - WAX_RELIC:
-    #             Pools: [Common, Uncommon]
-    #         - WAX_RELIC:
-    #             Value: Orichalcum
-    # 
-    # 
-    # Generation fails if more bonus items are configured than there are filler slots.
-    # 
-    # It's HIGHLY recommended to use the YAML Builder on our website to easily generate this option, which you can find at https://sts2ap.net
-    []
-
-  ################
-  # Filler Items #
-  ################
-  one_gold_filler_weight:
-    # Weight for One Gold filler items. Grants one gold to its associated character. If every filler weight is None, the generator
-    # uses that character's One Gold as the required safe fallback.
-    none: 50
-    low: 0
-    medium: 0
-    high: 0
-
-  five_gold_filler_weight:
-    # Weight for Five Gold filler items. Grants five gold to its associated character.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  free_attack_filler_weight:
-    # Weight for Free Attack filler items. At the start of the next player combat turn, makes the next Attack played cost zero energy.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  free_power_filler_weight:
-    # Weight for Free Power filler items. At the start of the next player combat turn, makes the next Power played cost zero energy.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  free_skill_filler_weight:
-    # Weight for Free Skill filler items. At the start of the next player combat turn, makes the next Skill played cost zero energy.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  dexterity_filler_weight:
-    # Weight for Dexterity filler items. Applies Dexterity at the start of the next player combat turn.
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  strength_filler_weight:
-    # Weight for Strength filler items. Applies Strength at the start of the next player combat turn.
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  plating_filler_weight:
-    # Weight for Plating filler items. Applies Plating at the start of the next player combat turn.
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  friendship_filler_weight:
-    # Weight for Friendship filler items. Applies Friendship at the start of the next player combat turn, raising maximum energy by one.
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  post_combat_card_upgrade_filler_weight:
-    # Weight for Post-Combat Card Upgrade filler items. At the start of the next player combat turn, applies a buff that upgrades a random deck card after combat.
-    none: 0
-    low: 50
-    medium: 0
-    high: 0
-
-  post_combat_card_removal_filler_weight:
-    # Weight for Post-Combat Card Removal filler items. At the start of the next player combat turn, applies a buff that lets you remove a deck card after combat.
-    none: 0
-    low: 50
-    medium: 0
-    high: 0
-
-  additional_card_reward_filler_weight:
-    # Weight for Additional Card Reward filler items. At the start of the next player combat turn, applies a buff that adds a card reward after combat.
-    none: 0
-    low: 50
-    medium: 0
-    high: 0
-
-  buffer_filler_weight:
-    # Weight for Buffer filler items. Applies Buffer at the start of the next player combat turn.
-    none: 0
-    low: 50
-    medium: 0
-    high: 0
-
-  vigor_filler_weight:
-    # Weight for Vigor filler items. Applies Vigor at the start of the next player combat turn.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  thorns_filler_weight:
-    # Weight for Thorns filler items. Applies Thorns at the start of the next player combat turn.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  artifact_filler_weight:
-    # Weight for Artifact filler items. Applies Artifact at the start of the next player combat turn.
-    none: 0
-    low: 0
-    medium: 0
-    high: 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - SwarmingElites
+  ascension_down: []
+  include_floor_checks: true
+  neow_sanity: false
+  campfire_sanity: true
+  gold_sanity: true
+  potion_sanity: true
+  shop_sanity: true
+  shop_card_slots: 2
+  shop_neutral_card_slots: 1
+  shop_relic_slots: 2
+  shop_potion_slots: 2
+  shop_remove_slots: true
+  shop_sanity_costs: discount_tiered
+  death_link: true
+  enable_death_fragments: true
+  death_link_damage_percent: 100
+  release_on_victory: true
+  seeded: false
+  one_gold_filler_weight: none
+  five_gold_filler_weight: high
+  free_attack_filler_weight: high
+  free_power_filler_weight: high
+  free_skill_filler_weight: high
+  vigor_filler_weight: high
+  artifact_filler_weight: high
+  thorns_filler_weight: high
+  buffer_filler_weight: low
+  dexterity_filler_weight: medium
+  strength_filler_weight: medium
+  plating_filler_weight: medium
+  friendship_filler_weight: medium
+  post_combat_card_upgrade_filler_weight: low
+  post_combat_card_removal_filler_weight: low
+  additional_card_reward_filler_weight: low
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Slay the Spire:
   ################
