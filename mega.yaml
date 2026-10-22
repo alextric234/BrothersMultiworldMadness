@@ -28945,1128 +28945,140 @@ Raft:
   maximum_resource_pack_amount: random
 
 Rain World:
-  #############
-  # Important #
-  #############
-  is_msc_enabled:
-    # Whether More Slugcats Expansion (Downpour) is enabled, regardless of which campaign you plan to play.
-    'false': 50
-    'true': 0
-
-  is_watcher_enabled:
-    # Whether The Watcher is enabled, regardless of which campaign you plan to play.
-    'false': 50
-    'true': 0
-
-  which_campaign:
-    # Which slugcat's campaign you will play.
-    monk: 0
-    survivor: 50
-    hunter: 0
-    gourmand: 0
-    artificer: 0
-    rivulet: 0
-    spearmaster: 0
-    saint: 0
-    sofanthiel: 0
-    watcher: 0
-
-  passage_progress_without_survivor:
-    # How The Survivor affects earning other passages.
-    # 
-    # **Disabled**: Only The Martyr, The Mother, and The Pilgrim can be earned before The Survivor.
-    # 
-    # **Enabled**: The Dragon Slayer, The Friend, and The Wanderer can additionally be earned before The Survivor.
-    # 
-    # **Bypassed**: Every passage can be earned before The Survivor.
-    # 
-    # This will override the actual value of the corresponding setting in the Rain World Remix menu.
-    disabled: 0
-    enabled: 0
-    bypassed: 50
-
-  which_victory_condition:
-    # What the victory condition should be.
-    # **Ascension** is the default, and **Story** is the slugcat specific ending.
-    # **Echoes** requires meeting enough Echoes to satisfy the Pilgrim passage.
-    # **Food Quest** requires eating every edible food in order to fill out the tracker.
-    # This includes expanded food quest, if it is enabled.
-    # 
-    # The **Story** victory condition depends on the selected gamestate:
-    # 
-    # **Vanilla**, **Saint**, or **Sofanthiel**: No alternate.
-    # 
-    # **Monk** and **Survivor**: Reach Journey's End in Outer Expanse.
-    # 
-    # **Hunter**: Use the green neuron on Looks to the Moon in Shoreline.
-    # 
-    # **Gourmand**: Receive the Mark in order to reach Outer Expanse, and subsequently reach Journey's End.
-    # 
-    # **Artificer**: Receive the Mark and the Citizen ID drone in order to reach Metropolis and kill the Chieftain Scavenger.
-    # 
-    # **Rivulet**: Receive the Rarefaction Cell and deliver it to Submerged Superstructure,
-    # then meet Looks to the Moon.
-    # 
-    # **Spearmaster**: Receive the SM pearl and Moon's message, then deliver it to Communications Array in Sky Islands.
-    # 
-    # When playing as the Watcher, these options are different:
-    # **Ascension** / **Spinning Top**: Complete the Spinning Top ending.
-    # **Story** / **Prince**: Complete the Prince ending.
-    # **Echoes** / **Weaver**: Complete the Weaver ending.
-    # **True Ending**: Complete the True ending. If this is chosen on a non-Watcher slugcat, it will be interpreted as ascension.
-    ascension: 50
-    story: 0
-    echoes: 0
-    food_quest: 0
-    true_ending: 0
-
-  which_gate_behavior:
-    # **Key only**: A key for each accessible gate is placed into the pool.
-    # These keys are required to use karma gates, and karma is not.
-    # 
-    # **Key and Karma**: Keys are required *and* gates have karma requirements.
-    # 
-    # **Key or Karma**: Either keys or karma are sufficient to use a gate.
-    # 
-    # **Karma only**: Unrandomized behavior.  Keys are not placed into the pool.
-    # 
-    # Gates will have Monk-style behavior if you choose a setting other than **Key only**.
-    key_only: 50
-    key_and_karma: 0
-    key_or_karma: 0
-    karma_only: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  randomize_starting_region:
-    # Whether the starting region should be randomized.
-    # 
-    # **Default Start**: Do not randomize the starting region.
-    # 
-    # **Weighted Choice**: Refer to "Possible Starting Regions" option to decide what starting regions can be chosen.
-    # 
-    # **Any Valid**: The starting region is chosen among every accessible region in the selected game state.
-    default_start: 50
-    weighted_choice: 0
-    any_valid: 0
-
+  death_link: true
+  is_msc_enabled: false
+  is_watcher_enabled: false
+  which_campaign: random
+  passage_progress_without_survivor: bypassed
+  which_victory_condition: ascension
+  which_gate_behavior: key_only
+  randomize_starting_region: default_start
   possible_starting_regions:
-    # Select which regions will be allowed as possible starting locations.
-    # Only used when "Randomize Starting Region" option is set to "Weighted Choice".
-    # The value on each region influences how likely it is to be selected.
-    # Regions not in the list or with a value less than 1 are not selected.
+    Outskirts: 1
+    Industrial Complex: 1
+    Drainage System / Undergrowth: 1
+    Garbage Wastes: 1
+    Shoreline / Waterfront Facility: 1
+    Shaded Citadel / Silent Construct: 1
+    The Exterior: 1
+    Five Pebbles / The Rot: 1
+    Chimney Canopy: 1
+    Sky Islands: 1
+    Farm Arrays: 1
+    Subterranean: 1
+    Pipeyard: 1
+    Submerged Superstructure: 1
+    Outer Expanse: 1
+    Metropolis: 1
+    Looks to the Moon: 1
+    Sunbaked Alley: 1
+    Coral Caves: 1
+    Torrential Railways: 1
     Aether Ridge: 1
     Badlands: 1
-    Chimney Canopy: 1
     Cold Storage: 1
-    Coral Caves: 1
     Desolate Tract: 1
-    Drainage System / Undergrowth: 1
-    Farm Arrays: 1
     Fetid Glen: 1
-    Five Pebbles / The Rot: 1
     Fractured Gateways: 1
-    Garbage Wastes: 1
     Heat Ducts: 1
-    Industrial Complex: 1
-    Looks to the Moon: 1
-    Metropolis: 1
     Migration Path: 1
-    Outer Expanse: 1
-    Outskirts: 1
     Pillar Grove: 1
-    Pipeyard: 1
     Rusted Wrecks: 1
     Salination: 1
-    Shaded Citadel / Silent Construct: 1
-    Shoreline / Waterfront Facility: 1
     Shrouded Stacks: 1
     Signal Spires: 1
-    Sky Islands: 1
     Stormy Coast: 1
-    Submerged Superstructure: 1
-    Subterranean: 1
-    Sunbaked Alley: 1
-    The Exterior: 1
     The Surface: 1
-    Torrential Railways: 1
     Torrid Desert: 1
     Turbulent Pump: 1
     Verdant Waterways: 1
-
-  #######################
-  # Difficulty settings #
-  #######################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  difficulty_monk:
-    # The number of different types of non-meats that must be available before The Monk can be logically required.
-    # Higher numbers are easier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 4
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-4: 0 # random value between 1 and 4
-
-  difficulty_hunter:
-    # The number of different types of meats that must be available before The Hunter can be logically required.
-    # Higher numbers are easier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 4
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-4: 0 # random value between 1 and 4
-
-  difficulty_outlaw:
-    # The number of different types of creatures that must be available before The Outlaw can be logically required.
-    # Higher numbers are easier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 8
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-8: 0 # random value between 1 and 8
-
-  difficulty_nomad:
-    # The number of regions that must be accessible before The Nomad can be logically required.
-    # Higher numbers are easier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3
-    # Maximum value is 8
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3-8: 0 # random value between 3 and 8
-
-  difficulty_chieftain:
-    # Whether a Scavenger toll must be accessible before The Chieftain can be logically required.
-    # If disabled, Chieftain becomes accessible whenever any Scavengers are accessible.
-    'false': 0
-    'true': 50
-
-  difficulty_glow:
-    # Whether the neuron glow is logically required for Shaded Citadel,
-    # parts of lower Pipeyard, and Filtration System.
-    'false': 0
-    'true': 50
-
-  difficulty_extreme_threats:
-    # Whether eliminating an extreme threat could be required (such as for a food quest check).
-    # This includes Daddy Long Legs (and variants), Red Lizards, King Vultures, Miros Vultures,
-    # Miros Birds, Aquapedes, and Red Centipedes.
-    'false': 50
-    'true': 0
-
-  difficulty_submerged:
-    # Changes the logical requirement for entering Submerged Superstructure.
-    # 
-    # If off, Submerged has no additional requirement to enter.
-    # 
-    # If set to aquatic, access to Submerged will expect you to have longer breath time from the Aquatic perk
-    # or to be playing as Rivulet. If the Aquatic perk is not in the item pool, this acts the same as "off".
-    # 
-    # If set to longer cycles, Rivulet will not be expected to enter Submerged until the Longer Cycles item is obtained.
-    longer_cycles: 0
-    aquatic: 50
-    'off': 0
-
-  difficulty_echo_low_karma:
-    # How echo apperances work below 5 max karma.
-    # Does not affect the echoes in Subterranean and The Exterior, which can always be visited.
-    # 
-    # **Unaltered**: Vanilla behavior.  Artificer needs a karma flower and other slugcats do not.
-    # 
-    # **Never**: Echoes cannot appear below 5 karma.
-    # 
-    # **With Karma Flower**: Echoes may appear below 5 karma
-    # if karma flower reinforcement is active and current karma equals max karma.
-    # This is the normal behavior for Artificer.
-    # 
-    # **Without Karma Flower**: Echoes may appear if current karma equals max karma.
-    never: 0
-    with_karma_flower: 0
-    without_karma_flower: 0
-    unaltered: 50
-
-  #######################
-  # Check pool settings #
-  #######################
-  checks_foodquest:
-    # Which slugcats the food quest should be available to.  Requires MSC.
-    all_slugcats: 50
-    only_gourmand: 0
-    'off': 0
-
-  checks_foodquest_expanded:
-    # Whether the food quest should be expanded to include most creatures.
-    # Specific food quest checks may be disabled by excluding the locations,
-    # and some slugcats will not be required to kill and eat extreme threats if that setting is enabled.
-    # Requires MSC.
-    'false': 50
-    'true': 0
-
-  passage_priority:
-    # Number of Passages that are randomly marked as priority checks,
-    # increasing the chance that they will contain progression items.
-    # These are in addition to any manually-prioritized Passages,
-    # and will not override any manually-excluded Passages.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 14
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-14: 0 # random value between 0 and 14
-
-  checks_devtokens:
-    # Whether dev commentary tokens should be checks.  Requires MSC.
-    'false': 50
-    'true': 0
-
-  checks_sheltersanity:
-    # Whether each shelter is a check.
-    'false': 50
-    'true': 0
-
-  checks_submerged:
-    # Whether Submerged Superstructure has any checks.
-    # If only aquatic is chosen, checks will only be generated
-    # if playing Rivulet or the Aquatic perk is in the item pool.
-    all_slugcats: 0
-    only_aquatic: 50
-    'off': 0
-
-  checks_flowersanity:
-    # Whether each static karma flower spawn is a check.
-    'false': 50
-    'true': 0
-
-  ######################
-  # Item pool settings #
-  ######################
-  extra_karma_cap_increases:
-    # Number of extra karma cap increases in the pool beyond the minimum required for ascension.
-    # For Watcher, this option will also apply to Ripple.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 30
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-30: 0 # random value between 0 and 30
-
-  damage_upgrades:
-    # Add an amount of items to the pool that permanently increase the damage of thrown spears.
-    # Each progressive upgrade adds 10% damage on top of the slugcat's base damage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    6: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  expedition_perks:
-    # Choose which Expedition perks will be added to the item pool.
-    # If an ability in this list is given to a slugcat that innately has it, there is no effect.
-    # Requires MSC.
-    # 
-    # Valid Perks: Back Spear Perk, Dual Wielding Perk, Blast Resistance Perk, Explosive Parry Perk,
-    # Explosive Jump Perk, Crafting Perk, Aquatic Perk, Agility Perk
-    []
-
-  pct_traps:
-    # The percentage of filler items that will be traps.  Set to 0 to remove traps entirely.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  weight_jitter:
-    # Each non-zero filler weight receives a random number, up to this jitter value, added to it.
-    # The lower the setting, the less likely it is that items with small weights appear in the pool at all.
-    # The higher the setting, the lower the influence of the item weights altogether.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #############################
-  # Watcher-specific settings #
-  #############################
-  logic_rotted_generation:
-    # Controls the generation of Crumbling Fringes, Corrupted Factories, Decaying Tunnels, and Infested Wastes.
-    # 
-    # **None**: There will be no checks in rotted vanilla regions, and bad warping will not be required to reach Outer Rim.
-    # 
-    # **Passthrough**: There will be no checks in rotted vanilla regions, but you may still have to bad warp to reach Outer Rim.
-    # 
-    # **Full**: Checks will be present in rotted vanilla regions
-    none: 0
-    passthrough: 50
-    full: 0
-
-  logic_ripplespace_min_req:
-    # The lowest that your *minimum* Ripple can be before Ripplespace is logically accessible.
-    # The default, 5, matches the actual game behavior.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 9
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-9: 0 # random value between 5 and 9
-
-  rotted_region_target:
-    # The number of regions that must be rotted for the Rot ending.
-    # The default, 21, matches the unaltered game behavior.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 21
-    21: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-21: 0 # random value between 2 and 21
-
-  randomize_weaver:
-    # Adds 4 progressive Weaver ability items to the item pool instead of gaining the ability naturally through Weaver encounters.
-    # For related ending only, the endings in question are Weaver or True Ending.
-    # The Weaver cannot be randomized if the Prince ending is chosen.
-    'false': 50
-    related_ending_only: 0
-    'true': 0
-
-  checks_spread_rot:
-    # Whether spreading the Rot to new regions are checks.
-    # This option will be force-disabled if "Randomize Weaver Ability" is set to true, or Weaver / True Ending is chosen.
-    # For related ending only, the ending in question is the Prince ending.
-    'false': 0
-    related_ending_only: 50
-    'true': 0
-
-  checks_weaver_encounters:
-    # Whether each of the 4 Weaver encounters are checks.
-    # This is separate from whether the ability itself is randomized.
-    # For related ending only, the endings in question are Weaver or True Ending.
-    'false': 0
-    related_ending_only: 50
-    'true': 0
-
-  spinning_top_keys:
-    # Whether keys are required to travel through Spinning Top warps.
-    'false': 0
-    'true': 50
-
-  daemon_keys:
-    # Whether keys are required to travel through Daemon warps.
-    'false': 50
-    'true': 0
-
-  priority_throne:
-    # Whether Prince checks should be normal, priority, or excluded locations.
-    normal: 50
-    priority: 0
-    excluded: 0
-
-  watcher_passages:
-    # Whether passage tokens will be added to the item pool when playing as Watcher.
-    # You will need the mod "Watcher Region Art" enabled in order to use passage tokens in-game.
-    # The mod can be found on the Steam workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3660768308
-    'false': 50
-    'true': 0
-
-  ################################
-  # Filler item relative weights #
-  ################################
-  wt_rocks:
-    # The relative weight of rocks in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_spears:
-    # The relative weight of spears in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_explosive_spears:
-    # The relative weight of explosive spears in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_grenades:
-    # The relative weight of grenades in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_flashbangs:
-    # The relative weight of flashbangs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_sporepuffs:
-    # The relative weight of spore puffs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_cherrybombs:
-    # The relative weight of cherrybombs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_bubble_weed:
-    # The relative weight of bubble weed in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_lanterns:
-    # The relative weight of lanterns in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_vulture_masks:
-    # The relative weight of vulture masks in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    9: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_pearls:
-    # The relative weight of pearls in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    9: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_beehives:
-    # The relative weight of beehives in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_fruit:
-    # The relative weight of blue fruit in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_bubblefruit:
-    # The relative weight of bubble fruit in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_eggbugeggs:
-    # The relative weight of eggbug eggs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_jellyfish:
-    # The relative weight of jellyfish in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_mushrooms:
-    # The relative weight of mushrooms in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_slimemold:
-    # The relative weight of slime mold in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_karma_flowers:
-    # The relative weight of karma flowers in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_lilypucks:
-    # The relative weight of lilypucks in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_dandelion_peaches:
-    # The relative weight of dandelion peaches in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_gooieducks:
-    # The relative weight of gooieducks in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_electric_spears:
-    # The relative weight of electric spears in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_singularity_bombs:
-    # The relative weight of singularity bombs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_joke_rifles:
-    # The relative weight of joke rifles in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_fireeggs:
-    # The relative weight of firebug eggs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_hellspears:
-    # The relative weight of hell spears in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_glowweed:
-    # The relative weight of glow weed in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_boomerangs:
-    # The relative weight of boomerangs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_poison_spears:
-    # The relative weight of poison spears in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_graffiti_bombs:
-    # The relative weight of graffiti bombs in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_rot_fruit:
-    # The relative weight of rot fruits in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_fire_sprite_larva:
-    # The relative weight of fire sprite larvae in the non-trap filler item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #########################
-  # Trap relative weights #
-  #########################
-  wt_stuns:
-    # The relative weight of stun traps in the trap filler item pool.
-    # Stun traps will briefly stun the slugcat, as if they were hit with a rock.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    60: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_zoomies:
-    # The relative weight of zoomies traps in the trap filler item pool.
-    # Zoomies traps will make the slugcat update at double speed for a short time.
-    # This will increase movement speed, but make platforming more difficult.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_timers:
-    # The relative weight of timer traps in the trap filler item pool.
-    # Timer traps will reduce the remaining time left in the current cycle.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_alarms:
-    # The relative weight of alarm traps in the trap filler item pool.
-    # Alarm traps will alert every creature in the region to the slugcats position for some time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_gravity:
-    # The relative *weight* of gravity traps in the trap filler item pool.
-    # Gravity traps will disable gravity for a short time.
-    # This has no effect in rooms with gravity effects already present (For example, in Five Pebbles).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_rains:
-    # The relative weight of rain traps in the trap filler item pool.
-    # Rain traps will activate strong pre-cycle rain for a short time.
-    # If MSC is not enabled, this effect will only be visual.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_redlizard:
-    # The relative weight of red lizard traps in the trap filler item pool.
-    # Red lizard traps will spawn a red lizard in an adjacent room.
-    # It will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_redcentipede:
-    # The relative weight of red centipede traps in the trap filler item pool.
-    # Red centipede traps will spawn a red centipede in an adjacent room.
-    # It will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_spitterspider:
-    # The relative weight of spitter spider traps in the trap filler item pool.
-    # Spitter spider traps will spawn multiple spitter spiders in an adjacent room(s).
-    # They will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_brotherlonglegs:
-    # The relative weight of brother long legs traps in the trap filler item pool.
-    # Brother long legs traps will spawn multiple BLLs in an adjacent room(s).
-    # They will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_daddylonglegs:
-    # The relative weight of daddy long legs traps in the trap filler item pool.
-    # Daddy long legs traps will spawn a Daddy long legs in an adjacent room.
-    # It will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_responsibility:
-    # The relative weight of responsibility traps in the trap filler item pool.
-    # Responsibility traps will spawn a slugpup in an adjacent room.
-    # It will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_ripplespawn:
-    # The relative weight of ripple spawn traps in the trap filler item pool.
-    # Ripple spawn traps will spawn a large amount of Ripple amoeba in the current room that chase the slugcat.
-    # Before the Glow is obtained these will be invisible, making them much more dangerous.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  wt_blizzardlizard:
-    # The relative weight of blizzard lizard traps in the trap filler item pool.
-    # Blizzard Lizard traps will spawn a blizzard lizard in an adjacent room.
-    # It will also know the slugcat's position for a short time.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  difficulty_monk: 3
+  difficulty_hunter: 3
+  difficulty_outlaw: 5
+  difficulty_nomad: 5
+  difficulty_chieftain: true
+  difficulty_glow: true
+  difficulty_extreme_threats: false
+  difficulty_submerged: aquatic
+  difficulty_echo_low_karma: unaltered
+  checks_foodquest: all_slugcats
+  checks_foodquest_expanded: false
+  passage_priority: 3
+  checks_sheltersanity: false
+  checks_submerged: only_aquatic
+  checks_flowersanity: false
+  checks_devtokens: false
+  expedition_perks: []
+  pct_traps: 30
+  weight_jitter: 10
+  extra_karma_cap_increases: 3
+  damage_upgrades: 6
+  logic_rotted_generation: passthrough
+  logic_ripplespace_min_req: 5
+  rotted_region_target: 21
+  randomize_weaver: 'false'
+  checks_spread_rot: related_ending_only
+  checks_weaver_encounters: related_ending_only
+  spinning_top_keys: true
+  daemon_keys: false
+  priority_throne: normal
+  watcher_passages: false
+  wt_rocks: 100
+  wt_spears: 40
+  wt_explosive_spears: 10
+  wt_grenades: 10
+  wt_flashbangs: 20
+  wt_sporepuffs: 20
+  wt_cherrybombs: 30
+  wt_bubble_weed: 20
+  wt_lanterns: 15
+  wt_vulture_masks: 9
+  wt_pearls: 9
+  wt_beehives: 15
+  wt_lilypucks: 20
+  wt_dandelion_peaches: 20
+  wt_gooieducks: 20
+  wt_electric_spears: 3
+  wt_singularity_bombs: 1
+  wt_joke_rifles: 1
+  wt_boomerangs: 20
+  wt_poison_spears: 15
+  wt_graffiti_bombs: 20
+  wt_fruit: 60
+  wt_bubblefruit: 40
+  wt_eggbugeggs: 30
+  wt_jellyfish: 15
+  wt_mushrooms: 15
+  wt_slimemold: 35
+  wt_karma_flowers: 5
+  wt_fireeggs: 5
+  wt_hellspears: 5
+  wt_glowweed: 15
+  wt_rot_fruit: 0
+  wt_fire_sprite_larva: 30
+  wt_stuns: 60
+  wt_zoomies: 50
+  wt_timers: 50
+  wt_alarms: 30
+  wt_rains: 50
+  wt_gravity: 10
+  wt_redlizard: 30
+  wt_redcentipede: 30
+  wt_spitterspider: 30
+  wt_brotherlonglegs: 30
+  wt_daddylonglegs: 10
+  wt_responsibility: 30
+  wt_ripplespawn: 0
+  wt_blizzardlizard: 10
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Ratchet & Clank 2:
   ################
