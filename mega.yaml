@@ -28865,316 +28865,40 @@ Pseudoregalia:
   priority_locations: []
 
 Psychonauts:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ####################
-  # Starting Options #
-  ####################
-  StartingLevitation:
-    # Start with Progressive Levitation level 1.
-    'false': 50
-    'true': 0
-
-  StartingCobwebDuster:
-    # Start with the Cobweb Duster.
-    'false': 50
-    'true': 0
-
-  StartingMentalMagnet:
-    # Start with Mental Magnet, pulling health, ammo, and arrowhead drops towards you.
-    'false': 0
-    'true': 50
-
-  RandomStartingMinds:
-    # Start with a random number of mind/area unlocking items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  ####################
-  # Cosmetic Options #
-  ####################
-  OtherItemsModel:
-    # Choose what your Archipelago items for other games look like inside Psychonauts.
-    # 
-    # Archipelago: The standard Archipelago symbol.
-    # 
-    # Bunny: The original PsychoRando model for Archipelago items, Bunnies!
-    # 
-    # Present: Open some holiday gift boxes!
-    archipelago: 50
-    bunny: 0
-    present: 0
-
-  PsiBallColor:
-    # Choose the starting color of your PsiBall.
-    red: 50
-    white: 0
-    pink: 0
-    yellow: 0
-    purple: 0
-    blue: 0
-    lightpurple: 0
-    cyan: 0
-    green: 0
-    orange: 0
-    lightgreen: 0
-    lightpeach: 0
-    lightpink: 0
-    lighterpink: 0
-
-  StartingColorizer:
-    # Start with the Colorizer, allowing you to change the color of your Psiball using the Bacon.
-    'false': 0
-    'true': 50
-
-  ################
-  # Goal Options #
-  ################
-  Goal:
-    # Your Victory Condition.
-    # 
-    # Asylum Brain Tank: Climb the Asylum and defeat the Coach Oleander Brain Tank.
-    # 
-    # Brain Hunt: Find the required amount of Camper Brains and re-brain them in Ford's Sanctuary.
-    # 
-    # Asylum Brain Tank and Brain Hunt: Find the required amount of Camper Brains, AND defeat the Coach Oleander Brain Tank.
-    asylum_brain_tank: 50
-    brain_hunt: 0
-    asylum_brain_tank_and_brain_hunt: 0
-
-  BrainsRequired:
-    # Number of Brains required to collect to Win, or open final door to Meat Circus Final Bosses.
-    # 
-    # If Goal is not Brain Hunt, or Asylum Brain Tank and Brain Hunt, this does nothing.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 19
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-19: 0 # random value between 1 and 19
-
-  RequireMeatCircus:
-    # Require finishing Meat Circus Final Bosses in addition to your goal.
-    'false': 0
-    'true': 50
-
-  ##########################
-  # Extra Location Options #
-  ##########################
-  RankSanity:
-    # Add Rank Rewards to EVERY Rank Up, instead of the traditional Five Ranks Up.
-    'false': 50
-    'true': 0
-
-  FigmentPercentageChecks:
-    # Controls the maximum percentage of figments needed from each mind that will send checks.
-    # 
-    # One check is sent for every 20 percent of figments found in each mind, up to the maximum set here.
-    # 
-    # If set to 0, no figment collecting is required.
-    0_percent: 50
-    20_percent: 0
-    40_percent: 0
-    60_percent: 0
-    80_percent: 0
-    100_percent: 0
-
-  DeepArrowheadShuffle:
-    # Add Deep Arrowhead checks and shuffle the Dowsing Rod and extra Arrowhead Bundles into the item pool.
-    # 
-    # Deep Arrowhead locations must be dug up from the ground using the Dowsing Rod and will set a shorter 10-minute
-    # (unpaused in-game time) respawn time after being dug up for the first time. Digging up a Deep Arrowhead again, after
-    # waiting for it to respawn, will award arrowheads like normal and set the normal 30-minute respawn time.
-    # 
-    # The Deep Arrowheads found under the Lake are not affected by this option.
-    'false': 50
-    'true': 0
-
-  MentalCobwebShuffle:
-    # Add Mental Cobweb checks and shuffle an extra PSI Card into the item pool for each Mental Cobweb.
-    # 
-    # Mental Cobweb locations must be collected using the Cobweb Duster. Collecting a Mental Cobweb will not add it to
-    # Raz's inventory, so the loom in Ford's Sanctuary will have no use.
-    'false': 50
-    'true': 0
-
-  ScavengerHuntRewards:
-    # Add Scavenger Hunt Completion Rewards as Locations.
-    # 
-    # Half: Adds a location for redeeming 8 scavenger hunt items with Ford in the camp.
-    # 
-    # All: Adds two locations for redeeming 8 and 16 scavenger hunt items with Ford in the camp.
-    none: 50
-    half: 0
-    all: 0
-
-  ###################
-  # Baggage Options #
-  ###################
-  HintUnclaimedBaggage:
-    # When interacting with Baggage that you don't have a matching tag for yet, automatically creates a hint for 
-    # the location in the client.
-    'false': 0
-    'true': 50
-
-  ProgressiveBaggage:
-    # Turns Emotional Baggage into Progressive Locations.
-    # 
-    # Each time you redeem a Baggage Tag with it's matching Baggage, you'll earn the next check for that type.
-    # 
-    # If toggled off, each Baggage redeemed will reward a Rank Up instead.
-    'false': 50
-    'true': 0
-
-  MaximumProgressiveBaggage:
-    # Maximum amount of each type of Baggage that will give checks.
-    # 
-    # Progressive Baggage collected beyond the maximum will reward a Rank Up instead.
-    # 
-    # Only works if Progressive Baggage is Enabled and value is greater than 0.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  #################
-  # Vault Options #
-  #################
-  VaultHints:
-    # When receiving a Memory Vault, hint a random location in your AP world that hasn't been collected yet.
-    'false': 0
-    'true': 50
-
-  VaultCount:
-    # How many Memory Vaults are added to the item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 101
-    19: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-101: 0 # random value between 0 and 101
-
-  ######################
-  # Difficulty Options #
-  ######################
-  EasyFlightMode:
-    # Replicate the Levitation Flight Glitch by simply holding down float in the air. No more button mashing.
-    # WARNING: Makes getting locations out of logic VERY easy.
-    'false': 50
-    'true': 0
-
-  EasyMillaRace:
-    # Makes collecting figments and winning the race in Milla's Mind easier by removing everyone else from the race.
-    'false': 50
-    'true': 0
-
-  BetterDowsingRod:
-    # Makes the Dowsing Rod gauge fill faster to collect Deep Arrowheads easier.
-    'false': 50
-    'true': 0
-
-  EnemyDamageMultiplier:
-    # Adjust how much damage Raz takes from enemies for an additional challenge.
-    # If set to 0, Raz will take no damage from enemies, but will still flinch.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  InstantDeathMode:
-    # Take any amount of damage, die instantly. Has priority over Enemy Damage Multiplier.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  StartingLevitation: false
+  StartingCobwebDuster: false
+  StartingMentalMagnet: true
+  RandomStartingMinds: 3
+  StartingColorizer: true
+  PsiBallColor: purple
+  OtherItemsModel: present
+  Goal: asylum_brain_tank
+  BrainsRequired: 10
+  RequireMeatCircus: true
+  RankSanity: false
+  FigmentPercentageChecks: 0_percent
+  DeepArrowheadShuffle: true
+  MentalCobwebShuffle: false
+  ScavengerHuntRewards: none
+  HintUnclaimedBaggage: true
+  ProgressiveBaggage: false
+  MaximumProgressiveBaggage: 5
+  VaultHints: true
+  VaultCount: 19
+  EasyMillaRace: true
+  EasyFlightMode: false
+  BetterDowsingRod: true
+  EnemyDamageMultiplier: 1
+  InstantDeathMode: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 R.E.P.O:
   ################
