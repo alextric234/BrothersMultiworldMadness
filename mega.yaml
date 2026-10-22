@@ -31226,288 +31226,35 @@ Slime Rancher:
   start_inventory_from_pool: {}
 
 Sly Cooper and the Thievius Raccoonus:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  UnlockClockwerk:
-    # What you need to do to unlock Cold Heart of Hate to defeat Clockwerk
-    boss_victories: 50
-    page_hunt: 0
-
-  FastClockwerk:
-    # If enabled, unlocking Cold Heart of Hate will give you access directly to the Clockwerk boss fight skipping all the previous levels.
-    'false': 50
-    'true': 0
-
-  RequiredBosses:
-    # How many members of the Fiendish Five you need to defeat before Cold Heart of Hate is unlocked.
-    # Only used if boss victories is selected as the Unlock Clockwerk option.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 4
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-4: 0 # random value between 1 and 4
-
-  MaxPages:
-    # How many pages are available to collect in the multiworld.
-    # These pages are NOT the same as the normal pages that give you thief moves.
-    # Only used if page hunt is selected as the Unlock Clockwerk option.
-    # Note that this option requires more locations than usual. Cluesanity is recommended.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 50
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-50: 0 # random value between 1 and 50
-
-  RequiredPages:
-    # How many pages of the Thievius Raccoonus you need to collect before Cold Heart of Hate is unlocked.
-    # These pages are NOT the same as the normal pages that give you thief moves.
-    # Only used if page hunt is selected as the Unlock Clockwerk option.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 50
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-50: 0 # random value between 1 and 50
-
-  StartingEpisode:
-    # Determines which episode you will start in. You will be able to do the initial level for it, but
-    # will only be able to continue if you receive a key for that episode (or unlock a different episode)
-    # from a location within it. Avoid Early BK is suggested if you want to avoid early stuck points.
-    tide_of_terror: 50
-    sunset_snake_eyes: 0
-    vicious_voodoo: 0
-    fire_in_the_sky: 0
-    all: 0
-
-  IncludeHourglasses:
-    # If enabled, Hourglasses are included in the locations.
-    'false': 50
-    'true': 0
-
-  HourglassesRequireRoll:
-    # Some Hourglasses are tough without the Roll move.
-    # If enabled, at least one Progressive Roll will logically be required for Hourglasses.
-    'false': 50
-    'true': 0
-
-  AvoidEarlyBK:
-    # Determines if you will start with 1 key for your chosen starting episode.
-    # If all is selected, you are given 1 key for a random episode.
-    'false': 50
-    'true': 0
-
-  ExcludeMinigames:
-    # Choose which minigames types you want to exclude as locations.
-    # Crabs: Treasure in the Depths
-    # Races: At the Dog Track, A Desperate Race
-    # Turrets: Murray's Big Gamble, The King of the Hill
-    # Hover Blasters: A Ghastly Voyage, Rapid Fire Assault
-    # Chicken Killing: Down Home Cooking
-    # Swamp Skiff: Piranha Lake
-    []
-
-  MinigameCaches:
-    # Determines how many additional "minigame cache" checks that minigame levels send when completed.
-    # Minigame levels will still have a key location even if this is set to 0.
-    # This is ignored for any minigame levels excluded above. Allows a range from 0-10.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  LocationCluesanityBundleSize:
-    # Determines how many bottles you need to collect for each check.
-    # Set to 0 to disable. Allows a range between 0 and 5.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  ItemCluesanityBundleSize:
-    # Determines how many bottles you will receive for a given level.
-    # Set to 0 to disable. Allows a range between 0 and 5.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  EnableTricks:
-    # This option allows you to enable alternative forms of logic to access parts of the game via tricks.
-    # Intended for use by people who know speedrun tricks already, but if you would like to learn, watch an
-    # Any% run of the game for reference on how to do the below tricks.
-    # 
-    # Tide of Terror supports tot_second_half_early and tot_raleigh_early.
-    # Sunset Snake Eyes supports sse_second_half_early and sse_muggshot_early.
-    # Vicious Voodoo only supports vv_second_half early as Mz. Ruby does not have known methods of early access.
-    # Fire in the Sky supports fits_second_half_early and fits_panda_early.
-    # Additionally, an 8th trick unseen_foe_invis_skip is supported which puts all Unseen Foe locations into logic
-    # without requiring any progressive invisibility items.
-    # 
-    # Including any of the tricks below will potentially require you to do those tricks to progress, depending
-    # on the randomization.
-    []
-
-  CutsceneSkip:
-    # Automatically skips dialogue and FMV cutscenes if enabled.
-    # Dialogue can be skipped with the R2 button whether this option is on or off.
-    'false': 0
-    'true': 50
-
-  TrapChance:
-    # Determines the chance for a filler item to become a trap.
-    # Set it to 0 for no traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  IcePhysicsTrapWeight:
-    # The weight of ice physics traps in the trap pool.
-    # Ice physics traps turn on the low friction cheat code for 10 seconds.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  SpeedChangeTrapWeight:
-    # The weight of speed change traps in the trap pool.
-    # Speed change traps change the game speed for 10 seconds.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  InvisibilityTrapWeight:
-    # The weight of invisibility traps in the trap pool.
-    # Invisibility traps turn Sly completely invisible for 10 seconds.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  BallTrapWeight:
-    # The weight of ball traps in the trap pool.
-    # Ball traps force Sly to stay in the roll form for 10 seconds.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  UnlockClockwerk: boss_victories
+  FastClockwerk: true
+  RequiredBosses: random
+  MaxPages: random
+  RequiredPages: random
+  StartingEpisode: random
+  IncludeHourglasses: false
+  HourglassesRequireRoll: false
+  AvoidEarlyBK: false
+  ExcludeMinigames: []
+  MinigameCaches: 0
+  LocationCluesanityBundleSize: 0
+  ItemCluesanityBundleSize: 0
+  EnableTricks: []
+  CutsceneSkip: true
+  TrapChance: 15
+  IcePhysicsTrapWeight: 25
+  SpeedChangeTrapWeight: 25
+  InvisibilityTrapWeight: 25
+  BallTrapWeight: 25
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 'SM64: Spicy Mycena 64':
   ################
