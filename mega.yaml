@@ -30639,97 +30639,29 @@ shapez 2:
   start_inventory_from_pool: {}
 
 Shellipelago:
-  ################
-  # Game Options #
-  ################
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  shuffle_essential_items:
-    # Shuffle essential Shellipelago progression items.
-    'false': 0
-    'true': 50
-
-  shuffle_max_resource_upgrades:
-    # Shuffle max HP and max rounds upgrades.
-    'false': 0
-    'true': 50
-
-  add_easy_destructible_checks:
-    # Add destructible tiles as locations.
-    'false': 50
-    'true': 0
-
-  enemies_are_checks:
-    # Add defeated enemies as locations.
-    'false': 50
-    'true': 0
-
-  enemies_are_hints:
-    # Defeated enemies can create Archipelago hints for useful Shellipelago locations.
-    'false': 50
-    'true': 0
-
-  shuffle_shops:
-    # Shuffle shop item locations. Fixed shop progression can still be shuffled when this is off.
-    'false': 0
-    'true': 50
-
-  show_essential_pickup_hints:
-    # Show special graphics for essential pickups in the client.
-    'false': 0
-    'true': 50
-
-  add_traps_to_pool:
-    # Allow trap items to be placed as rewards. Vanilla trap locations become filler when this is off.
-    'false': 50
-    'true': 0
-
-  trap_fill_percentage:
-    # Percentage of filler item slots that will be replaced with traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  death_link: true
+  progression_balancing: normal
+  accessibility: full
+  shuffle_essential_items: true
+  shuffle_max_resource_upgrades: true
+  add_easy_destructible_checks: false
+  enemies_are_checks: false
+  enemies_are_hints: true
+  shuffle_shops: true
+  show_essential_pickup_hints: true
+  add_traps_to_pool: true
+  trap_fill_percentage: 16
   trap_pool_spawn:
-    # Trap types that can spawn from the trap item pool.
-    ['Stun Trap', 'Slow Trap', 'Reverse Trap', 'Fast Trap', 'Zoom In Trap', 'Snake Trap', 'Screen Flip Trap', 'Instant Death Trap', 'Invisible Trap']
-
+  - Fast Trap
+  - Instant Death Trap
+  - Invisible Trap
+  - Reverse Trap
+  - Screen Flip Trap
+  - Slow Trap
+  - Snake Trap
+  - Stun Trap
+  - Zoom In Trap
   trap_weights:
-    # Relative weights for traps in the item pool. Set a trap to 0 to prevent it from appearing.
     Fast Trap: 1
     Instant Death Trap: 1
     Invisible Trap: 1
@@ -30739,67 +30671,17 @@ Shellipelago:
     Snake Trap: 1
     Stun Trap: 1
     Zoom In Trap: 1
-
-  other_players_can_find_item_pool_drops:
-    # Expose item-pool-only drops as Archipelago locations.
-    'false': 50
-    'true': 0
-
-  ring_link:
-    # Sync Rounds with rings in other games that have Ring Link enabled.
-    # As rounds are spent and gained, ring and round counts fluctuate for all players with this option enabled.
-    'false': 50
-    'true': 0
-
-  energy_link:
-    # Sync Energy with other clients that have Energy Link enabled.
-    'false': 50
-    'true': 0
-
-  trap_link:
-    # Send linked traps to other players with Trap Link enabled.
-    # If another linked game supports the received trap effect, that game applies the same trap.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  other_players_can_find_item_pool_drops: false
+  ring_link: true
+  energy_link: true
+  trap_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Ship of Harkinian:
   ################
