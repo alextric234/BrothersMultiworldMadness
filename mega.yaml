@@ -31129,230 +31129,36 @@ Slay the Spire:
   priority_locations: []
 
 Slime Rancher:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal_type:
-    # What criteria to goal
-    # notes = read all notes
-    # 7Zee = buy all 7Zee ranks
-    # credits = get to the end credits
-    # mail = mcguffin hunt, Casey's Letters
-    notes: 50
-    7zee: 0
-    credits: 0
-    mail: 0
-
-  mail_count:
-    # How many Casey's Letters to add to the pool for mcguffin hunt
-    # 8-20
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 8
-    # Maximum value is 20
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-8-20: 0 # random value between 8 and 20
-
-  start_with_dry_reef:
-    # Start with the Dry Reef unlocked
-    'false': 0
-    'true': 50
-
-  enable_stylish_dlc_treasure_pods:
-    # Whether the Secret Style DLC Treasure Pods are locations in the pool.
-    #         
-    #         This will add approximately 17 checks
-    #         
-    #         note: THIS WILL NOT GIVE YOU DLC
-    # YOU MUST __***OWN***__ THE DLC
-    'false': 50
-    'true': 0
-
-  treasure_cracker_checks:
-    # which levels of the treasure cracker is considered as checks
-    # default: level 1
-    # level 1 requires crafting 1 gadget
-    # level 2 requires crafting 20 gadgets
-    # level 3 requires crafting 50 gadgets
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  include_7z:
-    # Include unlockables behind 7z as checks
-    # estimated to appear in sphere 2 and above
-    # 
-    # This will add 54 checks
-    'false': 50
-    'true': 0
-
-  plortsanity:
-    # Selling a plort for the first time will send a check
-    # 
-    # This will add approximately 16 checks
-    'off': 0
-    all_except_gold: 50
-    all: 0
-
-  fix_market_rates:
-    # Overrides the default market behavior:
-    # instead of https://slimerancher.fandom.com/wiki/Plort_Market_(Slime_Rancher)
-    # it will make all plort prices 150% base value, base value listed in the above link
-    'false': 0
-    'true': 50
-
-  start_with_drone:
-    # Start with a Drone
-    'false': 0
-    'true': 50
-
-  trap_percent:
-    # what percent of filler should be replaced with traps
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  include_ogden:
-    # Include Ogden's Retreat
-    # 
-    # This will add 10 checks
-    'false': 50
-    'true': 0
-
-  include_mochi:
-    # Include Mochi's Manor
-    # 
-    # This will add 7 checks
-    'false': 50
-    'true': 0
-
-  include_viktor:
-    # Include Viktor's Workshop
-    # 
-    # This will add 13 checks
-    'false': 50
-    'true': 0
-
-  postgame:
-    # Include Post-Credit Locations, i.e. Item Vaults
-    # 
-    # This will add 42 checks
-    'false': 50
-    'true': 0
-
-  easy_skips:
-    # Enable Skips that many new players end up finding on their first playthrough
-    'false': 50
-    'true': 0
-
-  precise_movement:
-    # Enable Skips that require tighter movement than average
-    'false': 50
-    'true': 0
-
-  dangerous_skips:
-    # Enable Skips that have a high chance of taking damage or getting killed
-    'false': 50
-    'true': 0
-
-  obscure_locations:
-    # Enable Skips that abuse the terrain, usually in unintuitive ways
-    'false': 50
-    'true': 0
-
-  largo_jumps:
-    # Enable Skips where you jump off a largo midair
-    'false': 50
-    'true': 0
-
-  jetpack_boosts:
-    # Enable Skips where you use the ability to get rid of jetpack's startup times through careful jumping, allowing for more energy conservation
-    'false': 50
-    'true': 0
-
-  market_logic:
-    # Enable Logic tied to early trading when opening slime gates
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal_type: notes
+  mail_count: 8
+  start_with_dry_reef: true
+  enable_stylish_dlc_treasure_pods: false
+  treasure_cracker_checks: 1
+  include_7z: false
+  plortsanity: all_except_gold
+  fix_market_rates: true
+  start_with_drone: true
+  trap_percent: 15
+  include_ogden: false
+  include_mochi: false
+  include_viktor: false
+  postgame: false
+  easy_skips: false
+  precise_movement: false
+  dangerous_skips: false
+  obscure_locations: false
+  largo_jumps: false
+  jetpack_boosts: false
+  market_logic: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 'Sly 2: Band of Thieves':
   ################
