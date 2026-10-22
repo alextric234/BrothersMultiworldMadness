@@ -31161,514 +31161,69 @@ Slime Rancher:
   priority_locations: []
 
 'Sly 2: Band of Thieves':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ring_link:
-    # Whether your coin gain/loss is linked to other players. When you gain or
-    # lose coins, ring-linked players gain or lose the same amount, and vice
-    # versa.
-    'false': 50
-    'true': 0
-
-  permissive_yaml:
-    # If permissive yaml is on, incompatible yaml options will be changed to more
-    # suitable ones. If turned off, these yaml options will throw an error and
-    # cause generation to halt.
-    # 
-    # This is intended for yamls with random values. If you're not randomizing
-    # any options, it's recommended that you turn permissive yaml off.
-    'false': 50
-    'true': 0
-
-  starting_episode:
-    # Select Which episode to start with. Starting with Anatomy for disaster
-    # is not compatible with the "first section", "whole episode" and
-    # "progressive sections" options for "Episode 8 Keys".
-    the_black_chateau: 50
-    a_starry_eyed_encounter: 0
-    the_predator_awakens: 0
-    jailbreak: 0
-    a_tangled_web: 0
-    he_who_tames_the_iron_horse: 0
-    menace_from_the_north_eh: 0
-    anatomy_for_disaster: 0
-
-  ########
-  # Goal #
-  ########
-  goal:
-    # Which boss you must defeat to goal, or Clockwerk Hunt.
-    # 
-    # Clockwerk Hunt requires you to collect a certain number of Clockwerk
-    # parts/keys to goal. All Vaults requires you to open all 8 vaults.
-    # 
-    # Pick and Mix lets you combine several victory conditions; configure which
-    # ones with the "Pick and Mix" option.
-    dimitri: 0
-    rajan: 0
-    the_contessa: 0
-    jean_bison: 0
-    clockla: 50
-    all_bosses: 0
-    clockwerk_hunt: 0
-    all_vaults: 0
-    pick_and_mix: 0
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  ring_link: true
+  permissive_yaml: false
+  starting_episode: random
+  goal: clockla
   pick_and_mix:
-    # The victory conditions for the "Pick and Mix" goal. Only takes effect if
-    # goal is set to Pick and Mix. Set a condition to 1 to enable it and 0 to
-    # disable it. You goal once every enabled condition is met.
-    # 
-    # There is a condition for completing each episode, plus:
-    # 
-    # - clockwerk_hunt: collect the number of Clockwerk parts set by "Goal
-    #   Required Keys".
-    # - all_vaults: open all vaults.
-    # 
-    # At least one condition must be enabled.
-    a_starry_eyed_encounter: 0
-    a_tangled_web: 0
-    all_vaults: 0
-    anatomy_for_disaster: 0
-    clockwerk_hunt: 0
-    he_who_tames_the_iron_horse: 0
-    jailbreak: 0
-    menace_from_the_north_eh: 0
-    the_black_chateau: 0
     the_predator_awakens: 0
-
-  ###################
-  # Clockwerk parts #
-  ###################
-  keys_in_pool:
-    # How many Clockwerk parts are added to the pool. If this is lower than the
-    # required number of keys (for either Clockwerk Hunt or Episode 8 unlock),
-    # the generator warns and keeps your values as written, which can make the
-    # goal or Episode 8 impossible, or, with permissive_yaml on, lowers the
-    # requirement to match.
-    # 
-    # Setting this to values close to 500 requires that you set tasksanity to
-    # true, bottle_location_bundle_size to 1, and bottle_item_bundle_size to at
-    # least 3 (4 if both vault and pickpocket checks are turned off).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 500
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-500: 0 # random value between 1 and 500
-
-  episode_8_keys:
-    # Whether to have Anatomy for Disaster be unlocked with a number of Clockwerk
-    # parts, rather than with a single item like the other episodes.
-    # 
-    # - First section: Unlock only the first section of Anatomy for Disaster with
-    #   the required amount of Clockwerk Parts.
-    # - Last section: Unlock only the final mission of Anatomy for Disaster with
-    #   the required amount of Clockwerk Parts.
-    # - Whole episode: Unlock every mission in Anatomy for Disaster with the
-    #   required amount of Clockwerk Parts.
-    # - Gradual sections: Unlock the four sections of Anatomy for Disaster one at
-    #   a time, each requiring a larger fraction of the required Clockwerk Parts,
-    #   with the final section requiring the full amount.
-    # - Off: Unlock Anatomy for Disaster with progressive episode items, like the
-    #   other episodes.
-    first_section: 50
-    last_section: 0
-    whole_episode: 0
-    gradual_sections: 0
-    'off': 0
-
-  required_keys_episode_8:
-    # How many Clockwerk parts you need to unlock Anatomy for Disaster, if
-    # Episode 8 Keys is turned on.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 500
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-500: 0 # random value between 1 and 500
-
-  required_keys_goal:
-    # How many Clockwerk parts you need to goal, if goal objective is Clockwerk Hunt
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 500
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-500: 0 # random value between 1 and 500
-
-  #########
-  # Items #
-  #########
-  include_tom:
-    # Add the TOM ability/gadget to the pool.
-    'false': 50
-    'true': 0
-
-  include_mega_jump:
-    # Add the Mega Jump ability/gadget to the pool.
-    'false': 50
-    'true': 0
-
-  include_time_rush:
-    # Add the Time Rush ability/gadget to the pool.
-    'false': 50
-    'true': 0
-
-  coins_minimum:
-    # The minimum number of coins you'll receive when you get a "Coins" filler
-    # item.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  coins_maximum:
-    # The maximum number of coins you'll receive when you get a "Coins" filler
-    # item.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  bottle_item_bundle_size:
-    # How many bottles you receive from an item. Set to 0 to disable bottles
-    # as items. Both this and bottle_location_bundle_size must be non-zero for
-    # bottles to appear; setting only one is invalid.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 30
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-30: 0 # random value between 0 and 30
-
-  trap_chance:
-    # The percentage of filler items that are replaced with traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+    anatomy_for_disaster: 0
+    menace_from_the_north_eh: 0
+    a_tangled_web: 0
+    clockwerk_hunt: 0
+    all_vaults: 0
+    the_black_chateau: 0
+    jailbreak: 0
+    a_starry_eyed_encounter: 0
+    he_who_tames_the_iron_horse: 0
+  keys_in_pool: 20
+  episode_8_keys: first_section
+  required_keys_episode_8: 10
+  required_keys_goal: 10
+  include_tom: true
+  include_mega_jump: true
+  include_time_rush: false
+  coins_minimum: 50
+  coins_maximum: 200
+  bottle_item_bundle_size: 0
+  trap_chance: 0
   trap_weights:
-    # Relative weights of each trap type. When a filler item becomes a trap (see
-    # Trap Chance), its type is chosen according to these weights. Set a weight to
-    # 0 to disable that trap. The trap types are:
-    # 
-    # - Sly 1 Trap: sets the current character's health to 1.
-    # - Energy Drain Trap: empties the gadget meter.
-    # - Slow-mo Trap: slows the game down for a few seconds.
-    # - Sugar Rush Trap: speeds the game up for a few seconds.
-    # - Ice Trap: makes the ground slippery for a few seconds.
-    # - Noise Trap: sounds an alarm and alerts nearby guards for a few seconds.
+    sly_1_trap: 10
     energy_drain_trap: 10
+    slow_mo_trap: 10
+    sugar_rush_trap: 10
     ice_trap: 10
     noise_trap: 10
-    slow_mo_trap: 10
-    sly_1_trap: 10
-    sugar_rush_trap: 10
-
-  #############
-  # Locations #
-  #############
-  thiefnet_minimum:
-    # The minimum number of coins items on ThiefNet will cost.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9999
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9999: 0 # random value between 0 and 9999
-
-  thiefnet_maximum:
-    # The maximum number of coins items on ThiefNet will cost.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9999
-    2000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9999: 0 # random value between 0 and 9999
-
-  include_vaults:
-    # Whether to include vaults as checks.
-    'false': 0
-    'true': 50
-
-  include_pickpocketing:
-    # Whether to include pickpocketing loot from guards as checks.
-    'false': 50
-    'true': 0
-
-  tasksanity:
-    # Whether to include the individual tasks that make up each job as checks.
-    'false': 50
-    'true': 0
-
-  bottle_location_bundle_size:
-    # How many bottles you need to collect for each check. Set to 0 to disable
-    # bottles as checks. Both this and bottle_item_bundle_size must be non-zero
-    # for bottles to appear; setting only one is invalid.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 30
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-30: 0 # random value between 0 and 30
-
-  bottlesanity:
-    # Each bottle is its own check, rather than counting the number of bottles
-    # collected. Only takes effect if bottle_location_bundle_size is 1.
-    'false': 0
-    'true': 50
-
-  scout_thiefnet:
-    # Whether to scout/hint ThiefNet checks. They will still be displayed in game.
-    'false': 0
-    'true': 50
-
-  ##################
-  # Pick-pocketing #
-  ##################
-  randomize_loot:
-    # Whether to shuffle all pickpocketing loot locations. A guard could have the
-    # same piece of loot multiple times on their table, so there is no
-    # guaranteeing that each guard will have exactly 6 different pieces of loot.
-    'false': 50
-    'true': 0
-
-  dynamic_loot_tables:
-    # Whether the pickpocketing loot tables update during play, making loot whose
-    # checks have not been collected more common than loot that has already been
-    # checked.
-    'false': 50
-    'true': 0
-
-  small_guard_loot_chance:
-    # The chance that any given small guard will have pick-pocketable loot.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  large_guard_loot_chance:
-    # The chance that any given large guard will have pick-pocketable loot.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  loot_table_distribution:
-    # How "evenly" the loot table chances will be distributed. By default, the 6
-    # pieces of loot a guard can carry will be distributed with the chances
-    # (30%/30%/15%/15%/5%/5%). A lower value will make first pieces of loot even
-    # more likely, and a higher value will flatten out the chances.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  ###############
-  # Sell values #
-  ###############
-  loot_values:
-    # How much each piece of pickpocketing loot sells for.
-    # 
-    # - Vanilla: Loot sells for what it does in the base game.
-    # - Shuffled: The vanilla sell values are shuffled between the pieces of loot.
-    # - Randomized: Each piece of loot gets a new sell value, rolled between
-    #   "Loot Value Minimum" and "Loot Value Maximum".
-    vanilla: 50
-    shuffled: 0
-    randomized: 0
-
-  loot_value_minimum:
-    # The lowest a piece of loot can sell for. Only takes effect if loot_values is
-    # set to Randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  loot_value_maximum:
-    # The highest a piece of loot can sell for. Only takes effect if loot_values
-    # is set to Randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    150: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  treasure_values:
-    # How much each treasure sells for.
-    # 
-    # - Vanilla: Treasures sell for what they do in the base game.
-    # - Shuffled: The vanilla sell values are shuffled between the treasures.
-    # - Randomized: Each treasure gets a new sell value, rolled between "Treasure
-    #   Value Minimum" and "Treasure Value Maximum".
-    vanilla: 50
-    shuffled: 0
-    randomized: 0
-
-  treasure_value_minimum:
-    # The lowest a treasure can sell for. Only takes effect if treasure_values is
-    # set to Randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9999
-    150: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9999: 0 # random value between 0 and 9999
-
-  treasure_value_maximum:
-    # The highest a treasure can sell for. Only takes effect if treasure_values is
-    # set to Randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9999
-    800: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9999: 0 # random value between 0 and 9999
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  include_vaults: true
+  include_pickpocketing: false
+  tasksanity: false
+  thiefnet_minimum: 200
+  thiefnet_maximum: 2000
+  bottle_location_bundle_size: 0
+  bottlesanity: true
+  scout_thiefnet: true
+  small_guard_loot_chance: 20
+  large_guard_loot_chance: 40
+  loot_table_distribution: 50
+  randomize_loot: false
+  dynamic_loot_tables: false
+  loot_values: vanilla
+  loot_value_minimum: 10
+  loot_value_maximum: 150
+  treasure_values: vanilla
+  treasure_value_minimum: 150
+  treasure_value_maximum: 800
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Sly Cooper and the Thievius Raccoonus:
   ################
