@@ -28489,197 +28489,31 @@ Pokemon Mystery Dungeon Explorers of Sky:
   start_inventory_from_pool: {}
 
 Pokemon Pinball:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ################
-  # Goal Options #
-  ################
-  dex_needed:
-    # Determines how many Pokemon you need to catch to complete the game
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 150
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-150: 0 # random value between 1 and 150
-
-  required_mons:
-    # Which Pokemon are required to be caught to clear the game, leave blank if you don't want any
-    []
-
-  required_score:
-    # Determines a high score needed to clear the game
-    # leave at 0 to disable
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 2000000000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-2000000000: 0 # random value between 0 and 2000000000
-
-  include_notes:
-    # If enables will include an item where you can add a dex entry using the /research [pokemon name] server command
-    'false': 50
-    'true': 0
-
-  ####################
-  # Gameplay Options #
-  ####################
-  map_btn:
-    # Controls what button is needed to move between areas during gameplay
-    a: 0
-    b: 0
-    sel: 0
-    start: 0
-    right: 50
-    left: 0
-    up: 0
-    down: 0
-
-  rebalance_encounters:
-    # If enabled, will rebalance the encounter tables to make encountering rarer pokemon more common
-    'false': 0
-    'true': 50
-
-  permanent_ball_saver:
-    # If enabled, the game will make the ball saved permanent
-    'false': 50
-    'true': 0
-
-  double_timer:
-    # The amount of minutes you have to catch a Pokemon before it runs away
-    'false': 50
-    'true': 0
-
-  catch_rotation:
-    # Number of map routations required to open Bellsprout/Cloyster for Catchem Mode
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  evo_rotation:
-    # Number of map routations required to open Ditto/Slowbro for Evolution Mode
-    # Doesn't work on blue field yet
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  extra_start_route:
-    # Adds an extra route you can travel to from the start of the run, 
-    # this will not remove the extra copy of that route from the item pool
-    'false': 50
-    'true': 0
-
-  less_tired:
-    # If enabled pokemon will not be tired for as long during evolution
-    'false': 0
-    'true': 50
-
-  strong_tilt:
-    # If enabled, increases the strength of tilting, this can produce some odd results so use at your own risk
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  #########################
-  # Randomization Options #
-  #########################
-  mon_colors:
-    # If enabled, the game will randomize the colors of the Pokemon
-    'false': 50
-    'true': 0
-
-  map_colors:
-    # If enabled, the game will randomize the colors of the maps
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  dex_needed: 75
+  required_mons: []
+  required_score: 0
+  include_notes: true
+  map_btn: right
+  catch_rotation: 2
+  evo_rotation: 3
+  extra_start_route: true
+  rebalance_encounters: true
+  less_tired: true
+  permanent_ball_saver: true
+  strong_tilt: false
+  double_timer: true
+  death_link: true
+  mon_colors: true
+  map_colors: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Pokemon Platinum:
   ################
