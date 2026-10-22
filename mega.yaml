@@ -30388,335 +30388,38 @@ Ratchet & Clank 2:
     []
 
 Ratchet & Clank:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  #####################
-  # RAC1 Game Options #
-  #####################
-  starting_item:
-    # Randomize what weapon you start the game with.
-    # vanilla: Start with the Bomb Glove.
-    # random_same: Start with a random weapon.
-    # random_item: Start with any random equipable item, weapons or gadgets.
-    vanilla: 50
-    random_same: 0
-    random_item: 0
-
-  starting_location:
-    # Randomize what Planet you start on
-    'false': 0
-    'true': 50
-
-  pack_size_gold_bolts:
-    # Gold Bolts received each time you collect a pack of Gold Bolts (Gold Bolts Shuffle Off forces this to 1)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 40
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-40: 0 # random value between 1 and 40
-
-  pack_size_bolts:
-    # Bolts received each time you collect a pack of Bolts.
-    '0': 0
-    '1': 0
-    '10': 0
-    '100': 0
-    '250': 0
-    '500': 0
-    '750': 0
-    '1000': 0
-    '2000': 0
-    '3000': 0
-    '4000': 0
-    '5000': 0
-    '6000': 0
-    '7000': 0
-    '8000': 0
-    '9000': 0
-    '10000': 0
-    '12500': 0
-    '15000': 50
-    '17500': 0
-    '20000': 0
-    '25000': 0
-    '30000': 0
-    '40000': 0
-    '50000': 0
-    '75000': 0
-    '100000': 0
-
-  metal_bolt_multiplier:
-    # Bolt Multiplier when using the metal detector
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    35: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  enable_bolt_multiplier:
-    # Enables the bolt multiplier feature without being in New Game+.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  #########################
-  # RAC1 Location Options #
-  #########################
-  shuffle_weapons:
-    # Randomize Weapon locations
-    # vanilla: Weapons are unshuffled.
-    # random_same: Weapons are shuffled to other Weapon locations.
-    # random_item: Weapons are shuffled anywhere, useful items are found at Weapon locations.
-    # unrestricted: Weapons are shuffled anywhere, anything can be found at Weapon locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_gadgets:
-    # Randomize Gadget locations
-    # vanilla: Gadgets are unshuffled.
-    # random_same: Gadgets are shuffled to other Gadget locations.
-    # random_item: Gadgets are shuffled anywhere, useful items are found at Gadget locations.
-    # unrestricted: Gadgets are shuffled anywhere, anything can be found at Gadget locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_packs:
-    # Randomize Pack locations
-    # vanilla: Packs are unshuffled.
-    # random_same: Packs are shuffled to other Pack locations.
-    # random_item: Packs are shuffled anywhere, useful items are found at Pack locations.
-    # unrestricted: Packs are shuffled anywhere, anything can be found at Pack locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_helmets:
-    # Randomize Helmet locations
-    # vanilla: Helmets are unshuffled.
-    # random_same: Helmets are shuffled to other Helmet locations.
-    # random_item: Helmets are shuffled anywhere, useful items are found at Helmet locations.
-    # unrestricted: Helmets are shuffled anywhere, anything can be found at Helmet locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_boots:
-    # Randomize Boot locations
-    # vanilla: Boots are unshuffled.
-    # random_same: Boots are shuffled to other Boot locations.
-    # random_item: Boots are shuffled anywhere, useful items are found at Boot locations.
-    # unrestricted: Boots are shuffled anywhere, anything can be found at Boot locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_extra_items:
-    # Randomize Extra Item locations (Hoverboard, Persuader, etc...)
-    # vanilla: Extra Items are unshuffled.
-    # random_same: Extra Items are shuffled to other Extra Item locations.
-    # random_item: Extra Items are shuffled anywhere, useful items are found at Extra Item locations.
-    # unrestricted: Extra Items are shuffled anywhere, anything can be found at Extra Item locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_gold_bolts:
-    # Randomize Gold Bolt locations
-    'false': 0
-    'true': 50
-
-  shuffle_infobots:
-    # Randomize Infobot locations
-    # vanilla: Infobots are unshuffled.
-    # random_same: Infobots are shuffled to other Infobot locations.
-    # random_item: Infobots are shuffled anywhere, useful items are found at Infobot locations.
-    # WARNING! Using random_same, or random_item with no other pool selected, is likely to fail on solo worlds.
-    # unrestricted: Infobots are shuffled anywhere, anything can be found at Infobot locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  shuffle_gold_weapons:
-    # Randomize Gold Weapon locations
-    # vanilla: Gold Weapons are unshuffled.
-    # random_same: Gold Weapons are shuffled to other Gold Weapon locations.
-    # random_item: Gold Weapons are shuffled anywhere, useful items are found at Gold Weapon locations.
-    # unrestricted: Gold Weapons are shuffled anywhere, anything can be found at Gold Weapon locations.
-    vanilla: 0
-    random_same: 0
-    random_item: 0
-    unrestricted: 50
-
-  ############################
-  # RAC1 Progressive Options #
-  ############################
-  progressive_weapons:
-    # If enabled, make gold weapons and their standard variants progressive items.
-    #     vanilla: Gold Weapons and Weapons are not progressive, Gold Weapons do nothing until their base item is
-    #     found.
-    #     normal: Gold Weapons and Weapons are not progressive, each item is independent of other items.
-    #     progressive: Gold Weapons and Weapons are progressive, collecting multiple of an item will upgrade it.
-    #     progressive_reversed: Gold Weapons and Weapons are progressive, the order of upgrading is reversed.
-    #     progressive_random: Gold Weapons and Weapons are progressive, the order of upgrading is random.
-    vanilla: 0
-    normal: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  progressive_packs:
-    # vanilla: Packs are not progressive, each item is independent of other items.
-    # progressive: Packs are progressive, collecting multiple of an item will upgrade it.
-    # progressive_reversed: Packs are progressive, the order of upgrading is reversed.
-    # progressive_random: Packs are progressive, the order of upgrading is random.
-    vanilla: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  progressive_helmets:
-    # vanilla: Helmets are not progressive, each item is independent of other items.
-    # progressive: Helmets are progressive, collecting multiple of an item will upgrade it.
-    # progressive_reversed: Helmets are progressive, the order of upgrading is reversed.
-    # progressive_random: Helmets are progressive, the order of upgrading is random.
-    vanilla: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  progressive_boots:
-    # vanilla: Grind and Magneboots are not progressive, each item is independent of other items.
-    # progressive: Grind and Magneboots are progressive, collecting multiple of an item will upgrade it.
-    # progressive_reversed: Grind and Magneboots are progressive, the order of upgrading is reversed.
-    # progressive_random: Grind and Magneboots are progressive, the order of upgrading is random.
-    vanilla: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  progressive_hoverboard:
-    # vanilla: Hoverboard and Zoomerator are not progressive, each item is independent of other items.
-    # progressive: Hoverboard and Zoomerator are progressive, collecting multiple of an item will upgrade it.
-    # progressive_reversed: Hoverboard and Zoomerator are progressive, the order of upgrading is reversed.
-    # progressive_random: Hoverboard and Zoomerator are progressive, the order of upgrading is random.
-    vanilla: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  progressive_raritanium:
-    # vanilla: Raritanium and Persuader are not progressive, each item is independent of other items.
-    # progressive: Raritanium and Persuader are progressive, collecting multiple of an item will upgrade it.
-    # progressive_reversed: Raritanium and Persuader are progressive, the order of upgrading is reversed.
-    # progressive_random: Raritanium and Persuader are progressive, the order of upgrading is random.
-    vanilla: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  progressive_nanotech:
-    # vanilla: Nanotech is not progressive, each item is independent of other items.
-    # progressive: Nanotech are progressive, collecting multiple of an item will upgrade it.
-    # progressive_reversed: Nanotech are progressive, the order of upgrading is reversed.
-    # progressive_random: Nanotech are progressive, the order of upgrading is random.
-    vanilla: 50
-    progressive: 0
-    progressive_reversed: 0
-    progressive_random: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  starting_item: random_same
+  starting_location: true
+  pack_size_gold_bolts: 8
+  pack_size_bolts: '50000'
+  metal_bolt_multiplier: 35
+  enable_bolt_multiplier: 5
+  shuffle_weapons: unrestricted
+  shuffle_gadgets: unrestricted
+  shuffle_packs: unrestricted
+  shuffle_helmets: unrestricted
+  shuffle_boots: unrestricted
+  shuffle_extra_items: unrestricted
+  shuffle_gold_bolts: true
+  shuffle_infobots: unrestricted
+  shuffle_gold_weapons: unrestricted
+  progressive_weapons: normal
+  progressive_packs: vanilla
+  progressive_helmets: vanilla
+  progressive_boots: vanilla
+  progressive_hoverboard: vanilla
+  progressive_raritanium: vanilla
+  progressive_nanotech: vanilla
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Ratchet and Clank 3:
   ################
