@@ -40642,313 +40642,48 @@ Undertale Yellow:
   priority_locations: []
 
 Vampire Survivors:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal_requirement:
-    # 0 = Stage hunt (beat/loop all stages)
-    # 1 = Kill Director (required ~75% of stages beaten)
-    stage_hunt: 50
-    director: 0
-
-  chest_checks_per_stage:
-    # how many chest checks per stage
-    # from 5 to 10
-    # default: 7
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 10
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-10: 0 # random value between 5 and 10
-
-  egg_inclusion:
-    # how to include eggs:
-    # 0 = fully disabled
-    # 1 = locked behind an item
-    # 2 = fully unlocked
-    disabled: 0
-    locked_behind_item: 50
-    unlocked: 0
-
-  lock_hyper_behind_item:
-    # Lock the `Hyper` gamemode behind an item
-    'false': 50
-    'true': 0
-
-  lock_hurry_behind_item:
-    # Lock the `Hurry` gamemode behind an item
-    # This will lock `Beat with [character]` and `[stage] beaten` checks until hurry is found
-    'false': 50
-    'true': 0
-
-  lock_arcanas_behind_item:
-    # Lock the `Arcanas` gamemode behind an item
-    'false': 50
-    'true': 0
-
-  enemysanity:
-    # The first kill of an enemy is a check
-    'false': 50
-    'true': 0
-
-  enemysanity_arcana_enemies:
-    # Allows Arcana specific enemies to be checks for enemysanity
-    'false': 50
-    'true': 0
-
-  character_pool_size:
-    # Limit the amount of characters (select a random assortment of characters if higher)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  stage_pool_size:
-    # Limit the amount of stages (select a random assortment of stages if higher)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  allow_secret_characters:
-    # Allow the use of secret characters:
-    # [Exdash, Toastie, Smith IV, Random, Marrabbio, Avatar, Minnah, Leda, Cosmo, Trouser, Gains, Gyorunton, Red Death, Bats, Rose, Scorej-Oni, Gyoruntin, Young Maria, Familiar, Innocent, Cornell, Ferryman, Master Librarian, Hammer, Wind, Jonathan & Charlotte, Charlotte & Jonathan, Stella & Loretta, Loretta & Stella, Stella, Loretta, Brauner, Soleil, Dario, Dmitrii, Celia, Graham, Joachim, Walter, Carmilla, Olrox, Cave Troll, Axe Armor, Frozenshade, Succubus, Keremet, Sniper, Blackmore, Malphas, Death, Galamoth, Lolo, Hiss, Meow, and Purr, Kina, Imakoo, Door]
-    'false': 0
-    'true': 50
-
-  allow_megalo_characters:
-    # Allow the use of megalo characters:
-    # [Megalo Syuuto, Je-Ne-Viv, Megalo Impostor, Megalo Elizabeth, Megalo Olrox, Megalo Dracula]
-    'false': 50
-    'true': 0
-
-  allow_unfair_characters:
-    # Allow the use of unfair characters:
-    # [Peppino, MissingN▯, Space Dette, Megalo Menya, Ghost, Fleaman, Megalo Death, Chaos]
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  goal_requirement: stage_hunt
+  chest_checks_per_stage: 7
+  egg_inclusion: locked_behind_item
+  lock_hyper_behind_item: false
+  lock_hurry_behind_item: false
+  lock_arcanas_behind_item: true
+  enemysanity: true
+  enemysanity_arcana_enemies: false
+  character_pool_size: 0
+  stage_pool_size: 0
+  allow_secret_characters: true
+  allow_megalo_characters: true
+  allow_unfair_characters: true
   included_base_characters:
-    # Base Characters to be randomized
-    # possible options:
-    # [Antonio Belpaese, Imelda Belpaese, Pasqualina Belpaese, Gennaro Belpaese, Arca Ladonna, Porta Ladonna, Lama Ladonna, Poe Ratcho, Suor Clerici, Dommario, Krochi Freetto, Christine Davain, Pugnala Provola, Giovanna Grana, Poppea Pecorina, Concetta Caciotta, Mortaccio, Yatta Cavallo, Bianca Ramba, O'Sole Meeo, Sir Ambrojoe, Iguana Gallo Valletto, Divano Thelma, Zi'Assunta Belpaese, Exdash Exiviiq, Toastie, Smith IV, Random, Boon Marrabbio, Avatar Infernas, Minnah Mannarah, Leda, Cosmo Pavone, Peppino, Big Trouser, missingN, Gains Boros, Gyorunton, Mask of the Red Death, Queen Sigma, Bat Robbert, Zi'Appunta Belpaese, She-Moon Eeta, Santa Ladonna, Gazebo, Chula-Reh, Space Dude, Bats Bats Bats, Rose De Infernas, Torino, Scorej-Oni, Gyoruntin, Secretino, Space Dette]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    ['All']
-
-  included_moonspell_characters:
-    # Moonspell Characters to be randomized
-    # possible options:
-    # [Miang Moonspell, Menya Moonspell, Syuuto Moonspell, Babi-Onna, McCoy-Oni, Megalo Menya Moonspell, Megalo Syuuto Moonspell, Gab'Et-Oni]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_foscari_characters:
-    # Foscari Characters to be randomized
-    # possible options:
-    # [Eleanor Uziron, Maruto Cuts, Keitha Muort, Luminaire Foscari, Genevieve Gruyère, Je-Ne-Viv, Sammy, Rottin'Ghoul]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_amongus_characters:
-    # Amongus Characters to be randomized
-    # possible options:
-    # [Crewmate Dino, Engineer Gino, Ghost Lino, Shapeshifter Nino, Guardian Pina, Impostor Rina, Scientist Mina, Horse, Megalo Impostor Rina]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_operation_guns_characters:
-    # Operation Guns Characters to be randomized
-    # possible options:
-    # [Bill Rizer, Lance Bean, Ariana, Lucia Zero, Brad Fang, Browny, Sheena Etranzi, Probotector, Stanley, Newt Plissken, Colonel Bahamut, Simondo]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_castlevania_characters:
-    # Castlevania Characters to be randomized
-    # possible options:
-    # [Leon Belmont, Sonia Belmont, Trevor Belmont, Christopher Belmont, Simon Belmont, Juste Belmont, Richter Belmont, Julius Belmont, Grant Danasty, Quincy Morris, John Morris, Jonathan Morris, Maxim Kischine, Henry, Soma Cruz, Vlad Tepes Dracula, Charlotte Aulin, Sypha Belnades, Julia Laforeze, Carrie Fernandez, Yoko Belnades, Rinaldo Gandolfi, Mina Hakuba, Elizabeth Bartley, Alucard, Reinhardt Schneider, Eric Lecarde, Isaac, Hector, Sara Trantoul, Vincent Dorin, Maria Renard, Shanoa, Albus, Lisa, Shaft, Saint Germain, Nathan Graves, Cornell, Barlowe, Young Maria Renard, Familiar, Innocent Devil, Blue Crescent Moon Cornell, Ferryman, Librarian, Hammer, Wind, Hugh Baldwin, Morris Baldwin, Annette, Tera, Jonathan & Charlotte, Charlotte & Jonathan, Stella & Loretta Lecarde, Loretta & Stella Lecarde, Stella Lecarde, Loretta Lecarde, Brauner, Soleil Belmont, Dario Bossi, Dmitri Blinov, Celia Fortner, Graham Jones, Joachim, Walter, Carmilla, Cave Troll, Fleaman, Axe Armor, Frozenshade, Amalaric Sniper, Stone Skull, Sword Ruler, Persephone, Keremet, Astarte, Drolta, Actrise, Atlantis Shrine Wizard, Succubus, Fake Trio, Slogra and Gaibon, Zephyr, Jiangshi, Blackmore, Count Olrox, Malphas, Death, Galamoth, Megalo Elizabeth Bartley, Megalo Olrox, Megalo Death, Megalo Dracula, Chaos, Gaibon and Slogra, Slogra, Kid Dracula, Aeon, Desmond Belmont, Dolores Belmont, Zoe Belmont, Fishman, Fake Trevor, Fake Sypha, Fake Grant, Genya Arikado]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_emerald_characters:
-    # Emerald Characters to be randomized
-    # possible options:
-    # [Tsunanori Mido, Bonnie Blair, Formina Franklyn, Diva No. 5, Ameya Aisling, Siugnas, Final Emperor, Dolores, Macha, Lita, Kugutsu, Mr. S, Lolo, Hiss, Meow and Purr, Kina, Imakoo, Malevolent Door Spirit]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_balatro_characters:
-    # Balatro Characters to be randomized
-    # possible options:
-    # [Jimbo, Canio, Chicot, Perkeo]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
+  - All
+  included_moonspell_characters: []
+  included_foscari_characters: []
+  included_amongus_characters: []
+  included_operation_guns_characters: []
+  included_castlevania_characters: []
+  included_emerald_characters: []
+  included_balatro_characters: []
   included_normal_stages:
-    # Normal Stages to be randomized
-    # possible options:
-    # [Mad Forest, Inlaid Library, Dairy Plant, Gallo Tower, Cappella Magna, Westwoods, Mazerella]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    ['All']
-
-  included_bonus_stages:
-    # Bonus Stages to be randomized
-    # possible options:
-    # [Il Molise, Moongolow, Whiteout, The Coop, Space 54, Carlo Cart]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_challenge_stages:
-    # Challenge Stages to be randomized
-    # possible options:
-    # [Eudaimonia M., Green Acres, The Bone Zone, Boss Rash, Laborratory, Bat Country, Astral Stair, Tiny Bridge, Room 1665]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_moonspell_stages:
-    # Moonspell Stages to be randomized
-    # possible options:
-    # [Mt.Moonspell]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_foscari_stages:
-    # Foscari Stages to be randomized
-    # possible options:
-    # [Lake Foscari, Abyss Foscari]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_amongus_stages:
-    # Amongus Stages to be randomized
-    # possible options:
-    # [Polus Replica]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_operation_guns_stages:
-    # Operation Guns Stages to be randomized
-    # possible options:
-    # [Neo Galuga, Hectic Highway]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_castlevania_stages:
-    # Castlevania Stages to be randomized
-    # possible options:
-    # [Ode to Castlevania]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_emerald_stages:
-    # Emerald Stages to be randomized
-    # possible options:
-    # [Emerald Diorama]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  included_balatro_stages:
-    # Balatro Stages to be randomized
-    # possible options:
-    # [Ante Chamber]
-    # "All" - adds all locations above
-    # "Random" - picks a random # of characters b/t list's max size / 2 and list's max size
-    []
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - All
+  included_bonus_stages: []
+  included_challenge_stages: []
+  included_moonspell_stages: []
+  included_foscari_stages: []
+  included_amongus_stages: []
+  included_operation_guns_stages: []
+  included_castlevania_stages: []
+  included_emerald_stages: []
+  included_balatro_stages: []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Voltorb Flip:
   ################
