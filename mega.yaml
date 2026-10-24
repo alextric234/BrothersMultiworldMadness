@@ -35695,186 +35695,27 @@ Super Mario 64:
   stars_to_finish: random
 
 Super Mario Sunshine:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  extra_shines:
-    # How many extra shine sprites you want added to the pool. This is a percentage so it ranges from 0 to 90
-    # If more shines would be added than locations possible it will add as many as it can
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 90
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-90: 0 # random value between 0 and 90
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  #############
-  # SMS Basic #
-  #############
-  level_access:
-    # If on "vanilla", the main levels are accessed in the way they are in the base game (e.g. Ricco Harbor is accessible after collecting 3 Shine Sprites).
-    # If on "tickets", each level has a ticket item that must be acquired to access the level.
-    # To reduce generation failures in testing, you'll automatically receive one free ticket at the start.
-    vanilla: 50
-    tickets: 0
-
-  difficulty:
-    # This enables difficulty settings. Higher difficulty settings will include checks in logic that normally
-    # are not possible without doing difficult or unintended things. This includes spraying things with different
-    # nozzles, doing difficult platforming, and executing glitches.
-    normal: 50
-    hard: 0
-    advanced: 0
-    salty_tears: 0
-
-  all_shines_selectable:
-    # Enables you to select every shine without having to complete each in order.
-    # You will still need access to each hub (Gelato Beach, Noki Bay, Pinna Park, etc.)
-    'false': 50
-    'true': 0
-
-  starting_nozzle:
-    # If on, you will start with no Spray Nozzle, and in fact, no FLUDD at all. (Still in non-enforce mode)
-    # You will skip directly to Delfino Plaza, and the first Airstrip mission will be removed from locations.
-    # In this early version of this setting, you are expected to spray unusual things with Hover.
-    spray: 50
-    hover: 0
-    fluddless: 0
-
-  enable_coin_shines:
-    # Turn off to ignore the 100 coin Shine Sprites, which removes 8 Shine Sprites from the pool.
-    # You can still collect them, but they don't do anything.
-    'false': 50
-    'true': 0
-
-  nozzle_boxes:
-    # Enables Nozzle Boxes as a location.
-    'false': 50
-    'true': 0
-
-  corona_mountain_shines:
-    # How many Shine Sprites are required to access Corona Mountain and the Delfino Airstrip revisit.
-    # If this is more than the locations available, This will be automatically adjusted to 90-80% of locations available
-    # after all other progression items are created / accounted for.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 345
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-345: 0 # random value between 0 and 345
-
-  blue_coin_sanity:
-    # Full shuffle: adds Blue Coins to the pool and makes Blue Coins locations.
-    # Trade Shines Only: Adds the trade shines from the boathouse. Will NOT add the blue coin locations though.
-    no_blue_coins: 50
-    full_shuffle: 0
-    trade_shines_only: 0
-
-  blue_coin_maximum:
-    # How many Blue Coins to include in the pool if Blue Coinsanity is on.
-    # Does nothing if Blue Coinsanity full_shuffle is off.
-    # Corresponding trade shines will be removed from locations.
-    # Removed Blue Coins will be replaced by other items in the pool, such as filler, to fill the
-    #     remaining Blue Coin locations.
-    # Example: You only want 220 of the 240 possible blue coins, the other 20 spots will be filled by other items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 240
-    240: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-240: 0 # random value between 0 and 240
-
-  trade_shine_maximum:
-    # The number of Shines from the boathouse trades that will be shuffled. If the Blue Coin Maximum is not enough
-    # to obtain this amount, it will decrease automatically.
-    # Keep in mind that if this value is too high, there is a chance you will have to nearly 100% the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 24
-    12: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-24: 0 # random value between 0 and 24
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  extra_shines: 15
+  death_link: true
+  level_access: vanilla
+  enable_coin_shines: false
+  corona_mountain_shines: 50
+  nozzle_boxes: false
+  all_shines_selectable: true
+  blue_coin_sanity: no_blue_coins
+  blue_coin_maximum: 240
+  trade_shine_maximum: 12
+  starting_nozzle: random
+  difficulty: normal
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Super Mario World:
   ################
