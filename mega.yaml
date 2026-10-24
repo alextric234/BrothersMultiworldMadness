@@ -41780,231 +41780,33 @@ Yacht Dice:
   start_inventory: {}
 
 YARG:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  deathlink:
-    # When you die, everyone who enabled
-    # death link dies. Of course, the reverse
-    # is true too.
-    # 
-    # One Hit: Leaves you with 1 health in the
-    # rock meter, one note away from failing,
-    # but you can recover.
-    # 
-    # Instant: Instant fail on recieving a
-    # death link.
-    disabled: 50
-    one_hit: 0
-    instant: 0
-
-  energylink:
-    # Adds your score at the end of a song
-    # to the Archipelago Energy Link!
-    'false': 0
-    'true': 50
-
-  ##########################
-  # Song Selection Options #
-  ##########################
-  total_songs:
-    # The total amount of songs in the multiworld.
-    # 
-    # Note: Final song count may be lowered if there are not enough songs
-    # in the enabled setlists.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 481
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-481: 0 # random value between 5 and 481
-
-  percent_of_gems_generated:
-    # Percent of total YARG Gems generated. Based on a percentage of Total Songs.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  progression_balancing: normal
+  accessibility: full
+  deathlink: one_hit
+  energylink: true
+  total_songs: 10
+  percent_of_gems_generated: 80
   enabled_setlists:
-    # Select the setlists you want to play/have downloaded.
-    ['YARG Official Setlist']
-
-  excluded_songs:
-    # Songs to exclude from the selected setlists.
-    # 
-    # Excluded songs are formatted as
-    # "Song Name" by Artist
-    # 
-    # Example:
-    # "Oh, Krissy Baby!" by WhyLucas
-    []
-
-  ######################
-  # Instrument Shuffle #
-  ######################
-  instrument_shuffle:
-    # Shuffle selected instruments into
-    # the multiworld and require songs to
-    # be completed with specific instruments!
-    # 
-    # Note: Will be automatically disabled
-    # if less then 2 of the Shuffle (instrument)
-    # options are selected.
-    # 
-    # Note: The Shuffle (instrument)
-    # options will not do anything
-    # when this option is disabled.
-    # 
-    # Disclaimer: This option is a bit unstable at the
-    # moment. Make sure to include enough songs
-    # and setlists to support your instrument choices,
-    # otherwise gen will fail with an option error.
-    'false': 50
-    'true': 0
-
-  shuffle_guitar:
-    # Shuffle the 5 fret lead guitar
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_bass:
-    # Shuffle the 5 fret bass guitar
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_rhythm:
-    # Shuffle the 5 fret rhythm guitar
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_drums:
-    # Shuffle the drums
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_keys:
-    # Shuffle the 5 fret keys
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_pro_keys:
-    # Shuffle the 25 key Pro keys
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_vocals:
-    # Shuffle the microphone
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_2_part_harmony:
-    # Shuffle the 2 part harmonies
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  shuffle_3_part_harmony:
-    # Shuffle the 3 part harmonies
-    # into the multiworld.
-    'false': 50
-    'true': 0
-
-  ######################
-  # Visibility Options #
-  ######################
-  goal_song_visibility:
-    # Sets when you are able to see your goal song.
-    # 
-    # Full: You can always see your goal song
-    # Song: You only need the song unlock to see your goal song
-    # Gems: You only need the amount of required gems to see your goal song
-    # Song and Gems: You need both the song unlock and the amount of gems to see your goal song
-    # 
-    # Note: This does not effect logic at all
-    full: 50
-    song: 0
-    gems: 0
-    song_and_gems: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - YARG Official Setlist
+  excluded_songs: []
+  instrument_shuffle: false
+  shuffle_guitar: false
+  shuffle_bass: false
+  shuffle_rhythm: false
+  shuffle_drums: false
+  shuffle_keys: false
+  shuffle_pro_keys: false
+  shuffle_vocals: false
+  shuffle_2_part_harmony: false
+  shuffle_3_part_harmony: false
+  goal_song_visibility: full
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Yoshi's Island:
   ################
