@@ -36137,425 +36137,56 @@ Super Mario World:
     []
 
 Super Metroid Map Rando:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  remote_items:
-    # Indicates you get items sent from your own world. This allows coop play of a world.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When DeathLink is enabled and someone dies, you will die. With survive reserve tanks can save you.
-    disable: 50
-    enable: 0
-    enable_survive: 0
-
-  common_map:
-    # This allows multiple Map Rando players in a multiworld to share a common map layout by 
-    # setting CommonMap to the same group name
-    'no': 50
-    'yes': 0
-
-  common_door_colors:
-    # If On, the common multiworld seed will be used to choose the doors randomization. This overrides the "random_seed" of "other_settings" from "map_rando_options".
-    # All Map Rando worlds in the same common_map group having this On will use the same door colors. 
-    # This setting is ignored if "common_map" is Off.
-    'false': 50
-    'true': 0
-
-  unique_start_locations:
-    # When Common Map is set to a group name, controls start location uniqueness within the group.
-    # The integer value sets the maximum number of attempts to achieve unique start locations.
-    # If attempts are exhausted, generation proceeds as if this option were disabled.
-    # This setting is ignored if "common_map" is Off.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  etank_color_red:
-    # Use this to make Energy Tanks appear with a different color in the HUD.
-    # 
-    # This option has minor side effects on the colors of certain items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 255
-    222: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-255: 0 # random value between 0 and 255
-
-  etank_color_green:
-    # Use this to make Energy Tanks appear with a different color in the HUD.
-    # 
-    # This option has minor side effects on the colors of certain items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 255
-    56: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-255: 0 # random value between 0 and 255
-
-  etank_color_blue:
-    # Use this to make Energy Tanks appear with a different color in the HUD.
-    # 
-    # This option has minor side effects on the colors of certain items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 255
-    148: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-255: 0 # random value between 0 and 255
-
-  item_dot_change:
-    # This option affects what happens to item dots on the map after item collection:
-    # - Fade: Item dots fade to a darker color but remain visible.
-    # - Disappear: Item dots disappear entirely.
-    fade: 50
-    disappear: 0
-
-  transition_letters:
-    # This option affects how transitions between areas are marked on the map:
-    # - Arrows: An arrow is used, showing the direction of the transition.
-    # - Letters: A letter is used, the first letter of the name of the neighboring area.
-    arrows: 0
-    letters: 50
-
-  room_theme:
-    # This setting controls the palettes for rooms (affecting foregrounds and backgrounds):
-    # - Vanilla: Rooms use the palette from the original game.
-    # - AreaPalettes: Rooms use a palette based on the area in which they appear in the randomized map. This adds variety and can help the 
-    #                 randomized areas to feel more coherent.
-    # - AreaTiling: Rooms graphics are redrawn to follow a consistent theme for each area. This provides the highest level of variety
-    #                 and cohesiveness in room appearance.
-    vanilla: 50
-    areapalettes: 0
-    areatiling: 0
-
-  door_colors:
-    # This setting controls the color of ammo doors, the ones unlocked by Missiles, Supers, and Power Bombs.
-    # 
-    # - Vanilla: Doors have the colors that they do in the vanilla game.
-    # - Alternate: Different door colors are used, which may be easier to distinguish for color-blind players. This is based on a color scheme by Vibrant Colors.
-    vanilla: 50
-    alternate: 0
-
-  music:
-    # This setting can be used to disable game music, while still playing sound effects. The same music tracks will load (though not play), 
-    # in order to keep room load timings consistent.
-    # 
-    # MSU-1 support is built into the randomizer; on applicable platforms this can be used to customize the music, still with no effect on room load timings.
-    area: 50
-    disabled: 0
-
-  screen_shaking:
-    # This setting affects the graphical appearance of screen shaking, e.g., during the escape sequence, bosses, and in rooms where lava or acid rises.
-    # - Vanilla: Screen shaking happens as in the vanilla game (which has up to 3-pixel displacements).
-    # - Reduced: Screen shaking is capped to 1-pixel displacements.
-    # - Disabled: Screen shaking is disabled.
-    vanilla: 50
-    reduced: 0
-    disabled: 0
-
-  screen_flashing:
-    # This setting affects the graphical appearance of screen flashing, including lightning, escape sequence effects, boss damage, and the initial flash
-    # of Power Bomb explosions.
-    # - Vanilla: Screen flashing happens as in the vanilla game.
-    # - Reduced: Most large, sudden flashes are reduced to have a milder change in brightness, while still being noticeable. Caution is recommended for 
-    #             those with serious sensitivities to such effects, as the effectiveness of these changes is not guaranteed and may vary by individual.
-    # 
-    # The full-screen flashing after Mother Brain phase 1 is an exception, being always removed regardless of which option is selected.
-    vanilla: 0
-    reduced: 50
-
-  disable_beeping:
-    # This setting affects the low-energy beeping which alerts the player when Samus is at 30 energy or less.
-    # - Vanilla: The low-energy beeping behaves as in the vanilla game.
-    # - Disabled: The low-energy beeping is disabled.
-    vanilla: 50
-    disabled: 0
-
-  room_palettes:
-    # This setting controls the palettes for rooms (affecting foregrounds and backgrounds):
-    # - Vanilla: Rooms use the palette from the original game.
-    # - Area_Themed: Rooms use a palette based on the area in which they appear in the randomized map. This adds variety and can help the 
-    #                 randomized areas to feel more coherent.
-    vanilla: 50
-    area_themed: 0
-
-  tile_theme:
-    # This setting controls how the rooms in the game will be drawn. This affects only the graphical appearance of the rooms.
-    # - If None is selected, then rooms are tiled as they are in the vanilla game.
-    # - If Area_Themed is selceted, then rooms are tiled according to their area on the map.
-    # - If Scrambled is selected, then each room is tiled using a random theme.
-    # - If an individual theme is selected (e.g. Outer Crateria), then all the rooms are tiled using that theme.
-    # - If Practice Outlines is selected, then rooms are tiled using green outlines to mark the room collision; special blocks are shown in their true form; 
-    #     and a background grid helps with measuring positions and distances.
-    # - If Invisible is selected, then rooms are tiled using blank, transparent foreground, making the game difficult to navigate. 
-    #     Doors will still be visible, as will vanilla backgrounds and sprites.
-    none: 50
-    area_themed: 0
-    scrambled: 0
-    outer_crateria: 0
-    inner_crateria: 0
-    blue_brinstar: 0
-    green_brinstar: 0
-    pink_brinstar: 0
-    red_brinstar: 0
-    upper_norfair: 0
-    lower_norfair: 0
-    wrecked_ship: 0
-    west_maridia: 0
-    yellow_maridia: 0
-    mecha_tourian: 0
-    metroid_habitat: 0
-    outline: 0
-    invisible: 0
-
-  reserve_hud_style:
-    # The setting affects how reserve tanks are displayed on the HUD.
-    # - Vanilla: A reserve tank indicator is shown on the HUD only if reserve mode is AUTO, and its color indicates whether reserves have any energy or not.
-    # - Revamped: Each reserve tank is indicated with a bar showing how full it is. If reserve mode is AUTO, then the AUTO text also appears, 
-    #             and its color indicates whether reserves have any energy or not.
-    vanilla: 50
-    revamped: 0
-
-  screw_attack_animation:
-    # This setting determines how the Screw Attack animation appears:
-    # - Vanilla: The Screw Attack animation is always based on the Space Jump animation regardless of whether or not Space Jump is equipped.
-    # - Split: Screw Attack without Space Jump equipped is based on the spin-jump animation. Screw Attack with Space Jump equipped is based 
-    #         on the Space Jump animation.
-    vanilla: 50
-    split: 0
-
-  room_names:
-    # If enabled, then the name of the current room is shown at the bottom of the pause menu map screen.
-    'false': 0
-    'true': 50
-
-  shot:
-    # Shot button
-    x: 50
-    y: 0
-    a: 0
-    b: 0
-    l: 0
-    r: 0
-    select: 0
-    start: 0
-
-  jump:
-    # Jump button
-    x: 0
-    y: 0
-    a: 50
-    b: 0
-    l: 0
-    r: 0
-    select: 0
-    start: 0
-
-  dash:
-    # Dash button
-    x: 0
-    y: 0
-    a: 0
-    b: 50
-    l: 0
-    r: 0
-    select: 0
-    start: 0
-
-  item_select:
-    # ItemSelect button
-    x: 0
-    y: 0
-    a: 0
-    b: 0
-    l: 0
-    r: 0
-    select: 50
-    start: 0
-
-  item_cancel:
-    # ItemCancel button
-    x: 0
-    y: 50
-    a: 0
-    b: 0
-    l: 0
-    r: 0
-    select: 0
-    start: 0
-
-  angle_up:
-    # AngleUp button
-    x: 0
-    y: 0
-    a: 0
-    b: 0
-    l: 0
-    r: 50
-    select: 0
-    start: 0
-
-  angle_down:
-    # AngleDown button
-    x: 0
-    y: 0
-    a: 0
-    b: 0
-    l: 50
-    r: 0
-    select: 0
-    start: 0
-
+  progression_balancing: normal
+  accessibility: full
+  remote_items: false
+  death_link: enable_survive
+  common_map: 0
+  common_door_colors: false
+  unique_start_locations: 5
+  etank_color_red: 222
+  etank_color_green: 56
+  etank_color_blue: 148
+  item_dot_change: fade
+  transition_letters: letters
+  room_theme: areatiling
+  door_colors: vanilla
+  music: area
+  screen_shaking: reduced
+  screen_flashing: reduced
+  disable_beeping: vanilla
+  room_palettes: area_themed
+  tile_theme: none
+  reserve_hud_style: vanilla
+  screw_attack_animation: vanilla
+  room_names: true
+  shot: x
+  jump: a
+  dash: b
+  item_select: select
+  item_cancel: y
+  angle_up: r
+  angle_down: l
   spin_lock_buttons:
-    # Press the combination simultaneously to activate Spin Lock, temporarily preventing up/down inputs from breaking spin. Pressing shot will cancel this mode.
-    ['X', 'R', 'Up', 'L']
-
+  - L
+  - R
+  - Up
+  - X
   quick_reload_buttons:
-    # Press the combination simultaneously to quick reload from the last save. Repeat to cycle through previous saves.
-    ['Start', 'R', 'Select', 'L']
-
-  moonwalk:
-    # Moonwalk
-    'false': 50
-    'true': 0
-
-  item_matching:
-    # Changes how items from other worlds appear:
-    # - Metroid: Items from other Metroid games will get the closest matching sprite and map item markers.
-    # - Generic: All items from other worlds will have an Archipelago sprite, with an arrow to indicate progression
-    metroid: 50
-    generic: 0
-
-  map_rando_options:
-    # Map Rando Settings as defined by maprando.com.
-    # If you dont need to change deeper settings, you can either:
-    #  - use the lighter minimal version (see the default)
-    #  - add a "name" field at the topmost level, beside "version", and name it as one of the existing Map Rando builtin complete Settings Preset (ie, "Community Race Season 3 (Save the animals)")
-    # Otherwise, you can use your preferred Map Rando Settings Presets on maprando.com, export its JSON and directly embed it under here like so:
-    # 
-    # map_rando_options: {
-    #   "version": 119,
-    #   "name": my_custom_preset,
-    #     ...
-    # }
-    # 
-    # In all cases, using one of the existing "preset" name (ie, "Basic") of a settings category (ie, "skill_assumption_settings") will make the
-    # randomizer ignore all its children settings and use corresponding existing preset from Map Rando.
-    # 
-    # If "random_seed" is null, the seed from this world will be used instead of a random one to keep determinism in AP.
-    doors_mode: Ammo
-    item_progression_settings:
-      preset: Normal
-    map_layout: Standard
-    objective_settings:
-      preset: Bosses
-    other_settings:
-      area_assignment: Standard
-      door_locks_size: Large
-      energy_free_shinesparks: false
-      etank_refill: Vanilla
-      map_station_reveal: Full
-      maps_revealed: 'No'
-      race_mode: false
-      random_seed: null
-      ultra_low_qol: false
-      wall_jump: Vanilla
-    quality_of_life_settings:
-      preset: Default
-    save_animals: 'No'
-    skill_assumption_settings:
-      preset: Basic
-    start_location_settings:
-      mode: Ship
-    version: 119
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - L
+  - R
+  - Select
+  - Start
+  moonwalk: false
+  item_matching: metroid
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Super Smash Bros. Melee:
   ################
