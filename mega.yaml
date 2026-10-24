@@ -34533,972 +34533,107 @@ Spicy Meatball Overdrive:
   priority_locations: []
 
 Spirit Tracks:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    # 
-    # **Items:** ensure all logically relevant items can be acquired. Some items, such as keys, may be self-locking, and
-    # some locations may be inaccessible.
-    full: 0
-    minimal: 0
-    items: 50
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    # Still a bit buggy, the train won't die immediately.
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # The goal to accomplish in order to complete the seed.
-    # - defeat_malladus: enter the dark realm and defeat the demon king.
-    # - other options: defeat the specified boss/tos section to goal. (Staven is Byrne in US Localization)
-    # Is not compatible with dark realm unlock options, so you can't set a number of required dungeons or compass shards etc.
-    # The dungeon/section associated with the goal will never be excluded.
-    defeat_malladus: 50
-    beat_wooded_temple: 0
-    beat_blizzard_temple: 0
-    beat_marine_temple: 0
-    beat_mountain_temple: 0
-    beat_desert_temple: 0
-    beat_tos_section_1: 0
-    beat_tos_section_2: 0
-    beat_tos_section_3: 0
-    beat_tos_section_4: 0
-    defeat_staven: 0
-    beat_tos_section_6: 0
-
-  dark_realm_access:
-    # What unlocks the dark realm?
-    # - compass_of_light: only the compass of light is required. malladus also requires a sword, bow of light and Spirit Flute.
-    # - dungeons: find the compass of light and finish a specified number of dungeons to gain access to the dark realm.
-    # - shattered_compass: McGuffin hunt! find a specified number of compass shards to unlock the dark realm.
-    # - both: you need to find the shattered compass shards to get the track, and the dungeon goal to enter.
-    compass_of_light: 0
-    dungeons: 50
-    shattered_compass: 0
-    both: 0
-
-  dungeons_required:
-    # How many dungeons/ToS sections are required to unlock the dark realm?
-    # Will not go higher than the number of valid locations in dungeon pool.
-    # Is also the number of included dungeons if not using a dungeon goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 13
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-13: 0 # random value between 0 and 13
-
-  require_specific_dungeons:
-    # Specific dungeons are required to enter the dark realm.
-    # If false, all dungeons and tos sections (depending on tos_dungeon_options) count towards the dungeon goal.
-    'false': 0
-    'true': 50
-
-  endgame_scope:
-    # How much of the dark realm do you get to play?
-    # - full_dark_realm: everything!
-    # - skip_dark_trains: skip the first phase with the dark trains
-    # - skip_demon_train: only fight cole and malladus, skipping the demon train fight
-    # - malladus_only: only fight the final boss
-    # - malladus_p2: skip the boulder phase and the spirit duet, and go straight to the final phase
-    # - enter_dark_realm: Goal is sent on entering the dark realm, but you can still fight the bosses if you like.
-    full_dark_realm: 50
-    skip_dark_trains: 0
-    skip_demon_train: 0
-    malladus_only: 0
-    malladus_p2: 0
-    enter_dark_realm: 0
-
-  tos_dungeon_options:
-    # How does Tower of Spirits count towards the dungeon pool?
-    # - not_in_dungeon_pool: Tower of Spirits is not rolled for required or included dungeons.
-    # - final_section: Legacy option, currently adds section 5 and Staven (Byrne) as the tower's goal location
-    # - all_sections: all ToS sections are added to the dungeon pool.
-    not_in_dungeon_pool: 50
-    final_section: 0
-    all_sections: 0
-
-  plando_dungeon_pool:
-    # Choose what dungeons appear in the required dungeon pool.
-    # Leave blank to ignore.
-    # Valid options are: 'Wooded Temple', 'Blizzard Temple', 'Marine Temple', 'Mountain Temple', 'Desert Temple', 'ToS 1'...'ToS 6'
-    # Special Options include:
-    # - Lost At Sea
-    # - Take 'em All On 3
-    # - all (includes lost at sea and teao3)
-    # Overrides tos_dungeon_options.
-    []
-
-  exclude_sections:
-    # Exclude or remove locations from non-required Tower of Spirits Sections.
-    # Will spawn the blue warp in the tower early if section 5 is excluded, you'll still need to defeat Staven (Byrne) to reach the room behind it.
-    # The Stamp Stand is active as long as stamps are.
-    # - include: non-required sections are included
-    # - exclude: non-required sections locations are excluded, and can't have useful or progression items.
-    # - remove: non-required section locations are removed from generation, and don't count towards hint cost etc.
-    include: 50
-    exclude: 0
-    remove: 0
-
-  exclude_dungeons:
-    # Exclude or remove locations from non-required dungeons.
-    # Does not count Tower of Spirits, that has its own option.
-    # If using shattered compass goal, the game will still pick dungeons based on required dungeon settings for inclusion/exclusion.
-    # Does not work with require_specific_dungeons=False, that sets all dungeons to included.
-    # - include: non-required dungeons are included
-    # - exclude: non-required dungeon locations are excluded, and can't have useful or progression items.
-    # - remove: non-required dungeon locations are removed from generation, and don't count towards hint cost etc.
-    include: 0
-    exclude: 50
-    remove: 0
-
-  dungeon_hints:
-    # Get hints for what dungeons are required.
-    'false': 0
-    'true': 50
-
-  compass_shard_count:
-    # How many compass shards you need to unlock the tracks to the dark realm.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 30
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-30: 0 # random value between 1 and 30
-
-  compass_shard_total:
-    # Total number of compass shards in pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 30
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-30: 0 # random value between 1 and 30
-
-  #################
-  # Logic Options #
-  #################
-  logic:
-    # Logic Difficulty.
-    # - normal: Glitches and tricky tricks are not in logic.
-    # - hard: More difficult combat, obscure strategies, certain puzzles without their solutions and slow cycles are in logic.
-    # - glitched: more difficult tricks like bomb boosts and block clips are in logic.
-    normal: 50
-    hard: 0
-    glitched: 0
-
-  cannon_logic:
-    # When is cannon required?
-    # - train_requires_cannon: you cannot board the train without the cannon
-    # - open_train: cannonless train is not in logic, but you can use the train without cannon if you want to
-    # - hard_logic: cannonless train is in logic, often requiring clever routing, damage tanking or dodging cannonballs by braking with good timing. Should always be possible with vanilla train speed settings and a four heart spirit train.
-    # - no_logic: ignores train enemies in logic. Cheesing enemies with train speed is usually necessary.
-    train_requires_cannon: 50
-    open_train: 0
-    hard_logic: 0
-    no_logic: 0
-
-  ###############
-  # Key Options #
-  ###############
-  keysanity:
-    # Small Key Logic options:
-    # - vanilla: Keys are not randomized
-    # - in_own_section: Keys can be found in their own dungeon or Tower of Spirits section
-    # - in_own_dungeon: Keys can be found in their own dungeon
-    # - anywhere: Keysanity. Keys can be found anywhere
-    vanilla: 0
-    in_own_section: 50
-    in_own_dungeon: 0
-    anywhere: 0
-
-  randomize_boss_keys:
-    # Randomize Boss Keys.
-    # Most boss key locations trigger on picking up or moving the key, but for Mountain Temple you need to finish the minecart puzzle.
-    # - vanilla: boss keys are normal, you need to carry them to their door
-    # - vanilla_abstract: picking up boss keys gives you an abstract boss key item, so you don't have to carry the key
-    # - in_own_section: boss keys are randomized in their own dungeon/Tower of Spirits section
-    # - in_own_dungeon: boss keys are randomized in their own dungeon
-    # - anywhere: boss keys are randomized anywhere
-    vanilla: 50
-    vanilla_abstract: 0
-    in_own_section: 0
-    in_own_dungeon: 0
-    anywhere: 0
-
-  keyrings:
-    # Replaces small keys with keyrings, containing all small keys for that dungeon/ToS section.
-    # There's a separate option to also include boss keys.
-    # Does not work with vanilla key locations.
-    # - no_keyrings: all keys are singular, like vanilla
-    # - snurglar_only: only the 3 Snurglar Keys required to enter the Mountain Temple are keyrings.
-    # - all: All small keys are turned into keyrings
-    # - random_mixed: will roll a number of dungeons/sections to use keyrings for, and have single keys for the rest.
-    no_keyrings: 50
-    snurglar_only: 0
-    all: 0
-    random_mixed: 0
-
-  big_keyrings:
-    # Boss Keys are included in keyrings.
-    # Does not work with vanilla boss key locations.
-    # Boss Key randomization will switch to whatever the keysanity option is when boss key rando is not vanilla.
-    'false': 50
-    'true': 0
-
-  ################
-  # Item Options #
-  ################
-  progressive_equipment:
-    # Toggle if bow, bombs and sword have progressive items (true) or a main item and capacity upgrades (false).
-    # You cannot use the lokomo sword without the normal sword.
-    'false': 0
-    'true': 50
-
-  track_pool:
-    # What does your rail item pool look like?
-    # Includes different custom combined rail items sorted into different pools you can choose from.
-    # Many of the combined items overlap.
-    # Combinations that contain sources unlock what the source unlocks, like tower sections if you choose that option.
-    # - vanilla: Your rail pool consists of the 34 vanilla glyph, source, restoration and force gem tracks.
-    # - completed_glyphs: Each glyph comes pre-completed. Sand realm counts separately. 5 rail items.
-    # - major_minor: creates a major and minor rail combination for each realm, where the major contains the source, restoration and glyph. 10 rail items.
-    # - thematic: Adds 16 custom groups containing 3-5 rail items to the pool, based on locale.
-    # - mixed: Rolls a complete set of rail items from all rail pools.
-    # - mixed_large: rolls as mixed but does not include single rail items
-    # - mixed_small: rolls as mixed but does not include completed glyph items.
-    vanilla: 50
-    completed_glyphs: 0
-    major_minor: 0
-    thematic: 0
-    mixed: 0
-    mixed_large: 0
-    mixed_small: 0
-
-  shields_in_pool:
-    # Toggle if shields are in the item pool.
-    # You can always buy shields in shops after buying the randomized item on that slot.
-    # Shields ruin speedrunning strats so that's why this is an option~
-    'false': 0
-    'true': 50
-
-  ######################
-  # More Randomization #
-  ######################
-  randomize_minigames:
-    # Randomize Minigames.
-    # All difficulties include Restoration Duets, Hyrule Castle Sword Training and Goron Target Range.
-    # Easy+ includes Mayscore Whip game, Take 'em All On, Pirate Hideout, Slippery Station and Ends of the Earth.
-    # - no_minigames: minigames are not randomized
-    # - restoration_duets: include only restoration duets. Are they really minigames?
-    # - easy: only the easiest difficulty of each minigame is randomized.
-    # - hard: only the second difficulty of each minigame is randomized.
-    # - expert: only the hardest difficulty of each minigame is randomized. Includes Take 'em all On 3.
-    # - all_reasonable: the easy and hard difficulties are randomized.
-    # - everything: all minigame rewards are randomized.
-    no_minigames: 0
-    restoration_duets: 0
-    easy: 50
-    hard: 0
-    expert: 0
-    all_reasonable: 0
-    everything: 0
-
-  minigame_hints:
-    # Hint for minigames
-    'false': 50
-    'true': 0
-
-  randomize_stamps:
-    # What to do with stamps.
-    # - no_stamp_stands: don't randomize stamp book, stamps stands or stamp rewards from Niko
-    # - vanilla: Stamp stands give stamps, that are neither archipelago items nor randomized locations, that count towards Niko rewards, that are randomized.
-    # - vanilla_with_location: stamp stands are randomized locations, but also give non-archipelago-item stamps that count towards Niko rewards.
-    # - vanilla_items: stamp stands are locations, that give their vanilla stamp items.
-    # - randomized: stamp stands are randomized locations, and stamps are randomized items that you need to find.
-    no_stamp_stands: 0
-    vanilla: 0
-    vanilla_with_location: 50
-    vanilla_items: 0
-    randomize: 0
-
-  stamp_pack_sizes:
-    # Change the size of your stamp packs.
-    # Only used when stamps are randomized.
-    # - random_mixed (-1): chooses a mix of different pack sizes at random
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-    random_mixed: 50 # equivalent to -1
-
-  randomize_passengers:
-    # Randomize the sidequests involving moving passengers from one station to another.
-    # The requirements for picking up passengers is determined by the `passenger_pickup` option.
-    # - no_passengers: passengers are not randomized, and quests that affect future stuff are in their most convenient state.
-    # - vanilla: passengers are picked up in their vanilla locations, and only a successful delivery is a randomized location.
-    # You can carry 1 NPC at a time and have to keep them happy.
-    # - vanilla_abstract: same as above, but NPCs give themselves as items, and you don't need to care about their comfort.
-    # You can pick up multiple NPCs at the same time.
-    # - randomize: NPCs are items, and both picking them up and reaching their destinations are randomized locations.
-    no_passengers: 50
-    vanilla: 0
-    vanilla_abstract: 0
-    randomize: 0
-
-  passenger_pickup:
-    # What is required to pick up passengers with passenger rando.
-    # - tracks: you need any tracks that lead to their destination station, even if the tracks are unreachable or the station is shuffled.
-    # - visit: you need to have visited the passenger's destination to pick them up.
-    tracks: 50
-    visit: 0
-
-  randomize_cargo:
-    # Randomize transporting cargo from one station to another. You need the wagon to buy cargo.
-    # - no_cargo: Cargo deliveries are not randomized, and places affected are in their most convenient state, ex. Goron lava geyser are down.
-    # - vanilla: cargo can be bought at their vanilla locations, and only a successful delivery is a randomized location.
-    # You can carry 1 type of cargo at a time, perishables perish with time and temperature, and taking damage decrements your cargo count.
-    # - vanilla_abstract: same as above, but buying cargo gives an unlimited cargo item that unlocks all deliveries.
-    # You can pick up multiple cargo at the same time and don't have to worry about transport complications.
-    # - randomize: Cargo become items, and buying cargo/delivering cargo are both randomized locations.
-    # There are multiple cargo items when used in multiple places, and the items are used up on delivery.
-    no_cargo: 50
-    vanilla: 0
-    vanilla_abstract: 0
-    randomize: 0
-
-  portal_checks:
-    # Creates randomized locations for shooting the gem on each train portal.
-    'false': 50
-    'true': 0
-
-  ###############
-  # ToS Options #
-  ###############
-  tos_section_unlocks:
-    # What unlocks Tower of Spirits sections?
-    # If you have access to a higher tower entrance, a ramp will be created, but you can't enter/exit sections on the way without their requirements.
-    # open: all sections are open from the start
-    # sources: each source unlocks a new section
-    # progressive: adds "Progressive Tower Section" items, that unlock sections one at a time.
-    open: 0
-    sources: 50
-    progressive: 0
-
-  tos_unlock_base_item:
-    # If True, Prevents Tower of Spirit access until you have the `Tower of Spirits Base` item
-    # Creates an additional progressive tower section item instead if you play with progressive tower sections.
-    # Currently not compatible with station shuffle
-    'false': 50
-    'true': 0
-
-  tos_shortcuts:
-    # If enabled, taking the bottom door of the tower section of Tower of Spirits,
-    # that usually takes you back to the lobby,
-    # warps you to the highest unlocked door in the tower.
-    # To return to lobby as normal use any lift opposite any other exit.
-    'false': 50
-    'true': 0
-
-  randomize_tears:
-    # Randomize Tears of Light
-    # - vanilla: tears of light are not randomized
-    # - vanilla_items: tears of light are vanilla, but you don't need to collect them more than once and they count as archipelago locations for hint costs.
-    # - in_own_section: tears of light are randomized in their own tower sections. progressive and global tears can be in any section
-    # - in_tos: tears of light are randomized anywhere in Tower of Spirits
-    # - anywhere: tears of light are randomized anywhere
-    # - no_tears: you need to find either the lokomo sword or bow of light + bow to possess phantoms, tears are still randomized locations.
-    vanilla: 50
-    vanilla_items: 0
-    in_own_section: 0
-    in_tos: 0
-    anywhere: 0
-    no_tears: 0
-
-  tear_size:
-    # Tears of light size
-    # - small: you need 3 tears for each tower section
-    # - large: you need one big tear per section
-    small: 50
-    large: 0
-
-  tear_sections:
-    # tears_of_light_grouping:
-    # - unique_sections: tears of light only work in one section
-    # - all_sections: tears work globally for all sections.
-    # - progressive: tears fill each section from bottom to top. Works with shuffle_tos_section.
-    # If ToS entrances are shuffled, the order is decided randomly.
-    unique_sections: 50
-    all_sections: 0
-    progressive: 0
-
-  spirit_weapons:
-    # Lokomo Sword and Bow of Light can be combined with certain tear of light groupings
-    # - items: Lokomo Sword is the second progressive sword; and Bow of Light is its own item, but requires a progressive bow to use.
-    # - final_tear: if tear_group is all_sections or progressive, an extra tear item is added and collecting them all unlocks both the Lokomo Sword and the Bow of Light.
-    items: 50
-    final_tear: 0
-
-  ##############################
-  # Shops, Treasure and Rupees #
-  ##############################
-  shopsanity:
-    # Randomize Shops.
-    # Gives vanilla items after buying the randomized one.
-    # Add the following to the list to randomize that type of shop location:
-    # - uniques: 3 locations, 4500 rupees
-    # - treasure: 7 locations, 2400 rupees
-    # - potions: 10 locations, 1400 rupees
-    # - shields: 5 locations, 610 rupees
-    # - postcards: 4 locations 400 rupees
-    # - ammo: 4 locations 500 rupees
-    # - all: same as adding all above
-    []
-
-  shop_hints:
-    # Know what you're buying before you buy
-    'false': 0
-    'true': 50
-
-  rupee_farming_logic:
-    # What is required for rupee farming?
-    # - no_farming: All rupees are accounted for in the item pool.
-    # - unlimited_farming: Once you have access to Linebeck, or rupees from excess treasures, you are logically expected to farm for rupees.
-    no_farming: 50
-    unlimited_farming: 0
-
-  excess_random_treasure:
-    # There are random treasures everywhere, in pots, leaves, from minigames, shops and prize postcards.
-    # What happens when you get them?
-    # - nothing: random treasures give you nothing.
-    # - vanilla: You get what you get
-    # - convert_to_rupees: Instantly converts to Linebeck's sell price.
-    nothing: 0
-    vanilla: 50
-    convert_to_rupees: 0
-
-  ##################
-  # Rabbit Options #
-  ##################
-  rabbitsanity:
-    # Randomize catching rabbits. There are 10 rabbits for each realm, for a total of 50.
-    # Also includes Bunnio's rewards for 5 total rabbits, 1 of each rabbit, 10 rabbits of each type and 10 rabbits of all types.
-    # - no_rabbits: rabbits are not randomized
-    # - vanilla: rabbit locations always give rabbit items of their rabbit type.
-    # They still count as locations in archipelago for hint cost purposes, and the number of rabbits received scales based on how many locations you include.
-    # - unique_checks: each rabbit in the overworld is a unique location.
-    # - on_total: the total number of rabbits caught of each type gives a check, ex. "Catch 3 Snow Rabbits".
-    # - both: get locations both on specific rabbits and total rabbits.
-    no_rabbits: 50
-    vanilla: 0
-    unique_checks: 0
-    on_total: 0
-    both: 0
-
-  rabbit_max_location_count:
-    # The maximum number of rabbit locations for each type if rabbitsanity is enabled.
-    # Also affects rabbit_location_count_distribution.
-    # If rabbitsanity option is unique_checks or vanilla, it will pick this many unique locations of each type at random.
-    # If rabbitsanity is vanilla, rabbit pack size gets assigned automatically to make everything work.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  rabbit_location_count_distribution:
-    # How to distribute rabbit count with the on_total rabbitsanity option, for a maximum defined in rabbit_max_location_count.
-    # - for_each: creates one location per rabbit.
-    # - on_twos: creates a location for every 2 rabbits.
-    # - on_threes: creates a location for every 3 rabbits.
-    # - random_uniform: will roll an interval between 1 and 3 for each rabbit type
-    # - random_mixed: will first roll how many locations to create for each rabbit type, from 1 to rabbit_max_location_count, and then randomly pick from available rabbit locations.
-    # If rabbitsanity is vanilla or unique_checks, it defaults to for_each, but if combined with random_mixed it will randomize unique location count between 1 and rabbit_max_location_count for each rabbit type individually.
-    for_each: 50
-    on_twos: 0
-    on_threes: 0
-    random_uniform: 0
-    random_mixed: 0
-
-  rabbit_pack_size:
-    # Number of rabbits received per rabbit item for each rabbit type with rabbitsanity.
-    # Setting it to 0 or random_uniform will randomize between 1 and 5 for each rabbit type.
-    # Setting it to -1 or random_mixed will keep rolling random pack size items for each rabbit type until you have enough. It rolls a discrete triangular distribution between 1 and 5 with mode 2.
-    # If rabbitsanity is vanilla, this is ignored as vanilla assigns its own pack sizes.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-    random_uniform: 0 # equivalent to 0
-    random_mixed: 0 # equivalent to -1
-
-  rabbit_extra_items:
-    # How many extra rabbit items to create for each rabbit type.
-    # Is affected by rabbit_pack_size
-    # If rabbitsanity is vanilla, this will add extra rabbit items to the normal item pool.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  #################
-  # World Options #
-  #################
-  portal_behavior:
-    # How to handle the train portals.
-    # - always_open: You can always take the portals, as long as you have the tracks/entrances on both sides
-    # - open_one_way: You can always take the portals, but you have to unlock them from the side with the gem first.
-    # Opening a one-way portal opens it's vanilla counterpart, even when shuffled.
-    # - open_with_items: creates an item for each portal pair, that is required to use each portal. Does not work with shuffle_portals.
-    open_one_way: 50
-    always_open: 0
-    open_with_items: 0
-
-  open_blue_warps:
-    # 2-directional blue warps are open from the start.
-    # Nice if their entrances are shuffled.
-    # Opening a blue warp opens the matching lobby portal even when entrances are shuffled.
-    'false': 50
-    'true': 0
-
-  open_blizzard_temple:
-    # The bell doors in Blizzard Temple are open from the start.
-    'false': 50
-    'true': 0
-
-  ####################
-  # Starting Options #
-  ####################
+  progression_balancing: normal
+  accessibility: items
+  death_link: true
+  goal: defeat_malladus
+  dark_realm_access: dungeons
+  endgame_scope: full_dark_realm
+  dungeons_required: random
+  tos_dungeon_options: not_in_dungeon_pool
+  plando_dungeon_pool: []
+  require_specific_dungeons: false
+  dungeon_hints: true
+  exclude_dungeons: exclude
+  exclude_sections: include
+  compass_shard_count: random
+  compass_shard_total: random
+  logic: normal
+  cannon_logic: train_requires_cannon
+  keysanity: in_own_section
+  randomize_boss_keys: vanilla
+  keyrings: all
+  big_keyrings: true
+  progressive_equipment: true
+  track_pool: vanilla
+  shields_in_pool: true
+  randomize_minigames: easy
+  minigame_hints: true
+  randomize_stamps: vanilla_with_location
+  stamp_pack_sizes: random_mixed
+  randomize_passengers: no_passengers
+  passenger_pickup: tracks
+  randomize_cargo: no_cargo
+  portal_checks: false
+  tos_section_unlocks: sources
+  tos_unlock_base_item: false
+  tos_shortcuts: false
+  randomize_tears: vanilla
+  tear_size: small
+  tear_sections: unique_sections
+  spirit_weapons: items
+  shopsanity: []
+  shop_hints: true
+  rupee_farming_logic: no_farming
+  excess_random_treasure: vanilla
+  rabbitsanity: no_rabbits
+  rabbit_max_location_count: 10
+  rabbit_location_count_distribution: for_each
+  rabbit_pack_size: 1
+  rabbit_extra_items: 0
+  open_blizzard_temple: false
+  open_blue_warps: false
+  portal_behavior: open_one_way
   randomize_start:
-    # Where you start the game.
-    # Is a set of entrances it will roll from. You cannot start on the train.
-    # Special options include:
-    # - niko: the vanilla start.
-    # - tos: start in Tower of Spirits
-    # - towns: start in one of the six major settlements
-    # - stations: adds all stations to the pool. Note that most stations have zero sphere 0 locations
-    ['niko']
-
-  free_starting_items:
-    # Gives you this many free items on starting the game.
-    # Useful with random start on solo seeds, to ensure that starting is possible.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  start_with_train:
-    # Starts you with a forest glyph including track and cannon depending on cannon logic, giving you train access from the start.
-    # On by default to give people more checks in the beginning.
-    # If stations are shuffled or randomized start is on, if your starting entrance links to a track it will give you those tracks from your track pool.
-    'false': 0
-    'true': 50
-
-  ###############################
-  # Entrance Randomizer Options #
-  ###############################
-  shuffle_houses:
-    # Shuffle entrances to houses. Hyrule castle is shuffled separately.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # Adds 66 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_caves:
-    # Shuffle cave entrances. Disorientation Station and Ends of the Earth internals are shuffled separately.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # Adds 68 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_overworld:
-    # Shuffle overworld transitions (for link).
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_stations:
-    # Shuffle Stations.
-    # Adds 62 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_train_transitions:
-    # Shuffle the transitions between different realms, and the entrance to the underwater tracks.
-    # Adds 24 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_portals:
-    # Shuffle train portals.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # Always disables portal items.
-    # Other portal options still work!
-    # Opening a one-way portal unlocks it's vanilla counterpart, even when shuffled.
-    # Adds 16 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_dungeon_entrances:
-    # Shuffles the entrances between dungeon stations and the start of dungeons.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # - shuffle_in_own_dungeon_vanilla: the dungeon entrance will only shuffle to its own dungeon,
-    #     but to any entrance in that dungeon that's also in the in_own_dungeon pool
-    # - shuffle_in_own_dungeon_shuffle: the game pre-picks what dungeon goes to what dungeon entrance,
-    #     and that entrance can shuffle to any entrance in that dungeon also in the in_own_dungeon pool.
-    # Adds 10 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-    shuffle_in_own_dungeon_vanilla: 0
-    shuffle_in_own_dungeon_shuffle: 0
-
-  shuffle_tos_sections:
-    # Shuffle Tower of Spirits Sections.
-    # Also includes the summit as its own section.
-    # Progressive tears will respect the new ordering if shuffled alone, otherwise sections are assigned randomly.
-    # Adds 14 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_bosses:
-    # Shuffles the entrances to the five main dungeon bosses.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # - shuffle_in_own_dungeon_vanilla: the boss will only shuffle to its vanilla dungeon,
-    #     but to any entrance in that dungeon that's also in the in_own_dungeon pool
-    # - shuffle_in_own_dungeon_shuffle: the game pre-picks what boss goes to what dungeon entrance,
-    #     and that entrance can shuffle to any entrance in that dungeon also in the in_own_dungeon pool.
-    # Adds 10 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-    shuffle_in_own_dungeon_vanilla: 0
-    shuffle_in_own_dungeon_shuffle: 0
-
-  shuffle_dungeon_rooms:
-    # Shuffle the entrances inside dungeons.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # Has special option `shuffle in own dungeon`, that doesn't mix rooms from different dungeons.
-    # Adds 88 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-    shuffle_in_own_dungeon: 0
-
-  shuffle_warps:
-    # Shuffles 2-way blue warps.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # Has special option `shuffle in own dungeon`, that keeps them connecting in their local dungeon.
-    # Acts as a mixed pool with other options that pick it.
-    # Opening a blue warp unlocks the vanilla lobby portal, even when shuffled elsewhere.
-    # If dungeon entrances are shuffled alone, shuffle_in_own_dungeon for warps follow the new dungeon.
-    # Adds 10 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-    shuffle_in_own_dungeon: 0
-
-  shuffle_tos_staircase:
-    # Shuffle the single entrance pair between the ToS lobby and staircase.
-    # All entrance shuffle options allow you to mix and match them in 3 pools.
-    # Adds 2 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_hyrule_castle:
-    # Shuffle hyrule castle entrances.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # Adds 28 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_disorientation:
-    # Shuffle the inside of Disorientation Station.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # The entrance stairs are still in the cave pool.
-    # Adds 32 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_eote:
-    # Shuffle the inside of Ends of the Earth.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # The entrances to each difficulty are still in the cave pool.
-    # Always includes the EotE chests, no matter the minigame option.
-    # Adds 24 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  shuffle_las:
-    # Shuffle lost at sea dungeon.
-    # All entrance shuffle options allow you to mix and match them in 3 pools, or keep them separate.
-    # When shuffled, the two one way entrances are linked to a single entrance in a decoupled manner.
-    # Puzzles reset after leaving.
-    # Adds 12 (unpaired) entrances.
-    no_shuffle: 50
-    shuffle_alone: 0
-    shuffle_pool_a: 0
-    shuffle_pool_b: 0
-    shuffle_pool_c: 0
-
-  plando_transitions:
-    # Plando entrance connections. Format is a list of dictionaries:
-    # - entrance: "Entrance Name"
-    #   exit: "Exit Name"
-    #   direction: "Direction"
-    #   percentage: 100
-    # Direction must be one of 'entrance', 'exit', or 'both', and defaults to 'both' if omitted.
-    # Percentage is an integer from 1 to 100, and defaults to 100 when omitted.
-    # Will disconnect entrances for you, and randomize their dangling entrances with each other, even if their entrance pools don't allow it.
-    []
-
+  - niko
+  free_starting_items: 0
+  start_with_train: true
+  shuffle_houses: no_shuffle
+  shuffle_caves: no_shuffle
+  shuffle_overworld: no_shuffle
+  shuffle_stations: no_shuffle
+  shuffle_train_transitions: no_shuffle
+  shuffle_portals: no_shuffle
+  shuffle_dungeon_entrances: no_shuffle
+  shuffle_bosses: no_shuffle
+  shuffle_dungeon_rooms: no_shuffle
+  shuffle_tos_sections: no_shuffle
+  shuffle_tos_staircase: no_shuffle
+  shuffle_warps: no_shuffle
+  shuffle_hyrule_castle: no_shuffle
+  shuffle_disorientation: no_shuffle
+  shuffle_eote: no_shuffle
+  shuffle_las: no_shuffle
   entrance_directionality:
-    # Choose what entrance groups care about directionality (left entrance leads to right, house exterior leads to interior etc.).
-    # Pool options override individuals, individuals only count for shuffle_alone.
-    # Valid options are: houses, caves, stations, overworld, train, portals,
-    #   dungeon_entrances, bosses, dungeon_rooms, blue_warps,
-    #   tos_sections, tos_staircase,
-    #   castle, disorientation, eote, las,
-    #   pool_a, pool_b, pool_c, in_own_dungeon, all
-    # Pools with lots of dead ends have a high chance to cause gen errors.
-    # Staircases do not have directionality.
-    ['bosses', 'dungeon_entrances', 'tos_sections', 'houses', 'stations']
-
-  decouple_shuffled_entrances:
-    # Decouple shuffled entrances, so entrances are no longer bidirectional.
-    'false': 50
-    'true': 0
-
-  entrance_shuffle_retries:
-    # How many times the entrance shuffle tries again if it fails before giving up.
-    # Default is 10
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###############
-  # QoL Options #
-  ###############
-  enable_map_warp:
-    # Enable warping to any previously visited station or realm by opening the rail map and tapping a station.
-    # You can always warp to start by flipping the collection screen.
-    'false': 50
-    'true': 0
-
-  ut_blocked_entrances_behaviour:
-    # How UT handles entrances if you check an entrance that is blocked, for example entering the overworld without the right tracks.
-    # - mark_on_check: checking a blocked entrance will mark it as checked, even if you can't pass it.
-    # - mark_on_pass: checking a blocked entrance will not mark as checked, you have to actually pass it to mark it.
-    # - unmark_when_opened: checking a blocked entrance will mark it as checked, but once you unlock the requirements for traversing it the entrance will be unchecked.
-    mark_on_check: 50
-    mark_on_pass: 0
-    unmark_when_opened: 0
-
+  - bosses
+  - dungeon_entrances
+  - houses
+  - stations
+  - tos_sections
+  decouple_shuffled_entrances: false
+  entrance_shuffle_retries: 10
+  ut_blocked_entrances_behaviour: mark_on_check
+  enable_map_warp: true
   extra_events:
-    # Enable/disable extra UT events for certain settings.
-    # - portals: show events for opening train portals if they open one-way
-    # - stamps: show events for stamp stations if playing with vanilla stamps
-    # - visits: show events for visiting stations if playing with that passenger pickup requirement
-    # - rabbits: shows events for individual rabbits if playing with total rabbits, that all fill out once you get your final total location of that type.
-    # - warps: shows events for unlocking blue warps in dungeons.
-    # - passengers: shows picking up and other triggers for vanilla passengers
-    # - cargo: shows buying vanilla cargo for the first time
-    # - shortcuts: adds events for unlockable shortcuts, that don't progress logic. these are unlocked for /get_logical_path even if the event is disabled,
-    # and auto-unlock if save file progress is lost.
-    ['cargo', 'warps', 'stamps', 'visits', 'portals', 'rabbits', 'passengers']
-
-  ####################
-  # Cosmetic Options #
-  ####################
-  starting_train:
-    # What train to start with. Train parts will be randomized later.
-    # Different trains have different health, but see this to more be a fun cosmetic thing.
-    # - all_parts: start with all parts, and customize freely in Alfonzo's Workshop on outset.
-    # - random_train: picks 1 random train to start with
-    all_parts: 0
-    random_train: 0
-    spirit_train: 50
-    wooden_train: 0
-    refined_train: 0
-    demon_train: 0
-    stagecoach: 0
-    dragon_train: 0
-    sweet_train: 0
-    golden_train: 0
-
-  multiworld_item_model_swaps:
-    # Change the item models for items found belonging to other players to their nearest spirit-tracks equivalent.
-    # Currently, all Zelda Games are implemented except the Oracle games.
-    # Other copies of Spirit Tracks always swap their items.
-    'false': 0
-    'true': 50
-
-  multiworld_item_default_models:
-    # What unknown items from other worlds show up as.
-    # Known items still change to their closest match if model swaps are enabled.
-    # Revealed Traps always show up as skulls.
-    # - force_gems: Foreign items show up as force gems.
-    # - letters: Foreign items show up as letters.
-    # - rupees: Foreign items show up as rupees. Gold for progression, blue for useful, green for filler.
-    force_gems: 50
-    letters: 0
-    rupees: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  remove_items_from_pool:
-    # Removes specified amount of given items from the item pool, replacing them with random filler items.
-    # This option has significant chances to break generation if used carelessly, so test your preset several times
-    # before using it on long generations. Use at your own risk!
-    {}
-
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - cargo
+  - passengers
+  - portals
+  - rabbits
+  - stamps
+  - visits
+  - warps
+  starting_train: random_train
+  multiworld_item_model_swaps: true
+  multiworld_item_default_models: letters
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+  remove_items_from_pool: {}
 
 Spyro 2:
   ################
