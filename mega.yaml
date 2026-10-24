@@ -40770,574 +40770,72 @@ Warioworld:
   priority_locations: []
 
 Wikipelago:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ########
-  # Goal #
-  ########
-  goal:
-    # How the seed is won.
-    # grand_goal: collect Required Fragments, then find the answer to the Grand Goal question.
-    # realm_master: clear the last round of every branch / Realm. Needs Branch Count of at least 1;
-    # Knowledge Fragments and the Grand Goal are not generated.
-    grand_goal: 50
-    realm_master: 0
-
-  required_fragments:
-    # Knowledge Fragments needed to reveal and clear the Grand Goal.
-    # Landing on the answer page finishes the slot.
-    # Capped at Round Count: a higher value needs (and puts in the pool) only Round Count fragments.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 200
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-200: 0 # random value between 1 and 200
-
-  additional_fragments_in_pool:
-    # Extra Knowledge Fragments placed in the item pool beyond required_fragments (goal still needs only the required count).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 200
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-200: 0 # random value between 0 and 200
-
-  ##########
-  # Rounds #
-  ##########
-  check_count:
-    # Number of Start→Target rounds (checks) generated for your slot (10–999).
-    # Generation still fails if the enabled article pool is too small.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 999
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-999: 0 # random value between 10 and 999
-
-  start_rounds_unlocked:
-    # How many Start→Target rounds are playable immediately at seed start (1–999).
-    # High relative to Round Count feels more open early; low means waiting more on Round Access.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 999
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-999: 0 # random value between 1 and 999
-
-  rounds_per_unlock:
-    # How many additional rounds each Round Access item unlocks (1–999).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 999
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-999: 0 # random value between 1 and 999
-
-  #######################
-  # Realms & side roads #
-  #######################
-  branch_count:
-    # How many main-road rounds are crossroads (never round 1). Branch N needs N keys plus that finished crossroad
-    # (either order). 0 disables the whole branch system. All unlocked branches stay live at once.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  branch_length:
-    # Rounds in each unlocked side branch chain (1–20).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  topic_portals:
-    # Topic Realms. Every branch becomes a Realm with its own topic (History, Music, ...) and
-    # is opened by that topic's Portal item instead of generic Branch Keys, so Realms open in any order.
-    # Each Realm needs a distinct enabled category with at least Branch Length unused articles.
-    # Additional Branch Keys is ignored when this is on.
-    'false': 0
-    'true': 50
-
-  additional_branch_keys:
-    # Extra Branch Key items in the pool beyond branch_count. Still progression; extras do not open more branches.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  #########
-  # Tools #
-  #########
-  back_depth_start:
-    # Starting Back depth per round (0 = Back locked until Progressive Back items are found).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  back_depth_unlocks:
-    # Number of Progressive Back items in the pool (each raises per-round Back depth by 1).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  target_rerolls_start:
-    # Starting target rerolls available each round. Alternatives come from leftover articles in the same seed pool.
-    # The Grand Goal article itself cannot be rerolled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  target_reroll_unlocks:
-    # Number of Progressive Reroll items in the pool (each raises per-round reroll max by 1).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  #####################
-  # Letter-pair bingo #
-  #####################
-  toggle_bingo_letterpairs:
-    # When enabled, add letter-pair bingo board(s) with row/column/diagonal/full-card checks.
-    # Stamp pairs from page titles. Bingo on with start 0 and unlocks 0 is rejected (no boards).
-    'false': 0
-    'true': 50
-
-  bingo_letterpairs_grid:
-    # Bingo grid size N (N×N cells). Weighted sample from the slot language's Scrabble letter-pair frequencies (3-20).
-    # Letter pairs use Scrabble alphabets (e.g. pl keeps Ą/Ć/Ł…; fr folds é→E; de keeps Ä/Ö/Ü, ß→SS).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3-20: 0 # random value between 3 and 20
-
-  bingo_cards_start:
-    # How many letter-pair bingo boards are unlocked from the start (0 = all boards locked behind Progressive Bingo Card).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  bingo_card_unlocks:
-    # Number of Progressive Bingo Card items in the pool (extra boards beyond Bingo Cards Start). Combined boards capped at 40.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  bingo_stamp_unlocks:
-    # Number of Progressive Bingo Stamp items in the pool (each stamps one empty cell on one unlocked board, once per seed).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  ##########################
-  # Wikipedia & categories #
-  ##########################
-  wikipedia_language:
-    # Wikipedia language edition for article titles and page fetches (one per slot).
-    # Start/Target titles, Grand Goal question, and article fetches all use that edition.
-    # This is not the client UI language dropdown.
-    en: 50
-    fr: 0
-    de: 0
-    es: 0
-    it: 0
-    pt: 0
-    nl: 0
-    sv: 0
-    pl: 0
-
-  include_video_games:
-    # Allow video-game-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_movies:
-    # Allow movie-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_tv_shows:
-    # Allow TV-show-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_anime_manga:
-    # Allow anime- and manga-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_sports:
-    # Allow sports-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_science_space:
-    # Allow science- and space-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_technology:
-    # Allow technology- and internet-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_history:
-    # Allow history-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_geography:
-    # Allow geography- and landmark-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_food_cuisine:
-    # Allow food- and cuisine-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_art_literature:
-    # Allow art- and literature-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_mythology_folklore:
-    # Allow Legends & Beliefs articles (myths, folklore, legends, cryptids, religious figures)
-    # in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_music:
-    # Allow music-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_politics:
-    # Allow politics-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_famous_people:
-    # Allow famous-people-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_animals:
-    # Allow animal-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_biology_medicine:
-    # Allow biology- and medicine-tagged articles in the round and Grand Goal pools.
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_miscellaneous:
-    # Catch-all pages that matched no other category (or have no Wikidata entity).
-    # Titles are kept if any tag matches an enabled category (OR).
-    'false': 0
-    'true': 50
-
-  include_sensitive_pages:
-    # When off (default), pages flagged sensitive (pornography, BDSM / sadomasochism /
-    # sexual roleplay, terrorism, violent/sexual crime, illicit drugs) are excluded
-    # from round targets and from the Grand Goal pool even if they match an enabled
-    # category. When on, those pages may appear if they also match an enabled category.
-    'false': 50
-    'true': 0
-
-  ##########################
-  # Search & scroll sanity #
-  ##########################
-  searchsanity:
-    # When enabled, in-page search (Ctrl+F Lens) only finds letters unlocked
-    # via Search Letter items, plus any letters from Search Starting Letters.
-    'false': 50
-    'true': 0
-
-  search_starting_letters:
-    # Starting Search Letters when Searchsanity is on (ignored when Searchsanity is off).
-    # none: no free letters. all_vowels: A E I O U. etaoi: E T A O I. raise: R A I S E.
-    # Remaining letters still come from Search Letter items.
-    none: 50
-    all_vowels: 0
-    etaoi: 0
-    raise: 0
-
-  scrollsanity:
-    # When enabled, scrolling starts slow and speeds up with Progressive Scroll Speed items.
-    'false': 50
-    'true': 0
-
-  ##########
-  # Lenses #
-  ##########
-  randomize_tables:
-    # When enabled, Wikipedia tables stay hidden until Table Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_pictures:
-    # When enabled, Wikipedia images/galleries stay hidden until Picture Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_incipit:
-    # When enabled, the lead/intro section stays hidden until Lead Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_infoboxes:
-    # When enabled, infoboxes stay hidden until Infobox Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_toc:
-    # When enabled, the table of contents stays hidden until Contents Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_navboxes:
-    # When enabled, navboxes and See also hubs stay hidden until Navbox Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_hatnotes:
-    # When enabled, hatnotes stay hidden until Hatnote Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  randomize_references:
-    # When enabled, footnotes/references stay hidden until Reference Lens is received.
-    # Enabling lenses (even one) can make routing much harder; stacking several increases difficulty sharply.
-    'false': 50
-    'true': 0
-
-  ##############
-  # Difficulty #
-  ##############
-  deaths:
-    # When enabled, revisiting a page already visited this round causes a death
-    # (jump to a random Wikipedia page). Local only unless Death Link is also on.
-    # Peaceful when off.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When enabled, join Archipelago DeathLink (send and receive).
-    'false': 50
-    'true': 0
-
-  link_bombs:
-    # When enabled (and Deaths is on), random links on each page may be bombs that cause a death.
-    # Target and Grand Goal links are never bombs.
-    'false': 50
-    'true': 0
-
-  link_bomb_density:
-    # How many bomb links to try to place per page (capped at half the eligible links). Requires Deaths and Link Bombs.
-    # few = 1, more = 5, insane = 20.
-    few: 50
-    more: 0
-    insane: 0
-
-  #########
-  # Traps #
-  #########
-  trap_count:
-    # Number of trap items (Foggy Links / Missing Links / Wrong Wiki) added to the pool before Footnote filler.
-    # Counts toward the mandatory item budget — generation fails if too many.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-
-  trap_type:
-    # Which trap items to generate and accept from Trap Link.
-    # 
-    # ``all`` includes Foggy Links, Missing Links, and Wrong Wiki.
-    all: 50
-    only_foggy_links: 0
-    only_missing_links: 0
-    only_wrong_wiki: 0
-
-  trap_link:
-    # When enabled, share traps with other Trap Link players (send and receive). Independent of Trap Count.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: grand_goal
+  required_fragments: 7
+  additional_fragments_in_pool: 2
+  check_count: 40
+  start_rounds_unlocked: 10
+  rounds_per_unlock: 5
+  branch_count: 2
+  branch_length: 5
+  topic_portals: true
+  additional_branch_keys: 1
+  back_depth_start: 0
+  back_depth_unlocks: 3
+  target_rerolls_start: 1
+  target_reroll_unlocks: 2
+  toggle_bingo_letterpairs: true
+  bingo_letterpairs_grid: 5
+  bingo_cards_start: 1
+  bingo_card_unlocks: 2
+  bingo_stamp_unlocks: 2
+  wikipedia_language: en
+  include_video_games: true
+  include_movies: true
+  include_tv_shows: true
+  include_anime_manga: true
+  include_sports: false
+  include_science_space: true
+  include_technology: true
+  include_history: false
+  include_geography: false
+  include_food_cuisine: true
+  include_art_literature: false
+  include_mythology_folklore: false
+  include_music: true
+  include_politics: true
+  include_famous_people: true
+  include_animals: true
+  include_biology_medicine: true
+  include_miscellaneous: true
+  include_sensitive_pages: true
+  searchsanity: false
+  search_starting_letters: none
+  scrollsanity: false
+  randomize_tables: false
+  randomize_pictures: false
+  randomize_incipit: false
+  randomize_infoboxes: false
+  randomize_toc: false
+  randomize_navboxes: false
+  randomize_hatnotes: false
+  randomize_references: false
+  deaths: false
+  death_link: false
+  link_bombs: false
+  link_bomb_density: few
+  trap_count: 15
+  trap_type: all
+  trap_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Wordipelago:
   ################
