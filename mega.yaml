@@ -34706,696 +34706,93 @@ Spyro 2:
   priority_locations: []
 
 Spyro 3:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Lets the user choose the completion goal.
-    # Sorceress 1 - Beat the sorceress *and* obtain the specified number of eggs.
-    # Egg For Sale - Chase Moneybags after defeating the sorceress the first time.
-    # Sorceress 2 - Beat the sorceress in Super Bonus Round *and*
-    #     obtain the specified number of eggs.
-    # All Skillpoints - Collect all 20 skill points in the game.
-    #     Excluded locations are still required for this goal.
-    # Epilogue - Unlock the full epilogue by collecting all 20 skill points
-    #     and defeating the sorceress. Excluded locations are still required for this goal.
-    # Spike - Beat Spike *and* obtain the specified number of eggs.
-    # Scorch - Beat Scorch *and* obtain the specified number of eggs.
-    # Egg Hunt - Find the specified number of eggs to win. Portal requirements are reduced.
-    sorceress_1: 50
-    egg_for_sale: 0
-    sorceress_2: 0
-    all_skillpoints: 0
-    epilogue: 0
-    spike: 0
-    scorch: 0
-    egg_hunt: 0
-
-  egg_count:
-    # The number of eggs needed to win when goal is Sorceress 1,
-    # Sorceress 2, Spike, Scorch, and Egg Hunt.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 150
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-150: 0 # random value between 10 and 150
-
-  percent_extra_eggs:
-    # The percentage of extra eggs in the pool for Egg Hunt.
-    # For example, if 50 eggs are needed and there are 20% extra eggs,
-    # 60 eggs will be in the pool. The total number of available eggs
-    # caps at 150 regardless of this option. Rounds up.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  guaranteed_items:
-    # Guarantees that the specified items will be in the item pool
-    {}
-
-  death_link:
-    # Spyro will die when a DeathLink is received.
-    # Sends DeathLinks on his death.
-    # Some edge cases may not be handled.
-    'false': 50
-    'true': 0
-
-  #####################
-  # Enabled Locations #
-  #####################
-  enable_25_pct_gem_checks:
-    # Adds checks for getting 25% of the gems in a level
-    'false': 50
-    'true': 0
-
-  enable_50_pct_gem_checks:
-    # Adds checks for getting 50% of the gems in a level
-    'false': 50
-    'true': 0
-
-  enable_75_pct_gem_checks:
-    # Adds checks for getting 75% of the gems in a level
-    'false': 50
-    'true': 0
-
-  enable_gem_checks:
-    # Adds checks for getting all gems in a level
-    'false': 50
-    'true': 0
-
-  enable_total_gem_checks:
-    # Adds checks for every 500 gems you collect total.
-    # Gems currently paid to Moneybags do not count towards your total.
-    # Logic assumes you pay Moneybags everywhere.
-    'false': 50
-    'true': 0
-
-  max_total_gem_checks:
-    # The highest number of total gems that can be required for Total Gem Count checks.
-    # Has no effect if Enable Total Gem Count Checks is disabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 500
-    # Maximum value is 20000
-    6000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-500-20000: 0 # random value between 500 and 20000
-
-  enable_gemsanity:
-    # Adds checks for individual gems.
-    # If Moneybagssanity is off, Moneybags unlocks become free.
-    # WARNING: Full gemsanity requires the host to edit allow_full_gemsanity
-    #     in their yaml file.
-    # Off: Individual gems are not checks.
-    # Partial: 200 random gems become checks. Adds items giving 50 or 100 gems
-    #     for specific levels to the item pool.
-    # Full Bundles: Every gem is a check.  Adds items giving 50 or 100 gems
-    #     for specific levels to the item pool.  Adds many filler items.
-    'off': 50
-    partial: 0
-    full_bundles: 0
-
-  enable_skillpoint_checks:
-    # Adds checks for getting skill points
-    'false': 50
-    'true': 0
-
-  enable_life_bottle_checks:
-    # Adds checks for breaking life bottles.
-    # Off: Life bottles are not checks.
-    # Normal: The 26 intended life bottles become checks.
-    # Hard: Adds the out-of-bounds life bottle in Fireworks Factory to the pool.
-    # This does not include the 3 bottles on the impossible island in Midnight Mountain.
-    'off': 50
-    normal: 0
-    hard: 0
-
-  ####################
-  # Game Progression #
-  ####################
-  open_world:
-    # Grants access to all 4 homeworlds from the start.
-    # End of level and boss eggs are removed as checks.
-    # This removes 18 locations from the location pool,
-    # so you may need to enable additional locations to use this option.
-    # If Moneybags is Vanilla, companion unlocks will be free.
-    # Disables world keys.
-    'false': 50
-    'true': 0
-
-  level_lock_option:
-    # Determines the rules for entering levels.
-    # Sparx levels, companion levels, homeworlds, Super Bonus Round, and bosses
-    # are not affected by these settings.
-    # At least one Sunrise level will always start unlocked.
-    # Some settings give a free egg to ensure correct behavior.
-    # Some settings prevent non-companion levels from out of bounds.
-    # Vanilla: Levels have their vanilla unlock requirements.
-    # Keys: 20 Level Unlock items are added to the item pool.
-    # Randomize Requirements: Randomizes egg requirements for levels
-    #     that normally require eggs to enter.
-    # Add Requirements: Any level can have an egg requirement added.
-    # Add Gem Requirements: Any level can have an egg OR gem requirement added.
-    #     Only works when both Moneybagssanity and Gemsanity are on.
-    vanilla: 50
-    keys: 0
-    randomize_requirements: 0
-    add_requirements: 0
-    add_gem_requirements: 0
-
-  starting_levels_count:
-    # When Level Lock Options is not Vanilla or Randomize Requirements,
-    # determines how many non-companion levels start unlocked.
-    # The recommended value when Keys are in use is 2 or 3.
-    # One Sunrise level will always be unlocked.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  sorceress_door_requirement:
-    # Determines how many eggs are required to open Sorceress' Lair
-    # in Midnight Mountain.
-    # NOTE: This only works if Duckstation is set to interpreter mode.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  sbr_door_egg_requirement:
-    # Determines how many eggs are required to open Super Bonus Round.
-    # NOTE: This only works if Duckstation is set to interpreter mode.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 149
-    149: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-149: 0 # random value between 1 and 149
-
-  sbr_door_gem_requirement:
-    # Determines how many gems are required to open Super Bonus Round.
-    # Gem requirements within Super Bonus Round are based on this number.
-    # NOTE: This only works if Duckstation is set to interpreter mode.
-    # In game displays may have visual glitches.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 15000
-    15000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-15000: 0 # random value between 1 and 15000
-
-  moneybags_settings:
-    # Determines settings for Moneybags unlocks.
-    # Moneybags dialog has small visual errors.
-    # Defeating the Sorceress bypasses all requirements.
-    # Vanilla - Pay Moneybags to progress as usual
-    # Companionsanity - Unlock items replace payment for side characters.
-    # Moneybagssanity - Unlock items replace payment for Moneybags.
-    vanilla: 50
-    companionsanity: 0
-    moneybagssanity: 0
-
-  powerup_lock_settings:
-    # Powerup gates (such as superflame) require items to use.
-    # Does not affect the invincibility filler item.
-    # NOTE: The Sunrise Spring early level entry tricks assume
-    #     you do not need the superfly powerup to complete them!
-    # Vanilla - Powerups are available at all times.
-    # Type - Superfly, Fireball, and Invincibility Powerup items are added to the pool.
-    #     Fireworks Factory and Super Bonus Round's combo powerups
-    #     require both Superfly and Fireball to unlock.
-    # Individual: Each level's powerups are unlocked by a specific item.
-    vanilla: 50
-    type: 0
-    individual: 0
-
-  enable_world_keys:
-    # Prevents moving to the next homeworld without enough World Key items.
-    # You must still complete the vanilla requirements to go to the next homeworld.
-    # Disabled in Open World mode.
-    'false': 50
-    'true': 0
-
-  enable_midnight_whirlwind:
-    # Adds a whirlwind outside the Sorceress' Lair leading to the impossible
-    # island with 3 life bottles, once the Sorceress has been defeated.
-    # Puts these bottles into the item pool if life bottles are enabled.
-    'false': 50
-    'true': 0
-
-  #############
-  # Item Pool #
-  #############
-  enable_filler_extra_lives:
-    # Enables filler items that grant extra lives
-    'false': 0
-    'true': 50
-
-  enable_filler_invincibility:
-    # Enables filler items that grant temporary invincibility
-    'false': 50
-    'true': 0
-
-  enable_filler_color_change:
-    # Enables filler items that change Spyro's color
-    'false': 50
-    'true': 0
-
-  enable_filler_big_head_mode:
-    # Enables filler items that turn on Big Head Mode and Flat Spyro Mode
-    'false': 50
-    'true': 0
-
-  enable_filler_heal_sparx:
-    # Enables filler items that heal Sparx. Can exceed max health.
-    'false': 50
-    'true': 0
-
-  trap_filler_percent:
-    # The percent chance that a filler items is a trap.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  enable_trap_damage_sparx:
-    # Enables traps that damage Sparx. Cannot directly kill Spyro.
-    'false': 50
-    'true': 0
-
-  enable_trap_sparxless:
-    # Enables traps that removes Sparx.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Sparx Settings #
-  ##################
-  sparx_power_settings:
-    # Shuffles the Sparx abilities from completing Sparx levels into the item pool.
-    # Sparx's ability to break baskets becomes 2 progressive items.
-    # Having both allows atlas warp and breaking vases.
-    'false': 50
-    'true': 0
-
-  enable_progressive_sparx_health:
-    # Start the game with less max health.
-    # Add items to the pool to increase your max health.
-    # Heal Sparx items have no effect until all items are found.
-    # Off - The game behaves normally.
-    # Blue - Your max health starts at blue Sparx.
-    # Green - Your max health starts at green Sparx.
-    # Sparxless - Your max health starts at no Sparx.
-    # True Sparxless - Your max health is permanently Sparxless.
-    'off': 50
-    blue: 0
-    green: 0
-    sparxless: 0
-    true_sparxless: 0
-
-  enable_progressive_sparx_logic:
-    # Certain Sparx health amounts are expected before
-    # you are required to enter different levels.
-    # Super Bonus Round, Crawdad Farm, and levels in Midday and later
-    # logically require green Sparx.
-    # Fireworks Factory, Charmed Ridge, and levels in Midnight and later
-    # logically require blue Sparx.
-    # Dino Mines and the Sorceress logically require
-    # gold Sparx.
-    # The Extra Health item/bonus from Starfish Reef is not considered for this logic.
-    # Note: This does nothing unless Enable Progressive Sparx
-    # Health Upgrades is set to blue, green, or Sparxless,
-    'false': 50
-    'true': 0
-
-  require_sparx_for_max_gems:
-    # Determines the logic for gemsanity and 100% gem checks.
-    # 75% gem checks (100% in levels with no enemies) are always on.
-    # Off: Sparx max health and abilities do not affect gem logic.
-    # Green Sparx: Sparx is required.
-    # Sparx Finder: Sparx Gem Finder is required.
-    # NOTE: This option is ignored in True Sparxless mode,
-    # or in Sparxless mode if Progressive Sparx Health Logic is off.
-    'off': 50
-    green_sparx: 0
-    sparx_finder: 0
-
-  ###################
-  # Game Difficulty #
-  ###################
-  zoe_gives_hints:
-    # Some or all of the 13 Tutorial Zoes give hints.
-    # Which Zoes give hints are random.
-    # Hints include:
-    # - Difficult or slow locations
-    # - Progression items in your world
-    # - Joke hints
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 13
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-13: 0 # random value between 0 and 13
-
-  easy_skateboarding_lizards:
-    # The Sunny Villa lizard skateboarding challenges require only 1 lizard.
-    # Results in minor graphical glitches.
-    'false': 50
-    'true': 0
-
-  easy_skateboarding_points:
-    # Point-based skateboarding challenges in Sunny Villa
-    # and Enchanted Towers become much easier.
-    # Includes skill points.
-    'false': 50
-    'true': 0
-
-  easy_skateboarding_lost_fleet:
-    # Your turbo cannot run out in the Lost Fleet skateboarding challenges.
-    'false': 50
-    'true': 0
-
-  easy_skateboarding_super_bonus_round:
-    # Your turbo cannot run out in the Super Bonus Round skateboarding challenge.
-    'false': 50
-    'true': 0
-
-  easy_boxing:
-    # The enemy yeti in Frozen Altars boxing has only 1 health.
-    'false': 50
-    'true': 0
-
-  easy_sheila_bombing:
-    # Rocks and mushrooms never respawn in Spooky Swamp's Sheila sub-area.
-    'false': 50
-    'true': 0
-
-  easy_tanks:
-    # The Tanks challenges in Haunted Tomb will require only 1 tank each.
-    # Results in minor graphical glitches.
-    'false': 50
-    'true': 0
-
-  easy_subs:
-    # The Lost Fleet submarine challenges require ony 1 sub.
-    # The HUD will incorrectly display 1/1.
-    'false': 50
-    'true': 0
-
-  easy_bluto:
-    # Bluto in Seashell Shores has only 1 health.
-    'false': 50
-    'true': 0
-
-  easy_sleepyhead:
-    # Sleepyhead in Spooky Swamp has only 1 health.
-    'false': 50
-    'true': 0
-
-  easy_shark_riders:
-    # The Shark Riders challenge in Desert Ruins requires only 1 shark,
-    # which starts to the left of the building.
-    'false': 50
-    'true': 0
-
-  easy_whackamole:
-    # The Bentley Whack-A-Mole challenge in Crystal Islands require only 1 mole.
-    'false': 50
-    'true': 0
-
-  easy_tunnels:
-    # Water tunnels in Seashell Shore and Dino Mines move slightly more slowly.
-    'false': 50
-    'true': 0
-
-  no_green_rockets:
-    # Collecting a green rocket in Scorch will automatically convert to 50 red rockets instead.
-    'false': 50
-    'true': 0
-
-  ##########
-  # Tricks #
-  ##########
-  logic_sunny_sheila_early:
-    # Potentially require entering Sunny Villa's Sheila sub-area from out of bounds.
-    # NOTE: Entering this area from behind may crash the game if done incorrectly.
-    # This option only matters is Companionsanity or Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_cloud_backwards:
-    # Potentially require completing Cloud Spires backwards
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_molten_early:
-    # Potentially require entering Molten Crater from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_molten_byrd_early:
-    # Potentially require entering Molten Crater's Sgt. Byrd sub-area from out of bounds
-    'false': 50
-    'true': 0
-
-  logic_molten_thieves_no_moneybags:
-    # Potentially require entering Molten Crater's Thieves sub-area from out of bounds
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_seashell_early:
-    # Potentially require entering Seashell Shores from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_seashell_sheila_early:
-    # Potentially require entering Seashell Shores' Sheila sub-area from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_mushroom_early:
-    # Potentially require entering Mushroom Speedway from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_sheila_early:
-    # Potentially require entering Sheila's Alp from out of bounds
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Companionsanity or Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_spooky_early:
-    # Potentially require entering Spooky Swamp from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_spooky_no_moneybags:
-    # Potentially require getting to the end of Spooky Swamp
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_bamboo_early:
-    # Potentially require entering Bamboo Terrace from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_bamboo_bentley_early:
-    # Potentially require entering the Bamboo Terrace Bentley sub-area from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_country_early:
-    # Potentially require entering Country Speedway from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_byrd_early:
-    # Potentially require entering Sgt. Byrd's Base from out of bounds
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Companionsanity or Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_frozen_bentley_early:
-    # Potentially require entering the Frozen Altars Bentley sub-area from out of bounds.
-    # This option only matters if Companionsanity or Moneybagssaniity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_frozen_cat_hockey_no_moneybags:
-    # Potentially require entering the Frozen Altars cat hockey minigame
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_fireworks_early:
-    # Potentially require entering Fireworks Factory from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_fireworks_agent_9_early:
-    # Potentially require entering Fireworks Factory's Agent 9 sub-area
-    # out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_charmed_early:
-    # Potentially require entering Charmed Ridge from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_charmed_no_moneybags:
-    # Potentially require getting past the stairs in Charmed Ridge
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_honey_early:
-    # Potentially require entering Honey Speedway from out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_bentley_early:
-    # Potentially require entering Bentley's Outpost
-    # from out of bounds.
-    # This option only matters if Companionsanity or Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_crystal_no_moneybags:
-    # Potentially require fully completing Crystal Islands
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_desert_no_moneybags:
-    # Potentially require fully completing Desert Ruins
-    # without paying Moneybags or beating the Sorceress.
-    # This option only matters if Moneybagssanity is turned on.
-    'false': 50
-    'true': 0
-
-  logic_dino_agent_9_early:
-    # Potentially require entering the Agent 9 sub-area
-    # of Dino Mines out of bounds.
-    'false': 50
-    'true': 0
-
-  logic_sorceress_early:
-    # Potentially require entering Sorceress' Lair out of bounds.
-    # Does not change the door or goal requirements.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: sorceress_1
+  egg_count: random
+  percent_extra_eggs: 25
+  guaranteed_items: {}
+  death_link: true
+  enable_25_pct_gem_checks: true
+  enable_50_pct_gem_checks: true
+  enable_75_pct_gem_checks: false
+  enable_gem_checks: false
+  enable_total_gem_checks: false
+  max_total_gem_checks: 6000
+  enable_gemsanity: 'off'
+  enable_skillpoint_checks: false
+  enable_life_bottle_checks: normal
+  open_world: false
+  level_lock_option: keys
+  starting_levels_count: 2
+  sorceress_door_requirement: random
+  sbr_door_egg_requirement: 149
+  sbr_door_gem_requirement: 15000
+  moneybags_settings: vanilla
+  powerup_lock_settings: vanilla
+  enable_world_keys: false
+  enable_midnight_whirlwind: false
+  enable_filler_extra_lives: true
+  enable_filler_invincibility: true
+  enable_filler_color_change: true
+  enable_filler_big_head_mode: true
+  enable_filler_heal_sparx: true
+  trap_filler_percent: 15
+  enable_trap_damage_sparx: true
+  enable_trap_sparxless: true
+  sparx_power_settings: false
+  enable_progressive_sparx_health: 'off'
+  enable_progressive_sparx_logic: false
+  require_sparx_for_max_gems: 'off'
+  zoe_gives_hints: random
+  easy_skateboarding_lizards: true
+  easy_skateboarding_points: true
+  easy_skateboarding_lost_fleet: true
+  easy_skateboarding_super_bonus_round: true
+  easy_boxing: true
+  easy_sheila_bombing: true
+  easy_tanks: true
+  easy_subs: true
+  easy_bluto: true
+  easy_sleepyhead: true
+  easy_shark_riders: true
+  easy_whackamole: true
+  easy_tunnels: true
+  no_green_rockets: true
+  logic_sunny_sheila_early: false
+  logic_cloud_backwards: false
+  logic_molten_early: false
+  logic_molten_byrd_early: false
+  logic_molten_thieves_no_moneybags: false
+  logic_seashell_early: false
+  logic_seashell_sheila_early: false
+  logic_mushroom_early: false
+  logic_sheila_early: false
+  logic_spooky_early: false
+  logic_spooky_no_moneybags: false
+  logic_bamboo_early: false
+  logic_bamboo_bentley_early: false
+  logic_country_early: false
+  logic_byrd_early: false
+  logic_frozen_bentley_early: false
+  logic_frozen_cat_hockey_no_moneybags: false
+  logic_fireworks_early: false
+  logic_fireworks_agent_9_early: false
+  logic_charmed_early: false
+  logic_charmed_no_moneybags: false
+  logic_honey_early: false
+  logic_bentley_early: false
+  logic_crystal_no_moneybags: false
+  logic_desert_no_moneybags: false
+  logic_dino_agent_9_early: false
+  logic_sorceress_early: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 'Spyro: A Hero''s Tail':
   ################
