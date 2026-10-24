@@ -41847,235 +41847,27 @@ Yoshi's Island:
   yoshi_colors: random
 
 Yu-Gi-Oh! Dungeon Dice Monsters:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  progression:
-    # Free Duel mode means progression will be made through the Free Duel menu
-    # culminating in a fight against Yami Yugi.
-    # Your game will be longer per duelist you set to play against.
-    # You do not enter tournaments in this mode.
-    # 
-    # Tournament mode means progression will be made in Tournaments with the
-    # goal being completing The Last Judgement in the Dark Tournament Division.
-    # 24 - 72 duel wins required, depending on checks you receive.
-    free_duel: 50
-    tournaments: 0
-
-  tournament_rewards:
-    # This option only matters when your Progression mode is Tournament.
-    # 
-    # Choose whether you will be awarded one, two or three checks every time
-    # you complete a Tournament.
-    one: 0
-    two: 0
-    three: 50
-
-  free_duel_rewards:
-    # This option only matters when your Progression mode is Free Duel.
-    # 
-    # Choose whether you will be awarded one or two checks every time
-    # a duelist is defeated in Free Duel.
-    one: 0
-    two: 50
-
-  starting_duelists:
-    # This option only matters when your Progression mode is Free Duel.
-    #  
-    # The number of Duelists to start with unlocked.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 91
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-91: 0 # random value between 1 and 91
-
-  free_duel_goal:
-    # This option only matters when your Progression mode is Free Duel.
-    # 
-    # The number of duelists defeated required to unlock your goal duel (against Yami Yugi).
-    # A higher number leads to a longer game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 91
-    45: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-91: 0 # random value between 1 and 91
-
-  free_duel_pool:
-    # This option only matters when your Progression mode is Free Duel.
-    # 
-    # Set the number of duelists that locations will be created for
-    # in Free Duel progression mode.
-    # Lowering your location count allows you to send out fewer items
-    # if you set and achieve an early goal.
-    # 
-    # If this number is set below FreeDuelGoal,
-    # it will be raised to match it.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 91
-    45: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-91: 0 # random value between 1 and 91
-
-  dice_stats:
-    # The double option changes all dice crest faces to have
-    # double their normal value. This can reduce the amount of time
-    # spent rolling for necessary crests in battle and can give
-    # AI opponents a little more bite than normal.
-    # Normal leaves crest faces as they are in vanilla gameplay.
-    normal: 0
-    double: 50
-
-  randomize_starting_dice:
-    # In the base game your starting pool is lightly randomized to begin with,
-    # but this setting takes off the guardrails and generates you with any
-    # 15 dice from the game (no duplicates).
-    # 
-    # It is impossible to generate a starting pool with only items and no creatures to summon.
-    # 
-    # With this option active you have to select all of your new dice from your collection
-    # before the first duel begins.
-    'false': 50
-    'true': 0
-
-  set_starting_dice:
-    # If RandomizeStartingDice is True, you can set some or all of the dice
-    # you'd like to start with here.
-    # 
-    # Leave this empty if you'd like all random starting dice.
-    # You can specify up to 15 Dice, any entries
-    # after the 15th will be ignored, if you don't provide
-    # enough the rest will be random.
-    # You can include multiples of the same dice.
-    # Dice names are case sensitive, invalid names should
-    # raise an exception on game Generation.
-    # 
-    # Example Syntax for a Harpie Lady Sisters and two Lord of D.'s
-    # ["Harpie Lady Sisters", "Lord of D.", "Lord of D."]
-    []
-
-  bonus_item_mode:
-    # Decide what you would like to receive from filler checks.
-    # 
-    # Random Dice will reward any random die from the game.
-    # In Tournament Progression mode, Grandpa's Shop can still progress
-    # although it is quite slow. Approximately 3-6 Tournament wins per shop level.
-    # 
-    # Shop Progress makes collecting Dice locations. You may be required
-    # to buy dice from Grandpa's Shop to progress. This mode will divide the 
-    # number of filler checks between Shop Levels and Gold items.
-    # This will halt normal shop progression if you have chosen Tournament mode.
-    random_dice: 50
-    shop_progress: 0
-
-  gold_reward_amount:
-    # This option only matters when your Bonus Item Mode option is Shop Progress.
-    # 
-    # The amount of gold you will receive from Gold filler checks.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 200
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-200: 0 # random value between 50 and 200
-
-  set_free_duel_opponents:
-    # This option only matters when your Progression mode is Free Duel.
-    # 
-    # You can write in names of Duelists you'd like to gaurantee
-    # appearing in your free duel pool.
-    # 
-    # Leave this empty if you'd like all opponents to be random.
-    # You can specify as many duelists up to the size of your pool,
-    # any additional entries will be ignored, if you don't provide
-    # enough the rest will be random.
-    # Duelist names are case sensitive, invalid names should
-    # raise an exception on game Generation.
-    # 
-    # Yami Yugi and Yugi Moto always appear, they are invalid
-    # entries for this option.
-    # 
-    # Example Syntax for Mai Valentine and Joey Wheeler
-    # ["Mai Valentine", "Joey Wheeler"]
-    []
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  progression: free_duel
+  tournament_rewards: three
+  free_duel_rewards: two
+  starting_duelists: 10
+  free_duel_goal: 45
+  free_duel_pool: 45
+  dice_stats: double
+  randomize_starting_dice: true
+  set_starting_dice: []
+  bonus_item_mode: random_dice
+  gold_reward_amount: 100
+  set_free_duel_opponents: []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 ZALiA:
   ################
