@@ -14715,391 +14715,46 @@ Donkey Kong Country 2:
     []
 
 Donkey Kong Country Returns:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ####################
-  # Gameplay options #
-  ####################
-  time_attack_medal:
-    # Creates a location for each selected medal.
-    # 
-    # "Bronze", "Silver", "Gold", and "Shiny Gold" always include their respective
-    # medals.
-    # "Full" includes all medals.
-    # 
-    # "RandomAll" randomly selects additional medals from those not already selected.
-    # "RandomOne" randomly selects one additional medal from those not already
-    # selected.
-    # 
-    # "Bronzeless", "Silverless", "Goldless", and "Shiny Goldless" restrict the
-    # random selection pool by excluding those medals. These options have no effect
-    # unless "RandomAll" or "RandomOne" is selected.
-    []
-
-  ###############
-  # Key options #
-  ###############
-  sunset_shore_key:
-    # When enabled, adds the Jungle Shop Key for the level Sunset Shore as a location.
-    'false': 0
-    'true': 50
-
-  blowhole_bound_key:
-    # When enabled, adds the Beach Shop Key for the level Blowhole Bound as a location.
-    'false': 0
-    'true': 50
-
-  damp_dungeon_key:
-    # When enabled, adds the Ruins Shop Key for the level Damp Dungeon as a location.
-    'false': 0
-    'true': 50
-
-  mole_patrol_key:
-    # When enabled, adds the Cave Shop Key for the level Mole Patrol as a location.
-    'false': 0
-    'true': 50
-
-  springy_spores_key:
-    # When enabled, adds the Forest Shop Key for the level Springy Spores as a location.
-    'false': 0
-    'true': 50
-
-  precarious_plateau_key:
-    # When enabled, adds the Cliff Shop Key for the level Precarious Plateau as a location.
-    'false': 0
-    'true': 50
-
-  handy_hazards_key:
-    # When enabled, adds the Factory Shop Key for the level Handy Hazards as a location.
-    'false': 0
-    'true': 50
-
-  smokey_peak_key:
-    # When enabled, adds the Volcano Shop Key for the level Smokey Peak as a location.
-    'false': 0
-    'true': 50
-
-  #######################
-  # Boss access options #
-  #######################
-  jungle_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Jungle.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 41
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-41: 0 # random value between 0 and 41
-
-  beach_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Beach.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 85
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-85: 0 # random value between 0 and 85
-
-  ruins_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Ruins.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 132
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-132: 0 # random value between 0 and 132
-
-  cave_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Cave.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 162
-    110: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-162: 0 # random value between 0 and 162
-
-  forest_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Forest.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 219
-    150: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-219: 0 # random value between 0 and 219
-
-  cliff_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Cliff.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 274
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-274: 0 # random value between 0 and 274
-
-  factory_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Factory.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 324
-    260: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-324: 0 # random value between 0 and 324
-
-  volcano_boss_access:
-    # Sets the amount of total Puzzle Pieces needed to gain access to the Boss in the Volcano.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 371
-    320: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-371: 0 # random value between 0 and 371
-
-  ##########################
-  # K Level access options #
-  ##########################
-  jungle_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Jungle.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 24
-    24: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-24: 0 # random value between 0 and 24
-
-  beach_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Beach.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 28
-    28: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-28: 0 # random value between 0 and 28
-
-  ruins_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Ruins.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 24
-    24: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-24: 0 # random value between 0 and 24
-
-  cave_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Cave.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  forest_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Forest.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 32
-    32: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-32: 0 # random value between 0 and 32
-
-  cliff_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Cliff.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 32
-    32: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-32: 0 # random value between 0 and 32
-
-  factory_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Factory.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 28
-    28: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-28: 0 # random value between 0 and 28
-
-  volcano_k_level_access:
-    # Sets the amount of total Kong Letters, from the respective, World needed to gain access to the K Level in the Volcano.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 28
-    28: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-28: 0 # random value between 0 and 28
-
-  ###################
-  # Moveset options #
-  ###################
-  ################
-  # Misc options #
-  ################
-  smog_clear:
-    # When enabled, requires to beat 7-1 to clear the smog covering the Factory world to move through it.
-    # If disabled, DK will be able to traverse the Factory world even with the smog present.
-    'false': 0
-    'true': 50
-
-  lift_off_launch:
-    # When enabled, requires to beat 7-R to access Feather Fiend.
-    # If disabled, DK will be able to access Feather Fiend without the need to beat 7-R.
-    'false': 0
-    'true': 50
-
-  factory_buttons:
-    # Amount of Factory Buttons that are required to access 7-R. (Default = 3
-    # Choosing 0 will disable this option and make 7-R always available.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 15
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
-
-  squawks:
-    # Adds Squawks as an item which will enable Squawks as a permanent helper.
-    # Disabling this option makes Squawks available from the start.
-    # Squawks can be toggled in the Client as soon as he is available.
-    'false': 50
-    'true': 0
-
-  #######################
-  # Mirror mode options #
-  #######################
-  mirror_mode:
-    # Completing a level in Mirror Mode is considered a check.
-    'false': 50
-    'true': 0
-
-  mirror_mode_shards:
-    # Decides how many Mirror Shards are needed to unlock Mirror Mode.
-    # Setting this option to 0 will disable the Mirror Shards and Mirror Mode will get its own item.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 25
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-25: 0 # random value between 0 and 25
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  time_attack_medal: []
+  sunset_shore_key: true
+  blowhole_bound_key: true
+  damp_dungeon_key: true
+  mole_patrol_key: true
+  springy_spores_key: true
+  precarious_plateau_key: true
+  handy_hazards_key: true
+  smokey_peak_key: true
+  jungle_boss_access: 20
+  beach_boss_access: 50
+  ruins_boss_access: 80
+  cave_boss_access: 110
+  forest_boss_access: 150
+  cliff_boss_access: 200
+  factory_boss_access: 260
+  volcano_boss_access: 320
+  jungle_k_level_access: 24
+  beach_k_level_access: 28
+  ruins_k_level_access: 24
+  cave_k_level_access: 20
+  forest_k_level_access: 32
+  cliff_k_level_access: 32
+  factory_k_level_access: 28
+  volcano_k_level_access: 28
+  smog_clear: true
+  lift_off_launch: true
+  factory_buttons: 3
+  squawks: false
+  mirror_mode: false
+  mirror_mode_shards: 8
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Donkey Kong Country:
   ################
