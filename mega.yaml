@@ -38458,329 +38458,61 @@ The Legend of Dragoon:
   priority_locations: []
 
 The Legend of Zelda - Oracle of Ages:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # The goal to accomplish in order to complete the seed.
-    # - Beat Veran: beat the usual final boss
-    # - Beat Ganon: teleport to the Room of Rites after beating Onox or Veran, then beat Ganon (same as linked game)
-    # - Retrieve Maku Seed - You will have to retrieve the maku seed from the maku tree in order cut straight into the credits scene (similar to a triforce hunt in ALTTPR)
-    beat_veran: 50
-    beat_ganon: 0
-
-  logic_difficulty:
-    # The difficulty of the logic used to generate the seed.
-    # - Casual: expects you to know what you would know when playing the game for the first time
-    # - Medium: expects you to know well the alternatives on how to do basic things, but won't expect any trick
-    # - Hard: expects you to know difficult tricks such as bomb jumps
-    # - Hell: expects you to use tricks and glitches that span over more than a few inputs
-    casual: 50
-    medium: 0
-    hard: 0
-    hell: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  advance_shop:
-    # In the vanilla game, there is a house (northwest of Horon Village in Seasons, and south of the maku tree entrance in Lynna Village for Ages) hosting the secret "Advance Shop" that can only
-    # be accessed if the game is being played on a Game Boy Advance console.
-    # If enabled, this option makes this shop always open, adding 3 shop locations to the game (and some rupees to the
-    # item pool to compensate for the extra purchases that might be required)
-    'false': 50
-    'true': 0
-
-  deterministic_gasha_locations:
-    # When set to a non-zero value, planting a Gasha tree on a unique soil gives a deterministic item which is taken
-    # into account by logic. Once an item has been obtained this way, the soil disappears forever to avoid any chance
-    # of softlocking by wasting several Gasha Seeds on the same soil.
-    # The value of this option is the number of items that can be obtained that way, the maximum value expecting you
-    # to plant a tree on each one of the 16 Gasha spots in the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 15
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
-
-  secret_locations:
-    # When enabled, add the linked game secrets to the list of locations
-    'false': 50
-    'true': 0
-
-  linked_heros_cave:
-    # Adds linked hero's cave to a list of locations for you to complete. This option also allows you to mark which location the linked hero's cave will be in.
-    # - Maku Tree Entrance Right Side: A cave will be placed to the right side of the maku tree entrance
-    disabled: 50
-    maku_tree_entrance_right_side: 0
-
-  miniboss_locations:
-    # When enabled, all minibosses will have a check that you will need to get each time they are defeated.
-    'false': 50
-    'true': 0
-
-  required_essences:
-    # The amount of essences that need to be obtained in order to get the seed from the Maku Tree and be able
-    # to fight the final boss (depends on Goal Settings)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  shuffle_essences:
-    # If enabled, essences will be shuffled anywhere in the multiworld instead of being guaranteed to be found
-    # at the end their respective dungeons.
-    'false': 50
-    'true': 0
-
-  animal_companion:
-    # Determines which animal companion you can summon using the Flute, as well as the layout of the Natzu region.
-    # - Ricky: the kangaroo with boxing skills
-    # - Dimitri: the swimming dinosaur who can eat anything
-    # - Moosh: the flying blue bear (in seasons, he has a passion for Spring Bananas)
-    ricky: 0
-    dimitri: 0
-    moosh: 0
-    random: 50
-
-  shuffle_dungeons:
-    # If enabled, each dungeon entrance will lead to a random dungeon picked at generation time.
-    # Otherwise, all dungeon entrances lead to their dungeon as intended.
-    'false': 50
-    'true': 0
-
-  default_seed:
-    # Determines which of the 5 seed types will be the "default seed type", which is given:
-    # - when obtaining Seed Satchel
-    # - when obtaining Slingshot or Seed Shooter
-    # - by Horon (or Lynna) Seed Tree
-    ember: 50
-    scent: 0
-    pegasus: 0
-    gale: 0
-    mystery: 0
-
+  progression_balancing: normal
+  accessibility: full
+  goal: beat_veran
+  logic_difficulty: casual
+  death_link: true
+  advance_shop: false
+  deterministic_gasha_locations: 0
+  secret_locations: false
+  linked_heros_cave: disabled
+  miniboss_locations: false
+  required_essences: random
+  shuffle_essences: false
+  animal_companion: random
+  shuffle_dungeons: false
+  default_seed: ember
   duplicate_seed_trees:
-    # The game contains 8 seed trees, but only 5 types of seeds. This means that some types of seeds can appear on
-    # multiple trees. This setting lets you choose seed trees that will be guaranteed to not hold a unique type of
-    # seed. You can choose up to 3.
-    # Regardless of what you choose, each seed type will appear on at most 2 trees.
-    # Valid choices are:
-    # - Lynna City
-    # - Ambi's Palace
-    # - Deku Forest
-    # - Symmetry City
-    # - Crescent Island
-    # - Rolling Ridge West
-    # - Rolling Ridge East
-    # - Zora Village
-    ['Crescent Island', 'Zora Village', 'Rolling Ridge East']
-
-  warp_to_start_location:
-    # This option changes the spot you warp in when you press select or start, A, and B buttons to warp back to the forest of time.
-    # Please note that depending on the option you select, logic will be affected.
-    near_timeportal: 0
-    near_triforce_stone: 50
-
-  lynna_gardener:
-    # When enabled, a friendly gardener will have trimmed the bushes outside of Lynna City and cleared the path
-    # so you don't have to! This will expand the sphere 0 checks to include everything past the bushes that you
-    # normally would need nothing for.
-    # It is recommended to have this enabled for multiworlds.
-    'false': 50
-    'true': 0
-
-  master_keys:
-    # - Disabled: All dungeon keys must be obtained individually, just like in vanilla
-    # - All Small Keys: Small Keys are replaced by a single Master Key for each dungeon which is capable of opening
-    #   every small keydoor for that dungeon
-    # - All Dungeon Keys: the Master Key for each dungeon is also capable of opening the boss keydoor,
-    #   removing Boss Keys from the item pool
-    # Master Keys placement is determined following the "Keysanity (Small Keys)" option.
-    disabled: 50
-    all_small_keys: 0
-    all_dungeon_keys: 0
-
-  keysanity_small_keys:
-    # If enabled, dungeon Small Keys can be found anywhere instead of being confined in their dungeon of origin.
-    'false': 50
-    'true': 0
-
-  keysanity_boss_keys:
-    # If enabled, dungeon Boss Keys can be found anywhere instead of being confined in their dungeon of origin.
-    'false': 50
-    'true': 0
-
-  keysanity_maps_compasses:
-    # If enabled, Dungeon Maps and Compasses can be found anywhere instead of being confined in their dungeon of origin.
-    'false': 50
-    'true': 0
-
-  required_slates:
-    # The amount of slate that need to be obtained in order to get to the boss of the eighth dungeons.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  keysanity_slates:
-    # If enabled, Slates can be found anywhere instead of being confined in Dungeon 8.
-    'false': 50
-    'true': 0
-
-  vasu_ring_checks_requirement:
-    # When enabled, vasu will congradulate you based off of the number of rupees (for Rupee Ring check), and number of enemies defeated (for Slayer's Ring check). 
-    # 
-    # Disable Entirely: Determines whatever or not vasu will give out mutiple checks when the friendship ring check is finished.
-    # Rupee Requirement for Rupee Ring Check: Determines the amount of rupees that you need to collect in order for vasu to give you a check. (from 1 to 9999)
-    # Amount of Enemies Defeated for Slayer Ring Check: Determines the amount of enemies that you need to defeat in order for vasu to give you a check. (from 1 to 1000)
-    amount_of_enemies_defeated_for_slayer_ring_check: 50
-    disable_entirely: true
-    rupee_requirement_for_rupee_ring_check: 1000
-
-  gasha_nut_kill_requirement:
-    # This option lets you configure how many kills are required to make a gasha tree grow.
-    # Using a gasha ring halves this number.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 250
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-250: 0 # random value between 0 and 250
-    vanilla: 0 # equivalent to 40
-
-  required_rings:
-    # Forces a specified set of rings to appear somewhere in the seed.
-    # Adding too many rings to this list can cause generation failures.
-    # List of ring names can be found here: https://zeldawiki.wiki/wiki/Magic_Ring
-    []
-
+  - Crescent Island
+  - Rolling Ridge East
+  - Zora Village
+  warp_to_start_location: near_triforce_stone
+  lynna_gardener: true
+  master_keys: disabled
+  keysanity_small_keys: false
+  keysanity_boss_keys: false
+  keysanity_maps_compasses: false
+  required_slates: random
+  keysanity_slates: false
+  gasha_nut_kill_requirement: 20
+  required_rings: []
   excluded_rings:
-    # Forces a specified set of rings to not appear in the seed.
-    # List of ring names can be found here: https://zeldawiki.wiki/wiki/Magic_Ring
-    ['First Gen Ring', '100th Ring', 'Friendship Ring', 'Subrosian Ring', 'Cursed Ring', 'Like Like Ring', 'Rupee Ring', 'GBA Nature Ring', 'Sign Ring', 'Moblin Ring', 'GBA Time Ring', 'Victory Ring', "Slayer's Ring", 'Octo Ring']
-
-  shop_prices_factor:
-    # A factor (expressed as percentage) that will be applied to all prices inside all shops in the game.
-    # - Setting it at 10% will make all items almost free
-    # - Setting it at 500% will make all items horrendously expensive, use at your own risk!
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 500
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-500: 0 # random value between 10 and 500
-
-  combat_difficulty:
-    # Modifies the damage taken during combat to make this aspect of the game easier or harder depending on the
-    # type of experience you want to have
-    peaceful: 0
-    easier: 0
-    vanilla: 50
-    harder: 0
-    insane: 0
-
-  enforce_potion_in_shop:
-    # When enabled, the potion will always be available in the selected shop and will refill.
-    # WARNING : THIS POTION DOESN'T CURE KING ZORA, you still need to find a specific (blue) potion to cure him
-    # - disabled : The potion is not available by default, and if it's still in a shop, you can only buy it once
-    # - lynna_shop : A check will be removed in Lynna City's shop and potions will always be sold here
-    # - syrup_hut : A check will be removed in Syrup Hut and potions will always be sold here
-    disabled: 50
-    lynna_shop: 0
-    syrup_hut: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - 100th Ring
+  - Cursed Ring
+  - First Gen Ring
+  - Friendship Ring
+  - GBA Nature Ring
+  - GBA Time Ring
+  - Like Like Ring
+  - Moblin Ring
+  - Octo Ring
+  - Rupee Ring
+  - Sign Ring
+  - Slayer's Ring
+  - Subrosian Ring
+  - Victory Ring
+  shop_prices_factor: 25
+  combat_difficulty: vanilla
+  enforce_potion_in_shop: disabled
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 The Legend of Zelda - Phantom Hourglass:
   ################
