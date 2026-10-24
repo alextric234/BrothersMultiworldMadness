@@ -34636,625 +34636,74 @@ Spirit Tracks:
   remove_items_from_pool: {}
 
 Spyro 2:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Choose the completion goal.
-    # Ripto - Collect enough orbs to open the arena and beat Ripto.
-    # 64 Orb - Collect 64 orbs and beat Ripto.
-    # 100 Percent - Collect all talismans, orbs, and gems and beat Ripto.
-    #     In Open World mode, no talismans are required.
-    # 10 Tokens - Collect 8000 gems and 55 orbs to unlock the theme park
-    #     and collect all 10 tokens in Dragon Shores.
-    # All Skillpoints - Collect all 16 skill points in the game.
-    # Epilogue - Unlock the full epilogue by collecting all 16 skill points
-    #     and defeating Ripto.
-    ripto: 50
-    64_orb: 0
-    100_percent: 0
-    10_tokens: 0
-    all_skillpoints: 0
-    epilogue: 0
-
-  guaranteed_items:
-    # Guarantees that the specified items will be in the item pool
-    {}
-
-  death_link:
-    # Spyro will die when a DeathLink is
-    # received and will send them on his death.
-    # Not every death will trigger a DeathLink,
-    # and not every received DeathLink will kill Spyro.
-    'false': 50
-    'true': 0
-
-  #####################
-  # Enabled Locations #
-  #####################
-  enable_25_pct_gem_checks:
-    # Adds checks for getting 25% of the gems in a level
-    'false': 50
-    'true': 0
-
-  enable_50_pct_gem_checks:
-    # Adds checks for getting 50% of the gems in a level
-    'false': 50
-    'true': 0
-
-  enable_75_pct_gem_checks:
-    # Adds checks for getting 75% of the gems in a level
-    'false': 50
-    'true': 0
-
-  enable_gem_checks:
-    # Adds checks for getting all gems in a level
-    'false': 50
-    'true': 0
-
-  enable_total_gem_checks:
-    # Adds checks for every 500 gems you collect total.
-    # Gems currently paid to Moneybags do not count
-    # towards your total. Logic assumes you pay Moneybags everywhere
-    # you can so you cannot be locked out of checks.
-    'false': 50
-    'true': 0
-
-  max_total_gem_checks:
-    # The highest number of total gems that can be required
-    # for Total Gem Count checks. Has no effect if
-    # Enable Total Gem Count Checks is disabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 500
-    # Maximum value is 10000
-    4000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-500-10000: 0 # random value between 500 and 10000
-
-  enable_gemsanity:
-    # Adds checks for each individual gem.
-    # If Moneybagssanity is off, all Moneybags prices will be set to 0 in game.
-    # Full requires the host to edit allow_full_gemsanity
-    #     in their yaml file, as it is very disruptive.
-    # Off: Individual gems are not checks.
-    # Partial: Only some number of randomly chosen gems become checks. For every
-    #     level with loose gems (not speedways), Gem Bundle items giving
-    #     gems for that level will be added to the pool.
-    # Full: All gems are checks.
-    'off': 50
-    partial: 0
-    full: 0
-
-  gemsanity_item_locations:
-    # Should gem items be shuffled only
-    # in your world, or spread across the entire multiworld.
-    # Global is more disruptive to other players.
-    local: 50
-    global: 0
-
-  gemsanity_reward_type:
-    # Adds item rewards to the pool to match the applicable gem locations.
-    # Gems: If Gemsanity is set to FULL, each gem location in the game will have
-    #     its individual matching gem added to the item pool. Applies only to
-    #     full gemsanity. Choosing this slows down generation significantly.
-    # Bundles: Adds items that grant a number of gems for an individual level
-    #     to the item pool.
-    #     If Gemsanity=FULL, extra gem locations may contain other/filler items.
-    #     If Gemsanity=PARTIAL, This option is selected automatically
-    gems: 0
-    bundles: 50
-
-  gemsanity_gem_bundle_size:
-    # Define the amount of gems awarded by each Gem Bundle item.
-    # Determines how many items are added to the item pool.
-    # Determines how many gem locations are randomly selected if
-    #     Gemsanity is set to Partial (adds one location per bundle item).
-    # WARNING: Selecting an option smaller than 25 requires the host to
-    #     edit allow_full_gemsanity in their yaml file.
-    # Default (50):adds 8 Gem Bundles per Level to the Item Pool (168 Total)
-    # 10: 40 Bundles/Level (840 Total) ,  16: 25 Bundles/level (525 Total)
-    # 20: 20 Bundles/Level (420 Total) ,  25: 16 Bundles/Level (336 Total)
-    # 40: 10 Bundles/Level (210 Total) ,  50: 8 Bundles/Level (168 Total)
-    # 80: 5 Bundles/Level (105 Total)  ,  100: 4 Bundles/Level (84 Total)
-    '10': 0
-    '16': 0
-    '20': 0
-    '25': 0
-    '40': 0
-    '50': 50
-    '80': 0
-    '100': 0
-
-  enable_skillpoint_checks:
-    # Adds checks for getting skill points
-    'false': 50
-    'true': 0
-
-  enable_life_bottle_checks:
-    # Adds checks for getting life bottles
-    'false': 50
-    'true': 0
-
-  enable_spirit_particle_checks:
-    # Adds checks for getting all spirit particles in a level.
-    # Some minigame enemies are counted as spirit particles,
-    # like Draclets in Crystal Glacier. Some enemies only release
-    # spirit particles while the camera is on them.
-    'false': 50
-    'true': 0
-
-  ####################
-  # Game Progression #
-  ####################
-  enable_open_world:
-    # If on, Crush and Gulp do not require talismans.
-    # Removes talisman items from the pool.
-    # Effectively allows early access to each homeworld,
-    # though swim and climb may logicially lock progression.
-    'false': 50
-    'true': 0
-
-  start_with_abilities:
-    # The player will start with swim, climb, headbash.
-    'false': 50
-    'true': 0
-
-  open_world_warp_unlocks:
-    # The player will start with warps to all 3 worlds.
-    # Only has an effect in open world mode.
-    'false': 50
-    'true': 0
-
-  level_lock_options:
-    # Rules for unlocking each level.
-    # Glimmer, homeworlds, and bosses always have their vanilla requirements.
-    # If Moneybagssanity is off, sets prices to 0 to ensure beatable seeds.
-    # Vanilla: Levels are available if you meet the vanilla requirements.
-    # Keys: Levels are unlocked by finding "Unlock" items.
-    #     Note: you may need to increase the number of locations (for example,
-    #     by adding gem checks) to provide spots for the keys.
-    vanilla: 50
-    keys: 0
-
-  level_unlocks:
-    # How many level unlocks the player starts with.
-    # The player always has access to Glimmer, homeworlds, and bosses.
-    # Only has an effect when level locks are on.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 22
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-22: 0 # random value between 0 and 22
-
-  ripto_door_orbs:
-    # How many orbs are required to unlock the door to Ripto.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 64
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-64: 0 # random value between 0 and 64
-
-  moneybags_settings:
-    # Settings for Moneybags unlocks.
-    # Vanilla - Pay Moneybags to progress as usual
-    # Moneybagssanity - You cannot pay Moneybags at all and must        find unlock items to progress. Glimmer Bridge
-    #     is excluded to avoid issues with early game randomization.
-    vanilla: 50
-    moneybagssanity: 0
-
-  wt_warp_options:
-    # When warping to Winter Tundra from outside Crush or Gulp,
-    # reroutes the warp to inside the castle. Logically grants access
-    # to inner Winter Tundra.
-    # Represents planned vanilla functionality that was cut.
-    # Vanilla: Warps always go to outside the castle.
-    # Door: Warps inside the castle if you have unlocked the
-    #     door with headbash.
-    # Wall Orb: Warps inside the castle if you have the WT wall orb.
-    # Always: Warps always go to inside the castle. Logic will expect
-    #     homeworld navigation via Winter Tundra's castle warp.
-    vanilla: 50
-    door: 0
-    wall_orb: 0
-    always: 0
-
-  open_professor_door:
-    # Automatically open the Professor's door in Autumn Plains,
-    # which normally requires 8 orbs (normally bypassable with tricks).
-    # This door also affects the behavior of the warp from Crush to
-    # Autumn Plains. When the door is open, this warp will bring you
-    # next to Gulp, allowing you to skip needing climb to access the second
-    # half of Autumn Plains. This option is intended for use with
-    # open world with open world warps, but can be used without.
-    'false': 50
-    'true': 0
-
-  #############
-  # Item Pool #
-  #############
-  double_jump_ability:
-    # Settings for the unintended double jump ability, where jumping
-    # then pressing square without letting go of jump gains extra height.
-    # May impact logic on harder trick settings.
-    # Duckstation must be run in Interpreter mode for this to have any effect.
-    # Vanilla - Double Jump behaves normally.
-    # In Pool - Adds Double Jump to the item pool.
-    #     The ability is disabled until you acquire the item.
-    # Off - Double Jump is disabled.
-    vanilla: 50
-    in_pool: 0
-    'off': 0
-
-  permanent_fireball_ability:
-    # Settings for the Dragon Shores permanent fireball ability.
-    # May impact logic, even on the easiest trick settings.
-    # Vanilla - The fireball powerup in Dragon Shores behaves normally.
-    # In Pool - Adds Permanent Fireball to the item pool.
-    #     The Dragon Shores powerup does not work.
-    # Off - Permanent Fireball is disabled.
-    #     The Dragon Shores powerup does not work.
-    # Start With - You begin the game with fireball, as in New Game Plus.
-    vanilla: 50
-    in_pool: 0
-    'off': 0
-    start_with: 0
-
-  enable_filler_extra_lives:
-    # Adds extra lives to the item pool.
-    'false': 0
-    'true': 50
-
-  enable_destructive_spyro_filler:
-    # Adds to the item pool an item temporarily powering up
-    # Spyro so anything destructible he touches is destroyed.
-    # Affects enemies, strong chests, breakable walls, etc.
-    # Warning: Behavior is not consistent while charging.
-    'false': 50
-    'true': 0
-
-  enable_filler_color_change:
-    # Adds changing Spyro's color to the item pool.
-    'false': 50
-    'true': 0
-
-  enable_filler_big_head_mode:
-    # Adds turning on Big Head Mode and flat Spyro Mode
-    # to the item pool.
-    'false': 50
-    'true': 0
-
-  enable_filler_heal_sparx:
-    # Adds healing Sparx to the item pool.
-    # Sparx must be alive to be healed.
-    'false': 50
-    'true': 0
-
-  trap_filler_percent:
-    # The percentage of filler items that will be traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  enable_trap_damage_sparx:
-    # Adds damaging Sparx to the item pool.
-    # Cannot directly kill Spyro.
-    'false': 50
-    'true': 0
-
-  enable_trap_sparxless:
-    # Adds an item removing Sparx to the item pool.
-    'false': 50
-    'true': 0
-
-  enable_trap_invisibility:
-    # Adds turning Spyro invisible briefly to the item pool.
-    # Duckstation must be run in Interpreter mode for this to have any effect.
-    'false': 50
-    'true': 0
-
-  enable_trap_lazy_sparx:
-    # Adds making Sparx refuse to pick up gems for 30 seconds to the item pool.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Sparx Settings #
-  ##################
-  enable_progressive_sparx_health:
-    # Start the game with lower max health
-    # and add items to the pool to increase your max health.
-    # Off - The game behaves normally.
-    # Blue - Your max health starts at blue Sparx.
-    # Green - Your max health starts at green Sparx.
-    # Sparxless - Your max health starts at no Sparx.
-    # True Sparxless - Your max health is permanently Sparxless.
-    'off': 50
-    blue: 0
-    green: 0
-    sparxless: 0
-    true_sparxless: 0
-
-  enable_progressive_sparx_logic:
-    # Certain Sparx health amounts are expected before
-    # you are required to enter different levels.
-    # Aquaria Towers, Crush, and Autumn Plains expects green Sparx.
-    # Entering Skelos Badlands, Gulp, and Winter Tundra expects blue Sparx.
-    # Entering Ripto expects gold Sparx.
-    # This does nothing unless Enable Progressive Sparx Health Upgrades
-    # is set to blue, green, or Sparxless,
-    'false': 50
-    'true': 0
-
-  sparx_gem_finder:
-    # Settings for Sparx's gem finder ability.
-    # Vanilla - Holding L1+R1+R2 has Sparx point to the nearest gem.
-    #     Beating Ripto makes the effect permanent.
-    # In Pool - Adds Sparx Gem Finder to the item pool.
-    #     Behaves like Vanilla once you find the item.
-    # Off - Removes the ability for Sparx to point to gems.
-    vanilla: 50
-    in_pool: 0
-    'off': 0
-
-  extended_sparx_range:
-    # Settings for Extended Sparx range.
-    # Vanilla - Beating Ripto doubles Sparx's range.
-    # In Pool - Adds Extended Sparx Range to the item pool.
-    #     This item doubles Sparx's range.
-    #     Beating Ripto has no effect on your range.
-    vanilla: 50
-    in_pool: 0
-
-  extra_hit_point:
-    # Adds an extra hit point (equivalent to the in game cheat code)
-    # to the item pool. This does not affect progressive health logic.
-    # Has no effect when Progressive Sparx Health Upgrades are True Sparxless.
-    'false': 50
-    'true': 0
-
-  ###################
-  # Game Difficulty #
-  ###################
-  trick_difficulty:
-    # Determines which tricks, if any, are in logic.
-    # See https://github.com/Uroogla/S2AP/wiki/Tricks-and-Presets
-    # Off: Only dev-intended strategies are expected.
-    # Easy Tricks: Straightforward double jumps and fireball usage may be required.
-    # Medium Tricks: Standard speedrunning tricks, including more difficult
-    #     double jumps, may be required.
-    # Custom: Choose exactly which tricks are in logic.
-    'off': 50
-    easy_tricks: 0
-    medium_tricks: 0
-    custom: 0
-
-  custom_tricks:
-    # Set various tricks for logic.
-    # Only used if Trick Difficulty is Custom.
-    # Format as a comma-separated list of "nice" names:
-    # ["Sunny Beach Turtle Soup without Climb", "Crystal Glacier Bridge without Moneybags"].
-    # A full list of supported tricks can be found at:
-    # https://github.com/Uroogla/S2AP/blob/main/apworld/spyro2/LogicTricks.py
-    []
-
-  colossus_starting_goals:
-    # How many goals you start with in both Colossus orb challenges.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  idol_easy_fish:
-    # Red fish behave the same as other types of fish in Idol Springs.
-    'false': 50
-    'true': 0
-
-  hurricos_easy_lightning_orbs:
-    # Lightning thieves do not steal the orbs in Hurricos.
-    'false': 50
-    'true': 0
-
-  breeze_required_gears:
-    # How many gears you must collect to complete the trolley orb.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 50
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-50: 0 # random value between 1 and 50
-
-  scorch_bombo_settings:
-    # Settings for the Bombo orb in Scorch.
-    # Vanilla - Bombo behaves as normal.
-    # First Only - Complete the first (shortest) path to complete the orb.
-    # Attackless First Only - Complete the first (shortest) path to
-    #     complete the orb. Bombo will not attack.
-    vanilla: 50
-    first_only: 0
-    attackless_first_only: 0
-
-  fracture_require_headbash:
-    # Whether Hunter requires headbash to start Earthshaper Bash.
-    # Without headbash, this orb can be completed with fireball
-    # or the Fracture Easy Earthshapers setting.
-    # This changes the orb's logic.
-    'false': 0
-    'true': 50
-
-  fracture_easy_earthshapers:
-    # Removes the 7 earthshapers from the Alchemist area and
-    # reduces the maximum number of spirit particles in the level.
-    # Removes the headbash requirement from the Fracture Hills
-    # all spirit particles check. The second orb still requires
-    # headbash, unless Fracture Require Headbash is disabled.
-    'false': 50
-    'true': 0
-
-  magma_spyro_starting_popcorn:
-    # How many popcorn crystals you start with in each Hunter orb challenge.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9: 0 # random value between 0 and 9
-
-  magma_hunter_starting_popcorn:
-    # How many popcorn crystals Hunter starts with in each Hunter orb challenge.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 9
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-9: 0 # random value between 0 and 9
-
-  shady_require_headbash:
-    # Whether Free Hippos in Shady Oasis requires headbash to start.
-    # Without headbash, this orb can be completed with fireball.
-    # This changes the orb's logic.
-    'false': 0
-    'true': 50
-
-  easy_gulp:
-    # Spyro does double damage to Gulp.
-    'false': 50
-    'true': 0
-
-  #############
-  # Cosmetics #
-  #############
-  portal_gem_collection_color:
-    # Changes the color of the number that appears when gems are collected,
-    # as well as the text on portals.
-    default: 50
-    red: 0
-    green: 0
-    blue: 0
-    pink: 0
-    white: 0
-
-  gem_color:
-    # Changes the color of gem types (and some other items in game).
-    # Default: No changes.
-    # Shuffle: Mixes up the colors of gem types.
-    # Random Choice: Gem colors are randomly selected from a curated set of options.
-    # True Random: Gem colors are completely random.  This probably won't look great.
-    default: 50
-    shuffle: 0
-    random_choice: 0
-    true_random: 0
-
-  musicsanity:
-    # Shuffles most of the music in game.
-    # Off: No changes.
-    # Like With Like: Music is shuffled within its type:
-    #     Homeworld, Normal Level, Boss.
-    # Full: Music is shuffled regardless of type.
-    'off': 50
-    like_with_like: 0
-    full: 0
-
-  streamer_music:
-    # Streaming platforms sometimes mute VODs with the Autumn Plains
-    # or Winter Tundrea homeworld music.
-    # Replaces these with Summer Forest.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: ripto
+  guaranteed_items: {}
+  death_link: true
+  enable_25_pct_gem_checks: true
+  enable_50_pct_gem_checks: true
+  enable_75_pct_gem_checks: false
+  enable_gem_checks: false
+  enable_total_gem_checks: false
+  max_total_gem_checks: 4000
+  enable_skillpoint_checks: false
+  enable_life_bottle_checks: true
+  enable_spirit_particle_checks: false
+  enable_gemsanity: 'off'
+  gemsanity_item_locations: local
+  gemsanity_reward_type: bundles
+  gemsanity_gem_bundle_size: '50'
+  ripto_door_orbs: random
+  enable_open_world: false
+  open_world_warp_unlocks: false
+  start_with_abilities: true
+  wt_warp_options: vanilla
+  open_professor_door: false
+  level_lock_options: keys
+  level_unlocks: 8
+  moneybags_settings: vanilla
+  enable_filler_extra_lives: true
+  enable_destructive_spyro_filler: true
+  enable_filler_color_change: true
+  enable_filler_big_head_mode: true
+  enable_filler_heal_sparx: true
+  trap_filler_percent: 15
+  enable_trap_damage_sparx: true
+  enable_trap_sparxless: true
+  enable_trap_invisibility: true
+  enable_trap_lazy_sparx: true
+  double_jump_ability: vanilla
+  permanent_fireball_ability: in_pool
+  enable_progressive_sparx_health: 'off'
+  enable_progressive_sparx_logic: false
+  sparx_gem_finder: in_pool
+  extended_sparx_range: in_pool
+  extra_hit_point: false
+  trick_difficulty: 'off'
+  custom_tricks: []
+  colossus_starting_goals: 0
+  idol_easy_fish: true
+  hurricos_easy_lightning_orbs: true
+  breeze_required_gears: random
+  scorch_bombo_settings: first_only
+  fracture_require_headbash: true
+  fracture_easy_earthshapers: true
+  magma_spyro_starting_popcorn: 0
+  magma_hunter_starting_popcorn: 0
+  shady_require_headbash: true
+  easy_gulp: true
+  portal_gem_collection_color: random
+  gem_color: true_random
+  musicsanity: 'off'
+  streamer_music: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Spyro 3:
   ################
