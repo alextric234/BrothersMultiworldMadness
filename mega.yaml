@@ -41870,429 +41870,53 @@ Yu-Gi-Oh! Dungeon Dice Monsters:
   priority_locations: []
 
 ZALiA:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ################
-  # Item Options #
-  ################
-  randomize_item_locations:
-    # Items included in the mix: Main Items, Quest Items, Treasure Maps, Container Pieces, 1-Up Dolls.
-    'false': 0
-    'true': 50
-
-  randomize_pbag_locations:
-    # Include P-Bags in the mix.
-    'false': 50
-    'true': 0
-
-  randomize_key_locations:
-    # Include keys in the mix. Force-equips the Magical Key to its vanilla location.
-    # 
-    # To view key info: open the spell menu and hold the Y button.
-    # 
-    # Recommended to turn off Randomize Magical Key Location for this setting.
-    'false': 50
-    'true': 0
-
-  randomize_allkey_location:
-    # Includes the Magical/Skeleton Key in the shuffle instead of force-equipping it to
-    # its vanilla Great Palace location, letting it potentially turn up as an early item.
-    # Independent of Randomize Key Locations, which only affects the per-dungeon small keys.
-    'false': 50
-    'true': 0
-
-  limit_obscure_locations:
-    # Some item locations are obscure, making the time it takes to get to one fairly lengthy.
-    # 
-    # Enabling this limits the chance a progression item will be placed at an obscure location.
-    'false': 50
-    'true': 0
-
-  dark_room_difficulty:
-    # Controls whether dark rooms can be traversed without a light source.
-    # 
-    # 
-    # 0: CANDLE or FIRE required for every dark room — most restrictive.
-    # 
-    # 1: dark rooms of moderate difficulty can be traversed without light;
-    # 
-    #     only the hardest dark rooms require CANDLE or FIRE.
-    # 
-    # 2: CANDLE or FIRE is never required — all dark rooms passable without light.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 2
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-2: 0 # random value between 0 and 2
-
-  hard_logic_tricks:
-    # Allow precise/difficult tricks in the logic.
-    # 
-    # 
-    # Off (default): locations that can only be reached itemlessly through a very
-    # precise trick instead require the intended item.
-    # 
-    # On: precise alternatives are assumed, including itemless fire-pillar crossings
-    # and upthrust-less routes where GLOVE and JUMP are still required. Only enable if
-    # you are comfortable executing precise movement.
-    'false': 50
-    'true': 0
-
-  item_location_hints:
-    # NPCs and dialogue objects with a '?' above them will give a hint to the location of an item.
-    # 
-    # To view found hints: open the spell menu and hold the B button.
-    'false': 0
-    'true': 50
-
-  zelda_hint:
-    # Zelda gives a hint to the location of an item.
-    # 
-    # To view found hints: open the spell menu and hold the B button.
-    none: 50
-    flute: 0
-    magical_key: 0
-    jump_town: 0
-
-  hint_giver_percent:
-    # Percentage of in-game hint-givers (NPCs/objects marked with a '?') that actually
-    # give a useful item-location hint. The rest simply say they know nothing.
-    # 
-    # 100 = every hint-giver has a hint (the old behavior); 25 (default) = about a quarter do.
-    # 
-    # Has no effect if Item Location Hints is disabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #################
-  # Spell Options #
-  #################
-  shuffle_spells_among_wise_men:
-    # Shuffle which spell each Wise Man teaches you.
-    # 
-    # Spells stay locked to Wise Man locations -- only the town-to-spell mapping is randomized.
-    # 
-    # Ignored if Randomize Spell Locations is enabled.
-    'false': 50
-    'true': 0
-
-  randomize_spell_locations:
-    # Put spells into the general item/location pool instead of keeping them
-    # locked to Wise Man locations.
-    # 
-    # Spells can then turn up anywhere (dungeons,
-    # P-Bags, etc.), and Wise Men can give out any item instead of just a
-    # spell.
-    # 
-    # Overrides Shuffle Spells Among Wise Men.
-    'false': 50
-    'true': 0
-
-  randomize_spell_cost:
-    # Randomize spell MP costs. Variation: -25% to +10%.
-    'false': 0
-    'true': 50
-
-  ###################
-  # Dungeon Options #
-  ###################
-  randomize_dungeon_rooms:
-    # -NOT IMPLEMENTED- Randomize dungeon room layouts.
-    'false': 50
-    'true': 0
-
-  randomize_dungeon_locations:
-    # Assigns each overworld dungeon tile a dungeon from a shuffled list.
-    # 
-    # Includes all 7 1st Quest dungeons in the shuffle. Requires Item Rando enabled.
-    'false': 50
-    'true': 0
-
-  randomize_dungeon_boss:
-    # Assigns each of the 6 crystal dungeons a boss from a shuffled list.
-    # 
-    # Includes all 6 crystal dungeon bosses in the shuffle.
-    'false': 50
-    'true': 0
-
-  boss_item_locations:
-    # Add an extra randomized AP check at each palace boss, including Thunderbird.
-    # Crystal-palace checks trigger when the crystal is placed and on Thunderbird's death.
-    'false': 50
-    'true': 0
-
-  randomize_town_locations:
-    # Assigns each overworld town tile a town from a shuffled list.
-    # 
-    # Includes all 8 1st Quest towns in the shuffle.
-    'false': 50
-    'true': 0
-
-  randomize_dungeon_tileset:
-    # Assigns each dungeon graphics from a shuffled list.
-    # 
-    # Includes all original and custom dungeon graphics in the shuffle.
-    'false': 50
-    'true': 0
-
-  #################
-  # Enemy Options #
-  #################
-  enemy_difficulty:
-    # Difficulty rank of enemies that get randomized (1-4).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 4
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-4: 0 # random value between 1 and 4
-
-  enemy_randomization_method:
-    # How enemies are randomized:
-    # 
-    # Vanilla: no enemy randomization.
-    # 
-    # Spawns: shuffle enemy spawn locations (recommended).
-    # 
-    # Types: shuffle enemy types (may turn common enemies into much harder ones).
-    vanilla: 50
-    random_spawns: 0
-    random_types: 0
-
-  randomize_enemy_spawners:
-    # Shuffle the spawn locations of enemy spawners.
-    # 
-    # Drop spawners keep their vanilla locations, but the enemy that spawns from each drop is randomized.
-    'false': 50
-    'true': 0
-
-  enemy_enigma:
-    # Enemies transform into a random enemy instead of a basic Blue Slime when under the Enigma spell.
-    'false': 50
-    'true': 0
-
-  randomize_enemy_hp:
-    # Randomize enemy HP. Variation: -25% to +25%.
-    'false': 50
-    'true': 0
-
-  randomize_enemy_damage:
-    # Randomize enemy damage. Variation: -25% to +25%.
-    'false': 50
-    'true': 0
-
-  #################
-  # Other Options #
-  #################
-  randomize_level_cost:
-    # Randomize level-up costs. Variation: -25% to +25%.
-    'false': 0
-    'true': 50
-
-  randomize_xp:
-    # Randomize XP gains from enemies and P-Bags. Variation: -25% to +25%.
-    'false': 0
-    'true': 50
-
-  randomize_palette:
-    # Randomize color palettes. Can be adjusted in the options menu once in-game.
-    'false': 50
-    'true': 0
-
-  force_quit_penalty:
-    # Penalty for game-over warping:
-    # 
-    # On (Vanilla): XP loss of 75%.
-    # 
-    # Off (Recommended): no penalty.
-    # 
-    # 
-    # Game-over warping is when a game over is forced by holding LT+RT+SELECT.
-    # 
-    # Backtracking is much more likely in rando, so freely warping back to town saves time.
-    # 
-    # Note: losing all lives still incurs the vanilla 75% penalty.
-    'false': 0
-    'true': 50
-
-  starting_quest:
-    # Which quest to start on (Quest 1 or Quest 2).
-    quest_1: 50
-    quest_2: 0
-
-  starting_attack_level:
-    # What Attack level to start at.
-    # 
-    # Note: this is a handicap and does not affect randomization logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  starting_magic_level:
-    # What Magic level to start at.
-    # 
-    # Note: this is a handicap and does not affect randomization logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  starting_life_level:
-    # What Life level to start at.
-    # 
-    # Note: this is a handicap and does not affect randomization logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  kakusu_required_count:
-    # Number of Gold Slimes (Kakusu) required for their reward.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    7: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  kakusu_individual_location_count:
-    # Exposes this many of the 12 Gold Slime (Kakusu) kills as their own individual AP locations.
-    # 
-    # The remaining (unexposed) kills still count toward the bundled
-    # kakusu_required_count reward as before --
-    # 
-    # this option only adds extra locations, it never
-    # removes anything from the bundled reward's requirement.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  crystals_required_count:
-    # Number of crystals required to enter the Great Palace.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 6
-    6: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-6: 0 # random value between 0 and 6
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  randomize_item_locations: true
+  randomize_pbag_locations: false
+  randomize_key_locations: true
+  randomize_allkey_location: false
+  limit_obscure_locations: true
+  dark_room_difficulty: 0
+  hard_logic_tricks: false
+  item_location_hints: true
+  zelda_hint: flute
+  hint_giver_percent: 25
+  shuffle_spells_among_wise_men: false
+  randomize_spell_locations: false
+  randomize_spell_cost: true
+  randomize_dungeon_rooms: false
+  randomize_dungeon_locations: false
+  randomize_dungeon_boss: false
+  boss_item_locations: true
+  randomize_town_locations: false
+  randomize_dungeon_tileset: false
+  enemy_difficulty: 1
+  enemy_randomization_method: vanilla
+  randomize_enemy_spawners: false
+  enemy_enigma: false
+  randomize_enemy_hp: false
+  randomize_enemy_damage: false
+  randomize_level_cost: true
+  randomize_xp: true
+  randomize_palette: true
+  force_quit_penalty: false
+  starting_quest: quest_1
+  starting_attack_level: random
+  starting_magic_level: random
+  starting_life_level: random
+  kakusu_required_count: random
+  kakusu_individual_location_count: random
+  crystals_required_count: random
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Dark Souls III:
   progression_balancing: '50'
