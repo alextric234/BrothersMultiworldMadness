@@ -34795,666 +34795,78 @@ Spyro 3:
   priority_locations: []
 
 'Spyro: A Hero''s Tail':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  #############
-  # DEATHLINK #
-  #############
-  death_link:
-    # Determines DeathLink behavior.
-    # 
-    # disabled: Disabled.
-    # Shielded: The Butterfly Jar will protect you from a received DeathLink death, if you have it.
-    # Enabled: Enabled without shielding.
-    disabled: 50
-    shielded: 0
-    enabled: 0
-
-  death_link_amnesty:
-    # If DeathLink is enabled, this option decides how many in-game deaths need to occur before a DeathLink
-    # death is sent out to the multiworld. The game mod tracks your deaths on the pause menu's box labeled "DL:".
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  #######################
-  # GENERATION SETTINGS #
-  #######################
-  logging_level:
-    # This option lets you decide how much Spyro AHT generation information should be logged.
-    # The log will contain messages from all levels up to, and including, your choice. For example, "medium" will log low
-    # and medium messages, but not high or maximum messages. **Warning messages stemming from YAML issues are always logged.**
-    # 
-    # None: No additional logging beyond warnings.
-    # Low: Logs notable generation steps, such as "Checking if any minigames need vanilla rewards forced."
-    # Medium: Logs useful debugging information, such as listing your randomized shop prices. This is the default because
-    #   the information in these messages can be very helpful when making bug reports.
-    # High: Logs messages with extra generation logic, such as "Fire Breath has been placed into Starter Checks: Breath."
-    # Maximum: Logs with extreme detail, such as noting every single item created.
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-    maximum: 0
-
-  auto_corrections:
-    # This option decides the behavior of the generator if YAML issues are encountered. It is recommended to leave this
-    # set to fix_minor, especially if intending to randomize multiple options. Clashes stemming from this (such as having
-    # fireworks_goal on but having firework_checks disabled) are fixed by fix_minor.
-    # 
-    # halt: Generation will be strictly halted upon any sort of YAML issue.
-    # fix_minor: Only issues deemed minor will be fixed (such as the above example with fireworks_goal).
-    # fix_major: All issues will be fixed, even if it has a major impact (such as changing your starting realm to avoid an impossible start).
-    # 
-    # A full, detailed list of every scenario that can lead to a generation issue can be found on the project's wiki,
-    # linked below. auto_corrections is not capable of fixing issues with the base syntax of your YAML.
-    # https://github.com/PhoenixAki/PhoenixAP/wiki/Spyro:-AHT-1.2-%E2%80%90-List-of-auto_corrections-Fixes
-    halt: 0
-    fix_minor: 50
-    fix_major: 0
-
-  ########
-  # GOAL #
-  ########
+  progression_balancing: normal
+  accessibility: full
+  death_link: enabled
+  death_link_amnesty: 2
+  logging_level: medium
+  auto_corrections: fix_minor
   boss_goal:
-    # This option lets you add a requirement to defeat a number of bosses to your goal. You can enter "Random" to have
-    # a random selection of bosses chosen, even if you also choose a few bosses explicitly alongside "Random".
-    # 
-    # Note that this + all other goals are based on AHT checks. In specific circumstances, this can result in AHT registering
-    # goals unexpectedly early. See the below project wiki FAQ post for more info.
-    # https://github.com/PhoenixAki/PhoenixAP/wiki/Spyro:-AHT-1-%E2%80%90-Setup-Guide-&-FAQ#i-goaled-early-what-gives 
-    # 
-    # Valid Options: ["Gnasty Gnorc", "Ineptune", "Red", "Mecha-Red", "Random"]
-    ['Mecha-Red']
-
-  dark_gems_goal:
-    # This option lets you add a requirement to complete a number of Dark Gem checks to your goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 40
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-40: 0 # random value between 0 and 40
-
-  light_gems_goal:
-    # This option lets you add a requirement to complete a number of Light Gem checks to your goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  dragon_eggs_goal:
-    # This option lets you add a requirement to complete a number of Dragon Egg checks to your goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 80
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-80: 0 # random value between 0 and 80
-
-  fireworks_goal:
-    # This option lets you add a requirement to complete a number of firework checks to your goal.
-    # This requires firework_checks to be enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 22
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-22: 0 # random value between 0 and 22
-
-  shop_items_goal:
-    # This option lets you add a requirement to purchase a number of randomized shop items to your goal.
-    # This goal requires shop_randomization to be enabled. Keep in mind that the first randomized shop item is always free.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 56
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-56: 0 # random value between 0 and 56
-
-  locked_chests_goal:
-    # This option lets you add a requirement of opening a number of locked chests to your goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 52
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-52: 0 # random value between 0 and 52
-
-  exclude_chest_items:
-    # dragon_eggs_goal and light_gems_goal include locked chests which contain Dragon Eggs/Light Gems as valid ways to
-    # make goal progress. This option lets you limit dragon_eggs_goal and light_gems_goal to only count those which don't
-    # come from locked chests. Useful if wanting to have less direct requirement on chests for this seed.
-    disabled: 50
-    exclude_eggs: 0
-    exclude_light_gems: 0
-    exclude_both: 0
-
-  elders_goal:
-    # This option lets you add a requirement of talking to a number of elder dragons to your goal. You can enter "Random"
-    # to have a random selection of elders chosen, even if you also choose a few elders explicitly alongside "Random".
-    # 
-    # Valid Options: ["Elder Tomas", "Elder Magnus", "Elder Titan", "Elder Astor"]
-    []
-
-  minigames_goal:
-    # This option lets add minigame requirements to your goal. Next to each type, you can enter any of the following:
-    # - 0-8: you will need to complete this many of that minigame to goal.
-    # - random-on: picks a random number from 1-8.
-    # - random-off: 50% chance of a 0, 50% chance of a number 1-8.
-    Blink: 0
-    Sgt. Byrd: 0
-    Sparx: 0
-    Turret: 0
-
-  ####################
-  # CHECKS AND ITEMS #
-  ####################
-  open_world_mode:
-    # In the vanilla game, you can only teleport to a remote shop pad once you have physically reached it.
-    # open_world_mode lets you choose from a variety of ways to have shop pads become unlocked by Archipelago items.
-    # Any choice besides 'vanilla' requires enabling teleport_across_realms to prevent potential softlock scenarios.
-    # 
-    # vanilla: Shop pads are only unlocked by physically reaching them.
-    # full: All shop pads are unlocked from the start of the seed.
-    # randomized: Shop pads unlock through individual AP items e.g. "Dark Mine - Miner's Drop Shop Unlock".
-    # progressive_levels: Shop pads unlock per-level in vanilla game order e.g. "Progressive Crocovile Swamp Shop Unlock". 
-    # reverse_progressive_levels: Same as progressive_levels, but backwards vanilla order.
-    # full_level: All shop pads in a level will unlock at once through AP items. e.g. "Sunken Ruins - Shop Unlock".
-    # full_realm: All shop pads in a realm will unlock at once through AP items. e.g. "Icy Wilderness - Shop Unlock".
-    vanilla: 50
-    full: 0
-    randomized: 0
-    progressive_levels: 0
-    reverse_progressive_levels: 0
-    full_levels: 0
-    full_realms: 0
-
-  firework_checks:
-    # Enables 22 checks for flaming fireworks.
-    'false': 50
-    'true': 0
-
-  vanilla_minigame_rewards:
-    # This option lets you decide if you want any type of minigame to reward
-    # their vanilla Dragon Eggs and Light Gems instead of having randomized rewards.
-    # 
-    # Valid options: ["Sgt. Byrd", "Blink", "Turret", "Sparx"]
-    []
-
-  trap_percentage:
-    # This option decides how much of the junk item pool will contain traps, as a percentage out of 100.
-    # The resulting number of traps will always be rounded down, unless it is between 0-1, in which case it's rounded up.
-    # For example, if your seed needs 23 junk items, and you set trap_percentage to 50%, you would get 11 traps and 12 fillers.
-    # If you instead set trap_percentage to 4%, you would have 1 trap and 22 fillers.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  - Mecha-Red
+  dark_gems_goal: 0
+  light_gems_goal: 0
+  dragon_eggs_goal: 0
+  fireworks_goal: 0
+  shop_items_goal: 0
+  locked_chests_goal: 0
+  exclude_chest_items: disabled
+  elders_goal: []
+  open_world_mode: vanilla
+  firework_checks: false
+  vanilla_minigame_rewards: []
+  trap_percentage: 15
   filler_items:
-    # This option lets you choose which categories of filler (neutral-to-positive effect) items are enabled.
-    # 
-    # Dragon Eggs: These are considered filler due to having no impact on game progression.
-    # Breath Bombs: Fire, Electric, Water, and Ice Bombs. Bombs are only usable if you have their respective breath unlocked.
-    # Gem Packs: Gives a random amount of gems (400-600 or 800-1200 if you have double gems).
-    #   It is advised to disable gem packs if randomizing the shop, as gem logic does not account for them.
-    # Shinies: Items which do nothing, but have humorous names referencing things in the game and series.
-    # 
-    # Valid options: ["Dragon Eggs", "Breath Bombs", "Gem Packs", "Shinies"]
-    ['Dragon Eggs', 'Breath Bombs', 'Gem Packs', 'Shinies']
-
-  trap_items:
-    # This option lets you choose which trap items (neutral-to-negative effect) are enabled.
-    # Spam Call + Reverse Controls will be queued and triggered sequentially. Any trap received while offline
-    # will trigger (or get queued) upon next client reconnection.
-    # 
-    # Spam Call: A random line of Moneybags dialog + his shop music will play in-game for trap_length seconds.
-    # Reverse Controls: Flips the X and Y axis of both control sticks for trap_length seconds.
-    # Damage Sparx: You will take 1 hit of damage. If Sparx is gone, nothing happens (as in, this will never kill you).
-    #   Currently, this does not take away health from the minigame version of Sparx.
-    # Gem Tax: Takes away a random amount of gems (500-1000).
-    #   It is advised to disable gem tax if randomizing the shop, as gem logic does not account for them.
-    # 
-    # Valid options: ["Spam Call", "Reverse Controls", "Damage Sparx", "Gem Tax"]
-    []
-
-  trap_length:
-    # The Spam Call and Reverse Controls traps can run for a customizable number of seconds, which you can choose here.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 60
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-60: 0 # random value between 1 and 60
-
-  #################
-  # START OF GAME #
-  #################
+  - Breath Bombs
+  - Dragon Eggs
+  - Gem Packs
+  - Shinies
+  trap_items: []
+  trap_length: 30
   starting_breaths:
-    # Choose which breath(s) you want to start with.
-    # 
-    # If multiple breaths are listed, one will go into "Starter Checks: Breath", and the rest will go into your start inventory.
-    # "None" will start you with no breath, meaning "Starter Checks: Breath" will have a random item determined by Archipelago.
-    # If the list is left empty, 1 random breath will be chosen.
-    # 
-    # Valid Options: ["Fire Breath", "Electric Breath", "Water Breath", "Ice Breath", "None"]
-    ['Fire Breath']
-
-  movement_randomization:
-    # Choose whether to randomize each of the 3 base movement abilities (glide, swim, and charge).
-    # If any are randomized, you will start with a random item from Archipelago in their place.
-    # 
-    # Valid Options: ["Glide", "Swim", "Charge"]
-    []
-
+  - Fire Breath
+  movement_randomization: []
   starting_realms:
-    # Choose which realm(s) you will start with realm access cards for. 
-    # 
-    # If the list is left empty, 1 random realm will be chosen.
-    # If using full open_world_mode, you will start with all 4 access cards.
-    # If using non-full open_world_mode, non-starting realms will be unlocked via their "Depot" shop unlocks, instead of access cards.
-    #     
-    # Starting in Icy Wilderness with shop_randomization odd and no movement abilities randomized is disallowed due to restrictive starts.
-    # 
-    # Valid Options: ["Dragon Kingdom", "Lost Cities", "Icy Wilderness", "Volcanic Isle"]
-    ['Dragon Kingdom']
-
-  #################
-  # SHOP SETTINGS #
-  #################
-  shop_randomization:
-    # Determines whether to randomize Moneybags' shop. If not randomized, it will function identically to the vanilla game. 
-    # 
-    # If randomized, vanilla game shop items will be replaced with items from Archipelago. This has a few consequences:
-    #     - Double Gems, if enabled, is permanent once received, as is the Butterfly Jar (it replenishes on death if depleted).
-    #     - There is no limit to how many lockpicks you can hold at once. Same with ammo for breath bombs.
-    #     - Shop item prices will be the same everywhere i.e. remote shop pads will not upcharge you.
-    'false': 50
-    'true': 0
-
-  key_rings:
-    # This option decides whether you can purchase lockpicks or key rings, which are keys that open all locked chests in a level.
-    # 
-    # If shop_randomization is off, they will be placed in the shop, and locked chests will be in logic as soon as you have access to them.
-    # If shop_randomization is on, they will be placed into the world by Archipelago. Locked chests will be in logic as you collect each
-    #   level's key ring, or once you collect all 52 lockpicks.
-    'false': 50
-    'true': 0
-
-  shop_item_count:
-    # This option decides how many shop items you will have, if shop_randomization is on. The shop must have a minimum
-    # of 2 items to enable the gem logic system to function properly.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 56
-    18: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-56: 0 # random value between 2 and 56
-
-  shop_logic:
-    # When the shop is randomized, a series of "gem logic" rules tracks how many gems you have access to at all times.
-    # The generator uses these rules to determine how to logically spread out shop item purchases in one of 2 ways, determined by this option.
-    # 
-    # unordered: shop items will all have the same price. You can buy them in whatever order you wish, but the generator assumes
-    #   you will buy the items in order left -> right. This makes it possible to buy them in the "wrong" order which may require farming extra gems.
-    # ordered: shop items will instead display as "Unlocked at X Gems". Once you have X gems, the item will be free to purchase.
-    #   Prices will steadily increase to enforce a specific order of unlocking the items, removing the risk of getting logically softlocked.
-    # 
-    # Either way, the formula below is used to calculate your "base shop price", and your choice here determines the final prices.
-    # The first shop item is always free. If you don't fancy doing the math, you can tweak test seed(s) until you're happy with the prices.
-    # 
-    # ********************************FORMULA INFO (for the math nerds)********************************
-    # blink_gems_total = (20,203 - exclusions) * blink_gems%
-    # non_blink_enemies_total = 16,353 * non_blink_enemies%
-    # other_gems_total = (105,357 - exclusions) * other_gems%
-    #   If an individual minigame check is added to exclude_locations, the gems inside will be left out of the above
-    #   calculations so you aren't logically expected to get those gems. Works for Blink, Byrd, and Sparx minigames.
-    # gem_total = blink_gems_total + non_blink_enemies_total + other_gems_total
-    # base_shop_price = gem_total / (shop_item_count - 1)
-    # 
-    # If shop_logic is unordered, shop items will all cost base_shop_price, rounded down as needed.
-    # If shop_logic is ordered, shop items will cost base_shop_price * 1, base_shop_price * 2, etc., rounded down as needed.
-    # *************************************************************************************************
-    unordered: 50
-    ordered: 0
-
-  blink_gems:
-    # This option is used when shop_randomization is enabled. It lets you decide what % of gems from Blink minigames you want to
-    # be expected to collect. For example, a value of 50 means being expected to collect approximately 50% of such gems.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    75: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  non_blink_enemies:
-    # This option is used when shop_randomization is enabled. It lets you decide what % of gems from enemies you want
-    # to be expected to collect. This only applies to enemies in Spyro & Hunter levels.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    75: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  other_gems:
-    # This option is used when shop_randomization is enabled. It lets you decide what % of gems you want to be expected
-    # to collect from breakable containers, gems on the ground, and Sgt. Byrd + Sparx minigames.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    75: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  double_gems:
-    # This option is used when shop_randomization is enabled. It lets you enable or disable the permanent Double Gems item.
-    # Gem logic does not account for double gems, so if left enabled, you will collect gems faster than expected by logic.
-    enabled: 50
-    disabled: 0
-
-  #######################
-  # GATE & GADGET COSTS #
-  #######################
-  randomize_boss_lair_door_costs:
-    # Determines the Dark Gem cost for each boss lair.
-    # 
-    # default: Each boss lair has their vanilla cost (10/20/30/40).
-    # randomized: Randomly pick costs in the range defined by boss_lair_door_cost_min and boss_lair_door_cost_max.
-    # shuffle: Vanilla boss lair costs are shuffled between each other (still 10/20/30/40 but in a random order).
-    default: 50
-    randomized: 0
-    shuffle: 0
-
-  boss_lair_door_cost_min:
-    # Minimum cost for boss lairs, if set to randomized. Must be less than or equal to boss_lair_door_cost_max.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 40
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-40: 0 # random value between 1 and 40
-
-  boss_lair_door_cost_max:
-    # Maximum cost for boss lairs, if set to randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 40
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-40: 0 # random value between 1 and 40
-
-  boss_lair_forcing:
-    # This option decides if the generator should force boss lair(s) to have the most expensive Dark Gem costs.
-    # Such forcing takes place *after* costs have been decided through the above 3 options.
-    # 
-    # unchanged: Leaves boss lair costs untouched.
-    # gnasty_gnorc/ineptune/red/mecha_red: Swaps that boss's cost with the highest cost.
-    # automatic: Swaps all goal boss costs so that they are collectively the highest.
-    unchanged: 50
-    gnasty_gnorc: 0
-    ineptune: 0
-    red: 0
-    mecha_red: 0
-    automatic: 0
-
-  randomize_light_gem_door_costs:
-    # Determines the Light Gem cost for each Light Gem door.
-    # 
-    # default: Each door has their vanilla cost (20/45/70/95).
-    # randomized: Randomly pick costs in the range defined by light_gem_door_cost_min and light_gem_door_cost_max.
-    # shuffle: Each door has their vanilla cost shuffled with the others (still 20/45/70/95 but in a random order).
-    default: 50
-    randomized: 0
-    shuffle: 0
-
-  light_gem_door_cost_min:
-    # Minimum cost for light gem doors, if set to randomized. Must be less than or equal to light_gem_door_cost_max.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  light_gem_door_cost_max:
-    # Maximum cost for light gem doors, if set to randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  randomize_gadget_costs:
-    # Determines the Light Gem cost for each gadget. Listed in order of Ball Gadget -> Invincibility -> Supercharge.
-    # 
-    # default: Each gadget has their vanilla cost (8/24/40).
-    # randomized: Randomly picks costs in the range defined by gadget_cost_min and gadget_cost_max.
-    # shuffle: Each gadget has their vanilla cost shuffled with the others (still 8/24/40 but in a random order).
-    default: 50
-    randomized: 0
-    shuffle: 0
-
-  gadget_cost_min:
-    # Minimum cost for gadgets, if set to randomized. Must be less than or equal to gadget_cost_max.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  gadget_cost_max:
-    # Maximum cost for gadgets, if set to randomized.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  ###################
-  # QUALITY OF LIFE #
-  ###################
-  pause_menu_patch:
-    # The pause menu has 2 patches you can choose between which can help with escaping situations where you're stuck.
-    # Take note that each one has logic implications if using open_world_mode.
-    # 
-    # open_shop: pressing Y will open the shop display without needing to go to a shop physically. If using non-full open_world_mode,
-    #   this will auto-unlock your starting realm's "Depot" shop to prevent potential softlock scenarios.
-    # teleport_to_hub: pressing and holding Y will bring you to the current realm's realm teleporter. If using non-full open_world_mode,
-    #   this will be considered a valid alternative way to logically access a realm's hub level.
-    open_shop: 50
-    teleport_to_hub: 0
-
-  shop_pad_proximity_activation:
-    # When using non-full open_world_mode, shop pads only unlock via their unlock items. This can lead to situations where you
-    # can physically reach a shop pad but be unable to teleport back to it after, adding walking time on revisits.
-    # 
-    # This option lets you re-enable proximity-based activation of shop pads. If enabled, any shop that you physically reach can be teleported
-    # back to once you interact with them. This will result in each affected shop pad's unlock item becoming effectively an empty filler item.
-    'false': 50
-    'true': 0
-
-  hint_minigame_rewards:
-    # Whether to auto-hint a mini-game's rewards when talking to its NPC.
-    'false': 50
-    'true': 0
-
-  hint_boss_rewards:
-    # Whether to auto-hint a boss's rewards when their lair is opened.
-    'false': 50
-    'true': 0
-
-  hint_shop_items:
-    # Whether to auto-hint randomized shop items upon starting your save file.
-    'false': 50
-    'true': 0
-
-  hide_shop_item_names:
-    # Whether to hide the name of each randomized shop item (player name is still shown). This adds a mystery element to
-    # what item you'll get, at risk of wasting your gems on fillers/traps. Hinted shop checks will still show their item in the hint.
-    'false': 50
-    'true': 0
-
+  - Dragon Kingdom
+  shop_randomization: true
+  key_rings: true
+  shop_item_count: 18
+  shop_logic: unordered
+  blink_gems: 75
+  non_blink_enemies: 75
+  other_gems: 75
+  double_gems: enabled
+  randomize_boss_lair_door_costs: default
+  boss_lair_door_cost_min: 1
+  boss_lair_door_cost_max: 40
+  boss_lair_forcing: unchanged
+  randomize_light_gem_door_costs: default
+  light_gem_door_cost_min: 1
+  light_gem_door_cost_max: 100
+  randomize_gadget_costs: default
+  gadget_cost_min: 8
+  gadget_cost_max: 40
+  pause_menu_patch: open_shop
+  shop_pad_proximity_activation: true
+  hint_minigame_rewards: true
+  hint_boss_rewards: true
+  hint_shop_items: true
+  hide_shop_item_names: false
   easy_bosses:
-    # Toggles 'easy mode' for each boss, making them take triple damage to significantly shorten fights.
-    # Valid options: ["Gnasty Gnorc", "Ineptune", "Red", "Mecha-Red"]
-    ['Gnasty Gnorc', 'Ineptune', 'Red', 'Mecha-Red']
-
-  skip_cutscenes:
-    # Allows for skipping most cutscenes with the Y button.
-    'false': 0
-    'true': 50
-
-  skip_elevators:
-    # Replaces the long elevator waits to Cloudy Domain, Sunken Ruins and Magma Falls, with loading screens.
-    'false': 0
-    'true': 50
-
-  teleport_across_realms:
-    # Allows for teleporting to unlocked shop pads in any realm, from any realm. For example, you could
-    # teleport directly from Dragonfly Falls to Dark Mine without needing to use a hub realm teleporter.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Gnasty Gnorc
+  - Ineptune
+  - Mecha-Red
+  - Red
+  skip_cutscenes: true
+  skip_elevators: true
+  teleport_across_realms: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Stardew Valley:
   ################
