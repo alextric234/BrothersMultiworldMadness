@@ -40754,127 +40754,20 @@ Wario Land 4:
   start_inventory_from_pool: {}
 
 Warioworld:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Victory condition for the game.
-    # Final Boss: Defeat the Black Jewel after collecting a set amount of Big Key Fragments
-    final_boss: 50
-
-  big_key_fragments:
-    # How many Big Key Fragments are given on start?
-    # Recommended: 2 for a large pool of checks, 0 for a small or solo playthrough, set to 0 by default
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  endingtype:
-    # How many spritelings are needed for goal completion
-    # Silver ending (21) by default, you may change to other endings here:
-    # Plant: 0-1
-    # Wooden: 2-10
-    # Stone: 11-20
-    # Silver: 21-30
-    # Golden: 31-39
-    # Treasure: all 40
-    # or set your own!
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 40
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-40: 0 # random value between 0 and 40
-    plant: 0 # equivalent to 0
-    wooden: 0 # equivalent to 2
-    stone: 0 # equivalent to 11
-    silver: 50 # equivalent to 21
-    golden: 0 # equivalent to 31
-    treasure: 0 # equivalent to 40
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ring_link:
-    # Games that support ringlink will be able to send and retrieve 'rings' sent from another ringlink game.
-    # 
-    # 'Rings' in the context of Warioworld will be Coins.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: final_boss
+  big_key_fragments: 0
+  endingtype: silver
+  death_link: true
+  ring_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Wikipelago:
   ################
