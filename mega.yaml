@@ -25012,418 +25012,51 @@ OpenRCT2:
     []
 
 osu!:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  starting_songs:
-    # The number of songs that will be automatically unlocked at the start of a run.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  additional_songs:
-    # The total number of songs that will be placed in the randomization pool.
-    # - This does not count any starting songs or the goal song.
-    # Not all gamemodes have enough songs for the maximum amount on their own.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 15
-    # Maximum value is 400
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-15-400: 0 # random value between 15 and 400
-
-  additional_item_percentage:
-    # The percentage of songs that will have 2 items instead of 1 when completing them.
-    # Starting Songs will always have 2 items.
-    # Locations will be filled with duplicate songs if there are not enough items.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 100
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-100: 0 # random value between 50 and 100
-
-  disable_difficulty_reduction:
-    # Prevents plays using difficulty reduction mods from sending checks.
-    'false': 50
-    'true': 0
-
-  minimum_grade:
-    # If Enabled, only send checks for plays with a grade above this value.
-    # If using "CL" mod on Laser, will use Stable's Grading calculation.
-    'off': 50
-    ss: 0
-    s: 0
-    a: 0
-    b: 0
-    c: 0
-
-  difficulty_sync:
-    # Changes which difficulties of each beatmapset are able to send checks
-    # Off - Any difficulty of each Beatmapset will send a check.
-    # Strict_Any - Only difficulties that fall in your difficulty ranges will send checks
-    # Strict_Random - A randomly chosen difficulty within your range has to be played. To be used with /check_diff.
-    'off': 50
-    strict_any: 0
-    strict_random: 0
-
-  disallow_converts:
-    # Prevents Converts from sending checks. Reccomended if using strict difficulty Sync.
-    'false': 50
-    'true': 0
-
-  maximum_length:
-    # Maximum Length a Song can be, in seconds.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 2200
-    300: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-2200: 0 # random value between 0 and 2200
-
-  minimum_length:
-    # Minimum Length a Song can be, in seconds.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 2200
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-2200: 0 # random value between 0 and 2200
-
-  minimum_age:
-    # The newest year to pick beatmapsets from.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2007
-    # Maximum value is 2025
-    2025: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2007-2025: 0 # random value between 2007 and 2025
-
-  maximum_age:
-    # The oldest year to pick beatmapsets from.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2007
-    # Maximum value is 2025
-    2007: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2007-2025: 0 # random value between 2007 and 2025
-
-  exclude_standard:
-    # Ignores Standard beatmaps when Generating.
-    'false': 50
-    'true': 0
-
-  minimum_difficulty_standard:
-    # Atleast 1 beatmap of each included Beatmapset will have a difficulty between the Maximum and Minimum for an included Mode.
-    # Star Ratings are multipled by 100, ie: a Star Rating of 1.23 will be 123.
-    # Has No Effect if the given mode is Excluded.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  maximum_difficulty_standard:
-    # Maximum Difficulty for Standard beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  exclude_catch:
-    # Ignores Catch The Beat beatmaps when Generating.
-    'false': 50
-    'true': 0
-
-  minimum_difficulty_catch:
-    # Minimum Difficulty for Catch the Beat beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  maximum_difficulty_catch:
-    # Maximum Difficulty for Catch the Beat beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  exclude_taiko:
-    # Ignores Taiko beatmaps when Generating.
-    'false': 50
-    'true': 0
-
-  minimum_difficulty_taiko:
-    # Minimum Difficulty for Taiko beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  maximum_difficulty_taiko:
-    # Maximum Difficulty for Taiko beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  exclude_4k:
-    # Ignores 4-Key Mania beatmaps when Generating.
-    'false': 50
-    'true': 0
-
-  minimum_difficulty_4k:
-    # Minimum Difficulty for 4-Key Mania beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  maximum_difficulty_4k:
-    # Maximum Difficulty for 4-Key Mania beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  exclude_7k:
-    # Ignores 7-Key Mania beatmaps when Generating.
-    'false': 50
-    'true': 0
-
-  minimum_difficulty_7k:
-    # Minimum Difficulty for 7-Key Mania beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  maximum_difficulty_7k:
-    # Maximum Difficulty for 7-Key Mania beatmaps. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  exclude_other_keys:
-    # Ignores Mania beatmaps of Key Counts other than 4 and 7 when Generating.
-    'false': 50
-    'true': 0
-
-  minimum_difficulty_other:
-    # Minimum Difficulty for beatmaps of Key Counts other than 4 and 7. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  maximum_difficulty_other:
-    # Maximum Difficulty for beatmaps of Key Counts other than 4 and 7. Star Ratings are multipled by 100.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    1000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  performance_points_count_percentage:
-    # Collecting enough 'Performace Points' will unlock the goal song needed for completion.
-    # This option controls how many are in the item pool, based on the total number of songs.
-    # The 'Performance Points' in this multiworld are unrelated to your accounts PP Score.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 40
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-40: 0 # random value between 10 and 40
-
-  performance_points_win_count_percentage:
-    # The percentage of Performance Points in the item pool required to unlock the winning song.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 100
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-100: 0 # random value between 50 and 100
-
-  explicit_lyrics:
-    # Allows Songs with 18+ Lyrics to generate.
-    # While this can be played on the main Archipelago Server, Streaming them there is not reccomended.
-    'false': 50
-    'true': 0
-
-  enable_loved:
-    # Allows Loved Beatmaps to Appear when Generating. Not Reccomended with 'Disable Difficulty Reduction' Enabled.
-    'false': 50
-    'true': 0
-
-  shuffle_included_songs:
-    # Shuffles the songs in "Include Songs" to be randomly placed anywhere in the Rando.
-    # IF Enabled, included songs can appear as starting or goal songs.
-    # If Disabled, included songs will be added in ascending order by ID after the starting songs.
-    # IE: If you have 5 starting songs, the first ID will be song 6, the next will be song 6, etc.
-    'false': 50
-    'true': 0
-
-  include_songs:
-    # List of Beatmapset IDs to include, each replacing a Rando song.
-    []
-
-  exclude_songs:
-    # List of Beatmapset IDs to exclude. Listed Beatmapset IDs cannot appear in the Rando.
-    []
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  starting_songs: 5
+  additional_songs: 40
+  additional_item_percentage: 80
+  disable_difficulty_reduction: false
+  minimum_grade: 'off'
+  difficulty_sync: 'off'
+  disallow_converts: false
+  maximum_length: 300
+  minimum_length: 30
+  minimum_age: 2025
+  maximum_age: 2007
+  exclude_standard: false
+  minimum_difficulty_standard: 0
+  maximum_difficulty_standard: 1000
+  exclude_catch: false
+  minimum_difficulty_catch: 0
+  maximum_difficulty_catch: 1000
+  exclude_taiko: false
+  minimum_difficulty_taiko: 0
+  maximum_difficulty_taiko: 1000
+  exclude_4k: false
+  minimum_difficulty_4k: 0
+  maximum_difficulty_4k: 1000
+  exclude_7k: false
+  minimum_difficulty_7k: 0
+  maximum_difficulty_7k: 1000
+  exclude_other_keys: false
+  minimum_difficulty_other: 0
+  maximum_difficulty_other: 1000
+  performance_points_count_percentage: 20
+  performance_points_win_count_percentage: 80
+  explicit_lyrics: true
+  enable_loved: false
+  shuffle_included_songs: false
+  include_songs: []
+  exclude_songs: []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Outer Wilds:
   ################
