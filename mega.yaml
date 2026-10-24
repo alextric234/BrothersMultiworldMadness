@@ -1,6 +1,6 @@
 # Single-slot YAML: the game is chosen at random from every game below (equal weights).
 # Edit a weight in the `game:` block (0 = never) to bias or exclude a game.
-name: Player{number}
+name: player{number}man
 description: Random game from all templates
 game:
   A Hat in Time: 1
