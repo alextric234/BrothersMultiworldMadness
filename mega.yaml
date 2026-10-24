@@ -38438,153 +38438,24 @@ The Legend of Dragoon:
     []
 
 'The Legend of Spyro: Dawn of the Dragon':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  shuffle_chapter_order:
-    # Chapters are unlocked in a random order with the exception of Malefor's Lair which is always unlocked last.
-    'false': 50
-    'true': 0
-
-  shuffled_elements:
-    # Any elements added to this set will be unselectable until obtained via an item.
-    # Fire and Poison are unsupported by this feature due to a lack of checks prior to their use in the Catacombs.
-    # Use the Spyro/Cynder Elements Handling options for finer control.
-    []
-
-  spyro_elements_handling:
-    # Determines how to group Spyro's shuffled elements (Fire/Electricity/Ice/Earth).
-    # This option has no effect if none of Spyro's elements are present in Shuffled Elements.
-    # 
-    # Individual: Each shuffled element that belongs to Spyro is its own item.
-    # 
-    # All At Once: Every shuffled element that belongs to Spyro is obtained via the "Spyro's Elements" item.
-    individual: 50
-    all_at_once: 0
-
-  cynder_elements_handling:
-    # Determines how to group Cynder's shuffled elements (Poison/Fear/Wind/Shadow).
-    # This option has no effect if none of Cynder's elements are present in Shuffled Elements.
-    # 
-    # Individual: Each shuffled element that belongs to Cynder is its own item.
-    # 
-    # All At Once: Every shuffled element that belongs to Cynder is obtained via the "Cynder's Elements" item.
-    individual: 50
-    all_at_once: 0
-
-  learn_to_climb:
-    # Neither dragon can climb vines until it is enabled via the "Wall Climbing" item.
-    # This functionality extends to large objects that must be held onto and pulled with the chain.
-    # Examples of such objects include the raft in Valley of Avalar, the floodgate pistons in the Dam, and the hanging platforms in the Ruins of Warfang.
-    'false': 50
-    'true': 0
-
-  learn_to_wall_run:
-    # Neither dragon can run on walls until it is enabled via the "Wall Running" item.
-    'false': 50
-    'true': 0
-
-  learn_fury:
-    # One or both dragons cannot build the fury bar until it is enabled via an item.
-    # Use of fury breath via the Fury Armor's Set Bonus remains unaffected.
-    # Fury is required to pass phase 3 of the Malefor final boss fight.
-    # 
-    # Disabled: Both dragons can build the fury bar (vanilla behavior).
-    # 
-    # Spyro: Spyro cannot build fury until the "Spyro's Fury" item is obtained. Cynder remains unaffected.
-    # 
-    # Cynder: Cynder cannot build fury until the "Cynder's Fury" item is obtained. Spyro remains unaffected.
-    # 
-    # Both Together: Both dragons will not be able to build fury until the "Dragons' Fury" item is obtained.
-    # 
-    # Both Separate: Both dragons will not be able to build fury and can re-obtain them separately with the "Spyro's Fury" and "Cynder's Fury" items.
-    disabled: 50
-    spyro: 0
-    cynder: 0
-    both_together: 0
-    both_separate: 0
-
-  random_elite_elements:
-    # All 8 Elite Enemies will have the element required to break their masks randomized, with the color of the mask matching the newly randomized element.
-    # 
-    # Disabled: Elites will keep their vanilla elements and masks.
-    # 
-    # Random Normal: Elites will have a random element for each of their possible masks, with no duplicates.
-    # This means that Elites that had 2 or 3 possible elements in vanilla will have 2 or 3 different random possible elements.
-    # 
-    # Random Unique: Each Elite will have their own unique element. All 8 normal elements will be required to defeat all Elite Enemies.
-    disabled: 50
-    random_normal: 0
-    random_unique: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  shuffle_chapter_order: true
+  shuffled_elements: []
+  spyro_elements_handling: individual
+  cynder_elements_handling: individual
+  learn_to_climb: false
+  learn_to_wall_run: false
+  learn_fury: disabled
+  random_elite_elements: disabled
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 The Legend of Zelda - Oracle of Ages:
   ################
