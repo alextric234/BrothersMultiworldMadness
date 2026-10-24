@@ -31351,585 +31351,101 @@ Sly Cooper and the Thievius Raccoonus:
   priority_locations: []
 
 'SMW: Spicy Mycena Waffles':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_link_heart:
-    # Whenever DeathLinks are received they will be nullified at the cost of a heart
-    'false': 50
-    'true': 0
-
-  damage_link:
-    # Damage is shared across slots
-    'false': 50
-    'true': 0
-
-  trap_link:
-    # Whether your received traps are linked to other players
-    'false': 50
-    'true': 0
-
-  energy_link:
-    # Allows players to contribute to the EnergyLink pool by collecting coins
-    # 
-    # Players can exchange EnergyLink coins for consumable items
-    'false': 0
-    'true': 50
-
-  early_climb:
-    # Force Climb to appear early in the seed as a local item.
-    # 
-    # This is particularly useful to prevent BK when Level Shuffle is disabled
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # Determines the goal of the seed
-    # 
-    # Bowser: Find a certain number of Yoshi Eggs, reach Bowser's Castle and defeat Bowser
-    # 
-    # Yoshi's House: Find a certain number of Yoshi Eggs and bring them back to Yoshi's House
-    bowser: 50
-    yoshi_house: 0
-
-  yoshi_egg_count:
-    # Amount of Golden Yoshi Eggs that can be found anywhere in the multiworld/itempool.
-    # 
-    # The amount of eggs rolled by this option will be added to the amount of eggs created by the Local Golden Yoshi Eggs option
-    # and both of them will not exceed the 255 egg limit.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 255
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-255: 0 # random value between 0 and 255
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  death_link_heart: false
+  damage_link: true
+  trap_link: true
+  energy_link: true
+  early_climb: true
+  goal: bowser
+  yoshi_egg_count: 50
+  percentage_of_yoshi_eggs: 85
   yoshi_egg_placement:
-    # Forces Golden Yoshi Eggs into specific level exits.
-    # This option will create a new location in each level that's valid, that way it doesn't disturb your potential Priority Locations
-    # in said regions. Similar to how Boss Tokens operated before.
-    # 
-    # The "Every Level" option has priority over the others, creating an at least 96 egg game.
-    # 
-    # The amount of eggs rolled by this option will be added to the amount of eggs created by the yoshi_egg_count option
-    # and both of them will not exceed the 255 egg limit.
-    ['Castles', 'Switch Palaces', 'Ghost Houses', 'Special Zone']
-
-  percentage_of_yoshi_eggs:
-    # What Percentage of Yoshi Eggs are required to finish.
-    # 
-    # This option will sum yoshi_egg_placement and yoshi_egg_count, then it'll calculate the required amount from that egg count.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    85: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  #########
-  # Logic #
-  #########
+  - Castles
+  - Ghost Houses
+  - Special Zone
+  - Switch Palaces
   ability_shuffle:
-    # Which abilities and items will be added as items in the item pool
-    # If an ability is not present in the list they will be treated as unlocked from the start
-    ['Run', 'Carry', 'Swim', 'Spin Jump', 'Climb', 'P-Balloon', 'Yoshi', 'Powerups', 'Super Star', 'P-Switch', 'Item Box', 'Yellow Switch Palace', 'Green Switch Palace', 'Red Switch Palace', 'Blue Switch Palace', 'Special World']
-
-  game_logic_difficulty:
-    # Makes difficult levels expect the player to have certain amount of powerups in order to beat them
-    # 
-    # Easy: Hard levels require Mushroom + (Item box or Midway Points);
-    #       Harder levels require Fire Flower + (Extra Defense or Item box or Midway Points)
-    # Medium: Hard levels require Mushroom;
-    #         Harder levels require Mushroom + (Item box or Midway Points)
-    # Hard: No powerups or other items are required in any level to be beaten
-    easy: 0
-    medium: 50
-    hard: 0
-
-  alternate_logic:
-    # Alternate logic for certain locations.
-    []
-
-  inventory_yoshi_logic:
-    # Whether being able to use Yoshi inventory items is considered in logic or not for Yoshi related logic
-    # If disabled, you need to reach a level with a Yoshi block on it in order to have Yoshi related checks in logic.
-    'false': 50
-    'true': 0
-
-  decoupled_yoshi_carry:
-    # Whether Yoshi's Tongue requires an additional Progressive Yoshi item to be unlocked or not.
-    # If disabled, Yoshi will be able to use his tongue immediately after unlocking him.
-    'false': 0
-    'true': 50
-
-  decoupled_wall_run_anywhere:
-    # Whether Wall Run Anywhere requires an additional Progressive Run item or not.
-    # If disabled, Mario will gain the ability right after getting a Run item.
-    'false': 0
-    'true': 50
-
-  decoupled_fast_swimming:
-    # Whether Fast Swimming requires an additional Progressive Swim item or not.
-    # If disabled, Mario will gain the ability right after getting a Swim item.
-    'false': 0
-    'true': 50
-
-  luigi_physics:
-    # Enables SMA2 Luigi physics.
-    # WARNING: Logic does not account for those physics and probably never will.
-    'false': 50
-    'true': 0
-
-  ####################
-  # Location Options #
-  ####################
-  dragon_coin_checks:
-    # Whether collecting 5 Dragon Coins in each level will grant a check
-    'false': 50
-    'true': 0
-
-  moon_checks:
-    # Whether collecting a 3-Up Moon in a level will grant a check
-    'false': 50
-    'true': 0
-
-  hidden_1up_checks:
-    # Whether collecting a hidden 1-Up mushroom in a level will grant a check
-    # 
-    # These checks are considered cryptic as there's no actual indicator that they're in their respective places
-    # 
-    # Enable this option at your own risk
-    'false': 50
-    'true': 0
-
-  star_block_checks:
-    # Whether collecting a prize from a Star Block in a level will grant a check
-    'false': 50
-    'true': 0
-
-  midway_point_checks:
-    # Whether collecting a Midway Point in a level will grant a check
-    'false': 50
-    'true': 0
-
-  room_checks:
-    # Whether visiting a room in levels will grant a check
-    'false': 50
-    'true': 0
-
+  - Blue Switch Palace
+  - Carry
+  - Climb
+  - Green Switch Palace
+  - Item Box
+  - P-Balloon
+  - P-Switch
+  - Powerups
+  - Red Switch Palace
+  - Run
+  - Special World
+  - Spin Jump
+  - Super Star
+  - Swim
+  - Yellow Switch Palace
+  - Yoshi
+  game_logic_difficulty: medium
+  alternate_logic: []
+  inventory_yoshi_logic: false
+  decoupled_yoshi_carry: true
+  decoupled_wall_run_anywhere: true
+  decoupled_fast_swimming: true
+  luigi_physics: false
+  dragon_coin_checks: true
+  moon_checks: true
+  hidden_1up_checks: false
+  star_block_checks: true
+  midway_point_checks: true
+  room_checks: true
   block_checks:
-    # Whether hitting a block with an item or coin inside will grant a check
-    # 
-    # Note that some blocks are excluded due to how the option and the game works!
-    # Exclusion list:
-    #   * Blocks in Top Secret Area & Front Door/Bowser Castle
-    #   * Blocks that are unreachable unless you glitch your way in
-    ['Coin Blocks', 'Item Blocks', 'Yellow Switch Palace Blocks', 'Green Switch Palace Blocks', 'Invisible Blocks', 'P-Switch Blocks', 'Flying Blocks']
-
-  ###################
-  # Level Shuffling #
-  ###################
-  starting_location:
-    # Which location is your starting one
-    # May interact incorrectly with forced Collects
-    # Will throw errors on certain option combinations, please test your YAML
-    yoshis_island: 50
-    donut_plains: 0
-    vanilla_dome: 0
-    forest_of_illusion: 0
-    special_zone: 0
-
-  level_shuffle:
-    # Whether levels are shuffled
-    'false': 50
-    'true': 0
-
-  level_effects:
-    # How many levels will receive a permanent random trap effect in them
-    # Which traps are going to be used is going to be determined by their trap weight
-    # 
-    # Valid traps: Ice, Reverse, Screen Flip, Pixelate, Spotlight, Invisibility
-    # 
-    # Setting Game Logic Difficulty option to easy or medium is recommended.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  carryless_exits:
-    # Swaps some Keyholes with a Red Goal Orb which triggers the Secret Exit upon touching it
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 18
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-18: 0 # random value between 0 and 18
-
-  swap_exit_count:
-    # How many levels will have their exits swapped
-    # 
-    # Star World 5 and Donut Secret House are excluded from this feature
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 22
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-22: 0 # random value between 0 and 22
-
-  swap_donut_gh_exits:
-    # If enabled, this option will swap which overworld direction the two exits of the level at the Donut Ghost House overworld tile go:
-    # 
-    # False: Normal Exit goes up, Secret Exit goes right.
-    # 
-    # True: Normal Exit goes right, Secret Exit goes up.
-    # 
-    # This option has priority over Swap Level Exits.
-    'false': 0
-    'true': 50
-
-  map_teleport_shuffle:
-    # Whether map teleports (stars and pipes) are shuffled
-    'off': 50
-    on_only_stars: 0
-    on_only_pipes: 0
-    on_both_same_type: 0
-    on_both_mix: 0
-
-  map_transition_shuffle:
-    # Wheter map transitions are shuffled
-    'false': 50
-    'true': 0
-
-  enemy_shuffle:
-    # Shuffles around enemies.
-    'false': 50
-    'true': 0
-
-  bowser_castle_doors:
-    # How the doors of Bowser's Castle behave
-    # 
-    # Vanilla: Front and Back Doors behave as vanilla
-    # 
-    # Fast: Both doors behave as the Back Door
-    # 
-    # Slow: Both doors behave as the Front Door
-    # 
-    # "Front Door" rooms depend on the `bowser_castle_rooms` option
-    # 
-    # "Back Door" only requires going through the dark hallway to Bowser
-    vanilla: 50
-    fast: 0
-    slow: 0
-
-  bowser_castle_rooms:
-    # How the rooms of Bowser's Castle Front Door behave
-    # 
-    # Vanilla: You can choose which rooms to enter, as in vanilla
-    # 
-    # Random Two Room: Two random rooms are chosen
-    # 
-    # Random Five Room: Five random rooms are chosen
-    # 
-    # Gauntlet: All eight rooms must be cleared
-    # 
-    # Labyrinth: Which room leads to Bowser?
-    vanilla: 0
-    random_two_room: 50
-    random_five_room: 0
-    gauntlet: 0
-    labyrinth: 0
-
-  boss_shuffle:
-    # How bosses are shuffled
-    # 
-    # None: Bosses are not shuffled
-    # 
-    # Simple: Four Reznors and the seven Koopalings are shuffled around
-    # 
-    # Full: Each boss location gets a fully random boss
-    # 
-    # Singularity: One or two bosses are chosen and placed at every boss location
-    none: 50
-    simple: 0
-    full: 0
-    singularity: 0
-
-  ##################
-  # Junk and Traps #
-  ##################
-  junk_fill_percentage:
-    # Replace a percentage of non-required Yoshi Eggs in the item pool with random junk items
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  trap_fill_percentage:
-    # Replace a percentage of junk items in the item pool with random traps
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ice_trap_weight:
-    # Likelihood of a receiving a trap which causes the level to become slippery
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  stun_trap_weight:
-    # Likelihood of a receiving a trap which briefly stuns Mario
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  literature_trap_weight:
-    # Likelihood of a receiving a trap which causes the player to read literature
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  timer_trap_weight:
-    # Likelihood of a receiving a trap which causes the timer to run low
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  reverse_trap_weight:
-    # Likelihood of a receiving a trap which causes the controls to be reversed in the current level
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  thwimp_trap_weight:
-    # Likelihood of a receiving a trap which causes a Thwimp to spawn above the player
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  fishin_trap_weight:
-    # Likelihood of a receiving a trap which causes a Fishin' Boo to spawn above the player
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  screen_flip_trap_weight:
-    # Likelihood of a receiving a trap which causes the screen to flip vertically
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  sticky_floor_trap_weight:
-    # Likelihood of a receiving a trap which causes the floor become sticky
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  sticky_hands_trap_weight:
-    # Likelihood of a receiving a trap which causes the player's hands become sticky
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  pixelate_trap_weight:
-    # Likelihood of a receiving a trap which causes a the entire screen become pixelated
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  spotlight_trap_weight:
-    # Likelihood of a receiving a trap which causes a spotlight to appear on the player's position
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  bullet_time_trap_weight:
-    # Likelihood of a receiving a trap which slows down the game
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  invisibility_trap_weight:
-    # Likelihood of a receiving a trap which makes the player invisible
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  empty_item_box_trap_weight:
-    # Likelihood of a receiving a trap which removes the item in the item box
-    none: 0
-    low: 0
-    medium: 50
-    high: 0
-
-  ##############
-  # Aesthetics #
-  ##############
-  display_received_item_popups:
-    # What messages to display in-game for items received
-    none: 0
-    all: 0
-    progression: 0
-    progression_minus_yoshi_eggs: 50
-
-  music_shuffle:
-    # Music shuffle type
-    # 
-    # None: No Music is shuffled
-    # 
-    # Consistent: Each music track is consistently shuffled throughout the game
-    # 
-    # Full: Each individual level has a random music track
-    # 
-    # Singularity: The entire game uses one song for overworld and one song for levels
-    none: 50
-    consistent: 0
-    full: 0
-    singularity: 0
-
-  sfx_shuffle:
-    # Shuffles almost every instance of sound effect playback
-    # 
-    # Archipelago elements that play sound effects aren't randomized
-    # 
-    # None: No SFX are shuffled
-    # 
-    # Full: Each individual SFX call has a random SFX
-    # 
-    # Singularity: The entire game uses one SFX for every SFX call
-    none: 50
-    full: 0
-    singularity: 0
-
-  mario_palette:
-    # Mario palette color
-    mario: 50
-    luigi: 0
-    wario: 0
-    waluigi: 0
-    geno: 0
-    princess: 0
-    dark: 0
-    sponge: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Coin Blocks
+  - Flying Blocks
+  - Green Switch Palace Blocks
+  - Invisible Blocks
+  - Item Blocks
+  - P-Switch Blocks
+  - Yellow Switch Palace Blocks
+  bowser_castle_doors: vanilla
+  bowser_castle_rooms: random_two_room
+  level_effects: 0
+  level_shuffle: true
+  starting_location: random
+  map_teleport_shuffle: 'off'
+  map_transition_shuffle: false
+  carryless_exits: 0
+  swap_exit_count: 0
+  swap_donut_gh_exits: true
+  boss_shuffle: none
+  enemy_shuffle: true
+  junk_fill_percentage: 100
+  trap_fill_percentage: 15
+  ice_trap_weight: medium
+  stun_trap_weight: medium
+  literature_trap_weight: medium
+  timer_trap_weight: medium
+  reverse_trap_weight: medium
+  thwimp_trap_weight: medium
+  fishin_trap_weight: medium
+  screen_flip_trap_weight: medium
+  sticky_floor_trap_weight: medium
+  sticky_hands_trap_weight: medium
+  pixelate_trap_weight: medium
+  spotlight_trap_weight: medium
+  bullet_time_trap_weight: medium
+  invisibility_trap_weight: medium
+  empty_item_box_trap_weight: medium
+  display_received_item_popups: progression_minus_yoshi_eggs
+  music_shuffle: full
+  sfx_shuffle: full
+  mario_palette: random
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 SOH-EXTREME:
   ################
