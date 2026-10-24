@@ -34488,406 +34488,49 @@ Soul Blazer:
     []
 
 Spicy Meatball Overdrive:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Choose your victory condition.
-    # 
-    # mushroom_kingdom: full game. Collect moons, clear Bowser, and arrive in the
-    #     Mushroom Kingdom (default).
-    # festival: shorter game ending at the New Donk City Festival. Drops every
-    #     kingdom past Metro, every Metro moon except the seven on the festival
-    #     story path (Mechawiggler, the four band members, Powering Up the
-    #     Station, and A Traditional Festival! itself), and the 15 captures that
-    #     only exist in post-Metro kingdoms.
-    mushroom_kingdom: 50
-    festival: 0
-
-  capturesanity:
-    # Shuffle all captures into the pool.
-    # Each 'Capture: X' location only grants its check once you've received the matching X capture
-    # item — capturing an enemy you haven't unlocked yanks Mario back out and grants no credit.
-    'false': 50
-    'true': 0
-
-  talkatoo_mode:
-    # Talkatoo% mode: Talkatoo's speech bubble names 3 of YOUR AP-pool moons from the current
-    # kingdom, refilling as you collect them. Composable with the other include_* / capturesanity
-    # toggles — those still define which moons enter the pool; this option only changes how
-    # Talkatoo points at them. Non-AP moons are pre-marked as collected on save load so the world
-    # physically contains only AP locations (NOTE: destructive to the save; reserve this mode for
-    # AP-only playthroughs).
-    'false': 50
-    'true': 0
-
-  difficult_mode:
-    # Difficult Mode: For non-beginners who know how to do certain 'hard' tricks, aka Dino Skip,
-    # jump long gaps with good movement, skip certain captures that are otherwise 'required' in a casual playthrough,
-    # and other things that any casual player might not do in their first playthrough.
-    # ONLY FOR EXPERIENCED PLAYERS!!!
-    'false': 50
-    'true': 0
-
-  include_cap_peace_moons:
-    # Turn off to skip the small set of Cap Kingdom moons that are either only available after
-    # the kingdom's story is complete or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_cascade_peace_moons:
-    # Turn off to skip Cascade Kingdom moons that are only available after the kingdom's story
-    # is complete or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_sand_peace_moons:
-    # Turn off to skip Sand Kingdom moons that are only available after the kingdom's story
-    # is complete (Tostarena moon-rock state) or are otherwise tedious to track down.
-    # Removes ~22 locations. Set together with multiple other 'include_...' toggles set to false,
-    # generation may fail.
-    'false': 0
-    'true': 50
-
-  include_lake_peace_moons:
-    # Turn off to skip Lake Kingdom moons that are only available after the kingdom's story
-    # is complete (Lake Lamode moon-rock state) or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_wooded_peace_moons:
-    # Turn off to skip Wooded Kingdom moons that are only available after the kingdom's story
-    # is complete (Steam Gardens moon-rock state) or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_lost_peace_moons:
-    # Turn off to skip Lost Kingdom moons that are only available after the kingdom's story
-    # is complete or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_metro_peace_moons:
-    # Turn off to skip Metro Kingdom moons that are only available after the kingdom's story
-    # (the New Donk City festival) is complete or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_snow_peace_moons:
-    # Turn off to skip Snow Kingdom moons that are only available after the kingdom's story
-    # is complete (Shiveria moon-rock state) or are otherwise tedious to track down.
-    # Removes ~18 locations. Set together with multiple other 'include_...' toggles set to false,
-    # generation may fail.
-    'false': 0
-    'true': 50
-
-  include_seaside_peace_moons:
-    # Turn off to skip Seaside Kingdom moons that are only available after the kingdom's story
-    # is complete (Bubblaine moon-rock state) or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_luncheon_peace_moons:
-    # Turn off to skip Luncheon Kingdom moons that are only available after the kingdom's story
-    # is complete (Mount Volbono moon-rock state) or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_bowsers_peace_moons:
-    # Turn off to skip Bowser's Kingdom moons that are only available after the kingdom's story
-    # is complete or are otherwise tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_cloud_peace_moons:
-    # Turn off to skip Cloud Kingdom side moons (e.g. Picture Match) that are tedious to track down.
-    'false': 0
-    'true': 50
-
-  include_deep_woods_moons:
-    # Turn off to skip the Wooded Kingdom Deep Woods moons (the foggy secret area):
-    # Rolling Rock / Glowing / Hard Rock in Deep Woods, By the Babbling Brook,
-    # Past the Peculiar Pipes, A Treasure Made from Coins, Beneath the Roots of the Moving Tree,
-    # Deep Woods Treasure Trap, Exploring for Treasure, Wandering in the Fog, Nut Hidden in the Fog.
-    'false': 0
-    'true': 50
-
-  include_minigame_moons:
-    # Turn off to skip RNG / minigame moons across kingdoms: Sand/Metro/Luncheon Kingdom Slots,
-    # Sand Quiz, Ocean Quiz, Sphynx's Treasure Vault, Beach Volleyball pair, Jump-Rope pair,
-    # Roulette Tower pair.
-    # Removes ~12 locations. Set together with multiple other 'include_...' toggles set to false,
-    # generation may fail.
-    'false': 0
-    'true': 50
-
-  include_hint_art_moons:
-    # Turn off to skip moons that require interpreting Hint Art murals from other kingdoms:
-    # every 'Found with X Kingdom Art' moon plus Sand: Walking the Desert!.
-    'false': 0
-    'true': 50
-
-  include_tourist_moons:
-    # Turn off to skip the 'A Tourist in the X Kingdom' moons that require chained visits
-    # to a list of other kingdoms in sequence.
-    'false': 0
-    'true': 50
-
-  include_long_course_moons:
-    # Turn off to skip long obstacle-course / precision-platforming moons: Lake Jump-Grab-Climb,
-    # Wooded Flooding Pipeway / Elevator / Flower Road, Sand Strange Neighborhood, Luncheon Spinning
-    # Athletics / Fork Flickin', Seaside Narrow Valley / Stretch, Bowser's Dashing Clouds.
-    # Removes ~20 locations. Set together with multiple other 'include_...' toggles set to false,
-    # generation may fail.
-    'false': 0
-    'true': 50
-
-  include_precision_capture_moons:
-    # Turn off to skip moons that hinge on tedious precise control of a specific capture:
-    # Sand Bullet Bill Maze pair, Sand Invisible/Transparent Maze pair, Sand Jaxi Driver / Stunt,
-    # Metro Sharpshooting Under Siege, Metro RC Car Pro!, Bowser's Jizo cluster, Bowser's Pokio
-    # 'Poking' cluster.
-    # Removes ~15 locations. Set together with multiple other 'include_...' toggles set to false,
-    # generation may fail.
-    'false': 0
-    'true': 50
-
-  cascade_moon_count:
-    # Number of Cascade Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Cascade moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Cascade-flavored moons. Floor
-    # is the smallest count that still satisfies the Cascade kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3
-    # Maximum value is 20
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3-20: 0 # random value between 3 and 20
-
-  sand_moon_count:
-    # Number of Sand Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Sand moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Sand-flavored moons. Floor
-    # is the smallest count that still satisfies the Sand kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 12
-    # Maximum value is 62
-    62: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-12-62: 0 # random value between 12 and 62
-
-  lake_moon_count:
-    # Number of Lake Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Lake moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Lake-flavored moons. Floor
-    # is the smallest count that still satisfies the Lake kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 6
-    # Maximum value is 27
-    27: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-6-27: 0 # random value between 6 and 27
-
-  wooded_moon_count:
-    # Number of Wooded Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Wooded moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Wooded-flavored moons. Floor
-    # is the smallest count that still satisfies the Wooded kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 12
-    # Maximum value is 50
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-12-50: 0 # random value between 12 and 50
-
-  lost_moon_count:
-    # Number of Lost Kingdom Power Moons in the AP item pool. Reducing this
-    # replaces the dropped Lost moons with filler — the AP checks themselves stay;
-    # the player just receives fewer Lost-flavored moons. Floor is the smallest
-    # count that still satisfies the Lost kingdom gate (Lost has no Multi-Moon,
-    # so the floor equals the threshold directly).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 21
-    21: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-21: 0 # random value between 10 and 21
-
-  metro_moon_count:
-    # Number of Metro Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Metro moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Metro-flavored moons. Floor
-    # is the smallest count that still satisfies the Metro kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 16
-    # Maximum value is 53
-    53: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-16-53: 0 # random value between 16 and 53
-
-  snow_moon_count:
-    # Number of Snow Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Snow moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Snow-flavored moons. Floor
-    # is the smallest count that still satisfies the Snow kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 8
-    # Maximum value is 34
-    34: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-8-34: 0 # random value between 8 and 34
-
-  seaside_moon_count:
-    # Number of Seaside Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Seaside moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Seaside-flavored moons. Floor
-    # is the smallest count that still satisfies the Seaside kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 8
-    # Maximum value is 50
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-8-50: 0 # random value between 8 and 50
-
-  luncheon_moon_count:
-    # Number of Luncheon Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Luncheon moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Luncheon-flavored moons. Floor
-    # is the smallest count that still satisfies the Luncheon kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 14
-    # Maximum value is 49
-    49: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-14-49: 0 # random value between 14 and 49
-
-  ruined_moon_count:
-    # Number of Ruined Kingdom Power Moons (and the Multi-Moon) in the AP item
-    # pool. Reducing this replaces the dropped Ruined moons with filler — the AP
-    # checks themselves stay; the player just receives fewer Ruined-flavored moons.
-    # Floor is the smallest count that still satisfies the Ruined kingdom gate
-    # (3 effective moons to repair the Odyssey and reach Bowser's Kingdom): one
-    # Multi-Moon alone clears it.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 4
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-4: 0 # random value between 1 and 4
-
-  bowsers_moon_count:
-    # Number of Bowser's Kingdom Power Moons (and Multi-Moons) in the AP item pool.
-    # Reducing this replaces the dropped Bowser's moons with filler — the AP checks
-    # themselves stay; the player just receives fewer Bowser's-flavored moons. Floor
-    # is the smallest count that still satisfies the Bowser's kingdom gate.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 6
-    # Maximum value is 38
-    38: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-6-38: 0 # random value between 6 and 38
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: mushroom_kingdom
+  capturesanity: true
+  talkatoo_mode: false
+  difficult_mode: false
+  include_cap_peace_moons: true
+  include_cascade_peace_moons: true
+  include_sand_peace_moons: true
+  include_lake_peace_moons: true
+  include_wooded_peace_moons: true
+  include_lost_peace_moons: true
+  include_metro_peace_moons: true
+  include_snow_peace_moons: true
+  include_seaside_peace_moons: true
+  include_luncheon_peace_moons: true
+  include_bowsers_peace_moons: true
+  include_cloud_peace_moons: true
+  include_deep_woods_moons: true
+  include_minigame_moons: true
+  include_hint_art_moons: true
+  include_tourist_moons: true
+  include_long_course_moons: true
+  include_precision_capture_moons: true
+  cascade_moon_count: 20
+  sand_moon_count: 62
+  lake_moon_count: 27
+  wooded_moon_count: 50
+  lost_moon_count: 21
+  metro_moon_count: 53
+  snow_moon_count: 34
+  seaside_moon_count: 50
+  luncheon_moon_count: 49
+  ruined_moon_count: 4
+  bowsers_moon_count: 38
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Spirit Tracks:
   ################
