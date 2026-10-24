@@ -37485,263 +37485,58 @@ The Frog For Whom The Bell Tolls:
     []
 
 The Grinch:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  #############
-  # Item Pool #
-  #############
-  progressive_vacuums:
-    # Determines whether you get access to main areas progressively.
-    # If enabled, you will receive Whoville, Who Forest, Who Dump, and Who Lake in that order.
-    'false': 50
-    'true': 0
-
-  starting_area:
-    # Here, you can select which area you'll start the game with.
-    # Whichever one you pick is the region you'll have access to at the start of the Multiworld.
-    # If "progressive_vacuums" is enabled, this is not considered and will always start in Whoville.
-    whoville: 50
-    who_forest: 0
-    who_dump: 0
-    who_lake: 0
-
-  gadget_rando:
-    # Determines whether the Grinch's gadgets will be randomized or not.
-    # Disabling this will give you every gadget at the start from gadgets_to_randomize.
-    'false': 0
-    'true': 50
-
+  progression_balancing: normal
+  accessibility: full
+  progressive_vacuums: true
+  starting_area: whoville
+  gadget_rando: true
   gadgets_to_randomize:
-    # If "gadget_rando" is enabled, gadgets that you add to the dictionary will
-    # be randomized.
-    ['Binoculars', 'Rotten Egg Launcher', 'Rocket Spring', 'Slime Shooter', 'Octopus Climbing Device', 'Marine Mobile', 'Grinch Copter']
-
-  exclude_gc:
-    # Tired of getting Grinch Copter? This option ensures Grinch Copter is
-    # entirely taken out from the multiworld.
-    # Note that locations that hard require Grinch Copter will also be removed.
-    'false': 50
-    'true': 0
-
-  move_rando:
-    # Determines whether the Grinch's moves will be randomized or not.
-    # Disabling this will give you every gadget at the start from moves_to_randomize.
-    'false': 50
-    'true': 0
-
+  - Binoculars
+  - Grinch Copter
+  - Marine Mobile
+  - Octopus Climbing Device
+  - Rocket Spring
+  - Rotten Egg Launcher
+  - Slime Shooter
+  exclude_gc: true
+  move_rando: true
   moves_to_randomize:
-    # If "move_rando" is enabled, the Grinch's moves that you add to the dictionary will be randomized.
-    ['Pancake', 'Bad Breath', 'Seize', 'Max', 'Sneak']
-
-  randomize_mission_items:
-    # Allows mission specific items to be randomized in the itempool.
-    # NOTE: Excluding Submarine World from `exclude_environments` will still require
-    # you to enter the region to collect the Twin-End Tuba.
-    # NOTE: Disabling this adds the locations and will not add their items to the
-    # item pool. Enabling this removes these locations and adds the items.
-    'false': 0
-    'true': 50
-
-  randomize_sleigh_parts:
-    # Allows the sleigh parts to be randomized in the itempool.
-    # NOTE: Disabling this adds the locations and will not add their items to the
-    # item pool. Enabling this removes these locations and adds the items.
-    'false': 0
-    'true': 50
-
-  #####################
-  # Location Settings #
-  #####################
-  missionsanity:
-    # Adds individual tasks of a particular mission as locations.
-    'false': 50
-    'true': 0
-
-  exclude_environments:
-    # Allows entire environments to be entirely removed to ensure you are not
-    # logically required to enter the environment along with any and all checks
-    # that are in that environment too.
-    # 
-    # Valid keys: "Post Office", "Clock Tower", "City Hall", "Ski Resort",
-    # "Civic Center", "Minefield", "Power Plant", "Generator Building",
-    # "Scout's Hut", "North Shore", "Mayor's Villa", "Submarine World"
-    []
-
-  giftsanity:
-    # Determines if individual gifts are checks
-    # NOTE: This currently only disables the missions relating to squashing all
-    # gifts for an entire region.
-    'false': 50
-    'true': 0
-
-  supadow_minigames:
-    # Enables completing minigames through the Supadows in Mount Crumpit as checks.
-    # NOTE: Each difficulty will need to be played separately.
-    # These are not mixed with other difficulties for how locations get checked
-    none: 50
-    easy: 0
-    hard: 0
-    real_tough: 0
-
-  misc_checks:
-    # Adds locations that aren't specifically categorized and are either random
-    # events or just unnecessarily added locations that don't mean anything.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Logic Settings #
-  ##################
-  advanced_logic:
-    # Enables logic to allow skips, damage boosts, glitches, game restarts,
-    # excessive egg usage, and various other unintentional ways that beginners
-    # wouldn't grasp on their first playthrough if this is enabled to be considered
-    # logical.
-    'false': 50
-    'true': 0
-
-  ##################
-  # In-Game Tweaks #
-  ##################
-  unlimited_eggs:
-    # Determine if you run out of rotten eggs when you utilize your gadgets.
-    # This will also give 1 nitro egg/thistle per 0.5 seconds if in their respective regions.
-    # NOTE: Attempting to enable this with ringlink will force generation to stop
-    # until either option is disabled.
-    'false': 50
-    'true': 0
-
-  music_rando:
-    # Randomizes all music in the game
-    'false': 50
-    'true': 0
-
-  reduced_cutscenes:
-    # Certain cutscenes no longer trigger if enabled for a faster experience
-    'false': 50
-    'true': 0
-
-  teleport_multibind:
-    # Enables functionality to directly teleport back to Mount Crumpit on command.
-    # To teleport, you must be in the notebook and hold start followed by L1 + R1
-    'false': 50
-    'true': 0
-
-  ########################
-  # Filler/Trap Settings #
-  ########################
+  - Bad Breath
+  - Max
+  - Pancake
+  - Seize
+  - Sneak
+  randomize_mission_items: true
+  randomize_sleigh_parts: true
+  missionsanity: true
+  exclude_environments: []
+  giftsanity: false
+  supadow_minigames: none
+  misc_checks: false
+  advanced_logic: false
+  unlimited_eggs: true
+  music_rando: false
+  reduced_cutscenes: true
+  teleport_multibind: true
   filler_weight:
-    # Determines which filler is added to the pool.
+    5 Rotten Eggs: 50
     10 Rotten Eggs: 25
     20 Rotten Eggs: 25
-    5 Rotten Eggs: 50
-
-  trap_percentage:
-    # Determines how much filler is replaced with traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  trap_percentage: 15
   trap_weight:
-    # Determines which traps are replaced with filler in the pool.
-    Depletion Trap: 34
     Dump it to Crumpit: 33
     Who sent me back?: 33
-
-  ring_link:
-    # Whenever this is toggled, your ammo is linked with other ringlink-compatible
-    # games that also have this enabled.
-    # Due to instability, ringlink will not give you eggs if you are in either the
-    # Sleigh Ride or any of the minigames in Mount Crumpit.
-    # NOTE: Attempting to enable this with unlimited_eggs will force generation
-    # to stop until either option is enabled.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    # NOTE: Due to instability, you will not be able to send or receive deaths if you are in the following areas:
-    # 
-    # Mount Crumpit, Sleigh Ride, any minigame in Mount Crumpit, Clock Tower, City Hall, and Post Office
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+    Depletion Trap: 34
+  ring_link: true
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 The Guardian Legend:
   ################
