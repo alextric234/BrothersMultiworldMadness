@@ -44967,3 +44967,27 @@ Castlevania - Aria of Sorrow:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+Castlevania - Harmony of Dissonance:
+  progression_balancing: normal
+  accessibility: full
+  medium_ending_required: false
+  worst_ending_required: false
+  best_ending_required: true
+  furniture_amount_required: 0
+  area_shuffle: none
+  decouple_transitions: false
+  link_door_types: false
+  early_lizard: true
+  spellbound_boss_logic: normal
+  castle_warp_condition: bracelet
+  death_link: true
+  double_sided_warps: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
