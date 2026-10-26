@@ -44825,3 +44825,24 @@ Brotato:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Bubble Bobble:
+  progression_balancing: normal
+  accessibility: full
+  separate_super_bubble_bobble_levels: false
+  lock_super_bubble_bobble_levels: false
+  lock_two_player_mode: false
+  require_best_ending: false
+  increase_starting_lives_weight: random
+  timer_trap_weight: random
+  filler_weight: random
+  deathlink: true
+  deathlinktrigger: true
+  deathlinkresult: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
