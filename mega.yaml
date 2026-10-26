@@ -44968,3 +44968,127 @@ Clique:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Crypt of the NecroDancer:
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  death_link_type: tempo
+  trap_link: true
+  traplink_excluded_traps:
+  - InstantDeathTrap
+  - TutorialTrap
+  goal: story
+  all_zones_goal_clear: 6
+  zones_goal_clear: 24
+  golden_lute_shards_goal_clear: 10
+  lute_shards_in_pool: 13
+  victory_trigger: ensemble
+  expensive_purchase_price: 150
+  all_zones_speedrun_times:
+    Cadence: -1
+    Melody: -1
+    Aria: -1
+    Dorian: -1
+    Eli: -1
+    Monk: -1
+    Dove: -1
+    Coda: -1
+    Bolt: -1
+    Bard: -1
+    Nocturna: -1
+    Diamond: -1
+    Mary: -1
+    Tempo: -1
+    Reaper: -1
+    Klarinetta: -1
+    Chaunter: -1
+    Suzu: -1
+    Hatsune Miku: -1
+    Shovel Knight: -1
+  permanent_health_upgrades: 8
+  zone_progress_checks: 2
+  dlc:
+  - Synchrony
+  include_materials: false
+  included_extra_modes: []
+  include_codex_checks: true
+  include_shrine_checks: true
+  items_per_zone: 8
+  item_generation_chance: 25
+  include_flawless_chest_checks: false
+  shop_rows: small
+  lobby_npc_items: false
+  starting_inventory: reduced
+  zone_access_keys: progressive
+  starting_zone: zone_1
+  starting_character: cadence
+  character_blacklist:
+  - Bolt
+  - Coda
+  character_unlocks: item_only
+  include_unique_items: false
+  lock_character_room: false
+  buff_items: false
+  trap_percentage: 20
+  trap_weights:
+    Animal Trap: 40
+    Bald Trap: 50
+    Bomb Trap: 20
+    Camera Trap: 70
+    Chaos Trap: 40
+    Confusion Trap: 30
+    Cursed Trap: 30
+    Cutscene Trap: 70
+    Dad Trap: 40
+    Damage Trap: 70
+    Dead Ringer Trap: 10
+    Disarm Trap: 40
+    Double Damage Trap: 20
+    Earth Trap: 70
+    Frank Trap: 10
+    Freddy Trap: 60
+    Freeze Trap: 50
+    Gold Scatter Trap: 80
+    Haunted Shopkeeper Trap: 70
+    Hot Coals Trap: 50
+    Ice Floor Trap: 30
+    Isometric Trap: 40
+    Leaping Trap: 40
+    Market Crash Trap: 30
+    Marv Trap: 40
+    Monkey Trap: 60
+    No Return Trap: 40
+    One Hit Trap: 10
+    Shake Trap: 70
+    Shrink Trap: 30
+    Spotlight Trap: 40
+    Summon Trap: 80
+    Swap Trap: 40
+    Tar Trap: 50
+    Teleport Trap: 40
+    Tempo Trap: 70
+    Timer Trap: 30
+    Transmute Trap: 40
+    Trap Trap: 40
+    Undo Trap: 40
+    Wall Pig Trap: 30
+  death_link_trigger: game_over
+  price_randomization: vanilla
+  price_ranges:
+    random_min: 1
+    random_max: 10
+    filler_min: 1
+    filler_max: 4
+    useful_min: 2
+    useful_max: 8
+    progression_min: 4
+    progression_max: 10
+  diamond_exchange_rate: default
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
