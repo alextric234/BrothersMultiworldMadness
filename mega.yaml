@@ -44846,3 +44846,16 @@ Bubble Bobble:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Bugs Bunny Lost in Time:
+  progression_balancing: normal
+  accessibility: full
+  goal: present_day
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
