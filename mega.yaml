@@ -45218,3 +45218,67 @@ Dark Souls II:
   start_hints: []
   start_location_hints: []
   priority_locations: []
+
+Dark Souls Remastered:
+  progression_balancing: normal
+  accessibility: full
+  enable_deathlink: true
+  goal_condition: gwyn
+  guaranteed_items: {}
+  excluded_location_behavior: forbid_useful
+  can_warp_without_lordvessel: true
+  warp_to_all_bonfires: true
+  ghost_difficulty: rickert_sells_curses
+  soul_multiplier_base: 200
+  soul_multiplier_max: 300
+  soul_multiplier_steps: 0
+  weight_multiplier_base: 100
+  weight_multiplier_min: 100
+  weight_multiplier_steps: 0
+  fogwall_sanity: true
+  boss_fogwall_sanity: false
+  boss_soul_shuffle: true
+  boss_humanity_shuffle: true
+  boss_bone_shuffle: false
+  bk_weapon_shuffle: true
+  lizard_shuffle: false
+  unlimited_shop_item_shuffle: true
+  limited_shop_item_shuffle: true
+  shop_hints: progression
+  logic_to_access_firelink_altar: frampt
+  logic_to_access_catacombs: ornstein_and_smough
+  logic_to_access_totg: skull_lantern
+  randomize_starting_loadouts: true
+  randomize_starting_gifts: true
+  require_one_handed_starting_weapons: true
+  extra_starting_weapon_for_melee_classes: false
+  extra_starting_shield_for_all_classes: false
+  starting_sorcery: any
+  starting_miracle: heal
+  starting_pyromancy: any
+  no_weapon_requirements: false
+  no_spell_stat_requirements: false
+  no_miracle_covenant_requirements: true
+  upgraded_weapons_percentage: 0
+  upgraded_weapons_allowed_infusions:
+  - Chaos
+  - Crystal
+  - Divine
+  - Enchanted
+  - Fire
+  - Lightning
+  - Magic
+  - Normal
+  - Occult
+  - Raw
+  upgraded_weapons_adjusted_levels: true
+  upgraded_weapons_min_level: 0
+  upgraded_weapons_max_level: 15
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
