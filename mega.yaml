@@ -45156,3 +45156,37 @@ Crystalis:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+Dark Cloud 1:
+  progression_balancing: normal
+  accessibility: full
+  boss_goal: random
+  all_bosses: false
+  memory_count: random
+  open_dungeon: open
+  progressive_chars: true
+  extra_char_buildings: false
+  starter_weapons: true
+  miracle_sanity: true
+  shop_sanity: true
+  fish_sanity: none
+  floor_sanity: none
+  gem_set: false
+  abs_multiplier: triple
+  attach_multiplier: one_and_half
+  attach_mult_config: all
+  auto_build: hundo
+  death_link: true
+  toan_name: Toan
+  xiao_name: Xiao
+  goro_name: Goro
+  ruby_name: Ruby
+  ungaga_name: Ungaga
+  osmond_name: Osmond
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
