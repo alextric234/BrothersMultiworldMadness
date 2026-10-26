@@ -44605,3 +44605,29 @@ Bomberman The Second Attack:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Bomberman Hero:
+  progression_balancing: normal
+  accessibility: full
+  adok_bombs: 24
+  game_goal: bagular
+  stage_total: 67
+  max_adok: 28
+  two_stage: false
+  random_sounds: false
+  random_sky: true
+  random_music: false
+  clear_points: 3
+  item_powerups: true
+  item_health: true
+  gem_check_total: 5
+  needed_gem: 100
+  radio: true
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
