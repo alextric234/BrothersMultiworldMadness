@@ -15423,125 +15423,23 @@ Pizza Tower:
   priority_locations: []
 
 Plok:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  fleasanity:
-    # Adds killing fleas as extra checks
-    'false': 50
-    'true': 0
-
-  queen_items:
-    # Number of Mcguffin items required to reach the Flea Queen
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 4
-    # Maximum value is 13
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-4-13: 0 # random value between 4 and 13
-
-  start_lives:
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  single_item_stage_progression:
-    # When enabled will combined all the stage progression items into 4 'Progressive Unplok' items.
-    'false': 0
-    'true': 50
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ####################
-  # Gameplay Options #
-  ####################
-  random_music:
-    'false': 50
-    'true': 0
-
-  random_limbsfx:
-    'false': 50
-    'true': 0
-
-  random_color:
-    # Randomizes colors
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  fleasanity: false
+  queen_items: random
+  random_music: false
+  random_limbsfx: false
+  random_color: true
+  start_lives: 9
+  single_item_stage_progression: true
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Pokemon Black and White:
   progression_balancing: normal
