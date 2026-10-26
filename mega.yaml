@@ -49,7 +49,6 @@ game:
   Celeste (Open World): 1
   Celeste 64: 1
   Celeste: 1
-  Chrono Trigger Jets of Time: 1
   Civilization V: 1
   Civilization VI: 1
   Clique: 1
@@ -8625,128 +8624,6 @@ Celeste:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
-
-Chrono Trigger Jets of Time:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  seed_share_link:
-    # Game share link from the ctjot web generator
-    '': 50
-
-  game_mode:
-    # Game mode chosen by the user.
-    '': 50
-
-  item_difficulty:
-    # Game mode chosen by the user.
-    '': 50
-
-  tab_treasures:
-    # All treasures are replaced with tabs.
-    'false': 50
-    'true': 0
-
-  bucket_fragments:
-    # Enable the placement of Bucket Fragments.
-    'false': 50
-    'true': 0
-
-  fragment_count:
-    # Total number of bucket fragments to place
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  items:
-    # List of key items to be randomized
-    []
-
-  region_list:
-    # List of regions and their locations
-    {}
-
-  char_locations:
-    # Character recruitment locations
-    []
-
-  rules:
-    # Access rules for the chosen locations
-    {}
-
-  victory:
-    # Victory conditions for the chosen game mode
-    []
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
 
 Civilization V:
   progression_balancing: normal
@@ -44226,6 +44103,1209 @@ Tetris Attack:
   versus_mode: goal_progressive
   versus_easy_bowser: true
   music_filter: disable_no_music
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Bomberman 64:
+  progression_balancing: normal
+  accessibility: full
+  gold_cards: 45
+  max_cards: 50
+  game_goal: altair
+  open_stages: false
+  difficulty: normal
+  palace_on: false
+  boss_card_five: kill_count_reduction
+  death_link: true
+  random_music: false
+  random_sound: false
+  color: random
+  head_part: random
+  body_part: random
+  arm_left_part: random
+  arm_right_part: random
+  leg_left_part: random
+  leg_right_part: random
+  enemy_model: 'off'
+  enemy_ai: 'off'
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Bomberman The Second Attack:
+  progression_balancing: normal
+  accessibility: full
+  game_goal: noah
+  noah_open: generators
+  planet_required: 5
+  noah_boss: sthertoth
+  include_warkeys: false
+  start_element: random_element
+  start_planet: 2
+  death_link: true
+  reduce_food: true
+  pommysanity: true
+  shopsanity: true
+  powersanity: false
+  pommyshop: true
+  include_traps: true
+  random_music: false
+  random_sound: false
+  random_efx: false
+  chara_model: random
+  guardian_helmet: random
+  guardian_vest: random
+  guardian_arms: random
+  guardian_legs: random
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Bomberman Hero:
+  progression_balancing: normal
+  accessibility: full
+  adok_bombs: 24
+  game_goal: bagular
+  stage_total: 67
+  max_adok: 28
+  two_stage: false
+  random_sounds: false
+  random_sky: true
+  random_music: false
+  clear_points: 3
+  item_powerups: true
+  item_health: true
+  gem_check_total: 5
+  needed_gem: 100
+  radio: true
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Bomberman Quest:
+  progression_balancing: normal
+  accessibility: full
+  game_goal: engines
+  death_link: true
+  open_regions: true
+  save_heal: true
+  sneakers_start: true
+  fire_start: false
+  health_start: 5
+  sound_shuffle: false
+  music_shuffle: false
+  palette_random: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Borderlands 2:
+  progression_balancing: normal
+  accessibility: full
+  goal: face_mcshooty
+  custom_goal: []
+  delete_starting_gear: delete
+  gear_licenses: all
+  receive_gear: equip_only
+  filler_gear: both
+  filler_item_rotation:
+  - $100
+  - 10 Eridium
+  - 10% Exp
+  - 3 Skill Points
+  - RandomCandy
+  - gear
+  - sdu
+  level_up_checks: all
+  named_enemy_checks: all
+  vault_symbols: all
+  vending_machines: all
+  entrance_locks: all
+  fully_unlocked_mode: 'off'
+  progressive_travel_groups: []
+  backpack_pool: vanilla_plus
+  jump_checks: '3'
+  max_jump_height: extra_high
+  sprint_checks: '3'
+  max_sprint_speed: extra_fast
+  spawn_traps: '1'
+  quest_completion_checks: all
+  quest_reward_items: only_included_regions_gear
+  generic_mob_checks: 5_percent
+  gear_rarity_checks: exclude_seraph_plus
+  challenge_checks: all
+  chest_checks: all
+  remove_coop_checks: remove_all
+  remove_missable_checks: remove
+  remove_ffs_checks: remove
+  remove_tina_checks: remove
+  remove_torgue_checks: remove
+  remove_scarlett_checks: remove
+  remove_hammerlock_checks: remove
+  remove_digi_peak_checks: remove
+  remove_headhunter_checks: keep
+  remove_base_game_checks: keep
+  remove_specific_region_checks: []
+  remove_locations: []
+  include_locations: []
+  remove_raidboss_checks: keep
+  always_on_level: disabled
+  max_level_checks: none
+  death_link: true
+  death_link_punishment: ffyl
+  death_link_send_mode: death
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+Brotato:
+  death_link: true
+  progression_balancing: normal
+  accessibility: full
+  num_victories: 10
+  num_characters: 42
+  num_starting_characters: 5
+  starting_characters: default_all
+  include_base_game_characters:
+  - Apprentice
+  - Arms Dealer
+  - Artificer
+  - Baby
+  - Beast Master
+  - Brawler
+  - Bull
+  - Chunky
+  - Crazy
+  - Cryptid
+  - Cyborg
+  - Demon
+  - Doctor
+  - Engineer
+  - Entrepreneur
+  - Explorer
+  - Farmer
+  - Fisherman
+  - Generalist
+  - Ghost
+  - Gladiator
+  - Glutton
+  - Golem
+  - Hunter
+  - Jack
+  - King
+  - Knight
+  - Lich
+  - Loud
+  - Lucky
+  - Mage
+  - Masochist
+  - Multitasker
+  - Mutant
+  - Old
+  - One Armed
+  - Pacifist
+  - Ranger
+  - Renegade
+  - Saver
+  - Sick
+  - Soldier
+  - Speedy
+  - Streamer
+  - Technomage
+  - Vagabond
+  - Vampire
+  - Well Rounded
+  - Wildling
+  - Wounded
+  waves_per_drop: 1
+  num_wave_caps: four
+  gold_reward_mode: all_every_time
+  xp_reward_mode: all_every_time
+  enable_enemy_xp: true
+  include_elites_in_logic: false
+  spawn_normal_loot_crates: true
+  num_common_crate_drops: 25
+  num_common_crate_drops_per_check: 2
+  num_common_crate_drop_groups: 1
+  num_legendary_crate_drops: 5
+  num_legendary_crate_drops_per_check: 1
+  num_legendary_crate_drop_groups: 1
+  num_starting_shop_slots: random
+  shop_lock_buttons_mode: none
+  num_starting_lock_buttons: 0
+  common_item_weight: random
+  uncommon_item_weight: random
+  rare_item_weight: random
+  legendary_item_weight: random
+  common_upgrade_weight: random
+  uncommon_upgrade_weight: random
+  rare_upgrade_weight: random
+  legendary_upgrade_weight: random
+  gold_weight: random
+  xp_weight: random
+  enable_abyssal_terrors_dlc: false
+  include_abyssal_terrors_characters:
+  - Buccaneer
+  - Builder
+  - Captain
+  - Chef
+  - Creature
+  - Curious
+  - Diver
+  - Druid
+  - Dwarf
+  - Gangster
+  - Hiker
+  - Ogre
+  - Romantic
+  - Sailor
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Bubble Bobble:
+  progression_balancing: normal
+  accessibility: full
+  separate_super_bubble_bobble_levels: false
+  lock_super_bubble_bobble_levels: false
+  lock_two_player_mode: false
+  require_best_ending: false
+  increase_starting_lives_weight: random
+  timer_trap_weight: random
+  filler_weight: random
+  deathlink: true
+  deathlinktrigger: true
+  deathlinkresult: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Bugs Bunny Lost in Time:
+  progression_balancing: normal
+  accessibility: full
+  goal: present_day
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Build a Jetpack:
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  fishsanity: true
+  harsh_pressure: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Castlevania - Aria of Sorrow:
+  progression_balancing: normal
+  accessibility: items
+  target_platform: gba
+  randomize_pickups: true
+  goal: chaos
+  hard_mode: false
+  skull_key_warp: true
+  forbidden_area_button: pickup
+  death_link: true
+  soul_shuffle: any_type
+  keep_soul_drop_rates: true
+  shuffle_starting_soul: true
+  multiply_soul_drop_rates: true
+  soul_drop_rate_multiplier: double
+  ancient_book_soul_drops: true
+  item_smoothing: strict
+  item_smoothing_order: map_distance
+  early_mobility_souls: bias_early
+  black_panther_bias: true
+  logic_difficulty_preset: canonical
+  kickable_enemy_logic: inherit
+  platform_clip_logic: inherit
+  pixel_perfect_logic: inherit
+  quick_save_reset_logic: inherit
+  new_soul_pause: true
+  single_jump_divekick: true
+  classicvania_movement: false
+  oops_all_whips: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+'Castlevania: Dawn of Sorrow':
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: throne_room
+  replace_menace_with_soma: false
+  menace_condition: none
+  mine_condition: garden
+  garden_condition: none
+  soul_randomizer: soulsanity
+  soulsanity_level: simple
+  guaranteed_souls:
+  - Black Panther Soul
+  - Mud Demon Soul
+  - Procel Soul
+  soul_drop_percentage: double
+  no_logical_grinding: true
+  starting_weapon: random_any
+  shop_randomizer: true
+  gate_items: buttonsanity
+  disable_boss_seals: false
+  early_seal_1: false
+  seal_shuffle: false
+  randomize_seal_patterns: false
+  randomize_seal_details: normal
+  randomize_synthesis_souls: false
+  randomize_weapon_stats: normal
+  randomize_weapon_properties: false
+  randomize_weapon_attribute: normal
+  shuffle_starting_warp_room: false
+  open_drawbridge: false
+  randomize_red_soul_walls: false
+  randomize_doors: false
+  shuffle_enemy_drops: false
+  experience_percentage: quadruple
+  hard_mode: false
+  boss_shuffle: false
+  remove_money_gates: true
+  reveal_map: true
+  reveal_hidden_walls: true
+  fix_luck: true
+  boost_speed: false
+  one_screen_mode: false
+  no_mp_bat: false
+  passive_soul_eater_ring: false
+  start_with_doppelganger: false
+  area_music_randomizer: false
+  boss_music_randomizer: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+Castlevania - Harmony of Dissonance:
+  progression_balancing: normal
+  accessibility: full
+  medium_ending_required: false
+  worst_ending_required: false
+  best_ending_required: true
+  furniture_amount_required: 0
+  area_shuffle: none
+  decouple_transitions: false
+  link_door_types: false
+  early_lizard: true
+  spellbound_boss_logic: normal
+  castle_warp_condition: bracelet
+  death_link: true
+  double_sided_warps: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+'Castlevania: Legacy of Darkness':
+  progression_balancing: normal
+  accessibility: full
+  big_crystal_required: true
+  total_special2s: 0
+  percent_special2s_required: 80
+  bosses_required: 0
+  warp_layout: ''
+  warp_order: set_order
+  total_random_warps: 7
+  castle_keep_warp_possible: false
+  special1s_per_warp: 1
+  total_special1s: 7
+  stage_layout: 5
+  villa_branching_paths: three_with_cornell_path
+  castle_center_branching_paths: two
+  stage_shuffle: false
+  shuffled_starting_stage: random
+  castle_wall_state: hybrid
+  villa_state: hybrid
+  villa_maze_kid: random
+  post_behemoth_boss: random
+  duel_tower_final_boss: random
+  room_of_clocks_boss: random
+  renon_fight_condition: spend_30k
+  vincent_fight_condition: wait_16_days
+  castle_keep_ending_sequence: reinhardt_carrie_good
+  sub_weapon_shuffle: 'off'
+  multi_hit_breakables: false
+  empty_breakables: false
+  lizard_locker_items: false
+  behemoth_drops: false
+  spare_keys: 'off'
+  item_pool_difficulty: normal
+  permanent_powerups: true
+  permanent_sub_weapons: true
+  carrie_logic: false
+  hard_logic: false
+  increase_item_limit: true
+  detransform_at_will: false
+  invisible_items: vanilla
+  drop_previous_sub_weapon: true
+  disable_time_restrictions: none
+  skip_gondolas: false
+  skip_waterway_blocks: false
+  goddess_statue_hints: true
+  countdown: none
+  increase_shimmy_speed: false
+  fall_guard: false
+  nerf_healing_items: false
+  loading_zone_heals: true
+  death_link: 'off'
+  window_color_r: random
+  window_color_g: random
+  window_color_b: random
+  window_color_a: random
+  restore_cornell_fall_voice: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+Clique:
+  progression_balancing: normal
+  accessibility: full
+  color: random
+  hard_mode: true
+  force_progression: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+'Codename: Kids Next Door (GC)':
+  progression_balancing: normal
+  accessibility: full
+  logic_mode: fixed
+  difficulty_assumption: standard
+  starting_stage_slots: 1
+  stage14_placement: always_last
+  bosskey_mode: shuffle
+  auto_complete_on_victory: true
+  death_link: true
+  include_fixed_items_in_pool_when_loose: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Crypt of the NecroDancer:
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  death_link_type: tempo
+  trap_link: true
+  traplink_excluded_traps:
+  - InstantDeathTrap
+  - TutorialTrap
+  goal: story
+  all_zones_goal_clear: 6
+  zones_goal_clear: 24
+  golden_lute_shards_goal_clear: 10
+  lute_shards_in_pool: 13
+  victory_trigger: ensemble
+  expensive_purchase_price: 150
+  all_zones_speedrun_times:
+    Cadence: -1
+    Melody: -1
+    Aria: -1
+    Dorian: -1
+    Eli: -1
+    Monk: -1
+    Dove: -1
+    Coda: -1
+    Bolt: -1
+    Bard: -1
+    Nocturna: -1
+    Diamond: -1
+    Mary: -1
+    Tempo: -1
+    Reaper: -1
+    Klarinetta: -1
+    Chaunter: -1
+    Suzu: -1
+    Hatsune Miku: -1
+    Shovel Knight: -1
+  permanent_health_upgrades: 8
+  zone_progress_checks: 2
+  dlc:
+  - Synchrony
+  include_materials: false
+  included_extra_modes: []
+  include_codex_checks: true
+  include_shrine_checks: true
+  items_per_zone: 8
+  item_generation_chance: 25
+  include_flawless_chest_checks: false
+  shop_rows: small
+  lobby_npc_items: false
+  starting_inventory: reduced
+  zone_access_keys: progressive
+  starting_zone: zone_1
+  starting_character: cadence
+  character_blacklist:
+  - Bolt
+  - Coda
+  character_unlocks: item_only
+  include_unique_items: false
+  lock_character_room: false
+  buff_items: false
+  trap_percentage: 20
+  trap_weights:
+    Animal Trap: 40
+    Bald Trap: 50
+    Bomb Trap: 20
+    Camera Trap: 70
+    Chaos Trap: 40
+    Confusion Trap: 30
+    Cursed Trap: 30
+    Cutscene Trap: 70
+    Dad Trap: 40
+    Damage Trap: 70
+    Dead Ringer Trap: 10
+    Disarm Trap: 40
+    Double Damage Trap: 20
+    Earth Trap: 70
+    Frank Trap: 10
+    Freddy Trap: 60
+    Freeze Trap: 50
+    Gold Scatter Trap: 80
+    Haunted Shopkeeper Trap: 70
+    Hot Coals Trap: 50
+    Ice Floor Trap: 30
+    Isometric Trap: 40
+    Leaping Trap: 40
+    Market Crash Trap: 30
+    Marv Trap: 40
+    Monkey Trap: 60
+    No Return Trap: 40
+    One Hit Trap: 10
+    Shake Trap: 70
+    Shrink Trap: 30
+    Spotlight Trap: 40
+    Summon Trap: 80
+    Swap Trap: 40
+    Tar Trap: 50
+    Teleport Trap: 40
+    Tempo Trap: 70
+    Timer Trap: 30
+    Transmute Trap: 40
+    Trap Trap: 40
+    Undo Trap: 40
+    Wall Pig Trap: 30
+  death_link_trigger: game_over
+  price_randomization: vanilla
+  price_ranges:
+    random_min: 1
+    random_max: 10
+    filler_min: 1
+    filler_max: 4
+    useful_min: 2
+    useful_max: 8
+    progression_min: 4
+    progression_max: 10
+  diamond_exchange_rate: default
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Crystalis:
+  progression_balancing: normal
+  accessibility: full
+  shuffle_areas: false
+  shuffle_houses: false
+  randomize_tradeins: false
+  unidentified_key_items: false
+  randomize_wall_elements: false
+  shuffle_goa: false
+  randomize_sprite_colors: false
+  randomize_wild_warp: false
+  story_mode: false
+  no_bow_mode: false
+  orbs_not_required: false
+  thunder_warp: shuffled
+  vanilla_dolphin: false
+  fake_flight: out_of_logic
+  statue_glitch: disabled
+  mt_sabre_skip: disabled
+  statue_gauntlet_skip: disabled
+  sword_charge_glitch: disabled
+  trigger_skip: disabled
+  rage_skip: disabled
+  randomize_background_music: vanilla
+  randomize_map_colors: false
+  randomize_monster_weaknesses: false
+  oops_all_mimics: false
+  shuffle_tower_robots: false
+  dont_shuffle_mimics: false
+  keep_unique_items_and_consumables_separate: false
+  decrease_enemy_damage: false
+  guarantee_starting_sword: false
+  guarantee_refresh: false
+  experience_scales_faster: false
+  no_community_jokes: false
+  battle_magic_not_guaranteed: false
+  tink_mode: false
+  barrier_not_guaranteed: false
+  gas_mask_not_guaranteed: false
+  death_link: true
+  dont_buff_consumables: false
+  max_scaling_in_tower: false
+  experience_scales_slower: false
+  charge_shots_only: false
+  blackout: false
+  permadeath: false
+  dont_buff_dyna: false
+  dont_buff_bonus_items: false
+  vanilla_maps: gbc_cave
+  vanilla_shops: false
+  vanilla_wild_warp: disabled
+  vanilla_hud: false
+  dont_auto_equip_upgrades: false
+  disable_controller_shortcuts: false
+  audible_wall_cues: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+Dark Cloud 1:
+  progression_balancing: normal
+  accessibility: full
+  boss_goal: random
+  all_bosses: false
+  memory_count: random
+  open_dungeon: open
+  progressive_chars: true
+  extra_char_buildings: false
+  starter_weapons: true
+  miracle_sanity: true
+  shop_sanity: true
+  fish_sanity: none
+  floor_sanity: none
+  gem_set: false
+  abs_multiplier: triple
+  attach_multiplier: one_and_half
+  attach_mult_config: all
+  auto_build: hundo
+  death_link: true
+  toan_name: Toan
+  xiao_name: Xiao
+  goro_name: Goro
+  ruby_name: Ruby
+  ungaga_name: Ungaga
+  osmond_name: Osmond
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Dark Souls II:
+  progression_balancing: normal
+  accessibility: full
+  start_inventory:
+    Torch: 1
+  exclude_locations:
+  - Dark Chasm of Old
+  game_version: sotfs
+  combat_logic: easy
+  death_link: true
+  no_weapon_req: false
+  no_spell_req: false
+  no_equip_load: false
+  autoequip: true
+  randomize_starting_loadout: true
+  starting_weapon_requirement: usable_with_two_hands
+  enable_ngp: false
+  early_blacksmith: early_local
+  infinite_lifegems: false
+  old_iron_king_dlc: false
+  ivory_king_dlc: false
+  sunken_king_dlc: false
+  local_items: []
+  non_local_items: []
+  start_hints: []
+  start_location_hints: []
+  priority_locations: []
+
+Dark Souls Remastered:
+  progression_balancing: normal
+  accessibility: full
+  enable_deathlink: true
+  goal_condition: gwyn
+  guaranteed_items: {}
+  excluded_location_behavior: forbid_useful
+  can_warp_without_lordvessel: true
+  warp_to_all_bonfires: true
+  ghost_difficulty: rickert_sells_curses
+  soul_multiplier_base: 200
+  soul_multiplier_max: 300
+  soul_multiplier_steps: 0
+  weight_multiplier_base: 100
+  weight_multiplier_min: 100
+  weight_multiplier_steps: 0
+  fogwall_sanity: true
+  boss_fogwall_sanity: false
+  boss_soul_shuffle: true
+  boss_humanity_shuffle: true
+  boss_bone_shuffle: false
+  bk_weapon_shuffle: true
+  lizard_shuffle: false
+  unlimited_shop_item_shuffle: true
+  limited_shop_item_shuffle: true
+  shop_hints: progression
+  logic_to_access_firelink_altar: frampt
+  logic_to_access_catacombs: ornstein_and_smough
+  logic_to_access_totg: skull_lantern
+  randomize_starting_loadouts: true
+  randomize_starting_gifts: true
+  require_one_handed_starting_weapons: true
+  extra_starting_weapon_for_melee_classes: false
+  extra_starting_shield_for_all_classes: false
+  starting_sorcery: any
+  starting_miracle: heal
+  starting_pyromancy: any
+  no_weapon_requirements: false
+  no_spell_stat_requirements: false
+  no_miracle_covenant_requirements: true
+  upgraded_weapons_percentage: 0
+  upgraded_weapons_allowed_infusions:
+  - Chaos
+  - Crystal
+  - Divine
+  - Enchanted
+  - Fire
+  - Lightning
+  - Magic
+  - Normal
+  - Occult
+  - Raw
+  upgraded_weapons_adjusted_levels: true
+  upgraded_weapons_min_level: 0
+  upgraded_weapons_max_level: 15
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+DELTARUNE:
+  progression_balancing: normal
+  accessibility: full
+  have_starwalker: true
+  shuffle_ost: false
+  chosen_route: all_recruits
+  recruits_sanity: true
+  lose_recruits_sanity: false
+  randomize_secret_bosses: 'false'
+  macguffin_extra: 1
+  randomize_chapters: randomized
+  random_safety_chapter_inclusion: true
+  starting_chapter: random_chapter
+  include_chapter_1: true
+  macguffin_chapter_1: 0
+  chapter_1_recruit: true
+  include_chapter_2: true
+  macguffin_chapter_2: 0
+  include_chapter_3: true
+  macguffin_chapter_3: 0
+  randomize_sword_route: false
+  shadow_mantle_holder_as_secret_boss: false
+  include_shadow_mantle: true
+  exclude_t_rank_board: true
+  exclude_z_rank_board: true
+  physical_challenge_rank_sanity: false
+  exclude_t_rank_physical_challenge: true
+  exclude_z_rank_physical_challenge: true
+  allow_doom_board_without_all_characters: false
+  include_chapter_4: true
+  macguffin_chapter_4: 0
+  include_mike: 'false'
+  exclude_mike_platinum: false
+  include_chapter_5: true
+  macguffin_chapter_5: 3
+  include_hidden_items: false
+  include_secret_bosses_items_requirement: false
+  mysterykey_from_pink_coins: true
+  door_key_from_broken_keys: true
+  include_unused_items: 'false'
+  progressive_kris_weapons: false
+  progressive_susie_weapons: false
+  progressive_ralsei_weapons: false
+  progressive_noelle_weapons: false
+  unlock_characters: 'false'
+  start_with_random_character: true
+  unlock_fun_gang_actions: false
+  better_odds: true
+  remove_starting_equipment: false
+  item_balancing: false
+  pink_twin_ribbon_unnerf: true
+  rock_video_sanity: 'false'
+  exclude_t_rank_rock_video: true
+  exclude_z_rank_rock_video: true
+  speedrun_gliches_as_logic: false
+  nohit_as_logic: false
+  annoying_farming_as_logic: false
+  death_link: true
+  death_link_group: ''
+  damage_link: false
+  damage_link_group: ''
+  filler_healing_weight: common
+  filler_currency_weight: uncommon
+  trap_weight: rare
+  filler_armor_weight: rare
+  filler_tension_weight: very rare
+  filler_smile_weight: extremely rare
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Digimon World:
+  progression_balancing: normal
+  accessibility: full
+  goal: prosperity
+  early_statcap: true
+  required_prosperity: 10
+  guaranteed_items: {}
+  exp_multiplier: 10
+  progressive_stats: true
+  random_starter: rookie
+  random_techniques: enabled
+  fast_drimogemon: true
+  easy_monochromon: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+
+Donkey Kong Country:
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  energy_link: true
+  trap_link: true
+  starting_life_count: 99
+  gangplank_tokens: random
+  required_jungle_levels: random
+  required_mines_levels: random
+  required_valley_levels: random
+  required_glacier_levels: random
+  required_industries_levels: random
+  required_caverns_levels: random
+  logic: strict
+  glitched_world_access: false
+  kong_checks: true
+  balloon_checks: false
+  banana_checks: false
+  token_checks: false
+  starting_kong: random
+  starting_world: random
+  shuffle_abilities:
+  - Swim
+  - Roll
+  - Gorilla Slap
+  - Climb
+  - Carry
+  shuffle_animals:
+  - Enguarde
+  - Expresso
+  - Rambi
+  - Squawks
+  - Winky
+  shuffle_objects:
+  - Barrel Kannons
+  - Minecart
+  - Platforms
+  - Switch Barrels
+  - Tires
+  trap_fill_percentage: random-range-10-30
+  jump_trap_weight: random
+  sticky_floor_trap_weight: random
+  stun_trap_weight: random
+  ice_trap_weight: random
+  nut_trap_weight: random
+  army_trap_weight: random
+  animal_bonus_trap_weight: random
+  boss_very_gnawty_hp: 5
+  boss_very_gnawty_army: false
+  boss_master_necky_hp: 5
+  boss_master_necky_double: false
+  boss_queen_b_hp: 5
+  boss_really_gnawty_hp: 5
+  boss_really_gnawty_army: false
+  boss_dumb_drum_stun: false
+  boss_dumb_drum_enemy_drop: false
+  boss_master_necky_snr_hp: 5
+  palette_donkey_active: random
+  palette_donkey_inactive: random
+  palette_diddy_active: random
+  palette_diddy_inactive: random
+  kong_letters: BUTS
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+Donkey Kong Country 2:
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  damage_link: false
+  energy_link: true
+  trap_link: true
+  display_messages: on_everything
+  received_message_filter:
+  - Filler
+  - Progression
+  - Trap
+  - Useful
+  sent_message_filter:
+  - Filler
+  - Progression
+  - Trap
+  - Useful
+  starting_life_count: 50
+  goal: flying_krock
+  krock_boss_tokens: random
+  lost_world_rocks: 5
+  extra_lost_world_rocks: 3
+  lost_world_rock_placement: lost_world_level_clear
+  required_galleon_levels: random
+  required_cauldron_levels: random
+  required_quay_levels: random
+  required_kremland_levels: random
+  required_gulch_levels: random
+  required_keep_levels: random
+  required_krock_levels: 1
+  logic: strict
+  kong_checks: true
+  dk_coin_checks: true
+  balloonsanity: false
+  coinsanity: false
+  bananasanity: false
+  swanky_checks: true
+  starting_kong: both
+  shuffle_levels: false
+  shuffle_abilities:
+  - Carry
+  - Cartwheel
+  - Climb
+  - Cling
+  - Helicopter Spin
+  - Swim
+  - Team Attack
+  shuffle_animals:
+  - Clapper
+  - Enguarde
+  - Glimmer
+  - Rambi
+  - Rattly
+  - Skull Kart
+  - Squawks
+  - Squitter
+  shuffle_barrels:
+  - Barrel Kannons
+  - Controllable Barrels
+  - Exclamation Barrels
+  - Kong Barrels
+  - Warp Barrels
+  trap_fill_percentage: random-range-10-30
+  freeze_trap_weight: random
+  reverse_trap_weight: random
+  honey_trap_weight: random
+  ice_trap_weight: random
+  tnt_barrel_trap_weight: random
+  palette_diddy_active: random
+  palette_diddy_inactive: random
+  palette_diddy_invincible: random
+  palette_diddy_frozen: random
+  palette_diddy_reversed: random
+  palette_diddy_slow: random
+  palette_dixie_active: random
+  palette_dixie_inactive: random
+  palette_dixie_invincible: random
+  palette_dixie_frozen: random
+  palette_dixie_reversed: random
+  palette_dixie_slow: random
+  palette_rambi: random
+  palette_enguarde: random
+  palette_squitter: random
+  palette_rattly: random
+  palette_squawks: random
+  palette_quawks: random
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
+
+Donkey Kong Country 3:
+  progression_balancing: normal
+  accessibility: full
+  dk_coins_for_gyrocopter: 30
+  kongsanity: true
+  level_shuffle: false
+  difficulty: norml
+  goal: knautilus
+  krematoa_bonus_coin_cost: 15
+  percentage_of_extra_bonus_coins: 100
+  number_of_banana_birds: 15
+  percentage_of_banana_birds: 100
+  autosave: true
+  merry: false
+  music_shuffle: false
+  kong_palette_swap: random
+  starting_life_count: 50
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  
+Don't Starve Together:
+  progression_balancing: normal
+  accessibility: full
+  goal: survival
+  days_to_survive: one year
+  required_bosses:
+  - Ancient Guardian
+  crafting_mode: free_samples
+  death_link: true
+  boss_fill_items: normal
+  seasons:
+  - Autumn
+  - Spring
+  - Summer
+  - Winter
+  starting_season: autumn
+  day_phases:
+  - Day
+  - Dusk
+  - Night
+  season_flow: unlockable
+  cave_regions: auto
+  ocean_regions: auto
+  creature_locations: all
+  boss_locations: easy
+  cooking_locations: regular
+  farming_locations: false
+  shuffle_starting_recipes: false
+  shuffle_no_unlock_recipes: false
+  chesspiece_sketch_items: true
+  seed_items: true
+  junk_item_amount: 20
+  trap_items: low
+  season_trap_items: none
+  extra_damage_against_bosses: medium
+  damage_bonuses: medium
+  skill_level: easy
+  lighting_logic: auto
+  weapon_logic: auto
+  season_gear_logic: auto
+  base_making_logic: auto
+  backpack_logic: auto
+  healing_logic: auto
   local_items: []
   non_local_items: []
   start_inventory: {}
