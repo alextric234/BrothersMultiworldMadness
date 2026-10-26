@@ -45378,3 +45378,75 @@ Digimon World:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Donkey Kong Country:
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  energy_link: true
+  trap_link: true
+  starting_life_count: 99
+  gangplank_tokens: random
+  required_jungle_levels: random
+  required_mines_levels: random
+  required_valley_levels: random
+  required_glacier_levels: random
+  required_industries_levels: random
+  required_caverns_levels: random
+  logic: strict
+  glitched_world_access: false
+  kong_checks: true
+  balloon_checks: false
+  banana_checks: false
+  token_checks: false
+  starting_kong: random
+  starting_world: random
+  shuffle_abilities:
+  - Swim
+  - Roll
+  - Gorilla Slap
+  - Climb
+  - Carry
+  shuffle_animals:
+  - Enguarde
+  - Expresso
+  - Rambi
+  - Squawks
+  - Winky
+  shuffle_objects:
+  - Barrel Kannons
+  - Minecart
+  - Platforms
+  - Switch Barrels
+  - Tires
+  trap_fill_percentage: random_range_10-30
+  jump_trap_weight: random
+  sticky_floor_trap_weight: random
+  stun_trap_weight: random
+  ice_trap_weight: random
+  nut_trap_weight: random
+  army_trap_weight: random
+  animal_bonus_trap_weight: random
+  boss_very_gnawty_hp: 5
+  boss_very_gnawty_army: false
+  boss_master_necky_hp: 5
+  boss_master_necky_double: false
+  boss_queen_b_hp: 5
+  boss_really_gnawty_hp: 5
+  boss_really_gnawty_army: false
+  boss_dumb_drum_stun: false
+  boss_dumb_drum_enemy_drop: false
+  boss_master_necky_snr_hp: 5
+  palette_donkey_active: random
+  palette_donkey_inactive: random
+  palette_diddy_active: random
+  palette_diddy_inactive: random
+  kong_letters: BUTS
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
