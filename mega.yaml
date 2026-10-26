@@ -45546,3 +45546,28 @@ Donkey Kong Country 2:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+Donkey Kong Country 3:
+  progression_balancing: normal
+  accessibility: full
+  dk_coins_for_gyrocopter: 30
+  kongsanity: true
+  level_shuffle: false
+  difficulty: norml
+  goal: knautilus
+  krematoa_bonus_coin_cost: 15
+  percentage_of_extra_bonus_coins: 100
+  number_of_banana_birds: 15
+  percentage_of_banana_birds: 100
+  autosave: true
+  merry: false
+  music_shuffle: false
+  kong_palette_swap: random
+  starting_life_count: 50
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
