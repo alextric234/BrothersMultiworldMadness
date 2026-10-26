@@ -8168,336 +8168,63 @@ Castlevania - Harmony of Dissonance:
   start_inventory_from_pool: {}
 
 'Castlevania: Portrait of Ruin':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
+  progression_balancing: normal
+  accessibility: full
   exclude_locations:
-    # Prevent these locations from having an important item.
-    ['The Throne Room: Great Stairs Center', 'The Throne Room: Great Stairs Under Stairs', 'The Throne Room: Great Stairs Left', 'The Throne Room: Above Throne Right', 'The Throne Room: Great Stairs Hidden', 'The Throne Room: Above Throne Left']
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # The goal for your game.
-    # Brauner: Defeat Brauner in the studio portrait.
-    # Dracula: Defeat Dracula in the throne room.
-    brauner: 0
-    dracula: 50
-
-  brauner_portraits:
-    # How many of ANY portraits are required to be cleared to access Brauner's portrait.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  dracula_portraits:
-    # How many portraits are required to be cleared to access the Throne Room.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  brauner_required:
-    # If enabled, you will be required to fight Brauner before you can access the Throne Room,
-    # Of course, this won't do anything if the goal is set to Brauner.
-    'false': 0
-    'true': 50
-
-  open_throne:
-    # Unlocks the Throne Room by default. Your goal conditions will be checked
-    # by Dracula's boss door instead of the throne barrier.
-    'false': 50
-    'true': 0
-
-  ########################
-  # Nest of Evil Options #
-  ########################
-  nest_of_evil_state:
-    # The state of the Nest of Evil.
-    # Vanilla: Nest of Evil has its original rewards, the two tome pages and Greatest Five.
-    # Randomized: The three items in the Nest of Evil are random, and added to the item pool.
-    # Required: You are required to clear the Nest of Evil before you can access your final boss.
-    # Removed: The three items are added to the item pool, and the Nest of Evil is inaccessible.
-    vanilla: 50
-    randomized: 0
-    required: 0
-    removed: 0
-
-  nest_portraits:
-    # How many Portraits are required to be cleared to access the underground passage
-    # at the castle entrance.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  #####################
-  # Item Pool Options #
-  #####################
-  shuffle_whip:
-    # If enabled, the True Vampire Killer will be added to the item pool,
-    # and the Whip's Memory fight will grant you a random item.
-    # Otherwise, it will be at its normal location.
-    'false': 50
-    'true': 0
-
-  start_with_change_cube:
-    # If enabled, you'll start with the Change Cube by default
-    'false': 50
-    'true': 0
-
-  start_with_call_cube:
-    # If enabled, you'll start with the Call Cube by default
-    'false': 50
-    'true': 0
-
-  add_extra_items:
-    # If enabled, some items and spells that are otherwise only obtainable
-    # in other modes will be added to the item pool, such as Puppet Master.
-    'false': 50
-    'true': 0
-
-  exclude_owl_morph:
-    # If enabled, Owl Morph will not be added to the item pool.
-    'false': 50
-    'true': 0
-
-  ################
-  # Item Options #
-  ################
-  stronger_glove:
-    # If enabled, the Strength Glove will be buffed and able to push stationary heavy objects on its own.
-    'false': 50
-    'true': 0
-
-  random_spell_charge_times:
-    # Randomizes the charge time of non-major spells.
-    'false': 50
-    'true': 0
-
-  randomize_shop_items:
-    # Randomizes what items are in the shop.
-    'false': 50
-    'true': 0
-
-  subweapon_mastery_requirements:
-    # Modifies the amount of SP each Subweapon takes to be mastered.
-    # Normal: SP requirements are unchanged
-    # Randomized: Each subweapon will require a random amount of SP to master
-    # Zero: Each subweapon will start out mastered by default.
-    normal: 50
-    randomized: 0
-    zero: 0
-
-  #################
-  # World Options #
-  #################
-  add_boss_keys:
-    # If enabled, all Boss Doors will be locked until you find its respective Key.
-    # Key names are generally named after the room or area, and can be found on the Doc page.
-    'false': 50
-    'true': 0
-
+  - 'The Throne Room: Above Throne Left'
+  - 'The Throne Room: Above Throne Right'
+  - 'The Throne Room: Great Stairs Center'
+  - 'The Throne Room: Great Stairs Hidden'
+  - 'The Throne Room: Great Stairs Left'
+  - 'The Throne Room: Great Stairs Under Stairs'
+  death_link: true
+  goal: dracula
+  brauner_portraits: random
+  dracula_portraits: random
+  brauner_required: true
+  open_throne: false
+  nest_portraits: random
+  nest_of_evil_state: vanilla
+  shuffle_whip: false
+  start_with_change_cube: false
+  add_extra_items: true
+  exclude_owl_morph: false
+  start_with_call_cube: false
+  stronger_glove: true
+  random_spell_charge_times: true
+  randomize_shop_items: true
+  subweapon_mastery_requirements: normal
+  add_boss_keys: true
   removed_boss_keys:
-    # Boss Keys specified here will not be added to the pool and its boss door will not be locked.
-    ['Gallery Key', 'Colosseum Key', 'Throne Key']
-
-  early_open_castle:
-    # Adds a platform will be added to the Entrance allowing access to the Behemoth fight with no movement items.
-    # Additionally, a platform will be added after Keremet to allow you to access the cave area with only Acrobat.
-    # The end of the cave area will be slightly raised, requiring Stone of Flight or Puppet to access the main stairway area.
-    # This allows you to get up to Keremet with no additional items, and access 1 portrait with Acrobat on its own.
-    'false': 50
-    'true': 0
-
-  #################
-  # Quest Options #
-  #################
-  unlock_all_quests:
-    # If enabled, all Quests will be unlocked by default.
-    'false': 50
-    'true': 0
-
-  randomized_quests:
-    # Specify which Quests have random items. 'Preparations' is always included, regardless of settings. Nest of Evil is never included.
-    # You can type any quest name, as well as the following shortcuts:
-    # Requires Item: Any Quest which requires you to turn in an item or set of items (except for Almighty and Great Sage)
-    # Defeat Enemies: Any Quest which requires you to defeat specific enemies.
-    # Mastery: Any Quest which requires you to Master a subweapon.
-    # Simple: Any Quest with no specific requirement other than reaching an area or changing your status.
-    # Grindy: Any Quest with a high grinding requirement. (Includes the Mastery quests.)
-    # All: Enables ALL quests
-    {}
-
+  - Colosseum Key
+  - Gallery Key
+  - Throne Key
+  early_open_castle: false
+  unlock_all_quests: false
+  randomized_quests: []
   excluded_quests:
-    # Specify Excluded randomized quests from the above option. Excluded Quests will still be randomized, but will always be your own junk items.
-    # The same shortcuts from the above option apply.
-    ['Quest: S Rank Hunter', 'Quest: Master the Holy Power', 'Quest: The Hundred Tasks', 'Quest: The Great Sage', 'Quest: Hands of the Clock', 'Quest: Almighty']
-
-  ######################
-  # Area Randomization #
-  ######################
-  portrait_shuffle:
-    # Shuffles which areas the Portraits lead you to.
-    # Split: Shuffles the normal and Brauner portraits separately
-    # Full: Shuffles all of the portraits together
-    # Add Nest: Full, but also shuffles the Nest of Evil portrait
-    normal: 50
-    split: 0
-    full: 0
-    add_nest_of_evil: 0
-
-  randomize_transition_doors:
-    # Randomizes where the area transition doors in the Castle lead to.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Enemy Settings #
-  ##################
-  experience_percentage:
-    # What percentage of EXP enemies give you. This is a percent of their original EXP amount.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 500
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-500: 0 # random value between 50 and 500
-    none: 0 # equivalent to 0
-    half: 0 # equivalent to 50
-    normal: 50 # equivalent to 100
-    double: 0 # equivalent to 200
-    quadruple: 0 # equivalent to 400
-
-  sp_multiplier:
-    # Multiplier for the amount of SP given by enemies.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  shuffle_enemy_drops:
-    # Randomizes what items enemies drop, and what the drop chances are.
-    'false': 50
-    'true': 0
-
-  ###################
-  # Quality of Life #
-  ###################
-  reveal_map:
-    # Start with the entire map visible.
-    'false': 0
-    'true': 50
-
-  reveal_hidden_walls:
-    # Automatically reveals all breakable walls/objects.
-    'false': 50
-    'true': 0
-
-  one_screen_mode:
-    # Allows the entire game to be played with only the bottom screen. Press Select to view the map.
-    'false': 50
-    'true': 0
-
-  show_drop_rates:
-    # If enabled, enemies will always show the proper drop rates, even without the Gambler Glasses.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - 'Quest: Almighty'
+  - 'Quest: Hands of the Clock'
+  - 'Quest: Master the Holy Power'
+  - 'Quest: S Rank Hunter'
+  - 'Quest: The Great Sage'
+  - 'Quest: The Hundred Tasks'
+  portrait_shuffle: normal
+  randomize_transition_doors: false
+  experience_percentage: double
+  sp_multiplier: 10
+  shuffle_enemy_drops: false
+  reveal_map: true
+  reveal_hidden_walls: true
+  one_screen_mode: true
+  show_drop_rates: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Cave Story:
   progression_balancing: normal
@@ -15393,412 +15120,74 @@ Dr. Robotnik's Ring Racers:
   priority_locations: []
 
 Dragon Warrior:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  #######################
-  # Archipelago Options #
-  #######################
-  levelsanity:
-    # Makes level-ups location checks. 
-    # This adds between 1-29 checks depending on on the LevelSanity Range option below.
-    'false': 0
-    'true': 50
-
-  levelsanity_range:
-    # How many level-ups are included as location checks. Levels after 10 have the magic key in logic to prevent a tedious early grind.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 30
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-30: 0 # random value between 2 and 30
-
-  searchsanity:
-    # Adds search spot items as location checks.
-    # This adds 3 checks.
-    'false': 0
-    'true': 50
-
-  shopsanity:
-    # Buying a piece of equipment sends a location check instead of buying it. Adds progressive equipment items instead.
-    # This adds 13 checks. This option overrides and disables the randomized equipment shops option below.
-    'false': 50
-    'true': 0
-
-  monstersanity:
-    # Killing a monster for the first time sends a location check. This adds 40 checks. This option overrides and disables
-    # the random monster zones option below.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ##################
-  # Random Options #
-  ##################
-  random_growth:
-    # Player statistical growth at each level will be randomized.
-    'false': 50
-    'true': 0
-
-  random_map:
-    # The overworld map will be randomly generated. Stairs leading to other maps (Tantegel Basement, Garin's Grave) 
-    # are also shuffled.
-    # 
-    # Note that this is currently an experimental option! If you roll an unwinnable seed please let the developer know.
-    'false': 50
-    'true': 0
-
-  random_map_size:
-    # Sets the size of the randomly generated map.
-    normal: 50
-    small: 0
-    very_small: 0
-
-  random_spell_learning:
-    # The order and level you learn spells will be random.
-    'false': 50
-    'true': 0
-
-  random_weapon_shops:
-    # The weapons available in each shop will be randomized.
-    # 
-    # Overriden and disabled by Shopsanity option above.
-    'false': 50
-    'true': 0
-
-  random_weapon_prices:
-    # The prices of weapons in shops will be randomized.
-    'false': 50
-    'true': 0
-
-  heal_hurt_before_more:
-    # HEAL must come before HEALMORE; HURT before HURTMORE. This option only does something if you have Random Spell Learning on
-    'false': 50
-    'true': 0
-
-  random_xp_requirements:
-    # Experience requirements for each level will be randomized
-    'false': 50
-    'true': 0
-
-  random_monster_abilities:
-    # Monster spells and abilities will be randomized
-    'false': 50
-    'true': 0
-
-  random_monster_zones:
-    # Monster encounters in each zone will be randomized
-    'false': 50
-    'true': 0
-
-  random_monster_stats:
-    # Monster strength, agility, and HP will be randomized
-    'false': 50
-    'true': 0
-
-  random_monster_xp:
-    # The XP and GOLD gained from monsters will be randomized
-    'false': 50
-    'true': 0
-
-  make_random_stats_consistent:
-    # This makes the random stats, XP, and GOLD consistent with one another
-    'false': 50
-    'true': 0
-
-  #####################
-  # Challenge Options #
-  #####################
-  scared_metal_slimes:
-    # Metal Slimes will always have a chance to run
-    'false': 50
-    'true': 0
-
-  scaled_metal_slime_xp:
-    # Metal Slime XP will depend on your current level
-    'false': 50
-    'true': 0
-
-  no_hurtmore:
-    # You will never learn HURTMORE. Monsters can still have it. This only works with Randomized Spells on
-    'false': 50
-    'true': 0
-
-  only_healmore:
-    # Never learn any spell other than this. This only works with Randomized Spells on
-    'false': 50
-    'true': 0
-
-  no_numbers:
-    # No numbers will be visible until the Dragonlord fight
-    'false': 50
-    'true': 0
-
-  invisible_hero:
-    # Your sprite will be invisible
-    'false': 50
-    'true': 0
-
-  invisible_npcs:
-    # All NPCs will be invisible
-    'false': 50
-    'true': 0
-
-  bonk_damage:
-    # Bonking into walls will deal damage!
-    none: 50
-    1_hp: 0
-    2_hp: 0
-    20_hp: 0
-    instakill: 0
-    random_damage: 0
-    halve_health: 0
-
-  ###############
-  # QOL Options #
-  ###############
-  enable_menu_wrapping:
-    # This enables cursor wrapping in menus
-    'false': 0
-    'true': 50
-
-  enable_death_necklace:
-    # Equipping the death necklace will give +10AP and -25% HP
-    'false': 0
-    'true': 50
-
-  enable_battle_torches:
-    # Torches and Fairy water can be thrown at monsters
-    'false': 0
-    'true': 50
-
-  repel_in_dungeons:
-    # Enables REPEL to work in dungeons
-    'false': 0
-    'true': 50
-
-  permanent_repel:
-    # REPEL will always be active
-    'false': 50
-    'true': 0
-
-  permanent_torch:
-    # At least a 3x3 area will always be lit in dungeons
-    'false': 50
-    'true': 0
-
-  fast_text:
-    # All text will progress much faster
-    'false': 50
-    'true': 0
-
-  speed_hacks:
-    # Various aspects of the game will be much faster
-    'false': 50
-    'true': 0
-
-  summer_sale:
-    # All weapons and armor 35-65% off!
-    'false': 50
-    'true': 0
-
-  levelling_speed:
-    # Determines how fast you level up
-    normal: 0
-    fast: 50
-    very_fast: 0
-
-  level_1_radiant:
-    # If spells are randomized, makes sure the hero always knows Radiant. Overrides 'Only Healmore'
-    'false': 50
-    'true': 0
-
-  level_1_repel:
-    # If spells are randomized, makes sure the hero always knows Repel. Overrides 'Only Healmore'
-    'false': 50
-    'true': 0
-
-  easy_charlock:
-    # Make it slightly easier to run from high level monsters
-    'false': 50
-    'true': 0
-
-  modern_spell_names:
-    # Use spell names from more recent DQ releases
-    'false': 0
-    'true': 50
-
-  skip_original_credits:
-    # Skip the original credits and go straight to stat scroll
-    'false': 50
-    'true': 0
-
-  return_escapes:
-    # Return can be used in battle for a guaranteed escape
-    'false': 50
-    'true': 0
-
-  return_to_town:
-    # Wings and Return send you to the last place you saved or used an inn at
-    'false': 50
-    'true': 0
-
-  warp_whistle:
-    # The Fairy Flute will work as a warp whistle outside of battle, cycling between places you saved or used an inn at
-    'false': 50
-    'true': 0
-
-  levelup_refill:
-    # Have HP and MP refilled afater levelling up
-    'false': 50
-    'true': 0
-
-  ascetic_king:
-    # King Lorik will let the player keep their hard-earned gold upon dying.
-    'false': 0
-    'true': 50
-
-  run_mechanics:
-    # Change how a successful run is determined.
-    # 
-    # DW 1: Vanilla run mechanics
-    # Safer DW 1: Vanilla run mechanics, 4th run attempt guaranteed
-    # DW 2: 2/3 chance to run away at every attempt
-    # DW 4: 1st attempt: 50%, 2nd attempt: 50%, 3rd attempt: 75%, 4th attempt, 100%
-    dw1: 50
-    safer_dw1: 0
-    dw2: 0
-    dw4: 0
-
-  charlock_inn:
-    # Make the final dive easier by having a comfy bed and breakfast at the Dragonlord's
-    'false': 50
-    'true': 0
-
-  dl1_crits:
-    # Allow excellent moves against the Dragonlord's 1st form
-    'false': 50
-    'true': 0
-
-  dl2_crits:
-    # Allow excellent moves against the Dragonlord's 2nd form
-    'false': 50
-    'true': 0
-
-  #################
-  # Other Options #
-  #################
-  shuffle_music:
-    # Music in each area will be randomized
-    'false': 50
-    'true': 0
-
-  disable_music:
-    # This disables the game music in most situations
-    'false': 50
-    'true': 0
-
-  show_death_counter:
-    # The stats window will also have a death counter
-    'false': 50
-    'true': 0
-
-  disable_spell_flashing:
-    # Prevents the screen from flashing when you cast spells
-    'false': 50
-    'true': 0
-
-  disable_red_flashes:
-    # Prevents the screen from flashing when walking on damage tiles
-    'false': 50
-    'true': 0
-
-  noir_mode:
-    # It's all black and white baby!
-    'false': 50
-    'true': 0
-
-  magic_herbs:
-    # Make herbs refill MP rather than HP
-    'false': 50
-    'true': 0
-
-  normal_flute_speed:
-    # If Speed Hacks is on, the Fairy Flute music will not be sped up
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  levelsanity: true
+  levelsanity_range: 20
+  searchsanity: true
+  shopsanity: true
+  monstersanity: false
+  death_link: true
+  random_growth: false
+  random_map: false
+  random_map_size: normal
+  random_spell_learning: true
+  random_weapon_shops: true
+  random_weapon_prices: true
+  heal_hurt_before_more: false
+  random_xp_requirements: false
+  random_monster_abilities: false
+  random_monster_zones: false
+  random_monster_stats: false
+  random_monster_xp: true
+  make_random_stats_consistent: true
+  scared_metal_slimes: false
+  scaled_metal_slime_xp: false
+  no_hurtmore: false
+  only_healmore: false
+  no_numbers: false
+  invisible_hero: false
+  invisible_npcs: false
+  bonk_damage: none
+  enable_menu_wrapping: true
+  enable_death_necklace: true
+  enable_battle_torches: true
+  repel_in_dungeons: true
+  permanent_repel: false
+  permanent_torch: true
+  fast_text: true
+  speed_hacks: true
+  summer_sale: true
+  levelling_speed: very_fast
+  level_1_radiant: false
+  level_1_repel: false
+  easy_charlock: true
+  modern_spell_names: true
+  skip_original_credits: true
+  return_escapes: true
+  return_to_town: true
+  warp_whistle: true
+  levelup_refill: true
+  ascetic_king: true
+  run_mechanics: dw1
+  charlock_inn: true
+  dl1_crits: true
+  dl2_crits: true
+  shuffle_music: false
+  disable_music: false
+  show_death_counter: false
+  disable_spell_flashing: false
+  disable_red_flashes: false
+  noir_mode: false
+  magic_herbs: false
+  normal_flute_speed: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 DREDGE:
   ################
