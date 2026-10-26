@@ -45571,3 +45571,54 @@ Donkey Kong Country 3:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+  
+Don't Starve Together:
+  progression_balancing: normal
+  accessibility: full
+  goal: survival
+  days_to_survive: one year
+  required_bosses:
+  - Ancient Guardian
+  crafting_mode: free_samples
+  death_link: true
+  boss_fill_items: normal
+  seasons:
+  - Autumn
+  - Spring
+  - Summer
+  - Winter
+  starting_season: autumn
+  day_phases:
+  - Day
+  - Dusk
+  - Night
+  season_flow: unlockable
+  cave_regions: auto
+  ocean_regions: auto
+  creature_locations: all
+  boss_locations: easy
+  cooking_locations: regular
+  farming_locations: false
+  shuffle_starting_recipes: false
+  shuffle_no_unlock_recipes: false
+  chesspiece_sketch_items: true
+  seed_items: true
+  junk_item_amount: 20
+  trap_items: low
+  season_trap_items: none
+  extra_damage_against_bosses: medium
+  damage_bonuses: medium
+  skill_level: easy
+  lighting_logic: auto
+  weapon_logic: auto
+  season_gear_logic: auto
+  base_making_logic: auto
+  backpack_logic: auto
+  healing_logic: auto
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
