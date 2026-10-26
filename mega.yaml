@@ -45190,3 +45190,31 @@ Dark Cloud 1:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Dark Souls II:
+  progression_balancing: normal
+  accessibility: full
+  start_inventory:
+    Torch: 1
+  exclude_locations:
+  - Dark Chasm of Old
+  game_version: sotfs
+  combat_logic: easy
+  death_link: true
+  no_weapon_req: false
+  no_spell_req: false
+  no_equip_load: false
+  autoequip: true
+  randomize_starting_loadout: true
+  starting_weapon_requirement: usable_with_two_hands
+  enable_ngp: false
+  early_blacksmith: early_local
+  infinite_lifegems: false
+  old_iron_king_dlc: false
+  ivory_king_dlc: false
+  sunken_king_dlc: false
+  local_items: []
+  non_local_items: []
+  start_hints: []
+  start_location_hints: []
+  priority_locations: []
