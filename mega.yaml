@@ -44631,3 +44631,24 @@ Bomberman Hero:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Bomberman Quest:
+  progression_balancing: normal
+  accessibility: full
+  game_goal: engines
+  death_link: true
+  open_regions: true
+  save_heal: true
+  sneakers_start: true
+  fire_start: false
+  health_start: 5
+  sound_shuffle: false
+  music_shuffle: false
+  palette_random: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
