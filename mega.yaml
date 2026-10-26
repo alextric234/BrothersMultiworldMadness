@@ -44934,3 +44934,18 @@ Castlevania - Harmony of Dissonance:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+Clique:
+  progression_balancing: normal
+  accessibility: full
+  color: random
+  hard_mode: true
+  force_progression: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
