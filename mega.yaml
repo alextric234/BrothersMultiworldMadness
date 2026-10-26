@@ -44910,3 +44910,60 @@ Castlevania - Aria of Sorrow:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+'Castlevania: Dawn of Sorrow':
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: throne_room
+  replace_menace_with_soma: false
+  menace_condition: none
+  mine_condition: garden
+  garden_condition: none
+  soul_randomizer: soulsanity
+  soulsanity_level: simple
+  guaranteed_souls:
+  - Black Panther Soul
+  - Mud Demon Soul
+  - Procel Soul
+  soul_drop_percentage: double
+  no_logical_grinding: true
+  starting_weapon: random_any
+  shop_randomizer: true
+  gate_items: buttonsanity
+  disable_boss_seals: false
+  early_seal_1: false
+  seal_shuffle: false
+  randomize_seal_patterns: false
+  randomize_seal_details: normal
+  randomize_synthesis_souls: false
+  randomize_weapon_stats: normal
+  randomize_weapon_properties: false
+  randomize_weapon_attribute: normal
+  shuffle_starting_warp_room: false
+  open_drawbridge: false
+  randomize_red_soul_walls: false
+  randomize_doors: false
+  shuffle_enemy_drops: false
+  experience_percentage: quadruple
+  hard_mode: false
+  boss_shuffle: false
+  remove_money_gates: true
+  reveal_map: true
+  reveal_hidden_walls: true
+  fix_luck: true
+  boost_speed: false
+  one_screen_mode: false
+  no_mp_bat: false
+  passive_soul_eater_ring: false
+  start_with_doppelganger: false
+  area_music_randomizer: false
+  boss_music_randomizer: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
