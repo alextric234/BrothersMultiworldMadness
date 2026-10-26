@@ -45357,3 +45357,24 @@ DELTARUNE:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Digimon World:
+  progression_balancing: normal
+  accessibility: full
+  goal: prosperity
+  early_statcap: true
+  required_prosperity: 10
+  guaranteed_items: {}
+  exp_multiplier: 10
+  progressive_stats: true
+  random_starter: rookie
+  random_techniques: enabled
+  fast_drimogemon: true
+  easy_monochromon: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
