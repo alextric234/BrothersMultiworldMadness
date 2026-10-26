@@ -17281,297 +17281,41 @@ Secret of Evermore:
   priority_locations: []
 
 Secret of Mana:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Vanilla Short: Beat the Mana Beast, Mana Fort available right away.
-    # Vanilla Long: Beat the Mana Beast, activate the Mana Fort in Grand Palace.
-    # Mana Tree Revival: Reach the end of Pure Land with enough Mana Seeds.
-    vanilla_short: 0
-    vanilla_long: 50
-    mana_tree_revival: 0
-
-  logic:
-    # Restrictive logic requires the corresponding Mana Seed to get the palace rewards.
-    basic: 0
-    restrictive: 50
-
-  flammie_drum:
-    # Decides whether Flammie Drum is in the item pool or you start with it.
-    start: 50
-    find: 0
-
-  mtr_seeds_required:
-    # Number of seeds required to finish Mana Tree Revival goal. Does nothing for other goals.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-8: 0 # random value between 1 and 8
-
-  boy_role:
-    # Which stats and magic the boy should have.
-    boy: 50
-    girl: 0
-    sprite: 0
-    random_any: 0
-    random_unique: 0
-
-  girl_role:
-    # Which stats and magic the girl should have.
-    boy: 0
-    girl: 50
-    sprite: 0
-    random_any: 0
-    random_unique: 0
-
-  sprite_role:
-    # Which stats and magic the sprite should have.
-    boy: 0
-    girl: 0
-    sprite: 50
-    random_any: 0
-    random_unique: 0
-
-  start_char:
-    # Which character to start with.
-    boy: 50
-    girl: 0
-    sprite: 0
-
-  other_chars:
-    # How to get other characters.
-    start_with_all: 0
-    find_both_at_level_1: 50
-    find_both_at_current_level: 0
-    start_extra_find_one: 0
-    start_extra_find_none: 0
-    find_one_at_level_1: 0
-    find_one_at_current_level: 0
-    none: 0
-
-  start_weapon:
-    # Which weapon to start with.
-    glove: 0
-    sword: 0
-    axe: 0
-    spear: 0
-    whip: 0
-    bow: 0
-    boomerang: 0
-    javelin: 0
-    random: 50
-
-  start_gold:
-    # How much money to start with.
-    # Recommended 100 when not starting with Flammie Drum.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10000
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10000: 0 # random value between 0 and 10000
-
-  exp_multiplier:
-    # How much Exp to get, in %
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  gold_enemy_multiplier:
-    # How much GP to get from defeating enemies, in %
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1000
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1000: 0 # random value between 0 and 1000
-
-  gold_check_multiplier:
-    # How much GP to get from item pool, as multiplier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  gold_drop_multiplier:
-    # How much GP to get from enemy chests, as multiplier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  chest_drops:
-    # Decides how many chests will be dropped by enemies.
-    none: 0
-    low: 0
-    normal: 50
-    high: 0
-    highest: 0
-
-  chest_traps:
-    # Decides how many chests will have a trap.
-    none: 0
-    normal: 50
-    many: 0
-
-  bosses:
-    # Decide which bosses should be placed where.
-    vanilla: 0
-    swap: 0
-    any_random: 50
-
-  boss_element_rando:
-    # Gives boss random elements.
-    'false': 50
-    'true': 0
-
-  enemies:
-    # Decide which enemies should be placed where.
-    vanilla: 0
-    swap: 50
-    random_spawns: 0
-    oops_all: 0
-    none: 0
-
-  status_ailments:
-    # Status ailments caused by enemies are determined by:
-    # - Location: an enemy will cause the same conditions as the enemy that was originally there.
-    # - Enemy type: every enemy retains its status conditions regardless of location.
-    # - Random easy: randomize status effects with about the same distribution as vanilla.
-    # - Random annoying: randomize with about double the status ailments as vanilla.
-    # - Random awful: every enemy causes status ailments.
-    location: 50
-    enemy_type: 0
-    random_easy: 0
-    random_annoying: 0
-    random_awful: 0
-
-  enemy_stat_growth:
-    # Decides how enemies level up.
-    # Do not pick "Timed", "No Future" or "Vanilla" unless you know what you are doing.
-    with_player: 50
-    after_every_boss: 0
-    timed: 0
-    no_future: 0
-    vanilla: 0
-
-  enemy_difficulty:
-    # Decides how fast enemies level up.
-    # Do not pick "Impossible" unless you know what you are doing.
-    easy: 0
-    sorta_easy: 0
-    normal: 50
-    kinda_hard: 0
-    hard: 0
-    impossible: 0
-
-  randomize_weapons:
-    # Randomize names and properties of weapons.
-    # Mana sword will be preserved.
-    'false': 0
-    'true': 50
-
-  randomize_shops:
-    # Randomize gear available in shops.
-    'false': 0
-    'true': 50
-
-  randomize_music:
-    # Mix up songs a bit.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: vanilla_short
+  logic: restrictive
+  flammie_drum: start
+  mtr_seeds_required: random
+  boy_role: random_unique
+  girl_role: random_unique
+  sprite_role: random_unique
+  start_char: random
+  other_chars: find_both_at_current_level
+  start_weapon: random
+  start_gold: random
+  exp_multiplier: 200
+  gold_enemy_multiplier: 200
+  gold_check_multiplier: 2
+  gold_drop_multiplier: 2
+  chest_drops: normal
+  chest_traps: normal
+  bosses: any_random
+  boss_element_rando: false
+  enemies: swap
+  status_ailments: location
+  enemy_stat_growth: with_player
+  enemy_difficulty: normal
+  randomize_weapons: true
+  randomize_shops: true
+  randomize_music: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Shadow The Hedgehog:
   progression_balancing: normal
