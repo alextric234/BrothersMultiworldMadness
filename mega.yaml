@@ -7755,144 +7755,24 @@ Garfield Kart - Furious Racing:
   priority_locations: []
 
 GoldenEye 007:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # Cradle: Beat Cradle. All Missions: Beat all 20.
-    cradle: 50
-    all_missions: 0
-
-  starting_mission:
-    # Which mission starts unlocked
-    dam: 50
-    facility: 0
-    runway: 0
-    surface_1: 0
-    bunker_1: 0
-    silo: 0
-    frigate: 0
-    surface_2: 0
-    bunker_2: 0
-    statue: 0
-    archives: 0
-    streets: 0
-    depot: 0
-    train: 0
-    jungle: 0
-    control: 0
-    caverns: 0
-    cradle: 0
-
-  extra_locations:
-    # Enable Aztec, Egyptian, or both
-    aztec: 0
-    egyptian: 0
-    both: 0
-    'false': 50
-
-  objective_mode:
-    # Choose whether objectives are tracked separately per difficulty or shared across all
-    # difficulties.
-    per_difficulty: 0
-    shared: 50
-
-  mission_clear_mode:
-    # Each map is one check or one check per difficulty per stage (20 locations vs 60)
-    per_difficulty: 0
-    per_map: 50
-
-  progressive_weapons:
-    # Makes the progression more interesting. It's like gun game, but you unlock them in order up to
-    # Golden Gun, but starting with Klobb lol
-    'false': 0
-    'true': 50
-
-  death_link:
-    # When Bond dies you die in real life
-    'false': 50
-    'true': 0
-
-  trap_chance:
-    # Chance for junk to become trap (0=none 100=fuck you)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  goldeneye_trap:
-    # Pretty self explainatory honestly...
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: cradle
+  starting_mission: random
+  extra_locations: 'false'
+  objective_mode: shared
+  mission_clear_mode: per_map
+  progressive_weapons: true
+  death_link: true
+  trap_chance: 15
+  goldeneye_trap: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Hades:
   progression_balancing: normal
@@ -35300,34 +35180,3 @@ Final Fantasy IV Free Enterprise:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
-
-  progression_balancing: normal
-  accessibility: full
-  starter_pack: stage_clear_round_1
-  stage_clear_goal: true
-  puzzle_goal: puzzle
-  versus_goal: normal
-  stage_clear_inclusion: false
-  puzzle_inclusion: no_puzzle
-  versus_inclusion: false
-  death_link: true
-  stage_clear_mode: incremental_with_round_gate
-  stage_clear_filler: true
-  stage_clear_saves: true
-  special_stage_trap_count: 1
-  special_stage_hp_multiplier: 6
-  last_stage_hp_multiplier: 6
-  shock_panel_checks: 0
-  shock_panels_per_check: 4
-  puzzle_mode: incremental_with_level_gate
-  puzzle_filler: true
-  versus_mode: goal_progressive
-  versus_easy_bowser: true
-  music_filter: disable_no_music
-  local_items: []
-  non_local_items: []
-  start_inventory: {}
-  start_hints: []
-  start_location_hints: []
-  exclude_locations: []
-  priority_locations: []
