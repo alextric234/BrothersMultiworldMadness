@@ -45092,3 +45092,67 @@ Crypt of the NecroDancer:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Crystalis:
+  progression_balancing: normal
+  accessibility: full
+  shuffle_areas: false
+  shuffle_houses: false
+  randomize_tradeins: false
+  unidentified_key_items: false
+  randomize_wall_elements: false
+  shuffle_goa: false
+  randomize_sprite_colors: false
+  randomize_wild_warp: false
+  story_mode: false
+  no_bow_mode: false
+  orbs_not_required: false
+  thunder_warp: shuffled
+  vanilla_dolphin: false
+  fake_flight: out_of_logic
+  statue_glitch: disabled
+  mt_sabre_skip: disabled
+  statue_gauntlet_skip: disabled
+  sword_charge_glitch: disabled
+  trigger_skip: disabled
+  rage_skip: disabled
+  randomize_background_music: vanilla
+  randomize_map_colors: false
+  randomize_monster_weaknesses: false
+  oops_all_mimics: false
+  shuffle_tower_robots: false
+  dont_shuffle_mimics: false
+  keep_unique_items_and_consumables_separate: false
+  decrease_enemy_damage: false
+  guarantee_starting_sword: false
+  guarantee_refresh: false
+  experience_scales_faster: false
+  no_community_jokes: false
+  battle_magic_not_guaranteed: false
+  tink_mode: false
+  barrier_not_guaranteed: false
+  gas_mask_not_guaranteed: false
+  death_link: true
+  dont_buff_consumables: false
+  max_scaling_in_tower: false
+  experience_scales_slower: false
+  charge_shots_only: false
+  blackout: false
+  permadeath: false
+  dont_buff_dyna: false
+  dont_buff_bonus_items: false
+  vanilla_maps: gbc_cave
+  vanilla_shops: false
+  vanilla_wild_warp: disabled
+  vanilla_hud: false
+  dont_auto_equip_upgrades: false
+  disable_controller_shortcuts: false
+  audible_wall_cues: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
