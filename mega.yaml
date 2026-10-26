@@ -44949,3 +44949,22 @@ Clique:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+'Codename: Kids Next Door (GC)':
+  progression_balancing: normal
+  accessibility: full
+  logic_mode: fixed
+  difficulty_assumption: standard
+  starting_stage_slots: 1
+  stage14_placement: always_last
+  bosskey_mode: shuffle
+  auto_complete_on_victory: true
+  death_link: true
+  include_fixed_items_in_pool_when_loose: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
