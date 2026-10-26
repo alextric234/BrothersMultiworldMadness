@@ -17209,290 +17209,37 @@ Schedule I:
   priority_locations: []
 
 Scooby-Doo! Unmasked:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # **Defeat All 3 Bosses**
-    # 
-    # Receive Back to MFM Access and defeat Zen Tuo's Dragon, Guitar Ghoul,
-    # and Caveman. Both requirements must be met to enter Back to MFM. After
-    # completing Back to MFM, receive Movie Set Access and complete Movie Set /
-    # Pterodactyl.
-    # 
-    # **All Trap Pieces**
-    # 
-    # Receive Back to MFM Access and collect all nine Trap Piece items through
-    # Archipelago. Both requirements must be met to enter Back to MFM; defeating
-    # the three bosses is not required. After completing Back to MFM, receive
-    # Movie Set Access and complete Movie Set / Pterodactyl.
-    defeat_all_3_bosses: 50
-    all_trap_pieces: 0
-
-  snack_sanity:
-    # Turn each 100-Scooby-Snack box into an Archipelago location.
-    'false': 50
-    'true': 0
-
-  rat_sanity:
-    # Turn each blockable rat hole into an Archipelago location.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # Share deaths with other DeathLink-enabled players.
-    'false': 50
-    'true': 0
-
-  mubber_retention:
-    # Store Mubber on the Archipelago server and carry it between areas.
-    # 
-    # The four world multipliers increase costume-machine and food-dispenser
-    # prices. Their average also adds 10 Mubber per multiplier level to every
-    # Mubber Pack. Disable this option to use the game's original per-area
-    # Mubber counts and machine prices.
-    'false': 50
-    'true': 0
-
-  mubber_world_1_multiplier:
-    # World 1 Mubber-machine and food-dispenser price multiplier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-10: 0 # random value between 2 and 10
-
-  mubber_world_2_multiplier:
-    # World 2 Mubber-machine and food-dispenser price multiplier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-10: 0 # random value between 2 and 10
-
-  mubber_world_3_multiplier:
-    # World 3 Mubber-machine and food-dispenser price multiplier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-10: 0 # random value between 2 and 10
-
-  mubber_world_4_multiplier:
-    # World 4 Mubber-machine and food-dispenser price multiplier.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 2
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-2-10: 0 # random value between 2 and 10
-
-  shuffle_costumes:
-    # Shuffle both tiers of the Kung Fu, Bat, and Robin Hood costumes.
-    'false': 0
-    'true': 50
-
-  shuffle_health_upgrades:
-    # Shuffle the ten medal upgrades between the starting 3 and maximum 13.
-    'false': 0
-    'true': 50
-
-  trap_percentage:
-    # Percentage of otherwise-filler slots replaced by traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  snack_trap_weight:
-    # Relative frequency of Snack Traps. Zero disables this trap type.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  scare_trap_weight:
-    # Relative frequency of Scare Traps. Zero disables this trap type.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ultimate_scare_trap_weight:
-    # Relative frequency of Ultimate Scare Traps. Zero disables them.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  reverse_controls_trap_weight:
-    # Relative frequency of Reverse Controls Traps. Zero disables them.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  uv_trap_weight:
-    # Relative frequency of UV Traps. Zero disables this trap type.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  #########################
-  # Additional Objectives #
-  #########################
-  red_button_checks:
-    # Turn each destructible red floor button into an Archipelago check.
-    'false': 50
-    'true': 0
-
-  temple_gong_checks:
-    # Turn each destructible gong in Temple into an Archipelago check.
-    'false': 50
-    'true': 0
-
-  kung_fu_checks:
-    # Choose whether Kung Fu encounters give one check for clearing the
-    # fight or one check for every enemy defeated. Off adds no Kung Fu checks.
-    'off': 50
-    per_fight: 0
-    per_enemy: 0
-
-  ###################################
-  # Shared Resources (Experimental) #
-  ###################################
-  mubber_sync:
-    # Share one server-backed Mubber balance with every Scooby-Doo!
-    # Unmasked player who enables this option.
-    # 
-    # This also enables Mubber retention. Each participating player adds 0.2x
-    # to machine and food-dispenser prices, while Mubber Pack amounts continue
-    # to use only the receiving player's personal world multipliers.
-    # 
-    # (Unstable)
-    'false': 50
-    'true': 0
-
-  health_sync:
-    # Share current health, maximum health, healing, and health traps with
-    # every Scooby-Doo! Unmasked player who enables this option.
-    # 
-    # The group receives ten Health Upgrade items in total, divided across the
-    # participating players instead of placing ten upgrades in every world.
-    # 
-    # (Unstable)
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: defeat_all_3_bosses
+  snack_sanity: false
+  rat_sanity: false
+  death_link: true
+  mubber_retention: true
+  mubber_world_1_multiplier: 2
+  mubber_world_2_multiplier: 2
+  mubber_world_3_multiplier: 2
+  mubber_world_4_multiplier: 2
+  shuffle_costumes: true
+  shuffle_health_upgrades: true
+  trap_percentage: 14
+  snack_trap_weight: 50
+  scare_trap_weight: 50
+  ultimate_scare_trap_weight: 50
+  reverse_controls_trap_weight: 50
+  uv_trap_weight: 50
+  red_button_checks: false
+  temple_gong_checks: false
+  kung_fu_checks: 'off'
+  mubber_sync: false
+  health_sync: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Secret of Evermore:
   ################
