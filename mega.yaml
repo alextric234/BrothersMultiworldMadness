@@ -44572,3 +44572,36 @@ Bomberman 64:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Bomberman The Second Attack:
+  progression_balancing: normal
+  accessibility: full
+  game_goal: noah
+  noah_open: generators
+  planet_required: 5
+  noah_boss: sthertoth
+  include_warkeys: false
+  start_element: random_element
+  start_planet: 2
+  death_link: true
+  reduce_food: true
+  pommysanity: true
+  shopsanity: true
+  powersanity: false
+  pommyshop: true
+  include_traps: true
+  random_music: false
+  random_sound: false
+  random_efx: false
+  chara_model: random
+  guardian_helmet: random
+  guardian_vest: random
+  guardian_arms: random
+  guardian_legs: random
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
