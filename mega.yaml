@@ -8117,365 +8117,56 @@ Castlevania - Harmony of Dissonance:
     []
 
 'Castlevania: Order of Ecclesia':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  #################
-  # Goal Settings #
-  #################
-  villagers_required:
-    # How many Villagers you need to save in order to fight Barlowe.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 13
-    13: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-13: 0 # random value between 0 and 13
-
-  barlowe_required:
-    # If enabled, you'll need to defeat Barlowe before you can fight Dracula.
-    # Of course, if Barlowe locks the castle, this won't have any noticable effect.
-    'false': 0
-    'true': 50
-
-  ##################
-  # Starting Items #
-  ##################
-  starting_glyph:
-    # Which Arm Glyph you start the game with.
-    # Random Base selects any base-power Glyph.
-    # Random Melee selects a base-power melee weapon Glyph.
-    # You can additionanlly type in any valid Arm Glyph manually.
-    # (ex. "Confodere = 1")
-    random_base: 50
-    random_melee: 0
-    random_any: 0
-
-  start_with_lizard_tail:
-    # If disabled, Lizard Tail will be shuffled into the item pool.
-    'false': 0
-    'true': 50
-
-  start_with_glyph_union:
-    # If disabled, Glyph Union will be shuffled into the item pool.
-    'false': 0
-    'true': 50
-
-  start_with_glyph_sleeve:
-    # If enabled, you'll start with the Glyph Sleeve.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  villagers_required: random
+  barlowe_required: true
+  starting_glyph: 0
+  start_with_lizard_tail: true
+  start_with_glyph_union: true
+  start_with_glyph_sleeve: false
   starting_villagers:
-    # Specify which Villagers you want to start the game with.
-    ['Jacob']
-
-  ####################
-  # Location Options #
-  ####################
-  shuffle_dominus:
-    # Shuffles the three Dominus glyphs into the item pool.
-    'false': 0
-    'true': 50
-
-  add_brown_chests:
-    # Brown chest behavior.
-    # Normal; Brown chests are untouched
-    # Random Rewards; Shuffles the filler reward pool you get from brown chests
-    # Include; Converts all brown chests to regular chests.
-    normal: 50
-    random_rewards: 0
-    include: 0
-
-  randomize_villagers:
-    # How Villagers are placed.
-    # Normal: Villagers are found in their normal locations.
-    # Shuffled: Villagers are shuffled amongst each other
-    # Anywhere: Villagers can be found anywhere.
-    normal: 50
-    shuffled: 0
-    anywhere: 0
-
-  add_no_hit_chests:
-    # Adds the no-hit Boss chests to the check pool, except for Dracula.
-    # If you fail to get the chest, a portal will spawn in their room that lets you refight them.
-    'false': 50
-    'true': 0
-
-  excluded_no_hit_chests:
-    # Specify bosses that should not include their No-Hit chest in the location pool,
-    # if no-hit chests are enabled.
-    {}
-
-  #################
-  # Quest Options #
-  #################
-  randomized_quests:
-    # Specify which Quests have random items. Active quests that normally do not give items will if they are set here.
-    # Inlcuding Quests which do not normally give you rewards will give you an item.
-    # You can type any individual quest name, as well as the following shortcuts.
-    # Additionally, you can type the name of a Villager to include all of that villager's Quests.
-    # 
-    # Shortcuts:
-    # Requires Item: Any Quest which requires you to turn in an item.
-    # Defeat Enemies: Any Quest which requires you to defeat specific enemies.
-    # Simple: Any Quest which requires you to do some sort of specific task.
-    # Has Reward: Any Quest which directly gives you a reward for completing it.
-    # No Reward: Quests which only send items to the shop and do not give you an item as a reward.
-    # All: Enables ALL quests
-    {}
-
+  - Jacob
+  shuffle_dominus: true
+  add_brown_chests: normal
+  randomize_villagers: normal
+  add_no_hit_chests: false
+  excluded_no_hit_chests: []
+  randomized_quests: []
+  unlock_all_quests: false
+  include_quest_key_items: true
   excluded_quests:
-    # Specify Excluded randomized quests from the above option. Excluded Quests will still be randomized, but will always be your own junk items.
-    # The same shortcuts from the above option apply.
-    ['No Reward']
-
-  unlock_all_quests:
-    # If enabled, all Quests will be unlocked by default, and you can complete them out of order.
-    'false': 50
-    'true': 0
-
-  include_quest_key_items:
-    # If enabled, quest-related Key Items will be randomized into the item pool, and the original location is
-    # added as a check. Otherwise, they will be at their vanilla locations.
-    'false': 50
-    'true': 0
-
-  #################
-  # Glyph Options #
-  #################
-  randomize_glyph_attributes:
-    # Randomizes the Attributes of Arm Glyphs.
-    # Consistent: All levels of the same Glyph will use the same attribute. Glyph Unions will inherit the Attributes of their constituent Glyphs.
-    # Chaotic: All Glyphs and Glyph Unions will use random Attributes.
-    normal: 50
-    consistent: 0
-    chaotic: 0
-
-  randomize_stolen_glyphs:
-    # Randomizes Glyphs that can be stolen from enemies mid-attack.
-    # Shuffled: Randomizes stealable Enemy glyphs only into other non-required Glyphs.
-    # Glyphsanity: Adds these Glyphs into the check pool. Albus and Barlowe's Glyphs spawn
-    #  in their boss room after defeating them if you miss them during the fight.
-    normal: 50
-    shuffled: 0
-    glyphsanity: 0
-
-  randomize_dropped_glyphs:
-    # Randomizes Glyphs that can be dropped by enemies.
-    # Shuffled: Randomizes dropped enemy Glyphs only into other non-required Glyphs.
-    # Glyphsanity: Adds these Glyphs into the check pool.
-    normal: 50
-    shuffled: 0
-    glyphsanity: 0
-
-  glyph_drop_multiplier:
-    # Multiplier for the drop rate of enemy Glyphs.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  #################
-  # World Options #
-  #################
-  starting_area:
-    # Which main Area you start with.
-    none: 0
-    ruvas_forest: 0
-    argila_swamp: 0
-    kalidus_channel: 0
-    somnus_reef: 0
-    minera_prison_island: 0
-    lighthouse: 0
-    tymeo_mountains: 0
-    tristis_pass: 0
-    giants_dwelling: 0
-    mystery_manor: 0
-    misty_forest_road: 0
-    oblivion_ridge: 0
-    skeleton_cave: 0
-    monastery: 50
-
-  remove_training_hall:
-    # If enabled, Training Hall will never be accessible.
-    'false': 0
-    'true': 50
-
-  remove_large_cavern:
-    # If enabled, Large Cavern will never be accessible.
-    'false': 0
-    'true': 50
-
-  open_castle:
-    # Opens Dracula's Castle from the start of the game.
-    'false': 50
-    'true': 0
-
-  randomize_castle_doors:
-    # Randomizes where the area transition doors in the Castle lead to.
-    'false': 50
-    'true': 0
-
+  - No Reward
+  randomize_glyph_attributes: normal
+  randomize_stolen_glyphs: normal
+  randomize_dropped_glyphs: normal
+  glyph_drop_multiplier: random
+  starting_area: random
+  remove_training_hall: true
+  remove_large_cavern: true
+  open_castle: false
+  randomize_castle_doors: false
   logic_tricks:
-    # Tricks that can be individually enabled to make logic harder.
-    # You can view the full list of available tricks and documentation on them from
-    # the Game Page document.
-    ['Monastery Cubes Glyph With Secare Union', 'Redire Slides']
-
-  ##################
-  # Enemy Settings #
-  ##################
-  experience_percent:
-    # What percentage of EXP enemies give you. This is a percent of their original EXP amount.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 500
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-500: 0 # random value between 50 and 500
-    none: 0 # equivalent to 0
-    half: 0 # equivalent to 50
-    normal: 50 # equivalent to 100
-    double: 0 # equivalent to 200
-    quadruple: 0 # equivalent to 400
-
-  ap_multiplier:
-    # Multiplier for the amount of AP given by enemies.
-    # Does not affect AP not dropped by enemies.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  shuffle_enemy_drops:
-    # Randomizes what items enemies drop, and what the drop chances are.
-    'false': 50
-    'true': 0
-
-  weight_shuffled_drops:
-    # Weights enemy drops so that rare drops are more likely to be good items.
-    # This only applies when enemy drops are Shuffled.
-    'false': 0
-    'true': 50
-
-  ###################
-  # Quality of Life #
-  ###################
-  reveal_map:
-    # Start with the entire map visible.
-    'false': 0
-    'true': 50
-
-  reveal_hidden_walls:
-    # Automatically reveals all breakable walls/objects.
-    'false': 50
-    'true': 0
-
-  reveal_hidden_chests:
-    # Hidden blue chests will automatically be revealed.
-    'false': 0
-    'true': 50
-
-  one_screen_mode:
-    # Allows the entire game to be played with only the bottom screen. Press Select to view the map.
-    'false': 50
-    'true': 0
-
-  save_on_area_exit:
-    # If enabled, exiting to the World Map will fully heal you and automatically save the game.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Monastery Cubes Glyph With Secare Union
+  - Redire Slides
+  experience_percent: 201
+  ap_multiplier: 10
+  shuffle_enemy_drops: false
+  weight_shuffled_drops: true
+  reveal_map: true
+  reveal_hidden_walls: true
+  reveal_hidden_chests: true
+  one_screen_mode: true
+  save_on_area_exit: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 'Castlevania: Portrait of Ruin':
   ################
