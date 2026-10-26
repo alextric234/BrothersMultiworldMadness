@@ -44873,3 +44873,40 @@ Build a Jetpack:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Castlevania - Aria of Sorrow:
+  progression_balancing: normal
+  accessibility: items
+  target_platform: gba
+  randomize_pickups: true
+  goal: chaos
+  hard_mode: false
+  skull_key_warp: true
+  forbidden_area_button: pickup
+  death_link: true
+  soul_shuffle: any_type
+  keep_soul_drop_rates: true
+  shuffle_starting_soul: true
+  multiply_soul_drop_rates: true
+  soul_drop_rate_multiplier: double
+  ancient_book_soul_drops: true
+  item_smoothing: strict
+  item_smoothing_order: map_distance
+  early_mobility_souls: bias_early
+  black_panther_bias: true
+  logic_difficulty_preset: canonical
+  kickable_enemy_logic: inherit
+  platform_clip_logic: inherit
+  pixel_perfect_logic: inherit
+  quick_save_reset_logic: inherit
+  new_soul_pause: true
+  single_jump_divekick: true
+  classicvania_movement: false
+  oops_all_whips: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
