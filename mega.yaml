@@ -44542,3 +44542,33 @@ Tetris Attack:
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
+
+Bomberman 64:
+  progression_balancing: normal
+  accessibility: full
+  gold_cards: 45
+  max_cards: 50
+  game_goal: altair
+  open_stages: false
+  difficulty: normal
+  palace_on: false
+  boss_card_five: kill_count_reduction
+  death_link: true
+  random_music: false
+  random_sound: false
+  color: random
+  head_part: random
+  body_part: random
+  arm_left_part: random
+  arm_right_part: random
+  leg_left_part: random
+  leg_right_part: random
+  enemy_model: 'off'
+  enemy_ai: 'off'
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
