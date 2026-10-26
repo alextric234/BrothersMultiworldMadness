@@ -45282,3 +45282,78 @@ Dark Souls Remastered:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+DELTARUNE:
+  progression_balancing: normal
+  accessibility: full
+  have_starwalker: true
+  shuffle_ost: false
+  chosen_route: all_recruits
+  recruits_sanity: true
+  lose_recruits_sanity: false
+  randomize_secret_bosses: 'false'
+  macguffin_extra: 1
+  randomize_chapters: randomized
+  random_safety_chapter_inclusion: true
+  starting_chapter: random_chapter
+  include_chapter_1: true
+  macguffin_chapter_1: 0
+  chapter_1_recruit: true
+  include_chapter_2: true
+  macguffin_chapter_2: 0
+  include_chapter_3: true
+  macguffin_chapter_3: 0
+  randomize_sword_route: false
+  shadow_mantle_holder_as_secret_boss: false
+  include_shadow_mantle: true
+  exclude_t_rank_board: true
+  exclude_z_rank_board: true
+  physical_challenge_rank_sanity: false
+  exclude_t_rank_physical_challenge: true
+  exclude_z_rank_physical_challenge: true
+  allow_doom_board_without_all_characters: false
+  include_chapter_4: true
+  macguffin_chapter_4: 0
+  include_mike: 'false'
+  exclude_mike_platinum: false
+  include_chapter_5: true
+  macguffin_chapter_5: 3
+  include_hidden_items: false
+  include_secret_bosses_items_requirement: false
+  mysterykey_from_pink_coins: true
+  door_key_from_broken_keys: true
+  include_unused_items: 'false'
+  progressive_kris_weapons: false
+  progressive_susie_weapons: false
+  progressive_ralsei_weapons: false
+  progressive_noelle_weapons: false
+  unlock_characters: 'false'
+  start_with_random_character: true
+  unlock_fun_gang_actions: false
+  better_odds: true
+  remove_starting_equipment: false
+  item_balancing: false
+  pink_twin_ribbon_unnerf: true
+  rock_video_sanity: 'false'
+  exclude_t_rank_rock_video: true
+  exclude_z_rank_rock_video: true
+  speedrun_gliches_as_logic: false
+  nohit_as_logic: false
+  annoying_farming_as_logic: false
+  death_link: true
+  death_link_group: ''
+  damage_link: false
+  damage_link_group: ''
+  filler_healing_weight: common
+  filler_currency_weight: uncommon
+  trap_weight: rare
+  filler_armor_weight: rare
+  filler_tension_weight: very rare
+  filler_smile_weight: extremely rare
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
