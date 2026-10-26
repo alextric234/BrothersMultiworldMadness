@@ -44716,3 +44716,112 @@ Borderlands 2:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
+
+Brotato:
+  death_link: true
+  progression_balancing: normal
+  accessibility: full
+  num_victories: 10
+  num_characters: 42
+  num_starting_characters: 5
+  starting_characters: default_all
+  include_base_game_characters:
+  - Apprentice
+  - Arms Dealer
+  - Artificer
+  - Baby
+  - Beast Master
+  - Brawler
+  - Bull
+  - Chunky
+  - Crazy
+  - Cryptid
+  - Cyborg
+  - Demon
+  - Doctor
+  - Engineer
+  - Entrepreneur
+  - Explorer
+  - Farmer
+  - Fisherman
+  - Generalist
+  - Ghost
+  - Gladiator
+  - Glutton
+  - Golem
+  - Hunter
+  - Jack
+  - King
+  - Knight
+  - Lich
+  - Loud
+  - Lucky
+  - Mage
+  - Masochist
+  - Multitasker
+  - Mutant
+  - Old
+  - One Armed
+  - Pacifist
+  - Ranger
+  - Renegade
+  - Saver
+  - Sick
+  - Soldier
+  - Speedy
+  - Streamer
+  - Technomage
+  - Vagabond
+  - Vampire
+  - Well Rounded
+  - Wildling
+  - Wounded
+  waves_per_drop: 1
+  num_wave_caps: four
+  gold_reward_mode: all_every_time
+  xp_reward_mode: all_every_time
+  enable_enemy_xp: true
+  include_elites_in_logic: false
+  spawn_normal_loot_crates: true
+  num_common_crate_drops: 25
+  num_common_crate_drops_per_check: 2
+  num_common_crate_drop_groups: 1
+  num_legendary_crate_drops: 5
+  num_legendary_crate_drops_per_check: 1
+  num_legendary_crate_drop_groups: 1
+  num_starting_shop_slots: random
+  shop_lock_buttons_mode: none
+  num_starting_lock_buttons: 0
+  common_item_weight: random
+  uncommon_item_weight: random
+  rare_item_weight: random
+  legendary_item_weight: random
+  common_upgrade_weight: random
+  uncommon_upgrade_weight: random
+  rare_upgrade_weight: random
+  legendary_upgrade_weight: random
+  gold_weight: random
+  xp_weight: random
+  enable_abyssal_terrors_dlc: false
+  include_abyssal_terrors_characters:
+  - Buccaneer
+  - Builder
+  - Captain
+  - Chef
+  - Creature
+  - Curious
+  - Diver
+  - Druid
+  - Dwarf
+  - Gangster
+  - Hiker
+  - Ogre
+  - Romantic
+  - Sailor
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
