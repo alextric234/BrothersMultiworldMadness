@@ -6019,436 +6019,54 @@ Dark Souls Remastered:
   exclude_locations: []
   priority_locations: []
   start_inventory_from_pool: {}
-
+  
 Deep Rock Galactic:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ######################
-  # Goal Options (All) #
-  ######################
-  goal_mode:
-    # Set The Current Run Goal [Working Options = kill_caretaker (default) [Long], goldrush [Medium], hunter (beta) [Medium], gauntlet (beta) [Short]
-    kill_caretaker: 50
-    goldrush: 0
-    hunter: 0
-    gauntlet: 0
-
-  max_hazard:
-    # Determines how high the highest generated hazard level will be for objectives. (If Playing Gauntlet Goal, this is your Chosen Hazard Level)
-    haz2: 0
-    haz3: 0
-    haz4: 0
-    haz5: 50
-
-  ########################################
-  # Goal Options (Kill Caretaker) [Long] #
-  ########################################
-  biome_start:
-    # Determines what Biome you start with unlocked (Kill Caretaker Goal) [Unlocks all but End Biome]
-    all_unlocked: 0
-    azure_weald: 50
-    crystalline_caverns: 0
-    fungus_bogs: 0
-    hollow_bough: 0
-    glacial_strata: 0
-    dense_biozone: 0
-    magma_core: 0
-    radioactive_exclusion_zone: 0
-    salt_pits: 0
-    sandblasted_corridors: 0
-    ossuary_depths: 0
-
-  biome_end:
-    # Determines what Biome you end with (Kill Caretaker Goal)
-    azure_weald: 0
-    crystalline_caverns: 0
-    fungus_bogs: 0
-    hollow_bough: 0
-    glacial_strata: 0
-    dense_biozone: 0
-    magma_core: 50
-    radioactive_exclusion_zone: 0
-    salt_pits: 0
-    sandblasted_corridors: 0
-    ossuary_depths: 0
-
-  #####################################
-  # Goal Options (Gold Rush) [Medium] #
-  #####################################
-  gold_rush_val:
-    # Set The Current Gold Rush Gold needed (GoldRush Goal) [Must be Multiple of 10 and >5000]
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5000
-    # Maximum value is 30000
-    15000: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5000-30000: 0 # random value between 5000 and 30000
-
-  gold_rush_increment:
-    # Set The Amount of Gold Needed per Check (GoldRush Goal) [Must be Multiple of 10 and >30]
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 30
-    # Maximum value is 1000
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-30-1000: 0 # random value between 30 and 1000
-
-  ##################################
-  # Goal Options (Hunter) [Medium] #
-  ##################################
-  hunter_trophies:
-    # Set The Current Hunter Trophies Needed per enemy (Hunter Goal)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-100: 0 # random value between 10 and 100
-
-  hunter_targets:
-    # Determines what counts for the Hunter Goal (Hunter Goal)
-    everything: 50
-    bosses_only: 0
-    no_passive_creatures: 0
-
-  hunter_bosses:
-    # Determines how many Boss Hunter Goals you must meet to win (Hunter Goal)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3
-    # Maximum value is 9
-    6: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3-9: 0 # random value between 3 and 9
-
-  hunter_trophies_b:
-    # Set The Current Hunter Trophies Needed per Boss enemy (Hunter Goal)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  ###################################
-  # Goal Options (Gauntlet) [Short] #
-  ###################################
-  gauntlet_stages:
-    # Set The number of Stages to complete the Gauntlet (Gauntlet Goal)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 10
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-10: 0 # random value between 5 and 10
-
-  gauntlet_seed:
-    # Set a Mission Generation Seed for the Gauntlet (Gauntlet Goal)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1000
-    # Maximum value is 100000000
-    1234567: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1000-100000000: 0 # random value between 1000 and 100000000
-
-  gauntlet_start:
-    # Set The number of Stages you start with unlocked (Gauntlet Goal)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  gauntlet_help:
-    # Adds some additional starting stats in Gauntlet Mode to Balance the early game (Gauntlet Goal). Turn this off for added difficulty.
-    'false': 0
-    'true': 50
-
-  ######################
-  # Difficulty Options #
-  ######################
-  progression_diff:
-    # Determines how high the progressive check locks are for each sphere. (Completion by Diff LeafLover=10%, Normal=25%, Hard=33%, Lethal=50%, Karl=75%)
-    easy: 0
-    normal: 50
-    hard: 0
-    lethal: 0
-    karl: 0
-
-  starting_stats:
-    # Determine how hard your starting stats are. this also affects your maximum stats reached
-    easier_x2: 0
-    normal: 50
-    harder_half: 0
-
-  sprint_start:
-    # Sets whether sprinting should be possible from the start (removes some base movespeed checks)
-    'false': 50
-    'true': 0
-
-  avail_classes:
-    # Set you starting class
-    all: 0
-    gunner: 0
-    driller: 0
-    scout: 0
-    engineer: 0
-    random_class: 50
-
-  #####################
-  # Optional Features #
-  #####################
-  wep_rando:
-    # Set Weapons randomization Style (Fully Random disables Starting Weapon Choices)
-    'off': 0
-    fully_random: 50
-    choose_starters: 0
-
-  wep_primary:
-    # Set you starting primary weapon. (Make sure its for your starting class)
-    driller_flamethrower: 50
-    driller_cryo_canon: 0
-    driller_sludge_pump: 0
-    engineer_warthog_shotgun: 0
-    engineer_stubby_smg: 0
-    engineer_lok1_rifle: 0
-    gunner_minigun: 0
-    gunner_autocanon: 0
-    gunner_guided_rocket: 0
-    scout_assault_rifle: 0
-    scout_m1000_sniper: 0
-    scout_plasma_carbine: 0
-
-  wep_secondary:
-    # Set you starting secondary weapon. (Make sure its for your starting class)
-    driller_pistol: 50
-    driller_plasma_charger: 0
-    driller_wave_cooker: 0
-    engineer_deepcore_pgl: 0
-    engineer_breach_cutter: 0
-    engineer_shard_diffractor: 0
-    gunner_revolver: 0
-    gunner_burstfire_pistol: 0
-    gunner_coil_gun: 0
-    scout_boomstick: 0
-    scout_dual_pistols: 0
-    scout_crossbow: 0
-
-  error_cube_checks:
-    # Sets the number of checks to be Error cubes (Defaults to 10)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 25
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-25: 0 # random value between 0 and 25
-
-  traps_on:
-    # Turns on/off Trap Items
-    'false': 0
-    'true': 50
-
-  minigames_on:
-    # Turns on/off Jetty Boot as a location
-    'false': 0
-    'true': 50
-
-  minigame_num:
-    # Sets the high score needed for all the Minigame Locations (in increments of 5)
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 20
-    # Maximum value is 100
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-20-100: 0 # random value between 20 and 100
-
-  events_on:
-    # Turns on/off Machine Events as a location
-    'false': 0
-    'true': 50
-
-  ########################
-  # AP Coin Shop Options #
-  ########################
-  coin_shop_prices:
-    # Set the avg coin shop price. This will determine the cost of APCoin Shop Items in game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 30
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-30: 0 # random value between 1 and 30
-
-  shop_item_num:
-    # Set the amount of items to be in the APCoin Shop.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  gold_to_coin_rate:
-    # Set the value of Gold Gathered to APCoin Conversion Rate. For example setting this to 100 would mean 100x gathered gold gets you 1x APCoin.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 500
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-500: 0 # random value between 5 and 500
-
-  beermat_to_coin_rate:
-    # Set the value of Beer Materials to APCoin Conversion Rate. For example setting this to 5 would mean 5x gathered beer materials gets you 1x APCoin.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 50
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-50: 0 # random value between 1 and 50
-
-  #####################
-  # Deathlink Options #
-  #####################
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_link_all:
-    # Sets whether deathlink will kill all palyers, or just a single dwarf at random (in multiplayer)
-    'false': 0
-    'true': 50
-
-  death_link_failure:
-    # Sets whether deathlink will send only on Mission Failure (instead of dwarf death)
-    'false': 50
-    'true': 0
-
-  #####################
-  # BlackList Options #
-  #####################
-  blacklist_biome:
-    # Prevents certain biomes from being included in generation. (Only affects Kill Caretaker)
-    []
-
-  blacklist_obj:
-    # Prevents certain objectives from being included in generation. (Only affects Kill Caretaker)
-    []
-
-  blacklist_sec:
-    # Prevents certain objectives from being included in generation. (Affects Most Goals)
-    []
-
-  blacklist_warn:
-    # Prevents certain objectives from being included in generation. (Affects Most Goals)
-    []
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal_mode: goldrush
+  max_hazard: haz3
+  biome_start: azure_weald
+  biome_end: magma_core
+  gold_rush_val: 16177
+  gold_rush_increment: 50
+  hunter_trophies: 50
+  hunter_targets: everything
+  hunter_bosses: 6
+  hunter_trophies_b: 5
+  gauntlet_stages: 10
+  gauntlet_seed: 1234567
+  gauntlet_start: 1
+  gauntlet_help: true
+  progression_diff: normal
+  starting_stats: easier_x2
+  avail_classes: random_class
+  sprint_start: true
+  wep_rando: fully_random
+  wep_primary: random
+  wep_secondary: random
+  error_cube_checks: 10
+  traps_on: true
+  minigames_on: true
+  minigame_num: 30
+  events_on: true
+  coin_shop_prices: 5
+  gold_to_coin_rate: 50
+  beermat_to_coin_rate: 2
+  shop_item_num: 25
+  death_link: true
+  death_link_all: true
+  death_link_failure: false
+  blacklist_biome: []
+  blacklist_obj: []
+  blacklist_sec: []
+  blacklist_warn: []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 DELTARUNE:
   progression_balancing: normal
@@ -7246,202 +6864,43 @@ Dragon Warrior:
   priority_locations: []
 
 DREDGE:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  include_iron_rig_dlc:
-    # Include the Iron Rig DLC (Iron Rig DLC required for this)
-    'false': 50
-    'true': 0
-
-  include_pale_reach_dlc:
-    # Include the Pale Reach DLC (Pale Reach DLC required for this)
-    'false': 50
-    'true': 0
-
-  require_boat_performance:
-    # Set logic to require a fast enough, well lit boat to reach further areas, counting only engines and lights that
-    # fit in the hull together.
-    # 
-    # Gale Cliffs, Stellar Basin, Twisted Strand and Devil's Spine: 50 knots and 1800 lumens
-    # Open Ocean dredging, fishing and pickups, and the Iron Rig: 50 knots and 2100 lumens
-    # The Pale Reach: 60 knots and 2100 lumens
-    'false': 50
-    'true': 0
-
-  logical_nets:
-    # If enabled, logic may expect players to use nets as the only method of catching fish that are also catchable with a
-    # rod. This includes passive net catches in specific regions.
-    # 
-    # If disabled, logic will only consider rod-based access for such fish, ensuring checks are reachable through active
-    # fishing.
-    # 
-    # Recommended: disabled for players who prefer reliable, targeted fishing.
-    'false': 50
-    'true': 0
-
-  include_aberrations:
-    # If enabled, checks for fish aberrations may contain progression items.
-    'false': 50
-    'true': 0
-
-  add_fishing_licenses:
-    # If enabled, adds a required item to be able to catch each region's fish.
-    'false': 50
-    'true': 0
-
-  add_passage_items:
-    # If enabled, adds required items to be able to traverse each zone.
-    # The Windward Litany = Gale Cliffs
-    # The Astral Testament = Stellar Basin
-    # The Mangrove Canticle = Twisted Strand
-    # The Cinder Gospel = Devil's Spine
-    # The Pelagic Psalm = Open Ocean
-    # The Rimebound Chronicle = Pale Reach
-    'false': 50
-    'true': 0
-
-  include_message_bottles:
-    # If enabled, picking up each of the 10 messages in a bottle is a check.
-    'false': 0
-    'true': 50
-
-  include_research_checks:
-    # If enabled, researching each piece of equipment at the research station is a check. Research costs nothing in an
-    # AP save, so these are free checks once the research tree lets you reach them. Research Parts are never in the pool.
-    'false': 0
-    'true': 50
-
-  progressive_aberration_chance_items:
-    # How many Progressive Aberration Chance items to add. Each raises the minimum chance of catching an aberration by
-    # an equal share, so having all of them makes every catch an aberration. 0 adds none.
-    # 
-    # Logic expects at least half of them (or the Guaranteed Aberrations item) before any aberration, or anything that
-    # needs one, is in logic. With neither item in the pool, aberrations are left to the normal chance.
-    # 
-    # The boost can be switched off in game with "ap aberrations off" or in the mod settings.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  guaranteed_aberrations_item:
-    # Adds a Guaranteed Aberrations item that makes every catch an aberration as soon as it's received.
-    # Once received, every aberration is in logic.
-    # 
-    # The boost can be switched off in game with "ap aberrations off" or in the mod settings.
-    'false': 50
-    'true': 0
-
-  trap_percentage:
-    # The percentage of filler items replaced with traps. 0 adds no traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  progression_balancing: normal
+  accessibility: full
+  include_iron_rig_dlc: false
+  include_pale_reach_dlc: false
+  require_boat_performance: true
+  logical_nets: false
+  include_aberrations: true
+  add_fishing_licenses: true
+  add_passage_items: true
+  include_message_bottles: true
+  include_research_checks: true
+  progressive_aberration_chance_items: 5
+  guaranteed_aberrations_item: true
+  trap_percentage: random-range-10-30
   enabled_traps:
-    # Which traps can replace filler.
-    # 
-    # Damaging Event Trap: a monster that can damage your boat appears
-    # Scary Event Trap: something unsettling but harmless happens
-    # Money Loss Trap: lose 10% of your money
-    # Teleport Trap: get pulled back to where the Manifest ability takes you
-    # Panic Trap: your panic rises sharply
-    # Hull Damage Trap: your boat takes a hit
-    # Engine Damage Trap: an engine takes damage
-    # Nightfall Trap: time skips ahead to nightfall
-    # Rot Trap: a fish in your cargo rots
-    # Slow Trap: your boat slows down for a short while
-    # Lights Out Trap: your lights go out for a short while
-    # Cargo Scramble Trap: your cargo gets rearranged
-    # Reverse Controls Trap: your steering and throttle are reversed for a short while
-    ['Nightfall Trap', 'Money Loss Trap', 'Slow Trap', 'Lights Out Trap', 'Hull Damage Trap', 'Engine Damage Trap', 'Rot Trap', 'Reverse Controls Trap', 'Teleport Trap', 'Scary Event Trap', 'Damaging Event Trap', 'Cargo Scramble Trap', 'Panic Trap']
-
-  death_link:
-    # Enables deathlink
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Cargo Scramble Trap
+  - Damaging Event Trap
+  - Engine Damage Trap
+  - Hull Damage Trap
+  - Lights Out Trap
+  - Money Loss Trap
+  - Nightfall Trap
+  - Panic Trap
+  - Reverse Controls Trap
+  - Rot Trap
+  - Scary Event Trap
+  - Slow Trap
+  - Teleport Trap
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 EarthBound:
   progression_balancing: '50'
