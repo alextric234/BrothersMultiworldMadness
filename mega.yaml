@@ -23244,456 +23244,58 @@ Wynncraft:
   priority_locations: []
 
 Xenoblade X:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  #############
-  # Locations #
-  #############
-  clp:
-    # Allows you to get items from collectopedia entries and adds those locations to the pool
-    'false': 0
-    'true': 50
-
-  loc:
-    # Allows you to get items from locations and adds those locations to the pool
-    'false': 0
-    'true': 50
-
-  ebk:
-    # Allows you to get items from completing enemy entries(white dot in the menu)
-    # and adds those locations to the pool
-    'false': 0
-    'true': 50
-
-  enemy_book_threshold:
-    # Sets the required kills to unlock a enemy location. White dot in enemy book appears at 3 for normal enemies.
-    # Uniques are fixed at 1. Increase to 3 for a more authentic experience
-    discovery: 0
-    '1': 50
-    '2': 0
-    '3': 0
-
-  #########
-  # Items #
-  #########
-  amr:
-    # Allows you to receive ground armor as items and adds those items to the pool
-    'off': 0
-    'on': 50
-
-  wpn:
-    # Allows you to receive ground weapons as items and adds those items to the pool
-    'off': 0
-    'on': 50
-
-  aug:
-    # Allows you to receive ground augments as items and adds those items to the pool
-    'off': 0
-    'on': 50
-
-  skwpn:
-    # Allows you to receive skell weapons as items and adds those items to the pool
-    'off': 0
-    'on': 50
-
-  skamr:
-    # Allows you to receive skell armor as items and adds those items to the pool
-    'off': 0
-    'on': 50
-
-  skaug:
-    # Allows you to receive skell augments as items and adds those items to the pool
-    'off': 0
-    'on': 50
-
-  impit:
-    # Allows you to receive important items and adds those items to the pool. Increases generation time
-    'off': 50
-    'on': 0
-
-  character_level:
-    # Connects your logic level to your character level. This disables the normal way to increase your level.
-    # Dont enable if Logic Level Steps is disabled.
-    'off': 0
-    'on': 50
-
-  #########
-  # Logic #
-  #########
-  logic_level_steps:
-    # Defines the individual progress each level logic item provides. Higher means bigger ingame level increase
-    # per item, but lower item count in the pool
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-    disable: 0 # equivalent to 0
-
-  logic_level_overcap:
-    # Adds the specified number of level logic items to increase the chance of progressing.
-    # Lower to 0 for a more authentic experience
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 20
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-20: 0 # random value between 0 and 20
-
-  early_chapter4_logic:
-    # Forces FNet and Blade License to appear before Lvl 16
-    'false': 0
-    'true': 50
-
-  #################
-  # Customisation #
-  #################
-  drifter_ranged_weapon_type:
-    # Select the ranged weapon starter type for the drifter class
-    assault_rifle_vanilla: 0
-    sniper_rifle: 0
-    dual_guns: 0
-    gatling_gun: 0
-    raygun: 0
-    psycho_launchers: 0
-    random: 50
-
-  drifter_melee_weapon_type:
-    # Select the melee weapon starter type for the drifter class
-    longsword: 0
-    javelin: 0
-    dual_swords: 0
-    shield: 0
-    knife_vanilla: 0
-    photon_sabre: 0
-    random: 50
-
-  combat_starting_items:
-    # Start with the number of specified useful arts/skills/classes
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 252
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-252: 0 # random value between 0 and 252
-
-  #################
-  # Graphic packs #
-  #################
-  enemy_aggro:
-    # Increase or decrease the enemy aggression
-    none: 50
-    doubled_range: 0
-    half_range: 0
-    quarter_range: 0
-
-  enemy_stats:
-    # Adjust the stats of the enemies
-    none: 50
-    25_percent: 0
-    50_percent: 0
-    75_percent: 0
-    125_percent: 0
-    150_percent: 0
-    200_percent: 0
-
-  damage_multiplicator:
-    # Multiply your teams damage output. Note: Displayed damage values stay the same regardless
-    none: 50
-    25_percent: 0
-    33_percent: 0
-    50_percent: 0
-    200_percent: 0
-    300_percent: 0
-    500_percent: 0
-
-  battle_tension_points:
-    # Quality of Life to not start with full TP
-    'off': 0
-    on_boot: 0
-    on_boot_and_death_and_teleport: 50
-
-  battle_tension_points_link:
-    # Link your HP and TP together. Transforms the gameplay significantly
-    'off': 50
-    bound: 0
-    identical: 0
-    bound_inversely: 0
-    only_on_loss: 0
-    only_on_gain: 0
-
-  qte_auto:
-    # Automatically completes Quicktime-Events with the specified rating
-    none: 50
-    excellent: 0
-    good: 0
-
-  qte_skell:
-    # Restores skells automatically if the insurance is still valid
-    'off': 0
-    'on': 50
-
-  character_equip_any_weapon:
-    # Allows you to equip any equipment regardless of requirements
-    'off': 50
-    'on': 0
-
-  collection_range:
-    # Increases the collection range of items in the field
-    none: 50
-    big: 0
-
-  armor_slot_upgrades:
-    # Allows you to further upgrade armor slots.
-    'off': 50
-    'on': 0
-
-  armor_traits_upgrades:
-    # Allows you to further upgrade equipment traits. Optional without ressources
-    none: 50
-    normal: 0
-    cheat: 0
-
-  lv_points_modifier:
-    # Modifies the level experience gain and disables 9999 exp cap. Only active if you disabled
-    # Include Character Level
-    none: 0
-    x1: 0
-    x2: 0
-    x3: 0
-    x5: 50
-    x10: 0
-
-  battle_points_modifier:
-    # Modifies the battle experience gain to upgrade your arts and skills
-    none: 0
-    x2: 0
-    x3: 0
-    x5: 50
-    x10: 0
-
-  frontier_nav_miranium_frequency:
-    # Alters the frequency of the Frontier-Nav Miranium bonuses
-    none: 50
-    minute: 0
-    2_minutes: 0
-    5_minutes: 0
-    10_minutes: 0
-    15_minutes: 0
-    20_minutes: 0
-
-  frontier_nav_miranium_quantity:
-    # Alters the quantity of the Frontier-Nav Miranium bonuses
-    none: 50
-    x2: 0
-    x3: 0
-    x5: 0
-    x10: 0
-
-  frontier_nav_money_frequency:
-    # Alters the frequency of the Frontier-Nav Money bonuses
-    none: 50
-    minute: 0
-    2_minutes: 0
-    5_minutes: 0
-    7_minutes: 0
-    10_minutes: 0
-
-  frontier_nav_money_quantity:
-    # Alters the quantity of the Frontier-Nav Money bonuses
-    none: 50
-    x2: 0
-    x3: 0
-    x5: 0
-    x10: 0
-
-  frontier_nav_resources_frequency:
-    # Alters the frequency of the Frontier-Nav Resource bonuses
-    none: 50
-    minute: 0
-    2_minutes: 0
-    5_minutes: 0
-
-  frontier_nav_resources_quantity:
-    # Alters the quantity of the Frontier-Nav Resource bonuses
-    none: 50
-    x2: 0
-    x3: 0
-    x5: 0
-    x10: 0
-
-  frontier_nav_no_miranium_cap:
-    # Removes the Miranium cap caused by missing storage probes
-    'off': 50
-    'on': 0
-
-  equip_chest_count:
-    # Alters the guranteed equipment count in treasure chests. Only use if you removed gear from the item pool
-    none: 50
-    '1': 0
-    '2': 0
-    '3': 0
-
-  equip_quality:
-    # Alters the guranteed equipment trait count. Only use if you removed gear from the item pool.
-    # Linked with Augment Slots so always set both
-    none: 50
-    0_traits: 0
-    1_traits: 0
-    2_traits: 0
-    3_traits: 0
-
-  equip_slots:
-    # Alters the guranteed equipment augments slots count. Only use if you removed gear from the item pool.
-    # Linked with EquipQuality so always set both
-    none: 50
-    '0': 0
-    '1': 0
-    '2': 0
-    '3': 0
-
-  materials_drop_ratio:
-    # Alters the materials drop ratio
-    none: 0
-    drop_100_percent: 0
-    drop_70_percent: 0
-    drop_50_percent: 50
-    drop_30_percent: 0
-    drop_0_percent: 0
-
-  treasure_quality:
-    # Forces a specific quality, if you would get no loot
-    none: 0
-    gold_quality: 0
-    silver_quality: 0
-    bronze_quality: 50
-
-  moon_jump_width:
-    # Alters the jump width
-    none: 50
-    distance_150_percent: 0
-    distance_170_percent: 0
-    distance_200_percent: 0
-    distance_250_percent: 0
-
-  moon_jump_height:
-    # Alters the jump height
-    none: 50
-    height_105_percent: 0
-    height_107_percent: 0
-    height_110_percent: 0
-
-  were_going_to_plad_horizontal:
-    # Alters the skell flight speed
-    none: 0
-    speed_125_percent: 0
-    speed_150_percent: 0
-    speed_200_percent: 50
-    speed_300_percent: 0
-
-  were_going_to_plad_vertical:
-    # Alters the skell flight speed
-    none: 0
-    speed_125_percent: 0
-    speed_150_percent: 0
-    speed_200_percent: 50
-    speed_300_percent: 0
-
-  fast_run_speed:
-    # Alters the running speed
-    none: 0
-    speed_150_percent: 0
-    speed_200_percent: 0
-    speed_250_percent: 50
-    speed_300_percent: 0
-
-  faster_run_speed:
-    # Alters the new second stage running speed
-    none: 0
-    speed_300_percent: 0
-    speed_500_percent: 0
-    speed_700_percent: 0
-    speed_1000_percent: 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  clp: true
+  loc: true
+  ebk: true
+  enemy_book_threshold: '1'
+  amr: 'on'
+  wpn: 'on'
+  aug: 'on'
+  skwpn: 'on'
+  skamr: 'on'
+  skaug: 'on'
+  impit: 'off'
+  character_level: 'on'
+  logic_level_steps: 5
+  logic_level_overcap: 10
+  early_chapter4_logic: true
+  drifter_ranged_weapon_type: random
+  drifter_melee_weapon_type: random
+  combat_starting_items: 15
+  enemy_aggro: none
+  enemy_stats: none
+  damage_multiplicator: none
+  battle_tension_points: on_boot_and_death_and_teleport
+  battle_tension_points_link: 'off'
+  qte_auto: none
+  qte_skell: 'on'
+  character_equip_any_weapon: 'off'
+  collection_range: none
+  armor_slot_upgrades: 'off'
+  armor_traits_upgrades: none
+  lv_points_modifier: x5
+  battle_points_modifier: x5
+  frontier_nav_miranium_frequency: none
+  frontier_nav_miranium_quantity: none
+  frontier_nav_money_frequency: none
+  frontier_nav_money_quantity: none
+  frontier_nav_resources_frequency: none
+  frontier_nav_resources_quantity: none
+  frontier_nav_no_miranium_cap: 'off'
+  equip_chest_count: none
+  equip_quality: none
+  equip_slots: none
+  materials_drop_ratio: drop_50_percent
+  treasure_quality: bronze_quality
+  moon_jump_width: none
+  moon_jump_height: none
+  were_going_to_plad_horizontal: speed_200_percent
+  were_going_to_plad_vertical: speed_200_percent
+  fast_run_speed: speed_250_percent
+  faster_run_speed: speed_1000_percent
 
 Yacht Dice:
   progression_balancing: '50'
