@@ -22042,292 +22042,44 @@ Time is broken again:
   priority_locations: []
 
 TimeSplitters Future Perfect:
-  ################
-  # Game Options #
-  ################
-  starting_item:
-    # What you start with (as well as one random character and one random weapon).
-    # Random Arcade Or Challenge Mission: Arcade League missions and Challenges.
-    # Random Arcade Mission: Arcade League missions.
-    # Random Challenge Mission: Challenges.
-    # Random Story Mission: one story level, never 1924 Future Perfect.
-    # Random Any Mission: from all three pools (never 1924 Future Perfect). If the first one is a story
-    # level, it is the only one.
-    # Time To Split: 2401 Time To Split.
-    # With Progressive Story Level, a story start is always 2401 Time To Split (one Progressive Story Level).
-    # With Trophy Hunt and Exclude Story Mode, story starts become Random Arcade Or Challenge Mission.
-    random_arcade_or_challenge_mission: 50
-    random_arcade_mission: 0
-    random_challenge_mission: 0
-    random_story_mission: 0
-    random_any_mission: 0
-    time_to_split: 0
-
-  starting_mission_count:
-    # How many Arcade League missions or Challenges you start with. Only applies to the Random Arcade Or
-    # Challenge, Random Arcade, Random Challenge and Random Any options (with Random Any, a story level
-    # rolled first is the only starting mission).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 5
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-5: 0 # random value between 1 and 5
-
-  story_mode:
-    # Individual Items: every story level is its own item. Finding "2401 Time To Split" unlocks that level.
-    # Progressive Story Level: story levels unlock in order, one more for each Progressive Story Level you have.
-    individual_items: 50
-    progressive_story_level: 0
-
-  goal:
-    # 1924 Future Perfect: complete 1924 Future Perfect (on any difficulty). Its extra requirements are
-    # under "Goal Options - 1924 Future Perfect".
-    # Trophy Hunt: earn trophies on Arcade League missions and/or Challenges, as set under
-    # "Goal Options - Trophy Hunt".
-    future_perfect: 50
-    trophy_hunt: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  streamer_mode:
-    # Replace the licensed song played in the Disco map and the credits with another track from the
-    # game ("Like A Monkey"), so that streams and recordings are not flagged for copyrighted music.
-    'false': 50
-    'true': 0
-
-  ######################################
-  # Goal Options - 1924 Future Perfect #
-  ######################################
-  story_levels_required:
-    # Only used when the goal is 1924 Future Perfect. How many of the other 12 story levels you must
-    # have completed before 1924 Future Perfect opens (you also need its item, or all 13 Progressive
-    # Story Levels).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 12
-    12: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-12: 0 # random value between 0 and 12
-
-  trophies_required:
-    # Only used when the goal is 1924 Future Perfect. How many Arcade League missions and Challenges
-    # you must have beaten (with at least the grade below) before 1924 Future Perfect opens.
-    # 0 = none needed.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 48
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-48: 0 # random value between 0 and 48
-
-  trophies_required_grade:
-    # Only used when the goal is 1924 Future Perfect. The lowest trophy that counts towards
-    # "How Many Trophies Required To Access Goal".
-    bronze: 50
-    silver: 0
-    gold: 0
-    platinum: 0
-
-  ##############################
-  # Goal Options - Trophy Hunt #
-  ##############################
-  trophy_hunt_setting:
-    # Only used when the goal is Trophy Hunt. Which missions you need a trophy on.
-    # All Arcade Missions: the 27 Arcade League missions.
-    # All Challenges: the 21 Challenges.
-    # All Trophies: all 48.
-    all_arcade_missions: 0
-    all_challenges: 0
-    all_trophies: 50
-
-  trophy_grade:
-    # Only used when the goal is Trophy Hunt. The lowest trophy you need on each of those missions.
-    bronze: 50
-    silver: 0
-    gold: 0
-    platinum: 0
-
-  exclude_story_mode:
-    # Only used when the goal is Trophy Hunt. Story Mode locations never hold anything required to
-    # win (only useful and filler items, so weapon buffs and bonus items can still be found there).
-    'false': 50
-    'true': 0
-
-  #######################
-  # Difficulty Settings #
-  #######################
-  exclude_hard_story:
-    # Completing story levels on Hard only ever gives filler items, never anything useful or required.
-    'false': 0
-    'true': 50
-
-  exclude_all_platinum:
-    # Platinum trophies only ever give filler items, never anything useful or required.
-    'false': 50
-    'true': 0
-
-  exclude_platinum_trophies:
-    # Missions whose Platinum trophy only ever gives a filler item. Use the mission's own name,
-    # for example ["Rare Or Well Done?", "Astro Jocks"].
-    []
-
-  easier_astro_jocks:
-    # Easier trophy times for Astro Jocks: Platinum 2:15 (normally 2:00), Gold 2:30 (2:15),
-    # Silver 3:00 (2:30).
-    'false': 50
-    'true': 0
-
-  easier_rumble_in_the_jungle:
-    # Easier Platinum time for Rumble In The Jungle: 3:15 (normally 2:50). Gold stays 3:30 and
-    # Silver 4:00.
-    'false': 50
-    'true': 0
-
-  easier_cut_out_shoot_out:
-    # Slightly lower Platinum scores for the Cut-Out Shoot-Out Challenges: Hart Attack 1775
-    # (normally 1800), Come Hell Or High Water 1700 (1800), Balls Of Steel 1200 (1250).
-    'false': 50
-    'true': 0
-
-  quicker_electro_chimp_discomatic:
-    # Shorter trophy times for Electro Chimp Discomatic: Platinum 4:00 (normally 6:00), Gold 3:00
-    # (4:30), Silver 2:00 (4:00), Bronze 1:00 (3:00).
-    'false': 50
-    'true': 0
-
-  ###############
-  # Bonus Items #
-  ###############
-  starting_armour:
-    # Progressive Starting Armour: four items. Each one you have raises the armour you get when you
-    # start a mission, restart from a checkpoint or respawn: 25%, 50%, 75%, then a full bar.
-    # It applies in Story, Arcade League, Behead The Undead and TimeSplitters 'Story' Classic.
-    # Off: there are none.
-    # Start With One: you start with one (25%) and the other three are shuffled.
-    # Shuffle All: all four are shuffled.
-    'off': 0
-    start_with_one: 0
-    shuffle_all: 50
-
-  score_multiplier:
-    # Progressive Behead The Undead Score Multiplier: each one you have multiplies the points for
-    # every kill in Brain Drain, Rare Or Well Done? and Boxing Clever (x2, x3, then x4 with all three).
-    # Off: there are none; points are normal.
-    # Start With One: you start with one (x2) and the other two are shuffled.
-    # Shuffle All: all three are shuffled.
-    'off': 0
-    start_with_one: 0
-    shuffle_all: 50
-
-  early_score_multiplier:
-    # Makes one of the shuffled Progressive Behead The Undead Score Multipliers an early item, even
-    # if you already start with one. Does nothing when Behead The Undead Score Multiplier is Off.
-    'false': 50
-    'true': 0
-
-  misc_score_multiplier:
-    # Progressive Miscellaneous Challenges Score Multiplier: each one you have multiplies the points
-    # you score in Cortez Can't Jump!, TSUG: TimeSplitters Underground and Plainly Off His Rocker
-    # (x2, x3, then x4 with all three).
-    # Off: there are none; points are normal.
-    # Start With One: you start with one (x2) and the other two are shuffled.
-    # Shuffle All: all three are shuffled.
-    'off': 0
-    start_with_one: 0
-    shuffle_all: 50
-
-  early_misc_score_multiplier:
-    # Makes one of the shuffled Progressive Miscellaneous Challenges Score Multipliers an early item,
-    # even if you already start with one. Does nothing when the multiplier is Off.
-    'false': 50
-    'true': 0
-
-  include_weapon_buffs:
-    # Adds weapon buffs (bigger clips, more reserve ammo) to the item pool. They fill whatever
-    # locations are left after every other item, so a game holds a random selection of them.
-    # When off, those locations hold "Nothing" instead.
-    'false': 0
-    'true': 50
-
-  #######################
-  # Milestone Locations #
-  #######################
-  arcade_group_milestones:
-    # Adds a location for each Arcade League group, such as "AL - One Gun Fun - Group Completed" and
-    # "HL - Dead Weight - Group Completed". Each needs at least a Bronze trophy on every mission of
-    # its group.
-    'false': 0
-    'true': 50
-
-  challenge_group_milestones:
-    # Adds a location for each Challenge group, such as "Challenge - Behead The Undead - Group
-    # Completed" and "Challenge - Cat Driving - Group Completed". Each needs at least a Bronze trophy
-    # on every mission of its group.
-    'false': 0
-    'true': 50
-
-  league_milestones:
-    # Adds "Amateur League Completed", "Honorary League Completed" and "Elite League Completed".
-    # Each needs at least a Bronze trophy on every mission of that league.
-    'false': 0
-    'true': 50
-
-  all_challenges_milestone:
-    # Adds "All Challenges Completed". It needs at least a Bronze trophy on every Challenge.
-    'false': 0
-    'true': 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  starting_item: random
+  starting_mission_count: 1
+  story_mode: individual_items
+  goal: future_perfect
+  death_link: true
+  streamer_mode: false
+  story_levels_required: 12
+  trophies_required: 0
+  trophies_required_grade: bronze
+  trophy_hunt_setting: all_trophies
+  trophy_grade: bronze
+  exclude_story_mode: false
+  exclude_hard_story: true
+  exclude_all_platinum: false
+  exclude_platinum_trophies: []
+  easier_astro_jocks: false
+  easier_rumble_in_the_jungle: false
+  easier_cut_out_shoot_out: false
+  quicker_electro_chimp_discomatic: false
+  starting_armour: shuffle_all
+  score_multiplier: shuffle_all
+  early_score_multiplier: true
+  misc_score_multiplier: shuffle_all
+  early_misc_score_multiplier: true
+  include_weapon_buffs: true
+  arcade_group_milestones: true
+  challenge_group_milestones: true
+  league_milestones: true
+  all_challenges_milestone: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 ToeJam and Earl:
   progression_balancing: normal
