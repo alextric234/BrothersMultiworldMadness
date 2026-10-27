@@ -8640,326 +8640,38 @@ Mega Man 3:
   priority_locations: []
 
 Mega Man 7:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  #########################
-  # Progression and Logic #
-  #########################
-  robot_master_access_codes:
-    # Locks each Robot Master stage behind its corresponding Access Code.
-    # 
-    # One random Robot Master Access Code is granted at the start so that
-    # at least one stage is immediately available.
-    'false': 50
-    'true': 0
-
-  pickupsanity:
-    # Adds freestanding stage pickups as Archipelago locations.
-    # 
-    # Each unique pickup can be checked only once. After it has been checked,
-    # later respawns behave as normal vanilla pickups.
-    'false': 50
-    'true': 0
-
-  logic_boss_weakness:
-    # Every main boss will logically expect you to have its weakness.
-    'false': 50
-    'true': 0
-
-  #################
-  # Stage Options #
-  #################
-  skip_intro_stage:
-    # Starts the game after the Intro Stage and automatically get the corresponding check.
-    'false': 50
-    'true': 0
-
-  skip_robot_museum:
-    # Skips the Robot Museum stage and automatically awards the corresponding check
-    # when Robot Museum would normally become available.
-    'false': 50
-    'true': 0
-
-  robot_museum_robot_masters:
-    # Number of defeated Robot Masters required before Robot Museum
-    # becomes available.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 8
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-8: 0 # random value between 1 and 8
-
-  checkpoint_selection:
-    # Allows L/R on the stage-select screen to choose between the entrance,
-    # midpoint, and pre-boss checkpoints for cleared Robot Master stages.
-    'false': 0
-    'true': 50
-
-  checkpoint_selection_in_uncleared_stages:
-    # Allows checkpoint selection before a Robot Master stage has been cleared.
-    # Only applies when Checkpoint Selection is enabled.
-    'false': 50
-    'true': 0
-
-  #####################
-  # Exit Unit Options #
-  #####################
-  exit_unit_in_uncleared_stages:
-    # Allows the Exit Unit to be used before the current stage has been cleared.
-    'false': 50
-    'true': 0
-
-  paid_exit_unit:
-    # Allows the Exit Unit to be used before receiving the Exit Unit item by spending bolts.
-    'false': 0
-    'true': 50
-
-  paid_exit_unit_cost:
-    # Number of bolts required to use the Exit Unit before receiving the Exit Unit item.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  paid_exit_unit_in_logic:
-    # Allows logic to consider Paid Exit Unit as a valid way to leave stages.
-    # This can make seeds expect the player to have enough bolts for paid exits.
-    'false': 50
-    'true': 0
-
-  ####################
-  # Wily Progression #
-  ####################
-  wily_4_behavior:
-    # Determines how the Boss Rush and Final Wily Stage are structured.
-    # 
-    # Vanilla:
-    #     The Boss Rush, Wily Machine 7, and Wily Capsule remain one
-    #     continuous stage. The configured Final Wily Stage requirement
-    #     controls access to this stage.
-    # 
-    # Split:
-    #     The Boss Rush becomes a separate stage unlocked by the
-    #     Boss Rush Access Code. Completing it returns to stage select.
-    # 
-    #     The Final Wily Stage contains Wily Machine 7 and Wily Capsule
-    #     and is unlocked by the configured Final Wily Stage requirement.
-    # 
-    #     When Wily Stages is selected as the requirement type, completing
-    #     the Boss Rush counts as one of the four possible Wily stage clears.
-    # 
-    # Skip:
-    #     The Boss Rush is skipped. The Final Wily Stage begins immediately
-    #     before Wily Machine 7 and is unlocked by the configured
-    #     Final Wily Stage requirement.
-    vanilla: 0
-    split: 50
-    skip: 0
-
-  wily_4_requirement_type:
-    # Determines what is required to access the Final Wily Stage,
-    # containing Wily Machine 7 and Wily Capsule.
-    # 
-    # In Split mode, the Boss Rush is a separate stage and does not
-    # automatically have to be completed. It can contribute toward
-    # the Wily Stages requirement.
-    wily_stages: 50
-    robot_masters: 0
-    weapons: 0
-    defeat_protoman: 0
-
-  wily_4_wily_stages:
-    # With the Wily Stages requirement, sets the number of completed
-    # Wily stages required to access the Final Wily Stage.
-    # 
-    # Wily 1, Wily 2, and Wily 3 can each count toward this requirement.
-    # 
-    # In Split mode, the Boss Rush is a separate fourth Wily stage
-    # and can also count toward this requirement. A value of 4 therefore
-    # requires Wily 1, Wily 2, Wily 3, and the Boss Rush to be completed.
-    # 
-    # Outside Split mode, the maximum effective value is 3.
-    # A configured value of 4 is then automatically reduced to 3.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  wily_4_robot_masters:
-    # With the Robot Masters requirement, sets the number of defeated
-    # Robot Masters required to access the Final Wily Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  wily_4_weapons:
-    # With the Weapons requirement, sets the number of Robot Master
-    # weapons required to access the Final Wily Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  ######################
-  # Starting Resources #
-  ######################
-  starting_lives:
-    # Number of lives Mega Man starts with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 9
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-9: 0 # random value between 1 and 9
-
-  starting_bolts:
-    # Number of bolts Mega Man starts with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 999
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-999: 0 # random value between 0 and 999
-
-  starting_e_tanks:
-    # Number of E-Tanks Mega Man starts with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  starting_w_tanks:
-    # Number of W-Tanks Mega Man starts with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-4: 0 # random value between 0 and 4
-
-  starting_s_tanks:
-    # Number of S-Tanks Mega Man starts with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 1
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-1: 0 # random value between 0 and 1
-
-  #######################
-  # Multiplayer Options #
-  #######################
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  robot_master_access_codes: true
+  pickupsanity: true
+  logic_boss_weakness: true
+  skip_intro_stage: false
+  skip_robot_museum: false
+  robot_museum_robot_masters: random
+  checkpoint_selection: true
+  checkpoint_selection_in_uncleared_stages: false
+  exit_unit_in_uncleared_stages: true
+  paid_exit_unit: true
+  paid_exit_unit_cost: 100
+  paid_exit_unit_in_logic: false
+  wily_4_behavior: skip
+  wily_4_requirement_type: wily_stages
+  wily_4_wily_stages: 3
+  wily_4_robot_masters: 8
+  wily_4_weapons: 8
+  starting_lives: 9
+  starting_bolts: 0
+  starting_e_tanks: 0
+  starting_w_tanks: 0
+  starting_s_tanks: 0
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Mega Man X:
   ################
