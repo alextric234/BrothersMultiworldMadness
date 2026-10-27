@@ -22906,259 +22906,37 @@ ULTRAKILL:
     []
 
 Uncanny Cat Golf:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal_level:
-    # Set what goal level you want to do have as your final level.
-    # This level is removed from the multiworld, if selected, and will not be an item sent.
-    # Levels from World 5 or World P will force enable those worlds if selected, and the worlds aren't enabled
-    # 4-18 is a level with no gameplay or uncanny cat, so is provided as an option if you want to just win when you are at go mode.
-    '3_18': 0
-    '4_17': 50
-    '4_18': 0
-    '5_18': 0
-    p_17: 0
-
-  prism_unlock_amount:
-    # How many in game rank prisms are required to be obtained in total before your goal level unlocks.
-    # Requirement may be forcefully lowered to account for disabled levels or peak checks being disabled.
-    # You can always view the required amount you need in game to reference it.
-    # 
-    # Does nothing if macguffin goal is enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 560
-    200: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-560: 0 # random value between 50 and 560
-
-  macguffin_goal:
-    # Sets your goal to require a specified amount of "Cannium Prism" items instead of a specific requirement.
-    # This is a macguffin item that unlocks the goal level when reaching the specified amount.
-    'false': 50
-    'true': 0
-
-  macguffin_amount:
-    # How many macguffin "Cannium Prism" items are added into the multiworld.
-    # Does nothing if macguffin goal is disabled.
-    # May be automatically lowered depending on settings and excluded levels.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 50
-    40: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-50: 0 # random value between 10 and 50
-
-  macguffin_percent_required:
-    # What percentage "Cannium Prism" items are required to be obtained in total before your goal level unlocks.
-    # Does nothing if macguffin goal is disabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 25
-    # Maximum value is 100
-    75: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-25-100: 0 # random value between 25 and 100
-
-  gimmick_lock:
-    # Lock level gimmicks such as wormholes, dogs, toggle switches, etc. behind items in the multiworld.
-    'false': 0
-    'true': 50
-
-  level_unlock_style:
-    # How level unlocks are handled.
-    # 
-    # Individual: All level unlocks are individual items you must be sent
-    # World: Worlds are unlocks that you must be sent, you get access to all levels after being sent that world
-    individual: 50
-    world: 0
-
-  minigames:
-    # Enable minigames as checks, such as Bort Bash, UNCANNY_DASH, Meowls, etc.
-    'false': 50
-    'true': 0
-
-  world_5_levels:
-    # Include World 5 (Elysian Fields) levels as checks.
-    'false': 50
-    'true': 0
-
-  world_p_levels:
-    # Include World P (Cosmic Championship) levels as checks. These are a big step up in difficulty, so be warned
-    'false': 50
-    'true': 0
-
-  world_e_levels:
-    # Include World E levels as checks, which are exclusive levels from the Endless Shuffle.
-    'false': 50
-    'true': 0
-
-  peak_checks:
-    # Add a check for gaining a "PEAK" rank in a level. These can be really difficult.
-    'false': 50
-    'true': 0
-
-  coinsanity:
-    # Add checks for every coin found in the levels.
-    # 
-    # If you set this to All, it may be beneficial to make Uncanny Cat Spray a local item, to prevent bloating
-    # the multiworld with a huge amount of filler from your game. Please be cautious when using this setting
-    # without other people being aware of it, as this adds over 1000 locations into the game.
-    # 
-    # Off: Coins are not checks.
-    # All: Adds checks for every individual coin.
-    # Full Clear: Adds checks for fully clearing all coins in a level, but leaves out individual coin checks.
-    'off': 50
-    all: 0
-    full_clear: 0
-
-  excluded_levels:
-    # Remove levels from the multiworld completely. This removes all locations related to that level, and the level unlock item.
-    # Name levels by their id, e.g. "1-4, P-14, 5-3".
-    # 
-    # Excluding a level also removes the prisms from that level in logic, so your goal prism amount
-    # may be forcefully lowered to a still-obtainable number.
-    # 
-    # World 0 cannot be excluded at all (why would you want to?)
-    []
-
-  excluded_minigames:
-    # Remove specific minigames from the multiworld completely. This removes all locations related to that minigame, and the minigame unlock item.
-    # Valid options are "Bort Bash", "UNCANNY_DASH", and "Meowls"
-    []
-
-  goal_rank_requirement:
-    # Which in-game rank is required to unlock the goal.
-    # 
-    # Any: Any rank is allowed to unlock the goal.
-    # OK: An "OK" (3 prism) rank or better is required.
-    # Good: A "GOOD" (4 prism) rank or better is required.
-    # Peak: A "PEAK" (5 prism) rank or better is required.
-    any: 50
-    ok: 0
-    good: 0
-    peak: 0
-
-  rank_check_difficulty:
-    # Which in-game rank sends the per-level rank check.
-    # 
-    # OK: An "OK" (3 prism) rank or better sends the check.
-    # Good: A "GOOD" (4 prism) rank or better is required.
-    # 
-    # Every level always has a rank check. This only sets how hard it is to send one.
-    # This also determines how many levels are required to goal your game for logic.
-    ok: 0
-    good: 50
-
-  temp_modifiers:
-    # Adds temporary modifier items based on the existing modifiers, some of which are traps and some are useful. These last until you complete a level.
-    # If you find these too difficult, you can always go back to 0-1 to cycle through them, as that level will always be available.
-    # 
-    # When enabled, these make up 50% of the filler in your world, or 30% of it with Coinsanity on (the rest is Uncanny Cat Spray, which prevents you from dying to the Uncanny Cat one time per item).
-    # When disabled, that filler is all Uncanny Cat Spray instead (besides the costumes and other one off fillers)
-    'false': 0
-    'true': 50
-
-  buff_uncanny_cat_spray:
-    # Buffs the Uncanny Cat Spray item from doing nothing to giving you a one time protection against the Uncanny Cat.
-    # It is used up the moment you touch the Uncanny Cat, and doesn't come back upon restarting a level.
-    'false': 0
-    'true': 50
-
-  chill_mode:
-    # Enable the "Chill Mode" modifier that removes the Uncanny Cat entirely. This makes the game significantly easier.
-    # This can be disabled/enabled in the mod config.
-    'false': 50
-    'true': 0
-
-  panic_mode:
-    # Enable the "Panic Mode" modifier that speeds up the Uncanny Cat quite a bit. This makes the game significantly harder, and may
-    # result in unbeatable seeds depending on your skill levels. BE WARNED.
-    # 
-    # DO NOT ENABLE THIS IF YOU AREN'T PREPARED FOR WHAT IT ENTAILS.
-    # 
-    # Automatically disabled if "Chill Mode" is enabled.
-    # This can be disabled/enabled in the mod config.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal_level: random
+  prism_unlock_amount: 200
+  macguffin_goal: true
+  macguffin_amount: random
+  macguffin_percent_required: 75
+  gimmick_lock: true
+  level_unlock_style: individual
+  minigames: false
+  world_5_levels: false
+  world_p_levels: false
+  world_e_levels: false
+  peak_checks: false
+  coinsanity: 'off'
+  excluded_levels: []
+  excluded_minigames: []
+  goal_rank_requirement: any
+  rank_check_difficulty: good
+  temp_modifiers: true
+  buff_uncanny_cat_spray: true
+  chill_mode: false
+  panic_mode: false
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Undertale Yellow:
   progression_balancing: normal
