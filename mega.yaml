@@ -23199,425 +23199,49 @@ Wordipelago:
   start_inventory_from_pool: {}
 
 Wynncraft:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ################
-  # Goal Options #
-  ################
-  goal_type:
-    # Level: Reach the target level
-    # Dungeon: Complete the specified dungeon
-    # Quest: Complete the specified quest
-    level: 50
-    dungeon: 0
-    quest: 0
-
-  goal_level:
-    # 'Level' objective only:
-    # The level to reach to win the game.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 121
-    30: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-121: 0 # random value between 10 and 121
-
-  goal_dungeon:
-    # 'Dungeon' objective only:
-    # The dungeon to beat to win the game.
-    # Can be set to any dungeon in the game.
-    pit: 0
-    crypt: 0
-    sanctum: 0
-    tomb: 50
-    barrows: 0
-    ruins: 0
-    graveyard: 0
-    corrupt_sanctuary: 0
-    factory: 0
-    outlook: 0
-
-  goal_quest:
-    # 'Quest' objective only:
-    # The quest to complete to win the game.
-    # Can be set to any quest in the game.
-    arachnid: 0
-    sand: 0
-    llevigar: 50
-    jungle: 0
-    worm: 0
-    redbeard: 0
-    excavation: 0
-    reincarnation: 0
-    ascension: 0
-    light: 0
-    feathers: 0
-    breaking: 0
-    hunters: 0
-    apotheosis: 0
-
-  extra_content_levels:
-    # 'Dungeon' or 'Quest' objective only:
-    # Additional levels above the goal's level
-    # to include in the randomizer.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  #######################
-  # Region Lock Options #
-  #######################
-  starting_route:
-    # How much of the route from Ragni to Detlas to start unlocked
-    # None: WARNING - May cause generation errors
-    # Alekin: Ragni -> Alekin
-    # Detlas: Ragni -> Detlas
-    none: 0
-    alekin: 50
-    detlas: 0
-
-  locked_region_enforcement:
-    # Kill: Run /kill upon entering any locked region.
-    # Countdown: Run /kill after being in a locked region for a certain amount of time.
-    # Lenient: No locked region enforcement.
-    kill: 0
-    countdown: 50
-    lenient: 0
-
-  locked_region_countdown:
-    # 'Countdown' enforcement only:
-    # The number of seconds in a locked region until /kill is run.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 60
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-60: 0 # random value between 1 and 60
-
-  ############################
-  # Progressive Item Options #
-  ############################
-  level_increment:
-    # How many levels each max level item increases by.
-    # Set this higher if you disable a lot of checks.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  extra_max_levels:
-    # Number of filler items to convert to extra max level items.
-    # This should make it easier to get all max levels needed to win, as well as reducing how much you get stuck.
-    # Not all of these are guaranteed to be added, depending on item and location counts during generation.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 25
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-25: 0 # random value between 0 and 25
-
-  gear_lock_mode:
-    # Prevent gear from being used until it is unlocked
-    # Full: Armor, Accessories, and Weapons are unlocked independently
-    # Unified: All gear types are unlocked with a single item
-    full: 0
-    unified: 50
-    'off': 0
-
-  single_gear_rarity:
-    # Whether to combine all gear rarities (unique, rare, legendary+) into a single progressive level
-    'false': 50
-    'true': 0
-
-  gear_level_increment:
-    # How much to increase max gear level each item
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  extra_gear_levels:
-    # Number of filler items to convert to extra max gear level items per gear type (armor, accessories, weapons).
-    # Not all of these are guaranteed to be added, depending on item and location counts during generation.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 25
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-25: 0 # random value between 0 and 25
-
-  #################
-  # Check Options #
-  #################
-  quest_checks:
-    # Earn items for completing quests.
-    # Check Count: High
-    'false': 0
-    'true': 50
-
-  mini_quest_checks:
-    # Earn items for completing mini-quests.
-    # Check Count: Low
-    'false': 0
-    'true': 50
-
-  cave_checks:
-    # Earn items for completing caves.
-    # Check Count: High
-    'false': 0
-    'true': 50
-
-  dungeon_checks:
-    # Earn items for completing dungeons.
-    # Check Count: Very Low
-    'false': 0
-    'true': 50
-
-  corrupted_dungeon_checks:
-    # Earn items for completing corrupted dungeons.
-    # Check Count: Very Low
-    'false': 50
-    'true': 0
-
-  level_checks:
-    # Earn items for leveling up.
-    # Check Count: Medium
-    'false': 0
-    'true': 50
-
-  territory_checks:
-    # Earn items for visiting territories (regions) for the first time.
-    # Check Count: Very High
-    'false': 0
-    'true': 50
-
-  secret_checks:
-    # Earn items for discovering secret discoveries.
-    # Check Count: Medium
-    'false': 0
-    'true': 50
-
-  ###############
-  # QOL Options #
-  ###############
-  early_territory_levels:
-    # How many levels below the territory's recommended level
-    # needed for territory to be considered in-logic.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 20
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-20: 0 # random value between 1 and 20
-
-  logical_levels:
-    # Whether certain levels should require access to later-game areas.
-    # Disabling this could lead to having to grind a lot of levels.
-    'false': 0
-    'true': 50
-
-  logical_gear_levels:
-    # Whether certain levels should require access
-    # to a minimum level of gear.
-    # Disabling this could lead to being underpowered throughout the game.
-    'false': 0
-    'true': 50
-
-  logical_grind_spots:
-    # Whether certain levels should require
-    # access to a xp grind spot.
-    # Disabling this could lead to grinding xp at suboptimal locations.
-    'false': 0
-    'true': 50
-
-  logical_mounts:
-    # Whether certain levels should require
-    # access to mounts.
-    'false': 0
-    'true': 50
-
-  ################
-  # Trap Options #
-  ################
-  trap_chance:
-    # Percent of 'Nothing' filler items to replace with traps.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  freeze_trap_weight:
-    # Relative weight of freeze traps.
-    # Freeze trap: Freezes player movement.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  daze_trap_weight:
-    # Relative weight of daze traps.
-    # Daze trap: Disables player attacks/spells.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  blind_trap_weight:
-    # Relative weight of blind traps.
-    # Blind trap: Blacks out the entire screen.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  kill_trap_weight:
-    # Relative weight of kill traps.
-    # Kill trap: Immediately kills the player.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  trap_duration:
-    # Number of seconds for freeze, daze, and blind traps to take effect.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 120
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-120: 0 # random value between 1 and 120
-
-  #########################
-  # Miscellaneous Options #
-  #########################
-  death_link:
-    # Enable death link.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal_type: level
+  goal_level: 30
+  goal_dungeon: 3
+  goal_quest: 2
+  extra_content_levels: 0
+  starting_route: random
+  locked_region_enforcement: countdown
+  locked_region_countdown: 3
+  level_increment: 1
+  extra_max_levels: 5
+  gear_lock_mode: unified
+  single_gear_rarity: false
+  gear_level_increment: 5
+  extra_gear_levels: 3
+  quest_checks: true
+  mini_quest_checks: true
+  cave_checks: true
+  dungeon_checks: true
+  corrupted_dungeon_checks: false
+  level_checks: true
+  territory_checks: true
+  secret_checks: true
+  early_territory_levels: 5
+  logical_levels: true
+  logical_gear_levels: true
+  logical_grind_spots: true
+  logical_mounts: true
+  trap_chance: 15
+  freeze_trap_weight: 3
+  daze_trap_weight: 3
+  blind_trap_weight: 3
+  kill_trap_weight: 1
+  trap_duration: 15
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Xenoblade X:
   ################
