@@ -21609,99 +21609,20 @@ The Binding of Isaac Repentance:
     []
 
 The Frog For Whom The Bell Tolls:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  wonder_ball_sanity:
-    # If enabled, a location will be created for every Wonder Ball.
-    'false': 50
-    'true': 0
-
-  separate_docks:
-    # If enabled, each Syrup Lake dock will be a separate item.
-    'false': 50
-    'true': 0
-
-  hot_springs_egg_healing:
-    # Using a Hot Springs Egg heals the player one full heart. If this option is enabled, the player may be expected to
-    # use this in order to win certain battles, e.g., by alternating between using Hot Springs Eggs and Joy Fruit
-    # repeatedly until returning to full health.
-    'false': 50
-    'true': 0
-
-  sneak_logic:
-    # If enabled, the player will be expected to be able to sneak past certain monsters instead of having to defeat them.
-    'false': 50
-    'true': 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  wonder_ball_sanity: false
+  separate_docks: false
+  hot_springs_egg_healing: true
+  sneak_logic: false
+  death_link: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 The Grinch:
   progression_balancing: normal
