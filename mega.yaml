@@ -8141,7 +8141,7 @@ Mario & Luigi Superstar Saga:
   block_visibility: hidden_visible
   chuckle_beans: only_visible
   goal: emblem_hunt
-  emblems_required: 50
+  emblems_required: random-range-30-70
   emblems_amount: 100
   music_options: randomize
   randomize_sounds: true
