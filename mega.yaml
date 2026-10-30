@@ -14367,496 +14367,96 @@ Ultimate Custom Night:
   priority_locations: []
 
 ULTRAKILL:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ##########
-  # Levels #
-  ##########
-  start_level:
-    # Choose which level to start in.
-    '0_1': 50
-    '0_2': 0
-    '1_1': 0
-    '1_2': 0
-    '1_3': 0
-    '2_3': 0
-    '3_1': 0
-    '4_2': 0
-    '8_2': 0
-    '8_3': 0
-
-  goal_level:
-    # Choose which level must be completed to finish the game.
-    '0_1': 0
-    '0_2': 0
-    '0_3': 0
-    '0_4': 0
-    '0_5': 0
-    0_s: 0
-    '1_1': 0
-    '1_2': 0
-    '1_3': 0
-    '1_4': 0
-    1_s: 0
-    '2_1': 0
-    '2_2': 0
-    '2_3': 0
-    '2_4': 0
-    2_s: 0
-    '3_1': 0
-    '3_2': 0
-    '4_1': 0
-    '4_2': 0
-    '4_3': 0
-    '4_4': 0
-    4_s: 0
-    '5_1': 0
-    '5_2': 0
-    '5_3': 0
-    '5_4': 0
-    5_s: 0
-    '6_1': 0
-    '6_2': 0
-    '7_1': 0
-    '7_2': 0
-    '7_3': 0
-    '7_4': 0
-    7_s: 0
-    '8_1': 0
-    '8_2': 0
-    '8_3': 0
-    '8_4': 50
-    0_e: 0
-    1_e: 0
-    p_1: 0
-    p_2: 0
-
-  goal_requirement:
-    # Choose the number of levels that must be completed to unlock the goal.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 5
-    # Maximum value is 42
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-5-42: 0 # random value between 5 and 42
-
-  perfect_goal:
-    # Choose if the goal must be cleared with a perfect rank. Has no effect if the goal level is a secret mission.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  start_level: random
+  goal_level: random
+  goal_requirement: 15
+  perfect_goal: false
   skipped_levels:
-    # List as many levels as you would like to skip completing for the goal.
-    # 
-    # Skipped levels will still exist in the item pool, and can still be completed to add progress towards unlocking the goal, but will not be considered in logic.
-    ['1-E', '0-E', 'P-1', 'P-2']
-
-  auto_exclude_skipped_locations:
-    # Choose if skipped levels should automatically have all of their locations excluded.
-    'false': 0
-    'true': 50
-
-  auto_exclude_goal_locations:
-    # Choose if the goal level should automatically have all of its locations excluded.
-    'false': 0
-    'true': 50
-
-  unlock_type:
-    # Choose if levels will be unlocked one at a time, or whole layers at once.
-    levels: 50
-    layers: 0
-
-  secret_mission_unlock_type:
-    # Choose if secret missions should be unlocked by using their secret exits, or by finding items in the multiworld.
-    secret_exits: 50
-    items: 0
-
-  secret_exit_behavior:
-    # Choose if using secret exits should count the current level as completed, or if secret exits should NOT count the 
-    # current level as completed, and instead add rewards for using each secret exit.
-    # 
-    # Does not affect secret exits leading to prime sanctums.
-    standard: 50
-    add_rewards: 0
-
-  randomize_skulls:
-    # Turns the red and blue skulls into items that must be found before they will appear in levels.
-    'false': 50
-    'true': 0
-
-  randomize_limbo_switches:
-    # Randomizes the four switches in the Limbo layer.
-    'false': 50
-    'true': 0
-
-  randomize_violence_switches:
-    # Randomizes the three switches in 7-2.
-    'false': 50
-    'true': 0
-
-  #########
-  # Logic #
-  #########
-  require_gutterman_shield_break:
-    # Forces a way to break Guttermen shields (Knuckleblaster or any Alternate Shotgun) to be required in logic.
-    'false': 0
-    'true': 50
-
-  speedrunner_logic:
-    # Enables various speedrunning tech in logic, such as glitches, out-of-bounds exploits, and other difficult tricks. 
-    # 
-    # Work in progress! Only implemented until the end of Layer 3.
-    # May contain mistakes or errors! If you choose to test this, please report any issues in the Archipelago Discord server!
-    'false': 50
-    'true': 0
-
-  #######################
-  # Filler / Trap Items #
-  #######################
-  trap_percent:
-    # Choose the percentage of trap items that will appear when filling the item pool with junk.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    25: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  - 0-E
+  - 1-E
+  - P-1
+  - P-2
+  auto_exclude_skipped_locations: true
+  auto_exclude_goal_locations: true
+  unlock_type: layers
+  secret_mission_unlock_type: secret_exits
+  secret_exit_behavior: add_rewards
+  randomize_skulls: true
+  randomize_limbo_switches: true
+  randomize_violence_switches: false
+  require_gutterman_shield_break: true
+  speedrunner_logic: false
+  trap_percent: 25
   filler_weights:
-    # Choose the odds of each filler item being created when filling the item pool with junk.
-    +10,000P: 50
-    Air Jump: 50
-    Confusing Aura: 50
-    Dual Wield: 50
     Infinite Stamina: 50
-    Overheal: 50
-    Quick Charge: 50
+    Confusing Aura: 50
     Soap: 50
-
+    +10,000P: 50
+    Overheal: 50
+    Dual Wield: 50
+    Quick Charge: 50
+    Air Jump: 50
   trap_weights:
-    # Choose the odds of each trap item being created when filling the item pool with traps.
-    Hands-Free Mode: 50
-    Hard Damage: 50
     Radiant Aura: 50
     Stamina Limiter: 50
-    Wall Jump Limiter: 50
     Weapon Malfunction: 50
-
-  #########################
-  # Extra Location Checks #
-  #########################
-  enemy_rewards:
-    # Adds location checks for defeating enemies and unlocking terminal entries.
-    # 
-    # Bosses: Only includes bosses at the end of each act and in Prime Sanctums.
-    # 
-    # Extra: Also includes some additional bosses that usually only appear once.
-    # 
-    # All: Includes all bosses and enemies.
-    disabled: 50
-    bosses: 0
-    extra: 0
-    all: 0
-
-  challenge_rewards:
-    # Adds location checks for completing each level's challenge, except for the goal.
-    'false': 50
-    'true': 0
-
-  p_rank_rewards:
-    # Adds location checks for completing each level with a Perfect Rank, except for the goal.
-    'false': 50
-    'true': 0
-
-  randomize_clash_mode:
-    # Randomizes the unlock for destroying all crates in 4-S.
-    'false': 50
-    'true': 0
-
-  fish_rewards:
-    # Adds location checks for catching each fish in 5-S.
-    'false': 50
-    'true': 0
-
-  cleaning_rewards:
-    # Adds location checks for cleaning every room in 7-S.
-    'false': 50
-    'true': 0
-
-  hank_rewards:
-    # Adds location checks for giving Hank and Hank Jr. a head in 1-4 and 5-3.
-    'false': 50
-    'true': 0
-
-  chess_reward:
-    # Adds a location check for winning chess against a bot in the Developer Museum.
-    'false': 50
-    'true': 0
-
-  rocket_race_reward:
-    # Adds a location check for winning the rocket race in the Developer Museum.
-    'false': 50
-    'true': 0
-
-  ###########
-  # Weapons #
-  ###########
+    Hard Damage: 50
+    Wall Jump Limiter: 50
+    Hands-Free Mode: 50
+  enemy_rewards: disabled
+  challenge_rewards: true
+  p_rank_rewards: false
+  hank_rewards: true
+  randomize_clash_mode: true
+  fish_rewards: true
+  cleaning_rewards: false
+  chess_reward: false
+  rocket_race_reward: false
   starting_weapon_pool:
-    # Choose a pool of possible starting weapons and their weights of being selected.
-    # 
-    # Some weapons will not be considered valid depending on other options:
-    # 
-    # If the start level is 2-3, 8-2, or 8-3, all arms will be removed from the pool.
-    # 
-    # If choosing to start with Feedbacker, it will be removed from the pool.
-    # 
-    # If choosing not to start with Feedbacker, the Whiplash, Freezeframe, and all Railcannons are removed from the pool.
-    # 
-    # If choosing to randomize secondary fire and not to start with Feedbacker, the S.R.S. Cannon and Firestarter are removed from the pool.
-    # 
-    # If choosing to randomize secondary fire, not to start with Feedbacker, and for the Nailgun to be in its Alternate form, the Overheat is removed from the pool.
-    Feedbacker: 50
-    Knuckleblaster: 50
-    Nailgun - Attractor: 50
-    Nailgun - JumpStart: 50
     Nailgun - Overheat: 50
-    Railcannon - Electric: 50
-    Railcannon - Malicious: 50
-    Railcannon - Screwdriver: 50
-    Revolver - Marksman: 50
-    Revolver - Piercer: 50
-    Revolver - Sharpshooter: 50
-    Rocket Launcher - Firestarter: 50
     Rocket Launcher - Freezeframe: 50
     Rocket Launcher - S.R.S. Cannon: 50
-    Shotgun - Core Eject: 50
-    Shotgun - Pump Charge: 50
     Shotgun - Sawed-On: 50
+    Shotgun - Pump Charge: 50
+    Revolver - Piercer: 50
+    Rocket Launcher - Firestarter: 50
+    Nailgun - Attractor: 50
+    Railcannon - Electric: 50
+    Revolver - Marksman: 50
+    Revolver - Sharpshooter: 50
+    Railcannon - Malicious: 50
+    Feedbacker: 50
     Whiplash: 50
-
-  randomize_secondary_fire:
-    # Locks the ability to use a weapon's alternate fire behind items that must be found in the multiworld.
-    # 
-    # Split: Separate items will be created for each weapon and secondary fire.
-    # 
-    # Progressive: Two items will be created for each weapon, the first item found will unlock the weapon, and the second will unlock the secondary fire.
-    disabled: 50
-    split: 0
-    progressive: 0
-
-  start_with_arm:
-    # Choose whether or not to start the game with the Feedbacker arm.
-    'false': 0
-    'true': 50
-
-  revolver_form:
-    # Choose whether the revolver should be in its standard or alternate form initially.
-    # 
-    # The Piercer, Marksman, or Sharpshooter revolver still need to be found before the revolver can be used.
-    # 
-    # The other form must be unlocked.
-    standard: 50
-    alternate: 0
-
-  shotgun_form:
-    # Choose whether the shotgun should be in its standard or alternate form initially.
-    # 
-    # The Core Eject, Pump Charge, or Sawed-On shotgun still need to be found before the shotgun can be used.
-    # 
-    # The other form must be unlocked.
-    standard: 50
-    alternate: 0
-
-  nailgun_form:
-    # Choose whether the nailgun should be in its standard or alternate form initially.
-    # 
-    # The Attractor, Overheat, or JumpStart nailgun still need to be found before the nailgun can be used.
-    # 
-    # The other form must be unlocked.
-    standard: 50
-    alternate: 0
-
-  ############
-  # Movement #
-  ############
-  starting_stamina:
-    # Choose how many bars of stamina to start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  starting_walljumps:
-    # Choose how many wall jumps to start with.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  start_with_slide:
-    # Choose whether or not to start the game with the ability to slide.
-    'false': 0
-    'true': 50
-
-  start_with_slam:
-    # Choose whether or not to start the game with the ability to slam.
-    'false': 0
-    'true': 50
-
-  #################
-  # Miscellaneous #
-  #################
-  point_multiplier:
-    # Multiplies the amount of points earned to reduce grind.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  ui_color_randomizer:
-    # Randomizes UI colors, either once at the beginning of a run, or every time a level is loaded.
-    # 
-    # Does not affect item popup colors.
-    # 
-    # This option can be changed later.
-    disabled: 50
-    once: 0
-    every_load: 0
-
-  gun_color_randomizer:
-    # Randomizes gun colors, either once at the beginning of a run, or every time a level is loaded.
-    # 
-    # This option can be changed later.
-    disabled: 50
-    once: 0
-    every_load: 0
-
-  music_randomizer:
-    # Randomizes the music that plays during the game.
-    # 
-    # Music can be re-randomized, or toggled on or off later.
-    # 
-    # Some music is never randomized.
-    'false': 50
-    'true': 0
-
-  cybergrind_hints:
-    # Every 5 waves cleared in The Cyber Grind will unlock a hint.
-    # 
-    # This option can NOT be changed later.
-    'false': 0
-    'true': 50
-
-  death_link:
-    # When you die, everyone dies. The reverse is also true.
-    # 
-    # This option can be changed later.
-    'false': 50
-    'true': 0
-
-  death_link_amnesty:
-    # Choose how many deaths must happen before a death link is sent to the multiworld.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+    Knuckleblaster: 50
+    Railcannon - Screwdriver: 50
+    Shotgun - Core Eject: 50
+    Nailgun - JumpStart: 50
+  randomize_secondary_fire: progressive
+  start_with_arm: true
+  revolver_form: random
+  shotgun_form: alternate
+  nailgun_form: random
+  starting_stamina: 3
+  starting_walljumps: 3
+  start_with_slide: true
+  start_with_slam: true
+  point_multiplier: 5
+  ui_color_randomizer: every_load
+  gun_color_randomizer: every_load
+  music_randomizer: false
+  cybergrind_hints: true
+  death_link: true
+  death_link_amnesty: 5
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Uncanny Cat Golf:
   progression_balancing: normal
