@@ -7356,7 +7356,7 @@ Luigi's Mansion:
   self_item_messages: progression_items_only
   trap_link: true
   enable_trap_client_msg: true
-  energy_link: true
+  energy_link: false
   ring_link: true
   enable_ring_client_msg: true
   king_boo_health: 500
