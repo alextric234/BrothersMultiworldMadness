@@ -8384,7 +8384,7 @@ NSMBW:
   hint_hint_movies: true
   level_completion: true
   shortcuts_sanity: enabled
-  hint_movie_sanity: true
+  hint_movie_sanity: false
   starcoin_sanity: true
   include_inventory_powerups: 20
   world_comp_priority: false
