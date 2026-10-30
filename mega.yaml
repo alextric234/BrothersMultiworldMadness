@@ -9144,193 +9144,51 @@ Metroid Prime:
   start_inventory_from_pool: {}
 
 Mina The Hollower:
-  ################
-  # Game Options #
-  ################
-  death_link:
-    # When you die a sparkless death, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # Goal
-    radiantmanorgenerator: 0
-    fixgenerators: 50
-
-  goal_generators:
-    # If your goal is 'Fix Generators', how many should you need to repair?.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 6
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-6: 0 # random value between 1 and 6
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: fixgenerators
+  goal_generators: 3
   generator_pool:
-    # This is the pool of generators that the randomizer will select X generators from, where X is your "Generators Required" Option
-    # **WARNING** If this pool is smaller than the number of generators to goal, this will raise an option error
-    # **WARNING** This cannot be empty
-    # 
-    # Valid Options:
-    # - **Queensbury Crypt**
-    # - **Nox's Bayou**
-    # - **Septemburg**
-    # - **Bone Beach**
-    # - **Coltrane Peak**
-    # - **Astral Orrery**
-    ['Queensbury Crypt', "Nox's Bayou", 'Septemburg', 'Bone Beach', 'Coltrane Peak', 'Astral Orrery']
-
-  ################
-  # Item Options #
-  ################
-  starting_weapon:
-    # Select your starting weapon.
-    nightstar: 0
-    blaststrike_maul: 0
-    whisper_and_vesper: 0
-    battery_buster: 0
-    guardian_casket: 0
-    random: 50
-
-  random_starting_items:
-    # Take all starting health, spark, vials, Magic and randomize them. This increases the difficulty tenfold and can cause some cursed starts. You have been warned.
-    'false': 50
-    'true': 0
-
-  bone_up_cap:
-    # How do you want your Bone Up Cap Items. A progressive each for attack, defense and Sidearms OR One progressive item for all
-    perupgrade: 0
-    allupgrade: 50
-
-  max_stat_level:
-    # The maximum cap of each stat. Vanilla non-NG+ is 10, maximum at the end of the NG+ is 99.
-    # Will be soft capped if location count is too small, as this replaces filler items in the pool
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 10
-    # Maximum value is 99
-    15: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-10-99: 0 # random value between 10 and 99
-
+  - Astral Orrery
+  - Bone Beach
+  - Coltrane Peak
+  - Nox's Bayou
+  - Queensbury Crypt
+  - Septemburg
+  starting_weapon: random
+  random_starting_items: false
   ability_rando:
-    # Randomize abilities (You will not be able to perform the listed actions until sent them as items).
-    # If there are no abilities randomized, you will start in Loner's Landing. Otherwise you will start in Ossex
-    # 
-    # If you are ever stuck, there is a **Teleport Home** Button in the pause menu
-    # 
-    # Valid Options:
-    # - **Burrow** - The ability to burrow. You will still be able to enter Underlabs.
-    # - **Swim** - The ability to swim (burrow in deep water).
-    # - **Climb** - The ability to climb ropes.
-    # - **Bounce** - The ability to bounce on bounce plants and springboards.
-    # - **Spring** - The ability to be launched by springboards.
-    # - **Carry** - The ability to carry objects.
-    ['Swim', 'Climb', 'Bounce', 'Carry', 'Spring']
-
-  kear_rando:
-    # Vanilla: Universal Kears are in the multiworld. Every Kear Lock you open before receiving every single Kear will be OUT OF LOGIC
-    # AP Items: Each Kear Lock is removed by a unique AP item
-    # Area AP Items: All Kear Locks in an area are removed by a single AP Item
-    vanilla: 0
-    apitems: 50
-    areaapitems: 0
-
-  astral_switches:
-    # Instead of hitting the switches in Mirror's End yourself, make them items in the multiworld
-    'false': 0
-    'true': 50
-
-  ##################
-  # Filler Options #
-  ##################
-  trap_percent:
-    # What percentage of filler do you want replaced with traps?
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    0: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
+  - Bounce
+  - Carry
+  - Climb
+  - Spring
+  - Swim
+  bone_up_cap: allupgrade
+  max_stat_level: 40
+  kear_rando: apitems
+  astral_switches: true
+  trap_percent: random-range-10-30
   trap_weights:
-    # Change the weights of each trap
-    # 
-    # Valid Options:
-    #     - **Flip Controls Trap** - Invert your controls
-    #     - **Floor Is Lava Trap** - Leave a trail of lava
-    #     - **Giant Trap** - Mina gets larger
-    #     - **2x Giant Trap** - Mina gets VERY large
-    #     - **Giant Enemies Trap** - All enemies get larger
-    #     - **2x Giant Enemies Trap** - All enemies get VERY large
-    #     - **Invisible Trap** - Mina becomes invisible
-    #     - **No HUD Trap** - Remove your HUD
-    #     - **Rotate Camera Trap** - Slowly rotate your camera for a short time
-    #     - **Rotate Camera Input Trap** - Moving now rotates your camera slowly
-    #     - **Mirror Screen Trap** - Mirror your screen
-    #     - **Upsidedown Screen Trap** - Mirror your screen vertically
-    2x Giant Enemies Trap: 50
-    2x Giant Trap: 50
     Flip Controls Trap: 50
     Floor Is Lava Trap: 50
-    Giant Enemies Trap: 50
     Giant Trap: 50
+    2x Giant Trap: 50
+    Giant Enemies Trap: 50
+    2x Giant Enemies Trap: 50
     Invisible Trap: 50
-    Mirror Screen Trap: 50
     No HUD Trap: 50
-    Rotate Camera Input Trap: 50
     Rotate Camera Trap: 50
+    Rotate Camera Input Trap: 50
+    Mirror Screen Trap: 50
     Upsidedown Screen Trap: 50
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Minecraft:
   progression_balancing: normal
