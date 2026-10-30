@@ -9044,253 +9044,40 @@ Mystical Ninja Starring Goemon:
   priority_locations: []
 
 Neon White:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  difficulty_knowledge:
-    # How much understanding of the games mechanics is expected to figure out the solution to a given medal/gift/etc.
-    # Vanilla: *Only* allow cards and strats the basegame shows you.
-    # Casual: Expects the bare minimum, only tricks that are taught with in-game tutorials to beat the vanilla game.
-    # Standard: Incorporates hidden but usually intended or otherwise easy to intuit tech/ideas.
-    # Expert: Further includes some more advanced tech that is often only relevant to speedrunners.
-    # Master: Encompasses everything else from level-specific tech to extremely niche game quirks or nuances.
-    vanilla: 0
-    casual: 0
-    standard: 50
-    expert: 0
-    master: 0
-
-  difficulty_execution:
-    # How hard it is to actually execute a given solution to a given medal/gift/etc, assuming all knowledge.
-    # Vanilla: *Only* allow cards and strats the basegame shows you.
-    # Casual: Can be done by a brand-new player with minimal hassle.
-    # Standard: Consistently doable by a player who has all aces, especially players with dev medals.
-    # Expert: Doable by a player who has all dev medals and is competent with advanced tech.
-    # Master: Unreasonably difficult solutions that are inconsistent/overly precise to the vast majority of players.
-    vanilla: 0
-    casual: 0
-    standard: 50
-    expert: 0
-    master: 0
-
+  progression_balancing: normal
+  accessibility: full
+  difficulty_knowledge: casual
+  difficulty_execution: casual
   medal_select:
-    # Which medals to have as checks.
-    # Format as a comma-separated list of medal names: ["Bronze", "Ace"].
-    # Medals available are: Bronze, Silver, Gold, Ace, and Dev. Case-insensitive.
-    ['Bronze', 'Ace']
-
-  gifts:
-    # Whether or not to make gifts checks.
-    'false': 0
-    'true': 50
-
-  sidequests:
-    # Whether or not to make sidequest completions checks.
-    'false': 0
-    'true': 50
-
-  unlock_method:
-    # How missions are unlocked to progress through the game.
-    # Ranks: Fills the pool with Neon Ranks, each mission requiring a number of ranks to unlock. See Rank Requirement.
-    # Missions: 1 Mission Unlock item is added to the pool per mission, each obtained unlocking the next locked mission.
-    # Levels: Each level is an item that must be collected
-    ranks: 50
-    missions: 0
-    levels: 0
-
-  total_ranks:
-    # How many total Neon Ranks to add to the pool.
-    # Only applies when Mission Unlock Method is set to Ranks.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 300
-    100: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-300: 0 # random value between 1 and 300
-
-  ranks_required_percent:
-    # Percentage of existing Neon Ranks required to open the last mission.
-    # The rest of the mission requirements will scale accordingly.
-    # Only applies when Mission Unlock Method is set to Ranks.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 100
-    80: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-100: 0 # random value between 1 and 100
-
-  mission_count:
-    # The amount of Missions for the game to have when ranks or mission unlock method is chosen.
-    # Spreads levels as evenly as it can, then spreads across the later half with the remainder.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 3
-    # Maximum value is 60
-    11: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-3-60: 0 # random value between 3 and 60
-
-  level_gradient:
-    # The amount of "variance" in % to have in the random level selection for the ranks/mission unlock methods.
-    # A lower value means, as the levels are selected, you will, on average, need more and more cards.
-    # A higher value means much more randomness in the selection.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    50: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  starting_level_count:
-    # The amount of Levels for you to start with for Levels unlock method.
-    # This also influences how many fist-only levels are added early into the level pool for other unlock methods.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 10
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-10: 0 # random value between 1 and 10
-
-  goal:
-    # What the goal to complete should be.
-    # 3bosses - Beat The Clocktower, The Third Temple, and Absolution with the highest medal selected.
-    # TrueEnding - Gather all memories and write Green into the Book of Life. (WILL FAIL TO GEN)
-    3bosses: 50
-    trueending: 0
-
+  - gold
+  - bronze
+  - silver
+  gifts: true
+  sidequests: true
+  unlock_method: missions
+  total_ranks: 100
+  ranks_required_percent: 80
+  mission_count: 11
+  level_gradient: 50
+  starting_level_count: 5
+  goal: 3bosses
   filler_weights:
-    # How often different types of filler should appear.
-    # "Generic" means to pick from a list of filler that don't do anything.
-    # Only filler items (+ Generic) can be listed here.
-    Ammo Card: 1
     Generic: 10
     Health Card: 1
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  death_link_amn:
-    # How many deaths it takes to send a DeathLink.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 30
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-30: 0 # random value between 1 and 30
-
-  death_link_res:
-    # How many **level resets** it takes to send a DeathLink.
-    # Setting to 0 disables sending them on resets.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 50
-    20: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-50: 0 # random value between 0 and 50
-
-  bad_effects:
-    # Whether negative effects on the Neon White world are added to the item pool.
-    # === DOES NOT DO ANYTHING ATM ===
-    'false': 0
-    'true': 50
-
-  boof_shenanigans:
-    # Whether to include things like clips and far off Book of Life usages in the logic.
-    # === DOES NOT DO ANYTHING ATM ===
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+    Ammo Card: 1
+  death_link: true
+  death_link_amn: 5
+  death_link_res: 20
+  bad_effects: true
+  boof_shenanigans: false
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Noita:
   progression_balancing: '50'
