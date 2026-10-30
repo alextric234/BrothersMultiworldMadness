@@ -2844,12 +2844,12 @@ Banjo-Tooie:
   jamjars_silo_costs: vanilla
   randomize_bk_moves: none
   egg_behaviour: start_with_blue_eggs
-  progressive_beak_buster: true
-  progressive_shoes: true
-  progressive_water_training: basic
-  progressive_flight: true
-  progressive_egg_aiming: basic
-  progressive_bash_attack: true
+  progressive_beak_buster: false
+  progressive_shoes: false
+  progressive_water_training: none
+  progressive_flight: false
+  progressive_egg_aiming: none
+  progressive_bash_attack: false
   randomize_notes: false
   randomize_treble: true
   extra_trebleclefs_count: 0
