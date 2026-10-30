@@ -8729,281 +8729,44 @@ Mega Man X:
   start_inventory_from_pool: {}
 
 Mega Man X2:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  energy_link:
-    # Enable EnergyLink support.
-    # 
-    # EnergyLink in MMX2 works as a big HP and Weapon Energy pool that the players can use to request HP
-    # or Weapon Energy whenever they need to.
-    # 
-    # You make use of this feature by typing /heal <amount> or /refill <amount> in the client.
-    'false': 0
-    'true': 50
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  damage_link:
-    # Enable DamageLink support
-    'false': 50
-    'true': 0
-
-  pickup_locations:
-    # Whether collecting freestanding 1ups, HP and Weapon Energy capsules will be considered a location.
-    'false': 50
-    'true': 0
-
-  ####################
-  # Gameplay Options #
-  ####################
-  starting_hp:
-    # How much HP X will have at the start of the game.
-    # 
-    # Notes: Going over 32 HP may cause visual bugs in either gameplay or the pause menu. The max HP is capped at 64.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 32
-    16: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-32: 0 # random value between 1 and 32
-
-  heart_tank_effectiveness:
-    # How many units of HP each Heart tank will provide to the user.
-    # 
-    # Note: Going over 32 HP may cause visual bugs in either gameplay or the pause menu. The max HP is capped at 64.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 8
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-8: 0 # random value between 1 and 8
-
-  jammed_buster:
-    # Jams X's buster making it only able to shoot lemons.
-    # Note: This adds another Arms Upgrade into the item pool.
-    'false': 50
-    'true': 0
-
+  progression_balancing: normal
+  accessibility: full
+  energy_link: true
+  death_link: true
+  damage_link: false
+  pickup_locations: false
+  starting_hp: 16
+  heart_tank_effectiveness: 2
+  jammed_buster: true
   chips:
-    # Which chip items will be included in the game.
-    # Do note that this feature REQUIRES enabling pickup items as locations!
-    # 
-    # Supported enhancement chips:
-    # * "Quick Charge Chip" [MMX5] Halves charge time for X-Buster and Special Weapon shots
-    # * "Speedster Chip" [MMX5] Increases walking speed by 50%
-    # * "Super Recover Chip" [MMX5] Increases recovery from items by 25%
-    # * "Rapid Five Chip" [MMX5] Increases the amount of buster shots on screen to 5
-    # * "Speed Shot Chip" [MMX5] Increases default buster shot (lemons) horizontal speed by 50%
-    # * "Buster Plus Chip" [MMX5] Increases Buster damage by 1
-    # * "Weapon Plus Chip" [MMX6] Increases Weapon damage by 1
-    # * "D-Converter Chip" [MMX6] Refills the active weapon when taking damage
-    # * "D-Barrier Chip" [MMX6] Doubles the I-frames after getting hit
-    # * "Item Plus Chip" [MMX7] Increases item drop rates by roughly 33%
-    # * "Spike Walker Chip" [MMX8] Halves speed when sliding down a wall
-    ['Quick Charge Chip', 'Speedster Chip', 'Super Recover Chip', 'Rapid Five Chip', 'Speed Shot Chip', 'Buster Plus Chip', 'Weapon Plus Chip', 'D-Converter Chip', 'D-Barrier Chip', 'Item Plus Chip', 'Spike Walker Chip']
-
-  shoryuken_in_pool:
-    # Adds Shoryuken to the item pool.
-    'false': 0
-    'true': 50
-
-  x_hunters_arena_medal_count:
-    # How many Maverick Medals are required to allow X-Hunters to spawn on their Arena areas in the main levels.
-    # 
-    # You have to press SELECT on the map to swap which X-Hunter will be available.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  #########################
-  # Boss Weakness Options #
-  #########################
-  boss_weakness_rando:
-    # Every main boss will have its weakness randomized.
-    # 
-    # vanilla: Bosses retain their original weaknesses
-    # swapped: Bosses will swap around their weaknesses with other bosses
-    # simple: Bosses will have one random weakness
-    # chaotic_single: Bosses will have one random weakness under the chaotic set
-    # chaotic_double: Bosses will have two random weaknesses under the chaotic set
-    # chaotic_triple: Bosses will have three random weakness under the chaotic set
-    # 
-    # The chaotic set makes every weapon charge level a separate weakness instead of keeping
-    # them together, meaning that a boss can be weak to Charged Spin Wheel but not its
-    # uncharged version.
-    vanilla: 50
-    swapped: 0
-    simple: 0
-    chaotic_single: 0
-    chaotic_double: 0
-    chaotic_triple: 0
-
-  boss_weakness_plando:
-    # Forces bosses to have a specific weakness. Uses the names that appear on the chaotic weakness set.
-    # 
-    # Format: 
-    #   Boss Name: ["Weakness Name"]
-    {}
-
-  boss_weakness_strictness:
-    # How strict boss weaknesses will be.
-    # 
-    # not_strict: How the original game operates
-    # weakness_and_buster: Only allow the weakness and buster to deal damage to the bosses
-    # weakness_and_upgraded_buster: Only allow the weakness and buster charge levels 3 to deal damage to the bosses
-    # only_weakness: Only the weakness will deal damage to the bosses
-    not_strict: 50
-    weakness_and_buster: 0
-    weakness_and_upgraded_buster: 0
-    only_weakness: 0
-
-  boss_randomize_hp:
-    # Wheter to randomize the boss' hp or not. Mid bosses aren't supported (yet).
-    # 
-    # off: Bosses' HP will not be randomized
-    # weak: Bosses will have [2,32] HP
-    # regular: Bosses will have [16,48] HP
-    # strong: Bosses will have [32,64] HP
-    # chaotic: Bosses will have [2,64] HP
-    'off': 50
-    weak: 0
-    regular: 0
-    strong: 0
-    chaotic: 0
-
-  boss_hp_plando:
-    # Forces bosses to have a specific HP value. Can't go over 64 or lower than 2.
-    # Sigma Virus and mid-stage bosses aren't supported here (yet).
-    # Serges, Violen, Neo Violen and Agile share the same HP value with Agile's data applying to all three.
-    # 
-    # Format: 
-    #   Boss Name: HP Value
-    {}
-
-  ###########################
-  # X-Hunter's Base Options #
-  ###########################
-  x_hunter_base_open:
-    # Under which condition will X-Hunter's Base open.
-    item: 0
-    medals: 50
-
-  x_hunter_base_medal_count:
-    # How many Maverick Medals are required to access X-Hunter's Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    6: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  x_hunter_base_boss_rematch_count:
-    # How many boss rematches are needed in the fourth X-Hunter's Base stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-8: 0 # random value between 0 and 8
-
-  x_hunter_base_level_unlock:
-    # How are X-Hunter Base levels unlocked once you have access to the X-Hunter Base.
-    #   - **Vanilla**: Each level is unlocked as soon the previous one is beaten.
-    #   - **All Open**: All levels are unlocked.
-    vanilla: 50
-    all_open: 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_inventory_from_pool:
-    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
-    # 
-    # The game decides what the replacement items will be.
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - Buster Plus Chip
+  - D-Barrier Chip
+  - D-Converter Chip
+  - Item Plus Chip
+  - Quick Charge Chip
+  - Rapid Five Chip
+  - Speed Shot Chip
+  - Speedster Chip
+  - Spike Walker Chip
+  - Super Recover Chip
+  - Weapon Plus Chip
+  shoryuken_in_pool: false
+  x_hunters_arena_medal_count: 2
+  boss_weakness_rando: chaotic_double
+  boss_weakness_strictness: only_weakness
+  boss_randomize_hp: chaotic
+  x_hunter_base_open: medals
+  x_hunter_base_medal_count: 6
+  x_hunter_base_boss_rematch_count: 8
+  x_hunter_base_level_unlock: vanilla
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  start_inventory_from_pool: {}
 
 Mega Man X3:
   ################
