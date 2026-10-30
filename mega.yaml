@@ -12100,7 +12100,7 @@ SOH-EXTREME:
   shuffle_shovel: false
   shuffle_bean_souls: false
   shuffle_enemy_drops: true
-  npc_speech_sanity: true
+  npc_speech_sanity: false
   song_note_shuffle: 'off'
   shuffle_flow_of_time: true
   frozen_starting_time: randomized
