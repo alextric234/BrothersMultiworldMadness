@@ -15764,7 +15764,7 @@ Kingdom Hearts:
   atlantica:
     'false': 25
   cups:
-    cups: 25
+    off: 25
   hundred_acre_wood:
     'true': 28
   jungle_slider:
