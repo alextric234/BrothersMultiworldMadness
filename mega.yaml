@@ -11043,9 +11043,9 @@ Shadow The Hedgehog:
   weapon_groups:
   - Stage Melee Weapons
   enable_traps: true
-  ammo_trap_enabled: 'on'
-  checkpoint_trap_enabled: 'on'
-  poison_trap_enabled: 'on'
+  ammo_trap_enabled: low
+  checkpoint_trap_enabled: low
+  poison_trap_enabled: low
   trap_fill_percentage: 15
   ring_link: 'on'
   shadow_mod: vanilla
