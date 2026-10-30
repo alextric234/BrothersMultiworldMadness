@@ -8984,263 +8984,39 @@ Mirror's Edge:
   start_inventory_from_pool: {}
 
 Monster Hunter World:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  ending_rank:
-    # Choose which rank you must reach the end of in order to complete.
-    # Low Rank: Finish "A Colossal Task"
-    # High Rank: Finish "Land of Convergence"
-    # Master Rank: Finish "Paean of Guidance"
-    low_rank: 0
-    high_rank: 50
-    master_rank: 0
-
-  specialarena_quests:
-    # Adds Special Arena Quests to the quest pool.
-    # Note: These are the quest that are unlocked when you capture a monster.
-    'false': 50
-    'true': 0
-
-  event_quests:
-    # Adds Event Quests to the quest pool.
-    'false': 50
-    'true': 0
-
-  special_quests:
-    # Adds Special Quests to the quest pool.
-    # Note: This does not add any Low Rank and one High Rank quest.
-    'false': 50
-    'true': 0
-
-  grindy_quests:
-    # Adds some quests and some dependent locations to the pool.
-    # Note: These quests require a significant amount of effort to unlock.
-    'false': 50
-    'true': 0
-
-  overpowered_equip:
-    # Adds the next rank of progressive weapons and armor to the pool.
-    # Note: This does not have an effect if selecting Master Rank.
-    'false': 0
-    'true': 50
-
-  freearmor:
-    # Makes Armors cost no materials
-    'false': 0
-    'true': 50
-
-  freeweapon:
-    # Makes Weapons cost no materials
-    'false': 0
-    'true': 50
-
-  seasonal:
-    # Makes it so seasonal armor and weapons are added to the pool for free weapons and armors.
-    'false': 50
-    'true': 0
-
-  endemiclife:
-    # Adds catching basic endemic life to the location pool.
-    'false': 50
-    'true': 0
-
-  rareendemic:
-    # Adds catching rare endemic life to the location pool.
-    # These are animals that will likely appear during the game but you may need to seek them out.
-    'false': 50
-    'true': 0
-
-  legendendemic:
-    # Adds catching legendary endemic life to the location pool.
-    # You will need to seek these animals in their specific conditions.
-    'false': 50
-    'true': 0
-
-  specialized_tools:
-    # Adds specialized tools to the item pool and location pool.
-    # Note: Currently the tool slots are not taken into account and will be unlocked per usual.
-    'false': 0
-    'true': 50
-
-  overpowered_tools:
-    # Adds the upgraded form of specialized tools to the item pool.
-    # Note: This does not have an effect if selecting Master Rank.
-    'false': 0
-    'true': 50
-
-  zennyweight:
-    # Sets the weight of receiving an amount of Zenny
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 200
-    150: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-200: 0 # random value between 1 and 200
-
-  chanceweight:
-    # Sets the weight of receiving a Chance Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  meldingweight:
-    # Sets the weight of receiving a Melding Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  junkweight:
-    # Sets the weight of receiving a Junk Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ingredientweight:
-    # Sets the weight of receiving an Ingredient Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ammoweight:
-    # Sets the weight of receiving an Ammo Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  buffweight:
-    # Sets the weight of receiving a Buff Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  utilityweight:
-    # Sets the weight of receiving a Utility Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  healingweight:
-    # Sets the weight of receiving a Healing Loot Box
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    10: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
-
+  progression_balancing: normal
+  accessibility: full
+  ending_rank: low_rank
+  specialarena_quests: true
+  event_quests: false
+  special_quests: false
+  grindy_quests: false
+  overpowered_equip: true
+  freearmor: true
+  freeweapon: true
+  seasonal: false
+  endemiclife: true
+  rareendemic: false
+  legendendemic: false
+  specialized_tools: true
+  overpowered_tools: true
+  zennyweight: 150
+  chanceweight: 10
+  meldingweight: 10
+  junkweight: 10
+  ingredientweight: 10
+  ammoweight: 10
+  buffweight: 10
+  utilityweight: 10
+  healingweight: 10
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
+  
 Mystical Ninja Starring Goemon:
   progression_balancing: normal
   accessibility: full
