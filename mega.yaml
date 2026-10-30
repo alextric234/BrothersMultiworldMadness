@@ -2842,7 +2842,7 @@ Banjo-Tooie:
   custom_worlds: 1,4,8,14,20,28,36,45,55
   randomize_bt_moves: true
   jamjars_silo_costs: vanilla
-  randomize_bk_moves: mcjiggy_special
+  randomize_bk_moves: false
   egg_behaviour: start_with_blue_eggs
   progressive_beak_buster: true
   progressive_shoes: true
@@ -2876,7 +2876,7 @@ Banjo-Tooie:
   randomize_silos: true
   open_silos: 2
   skip_puzzles: true
-  randomize_worlds: true
+  randomize_worlds: false
   randomize_world_entrance_loading_zones: false
   randomize_boss_loading_zones: false
   backdoors: false
