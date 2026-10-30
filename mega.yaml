@@ -9450,172 +9450,22 @@ Path of Exile:
   priority_locations: []
 
 'PAYDAY 2: Criminal Dawn':
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  goal:
-    # ORIGINAL: Finish a run consisting of random tiered heists.
-    # CAMPAIGN: Finish a preset run with a fixed set of heists.
-    # SCORE: Send every score check. Heists are completely random.
-    original: 50
-    campaign: 0
-    score: 0
-
-  campaign:
-    # Only used if 'Campaign' is selected as the goal.
-    # You need to own all the DLC in a campaign to be able to play it!
-    # 
-    # CLASSICS: First World Bank, Heat Street, Panic Room, Green Bridge, Diamond Heist, Slaughterhouse.
-    # YOU GUYS NO FUN: Four Stores, Mallcrasher, Nightclub, Aftershock, Meltdown.
-    # RETURN OF THE RAT: Watchdogs, Firestarter day 1, Rats, Hoxton Breakout day 2, Hoxton Revenge.
-    # DEATH OF DEMOCRACY: Framing Frame day 3, Election Day bank, Big Oil day 2.
-    # MURKY DAY: Shadow Raid, Meltdown, Beneath the Mountain (DLC), Henry's Rock.
-    # I NEED MY PAYDAY TOO: Big Bank (DLC), The Diamond (DLC), Hotline Miami (DLC), Hoxton Breakout day 1, Golden Grin Casino (DLC).
-    # GREATEST HEIST OF ALL: Reservoir Dogs (DLC), Brooklyn Bank, Shacklethorne Auction, Breakin' Feds, Hell's Island, White House.
-    # SILK ROAD: Border Crossing (DLC), San Martín Bank (DLC), Breakfast in Tijuana (DLC), Buluc's Mansion (DLC).
-    # CITY OF GOLD: Dragon Heist (DLC), Black Cat (DLC), Mountain Master (DLC).
-    # TEXAS HEAT: Midland Ranch (DLC), Hostile Takeover (DLC), Crude Awakening (DLC).
-    # FOLLOW THE MONEY: Bank Heist: Cash, GO Bank, Brooklyn Bank, San Martín Bank (DLC), First World Bank, Big Bank (DLC).
-    # GUN RUNNERS: Firestarter day 1, Aftershock, Brooklyn 10-10 (DLC), Bomb: Dockyard (DLC), Midland Ranch (DLC), Border Crossing (DLC).
-    # HOX HOX HOX: Hoxton Breakout day 1, Hoxton Breakout day 2, Hoxton Revenge.
-    # NIGHT OF FRIGHTS: Cursed Kill Room, Prison Nightmare, Lab Rats, Safehouse Nightmare.
-    # HOLIDAY SPECIAL: White Xmas, Santa's Workshop, Stealing Xmas.
-    # STEALTH MISSION: Breakin' Feds, Yacht Heist (DLC), Murky Station (licensed), Shadow Raid, Car Shop.
-    classics: 50
-    you_guys_no_fun: 0
-    return_of_the_rat: 0
-    death_of_democracy: 0
-    murky_day: 0
-    i_need_my_payday_too: 0
-    greatest_heist_of_all: 0
-    silk_road: 0
-    city_of_gold: 0
-    texas_heat: 0
-    follow_the_money: 0
-    gun_runners: 0
-    hox_hox_hox: 0
-    night_of_frights: 0
-    holiday_special: 0
-    stealth_mission: 0
-
-  run_length:
-    # Only used if 'Original' is selected as the goal.
-    # 
-    # How many heists you need to finish to win.
-    # The final heist is always White House or Crude Awakening (if you own it).
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 6
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-6: 0 # random value between 1 and 6
-
-  score_checks:
-    # Base number of score checks. Each check requires one more point than the last, so this scales quite fast!
-    # This is increased by other options, so the actual number of score checks will often be higher.
-    # Solo worlds will fail to generate if this is set too low. 60 is a good starting point!
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 100
-    68: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-100: 0 # random value between 0 and 100
-
-  safehouse_tiers:
-    # How many times you can upgrade the safe house. Adds 8 score checks per tier.
-    # The 'Score' goal can fail to generate if this is too high.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 6
-    4: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-6: 0 # random value between 0 and 6
-
-  early_bot:
-    # Force a bot to generate in sphere 1, guaranteeing that you get an early bot.
-    # This can make the early game significantly easier. If you are playing alone, keeping this on is recommended!
-    'false': 0
-    'true': 50
-
-  biglobby:
-    # Whether BigLobby is installed. Adds 20 extra score checks when enabled.
-    # Enabling this increases the number of extra bots from 3 all the way up to 21, however the game may become less stable:
-    # https://modworkshop.net/mod/21582
-    'false': 50
-    'true': 0
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  progression_balancing: normal
+  accessibility: full
+  goal: original
+  campaign: classics
+  run_length: 4
+  score_checks: 68
+  safehouse_tiers: 4
+  early_bot: true
+  biglobby: true
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 Peggle Deluxe:
   progression_balancing: normal
