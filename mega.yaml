@@ -9403,329 +9403,51 @@ Paint:
   priority_locations: []
 
 Path of Exile:
-  ################
-  # Game Options #
-  ################
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-99: 0 # random value between 0 and 99
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
-
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
-
-  death_link:
-    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
-    'false': 50
-    'true': 0
-
-  ################
-  # Goal Options #
-  ################
-  goal:
-    # Specifies the goal of the world.
-    # if your goal is act 5, you need to get to the 3rd area in act 6, kauri fortress, because of zone names.
-    complete_the_campaign: 50
-    complete_act_1: 0
-    complete_act_2: 0
-    complete_act_3: 0
-    complete_act_4: 0
-    kauri_fortress_act_6: 0
-    complete_act_6: 0
-    complete_act_7: 0
-    complete_act_8: 0
-    complete_act_9: 0
-    defeat_bosses: 0
-
-  number_of_bosses:
-    # This is ignored if Goal isn't set to defeat_bosses. This specifies the number of bosses that need to be defeated
-    # (and for you to pick up their drops) in order for you to goal. This will max out at the number of bosses available in the world.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 1
-    # Maximum value is 31
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-1-31: 0 # random value between 1 and 31
-
+  progression_balancing: normal
+  accessibility: full
+  death_link: true
+  goal: complete_act_4
+  number_of_bosses: 1
   bosses_available:
-    # This is also ignored if Goal isn't set to defeat_bosses. Specifies the availability of the bosses in the world.
-    # This will NOT determine how many bosses are available in the world, but rather which bosses can be randomized.
-    # This will choose any (including _very_ difficult bosses if none are selected.)
-    # 
-    # valid choices: [ "hydra", "phoenix", "chimera", "minotaur", "shaper", "uber_shaper", "elder", "uber_elder",
-    #  "uber_uber_elder", "atziri", "uber_atziri", "al-hezmin", "baran", "drox", "veritania", "sirus", "uber_sirus", "maven",
-    #  "uber_maven", "exarch", "uber_exarch", "eater", "uber_eater", "incarnation_of_neglect", "uber_incarnation_of_neglect",
-    #  "incarnation_of_fear", "uber_incarnation_of_fear", "incarnation_of_dread", "uber_incarnation_of_dread", "cortex", "uber_cortex"]
-    ['hydra', 'phoenix', 'chimera', 'minotaur', 'al-hezmin', 'baran', 'drox', 'veritania']
-
-  #####################
-  # Character Options #
-  #####################
-  starting_character:
-    # The starting character for the world. This will determine the class available at the start.
-    scion: 0
-    marauder: 0
-    ranger: 0
-    witch: 0
-    duelist: 0
-    templar: 0
-    shadow: 0
-    random: 50
-
-  ascendancies_available_per_class:
-    # Specifies the maximum number of available ascendancies per class.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 3
-    1: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-3: 0 # random value between 0 and 3
-
-  allow_unlock_of_other_characters:
-    # Allows unlocking of other characters.
-    'false': 0
-    'true': 50
-
-  usable_starting_gear:
-    # Specifies if you should start with the gear that you find in the tutorial, for your starting character.
-    # use this option if you don't want to punch hillock to death.
-    no_starting_gear: 0
-    starting_weapon: 0
-    starting_weapon_and_flask_slots: 0
-    starting_weapon_and_gems: 0
-    starting_weapon_flask_and_gems: 50
-
-  gucci_hobo_mode:
-    # Specifies if the world should be in Gucci Hobo Mode, this restricts use of non-unique equipment.
-    # This is an extremely difficult challenge intended for experienced players, and will greatly increase the length of your run.
-    # Expect a very slow start, involving farming early act 1 zones. (not reccomended)
-    disabled: 50
-    allow_one_slot_of_any_rarity: 0
-    allow_one_slot_of_normal_rarity: 0
-    no_non_unique_items: 0
-
-  ######################
-  # Generation Options #
-  ######################
-  progressive_gear:
-    # Controls whether gear rarity follows a progressive unlock system. Progressive gear is recommended for better game balance and pacing.
-    # When enabled, you'll receive gear upgrades that will increase in rarity.
-    # When disabled, you can receive gear of any rarity (you might find rare items before normal ones).
-    enabled: 50
-    disabled: 0
-    progressive_except_for_unique: 0
-
-  disable_generation_logic:
-    # Disables all generation logic, ignoring any placement rules, and placing items completely randomly. This ignores all other "Minimum Available" Options.
-    # This will likely make your run very difficult, and is not recommended.
-    'false': 50
-    'true': 0
-
-  gear_upgrades:
-    # Specifies if gear rarity should be restricted to a certain rarity, unlockable through items found in the multiworld.
-    all_gear_unlocked_at_start: 0
-    all_normal_and_unique_gear_unlocked: 0
-    all_normal_gear_unlocked: 0
-    all_uniques_unlocked: 0
-    no_gear_unlocked: 50
-
-  gear_upgrades_per_act:
-    # Specifies a minimum number of rarity of gear upgrades available per act. (there are 38 total)
-    # This will be ignored if the "Gear Upgrades" option is turned off.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 38
-    5: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-38: 0 # random value between 0 and 38
-
-  add_flasks_to_item_pool:
-    # Specifies if flasks should be restricted, unlockable through items found in the multiworld.
-    # You may equip up to 5 flasks of a given rarity, and can unlock more flasks of a rarity through items.
-    'false': 0
-    'true': 50
-
-  flasks_per_act:
-    # Specifies a minimum number of available flask slots per act. (there are 5 total)
-    # This will be ignored if the "Flask Slots" option is turned off.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-
-  add_max_links_to_item_pool:
-    # Specifies if the number of linked support gem slots you can use in gear should be restricted, unlockable through items found in the multiworld.
-    'false': 0
-    'true': 50
-
-  max_links_per_act:
-    # Specifies a minimum number of available linked support gem slots per act. (there are 22 total)
-    # This will be ignored if the "Support Gem Slot Upgrades" option is turned off.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 22
-    3: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-22: 0 # random value between 0 and 22
-
-  add_passive_skill_points_to_item_pool:
-    # Specifies if passive skill points should be restricted, unlockable through items found in the multiworld.
-    'false': 0
-    'true': 50
-
-  add_leveling_up_to_location_pool:
-    # Specifies if leveling up be considered "locations".
-    'false': 0
-    'true': 50
-
-  add_area_locations_to_location_pool:
-    # Specifies if reaching areas (zones) should be considered "locations".
-    # Only areas up to the goal act are included.
-    'false': 0
-    'true': 50
-
-  add_skill_gems_to_item_pool:
-    # Specifies if skill gems should be restricted, unlockable through items found in the multiworld.
-    'false': 0
-    'true': 50
-
-  skill_gems_per_act:
-    # Specifies the minimum number of usable skill gems placed by the generator per act.
-    # Higher values will place more relevant skill gems early on
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 15
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-15: 0 # random value between 0 and 15
-
-  add_support_gems_to_item_pool:
-    # Specifies if skill gems should be restricted, unlockable through items found in the multiworld.
-    'false': 0
-    'true': 50
-
-  support_gems_per_act:
-    # Specifies the minimum number of usable support gems (by character level) placed by the generator per act.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 10
-    2: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-0-10: 0 # random value between 0 and 10
-
-  ##################
-  # Client Options #
-  ##################
-  loot_filter_sounds:
-    # sounds for the Archipelago items drop.
-    no_sound: 0
-    tts: 0
-    jingles: 50
-
-  loot_filter_display:
-    # Loot filter display style.
-    show_classification: 50
-    hide_classification: 0
-    randomize_lootfilter_style: 0
-
-  enable_tts:
-    # Enable Text-to-Speech (TTS). If using other loot filter sounds, this option will still generate TTS audio files for invalid state warnings.
-    # If this is disabled, this will ignore Loot Filter Sounds if set to TTS.
-    # If TTS is enabled, the client will generate audio files for item drops that are not already present,
-    # This may take some time initially, but will speed as audio files are generated and saved.
-    'false': 0
-    'true': 50
-
-  tts_speed:
-    # Speed of the Text-to-Speech (TTS) feature, if enabled.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 50
-    # Maximum value is 500
-    250: 50
-    random: 0
-    random-low: 0 # random value weighted towards lower values
-    random-high: 0 # random value weighted towards higher values
-    random-range-50-500: 0 # random value between 50 and 500
-
-  ###########################
-  # Item & Location Options #
-  ###########################
-  local_items:
-    # Forces these items to be in their native world.
-    []
-
-  non_local_items:
-    # Forces these items to be outside their native world.
-    []
-
-  start_inventory:
-    # Start with the specified amount of these items. Example: "Bomb: 1"
-    {}
-
-  start_hints:
-    # Start with these item's locations prefilled into the ``!hint`` command.
-    []
-
-  start_location_hints:
-    # Start with these locations and their item prefilled into the ``!hint`` command.
-    []
-
-  exclude_locations:
-    # Prevent these locations from having an important item.
-    []
-
-  priority_locations:
-    # Prevent these locations from having an unimportant item.
-    []
-
-  item_links:
-    # Share part of your item pool with other players.
-    []
-
-  plando_items:
-    # Generic items plando.
-    []
+  - al-hezmin
+  - baran
+  - chimera
+  - drox
+  - hydra
+  - minotaur
+  - phoenix
+  - veritania
+  starting_character: random
+  ascendancies_available_per_class: random
+  allow_unlock_of_other_characters: true
+  usable_starting_gear: starting_weapon_flask_and_gems
+  gucci_hobo_mode: disabled
+  progressive_gear: enabled
+  disable_generation_logic: false
+  gear_upgrades: no_gear_unlocked
+  gear_upgrades_per_act: 5
+  add_flasks_to_item_pool: true
+  flasks_per_act: 3
+  add_max_links_to_item_pool: true
+  max_links_per_act: 3
+  add_passive_skill_points_to_item_pool: true
+  add_leveling_up_to_location_pool: true
+  add_area_locations_to_location_pool: true
+  add_skill_gems_to_item_pool: true
+  skill_gems_per_act: 2
+  add_support_gems_to_item_pool: true
+  support_gems_per_act: 2
+  loot_filter_sounds: jingles
+  loot_filter_display: show_classification
+  enable_tts: true
+  tts_speed: 250
+  local_items: []
+  non_local_items: []
+  start_inventory: {}
+  start_hints: []
+  start_location_hints: []
+  exclude_locations: []
+  priority_locations: []
 
 'PAYDAY 2: Criminal Dawn':
   ################
