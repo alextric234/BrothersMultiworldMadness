@@ -13620,7 +13620,7 @@ The Grinch:
     Dump it to Crumpit: 33
     Who sent me back?: 33
     Depletion Trap: 34
-  ring_link: true
+  ring_link: false
   death_link: true
   local_items: []
   non_local_items: []
