@@ -17907,7 +17907,7 @@ Wario Land:
   percentage_of_garlic_cloves: 100
   treasure_checks: true
   blocksanity: false
-  trap_fill_percentage: 15aaa
+  trap_fill_percentage: 15
   stun_trap_weight: medium
   timer_trap_weight: medium
   death_trap_weight: medium
