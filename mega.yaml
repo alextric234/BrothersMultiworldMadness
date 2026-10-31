@@ -93,7 +93,6 @@ game:
   Five Nights at Fuckboy's: 1
   FNaFW: 1
   Garfield Kart - Furious Racing: 1
-  Gauntlet Legends: 1
   Getting Over It: 1
   GoldenEye 007: 1
   Hades: 1
@@ -205,7 +204,6 @@ game:
   Return of the Obra Dinn: 1
   Rimworld: 1
   Risk of Rain 2: 1
-  Rogue Legacy: 1
   Rogue Legacy 2: 1
   Satisfactory: 1
   Saving Princess: 1
@@ -15337,47 +15335,6 @@ Five Nights at Frickbear's 3:
   exclude_locations: []
   priority_locations: []
 
-Gauntlet Legends:
-  progression_balancing: '50'
-  accessibility: full
-  death_link: 'true'
-  included_areas:
-  - Castle
-  - Town
-  - Ice
-  - Battlefield
-  chests_barrels: all_both
-  obelisks: 'true'
-  mirror_shards: 'true'
-  portals: 'true'
-  goal: defeat_skorne
-  boss_goal_count: '4'
-  max_difficulty: '4'
-  instant_max: 'false'
-  infinite_keys: 'true'
-  permanent_speed: 'true'
-  included_traps:
-  - Death
-  - Poison Fruit
-  - Crossbow Shooter
-  - Bomb Thrower
-  - Bomb Runner
-  - Golem
-  traps_frequency: '10'
-  local_filler_frequency: '50'
-  unlock_character_one: none
-  unlock_character_two: none
-  unlock_character_three: none
-  unlock_character_four: none
-  local_items: []
-  non_local_items: []
-  start_hints: []
-  start_location_hints: []
-  exclude_locations: []
-  priority_locations: []
-  start_inventory: {}
-  start_inventory_from_pool: {}
-
 Getting Over It:
   progression_balancing: normal
   accessibility: full
@@ -16926,16 +16883,6 @@ Return of the Obra Dinn:
   exclude_locations: []
   priority_locations: []
 
-Rogue Legacy:
-  progression_balancing: normal
-  accessibility: full
-  local_items: []
-  non_local_items: []
-  start_inventory: {}
-  start_hints: []
-  start_location_hints: []
-  exclude_locations: []
-  priority_locations: []
 
 Rogue Legacy 2:
   progression_balancing: normal
