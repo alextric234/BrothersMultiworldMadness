@@ -187,7 +187,6 @@ game:
   Pokemon Pinball: 1
   Pokemon Platinum: 1
   Pokemon Ranger (Quest): 1
-  Pokemon Red and Blue: 1
   Pokemon Snap: 1
   Pokemon Trozei: 1
   PokePark: 1
@@ -16708,114 +16707,6 @@ Pokeclicker:
   priority_locations: []
   start_inventory_from_pool: {}
 
-Pokemon Red and Blue:
-  progression_balancing: '50'
-  accessibility: items
-  trainer_name: super butt
-  rival_name: cooler butt
-  elite_four_key_items_condition: '0'
-  elite_four_pokedex_condition: '0'
-  route_3_condition: open
-  robbed_house_officer: 'false'
-  second_fossil_check_condition: '1'
-  fossil_check_item_types: any
-  exp_all: start_with
-  old_man: early_parcel
-  badgesanity: 'true'
-  badges_needed_for_hm_moves: 'off'
-  key_items_only: 'false'
-  tea: 'true'
-  extra_key_items: 'true'
-  split_card_key: 'on'
-  all_elevators_locked: 'true'
-  extra_strength_boulders: 'false'
-  require_item_finder: 'true'
-  randomize_hidden_items: exclude
-  prizesanity: 'false'
-  trainersanity: '0'
-  dexsanity: '50'
-  randomize_pokedex: start_with
-  require_pokedex: 'true'
-  all_pokemon_seen: 'true'
-  oaks_aide_rt_2: '10'
-  oaks_aide_rt_11: '20'
-  oaks_aide_rt_15: '30'
-  stonesanity: 'false'
-  door_shuffle: 'off'
-  warp_tile_shuffle: vanilla
-  randomize_rock_tunnel: 'false'
-  dark_rock_tunnel_logic: 'true'
-  free_fly_location: 'true'
-  town_map_fly_location: 'true'
-  minimum_steps_between_encounters: '5'
-  level_scaling: by_spheres
-  exp_modifier: '80'
-  randomize_wild_pokemon: vanilla
-  area_1_to_1_mapping: 'true'
-  randomize_starter_pokemon: completely_random
-  randomize_static_pokemon: vanilla
-  randomize_legendary_pokemon: vanilla
-  catch_em_all: 'off'
-  randomize_pokemon_stats: vanilla
-  randomize_pokemon_catch_rates: 'false'
-  minimum_catch_rate: '50'
-  randomize_trainer_parties: vanilla
-  trainer_legendaries: 'false'
-  move_balancing: 'false'
-  fix_combat_bugs: 'true'
-  randomize_pokemon_movesets: vanilla
-  confine_transform_to_ditto: 'true'
-  start_with_four_moves: 'false'
-  same_type_attack_bonus: 'true'
-  randomize_tm_moves: 'false'
-  tm_same_type_compatibility: '-1'
-  tm_normal_type_compatibility: '-1'
-  tm_other_type_compatibility: '-1'
-  hm_same_type_compatibility: '-1'
-  hm_normal_type_compatibility: '-1'
-  hm_other_type_compatibility: '-1'
-  inherit_tm_hm_compatibility: 'false'
-  randomize_move_types: 'false'
-  randomize_pokemon_types: vanilla
-  secondary_type_chance: '-1'
-  randomize_type_chart: vanilla
-  normal_matchups: '143'
-  super_effective_matchups: '38'
-  not_very_effective_matchups: '38'
-  immunity_matchups: '6'
-  type_chart_seed: random
-  safari_zone_normal_battles: 'false'
-  normalize_encounter_chances: 'false'
-  reusable_tms: 'true'
-  better_shops: add_master_ball
-  master_ball_price: '50'
-  starting_money: '579672'
-  lose_money_on_blackout: 'false'
-  poke_doll_skip: patched
-  bicycle_gate_skips: patched
-  trap_percentage: '15'
-  poison_trap_weight: medium
-  fire_trap_weight: medium
-  paralyze_trap_weight: medium
-  sleep_trap_weight: medium
-  ice_trap_weight: disabled
-  randomize_pokemon_palettes: completely_random
-  death_link: 'true'
-  local_items: []
-  non_local_items: []
-  start_hints: []
-  start_location_hints: []
-  exclude_locations: []
-  priority_locations: []
-  start_inventory: {}
-  game_version: random
-  elite_four_badges_condition: random
-  victory_road_condition: random
-  route_22_gate_condition: random
-  viridian_gym_condition: random
-  cerulean_cave_badges_condition: random
-  cerulean_cave_key_items_condition: random
-  blind_trainers: random
 
 Plants Vs Zombies Fusion:
   progression_balancing: normal
