@@ -6893,19 +6893,38 @@ Kingdom Hearts 2:
   priority_locations: {}
 
 Kingdom Hearts III:
-  progression_balancing: normal
+  progression_balancing: 50
   accessibility: full
-  death_link: true
-  death_link_amnesty: 0
-  battle_level_mode: sora_level
   goal: three_proofs
+  death_link: "true"
+  death_link_amnesty: 5
+  battle_level_mode: off
+  battle_level_offset: 0
   keyblade_levels: shuffled
-  style_change: keybladestylesanity
+  stylesanity: on
+  chestsanity: "true"
   ultima_weapon_mode: randomized_pool
   ultima_weapon_shard_count: 7
   trap_percentage: 15
-  moogle_shop_checks: random
-  moogle_shop_price: 100
+  portal_unlocks: keyblades
+  default_base_abilities: "true"
+  start_with_wall_run: "false"
+  start_with_magic: "false"
+  start_with_links: "false"
+  start_with_attraction_flow: "false"
+  junk_golden_herc_rewards: "true"
+  level_up_limit: 35
+  base_sora_stats_pool: boosted
+  level_up_stats_pool: boosted
+  keyblade_enhance_stats_pool: boosted
+  equipment_stats_pool: boosted
+  food_effect_stats_pool: boosted
+  allow_all_stats: "false"
+  allow_negative_stats: "false"
+  exp_multiplier: 5_0x
+  include_space: "true"
+  include_grindy_space_missions: "false"
+  include_space_superbosses: "false"
   olympus_pool: randomize
   twilight_town_pool: randomize
   toy_box_pool: randomize
@@ -6914,126 +6933,127 @@ Kingdom Hearts III:
   hundred_acre_wood_pool: junk
   arendelle_pool: randomize
   san_fransokyo_pool: randomize
+  junk_san_fransokyo_chests: "true"
   the_caribbean_pool: randomize
+  junk_the_caribbean_chests: "true"
   keyblade_graveyard_pool: randomize
   remind_pool: randomize
   dark_world_pool: randomize
   unreality_pool: junk
-  lucky_emblems_per_check: vanilla milestones
   equipment_abilities_pool: randomize
-  data_battle_rewards_pool: junk
-  synthesis_pool: vanilla
-  photo_missions_pool: randomize
-  keyblade_upgrade_rewards_pool: vanilla
+  data_battle_rewards_pool: randomize
   fullcourse_abilities_pool: junk
-  lucky_emblems_pool: junk
+  ingredients: off
+  adversary_checks: "true"
+  battlegates_pool: junk
+  lucky_emblems_pool: randomize
+  lucky_emblems_per_check: 3
+  lucky_emblem_limit: emblems_30
   flantastic_flans_pool: randomize
   verum_rex_pool: junk
+  verum_rex_max_rank: junk
   festival_dance_pool: junk
+  festival_dance_max_rank: junk
   frozen_slider_pool: junk
+  frozen_slider_max_rank: junk
   flash_tracer_course_a_pool: junk
+  flash_tracer_course_a_max_rank: junk
   flash_tracer_course_b_pool: junk
-  festival_dance_max_rank: a
-  verum_rex_max_rank: a
-  frozen_slider_max_rank: a
-  flash_tracer_course_a_max_rank: a
-  flash_tracer_course_b_max_rank: a
-  classic_kingdom_checks: 'off'
-  ingredients: 'off'
-  battlegates_pool: junk
-  olympus_coliseum_pool: 'off'
+  flash_tracer_course_b_max_rank: junk
+  classic_kingdom_checks: high_score
+  junk_classic_kingdom_reward: "false"
+  synthesis_pool: vanilla
+  moogle_synthesis_limit: 15
+  photo_missions_pool: randomize
+  keyblade_upgrade_rewards_pool: vanilla
+  moogle_shop_checks: 0
+  moogle_shop_price: 100
+  olympus_coliseum_pool: off
   music_chest_count: 0
   music_chest_vanilla_conversion: 0
-  music_chest_bonus_checks: true
   melody_of_memory_difficulty: beginner
-  base_sora_stats_pool: boosted
-  level_up_stats_pool: boosted
-  keyblade_enhance_stats_pool: boosted
-  equipment_stats_pool: balanced
-  food_effect_stats_pool: balanced
-  exp_multiplier: 5_0x
+  melody_of_memory_party: team_classic
+  melody_of_memory_play_style: normal
+  melody_of_memory_starting_item: none
   enemies_pool: vanilla
+  enemy_chaos: "false"
   bosses_pool: vanilla
+  boss_blacklist: []
+  default_data_battles: "false"
+  default_end_game_battles: "false"
+  default_yozora_battle: "false"
   party_members_pool: vanilla
-  default_data_battles: false
-  default_end_game_battles: false
-  default_yozora_battle: false
-  default_donald_goofy: false
-  enemy_chaos: false
-  party_chaos: false
-  color_randomization: 'off'
-  default_base_abilities: true
-  start_with_wall_run: false
-  start_with_magic: false
-  start_with_links: false
-  start_with_attraction_flow: false
-  junk_classic_kingdom_reward: true
-  junk_golden_herc_rewards: true
-  junk_sora_collection_rewards: true
-  allow_all_stats: false
-  allow_negative_stats: false
-  level_up_limit: 50
-  lucky_emblem_limit: emblems_50
-  moogle_synthesis_limit: 15
-  easier_mini_ufo: true
-  faster_raging_vulture: true
-  faster_lich_sequence: true
-  dark_baymax_phase_1_skip: true
-  frozen_chase_skip: true
-  faster_crab_collection: true
-  big_hero_rescue_skip: true
-  faster_sora_collection: true
-  guardians_of_light_skip: true
-  fun_10k_heartless: true
-  skip_guardians_and_mickey_walk: true
-  fast_union_cross: true
-  fast_dance_minigame: true
-  fast_beat_of_lead: true
-  all_maps_unlocked: true
-  max_level_ship: true
-  auto_skip_cutscenes: false
-  skip_world_intro_cutscenes: false
+  party_chaos: "false"
+  color_randomization: wild
+  music_shuffle: chaos
+  include_custom_music: "true"
+  form_themes: "false"
+  easier_mini_ufo: "true"
+  faster_raging_vulture: "true"
+  faster_lich_sequence: "true"
+  dark_baymax_phase_1_skip: "true"
+  frozen_chase_skip: "true"
+  faster_crab_collection: "true"
+  faster_sora_collection: "true"
+  guardians_of_light_skip: "true"
+  fun_10k_heartless: "true"
+  skip_guardians_and_mickey_walk: "true"
+  fast_union_cross: "true"
+  fast_beat_of_lead: "true"
+  fast_dance_minigame: "true"
+  max_level_ship: "true"
+  auto_skip_cutscenes: "false"
+  skip_world_intro_cutscenes: "true"
+  map_overlay_enabled: "true"
+  map_overlay_keybinds: "true"
+  hide_locked_chest_icons: "false"
+  song_display: "true"
+  map_chest_icons: "true"
+  map_emblem_icons: "true"
+  map_ingredient_icons: "true"
+  minimap_icons: "true"
+  large_map_icons: "true"
   hint_selection_type: verbose
   important_hint_checks:
-  - '''Ohana Heartbinder'
-  - 'Ability: Air Slide'
-  - 'Ability: Block'
-  - 'Ability: Dodge Roll'
-  - 'Ability: Doubleflight'
-  - 'Ability: Pole Spin'
-  - 'Ability: Second Chance'
-  - 'Ability: Withstand Combo'
-  - Dream Heartbinder
-  - 'Magic: Aero'
-  - 'Magic: Blizzard'
-  - 'Magic: Cure'
-  - 'Magic: Fire'
-  - 'Magic: Thunder'
-  - 'Magic: Water'
-  - Ocean Heartbinder
-  - Pixel Heartbinder
-  - Pride Heartbinder
-  - Secret Report 1
-  - Secret Report 10
-  - Secret Report 11
-  - Secret Report 12
-  - Secret Report 13
-  - Secret Report 2
-  - Secret Report 3
-  - Secret Report 4
-  - Secret Report 5
-  - Secret Report 6
-  - Secret Report 7
-  - Secret Report 8
-  - Secret Report 9
+    - "'Ohana Heartbinder"
+    - "Ability: Air Slide"
+    - "Ability: Block"
+    - "Ability: Dodge Roll"
+    - "Ability: Doubleflight"
+    - "Ability: Pole Spin"
+    - "Ability: Second Chance"
+    - "Ability: Withstand Combo"
+    - Dream Heartbinder
+    - "Magic: Aero"
+    - "Magic: Blizzard"
+    - "Magic: Cure"
+    - "Magic: Fire"
+    - "Magic: Thunder"
+    - "Magic: Water"
+    - Ocean Heartbinder
+    - Pixel Heartbinder
+    - Pride Heartbinder
+    - Secret Report 1
+    - Secret Report 10
+    - Secret Report 11
+    - Secret Report 12
+    - Secret Report 13
+    - Secret Report 2
+    - Secret Report 3
+    - Secret Report 4
+    - Secret Report 5
+    - Secret Report 6
+    - Secret Report 7
+    - Secret Report 8
+    - Secret Report 9
   local_items: []
   non_local_items: []
   start_inventory: {}
+  start_inventory_from_pool: {}
   start_hints: []
   start_location_hints: []
   exclude_locations: []
   priority_locations: []
-  start_inventory_from_pool: {}
 
 Kirby Air Ride:
   death_link: true
