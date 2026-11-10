@@ -6922,7 +6922,7 @@ Kingdom Hearts III:
   allow_all_stats: "false"
   allow_negative_stats: "false"
   exp_multiplier: 5_0x
-  include_space: "true"
+  include_space: "false"
   include_grindy_space_missions: "false"
   include_space_superbosses: "false"
   olympus_pool: randomize
