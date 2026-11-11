@@ -5509,7 +5509,10 @@ Dicey Dungeons:
   spare_dice_shards: 0
   episode_progression: vanilla
   shop_selection: vanilla
-  character: warrior
+  character: 
+    warrior: 50
+    theif: 50
+    robot: 50
   excluded_equipment: []
   randomize_gadgets: vanilla
   use_equipment_from_any_character: false
