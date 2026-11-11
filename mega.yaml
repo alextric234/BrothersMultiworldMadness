@@ -3,324 +3,323 @@
 name: player{number}man
 description: Random game from all templates
 game:
-  A Hat in Time: 1
-  A Link Between Worlds: 1
-  A Link to the Past: 1
-  A Short Hike: 1
-  A Space Archipelago: 1
-  Actraiser: 1
-  Adventure: 1
-  AM2R: 1
-  ANIMAL WELL: 1
-  Another Crabs Treasure: 1
-  AP-Rummy: 1
-  Ape Escape 2: 1
-  Ape Escape 3: 1
-  Ape Escape: 1
-  APQuest: 1
-  Archipeladoku: 1
-  Balatro: 1
-  Baldur's Gate 3 - ToT: 1
-  Baldur's Gate 3: 1
-  Banjo-Tooie: 1
-  Battle for Bikini Bottom: 1
-  Bloons TD6: 1
-  Blasphemous: 1
-  Bomberman 64: 1
-  Bomberman Hero: 1
-  Bomberman Quest: 1
-  Bomberman The Second Attack: 1
-  Borderlands 2: 1
-  Brave Fencer Musashi: 1
-  Brotato: 1
-  Bubble Bobble: 1
-  Buckshot Roulette: 1
-  Bugs Bunny Lost in Time: 1
-  Build a Jetpack: 1
-  Castlevania 64: 1
-  Castlevania - Aria of Sorrow: 1
-  Castlevania - Circle of the Moon: 1
-  Castlevania - Harmony of Dissonance: 1
-  'Castlevania: Dawn of Sorrow': 1
-  'Castlevania: Legacy of Darkness': 1
-  'Castlevania: Order of Ecclesia': 1
-  'Castlevania: Portrait of Ruin': 1
-  Cave Story: 1
-  Celeste (Open World): 1
-  Celeste 64: 1
-  Celeste: 1
-  Civilization V: 1
-  Civilization VI: 1
-  Clique: 1
-  CloverPit: 1
-  ClusterTruck: 1
-  'Codename: Kids Next Door (GC)': 1
-  Crash Bash: 1
-  Crash Team Racing: 1
-  Crash2: 1
-  Crazy Taxi: 1
-  Crypt of the NecroDancer: 1
-  Crystalis: 1
-  Cuphead: 1
-  Dark Cloud 1: 1
-  Dark Souls II: 1
-  Dark Souls III: 1
-  Dark Souls Remastered: 1
-  Deep Rock Galactic: 1
-  DELTARUNE: 1
-  Dicey Dungeons: 1
-  Diddy Kong Racing: 1
-  Digimon World: 1
-  Don't Starve Together: 1
-  Donkey Kong 64: 1
-  Donkey Kong Country 2: 1
-  Donkey Kong Country Returns: 1
-  Donkey Kong Country: 1
-  Donkey Kong Country 3: 1
-  DORONKO WANKO: 1
-  Dr. Robotnik's Ring Racers: 1
-  Dragon Warrior: 1
-  DREDGE: 1
-  EarthBound: 1
-  Factorio: 1
-  FFPS: 1
-  Final Fantasy Tactics Advance: 1
-  Final Fantasy Tactics Ivalice Island: 1
-  Final Fantasy IV Free Enterprise: 1
-  Fire Emblem Sacred Stones: 1
-  Five Nights at Frickbear's 3: 1
-  Five Nights at Fuckboy's 2: 1
-  Five Nights at Fuckboy's: 1
-  FNaFW: 1
-  Garfield Kart - Furious Racing: 1
-  Getting Over It: 1
-  GoldenEye 007: 1
-  Hades: 1
-  Harry Potter 2 PC: 1
-  Haste: 1
-  Hollow Knight: 1
-  Inscryption: 1
-  Isles of Trials: 1
-  'Jak and Daxter: The Precursor Legacy': 1
-  Jak II: 1
-  Jak 3: 1
-  Jigsaw: 1
-  K-On! After School Live!!: 1
-  Keep Talking and Nobody Explodes: 1
-  Kingdom Hearts: 1
-  Kingdom Hearts 2: 1
-  Kingdom Hearts III: 1
-  Kingdom Hearts Birth by Sleep: 1
-  Kingdom Hearts Chain of Memories: 1
-  Kingdom Hearts Dream Drop Distance: 1
-  Kingdom Hearts RE Chain of Memories: 1
-  Kirby 64 - The Crystal Shards: 1
-  Kirby Air Ride: 1
-  Kirby Super Star: 1
-  Kirby's Dream Land 3: 1
-  Landstalker - The Treasures of King Nole: 1
-  'Lego Batman: The Video Game': 1
-  Lethal Company: 1
-  Links Awakening DX: 1
-  Lufia II Ancient Cave: 1
-  Luigi's Mansion: 1
-  Manic Miners: 1
-  Manual_DeadByDaylight-Killer-C40_nivomi: 1
-  Mario & Luigi Superstar Saga: 1
-  Mario Kart 64: 1
-  Mario Kart Wii: 1
-  Mario Kart Double Dash: 1
-  Mario is Missing: 1
-  Mario Sports Mix: 1
-  Mario Super Sluggers: 1
-  Medievil: 1
-  MegaMan Battle Network 3: 1
-  Mega Man 2: 1
-  Mega Man 3: 1
-  Mega Man 7: 1
-  Mega Man X: 1
-  Mega Man X2: 1
-  Mega Man X3: 1
-  MetroCUBEvania: 1
-  Metroid Bread: 1
-  Metroid Dread: 1
-  Metroid Fusion: 1
-  Metroid Prime: 1
-  'Metroid: Zero Mission': 1
-  Mina The Hollower: 1
-  Minecraft: 1
-  Mirror's Edge: 1
-  Monster Hunter World: 1
-  Mystical Ninja Starring Goemon: 1
-  Naruto Clash of Ninja 2: 1
-  Neon White: 1
-  Noita: 1
-  NSMBW: 1
-  Ocarina of Time: 1
-  Ocarina of Time but it's just Master Quest Water Temple: 1
-  Old School Runescape: 1
-  OpenRCT2: 1
-  osu!: 1
-  Outer Wilds: 1
-  Overcooked! 2: 1
-  Paint: 1
-  Paper Mario: 1
-  'Paper Mario: The Thousand-Year Door': 1
-  Path of Exile: 1
-  'PAYDAY 2: Criminal Dawn': 1
-  PEAK: 1
-  Peggle Deluxe: 1
-  Peggle Nights: 1
-  Pikmin: 1
-  Pikmin 2: 1
-  Pizza Tower: 1
-  PlateUp: 1
-  Plants Vs Zombies Fusion: 1
-  Plok: 1
-  Pokeclicker: 1
-  Pokemon Black and White: 1
-  Pokemon Crystal: 1
-  Pokemon Emerald: 1
-  Pokemon FireRed and LeafGreen: 1
-  Pokemon HeartGold and SoulSilver: 1
-  Pokemon Mystery Dungeon Explorers of Sky: 1
-  Pokemon Pinball: 1
-  Pokemon Platinum: 1
-  Pokemon Ranger (Quest): 1
-  Pokemon Snap: 1
-  Pokemon Trozei: 1
-  PokePark: 1
-  Pokepelago: 1
-  Portal 2: 1
-  Pseudoregalia: 1
-  Psychonauts: 1
-  R.E.P.O: 1
-  Raft: 1
-  Rain World: 1
-  Ratchet & Clank 2: 1
-  Ratchet & Clank: 1
-  Ratchet and Clank 3: 1
-  Return of the Obra Dinn: 1
-  Rimworld: 1
-  Risk of Rain 2: 1
-  Rogue Legacy 2: 1
-  Satisfactory: 1
-  Saving Princess: 1
-  Schedule I: 1
-  Scooby-Doo! Unmasked: 1
-  Scooby-Doo! Night of 100 Frights: 1
-  Secret of Evermore: 1
-  Secret of Mana: 1
-  Shadow The Hedgehog: 1
-  shapez: 1
-  shapez 2: 1
-  Shellipelago: 1
-  Ship of Harkinian: 1
-  Simon Tatham's Portable Puzzle Collection: 1
-  Simpsons Hit and Run: 1
-  Skyward Sword: 1
-  Slay the Spire II: 1
-  Slay the Spire: 1
-  Slime Rancher: 1
-  'Sly 2: Band of Thieves': 1
-  Sly Cooper and the Thievius Raccoonus: 1
-  'SM64: Spicy Mycena 64': 1
-  'SMW: Spicy Mycena Waffles': 1
-  SMZ3: 1
-  SOH-EXTREME: 1
-  Sonic Adventure 2 Battle: 1
-  Sonic Adventure DX: 1
-  Sonic Battle: 1
-  Sonic Colours (DS): 1
-  Sonic Heroes: 1
-  Sonic Riders: 1
-  Sonic Robo Blast 2: 1
-  Sonic Rush: 1
-  Sonic the Hedgehog 1: 1
-  Soul Blazer: 1
-  Spelunker: 1
-  Spicy Meatball Overdrive: 1
-  Spinball: 1
-  Spirit Tracks: 1
-  Spyro 2: 1
-  Spyro 3: 1
-  'Spyro: A Hero''s Tail': 1
-  Stardew Valley: 1
-  Star Fox 64: 1
-  Stick Ranger: 1
-  Streets of Rage: 1
-  Subnautica: 1
-  Super Cat Planet: 1
-  Super Junkoid: 1
-  Super Mario 64: 1
-  Super Mario Land 2: 1
-  Super Mario RPG Legend of the Seven Stars: 1
-  Super Mario Sunshine: 1
-  Super Mario Sunshine Arcade 2: 1
-  Super Mario World: 1
-  Super Metroid: 1
-  Super Metroid Map Rando: 1
-  Super Smash Bros. Melee: 1
-  Symphony of the Night: 1
-  Taz Wanted: 1
-  TCG Card Shop Simulator: 1
-  Terraria: 1
-  Tetris: 1
-  Tetris Attack: 1
-  The Binding of Isaac Repentance: 1
-  The Frog For Whom The Bell Tolls: 1
-  The Grinch: 1
-  The Guardian Legend: 1
-  The Legend of Dragoon: 1
-  'The Legend of Spyro: Dawn of the Dragon': 1
-  The Legend of Zelda - Oracle of Ages: 1
-  The Legend of Zelda - Phantom Hourglass: 1
-  The Legend of Zelda: 1
-  The Minish Cap: 1
-  The Murder of Sonic the Hedgehog: 1
-  The Sims 4: 1
-  The Wind Waker: 1
-  Time is broken again: 1
-  TimeSplitters Future Perfect: 1
-  ToeJam and Earl: 1
-  Toy Story 2: 1
-  TUNIC: 1
-  Twilight Princess: 1
-  Twisty Cube: 1
-  Ty the Tasmanian Tiger: 1
-  Tyrian: 1
-  Ultimate Custom Night: 1
-  ULTRAKILL: 1
-  Uncanny Cat Golf: 1
-  Undertale: 1
-  Undertale Yellow: 1
-  Unfair Flips: 1
-  Vampire Survivors: 1
-  Void Sols: 1
-  Voltorb Flip: 1
-  VVVVVV: 1
-  Wario Land 3: 1
-  Wario Land 4: 1
-  Wario Land: 1
-  Warioworld: 1
-  Watery Words: 1
-  WEBFISHING: 1
-  Wikipelago: 1
-  Wordipelago: 1
-  Wynncraft: 1
-  Xenoblade X: 1
-  Yacht Dice: 1
-  YARG: 1
-  Yoku's Island Express: 1
-  Yooka-Laylee: 1
-  Yoshi's Island: 1
-  'Yu-Gi-Oh! GX: Duel Academy': 1
-  Yu-Gi-Oh! Dungeon Dice Monsters: 1
-  Yu-Gi-Oh! Forbidden Memories: 1
-  ZALiA: 1 
-  'Zelda II: The Adventure of Link': 1
-  Zillion: 1
-
+  A Hat in Time: 100
+  A Link Between Worlds: 100
+  A Link to the Past: 100
+  A Short Hike: 100
+  A Space Archipelago: 100
+  Actraiser: 100
+  Adventure: 100
+  AM2R: 100
+  ANIMAL WELL: 100
+  Another Crabs Treasure: 100
+  AP-Rummy: 100
+  Ape Escape 2: 100
+  Ape Escape 3: 100
+  Ape Escape: 100
+  APQuest: 100
+  Archipeladoku: 100
+  Balatro: 100
+  Baldur's Gate 3 - ToT: 100
+  Baldur's Gate 3: 100
+  Banjo-Tooie: 100
+  Battle for Bikini Bottom: 100
+  Bloons TD6: 100
+  Blasphemous: 100
+  Bomberman 64: 100
+  Bomberman Hero: 100
+  Bomberman Quest: 100
+  Bomberman The Second Attack: 100
+  Borderlands 2: 100
+  Brave Fencer Musashi: 100
+  Brotato: 100
+  Bubble Bobble: 100
+  Buckshot Roulette: 100
+  Bugs Bunny Lost in Time: 100
+  Build a Jetpack: 100
+  Castlevania 64: 100
+  Castlevania - Aria of Sorrow: 100
+  Castlevania - Circle of the Moon: 100
+  Castlevania - Harmony of Dissonance: 100
+  'Castlevania: Dawn of Sorrow': 100
+  'Castlevania: Legacy of Darkness': 100
+  'Castlevania: Order of Ecclesia': 100
+  'Castlevania: Portrait of Ruin': 100
+  Cave Story: 100
+  Celeste (Open World): 100
+  Celeste 64: 100
+  Celeste: 100
+  Civilization V: 100
+  Civilization VI: 100
+  Clique: 100
+  CloverPit: 100
+  ClusterTruck: 100
+  'Codename: Kids Next Door (GC)': 100
+  Crash Bash: 100
+  Crash Team Racing: 100
+  Crash2: 100
+  Crazy Taxi: 100
+  Crypt of the NecroDancer: 100
+  Crystalis: 100
+  Cuphead: 100
+  Dark Cloud 1: 100
+  Dark Souls II: 100
+  Dark Souls III: 100
+  Dark Souls Remastered: 100
+  Deep Rock Galactic: 100
+  DELTARUNE: 100
+  Dicey Dungeons: 100
+  Diddy Kong Racing: 100
+  Digimon World: 100
+  Don't Starve Together: 100
+  Donkey Kong 64: 100
+  Donkey Kong Country 2: 100
+  Donkey Kong Country Returns: 100
+  Donkey Kong Country: 100
+  Donkey Kong Country 3: 100
+  DORONKO WANKO: 100
+  Dr. Robotnik's Ring Racers: 100
+  Dragon Warrior: 100
+  DREDGE: 100
+  EarthBound: 100
+  Factorio: 100
+  FFPS: 100
+  Final Fantasy Tactics Advance: 100
+  Final Fantasy Tactics Ivalice Island: 100
+  Final Fantasy IV Free Enterprise: 100
+  Fire Emblem Sacred Stones: 100
+  Five Nights at Frickbear's 3: 100
+  Five Nights at Fuckboy's 2: 100
+  Five Nights at Fuckboy's: 100
+  FNaFW: 100
+  Garfield Kart - Furious Racing: 100
+  Getting Over It: 100
+  GoldenEye 007: 100
+  Hades: 100
+  Harry Potter 2 PC: 100
+  Haste: 100
+  Hollow Knight: 100
+  Inscryption: 100
+  Isles of Trials: 100
+  'Jak and Daxter: The Precursor Legacy': 100
+  Jak II: 100
+  Jak 3: 100
+  Jigsaw: 100
+  K-On! After School Live!!: 100
+  Keep Talking and Nobody Explodes: 100
+  Kingdom Hearts: 100
+  Kingdom Hearts 2: 100
+  Kingdom Hearts III: 100
+  Kingdom Hearts Birth by Sleep: 100
+  Kingdom Hearts Chain of Memories: 100
+  Kingdom Hearts Dream Drop Distance: 100
+  Kingdom Hearts RE Chain of Memories: 100
+  Kirby 64 - The Crystal Shards: 100
+  Kirby Air Ride: 100
+  Kirby Super Star: 100
+  Kirby's Dream Land 3: 100
+  Landstalker - The Treasures of King Nole: 100
+  'Lego Batman: The Video Game': 100
+  Lethal Company: 100
+  Links Awakening DX: 100
+  Lufia II Ancient Cave: 100
+  Luigi's Mansion: 100
+  Manic Miners: 100
+  Manual_DeadByDaylight-Killer-C40_nivomi: 100
+  Mario & Luigi Superstar Saga: 100
+  Mario Kart 64: 100
+  Mario Kart Wii: 100
+  Mario Kart Double Dash: 100
+  Mario is Missing: 100
+  Mario Sports Mix: 100
+  Mario Super Sluggers: 100
+  Medievil: 100
+  MegaMan Battle Network 3: 100
+  Mega Man 2: 100
+  Mega Man 3: 100
+  Mega Man 7: 100
+  Mega Man X: 100
+  Mega Man X2: 100
+  Mega Man X3: 100
+  MetroCUBEvania: 100
+  Metroid Bread: 100
+  Metroid Dread: 100
+  Metroid Fusion: 100
+  Metroid Prime: 100
+  'Metroid: Zero Mission': 100
+  Mina The Hollower: 100
+  Minecraft: 100
+  Mirror's Edge: 100
+  Monster Hunter World: 100
+  Mystical Ninja Starring Goemon: 100
+  Naruto Clash of Ninja 2: 100
+  Neon White: 100
+  Noita: 100
+  NSMBW: 100
+  Ocarina of Time: 100
+  Ocarina of Time but it's just Master Quest Water Temple: 100
+  Old School Runescape: 100
+  OpenRCT2: 100
+  osu!: 100
+  Outer Wilds: 100
+  Overcooked! 2: 100
+  Paint: 100
+  Paper Mario: 100
+  'Paper Mario: The Thousand-Year Door': 100
+  Path of Exile: 100
+  'PAYDAY 2: Criminal Dawn': 100
+  PEAK: 100
+  Peggle Deluxe: 100
+  Peggle Nights: 100
+  Pikmin: 100
+  Pikmin 2: 100
+  Pizza Tower: 100
+  PlateUp: 100
+  Plants Vs Zombies Fusion: 100
+  Plok: 100
+  Pokeclicker: 100
+  Pokemon Black and White: 100
+  Pokemon Crystal: 100
+  Pokemon Emerald: 100
+  Pokemon FireRed and LeafGreen: 100
+  Pokemon HeartGold and SoulSilver: 100
+  Pokemon Mystery Dungeon Explorers of Sky: 100
+  Pokemon Pinball: 100
+  Pokemon Platinum: 100
+  Pokemon Ranger (Quest): 100
+  Pokemon Snap: 100
+  Pokemon Trozei: 100
+  PokePark: 100
+  Pokepelago: 100
+  Portal 2: 100
+  Pseudoregalia: 100
+  Psychonauts: 100
+  R.E.P.O: 100
+  Raft: 100
+  Rain World: 100
+  Ratchet & Clank 2: 100
+  Ratchet & Clank: 100
+  Ratchet and Clank 3: 100
+  Return of the Obra Dinn: 100
+  Rimworld: 100
+  Risk of Rain 2: 100
+  Rogue Legacy 2: 100
+  Satisfactory: 100
+  Saving Princess: 100
+  Schedule I: 100
+  Scooby-Doo! Unmasked: 100
+  Scooby-Doo! Night of 100 Frights: 100
+  Secret of Evermore: 100
+  Secret of Mana: 100
+  Shadow The Hedgehog: 100
+  shapez: 100
+  shapez 2: 100
+  Shellipelago: 100
+  Ship of Harkinian: 100
+  Simon Tatham's Portable Puzzle Collection: 100
+  Simpsons Hit and Run: 100
+  Skyward Sword: 100
+  Slay the Spire II: 100
+  Slay the Spire: 100
+  Slime Rancher: 100
+  'Sly 2: Band of Thieves': 100
+  Sly Cooper and the Thievius Raccoonus: 100
+  'SM64: Spicy Mycena 64': 100
+  'SMW: Spicy Mycena Waffles': 100
+  SMZ3: 100
+  SOH-EXTREME: 100
+  Sonic Adventure 2 Battle: 100
+  Sonic Adventure DX: 100
+  Sonic Battle: 100
+  Sonic Colours (DS): 100
+  Sonic Heroes: 100
+  Sonic Riders: 100
+  Sonic Robo Blast 2: 100
+  Sonic Rush: 100
+  Sonic the Hedgehog 1: 100
+  Soul Blazer: 100
+  Spelunker: 100
+  Spicy Meatball Overdrive: 100
+  Spinball: 100
+  Spirit Tracks: 100
+  Spyro 2: 100
+  Spyro 3: 100
+  'Spyro: A Hero''s Tail': 100
+  Stardew Valley: 100
+  Star Fox 64: 100
+  Stick Ranger: 100
+  Streets of Rage: 100
+  Subnautica: 100
+  Super Cat Planet: 100
+  Super Junkoid: 100
+  Super Mario 64: 100
+  Super Mario Land 2: 100
+  Super Mario RPG Legend of the Seven Stars: 100
+  Super Mario Sunshine: 100
+  Super Mario Sunshine Arcade 2: 100
+  Super Mario World: 100
+  Super Metroid: 100
+  Super Metroid Map Rando: 100
+  Super Smash Bros. Melee: 100
+  Symphony of the Night: 100
+  Taz Wanted: 100
+  TCG Card Shop Simulator: 100
+  Terraria: 100
+  Tetris: 100
+  Tetris Attack: 100
+  The Binding of Isaac Repentance: 100
+  The Frog For Whom The Bell Tolls: 100
+  The Grinch: 100
+  The Guardian Legend: 100
+  The Legend of Dragoon: 100
+  'The Legend of Spyro: Dawn of the Dragon': 100
+  The Legend of Zelda - Oracle of Ages: 100
+  The Legend of Zelda - Phantom Hourglass: 100
+  The Legend of Zelda: 100
+  The Minish Cap: 100
+  The Murder of Sonic the Hedgehog: 100
+  The Sims 4: 100
+  The Wind Waker: 100
+  Time is broken again: 100
+  TimeSplitters Future Perfect: 100
+  ToeJam and Earl: 100
+  Toy Story 2: 100
+  TUNIC: 100
+  Twilight Princess: 100
+  Twisty Cube: 100
+  Ty the Tasmanian Tiger: 100
+  Tyrian: 100
+  Ultimate Custom Night: 100
+  ULTRAKILL: 100
+  Uncanny Cat Golf: 100
+  Undertale: 100
+  Undertale Yellow: 100
+  Unfair Flips: 100
+  Vampire Survivors: 100
+  Void Sols: 100
+  Voltorb Flip: 100
+  VVVVVV: 100
+  Wario Land 3: 100
+  Wario Land 4: 100
+  Wario Land: 100
+  Warioworld: 100
+  Watery Words: 100
+  WEBFISHING: 100
+  Wikipelago: 100
+  Wordipelago: 100
+  Wynncraft: 100
+  Xenoblade X: 100
+  Yacht Dice: 100
+  YARG: 100
+  Yoku's Island Express: 100
+  Yooka-Laylee: 100
+  Yoshi's Island: 100
+  'Yu-Gi-Oh! GX: Duel Academy': 100
+  Yu-Gi-Oh! Dungeon Dice Monsters: 100
+  Yu-Gi-Oh! Forbidden Memories: 100
+  ZALiA: 100 
+  'Zelda II: The Adventure of Link': 100
+  Zillion: 100
 requires:
   version: 0.6.7
 
